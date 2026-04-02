@@ -1,0 +1,120 @@
+[
+  {
+    "slug": "/404",
+    "title": "404",
+    "type": "info",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/about-us",
+    "title": "About Us",
+    "type": "legal",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/accessibility",
+    "title": "Accessibility",
+    "type": "legal",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/contact-us",
+    "title": "Contact Us",
+    "type": "legal",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/cookies-policy",
+    "title": "Cookies Policy",
+    "type": "legal",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/disclaimer",
+    "title": "Disclaimer",
+    "type": "legal",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/guides/how-to-delete-downloads-on-mac",
+    "title": "How To Delete Downloads On Mac",
+    "type": "guide",
+    "priority": 0.7,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/guides/how-to-find-downloads-on-iPhone",
+    "title": "How To Find Downloads On IPhone",
+    "type": "guide",
+    "priority": 0.7,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "",
+    "title": "Home",
+    "type": "tool",
+    "priority": 1,
+    "lastmod": "2026-03-26",
+    "keywords": [
+      "video downloader",
+      "youtube",
+      "tiktok",
+      "mp3",
+      "converter"
+    ]
+  },
+  {
+    "slug": "/pinterest-917fa",
+    "title": "Pinterest 917fa",
+    "type": "info",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/privacy-policy",
+    "title": "Privacy Policy",
+    "type": "legal",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/sitemap",
+    "title": "Sitemap",
+    "type": "utility",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/terms-of-use",
+    "title": "Terms Of Use",
+    "type": "legal",
+    "priority": 0.5,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  },
+  {
+    "slug": "/tools/youtube-to-mp3",
+    "title": "Youtube To Mp3",
+    "type": "tool",
+    "priority": 0.8,
+    "lastmod": "2026-03-26",
+    "keywords": []
+  }
+]
