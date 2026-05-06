@@ -49,6 +49,14 @@ const siteRegistry = [
     "keywords": []
   },
   {
+    "slug": "/dmca",
+    "title": "Dmca",
+    "type": "info",
+    "priority": 0.5,
+    "lastmod": "2026-05-06",
+    "keywords": []
+  },
+  {
     "slug": "/guides/how-to-delete-downloads-on-mac",
     "title": "How To Delete Downloads On Mac",
     "type": "guide",
