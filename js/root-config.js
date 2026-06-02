@@ -1,0 +1,311 @@
+// ─────────────────────────────────────────
+// INTELREAP ROOT CONFIGURATION
+// Global site constants
+// Dynamic year and date utilities
+// ─────────────────────────────────────────
+
+const INTELREAP_CONFIG = {
+
+  // ─────────────────────────────────────
+  // SITE IDENTITY
+  // ─────────────────────────────────────
+
+  siteName: 'IntelReap',
+  siteTagline: 'Real-time network and device intelligence.',
+  siteDescription: 'IntelReap reveals your network infrastructure, device fingerprint, security posture and browser capabilities in real time. Free. No login required.',
+  baseUrl: 'https://intelreap.com',
+  toolName: 'NDIC',
+  toolFullName: 'Network and Device Intelligence Center',
+  reportName: 'Network and Device Intelligence Report',
+  version: '1.0.0',
+
+  // ─────────────────────────────────────
+  // SOCIAL LINKS
+  // ─────────────────────────────────────
+
+  social: {
+    twitter: 'https://twitter.com/intelreap',
+    github: 'https://github.com/accessmakr/intelreap-frontend'
+  },
+
+  // ─────────────────────────────────────
+  // CONTACT
+  // ─────────────────────────────────────
+
+  contact: {
+    email: 'accessmakr@gmail.com',
+    formName: 'Request And Contact'
+  },
+
+  // ─────────────────────────────────────
+  // DYNAMIC DATE UTILITIES
+  // ─────────────────────────────────────
+
+  getCurrentYear() {
+    return new Date().getFullYear()
+  },
+
+  getCurrentDate() {
+    return new Date().toISOString().split('T')[0]
+  },
+
+  // Schema dateModified
+  // Updates every Monday automatically
+  getSchemaDateModified() {
+    const now = new Date()
+    const day = now.getDay()
+    const diff = now.getDate() - day +
+      (day === 0 ? -6 : 1)
+    const monday = new Date(now.setDate(diff))
+    return monday.toISOString().split('T')[0]
+  },
+
+  // ─────────────────────────────────────
+  // SEASONAL BANNER
+  // ─────────────────────────────────────
+
+  getSeason() {
+    const month = new Date().getMonth()
+    if (month >= 2 && month <= 4) {
+      return {
+        label: 'Spring Edition',
+        emoji: '🌱',
+        color: '#48bb78'
+      }
+    }
+    if (month >= 5 && month <= 7) {
+      return {
+        label: 'Summer Edition',
+        emoji: '☀️',
+        color: '#ecc94b'
+      }
+    }
+    if (month >= 8 && month <= 10) {
+      return {
+        label: 'Fall Edition',
+        emoji: '🍂',
+        color: '#ed8936'
+      }
+    }
+    return {
+      label: 'Winter Edition',
+      emoji: '❄️',
+      color: '#76e4f7'
+    }
+  },
+
+  // ─────────────────────────────────────
+  // CTA ROTATION
+  // ─────────────────────────────────────
+
+  ctaVariants: [
+    'Run Intelligence Scan',
+    'Analyse My Connection',
+    'Reveal My Network',
+    'Start Free Scan',
+    'Inspect My Device',
+    'Run Full Diagnostic'
+  ],
+
+  getRandomCTA() {
+    const variants = this.ctaVariants
+    return variants[
+      Math.floor(Math.random() * variants.length)
+    ]
+  },
+
+  // ─────────────────────────────────────
+  // TRUST STATS
+  // ─────────────────────────────────────
+
+  trust: {
+    rating: '4.9★',
+    ratingLabel: 'satisfaction',
+    stat1: '234 data points',
+    stat1Label: 'per scan',
+    stat2: '12 intelligence panels',
+    stat2Label: 'per report',
+    stat3: 'Zero data stored',
+    stat3Label: 'privacy first'
+  },
+
+  // ─────────────────────────────────────
+  // FRESHNESS BADGE
+  // ─────────────────────────────────────
+
+  getFreshnessBadge() {
+    const now = new Date()
+    const today = now.toLocaleDateString(
+      'en-US',
+      {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }
+    )
+    return `Last updated ${today}`
+  },
+
+  // ─────────────────────────────────────
+  // PATHS
+  // Resolves correct relative paths
+  // based on current page depth
+  // ─────────────────────────────────────
+
+  getBasePath() {
+    const depth = window.location.pathname
+      .split('/')
+      .filter(Boolean).length
+
+    if (depth <= 1) return './'
+    return '../'.repeat(depth - 1)
+  },
+
+  getJsPath() {
+    return this.getBasePath() + 'js/'
+  },
+
+  getAssetsPath() {
+    return this.getBasePath() + 'assets/'
+  }
+}
+
+// ─────────────────────────────────────────
+// DYNAMIC YEAR INJECTION
+// Replaces all .dynamic-year elements
+// ─────────────────────────────────────────
+
+const injectDynamicYears = () => {
+  const year = INTELREAP_CONFIG.getCurrentYear()
+  const elements = document.querySelectorAll(
+    '.dynamic-year'
+  )
+  elements.forEach(el => {
+    el.textContent = year
+  })
+
+  // Also update copyright
+  const copyrightEls = document.querySelectorAll(
+    '.copyright-year'
+  )
+  copyrightEls.forEach(el => {
+    el.textContent = `© ${year} IntelReap`
+  })
+}
+
+// ─────────────────────────────────────────
+// SEASONAL BANNER INJECTION
+// ─────────────────────────────────────────
+
+const injectSeasonalBanner = () => {
+  const banner = document.getElementById(
+    'seasonal-banner'
+  )
+  if (!banner) return
+
+  const season = INTELREAP_CONFIG.getSeason()
+  banner.textContent =
+    `${season.emoji} ${season.label}`
+  banner.style.setProperty(
+    '--season-color',
+    season.color
+  )
+  banner.style.color = season.color
+}
+
+// ─────────────────────────────────────────
+// CTA ROTATION INJECTION
+// ─────────────────────────────────────────
+
+const injectCTARotation = () => {
+  const ctaButtons = document.querySelectorAll(
+    '.cta-rotate'
+  )
+
+  ctaButtons.forEach(btn => {
+    btn.textContent =
+      INTELREAP_CONFIG.getRandomCTA()
+  })
+
+  // Rotate every 4 seconds
+  setInterval(() => {
+    ctaButtons.forEach(btn => {
+      btn.style.opacity = '0'
+      setTimeout(() => {
+        btn.textContent =
+          INTELREAP_CONFIG.getRandomCTA()
+        btn.style.opacity = '1'
+      }, 300)
+    })
+  }, 4000)
+}
+
+// ─────────────────────────────────────────
+// FRESHNESS BADGE INJECTION
+// ─────────────────────────────────────────
+
+const injectFreshnessBadge = () => {
+  const badge = document.getElementById(
+    'freshness-badge'
+  )
+  if (!badge) return
+
+  badge.textContent =
+    INTELREAP_CONFIG.getFreshnessBadge()
+}
+
+// ─────────────────────────────────────────
+// SCROLL PROGRESS BAR
+// ─────────────────────────────────────────
+
+const initScrollProgressBar = () => {
+  const bar = document.getElementById(
+    'scroll-progress-bar'
+  )
+  if (!bar) return
+
+  const updateBar = () => {
+    const scrollTop =
+      window.scrollY ||
+      document.documentElement.scrollTop
+
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight
+
+    const progress = docHeight > 0
+      ? (scrollTop / docHeight) * 100
+      : 0
+
+    bar.style.width = `${progress}%`
+  }
+
+  window.addEventListener(
+    'scroll',
+    updateBar,
+    { passive: true }
+  )
+
+  updateBar()
+}
+
+// ─────────────────────────────────────────
+// RUN ON DOM READY
+// ─────────────────────────────────────────
+
+const runRootConfig = () => {
+  injectDynamicYears()
+  injectSeasonalBanner()
+  injectCTARotation()
+  injectFreshnessBadge()
+  initScrollProgressBar()
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener(
+    'DOMContentLoaded',
+    runRootConfig
+  )
+} else {
+  runRootConfig()
+}
