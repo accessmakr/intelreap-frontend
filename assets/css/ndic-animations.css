@@ -1,0 +1,1498 @@
+/* ═════════════════════════════════════════════════════════════
+   INTELREAP — NDIC ANIMATIONS SYSTEM
+   All keyframes, transitions, micro-interactions
+   and motion design for the intelligence platform
+   ═════════════════════════════════════════════════════════════
+
+   TABLE OF CONTENTS
+   ─────────────────────────────────────────────────────────────
+   01. KEYFRAME DEFINITIONS
+   02. PAGE LOAD SEQUENCE
+   03. CANVAS REVEAL ANIMATIONS
+   04. SCORE UPDATE ANIMATIONS
+   05. SKELETON LOADING
+   06. SCAN STATUS ANIMATIONS
+   07. TICKER SCROLL
+   08. MAP MARKER ANIMATIONS
+   09. TYPING EFFECT
+   10. CHART ENTRANCE ANIMATIONS
+   11. FEED ENTRY ANIMATIONS
+   12. SHARE PILL ANIMATIONS
+   13. SEARCH MODAL ANIMATIONS
+   14. DRAWER ANIMATIONS
+   15. TOAST ANIMATIONS
+   16. HEADER ANIMATIONS
+   17. HERO SECTION ANIMATIONS
+   18. FAQ ACCORDION ANIMATIONS
+   19. CAROUSEL ANIMATIONS
+   20. DEEP DIVE LINK ANIMATIONS
+   21. NUMBER COUNTER ANIMATION
+   22. REDUCED MOTION OVERRIDES
+   ───────────────────────────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────
+   01. KEYFRAME DEFINITIONS
+   ───────────────────────────────────────── */
+
+/* Fade in */
+@keyframes ndic-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade in upward */
+@keyframes ndic-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in downward */
+@keyframes ndic-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from left */
+@keyframes ndic-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from right */
+@keyframes ndic-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in */
+@keyframes ndic-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scale in subtle */
+@keyframes ndic-scale-subtle {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Skeleton pulse */
+@keyframes ndic-skeleton-pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Pulse dot — status indicator */
+@keyframes ndic-pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
+  }
+}
+
+/* Pulse ring — map marker */
+@keyframes ndic-marker-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Ticker scroll — endless horizontal */
+@keyframes ndic-ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Score count up */
+@keyframes ndic-count-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Score flash on update */
+@keyframes ndic-score-flash {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Glow pulse */
+@keyframes ndic-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0,180,216,0);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(0,180,216,0.15);
+  }
+}
+
+/* Typing cursor blink */
+@keyframes ndic-cursor-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Scan line sweep */
+@keyframes ndic-scan-sweep {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Data flicker — terminal effect */
+@keyframes ndic-flicker {
+  0%, 95%, 100% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.7;
+  }
+  97% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 0.8;
+  }
+}
+
+/* Spin */
+@keyframes ndic-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shimmer — skeleton highlight */
+@keyframes ndic-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Bounce in */
+@keyframes ndic-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide in from bottom */
+@keyframes ndic-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Progress bar fill */
+@keyframes ndic-progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--target-width, 100%);
+  }
+}
+
+/* Stagger fade up for lists */
+@keyframes ndic-stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Canvas border glow on data arrival */
+@keyframes ndic-canvas-arrive {
+  0% {
+    border-color: rgba(0,180,216,0.4);
+    box-shadow: 0 0 0 0 rgba(0,180,216,0.2);
+  }
+  50% {
+    border-color: rgba(0,180,216,0.6);
+    box-shadow: 0 0 0 4px rgba(0,180,216,0.08);
+  }
+  100% {
+    border-color: rgba(255,255,255,0.06);
+    box-shadow: none;
+  }
+}
+
+/* Feed entry entrance */
+@keyframes ndic-feed-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+    background: rgba(0,180,216,0.04);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    background: transparent;
+  }
+}
+
+/* Hero badge entrance */
+@keyframes ndic-hero-badge-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Grid background drift */
+@keyframes ndic-grid-drift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-3px, -3px);
+  }
+  66% {
+    transform: translate(3px, 2px);
+  }
+}
+
+/* Score ring draw */
+@keyframes ndic-ring-draw {
+  from {
+    stroke-dashoffset: 283;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: var(--ring-offset, 0);
+    opacity: 1;
+  }
+}
+
+/* Capability tile pop in */
+@keyframes ndic-tile-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  70% {
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   02. PAGE LOAD SEQUENCE
+   Staggered entrance for the full page
+   ───────────────────────────────────────── */
+
+/* Site header slides down */
+.ndic-site-header {
+  animation: ndic-fade-down 400ms ease both;
+  animation-delay: 0ms;
+}
+
+/* Seasonal banner */
+#seasonal-banner {
+  animation: ndic-fade-down 350ms ease both;
+  animation-delay: 50ms;
+}
+
+/* Hero badge */
+.ndic-hero-badge {
+  animation: ndic-hero-badge-in 500ms
+    cubic-bezier(0.34, 1.56, 0.64, 1)
+    both;
+  animation-delay: 150ms;
+}
+
+/* Hero title */
+.ndic-hero-title {
+  animation: ndic-fade-up 600ms ease both;
+  animation-delay: 200ms;
+}
+
+/* Hero tagline */
+.ndic-hero-tagline {
+  animation: ndic-fade-up 500ms ease both;
+  animation-delay: 300ms;
+}
+
+/* Hero CTA group */
+.ndic-hero-cta-group {
+  animation: ndic-fade-up 500ms ease both;
+  animation-delay: 380ms;
+}
+
+/* Trust strip */
+.ndic-trust-strip {
+  animation: ndic-fade-up 400ms ease both;
+  animation-delay: 450ms;
+}
+
+/* Scroll progress bar */
+#scroll-progress-bar {
+  animation: ndic-fade-in 300ms ease both;
+  animation-delay: 100ms;
+}
+
+
+/* ─────────────────────────────────────────
+   03. CANVAS REVEAL ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Canvas fade in when loaded */
+.ndic-canvas-loaded {
+  animation: ndic-canvas-arrive 1200ms ease both,
+             ndic-scale-subtle 500ms ease both;
+}
+
+/* Stagger canvas grid items */
+.ndic-canvas-grid .ndic-canvas:nth-child(1) {
+  animation-delay: 0ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(2) {
+  animation-delay: 60ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(3) {
+  animation-delay: 120ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(4) {
+  animation-delay: 180ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(5) {
+  animation-delay: 240ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(6) {
+  animation-delay: 300ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(7) {
+  animation-delay: 360ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(8) {
+  animation-delay: 420ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(9) {
+  animation-delay: 480ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(10) {
+  animation-delay: 540ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(11) {
+  animation-delay: 600ms;
+}
+.ndic-canvas-grid .ndic-canvas:nth-child(12) {
+  animation-delay: 660ms;
+}
+
+/* Parameter rows stagger in within canvas */
+.ndic-canvas-loaded .ndic-param-row {
+  animation: ndic-fade-left 300ms ease both;
+}
+
+.ndic-canvas-loaded .ndic-param-row:nth-child(1) {
+  animation-delay: 50ms;
+}
+.ndic-canvas-loaded .ndic-param-row:nth-child(2) {
+  animation-delay: 80ms;
+}
+.ndic-canvas-loaded .ndic-param-row:nth-child(3) {
+  animation-delay: 110ms;
+}
+.ndic-canvas-loaded .ndic-param-row:nth-child(4) {
+  animation-delay: 140ms;
+}
+.ndic-canvas-loaded .ndic-param-row:nth-child(5) {
+  animation-delay: 170ms;
+}
+.ndic-canvas-loaded .ndic-param-row:nth-child(6) {
+  animation-delay: 200ms;
+}
+.ndic-canvas-loaded .ndic-param-row:nth-child(7) {
+  animation-delay: 230ms;
+}
+.ndic-canvas-loaded .ndic-param-row:nth-child(8) {
+  animation-delay: 260ms;
+}
+.ndic-canvas-loaded .ndic-param-row:nth-child(n+9) {
+  animation-delay: 290ms;
+}
+
+
+/* ─────────────────────────────────────────
+   04. SCORE UPDATE ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Score value flashes when it changes */
+.ndic-score-updating {
+  animation: ndic-score-flash 600ms ease both;
+}
+
+/* Score count animation */
+.ndic-score-counting {
+  animation: ndic-count-up 400ms ease both;
+}
+
+/* Global score large number */
+#c11-global-score {
+  transition: color 600ms ease;
+}
+
+/* Header score pill */
+#header-score-pill {
+  transition: color 600ms ease,
+              background 600ms ease,
+              border-color 600ms ease;
+}
+
+/* Canvas score badges */
+[id$="-score"] {
+  transition: color 400ms ease;
+}
+
+/* Score ring glow */
+.ndic-score-ring-container:hover {
+  animation: ndic-glow-pulse 2s ease-in-out infinite;
+}
+
+
+/* ─────────────────────────────────────────
+   05. SKELETON LOADING
+   ───────────────────────────────────────── */
+
+/* Skeleton shimmer on param values */
+.ndic-canvas-loading .ndic-param-value,
+.ndic-canvas-loading .ndic-canvas-heading,
+.ndic-canvas-loading .ndic-canvas-subheading,
+.ndic-canvas-loading .ndic-canvas-score {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-elevated) 25%,
+    rgba(255,255,255,0.06) 50%,
+    var(--color-bg-elevated) 75%
+  );
+  background-size: 200% 100%;
+  animation: ndic-shimmer 1.8s ease-in-out infinite;
+  border-radius: 3px;
+  color: transparent !important;
+  border-color: transparent !important;
+  min-width: 60px;
+  min-height: 12px;
+  display: inline-block;
+}
+
+/* Loading canvas viz area */
+.ndic-canvas-loading .ndic-canvas-viz {
+  background: var(--color-bg-tertiary);
+  position: relative;
+  overflow: hidden;
+}
+
+.ndic-canvas-loading .ndic-canvas-viz::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0,180,216,0.04) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: ndic-shimmer 2s ease-in-out infinite;
+}
+
+/* Scanning indicator text */
+.ndic-canvas-loading .ndic-canvas-viz::before {
+  content: 'SCANNING...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(0,180,216,0.3);
+  z-index: 1;
+}
+
+
+/* ─────────────────────────────────────────
+   06. SCAN STATUS ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Pulsing active dot */
+#scan-status-dot[data-status="active"] {
+  animation: ndic-pulse-dot 2s ease-in-out infinite;
+}
+
+/* Fast pulse when scanning */
+#scan-status-dot[data-status="scanning"] {
+  animation: ndic-pulse-dot 800ms ease-in-out infinite;
+}
+
+/* Flicker for terminal authenticity */
+#scan-status-text {
+  animation: ndic-flicker 8s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* Tool header entrance */
+.ndic-tool-header {
+  animation: ndic-fade-down 400ms ease both;
+  animation-delay: 100ms;
+}
+
+
+/* ─────────────────────────────────────────
+   07. TICKER SCROLL
+   ───────────────────────────────────────── */
+
+.ndic-ticker-track {
+  animation: ndic-ticker-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover — handled in CSS too */
+.ndic-ticker:hover .ndic-ticker-track {
+  animation-play-state: paused;
+}
+
+/* Ticker container entrance */
+.ndic-ticker-container {
+  animation: ndic-fade-in 500ms ease both;
+}
+
+/* Value highlight pulse */
+.ndic-ticker-item--highlight .ndic-ticker-value {
+  animation: ndic-flicker 6s ease-in-out infinite;
+}
+
+
+/* ─────────────────────────────────────────
+   08. MAP MARKER ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Marker dot pulse */
+.ndic-marker-dot {
+  animation: ndic-pulse-dot 2s
+    ease-in-out infinite;
+}
+
+/* Marker ring expand */
+.ndic-marker-pulse {
+  animation: ndic-marker-pulse 2s
+    ease-out infinite;
+}
+
+/* Second ring offset */
+.ndic-marker-pulse-2 {
+  animation: ndic-marker-pulse 2s
+    ease-out infinite;
+  animation-delay: 700ms;
+}
+
+/* Map container entrance */
+.ndic-map-wrapper {
+  animation: ndic-scale-subtle 500ms ease both;
+}
+
+
+/* ─────────────────────────────────────────
+   09. TYPING EFFECT
+   AI SUMMARY TEXT
+   ───────────────────────────────────────── */
+
+/* Typing cursor */
+.ndic-ai-summary-text::after {
+  content: '|';
+  display: inline;
+  color: var(--color-accent-primary);
+  animation: ndic-cursor-blink 1s step-end infinite;
+  margin-inline-start: 1px;
+}
+
+/* When fully loaded remove cursor */
+.ndic-summary-loaded .ndic-ai-summary-text::after {
+  content: none;
+}
+
+/* Summary text fade transition */
+.ndic-ai-summary-text {
+  transition: opacity 200ms ease;
+}
+
+.ndic-summary-updating .ndic-ai-summary-text {
+  opacity: 0.2;
+}
+
+.ndic-summary-loaded .ndic-ai-summary-text {
+  opacity: 1;
+  animation: ndic-fade-in 300ms ease both;
+}
+
+
+/* ─────────────────────────────────────────
+   10. CHART ENTRANCE ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Charts fade in after canvas loaded */
+.ndic-canvas-loaded canvas {
+  animation: ndic-fade-in 600ms ease both;
+  animation-delay: 200ms;
+}
+
+/* D3 SVG diagrams */
+.ndic-canvas-loaded svg {
+  animation: ndic-fade-in 700ms ease both;
+  animation-delay: 150ms;
+}
+
+/* Chart canvas hover lift */
+.ndic-canvas-viz:hover canvas {
+  transform: translateZ(0);
+}
+
+
+/* ─────────────────────────────────────────
+   11. FEED ENTRY ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* New feed entries slide in */
+.ndic-feed-entry {
+  animation: ndic-feed-enter 350ms ease both;
+}
+
+/* Critical entries get an extra pulse */
+.ndic-feed-entry[data-severity="CRITICAL"] {
+  animation: ndic-feed-enter 350ms ease both,
+             ndic-glow-pulse 2s ease-in-out 2;
+}
+
+/* Feed wrapper scrollbar smooth */
+.ndic-feed-wrapper {
+  scroll-behavior: smooth;
+}
+
+
+/* ─────────────────────────────────────────
+   12. SHARE PILL ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Share pills stagger entrance */
+.ndic-share-pills {
+  animation: ndic-fade-up 400ms ease both;
+}
+
+.ndic-share-pill {
+  animation: ndic-scale-in 200ms ease both;
+  transition: transform var(--transition-fast),
+              color var(--transition-fast),
+              background var(--transition-fast),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.ndic-share-pill:nth-child(1)  { animation-delay: 0ms; }
+.ndic-share-pill:nth-child(2)  { animation-delay: 25ms; }
+.ndic-share-pill:nth-child(3)  { animation-delay: 50ms; }
+.ndic-share-pill:nth-child(4)  { animation-delay: 75ms; }
+.ndic-share-pill:nth-child(5)  { animation-delay: 100ms; }
+.ndic-share-pill:nth-child(6)  { animation-delay: 125ms; }
+.ndic-share-pill:nth-child(7)  { animation-delay: 150ms; }
+.ndic-share-pill:nth-child(8)  { animation-delay: 175ms; }
+.ndic-share-pill:nth-child(9)  { animation-delay: 200ms; }
+.ndic-share-pill:nth-child(10) { animation-delay: 225ms; }
+.ndic-share-pill:nth-child(11) { animation-delay: 250ms; }
+.ndic-share-pill:nth-child(12) { animation-delay: 275ms; }
+.ndic-share-pill:nth-child(13) { animation-delay: 300ms; }
+.ndic-share-pill:nth-child(14) { animation-delay: 325ms; }
+.ndic-share-pill:nth-child(15) { animation-delay: 350ms; }
+.ndic-share-pill:nth-child(16) { animation-delay: 375ms; }
+
+/* Hover lift */
+.ndic-share-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.ndic-share-pill:active {
+  transform: translateY(0);
+}
+
+/* Copied state bounce */
+.ndic-share-pill--copied {
+  animation: ndic-bounce-in 400ms
+    cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+}
+
+
+/* ─────────────────────────────────────────
+   13. SEARCH MODAL ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Overlay fade */
+.ndic-search-overlay {
+  transition: opacity 200ms ease;
+}
+
+.ndic-search-overlay--open {
+  opacity: 1;
+}
+
+/* Modal slide in */
+.ndic-search-modal {
+  transition: transform 250ms
+    cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 200ms ease;
+}
+
+.ndic-search-overlay--open .ndic-search-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Search results stagger */
+.ndic-search-result {
+  animation: ndic-fade-up 200ms ease both;
+}
+
+.ndic-search-result:nth-child(1) { animation-delay: 0ms; }
+.ndic-search-result:nth-child(2) { animation-delay: 30ms; }
+.ndic-search-result:nth-child(3) { animation-delay: 60ms; }
+.ndic-search-result:nth-child(4) { animation-delay: 90ms; }
+.ndic-search-result:nth-child(5) { animation-delay: 120ms; }
+.ndic-search-result:nth-child(6) { animation-delay: 150ms; }
+.ndic-search-result:nth-child(7) { animation-delay: 180ms; }
+.ndic-search-result:nth-child(8) { animation-delay: 210ms; }
+
+/* Active result highlight */
+.ndic-search-result--active {
+  background: rgba(0,180,216,0.06);
+  border-inline-start: 2px solid var(--color-accent-primary);
+  padding-inline-start: calc(var(--space-5) - 2px);
+  transition: background 150ms ease;
+}
+
+
+/* ─────────────────────────────────────────
+   14. DRAWER ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Drawer slide in */
+.ndic-mobile-drawer-inner {
+  transition: transform 350ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ndic-mobile-drawer--open .ndic-mobile-drawer-inner {
+  transform: translateX(0);
+}
+
+/* Nav links stagger in */
+.ndic-mobile-drawer--open .ndic-mobile-nav-link {
+  animation: ndic-fade-left 300ms ease both;
+}
+
+.ndic-mobile-drawer--open
+  .ndic-mobile-nav-link:nth-child(1) {
+  animation-delay: 100ms;
+}
+.ndic-mobile-drawer--open
+  .ndic-mobile-nav-link:nth-child(2) {
+  animation-delay: 150ms;
+}
+.ndic-mobile-drawer--open
+  .ndic-mobile-nav-link:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+
+/* ─────────────────────────────────────────
+   15. TOAST ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Toast slide in from right */
+.ndic-toast {
+  transition:
+    transform 300ms
+      cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 250ms ease;
+}
+
+.ndic-toast--visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.ndic-toast--hiding {
+  transition:
+    transform 300ms ease,
+    opacity 250ms ease;
+  transform: translateX(110%);
+  opacity: 0;
+}
+
+/* Icon entrance */
+.ndic-toast--visible .ndic-toast-icon {
+  animation: ndic-bounce-in 400ms
+    cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 100ms;
+}
+
+/* Success toast icon */
+.ndic-toast--success .ndic-toast-icon {
+  animation: ndic-bounce-in 400ms
+    cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    ndic-glow-pulse 2s ease-in-out 1
+      400ms both;
+}
+
+
+/* ─────────────────────────────────────────
+   16. HEADER ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Nav links hover underline */
+.ndic-nav-link {
+  position: relative;
+}
+
+.ndic-nav-link::after {
+  content: '';
+  position: absolute;
+  inset-block-end: -2px;
+  inset-inline-start: var(--space-3);
+  inset-inline-end: var(--space-3);
+  height: 1px;
+  background: var(--color-accent-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.ndic-nav-link:hover::after,
+.ndic-nav-link--active::after {
+  transform: scaleX(1);
+}
+
+/* Language trigger */
+.ndic-lang-trigger {
+  transition: all var(--transition-fast);
+}
+
+.ndic-lang-trigger:hover {
+  transform: translateY(-1px);
+}
+
+/* Language dropdown items */
+.ndic-lang-option {
+  transition: background var(--transition-fast),
+              color var(--transition-fast),
+              padding-inline-start var(--transition-fast);
+}
+
+.ndic-lang-option:hover {
+  padding-inline-start: calc(var(--space-4) + 4px);
+}
+
+
+/* ─────────────────────────────────────────
+   17. HERO SECTION ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Hero background grid subtle drift */
+.ndic-hero::before {
+  animation: ndic-grid-drift 20s
+    ease-in-out infinite;
+}
+
+/* Highlight text glow */
+.ndic-hero-title .ndic-highlight {
+  position: relative;
+}
+
+.ndic-hero-title .ndic-highlight::after {
+  content: '';
+  position: absolute;
+  inset-block-end: -2px;
+  inset-inline: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-primary),
+    transparent
+  );
+  animation: ndic-progress-fill 800ms ease both;
+  animation-delay: 600ms;
+  --target-width: 100%;
+}
+
+/* CTA button pulse on load */
+.ndic-btn-primary {
+  animation: ndic-fade-up 500ms ease both;
+  animation-delay: 400ms;
+}
+
+/* Primary button hover shimmer */
+.ndic-btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.ndic-btn-primary::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: -100%;
+  width: 60%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.15),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: none;
+}
+
+.ndic-btn-primary:hover::after {
+  animation: ndic-btn-shimmer 500ms ease both;
+}
+
+@keyframes ndic-btn-shimmer {
+  from {
+    inset-inline-start: -100%;
+    opacity: 1;
+  }
+  to {
+    inset-inline-start: 150%;
+    opacity: 0;
+  }
+}
+
+/* Freshness badge pulse */
+#freshness-badge::before {
+  animation: ndic-pulse-dot 3s
+    ease-in-out infinite;
+}
+
+
+/* ─────────────────────────────────────────
+   18. FAQ ACCORDION ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Chevron rotation */
+.ndic-faq-chevron {
+  transition: transform 300ms
+    cubic-bezier(0.4, 0, 0.2, 1),
+    color var(--transition-base);
+}
+
+.ndic-faq-item--open .ndic-faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Answer reveal */
+.ndic-faq-answer {
+  transition:
+    max-height 350ms
+      cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 300ms ease;
+}
+
+.ndic-faq-item--open .ndic-faq-answer {
+  max-height: 600px;
+  opacity: 1;
+}
+
+/* Question hover bar */
+.ndic-faq-question {
+  position: relative;
+}
+
+.ndic-faq-question::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 2px;
+  background: var(--color-accent-primary);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.ndic-faq-item--open .ndic-faq-question::before,
+.ndic-faq-question:hover::before {
+  transform: scaleY(1);
+}
+
+/* FAQ items stagger entrance */
+.ndic-faq-item {
+  animation: ndic-fade-up 400ms ease both;
+}
+
+.ndic-faq-item:nth-child(1)  { animation-delay: 0ms; }
+.ndic-faq-item:nth-child(2)  { animation-delay: 40ms; }
+.ndic-faq-item:nth-child(3)  { animation-delay: 80ms; }
+.ndic-faq-item:nth-child(4)  { animation-delay: 120ms; }
+.ndic-faq-item:nth-child(5)  { animation-delay: 160ms; }
+.ndic-faq-item:nth-child(6)  { animation-delay: 200ms; }
+.ndic-faq-item:nth-child(7)  { animation-delay: 240ms; }
+.ndic-faq-item:nth-child(8)  { animation-delay: 280ms; }
+.ndic-faq-item:nth-child(9)  { animation-delay: 320ms; }
+.ndic-faq-item:nth-child(10) { animation-delay: 360ms; }
+.ndic-faq-item:nth-child(11) { animation-delay: 400ms; }
+.ndic-faq-item:nth-child(12) { animation-delay: 440ms; }
+
+
+/* ─────────────────────────────────────────
+   19. CAROUSEL ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Track slide transition */
+.ndic-carousel-track {
+  transition: transform 500ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dot transition */
+.ndic-carousel-dot {
+  transition: width 300ms ease,
+              background 300ms ease;
+}
+
+/* Card hover */
+.ndic-carousel-card {
+  transition: background var(--transition-fast);
+}
+
+.ndic-carousel-cta-arrow {
+  transition: transform var(--transition-fast);
+  display: inline-block;
+}
+
+.ndic-carousel-card:hover .ndic-carousel-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Carousel entrance */
+.ndic-ad-carousel {
+  animation: ndic-fade-up 500ms ease both;
+}
+
+
+/* ─────────────────────────────────────────
+   20. DEEP DIVE LINK ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Arrow slide on hover */
+.ndic-deep-dive-link::after {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.ndic-deep-dive-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* Internal links grid items */
+.ndic-internal-link {
+  transition: background var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.ndic-internal-link:hover {
+  transform: translateX(3px);
+}
+
+/* Internal links entrance */
+.ndic-internal-link {
+  animation: ndic-fade-left 300ms ease both;
+}
+
+.ndic-internal-link:nth-child(1)  { animation-delay: 0ms; }
+.ndic-internal-link:nth-child(2)  { animation-delay: 30ms; }
+.ndic-internal-link:nth-child(3)  { animation-delay: 60ms; }
+.ndic-internal-link:nth-child(4)  { animation-delay: 90ms; }
+.ndic-internal-link:nth-child(5)  { animation-delay: 120ms; }
+.ndic-internal-link:nth-child(6)  { animation-delay: 150ms; }
+.ndic-internal-link:nth-child(7)  { animation-delay: 180ms; }
+.ndic-internal-link:nth-child(8)  { animation-delay: 210ms; }
+.ndic-internal-link:nth-child(9)  { animation-delay: 240ms; }
+.ndic-internal-link:nth-child(10) { animation-delay: 270ms; }
+.ndic-internal-link:nth-child(11) { animation-delay: 300ms; }
+.ndic-internal-link:nth-child(12) { animation-delay: 330ms; }
+
+
+/* ─────────────────────────────────────────
+   21. NUMBER COUNTER ANIMATION
+   Applied by JS when score changes
+   ───────────────────────────────────────── */
+
+/* Score value update transition */
+.ndic-value-updated {
+  animation: ndic-count-up 400ms
+    cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Param value highlight flash */
+.ndic-param-value-changed {
+  animation: ndic-score-flash 500ms ease both;
+}
+
+
+/* ─────────────────────────────────────────
+   22. COOKIE NOTICE ANIMATION
+   ───────────────────────────────────────── */
+
+.ndic-cookie-notice {
+  animation: ndic-slide-up 400ms
+    cubic-bezier(0.34, 1.56, 0.64, 1)
+    both;
+  animation-delay: 2000ms;
+}
+
+.ndic-cookie-notice--hiding {
+  animation: none;
+  transition: transform 400ms ease,
+              opacity 400ms ease;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+
+/* ─────────────────────────────────────────
+   23. TOOL HEADER META ITEMS
+   ───────────────────────────────────────── */
+
+/* Meta items stagger */
+.ndic-tool-header-meta-item {
+  animation: ndic-fade-up 300ms ease both;
+}
+
+.ndic-tool-header-meta-item:nth-child(1) {
+  animation-delay: 200ms;
+}
+.ndic-tool-header-meta-item:nth-child(2) {
+  animation-delay: 260ms;
+}
+.ndic-tool-header-meta-item:nth-child(3) {
+  animation-delay: 320ms;
+}
+.ndic-tool-header-meta-item:nth-child(4) {
+  animation-delay: 380ms;
+}
+
+
+/* ─────────────────────────────────────────
+   24. CONTACT FORM ANIMATIONS
+   ───────────────────────────────────────── */
+
+/* Form field focus glow */
+.ndic-form-input,
+.ndic-form-textarea {
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              background var(--transition-fast);
+}
+
+/* Submit button active state */
+.ndic-form-submit {
+  transition: all var(--transition-fast);
+}
+
+.ndic-form-submit:active {
+  transform: scale(0.98);
+}
+
+/* Form entrance */
+.ndic-contact-form {
+  animation: ndic-scale-subtle 500ms ease both;
+}
+
+
+/* ─────────────────────────────────────────
+   25. DOWNLOAD BUTTON ANIMATIONS
+   ───────────────────────────────────────── */
+
+.ndic-btn-download {
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.ndic-btn-download:hover {
+  transform: translateY(-1px);
+}
+
+.ndic-btn-download:active {
+  transform: translateY(0);
+}
+
+/* Success state bounce */
+.ndic-btn-success {
+  animation: ndic-bounce-in 400ms
+    cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+}
+
+
+/* ─────────────────────────────────────────
+   26. HOVER MICRO-INTERACTIONS
+   ───────────────────────────────────────── */
+
+/* Canvas header hover */
+.ndic-canvas-heading {
+  transition: color var(--transition-fast);
+}
+
+.ndic-canvas:hover .ndic-canvas-heading {
+  color: var(--color-accent-primary);
+}
+
+/* Parameter row hover left shift */
+.ndic-param-row {
+  transition:
+    background var(--transition-fast),
+    padding-inline-start var(--transition-fast);
+}
+
+/* Viz area hover brightness */
+.ndic-canvas-viz {
+  transition: filter var(--transition-base);
+}
+
+.ndic-canvas:hover .ndic-canvas-viz {
+  filter: brightness(1.03);
+}
+
+/* Citation link hover underline grow */
+.ndic-citation-link {
+  transition: color var(--transition-fast),
+              text-decoration-color var(--transition-fast);
+}
+
+/* Footer link hover indent */
+.ndic-footer-col a {
+  position: relative;
+  padding-inline-start: 0;
+  transition: color var(--transition-fast),
+              padding-inline-start var(--transition-fast);
+}
+
+.ndic-footer-col a:hover {
+  padding-inline-start: 6px;
+}
+
+/* Footer link hover marker */
+.ndic-footer-col a::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-accent-primary);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.ndic-footer-col a:hover::before {
+  opacity: 1;
+}
+
+
+/* ─────────────────────────────────────────
+   27. REDUCED MOTION OVERRIDES
+   Respects prefers-reduced-motion
+   Removes animations but keeps transitions
+   ───────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ndic-ticker-track {
+    animation: none;
+  }
+
+  .ndic-marker-pulse {
+    animation: none;
+  }
+
+  .ndic-marker-dot {
+    animation: none;
+  }
+
+  #scan-status-dot[data-status="active"],
+  #scan-status-dot[data-status="scanning"] {
+    animation: none;
+  }
+
+  #scan-status-text {
+    animation: none;
+  }
+
+  .ndic-canvas-loading .ndic-param-value,
+  .ndic-canvas-loading .ndic-canvas-heading {
+    animation: none;
+    background: var(--color-bg-elevated);
+  }
+
+  .ndic-hero::before {
+    animation: none;
+  }
+
+  .ndic-share-pill:hover {
+    transform: none;
+  }
+
+  .ndic-btn-primary:hover {
+    transform: none;
+  }
+
+  .ndic-btn-download:hover {
+    transform: none;
+  }
+
+  .ndic-internal-link:hover {
+    transform: none;
+  }
+
+  .ndic-cookie-notice {
+    animation: none;
+  }
+
+  .ndic-faq-answer {
+    transition: opacity 150ms ease;
+  }
+
+}
