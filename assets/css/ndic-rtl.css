@@ -1,0 +1,916 @@
+/* ═════════════════════════════════════════════════════════════
+   INTELREAP — RTL LAYOUT OVERRIDES
+   Applied when <html dir="rtl"> is set
+   Covers Arabic, Urdu, Persian, Hebrew
+   All layout flips. All typography mirrors.
+   All animations reverse direction.
+   ═════════════════════════════════════════════════════════════
+
+   NOTE: ndic-design-system.css uses CSS logical
+   properties throughout (margin-inline-start,
+   padding-inline-end, inset-inline-start etc).
+   This file handles the exceptions where
+   logical properties were not sufficient
+   and visual direction overrides are needed.
+   ═════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────
+   BASE RTL DOCUMENT
+   ───────────────────────────────────────── */
+
+[dir="rtl"] {
+  /* Arabic / Urdu / Persian font loading */
+  font-family: 'Noto Sans Arabic', 'Be Vietnam Pro', sans-serif;
+}
+
+/* Arabic body copy */
+[dir="rtl"] body {
+  font-family: 'Noto Sans Arabic', 'Be Vietnam Pro', sans-serif;
+  letter-spacing: 0;
+}
+
+/* Arabic headings — Noto Naskh for display */
+[dir="rtl"] .ndic-hero-title,
+[dir="rtl"] .ndic-canvas-subheading,
+[dir="rtl"] .ndic-heading-1,
+[dir="rtl"] .ndic-heading-2,
+[dir="rtl"] .ndic-heading-3,
+[dir="rtl"] .ndic-faq-question,
+[dir="rtl"] .ndic-contact-title,
+[dir="rtl"] .ndic-quick-answer-title,
+[dir="rtl"] .ndic-full-summary-title,
+[dir="rtl"] .ndic-footer-wordmark {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+/* Monospace data values stay LTR
+   IP addresses, ASNs, numbers
+   must always read left-to-right */
+[dir="rtl"] .ndic-param-value,
+[dir="rtl"] .ndic-value,
+[dir="rtl"] .ndic-canvas-heading,
+[dir="rtl"] .ndic-label,
+[dir="rtl"] .ndic-badge,
+[dir="rtl"] .ndic-score-large,
+[dir="rtl"] #c11-global-score,
+[dir="rtl"] #header-score-pill,
+[dir="rtl"] .ndic-ai-source-badge,
+[dir="rtl"] .ndic-ticker-value,
+[dir="rtl"] .ndic-ticker-label,
+[dir="rtl"] .ndic-feed-time,
+[dir="rtl"] .ndic-feed-category,
+[dir="rtl"] .ndic-feed-severity,
+[dir="rtl"] .ndic-tool-meta-value,
+[dir="rtl"] .ndic-canvas-score,
+[dir="rtl"] #scan-status-text {
+  direction: ltr;
+  unicode-bidi: embed;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: end;
+}
+
+/* Parameter labels align right in RTL */
+[dir="rtl"] .ndic-param-label {
+  text-align: start;
+}
+
+
+/* ─────────────────────────────────────────
+   HEADER — RTL
+   ───────────────────────────────────────── */
+
+/* Logo stays on right side in RTL */
+[dir="rtl"] .ndic-site-header-inner {
+  flex-direction: row-reverse;
+}
+
+/* Nav dock aligns correctly */
+[dir="rtl"] #master-nav-dock {
+  flex-direction: row-reverse;
+}
+
+/* Logo link direction */
+[dir="rtl"] .ndic-site-logo-link {
+  flex-direction: row-reverse;
+}
+
+/* Search trigger text */
+[dir="rtl"] .trigger-search {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   NAVIGATION — RTL
+   ───────────────────────────────────────── */
+
+/* Desktop nav direction */
+[dir="rtl"] .ndic-nav-desktop {
+  flex-direction: row-reverse;
+}
+
+/* Active nav underline mirrors */
+[dir="rtl"] .ndic-nav-link::after {
+  transform-origin: right center;
+}
+
+/* Mobile drawer opens from left in RTL */
+[dir="rtl"] .ndic-mobile-drawer-inner {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
+  border-inline-start: none;
+  border-inline-end: 1px solid var(--color-border-primary);
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .ndic-mobile-drawer--open
+  .ndic-mobile-drawer-inner {
+  transform: translateX(0);
+}
+
+/* Mobile nav links */
+[dir="rtl"] .ndic-mobile-nav-link {
+  text-align: start;
+}
+
+/* Close button mirrors */
+[dir="rtl"] .ndic-drawer-close {
+  inset-inline-start: var(--space-4);
+  inset-inline-end: auto;
+}
+
+
+/* ─────────────────────────────────────────
+   LANGUAGE SWITCHER — RTL
+   ───────────────────────────────────────── */
+
+/* Dropdown opens from left in RTL */
+[dir="rtl"] .ndic-lang-dropdown {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
+}
+
+/* Option text alignment */
+[dir="rtl"] .ndic-lang-option {
+  text-align: start;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .ndic-lang-option:hover {
+  padding-inline-end: calc(var(--space-4) + 4px);
+  padding-inline-start: var(--space-4);
+}
+
+
+/* ─────────────────────────────────────────
+   SEARCH MODAL — RTL
+   ───────────────────────────────────────── */
+
+/* Search input and icon direction */
+[dir="rtl"] .ndic-search-input-wrap {
+  flex-direction: row-reverse;
+}
+
+/* Search input text direction */
+[dir="rtl"] .ndic-search-input {
+  direction: rtl;
+  text-align: start;
+}
+
+/* Search result layout */
+[dir="rtl"] .ndic-search-result {
+  border-inline-end: 2px solid transparent;
+  border-inline-start: none;
+}
+
+[dir="rtl"] .ndic-search-result--active {
+  border-inline-end: 2px solid
+    var(--color-accent-primary);
+  border-inline-start: none;
+  padding-inline-end: calc(var(--space-5) - 2px);
+  padding-inline-start: var(--space-5);
+}
+
+/* Search footer */
+[dir="rtl"] .ndic-search-footer {
+  flex-direction: row-reverse;
+}
+
+/* Search header */
+[dir="rtl"] .ndic-search-header {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   HERO — RTL
+   ───────────────────────────────────────── */
+
+/* Hero text alignment */
+[dir="rtl"] .ndic-hero-badge {
+  flex-direction: row-reverse;
+}
+
+/* Highlight underline mirrors */
+[dir="rtl"] .ndic-hero-title .ndic-highlight::after {
+  background: linear-gradient(
+    270deg,
+    var(--color-accent-primary),
+    transparent
+  );
+}
+
+/* CTA group */
+[dir="rtl"] .ndic-hero-cta-group {
+  flex-direction: row-reverse;
+}
+
+/* Trust strip */
+[dir="rtl"] .ndic-trust-strip {
+  flex-direction: row-reverse;
+}
+
+/* Trust item */
+[dir="rtl"] .ndic-trust-item {
+  flex-direction: row-reverse;
+}
+
+/* Freshness badge */
+[dir="rtl"] #freshness-badge {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   TOOL HEADER — RTL
+   ───────────────────────────────────────── */
+
+[dir="rtl"] .ndic-tool-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-tool-header-logo {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-scan-status {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-tool-header-meta {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   CANVAS COMPONENTS — RTL
+   ───────────────────────────────────────── */
+
+/* Canvas top accent line mirrors */
+[dir="rtl"] .ndic-canvas::before {
+  background: linear-gradient(
+    270deg,
+    var(--color-accent-primary),
+    transparent 60%
+  );
+}
+
+/* Canvas header */
+[dir="rtl"] .ndic-canvas-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-canvas-header-left {
+  align-items: flex-end;
+}
+
+/* Canvas headings */
+[dir="rtl"] .ndic-canvas-heading {
+  letter-spacing: 0;
+}
+
+
+/* ─────────────────────────────────────────
+   PARAMETER ROWS — RTL
+   ───────────────────────────────────────── */
+
+/* Parameter rows reverse */
+[dir="rtl"] .ndic-param-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-param-label {
+  text-align: end;
+}
+
+[dir="rtl"] .ndic-param-value {
+  text-align: start;
+}
+
+/* FAQ sidebar accent bar */
+[dir="rtl"] .ndic-faq-question::before {
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+}
+
+
+/* ─────────────────────────────────────────
+   DETECTION BADGES — RTL
+   ───────────────────────────────────────── */
+
+/* Critical feed entry border mirrors */
+[dir="rtl"] .ndic-feed-entry[data-severity="CRITICAL"] {
+  border-inline-end: 2px solid var(--color-critical);
+  border-inline-start: none;
+}
+
+[dir="rtl"] .ndic-feed-entry[data-severity="WARNING"] {
+  border-inline-end: 2px solid var(--color-warning);
+  border-inline-start: none;
+}
+
+
+/* ─────────────────────────────────────────
+   LIVE FEED — RTL
+   ───────────────────────────────────────── */
+
+/* Feed entry layout */
+[dir="rtl"] .ndic-feed-entry {
+  flex-direction: row-reverse;
+  direction: rtl;
+}
+
+/* Feed message stays LTR for technical data */
+[dir="rtl"] .ndic-feed-message {
+  direction: ltr;
+  text-align: end;
+}
+
+/* Feed category and severity */
+[dir="rtl"] .ndic-feed-category,
+[dir="rtl"] .ndic-feed-severity {
+  direction: ltr;
+}
+
+
+/* ─────────────────────────────────────────
+   AI SUMMARY — RTL
+   ───────────────────────────────────────── */
+
+/* Summary header */
+[dir="rtl"] .ndic-ai-summary-header {
+  flex-direction: row-reverse;
+}
+
+/* Summary text direction */
+[dir="rtl"] .ndic-ai-summary-text {
+  direction: rtl;
+  text-align: start;
+}
+
+/* Remove typing cursor for RTL
+   cursor position is complex in RTL */
+[dir="rtl"] .ndic-ai-summary-text::after {
+  content: none;
+}
+
+/* Full system summary */
+[dir="rtl"] #full-system-summary {
+  direction: rtl;
+  text-align: start;
+}
+
+/* Full summary header */
+[dir="rtl"] .ndic-full-summary-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-full-summary-meta {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-full-summary-footer {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   DOWNLOAD BUTTONS — RTL
+   ───────────────────────────────────────── */
+
+[dir="rtl"] .ndic-download-group {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-btn-download {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   SHARE SYSTEM — RTL
+   ───────────────────────────────────────── */
+
+/* Pills wrap RTL */
+[dir="rtl"] .ndic-share-pills {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   TICKER — RTL
+   ───────────────────────────────────────── */
+
+/* Ticker scrolls right-to-left in LTR
+   In RTL it should scroll left-to-right */
+[dir="rtl"] .ndic-ticker-track {
+  animation-direction: reverse;
+}
+
+/* Ticker item layout */
+[dir="rtl"] .ndic-ticker-item {
+  flex-direction: row-reverse;
+}
+
+/* Fade edges mirror */
+[dir="rtl"] .ndic-ticker-container::before {
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+  background: linear-gradient(
+    to left,
+    var(--color-bg-secondary),
+    transparent
+  );
+}
+
+[dir="rtl"] .ndic-ticker-container::after {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  background: linear-gradient(
+    to right,
+    var(--color-bg-secondary),
+    transparent
+  );
+}
+
+
+/* ─────────────────────────────────────────
+   CAROUSEL — RTL
+   ───────────────────────────────────────── */
+
+/* Carousel navigation mirrors */
+[dir="rtl"] .ndic-carousel-prev {
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+}
+
+[dir="rtl"] .ndic-carousel-next {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+/* Card inner layout */
+[dir="rtl"] .ndic-carousel-card-inner {
+  flex-direction: row-reverse;
+}
+
+/* Badge positions */
+[dir="rtl"] .ndic-carousel-badge {
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+}
+
+[dir="rtl"] .ndic-carousel-disclosure {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+/* CTA arrow mirrors */
+[dir="rtl"] .ndic-carousel-cta {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-carousel-cta-arrow {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .ndic-carousel-card:hover
+  .ndic-carousel-cta-arrow {
+  transform: scaleX(-1) translateX(-4px);
+}
+
+/* Track slides RTL */
+[dir="rtl"] .ndic-carousel-track {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   LOGIC AND METHODOLOGY — RTL
+   ───────────────────────────────────────── */
+
+[dir="rtl"] .ndic-logic-block-text,
+[dir="rtl"] .ndic-methodology-block-text {
+  direction: rtl;
+  text-align: start;
+}
+
+
+/* ─────────────────────────────────────────
+   CITATION SECTION — RTL
+   ───────────────────────────────────────── */
+
+[dir="rtl"] .ndic-citation-item {
+  direction: rtl;
+  flex-direction: row-reverse;
+}
+
+/* Citation numbers stay LTR */
+[dir="rtl"] .ndic-citation-num {
+  direction: ltr;
+}
+
+/* Citation links stay LTR (URLs) */
+[dir="rtl"] .ndic-citation-link {
+  direction: ltr;
+  text-align: end;
+  unicode-bidi: embed;
+}
+
+
+/* ─────────────────────────────────────────
+   INTERNAL LINKS — RTL
+   ───────────────────────────────────────── */
+
+/* Hover direction mirrors */
+[dir="rtl"] .ndic-internal-link:hover {
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .ndic-internal-link {
+  animation-name: ndic-fade-right;
+}
+
+[dir="rtl"] .ndic-back-to-main::before {
+  content: '→';
+}
+
+[dir="rtl"] .ndic-back-to-main {
+  direction: rtl;
+}
+
+
+/* ─────────────────────────────────────────
+   FAQ ACCORDION — RTL
+   ───────────────────────────────────────── */
+
+/* Question layout */
+[dir="rtl"] .ndic-faq-question {
+  flex-direction: row-reverse;
+  text-align: start;
+}
+
+/* Accent bar mirrors */
+[dir="rtl"] .ndic-faq-question::before {
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+}
+
+/* Answer text */
+[dir="rtl"] .ndic-faq-answer-inner {
+  direction: rtl;
+  text-align: start;
+}
+
+
+/* ─────────────────────────────────────────
+   CONTACT FORM — RTL
+   ───────────────────────────────────────── */
+
+/* Form layout */
+[dir="rtl"] .ndic-contact-section {
+  direction: rtl;
+}
+
+/* Labels */
+[dir="rtl"] .ndic-form-label {
+  text-align: start;
+}
+
+/* Inputs */
+[dir="rtl"] .ndic-form-input,
+[dir="rtl"] .ndic-form-textarea {
+  direction: rtl;
+  text-align: start;
+}
+
+/* Email/URL inputs stay LTR */
+[dir="rtl"] .ndic-form-input[type="email"],
+[dir="rtl"] .ndic-form-input[type="url"] {
+  direction: ltr;
+  text-align: end;
+}
+
+
+/* ─────────────────────────────────────────
+   FOOTER — RTL
+   ───────────────────────────────────────── */
+
+/* Footer inner */
+[dir="rtl"] .ndic-footer-inner {
+  direction: rtl;
+}
+
+/* Footer links columns */
+[dir="rtl"] .ndic-footer-col {
+  align-items: flex-start;
+}
+
+[dir="rtl"] .ndic-footer-col a {
+  text-align: start;
+}
+
+/* Footer col hover marker mirrors */
+[dir="rtl"] .ndic-footer-col a::before {
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+}
+
+[dir="rtl"] .ndic-footer-col a:hover {
+  padding-inline-end: 6px;
+  padding-inline-start: 0;
+}
+
+/* Footer bottom */
+[dir="rtl"] .ndic-footer-bottom {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-footer-copyright {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-footer-legal-inline {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   TOAST — RTL
+   ───────────────────────────────────────── */
+
+/* Toast slides in from left in RTL */
+[dir="rtl"] #toast-container {
+  inset-inline-start: var(--space-6);
+  inset-inline-end: auto;
+}
+
+[dir="rtl"] .ndic-toast {
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .ndic-toast--visible {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .ndic-toast--hiding {
+  transform: translateX(-110%);
+}
+
+[dir="rtl"] .ndic-toast {
+  border-inline-end: 3px solid transparent;
+  border-inline-start: none;
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .ndic-toast--success {
+  border-inline-end: 3px solid var(--color-success);
+}
+
+[dir="rtl"] .ndic-toast--error {
+  border-inline-end: 3px solid var(--color-danger);
+}
+
+
+/* ─────────────────────────────────────────
+   COOKIE NOTICE — RTL
+   ───────────────────────────────────────── */
+
+/* Cookie notice opens from right in RTL */
+[dir="rtl"] .ndic-cookie-notice {
+  inset-inline-end: var(--space-4);
+  inset-inline-start: auto;
+}
+
+[dir="rtl"] .ndic-cookie-text {
+  direction: rtl;
+  text-align: start;
+}
+
+[dir="rtl"] .ndic-cookie-actions {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   DEEP DIVE LINKS — RTL
+   ───────────────────────────────────────── */
+
+/* Arrow mirrors */
+[dir="rtl"] .ndic-deep-dive-link::after {
+  content: '←';
+}
+
+[dir="rtl"] .ndic-deep-dive-link:hover::after {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .ndic-deep-dive-link {
+  flex-direction: row-reverse;
+}
+
+
+/* ─────────────────────────────────────────
+   SCORE ELEMENTS — RTL
+   ───────────────────────────────────────── */
+
+/* Health badge */
+[dir="rtl"] .ndic-health-badge {
+  direction: ltr;
+}
+
+/* Canvas score stays LTR */
+[dir="rtl"] .ndic-canvas-score {
+  direction: ltr;
+}
+
+/* Canvas footer */
+[dir="rtl"] .ndic-canvas-footer {
+  direction: rtl;
+}
+
+
+/* ─────────────────────────────────────────
+   ANIMATIONS — RTL OVERRIDES
+   ───────────────────────────────────────── */
+
+/* Feed entries slide from right in RTL */
+@keyframes ndic-feed-enter-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+    background: rgba(0,180,216,0.04);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    background: transparent;
+  }
+}
+
+[dir="rtl"] .ndic-feed-entry {
+  animation-name: ndic-feed-enter-rtl;
+}
+
+/* Param rows slide from right in RTL */
+@keyframes ndic-fade-right-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+[dir="rtl"] .ndic-canvas-loaded .ndic-param-row {
+  animation-name: ndic-fade-right-rtl;
+}
+
+/* Share pills stagger from right */
+@keyframes ndic-scale-in-rtl {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+[dir="rtl"] .ndic-share-pill {
+  animation-name: ndic-scale-in-rtl;
+}
+
+/* Hero title from right */
+@keyframes ndic-fade-up-rtl {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile drawer from left in RTL */
+@keyframes ndic-drawer-rtl {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   QUICK ANSWER — RTL
+   ───────────────────────────────────────── */
+
+[dir="rtl"] .ndic-quick-answer {
+  direction: rtl;
+}
+
+[dir="rtl"] .ndic-quick-answer-body {
+  direction: rtl;
+  text-align: start;
+}
+
+
+/* ─────────────────────────────────────────
+   CANVAS VISUALIZATION — RTL
+   ───────────────────────────────────────── */
+
+/* Chart axis labels stay LTR */
+[dir="rtl"] canvas {
+  direction: ltr;
+}
+
+/* SVG text stays LTR for data */
+[dir="rtl"] svg text {
+  direction: ltr;
+}
+
+/* D3 routing diagram — nodes stay LTR */
+[dir="rtl"] #canvas1-routing-diagram {
+  direction: ltr;
+}
+
+/* Capability grid — tiles stay LTR */
+[dir="rtl"] #canvas8-capability-grid {
+  direction: ltr;
+}
+
+/* Score rings stay LTR */
+[dir="rtl"] #canvas11-score-rings {
+  direction: ltr;
+}
+
+
+/* ─────────────────────────────────────────
+   MAP — RTL
+   ───────────────────────────────────────── */
+
+/* Leaflet maps stay LTR */
+[dir="rtl"] .leaflet-container {
+  direction: ltr;
+}
+
+/* Popup content direction */
+[dir="rtl"] .ndic-map-popup {
+  direction: rtl;
+}
+
+[dir="rtl"] .ndic-popup-header {
+  flex-direction: row-reverse;
+}
+
+/* IP stays LTR */
+[dir="rtl"] .ndic-popup-ip {
+  direction: ltr;
+}
+
+
+/* ─────────────────────────────────────────
+   SCROLLBAR — RTL
+   Moves scrollbar to left side
+   ───────────────────────────────────────── */
+
+[dir="rtl"] .ndic-feed-wrapper,
+[dir="rtl"] .ndic-lang-dropdown,
+[dir="rtl"] .ndic-search-results {
+  scrollbar-width: thin;
+}
+
+/* Webkit scrollbar position */
+[dir="rtl"] ::-webkit-scrollbar {
+  /* Scrollbar appears on left in RTL */
+}
