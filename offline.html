@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width,
+    initial-scale=1.0,
+    viewport-fit=cover">
+  <meta name="theme-color" content="#00b4d8">
+  <meta name="apple-mobile-web-app-capable"
+    content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent">
+  <title>IntelReap — You Are Offline</title>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-base:      #05060a;
+      --bg-secondary: #0d1117;
+      --bg-elevated:  #161d28;
+      --text-primary: #e8edf4;
+      --text-muted:   #3d4f62;
+      --accent:       #00b4d8;
+      --border:       rgba(255,255,255,0.06);
+      --success:      #00e676;
+      --warning:      #ffca28;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Be+Vietnam+Pro:wght@400;500&family=JetBrains+Mono:wght@500;600&display=swap');
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100%;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          rgba(0,180,216,0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(0,180,216,0.025) 1px,
+          transparent 1px
+        );
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .offline-card {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* Top accent */
+    .offline-card::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        transparent 60%
+      );
+      border-radius: 16px 16px 0 0;
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline: 0;
+    }
+
+    /* Status indicator */
+    .offline-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      background: rgba(255,82,82,0.08);
+      border: 1px solid rgba(255,82,82,0.2);
+      border-radius: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ff5252;
+      margin-block-end: 24px;
+    }
+
+    .offline-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ff5252;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Logo */
+    .offline-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-block-end: 8px;
+    }
+
+    .offline-logo span {
+      color: var(--accent);
+    }
+
+    /* Title */
+    .offline-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-block-end: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Body text */
+    .offline-body {
+      font-size: 14px;
+      color: #7a8fa8;
+      line-height: 1.7;
+      margin-block-end: 32px;
+      max-width: 360px;
+      margin-inline: auto;
+    }
+
+    /* Divider */
+    .offline-divider {
+      border: none;
+      border-block-start: 1px solid var(--border);
+      margin-block: 24px;
+    }
+
+    /* Cached data notice */
+    .offline-cached-notice {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-block-end: 24px;
+    }
+
+    .offline-cached-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-block-end: 8px;
+    }
+
+    .offline-cached-body {
+      font-size: 12px;
+      color: #7a8fa8;
+      line-height: 1.6;
+    }
+
+    /* Retry button */
+    .offline-retry {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #05060a;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 200ms ease;
+      margin-block-end: 12px;
+    }
+
+    .offline-retry:hover {
+      background: #00cffa;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,180,216,0.3);
+    }
+
+    .offline-retry:active {
+      transform: translateY(0);
+    }
+
+    /* Home link */
+    .offline-home {
+      display: block;
+      font-size: 12px;
+      color: #3d4f62;
+      text-decoration: none;
+      transition: color 150ms ease;
+    }
+
+    .offline-home:hover {
+      color: #7a8fa8;
+    }
+
+    /* Network info */
+    .offline-network-info {
+      margin-block-start: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .offline-network-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: var(--bg-elevated);
+      border-radius: 6px;
+    }
+
+    .offline-network-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .offline-network-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .offline-network-value.status-offline {
+      color: #ff5252;
+    }
+
+    .offline-network-value.status-online {
+      color: var(--success);
+    }
+
+    /* Footer */
+    .offline-footer {
+      margin-block-start: 32px;
+      font-size: 11px;
+      color: #3d4f62;
+    }
+
+    /* Spinner */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .offline-spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(5,6,10,0.3);
+      border-block-start-color: #05060a;
+      border-radius: 50%;
+      animation: spin 600ms linear infinite;
+    }
+
+    .offline-retry.loading .offline-retry-text {
+      display: none;
+    }
+
+    .offline-retry.loading .offline-spinner {
+      display: block;
+    }
+
+    @media (max-width: 480px) {
+      .offline-card {
+        padding: 28px 20px;
+      }
+      .offline-title {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="offline-card" role="main">
+
+    <!-- Status indicator -->
+    <div class="offline-status">
+      <span class="offline-dot" aria-hidden="true"></span>
+      <span>Connection Lost</span>
+    </div>
+
+    <!-- Logo -->
+    <div class="offline-logo"
+      aria-label="IntelReap">
+      INTEL<span>REAP</span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="offline-title">
+      You Are Offline
+    </h1>
+
+    <!-- Body -->
+    <p class="offline-body">
+      IntelReap requires an active connection
+      to gather intelligence data.
+      Check your network and try again.
+    </p>
+
+    <!-- Cached data notice -->
+    <div class="offline-cached-notice"
+      id="cached-notice"
+      style="display:none">
+      <div class="offline-cached-title">
+        Cached Intelligence Available
+      </div>
+      <p class="offline-cached-body">
+        Some previously scanned data
+        may be available from your
+        last session.
+        <a href="/intelligence.html"
+          style="color:var(--accent)">
+          View cached data →
+        </a>
+      </p>
+    </div>
+
+    <!-- Retry button -->
+    <button
+      class="offline-retry"
+      id="retry-btn"
+      onclick="retryConnection()"
+      aria-label="Retry connection"
+    >
+      <span class="offline-retry-text">
+        Retry Connection
+      </span>
+      <span class="offline-spinner"
+        aria-hidden="true">
+      </span>
+    </button>
+
+    <!-- Home link -->
+    <a href="/intelligence.html"
+      class="offline-home">
+      Return to Intelligence Center
+    </a>
+
+    <hr class="offline-divider">
+
+    <!-- Network diagnostics -->
+    <div class="offline-network-info">
+      <div class="offline-network-row">
+        <span class="offline-network-label">
+          Online Status
+        </span>
+        <span
+          class="offline-network-value status-offline"
+          id="online-status">
+          Offline
+        </span>
+      </div>
+      <div class="offline-network-row">
+        <span class="offline-network-label">
+          Connection Type
+        </span>
+        <span class="offline-network-value"
+          id="connection-type">
+          —
+        </span>
+      </div>
+      <div class="offline-network-row">
+        <span class="offline-network-label">
+          Effective Type
+        </span>
+        <span class="offline-network-value"
+          id="effective-type">
+          —
+        </span>
+      </div>
+      <div class="offline-network-row">
+        <span class="offline-network-label">
+          Last Seen Online
+        </span>
+        <span class="offline-network-value"
+          id="last-online">
+          —
+        </span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="offline-footer">
+      INTEL<span style="color:var(--accent)">REAP</span>
+      — Real-time network and device intelligence
+    </p>
+
+  </div>
+
+  <script>
+    // ─────────────────────────────────────
+    // NETWORK DIAGNOSTICS
+    // ─────────────────────────────────────
+
+    const updateNetworkInfo = () => {
+      const statusEl =
+        document.getElementById('online-status')
+      const connTypeEl =
+        document.getElementById('connection-type')
+      const effectiveEl =
+        document.getElementById('effective-type')
+
+      const isOnline = navigator.onLine
+
+      if (statusEl) {
+        statusEl.textContent =
+          isOnline ? 'Online' : 'Offline'
+        statusEl.className = isOnline
+          ? 'offline-network-value status-online'
+          : 'offline-network-value status-offline'
+      }
+
+      const conn = navigator.connection ||
+        navigator.mozConnection ||
+        navigator.webkitConnection
+
+      if (conn) {
+        if (connTypeEl) {
+          connTypeEl.textContent =
+            conn.type || 'Unknown'
+        }
+        if (effectiveEl) {
+          effectiveEl.textContent =
+            (conn.effectiveType || 'Unknown')
+              .toUpperCase()
+        }
+      }
+
+      // Store last online time
+      if (isOnline) {
+        localStorage.setItem(
+          'ndic_last_online',
+          new Date().toISOString()
+        )
+      }
+
+      const lastOnline =
+        localStorage.getItem('ndic_last_online')
+      const lastOnlineEl =
+        document.getElementById('last-online')
+
+      if (lastOnlineEl && lastOnline) {
+        const date = new Date(lastOnline)
+        lastOnlineEl.textContent =
+          date.toLocaleTimeString(
+            'en-US',
+            {
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit',
+              hour12: false
+            }
+          )
+      }
+    }
+
+    // ─────────────────────────────────────
+    // RETRY CONNECTION
+    // ─────────────────────────────────────
+
+    const retryConnection = () => {
+      const btn =
+        document.getElementById('retry-btn')
+
+      if (btn) {
+        btn.classList.add('loading')
+        btn.disabled = true
+      }
+
+      // Check connection
+      fetch('/intelligence.html', {
+        method: 'HEAD',
+        cache: 'no-store'
+      }).then(() => {
+        // Connection restored
+        window.location.href = '/intelligence.html'
+      }).catch(() => {
+        // Still offline
+        if (btn) {
+          btn.classList.remove('loading')
+          btn.disabled = false
+        }
+
+        // Shake animation
+        const card =
+          document.querySelector('.offline-card')
+        if (card) {
+          card.style.animation =
+            'shake 400ms ease'
+          setTimeout(() => {
+            card.style.animation = ''
+          }, 400)
+        }
+      })
+    }
+
+    // ─────────────────────────────────────
+    // ONLINE LISTENER
+    // Auto-redirect when back online
+    // ─────────────────────────────────────
+
+    window.addEventListener('online', () => {
+      setTimeout(() => {
+        window.location.href = '/intelligence.html'
+      }, 800)
+    })
+
+    window.addEventListener('offline', () => {
+      updateNetworkInfo()
+    })
+
+    // ─────────────────────────────────────
+    // CHECK FOR CACHED CONTENT
+    // ─────────────────────────────────────
+
+    const checkCachedContent = async () => {
+      if ('caches' in window) {
+        const hasCache = await caches.has(
+          'intelreap-v1.0.0-pages'
+        )
+        const cachedNotice =
+          document.getElementById('cached-notice')
+        if (hasCache && cachedNotice) {
+          cachedNotice.style.display = 'block'
+        }
+      }
+    }
+
+    // ─────────────────────────────────────
+    // SHAKE ANIMATION
+    // ─────────────────────────────────────
+
+    const style = document.createElement('style')
+    style.textContent = `
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-8px); }
+        40% { transform: translateX(8px); }
+        60% { transform: translateX(-4px); }
+        80% { transform: translateX(4px); }
+      }
+    `
+    document.head.appendChild(style)
+
+    // ─────────────────────────────────────
+    // INIT
+    // ─────────────────────────────────────
+
+    updateNetworkInfo()
+    checkCachedContent()
+
+    // Refresh diagnostics every 3 seconds
+    setInterval(updateNetworkInfo, 3000)
+
+    // If already online (navigated here
+    // by mistake) redirect immediately
+    if (navigator.onLine) {
+      setTimeout(() => {
+        window.location.href = '/intelligence.html'
+      }, 1500)
+    }
+  </script>
+
+</body>
+</html>
