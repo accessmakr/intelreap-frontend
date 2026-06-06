@@ -468,14 +468,46 @@ window.NDIC_TRANSLATIONS_BN = {
   citations: {
     label: 'উৎস ও তথ্যসূত্র',
     sources: [
-      { num: '১', text: 'Google Web Vitals ডকুমেন্টেশন', url: 'https://web.dev/vitals/' },
-      { num: '২', text: 'IANA — স্বায়ত্তশাসিত সিস্টেম নম্বর রেজিস্ট্রি', url: 'https://www.iana.org/assignments/as-numbers/' },
-      { num: '৩', text: 'PeeringDB — নেটওয়ার্ক অবকাঠামো ডেটাবেস', url: 'https://www.peeringdb.com/' },
-      { num: '৪', text: 'MaxMind GeoLite2 ডেটাবেস ডকুমেন্টেশন', url: 'https://dev.maxmind.com/geoip/geolite2-free-geolocation-data' },
-      { num: '৫', text: 'MDN Web Docs — Navigator API', url: 'https://developer.mozilla.org/en-US/docs/Web/API/Navigator' },
-      { num: '৬', text: 'W3C — WebGL স্পেসিফিকেশন', url: 'https://www.khronos.org/registry/webgl/specs/latest/' },
-      { num: '৭', text: 'RIPE NCC — ইন্টারনেট নম্বর রেজিস্ট্রি', url: 'https://www.ripe.net/' },
-      { num: '৮', text: 'WebRTC নিরাপত্তা আর্কিটেকচার — RFC 8826', url: 'https://datatracker.ietf.org/doc/html/rfc8826' }
+      {
+        num: '১',
+        text: 'Google Web Vitals ডকুমেন্টেশন',
+        url: 'https://web.dev/vitals/'
+      },
+      {
+        num: '২',
+        text: 'IANA — স্বায়ত্তশাসিত সিস্টেম নম্বর রেজিস্ট্রি',
+        url: 'https://www.iana.org/assignments/as-numbers/'
+      },
+      {
+        num: '৩',
+        text: 'PeeringDB — নেটওয়ার্ক অবকাঠামো ডেটাবেস',
+        url: 'https://www.peeringdb.com/'
+      },
+      {
+        num: '৪',
+        text: 'MaxMind GeoLite2 ডেটাবেস ডকুমেন্টেশন',
+        url: 'https://dev.maxmind.com/geoip/geolite2-free-geolocation-data'
+      },
+      {
+        num: '৫',
+        text: 'MDN Web Docs — Navigator API',
+        url: 'https://developer.mozilla.org/en-US/docs/Web/API/Navigator'
+      },
+      {
+        num: '৬',
+        text: 'W3C — WebGL স্পেসিফিকেশন',
+        url: 'https://www.khronos.org/registry/webgl/specs/latest/'
+      },
+      {
+        num: '৭',
+        text: 'RIPE NCC — ইন্টারনেট নম্বর রেজিস্ট্রি',
+        url: 'https://www.ripe.net/'
+      },
+      {
+        num: '৮',
+        text: 'WebRTC নিরাপত্তা আর্কিটেকচার — RFC 8826',
+        url: 'https://datatracker.ietf.org/doc/html/rfc8826'
+      }
     ]
   },
   faq: {
@@ -550,4 +582,51 @@ window.NDIC_TRANSLATIONS_BN = {
     tagline: 'রিয়েল-টাইম নেটওয়ার্ক ও ডিভাইস ইন্টেলিজেন্স।',
     description: 'বিনামূল্যে ব্রাউজার-ভিত্তিক ইন্টেলিজেন্স টুল। কোনো লগইন নেই। কোনো ডেটা সংরক্ষণ নেই।',
     col_intelligence: 'ইন্টেলিজেন্স',
-    col_deep_dives: 'গভ
+    col_deep_dives: 'গভীর বিশ্লেষণ',
+    col_legal: 'আইনি',
+    col_connect: 'সংযোগ',
+    copyright_suffix: 'সমস্ত ইন্টেলিজেন্স ডেটা আপনার ব্রাউজারে স্থানীয়ভাবে প্রক্রিয়া করা হয়।',
+    privacy: 'গোপনীয়তা',
+    cookies: 'কুকি',
+    terms: 'শর্তাবলী',
+    twitter: 'Twitter / X',
+    github: 'GitHub'
+  },
+  cookie: {
+    text: 'IntelReap আপনার ভাষার পছন্দ সংরক্ষণ করতে ন্যূনতম স্থানীয় স্টোরেজ ব্যবহার করে। কোনো ট্র্যাকিং নেই। কোনো তৃতীয় পক্ষের কুকি নেই।',
+    accept: 'গ্রহণ করুন',
+    decline: 'প্রত্যাখ্যান করুন',
+    policy_link: 'কুকি নীতি'
+  },
+  offline: {
+    status: 'সংযোগ হারিয়েছে',
+    title: 'আপনি অফলাইন',
+    body: 'IntelReap-এর ইন্টেলিজেন্স ডেটা সংগ্রহের জন্য সক্রিয় সংযোগ প্রয়োজন। আপনার নেটওয়ার্ক পরীক্ষা করুন এবং পুনরায় চেষ্টা করুন।',
+    retry: 'সংযোগ পুনরায় চেষ্টা করুন',
+    home: 'ইন্টেলিজেন্স সেন্টারে ফিরে যান',
+    cached_title: 'ক্যাশড ইন্টেলিজেন্স উপলব্ধ',
+    cached_body: 'আপনার শেষ সেশনের কিছু স্ক্যান করা ডেটা উপলব্ধ থাকতে পারে।',
+    online_status: 'অনলাইন অবস্থা',
+    connection_type: 'সংযোগের ধরন',
+    effective_type: 'কার্যকর ধরন',
+    last_online: 'সর্বশেষ অনলাইন'
+  },
+  internal_links: {
+    header: 'ইন্টেলিজেন্স প্যানেল অন্বেষণ করুন',
+    back_to_main: '← ইন্টেলিজেন্স সেন্টারে ফিরে যান'
+  },
+  seasonal: {
+    spring: 'বসন্ত সংস্করণ',
+    summer: 'গ্রীষ্ম সংস্করণ',
+    fall: 'শরৎ সংস্করণ',
+    winter: 'শীত সংস্করণ'
+  },
+  errors: {
+    backend_unavailable: 'ব্যাকএন্ড অনুপলব্ধ — ফলব্যাক ডেটা ব্যবহার করছে',
+    scan_failed: 'স্ক্যান ব্যর্থ — পুনরায় চেষ্টা করছে',
+    no_data: 'কোনো ডেটা উপলব্ধ নেই',
+    loading: 'লোড হচ্ছে...',
+    not_detected: 'শনাক্ত হয়নি',
+    api_error: 'API ত্রুটি'
+  }
+}
