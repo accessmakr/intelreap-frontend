@@ -630,8 +630,3 @@ window.NDIC_TRANSLATIONS_PL = {
     api_error: 'Błąd API'
   }
 }
-```
-
----
-
-## FILE — assets/js/i18n/translations/nl.js
