@@ -68,7 +68,7 @@ const PRECACHE_STATIC = [
 // ─────────────────────────────────────────
 
 const PRECACHE_PAGES = [
-  '/intelligence.html',
+  '/index.html',
   '/intelligence/network-route.html',
   '/intelligence/network-identity.html',
   '/intelligence/vpn-proxy.html',
@@ -504,7 +504,7 @@ self.addEventListener('push', (event) => {
     badge: '/assets/images/icons/icon-96.png',
     vibrate: [100, 50, 100],
     data: {
-      url: data.url || '/intelligence.html'
+      url: data.url || '/index.html'
     },
     actions: [
       {
@@ -534,7 +534,7 @@ self.addEventListener(
     if (event.action === 'dismiss') return
 
     const url = event.notification.data?.url ||
-      '/intelligence.html'
+      '/index.html'
 
     event.waitUntil(
       self.clients.matchAll({
