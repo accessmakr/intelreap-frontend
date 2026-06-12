@@ -2,7 +2,7 @@
 // INTELREAP LIVE TELEMETRY TICKER
 // Endless horizontal scroll ticker
 // Two modes:
-// LIVE — reads from STATE (intelligence.html)
+// LIVE — reads from STATE (index.html)
 // STATIC — sample data (all other pages)
 // Updates every 5 seconds on live mode
 // ─────────────────────────────────────────
@@ -87,7 +87,7 @@ const TickerSystem = (() => {
 
   // ─────────────────────────────────────
   // READ LIVE STATE
-  // Only available on intelligence.html
+  // Only available on index.html
   // ─────────────────────────────────────
 
   const getLiveTickerItems = () => {
