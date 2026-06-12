@@ -52,7 +52,7 @@ const SchemaSystem = (() => {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: `${BASE}/intelligence.html?q={search_term_string}`
+        urlTemplate: `${BASE}/index.html?q={search_term_string}`
       },
       'query-input': 'required name=search_term_string'
     }
@@ -206,7 +206,7 @@ const SchemaSystem = (() => {
         '@type': 'ListItem',
         position: 2,
         name: 'Intelligence Center',
-        item: `${BASE}/intelligence.html`
+        item: `${BASE}/index.html`
       })
       items.push({
         '@type': 'ListItem',
