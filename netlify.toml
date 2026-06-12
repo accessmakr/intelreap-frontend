@@ -1,0 +1,72 @@
+# ─────────────────────────────────────────
+# INTELREAP NETLIFY CONFIGURATION
+# Routing, redirects, headers
+# ─────────────────────────────────────────
+
+[build]
+  publish = "."
+
+# ─────────────────────────────────────────
+# REDIRECTS
+# ─────────────────────────────────────────
+
+# intelligence.html → root (safety redirect)
+# Handles all old references and bookmarks
+[[redirects]]
+  from = "/intelligence.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Clean URL support (optional)
+# Allows intelreap.com/intelligence/security
+# without the .html extension
+[[redirects]]
+  from = "/intelligence/:page"
+  to = "/intelligence/:page.html"
+  status = 200
+
+# ─────────────────────────────────────────
+# SECURITY HEADERS
+# Applied to all pages
+# ─────────────────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# ─────────────────────────────────────────
+# CACHE HEADERS
+# Static assets cached aggressively
+# HTML pages not cached (always fresh)
+# ─────────────────────────────────────────
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "no-cache"
