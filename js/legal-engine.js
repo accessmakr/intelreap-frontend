@@ -26,7 +26,7 @@ const LegalEngine = (() => {
 
         <div class="ndic-footer-brand">
           
-            href="${basePath}intelligence.html"
+            href="${basePath}index.html"
             class="ndic-footer-logo-link"
           >
             <span class="ndic-footer-wordmark">
@@ -49,7 +49,7 @@ const LegalEngine = (() => {
             <h4 class="ndic-footer-col-title">
               Intelligence
             </h4>
-            <a href="${basePath}intelligence.html">
+            <a href="${basePath}index.html">
               Intelligence Center
             </a>
             <a href="${basePath}intelligence/network-route.html">
