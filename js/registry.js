@@ -29,8 +29,8 @@ const INTELREAP_REGISTRY = {
       title: 'Network and Device Intelligence Center',
       shortTitle: 'NDIC',
       description: 'Instantly reveal your network infrastructure, device fingerprint, security posture, and browser capabilities in real time. Free. No login.',
-      url: '/intelligence.html',
-      canonical: 'https://intelreap.com/intelligence.html',
+      url: '/index.html',
+      canonical: 'https://intelreap.com',
       category: 'tool',
       priority: 1.0,
       keywords: [
