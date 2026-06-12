@@ -2,7 +2,7 @@
   "name": "IntelReap — Network and Device Intelligence Center",
   "short_name": "IntelReap",
   "description": "Real-time network and device intelligence. Reveal your IP, ASN, VPN status, browser capabilities, security posture and performance score instantly. Free. No login.",
-  "start_url": "/intelligence.html",
+  "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
   "display_override": [
@@ -106,7 +106,7 @@
       "name": "Run Intelligence Scan",
       "short_name": "Scan",
       "description": "Open the Network and Device Intelligence Center",
-      "url": "/intelligence.html",
+      "url": "/index.html",
       "icons": [
         {
           "src": "/assets/images/icons/icon-96.png",
@@ -162,7 +162,7 @@
     }
   ],
   "share_target": {
-    "action": "/intelligence.html",
+    "action": "/index.html",
     "method": "GET",
     "params": {
       "title": "title",
@@ -173,7 +173,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+intelreap",
-      "url": "/intelligence.html?q=%s"
+      "url": "/index.html?q=%s"
     }
   ],
   "handle_links": "preferred",
