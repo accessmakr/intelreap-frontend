@@ -46,7 +46,7 @@ const InternalLinksEngine = (() => {
         </div>
         <div class="ndic-internal-links-footer">
           
-            href="${basePath}intelligence.html"
+            href="${basePath}index.html"
             class="ndic-back-to-main"
           >
             ← Back to Intelligence Center
