@@ -136,7 +136,7 @@ const SearchSystem = (() => {
 
     searchResults.innerHTML = pages.map(
       (page, index) => `
-        
+        <a
           href="${basePath}${page.url.replace(/^\//, '')}"
           class="ndic-search-result"
           role="option"
