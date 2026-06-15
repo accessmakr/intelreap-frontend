@@ -27,7 +27,7 @@ const InternalLinksEngine = (() => {
         </div>
         <div class="ndic-internal-links-grid">
           ${deepDivePages.map(page => `
-            
+            <a
               href="${basePath}${page.url.replace(/^\//, '')}"
               class="ndic-internal-link ${
                 currentPage?.id === page.id
@@ -45,7 +45,7 @@ const InternalLinksEngine = (() => {
           `).join('')}
         </div>
         <div class="ndic-internal-links-footer">
-          
+          <a
             href="${basePath}index.html"
             class="ndic-back-to-main"
           >
