@@ -39,7 +39,7 @@ const CarouselSystem = (() => {
       : ''
 
     slide.innerHTML = `
-      
+      <a
         href="${item.url}"
         class="ndic-carousel-card"
         target="_blank"
