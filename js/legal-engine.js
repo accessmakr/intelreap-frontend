@@ -25,7 +25,7 @@ const LegalEngine = (() => {
       <div class="ndic-footer-inner">
 
         <div class="ndic-footer-brand">
-          
+          <a
             href="${basePath}index.html"
             class="ndic-footer-logo-link"
           >
@@ -112,14 +112,14 @@ const LegalEngine = (() => {
             <h4 class="ndic-footer-col-title">
               Connect
             </h4>
-            
+            <a
               href="https://twitter.com/intelreap"
               target="_blank"
               rel="noopener noreferrer"
             >
               Twitter / X
             </a>
-            
+            <a
               href="https://github.com/accessmakr/intelreap-frontend"
               target="_blank"
               rel="noopener noreferrer"
@@ -184,7 +184,7 @@ const LegalEngine = (() => {
           IntelReap uses minimal local storage
           to save your language preference.
           No tracking. No third-party cookies.
-          
+          <a
             href="${basePath}cookies-policy.html"
             class="ndic-cookie-link"
           >
