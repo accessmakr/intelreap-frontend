@@ -559,7 +559,7 @@
       <div class="legal-section">
         <h2><span class="section-num">02</span> How IntelReap Works</h2>
         <p>IntelReap is a fully client-side application. When you run an intelligence scan, your browser collects data about your own network connection and device using standard browser APIs. This data is displayed to you in real time and never leaves your device.</p>
-        <p>The only external communication that occurs is a query to the IntelReap backend API at <code style="font-family:'JetBrains Mono',monospace;font-size:0.8em;color:#0ea5e9;">intelreap-backend.vercel.app</code> to enrich IP geolocation data. This request contains only your public IP address, which is information already visible to any server you connect to on the internet. The response is displayed to you and not stored.</p>
+        <p>The only external communication that occurs is a query to our backend API to enrich IP geolocation data for display purposes only. This request contains only your public IP address, which is information already visible to any server you connect to on the internet. The response is displayed to you and not stored.</p>
       </div>
 
       <!-- SECTION 3 -->
@@ -583,11 +583,12 @@
       <!-- SECTION 5 -->
       <div class="legal-section">
         <h2><span class="section-num">05</span> Third-Party Services</h2>
-        <p>IntelReap uses the following third-party services in limited capacities:</p>
+        <p>IntelReap uses the following categories of third-party services in limited capacities:</p>
         <ul>
-          <li><strong style="color:var(--color-text-primary,#e2e8f0);">ip-api.com</strong> — IP geolocation enrichment. Your public IP is queried to determine approximate location, ISP, and ASN data. ip-api.com's own privacy policy governs this interaction.</li>
-          <li><strong style="color:var(--color-text-primary,#e2e8f0);">Google Fonts</strong> — Typography loaded from Google's CDN. Google may log font requests per their standard privacy practices.</li>
-          <li><strong style="color:var(--color-text-primary,#e2e8f0);">Groq / Gemini</strong> — When AI diagnostic summaries are generated, scan summary data is processed by the AI provider to generate the summary text. No personally identifiable information is included in these requests.</li>
+          <li><strong style="color:var(--color-text-primary,#e2e8f0);">IP geolocation provider</strong> — Your public IP address is queried to determine approximate location, ISP, and ASN data for display in your intelligence report. Your public IP is already visible to any server you connect to on the internet.</li>
+          <li><strong style="color:var(--color-text-primary,#e2e8f0);">Web font provider</strong> — Typography is loaded from a third-party CDN. The provider may log font requests per their standard practices but does not set cookies on IntelReap pages.</li>
+          <li><strong style="color:var(--color-text-primary,#e2e8f0);">AI language model provider</strong> — When AI diagnostic summaries are generated, anonymised scan summary data is processed by an AI provider to produce the summary text. No personally identifiable information is included in these requests.</li>
+          <li><strong style="color:var(--color-text-primary,#e2e8f0);">Hosting provider</strong> — IntelReap is hosted on a third-party static hosting platform. Standard server logs may be maintained by the hosting provider per their own privacy policy.</li>
         </ul>
         <p>No advertising networks, behavioural analytics platforms, or data brokers receive any information through IntelReap.</p>
       </div>
@@ -641,7 +642,6 @@
         <p>For any privacy-related enquiries, data deletion requests, or questions about this policy, contact the IntelReap team directly:</p>
         <ul>
           <li>Contact: <a href="./contact.html" style="color:var(--color-accent,#0ea5e9);">Submit an enquiry via the contact form</a></li>
-          <li>GitHub: <a href="https://github.com/accessmakr/intelreap-frontend" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent,#0ea5e9);">github.com/accessmakr/intelreap-frontend</a></li>
         </ul>
       </div>
 
