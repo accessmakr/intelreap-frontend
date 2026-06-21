@@ -69,19 +69,20 @@
 :root {
 
   /* ── BACKGROUNDS ── */
-  --color-bg-base:         #05060a;
-  --color-bg-primary:      #080b10;
-  --color-bg-secondary:    #0d1117;
-  --color-bg-tertiary:     #111722;
-  --color-bg-elevated:     #161d28;
-  --color-bg-hover:        rgba(255,255,255,0.03);
-  --color-bg-active:       rgba(0,180,216,0.06);
+  --color-bg-base:         #10141b;
+  --color-bg-primary:      #161b24;
+  --color-bg-secondary:    #1b212c;
+  --color-bg-tertiary:     #212834;
+  --color-bg-elevated:     #28313f;
+  --color-bg-hover:        rgba(255,255,255,0.04);
+  --color-bg-active:       rgba(0,180,216,0.07);
 
   /* ── TEXT ── */
-  --color-text-primary:    #e8edf4;
-  --color-text-secondary:  #7a8fa8;
-  --color-text-muted:      #3d4f62;
-  --color-text-inverse:    #05060a;
+  --color-text-primary:    #dde3ea;
+  --color-text-secondary:  #8b9cb3;
+  --color-text-muted:      #4a5d72;
+  --color-text-inverse:    #10141b;
+</parameter>
 
   /* ── BORDERS ── */
   --color-border-primary:  rgba(255,255,255,0.06);
