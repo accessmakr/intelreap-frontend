@@ -79,10 +79,9 @@
 
   /* ── TEXT ── */
   --color-text-primary:    #dde3ea;
-  --color-text-secondary:  #8b9cb3;
-  --color-text-muted:      #4a5d72;
+  --color-text-secondary:  #a8b6c9;
+  --color-text-muted:      #7e90a8;
   --color-text-inverse:    #10141b;
-</parameter>
 
   /* ── BORDERS ── */
   --color-border-primary:  rgba(255,255,255,0.06);
@@ -177,6 +176,35 @@
   --section-padding:  var(--space-16) var(--space-6);
   --header-height:    60px;
   --ticker-height:    36px;
+}
+
+
+/* ─────────────────────────────────────────
+   LIGHT THEME — opt-in via toggle button
+   Activated by [data-theme="light"] on <html>
+   Dark is the default everywhere else.
+   ───────────────────────────────────────── */
+[data-theme="light"] {
+  --color-bg-base:         #fafbfc;
+  --color-bg-primary:      #f3f5f7;
+  --color-bg-secondary:    #eaedf1;
+  --color-bg-tertiary:     #e0e4e9;
+  --color-bg-elevated:     #ffffff;
+  --color-bg-hover:        rgba(0,0,0,0.035);
+  --color-bg-active:       rgba(0,137,171,0.07);
+
+  --color-text-primary:    #1a202c;
+  --color-text-secondary:  #4f5b6b;
+  --color-text-muted:      #5e6d80;
+  --color-text-inverse:    #fafbfc;
+
+  --color-border-primary:  rgba(0,0,0,0.08);
+  --color-border-secondary:rgba(0,0,0,0.13);
+  --color-border-accent:   rgba(0,137,171,0.32);
+
+  --color-accent-primary:   #0089ab;
+  --color-accent-secondary: #6d28d9;
+  --color-accent-tertiary:  #c2410c;
 }
 
 
@@ -616,6 +644,39 @@ select {
     display: inline-block;
   }
 }
+
+/* ── THEME TOGGLE BUTTON ── */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-primary);
+  background: var(--color-bg-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-secondary);
+  background: var(--color-bg-tertiary);
+}
+
+.theme-toggle-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn .icon-moon { display: block; }
+.theme-toggle-btn .icon-sun { display: none; }
+
+[data-theme="light"] .theme-toggle-btn .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle-btn .icon-sun { display: block; }
 
 /* Nav dock */
 #master-nav-dock {
