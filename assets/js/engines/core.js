@@ -44,25 +44,29 @@ const CoreEngine = (() => {
       checks.push('logger.js not loaded')
     }
 
-    // Check engines loaded
-    const engines = [
-      'DeviceEngine',
-      'GraphicsEngine',
-      'CapabilityEngine',
-      'SecurityEngine',
-      'PerformanceEngine',
-      'SpeedEngine',
-      'NetworkEngine',
-      'IPEngine',
-      'ProxyEngine',
-      'ScoringEngine',
-      'AISummaryEngine',
-      'MonitoringEngine'
-    ]
+    // NOTE: same window[string] pitfall as the
+    // canvas lookup below — these engines are
+    // declared with `const` in their own files,
+    // so they're never properties of `window`.
+    // Reference them directly instead.
+    const engineRefs = {
+      DeviceEngine:      typeof DeviceEngine !== 'undefined' ? DeviceEngine : undefined,
+      GraphicsEngine:    typeof GraphicsEngine !== 'undefined' ? GraphicsEngine : undefined,
+      CapabilityEngine:  typeof CapabilityEngine !== 'undefined' ? CapabilityEngine : undefined,
+      SecurityEngine:    typeof SecurityEngine !== 'undefined' ? SecurityEngine : undefined,
+      PerformanceEngine: typeof PerformanceEngine !== 'undefined' ? PerformanceEngine : undefined,
+      SpeedEngine:       typeof SpeedEngine !== 'undefined' ? SpeedEngine : undefined,
+      NetworkEngine:     typeof NetworkEngine !== 'undefined' ? NetworkEngine : undefined,
+      IPEngine:          typeof IPEngine !== 'undefined' ? IPEngine : undefined,
+      ProxyEngine:       typeof ProxyEngine !== 'undefined' ? ProxyEngine : undefined,
+      ScoringEngine:     typeof ScoringEngine !== 'undefined' ? ScoringEngine : undefined,
+      AISummaryEngine:   typeof AISummaryEngine !== 'undefined' ? AISummaryEngine : undefined,
+      MonitoringEngine:  typeof MonitoringEngine !== 'undefined' ? MonitoringEngine : undefined
+    }
 
-    engines.forEach(engine => {
-      if (typeof window[engine] === 'undefined') {
-        checks.push(`${engine} not loaded`)
+    Object.entries(engineRefs).forEach(([name, ref]) => {
+      if (typeof ref === 'undefined') {
+        checks.push(`${name} not loaded`)
       }
     })
 
@@ -294,29 +298,39 @@ const CoreEngine = (() => {
       'Phase 6 starting — canvas renders'
     )
 
-    const canvasRenderers = [
-      'Canvas1', 'Canvas2', 'Canvas3',
-      'Canvas4', 'Canvas5', 'Canvas6',
-      'Canvas7', 'Canvas8', 'Canvas9',
-      'Canvas10', 'Canvas11', 'Canvas12'
-    ]
+    // NOTE: Canvas1..Canvas12 are declared with
+    // `const` in their own files, so they exist
+    // in the shared global lexical scope but are
+    // NOT properties of `window`. Referencing them
+    // directly (not via window[stringName]) is what
+    // makes this lookup actually work.
+    const canvasRenderers = {
+      Canvas1, Canvas2, Canvas3, Canvas4,
+      Canvas5, Canvas6, Canvas7, Canvas8,
+      Canvas9, Canvas10, Canvas11, Canvas12
+    }
 
-    canvasRenderers.forEach(rendererName => {
-      const renderer = window[rendererName]
-      if (
-        renderer &&
-        typeof renderer.render === 'function'
-      ) {
-        try {
-          renderer.render()
-        } catch (error) {
+    Object.entries(canvasRenderers).forEach(
+      ([rendererName, renderer]) => {
+        if (
+          renderer &&
+          typeof renderer.render === 'function'
+        ) {
+          try {
+            renderer.render()
+          } catch (error) {
+            logError(
+              `${rendererName} render failed: ` +
+              error.message
+            )
+          }
+        } else {
           logError(
-            `${rendererName} render failed: ` +
-            error.message
+            `${rendererName} renderer not found`
           )
         }
       }
-    })
+    )
 
     logSystem(
       'INFO',
