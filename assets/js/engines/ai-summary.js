@@ -513,7 +513,7 @@ const AISummaryEngine = (() => {
     // Cooldown check
     const now = Date.now()
     if (
-      now - lastFullSummaryTime 
+      now - lastFullSummaryTime <
       FULL_SUMMARY_COOLDOWN
     ) {
       return STATE.summaries.fullSystem
