@@ -290,6 +290,69 @@ const initScrollProgressBar = () => {
 }
 
 // ─────────────────────────────────────────
+// THEME TOGGLE
+// Light is the default theme. Dark is an
+// opt-in choice persisted to localStorage.
+// The <head> inline script already applies
+// the saved theme before paint to avoid a
+// flash — this just wires up the button and
+// keeps it in sync with the current state.
+// ─────────────────────────────────────────
+
+const getCurrentTheme = () => {
+  return document.documentElement
+    .getAttribute('data-theme') === 'dark'
+    ? 'dark'
+    : 'light'
+}
+
+const setTheme = (theme) => {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute(
+      'data-theme',
+      'dark'
+    )
+  } else {
+    document.documentElement.removeAttribute(
+      'data-theme'
+    )
+  }
+  localStorage.setItem('ndic_theme', theme)
+}
+
+const toggleTheme = () => {
+  const next = getCurrentTheme() === 'dark'
+    ? 'light'
+    : 'dark'
+  setTheme(next)
+}
+
+const initThemeToggle = () => {
+  const btn = document.getElementById(
+    'theme-toggle-btn'
+  )
+  if (!btn) return
+
+  btn.addEventListener('click', toggleTheme)
+
+  btn.setAttribute(
+    'aria-label',
+    getCurrentTheme() === 'dark'
+      ? 'Switch to light theme'
+      : 'Switch to dark theme'
+  )
+
+  btn.addEventListener('click', () => {
+    btn.setAttribute(
+      'aria-label',
+      getCurrentTheme() === 'dark'
+        ? 'Switch to light theme'
+        : 'Switch to dark theme'
+    )
+  })
+}
+
+// ─────────────────────────────────────────
 // RUN ON DOM READY
 // ─────────────────────────────────────────
 
@@ -299,6 +362,7 @@ const runRootConfig = () => {
   injectCTARotation()
   injectFreshnessBadge()
   initScrollProgressBar()
+  initThemeToggle()
 }
 
 if (document.readyState === 'loading') {
