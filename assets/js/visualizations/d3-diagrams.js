@@ -56,54 +56,111 @@ const D3DiagramsViz = (() => {
     const network = STATE.network
     const identity = STATE.identity
 
-    const nodes = [
-      {
-        id: 'device',
-        label: 'Your Device',
-        sublabel: identity.ip || '—',
-        type: 'device',
-        x: width * 0.1,
-        y: height * 0.5,
-        fixed: true
-      },
-      {
-        id: 'isp',
-        label: identity.isp ||
-          'Internet Service Provider',
-        sublabel: identity.connectionType ||
-          'ISP',
-        type: 'isp',
-        x: width * 0.3,
-        y: height * 0.5
-      },
-      {
-        id: 'asn',
-        label: network.asnOwner || 'ASN',
-        sublabel: network.asn || '—',
-        type: 'asn',
-        x: width * 0.5,
-        y: height * 0.5
-      },
-      {
-        id: 'upstream',
-        label: network.upstreamProvider ||
-          'Upstream Provider',
-        sublabel: network.networkTier || '—',
-        type: 'upstream',
-        x: width * 0.7,
-        y: height * 0.5
-      },
-      {
-        id: 'internet',
-        label: 'Internet',
-        sublabel: network.allocationRegistry ||
-          'Global',
-        type: 'internet',
-        x: width * 0.9,
-        y: height * 0.5,
-        fixed: true
-      }
-    ]
+    // Below this container width, lay nodes
+    // out as 3-over-2 rows instead of a single
+    // cramped row of 5 across — this is purely
+    // a layout branch, the data and flow order
+    // (device -> isp -> asn -> upstream -> internet)
+    // stay identical either way.
+    const isNarrow = width < 480
+
+    const nodes = isNarrow
+      ? [
+          {
+            id: 'device',
+            label: 'Your Device',
+            sublabel: identity.ip || '—',
+            type: 'device',
+            x: width * 0.18,
+            y: height * 0.3,
+            fixed: true
+          },
+          {
+            id: 'isp',
+            label: identity.isp ||
+              'Internet Service Provider',
+            sublabel: identity.connectionType ||
+              'ISP',
+            type: 'isp',
+            x: width * 0.5,
+            y: height * 0.3
+          },
+          {
+            id: 'asn',
+            label: network.asnOwner || 'ASN',
+            sublabel: network.asn || '—',
+            type: 'asn',
+            x: width * 0.82,
+            y: height * 0.3
+          },
+          {
+            id: 'upstream',
+            label: network.upstreamProvider ||
+              'Upstream Provider',
+            sublabel: network.networkTier || '—',
+            type: 'upstream',
+            x: width * 0.34,
+            y: height * 0.72
+          },
+          {
+            id: 'internet',
+            label: 'Internet',
+            sublabel: network.allocationRegistry ||
+              'Global',
+            type: 'internet',
+            x: width * 0.66,
+            y: height * 0.72,
+            fixed: true
+          }
+        ]
+      : [
+          {
+            id: 'device',
+            label: 'Your Device',
+            sublabel: identity.ip || '—',
+            type: 'device',
+            x: width * 0.1,
+            y: height * 0.5,
+            fixed: true
+          },
+          {
+            id: 'isp',
+            label: identity.isp ||
+              'Internet Service Provider',
+            sublabel: identity.connectionType ||
+              'ISP',
+            type: 'isp',
+            x: width * 0.3,
+            y: height * 0.5
+          },
+          {
+            id: 'asn',
+            label: network.asnOwner || 'ASN',
+            sublabel: network.asn || '—',
+            type: 'asn',
+            x: width * 0.5,
+            y: height * 0.5
+          },
+          {
+            id: 'upstream',
+            label: network.upstreamProvider ||
+              'Upstream Provider',
+            sublabel: network.networkTier || '—',
+            type: 'upstream',
+            x: width * 0.7,
+            y: height * 0.5
+          },
+          {
+            id: 'internet',
+            label: 'Internet',
+            sublabel: network.allocationRegistry ||
+              'Global',
+            type: 'internet',
+            x: width * 0.9,
+            y: height * 0.5,
+            fixed: true
+          }
+        ]
 
     // Links between nodes
     const links = [
@@ -337,7 +394,7 @@ const D3DiagramsViz = (() => {
       .force('link',
         d3.forceLink(links)
           .id(d => d.id)
-          .distance(width * 0.18)
+          .distance(isNarrow ? width * 0.32 : width * 0.18)
           .strength(0.8)
       )
       .force('charge',
@@ -349,8 +406,8 @@ const D3DiagramsViz = (() => {
           .strength(d => d.fixed ? 1 : 0.3)
       )
       .force('y',
-        d3.forceY(height / 2)
-          .strength(0.5)
+        d3.forceY(d => d.y || height / 2)
+          .strength(d => d.fixed ? 1 : 0.5)
       )
       .alpha(0.8)
       .alphaDecay(0.05)
