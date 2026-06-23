@@ -1620,6 +1620,8 @@ select {
   border-block-end: 1px solid var(--color-border-primary);
   min-height: 180px;
   display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
   align-items: center;
   justify-content: center;
   position: relative;
