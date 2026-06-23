@@ -866,9 +866,15 @@ const D3DiagramsViz = (() => {
     const scores = STATE.scores
 
     const width = container.clientWidth || 300
-    const height = Math.min(width, 300)
+    const isNarrow = width < 480
+    // Narrow screens need a 3-row legend
+    // instead of 1 row, so reserve extra
+    // vertical space for it
+    const legendRows = isNarrow ? 3 : 1
+    const height = Math.min(width, 300) +
+      (isNarrow ? (legendRows - 1) * 18 : 0)
     const cx = width / 2
-    const cy = height / 2
+    const cy = (Math.min(width, 300)) / 2
     const maxRadius = Math.min(cx, cy) - 20
 
     const svg = d3
@@ -987,28 +993,6 @@ const D3DiagramsViz = (() => {
         .duration(600)
         .attr('opacity', 1)
 
-      // Ring label on right side
-      const labelRadius =
-        (innerRadius + outerRadius) / 2
-      const labelX = cx + labelRadius + 8
-      const labelY = cy
-
-      if (index < 9) {
-        const angle90 = -Math.PI / 2 +
-          (index / ringCount) * 0.15
-
-        svg.append('text')
-          .attr('x',
-            cx +
-            (labelRadius) *
-            Math.cos(Math.PI / 2 + 0.15 * index)
-          )
-          .attr('y',
-            cy -
-            (innerRadius + outerRadius) / 2 -
-            index * ringThickness
-          )
-      }
     })
 
     // Center global score
@@ -1035,16 +1019,23 @@ const D3DiagramsViz = (() => {
       )
 
     // Legend below rings
-    const legendY = height - 5
-    const legendSpacing = width / rings.length
+    const legendCols = isNarrow ? 3 : rings.length
+    const legendRowHeight = 18
+    const legendColWidth = width / legendCols
+    const legendStartY = isNarrow
+      ? (Math.min(width, 300)) - 5
+      : height - 5
 
     rings.forEach((ring, index) => {
-      const lx = (index + 0.5) * legendSpacing
+      const col = index % legendCols
+      const row = Math.floor(index / legendCols)
+      const lx = (col + 0.5) * legendColWidth
+      const ly = legendStartY + row * legendRowHeight
       const score = scores[ring.key] || 0
 
       const legendGroup = svg.append('g')
         .attr('transform',
-          `translate(${lx}, ${legendY})`
+          `translate(${lx}, ${ly})`
         )
 
       legendGroup.append('circle')
@@ -1054,10 +1045,14 @@ const D3DiagramsViz = (() => {
 
       legendGroup.append('text')
         .attr('text-anchor', 'middle')
-        .attr('fill', 'rgba(255,255,255,0.4)')
-        .attr('font-size', '7px')
+        .attr('fill', 'rgba(255,255,255,0.5)')
+        .attr('font-size', isNarrow ? '9px' : '7px')
         .attr('y', 0)
-        .text(ring.label)
+        .text(
+          isNarrow
+            ? truncateString(ring.label, 10)
+            : ring.label
+        )
     })
 
     logSystem(
