@@ -199,7 +199,8 @@ const LeafletMapViz = (() => {
         .addTo(map)
         .bindPopup(popupContent, {
           className: 'ndic-leaflet-popup',
-          maxWidth: 280,
+          maxWidth: 230,
+          autoPan: true,
           closeButton: true
         })
         .openPopup()
