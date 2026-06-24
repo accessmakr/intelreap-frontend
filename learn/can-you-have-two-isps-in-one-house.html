@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       THEME DETECTION — inline, runs before first paint to prevent
+       flash of wrong colour scheme
+  ═══════════════════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ndic_theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CORE META
+  ═══════════════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SEO META
+  ═══════════════════════════════════════════════════════════════════ -->
+  <title>Can You Have Two ISPs in One House? Complete Guide — IntelReap</title>
+  <meta name="description"
+        content="Yes — you can legally have two ISPs in one house. Learn how dual-WAN works, which routers support it, load balancing vs failover, costs, and how to check ISP availability in your area.">
+  <meta name="keywords"
+        content="can you have two isps in one house, can you have two isp in the same house, can i have 2 isp in one house, dual WAN router setup, two internet providers one house, what isp is available in my area, what does isp stand for, what is an isp in education, ISP failover, ISP load balancing">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CANONICAL + HREFLANG
+  ═══════════════════════════════════════════════════════════════════ -->
+  <link rel="canonical" href="https://intelreap.com/learn/can-you-have-two-isps-in-one-house.html">
+  <link rel="alternate" hreflang="en"       href="https://intelreap.com/learn/can-you-have-two-isps-in-one-house.html">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/can-you-have-two-isps-in-one-house.html">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       OPEN GRAPH
+  ═══════════════════════════════════════════════════════════════════ -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Can You Have Two ISPs in One House? Complete Guide — IntelReap">
+  <meta property="og:description" content="Yes — two ISPs in one house is completely legal. Dual-WAN setup guide, load balancing vs failover, cost breakdown, and how to check ISP availability at your address.">
+  <meta property="og:url"         content="https://intelreap.com/learn/can-you-have-two-isps-in-one-house.html">
+  <meta property="og:site_name"   content="IntelReap">
+  <meta property="og:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"      content="en_US">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TWITTER CARD
+  ═══════════════════════════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Can You Have Two ISPs in One House? — IntelReap">
+  <meta name="twitter:description" content="Yes — two ISPs in one house is legal and practical. Complete dual-WAN guide, costs, router types, and ISP availability explained.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       GEO + ICBM
+  ═══════════════════════════════════════════════════════════════════ -->
+  <meta name="geo.region"   content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM"         content="51.5074, -0.1278">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PWA + FAVICON
+  ═══════════════════════════════════════════════════════════════════ -->
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color"                    content="#00b4d8">
+  <meta name="mobile-web-app-capable"         content="yes">
+  <meta name="apple-mobile-web-app-capable"   content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title"     content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#00b4d8">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#00b4d8">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SITEMAP
+  ═══════════════════════════════════════════════════════════════════ -->
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PRECONNECT
+  ═══════════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FONTS
+  ═══════════════════════════════════════════════════════════════════ -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       GLOBAL DESIGN SYSTEM CSS
+  ═══════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PAGE-SPECIFIC STYLES
+  ═══════════════════════════════════════════════════════════════════ -->
+  <style>
+
+    /* ── SCROLL PROGRESS BAR ─────────────────────────────── */
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: linear-gradient(90deg, #059669 0%, #7c3aed 100%);
+      z-index: 10000;
+      transition: width 80ms linear;
+      will-change: width;
+      pointer-events: none;
+    }
+
+    /* ── BREADCRUMB ──────────────────────────────────────── */
+    .ir-breadcrumb {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.8125rem;
+      color: #6b7280;
+    }
+    [data-theme="dark"] .ir-breadcrumb { color: #9ca3af; }
+    .ir-breadcrumb a { color: #059669; text-decoration: none; }
+    .ir-breadcrumb a:hover { text-decoration: underline; }
+    .ir-breadcrumb-sep { opacity: 0.45; }
+    .ir-breadcrumb-current { color: #374151; font-weight: 500; }
+    [data-theme="dark"] .ir-breadcrumb-current { color: #d1d5db; }
+
+    /* ── ARTICLE WRAPPER ─────────────────────────────────── */
+    .ir-article {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ── ARTICLE TYPOGRAPHY ──────────────────────────────── */
+    .ir-article h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 2.875rem 0 0.875rem;
+      color: #111827;
+      scroll-margin-top: 5rem;
+    }
+    [data-theme="dark"] .ir-article h2 { color: #f9fafb; }
+
+    .ir-article h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin: 1.875rem 0 0.625rem;
+      color: #1f2937;
+    }
+    [data-theme="dark"] .ir-article h3 { color: #f3f4f6; }
+
+    .ir-article p {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #374151;
+      margin-bottom: 1.125rem;
+    }
+    [data-theme="dark"] .ir-article p { color: #d1d5db; }
+
+    .ir-article ul,
+    .ir-article ol {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #374151;
+      margin: 0.5rem 0 1.25rem 1.5rem;
+    }
+    [data-theme="dark"] .ir-article ul,
+    [data-theme="dark"] .ir-article ol { color: #d1d5db; }
+
+    .ir-article li { margin-bottom: 0.45rem; }
+
+    .ir-article strong { font-weight: 600; color: #111827; }
+    [data-theme="dark"] .ir-article strong { color: #f9fafb; }
+
+    .ir-article em { font-style: italic; }
+
+    .ir-article a { color: #059669; text-decoration: underline; text-underline-offset: 3px; }
+    .ir-article a:hover { color: #047857; }
+    [data-theme="dark"] .ir-article a { color: #34d399; }
+    [data-theme="dark"] .ir-article a:hover { color: #6ee7b7; }
+
+    /* ── CALLOUT: HIGHLIGHT (emerald left border) ────────── */
+    .ir-callout-green {
+      border-left: 4px solid #059669;
+      background: #f0fdf4;
+      border-radius: 0 0.625rem 0.625rem 0;
+      padding: 1rem 1.375rem;
+      margin: 1.625rem 0 1.875rem;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      color: #374151;
+    }
+    [data-theme="dark"] .ir-callout-green {
+      background: rgba(5,150,105,0.1);
+      border-color: #34d399;
+      color: #d1d5db;
+    }
+    .ir-callout-green strong { color: #065f46; font-weight: 600; }
+    [data-theme="dark"] .ir-callout-green strong { color: #6ee7b7; }
+
+    /* ── CALLOUT: NOTE (violet left border) ──────────────── */
+    .ir-callout-violet {
+      border-left: 4px solid #7c3aed;
+      background: #f5f3ff;
+      border-radius: 0 0.625rem 0.625rem 0;
+      padding: 1rem 1.375rem;
+      margin: 1.625rem 0 1.875rem;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      color: #374151;
+    }
+    [data-theme="dark"] .ir-callout-violet {
+      background: rgba(124,58,237,0.1);
+      border-color: #a78bfa;
+      color: #d1d5db;
+    }
+    .ir-callout-violet strong { color: #5b21b6; font-weight: 600; }
+    [data-theme="dark"] .ir-callout-violet strong { color: #c4b5fd; }
+
+    /* ── COMPARISON TABLE ────────────────────────────────── */
+    .ir-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1.25rem 0 2.25rem;
+      border-radius: 0.875rem;
+      border: 1px solid #e5e7eb;
+      -webkit-overflow-scrolling: touch;
+    }
+    [data-theme="dark"] .ir-table-wrap { border-color: #374151; }
+    .ir-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9rem;
+    }
+    .ir-table caption {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: left;
+      padding: 0.625rem 1rem 0;
+      caption-side: top;
+    }
+    [data-theme="dark"] .ir-table caption { color: #9ca3af; }
+    .ir-table th {
+      background: #f9fafb;
+      color: #111827;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.875rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid #e5e7eb;
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .ir-table th {
+      background: rgba(255,255,255,0.04);
+      color: #f9fafb;
+      border-color: #374151;
+    }
+    .ir-table td {
+      padding: 0.8rem 1rem;
+      color: #374151;
+      border-bottom: 1px solid #f3f4f6;
+      vertical-align: middle;
+      line-height: 1.55;
+    }
+    [data-theme="dark"] .ir-table td { color: #d1d5db; border-color: #1f2937; }
+    .ir-table tr:last-child td { border-bottom: none; }
+    .ir-table tr:hover td { background: rgba(5,150,105,0.028); }
+    [data-theme="dark"] .ir-table tr:hover td { background: rgba(52,211,153,0.04); }
+    .ir-check    { color: #059669; font-weight: 600; }
+    .ir-cross    { color: #dc2626; }
+    .ir-neutral  { color: #6b7280; }
+    [data-theme="dark"] .ir-check   { color: #34d399; }
+    [data-theme="dark"] .ir-cross   { color: #f87171; }
+    [data-theme="dark"] .ir-neutral { color: #9ca3af; }
+
+    /* ── NUMBERED STEP LIST ──────────────────────────────── */
+    .ir-steps { list-style: none; margin: 0.5rem 0 1.75rem; padding: 0; }
+    .ir-step {
+      display: flex;
+      gap: 1.125rem;
+      margin-bottom: 1.375rem;
+      align-items: flex-start;
+    }
+    .ir-step-num {
+      flex-shrink: 0;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #059669 0%, #7c3aed 100%);
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+    .ir-step-body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      color: #374151;
+    }
+    [data-theme="dark"] .ir-step-body { color: #d1d5db; }
+    .ir-step-body strong {
+      font-weight: 600;
+      display: block;
+      color: #111827;
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+    [data-theme="dark"] .ir-step-body strong { color: #f9fafb; }
+
+    /* ── INLINE CTA BLOCK ────────────────────────────────── */
+    .ir-cta-block {
+      background: linear-gradient(135deg, rgba(5,150,105,0.07) 0%, rgba(124,58,237,0.07) 100%);
+      border: 1px solid rgba(5,150,105,0.22);
+      border-radius: 1.125rem;
+      padding: 2.125rem 2rem;
+      margin: 2.875rem 0;
+      text-align: center;
+    }
+    [data-theme="dark"] .ir-cta-block {
+      background: linear-gradient(135deg, rgba(5,150,105,0.11) 0%, rgba(124,58,237,0.11) 100%);
+      border-color: rgba(52,211,153,0.22);
+    }
+    .ir-cta-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #059669;
+      margin-bottom: 0.625rem;
+      display: block;
+    }
+    [data-theme="dark"] .ir-cta-eyebrow { color: #34d399; }
+    .ir-cta-block h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3125rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 0.625rem;
+      line-height: 1.3;
+    }
+    [data-theme="dark"] .ir-cta-block h3 { color: #f9fafb; }
+    .ir-cta-block > p {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: #6b7280;
+      margin: 0 0 1.5rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    [data-theme="dark"] .ir-cta-block > p { color: #9ca3af; }
+
+    /* ── LOGIC + METHODOLOGY CARDS ───────────────────────── */
+    .ir-logic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2.25rem 0;
+    }
+    @media (max-width: 580px) { .ir-logic-grid { grid-template-columns: 1fr; } }
+    .ir-logic-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.875rem;
+      padding: 1.375rem 1.5rem;
+      background: #fafafa;
+    }
+    [data-theme="dark"] .ir-logic-card {
+      border-color: #374151;
+      background: rgba(255,255,255,0.03);
+    }
+    .ir-logic-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #059669;
+      margin-bottom: 0.625rem;
+      display: block;
+    }
+    [data-theme="dark"] .ir-logic-eyebrow { color: #34d399; }
+    .ir-logic-card p {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: #374151;
+      margin: 0;
+    }
+    [data-theme="dark"] .ir-logic-card p { color: #d1d5db; }
+
+    /* ── SHARE SECTION ───────────────────────────────────── */
+    .ir-share-wrap {
+      margin: 2.75rem 0;
+      padding: 1.875rem;
+      background: #f9fafb;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+    }
+    [data-theme="dark"] .ir-share-wrap {
+      background: rgba(255,255,255,0.03);
+      border-color: #374151;
+    }
+    .ir-share-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    [data-theme="dark"] .ir-share-label { color: #9ca3af; }
+    .ir-share-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .ir-share-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.4375rem 0.9375rem;
+      border-radius: 9999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      color: #374151;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .ir-share-pill:hover {
+      border-color: #059669;
+      background: rgba(5,150,105,0.045);
+      color: #059669;
+      text-decoration: none;
+    }
+    [data-theme="dark"] .ir-share-pill {
+      background: rgba(255,255,255,0.05);
+      border-color: #374151;
+      color: #d1d5db;
+    }
+    [data-theme="dark"] .ir-share-pill:hover {
+      border-color: #34d399;
+      background: rgba(52,211,153,0.07);
+      color: #34d399;
+    }
+
+    /* ── FAQ SECTION ─────────────────────────────────────── */
+    .ir-faq-outer {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem 1rem;
+    }
+    .ir-faq-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 0.5rem;
+    }
+    [data-theme="dark"] .ir-faq-heading { color: #f9fafb; }
+    .ir-faq-sub {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      color: #6b7280;
+      margin: 0 0 1.5rem;
+      line-height: 1.65;
+    }
+    [data-theme="dark"] .ir-faq-sub { color: #9ca3af; }
+
+    /* ── CONTACT FORM ────────────────────────────────────── */
+    .ir-contact-outer {
+      max-width: 860px;
+      margin: 2.5rem auto 0;
+      padding: 0 1.5rem 4rem;
+    }
+    .ir-contact-header {
+      text-align: center;
+      margin-bottom: 1.875rem;
+    }
+    .ir-contact-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 0.375rem;
+    }
+    [data-theme="dark"] .ir-contact-title { color: #f9fafb; }
+    .ir-contact-sub {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      color: #6b7280;
+      line-height: 1.65;
+    }
+    [data-theme="dark"] .ir-contact-sub { color: #9ca3af; }
+    .ir-form-wrap { max-width: 400px; margin: 0 auto; }
+    .ir-form-card {
+      background: rgba(255,255,255,0.65);
+      border: 1px solid rgba(5,150,105,0.28);
+      border-radius: 1.375rem;
+      padding: 2.125rem 2rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 28px rgba(5,150,105,0.07), 0 1px 4px rgba(0,0,0,0.04);
+    }
+    [data-theme="dark"] .ir-form-card {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(52,211,153,0.22);
+      box-shadow: 0 4px 28px rgba(0,0,0,0.28);
+    }
+    .ir-field { margin-bottom: 1.125rem; }
+    .ir-field label {
+      display: block;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #6b7280;
+      margin-bottom: 0.375rem;
+    }
+    [data-theme="dark"] .ir-field label { color: #9ca3af; }
+    .ir-input {
+      width: 100%;
+      padding: 0.6875rem 0.9375rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5625rem;
+      background: #fff;
+      color: #374151;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      box-sizing: border-box;
+    }
+    .ir-input:focus {
+      border-color: #059669;
+      box-shadow: 0 0 0 3px rgba(5,150,105,0.11);
+    }
+    [data-theme="dark"] .ir-input {
+      background: rgba(255,255,255,0.07);
+      border-color: #374151;
+      color: #f3f4f6;
+    }
+    [data-theme="dark"] .ir-input:focus {
+      border-color: #34d399;
+      box-shadow: 0 0 0 3px rgba(52,211,153,0.13);
+    }
+    .ir-textarea { min-height: 110px; resize: vertical; }
+    .ir-honeypot {
+      display: none;
+      visibility: hidden;
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+    }
+    .ir-submit {
+      width: 100%;
+      padding: 0.8125rem;
+      background: linear-gradient(135deg, #059669 0%, #7c3aed 100%);
+      color: #fff;
+      border: none;
+      border-radius: 0.6875rem;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.15s;
+      margin-top: 0.625rem;
+    }
+    .ir-submit:hover  { opacity: 0.87; transform: translateY(-1px); }
+    .ir-submit:active { transform: translateY(0); }
+
+    /* ── MOBILE ADJUSTMENTS ──────────────────────────────── */
+    @media (max-width: 640px) {
+      .ir-article h2  { font-size: 1.25rem; margin-top: 2.25rem; }
+      .ir-article h3  { font-size: 1.0625rem; }
+      .ir-article p,
+      .ir-article li  { font-size: 0.9375rem; }
+      .ir-cta-block   { padding: 1.625rem 1.25rem; }
+      .ir-cta-block h3 { font-size: 1.125rem; }
+      .ir-form-card   { padding: 1.625rem 1.25rem; }
+      .ir-share-wrap  { padding: 1.375rem 1.125rem; }
+      .ir-logic-card  { padding: 1.125rem 1.25rem; }
+      .ir-faq-outer,
+      .ir-contact-outer { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+  </style>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       STRUCTURED DATA / JSON-LD
+  ═══════════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://intelreap.com/learn/can-you-have-two-isps-in-one-house.html#article",
+        "headline": "Can You Have Two ISPs in One House? Complete Guide",
+        "description": "Yes — you can legally have two ISPs in one house. This guide explains how dual-WAN routers work, load balancing versus failover, costs, and how to check ISP availability at your address.",
+        "url": "https://intelreap.com/learn/can-you-have-two-isps-in-one-house.html",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://intelreap.com/assets/images/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "datePublished": "2026-01-10",
+        "dateModified": "2026-06-09",
+        "author": { "@type": "Organization", "@id": "https://intelreap.com/#organization" },
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://intelreap.com/learn/can-you-have-two-isps-in-one-house.html"
+        },
+        "inLanguage": "en-US",
+        "keywords": "can you have two isps in one house, dual WAN, two internet providers, ISP setup, what does ISP stand for",
+        "articleSection": "Network Guides",
+        "wordCount": 2900
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://intelreap.com/assets/images/intelreap-logo.svg"
+        },
+        "sameAs": [
+          "https://twitter.com/intelreap",
+          "https://github.com/intelreap"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://intelreap.com/#website",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://intelreap.com/index.html?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://intelreap.com" },
+          { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://intelreap.com/learn/" },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Can You Have Two ISPs in One House?",
+            "item": "https://intelreap.com/learn/can-you-have-two-isps-in-one-house.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can you legally have two ISPs in one house?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — it is completely legal in most countries to subscribe to two or more ISPs at the same residential address. ISPs hold no legal exclusivity rights over your property, and standard residential service agreements do not prevent you from contracting with a competing provider. Always review each ISP's specific terms of service for any unusual local provisions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does ISP stand for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ISP stands for Internet Service Provider — the company that delivers your broadband connection and routes your data to and from the public internet. Examples include Comcast and AT&T in the US, BT and Virgin Media in the UK, and Optus in Australia. Every ISP is identified on the internet by its Autonomous System Number (ASN), which appears in the global BGP routing table."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a dual-WAN router?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A dual-WAN router has two separate WAN ports, each accepting a live connection from a different ISP's modem. Its routing engine manages both connections simultaneously — distributing sessions across them for load balancing, or holding one in reserve as an automatic failover. Every device on the local network sees one unified network with no manual reconfiguration needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need two routers for two ISPs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — a single dual-WAN capable router manages both connections. You only need two modems (one per ISP) and one dual-WAN router. Two separate routers are only useful if you want to keep the two connections on completely isolated networks, for example a dedicated business network on one ISP and a personal network on the other."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I find which ISPs are available in my area?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the US, check the FCC National Broadband Map at broadbandmap.fcc.gov or BroadbandNow. In the UK, use Ofcom's Connected Nations checker or individual ISP postcode tools. In Europe, consult your national telecom regulator's coverage map. Calling providers directly with your full address is often the fastest and most accurate method. IntelReap's Network Route panel also reveals the ISP and ASN of your current active connection in real time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between ISP load balancing and failover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Load balancing runs both ISP connections simultaneously and distributes outgoing sessions across them to increase total household throughput. Failover keeps one ISP as a standby that only activates when the primary drops, detected automatically via the router's ping health checks. Load balancing optimises for throughput; failover optimises for maximum uptime. Most dual-WAN routers support both simultaneously."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will two ISPs double my download speed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not for a single download. A single TCP session routes through one ISP at a time, so one file download is still capped at that connection's speed. Load balancing increases total household concurrent throughput by routing multiple simultaneous sessions across both ISPs. To genuinely combine both connections for a single session, you need bonding software such as Speedify or an SD-WAN solution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does ISP mean in education or school?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In educational settings, ISP often stands for Individual Support Plan — a personalised document outlining a student's specific learning needs and support strategies. In any networking, IT, or computer science context within a school, ISP retains its standard meaning as Internet Service Provider."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which term correctly describes the function of an ISP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Internet Service Provider correctly describes the function of an ISP. It is a company that provides end users with access to the internet by operating a network with an assigned ASN, using BGP to exchange routing information with upstream providers, and allocating IP address blocks to customers — acting as the gateway between your local network and the global internet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I check which ISP my current connection is using?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Visit IntelReap and run a free scan. The Network Route panel shows your current ISP name, ASN, organisation, and BGP routing path in real time. No account or software is required — it works directly in any modern browser. In a dual-WAN setup, switch between WANs and rescan to confirm a different ISP appears for each connection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does having two ISPs from the same parent company give real redundancy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Two brands under the same parent company often share physical infrastructure, NOCs, and backbone routing. A single outage event can bring both down simultaneously. True redundancy requires two ISPs with separate physical lines, separate ASNs, and different upstream transit providers. Use IntelReap's Network Route tool to check each connection's ASN — if both show the same ASN or parent organisation, your redundancy is not genuine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a mobile broadband SIM serve as a second ISP for failover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — and it is one of the most cost-effective dual-ISP configurations for most households. A 4G or 5G mobile broadband connection uses entirely separate physical infrastructure (cellular towers) from a fixed cable or fiber line. Most dual-WAN routers support a USB LTE modem or secondary ethernet port for a cellular connection. In failover-only mode, a modest data plan with 50–100 Mbps is more than enough to maintain calls, email, and essential services while the primary fixed-line ISP recovers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ═══════════════════════════════════════════════════════════════════ -->
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SITE HEADER
+  ═══════════════════════════════════════════════════════════════════ -->
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap — home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+
+      <button type="button"
+              class="trigger-search"
+              aria-label="Open search (Command K)">
+        <svg width="14" height="14" fill="none" stroke="currentColor"
+             viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+
+      <button type="button"
+              class="theme-toggle-btn"
+              id="theme-toggle-btn"
+              aria-label="Switch colour theme">
+        <svg class="icon-sun" width="16" height="16" fill="none"
+             stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path stroke-linecap="round"
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41
+                   M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="16" height="16" fill="none"
+             stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- MUST REMAIN EMPTY — populated by menu-system.js -->
+      <div id="master-nav-dock" class="flex items-center justify-between"></div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SEASONAL BANNER — populated by inline JS
+  ═══════════════════════════════════════════════════════════════════ -->
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+
+    <!-- ══════════════ TICKER ══════════════ -->
+    <div class="ndic-ticker-container"></div>
+
+    <!-- ══════════════ BREADCRUMB ══════════════ -->
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="../index.html">Home</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="../learn/">Learn</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="ir-breadcrumb-current" aria-current="page">
+        Can You Have Two ISPs in One House?
+      </span>
+    </nav>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Network Guide</span>
+        </div>
+
+        <h1 class="ndic-hero-title">
+          Can You Have <span class="ndic-highlight">Two ISPs</span><br>
+          in One House?
+        </h1>
+
+        <p class="ndic-hero-tagline">
+          Yes — and it is more common than most people realise. This complete guide explains exactly how dual-WAN setups work, when two internet providers genuinely make sense, which routers handle it, how to check which ISPs serve your address, and whether it will actually improve your connection.
+        </p>
+
+        <div class="ndic-hero-cta-group">
+          <a href="../intelligence/network-route.html"
+             class="ndic-btn-primary cta-rotate">
+            Check My Network Route
+          </a>
+          <a href="../intelligence/network-identity.html"
+             class="ndic-btn-secondary">
+            See My ISP Details →
+          </a>
+        </div>
+
+        <div id="freshness-badge" aria-live="polite">Loading…</div>
+
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">4.9★</span>
+            <span class="ndic-trust-label">satisfaction</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">234 data points</span>
+            <span class="ndic-trust-label">per scan</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">12 intelligence panels</span>
+            <span class="ndic-trust-label">per report</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">Zero data stored</span>
+            <span class="ndic-trust-label">privacy first</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════ QUICK ANSWER ══════════════ -->
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">
+        Yes — having two ISPs in one house is legal, technically straightforward,
+        and increasingly common for both households and home offices
+      </h2>
+      <p class="ndic-quick-answer-body">
+        Two internet service providers at the same address requires two service contracts, two modems, and a dual-WAN capable router that manages both connections as one unified network. You can run both simultaneously — distributing sessions for higher total throughput — or hold one as an automatic failover that activates the moment your primary drops. ISPs have no legal exclusivity over your property, and standard residential terms of service do not prevent you from subscribing to a competitor.
+      </p>
+    </section>
+
+    <!-- ══════════════ ARTICLE BODY ══════════════ -->
+    <article class="ir-article"
+             itemscope itemtype="https://schema.org/Article">
+
+      <!-- ── § 1  What Does It Mean ─────────────────────── -->
+      <h2>What Does It Actually Mean to Have Two ISPs?</h2>
+      <p>
+        When people ask whether they can have two ISPs in the same house, they are usually asking two closely related questions at once: can they physically run two separate internet connections into the same building — and can both connections serve the same devices at the same time on one network?
+      </p>
+      <p>
+        The answer to both is yes. Having two ISPs means holding two active service accounts with two separate providers, each of which delivers its own broadband connection to your premises via its own modem or line termination unit. A dual-WAN router then sits between those two modems and your internal network, making real-time decisions about which ISP handles each outgoing session. Every device on your Wi-Fi sees one unified network — the router manages the complexity invisibly behind the scenes.
+      </p>
+      <p>
+        People arrive at this setup for different reasons. Some want the combined bandwidth for a high-demand household. Others need the reliability guarantee — a single ISP going offline should not halt a remote working session, a live stream, or a business-critical call. Some households also have members with strong provider preferences, or different speed requirements that no single ISP plan satisfies cleanly.
+      </p>
+
+      <!-- ── § 2  Is It Legal ───────────────────────────── -->
+      <h2>Is It Legal to Have Two ISPs at the Same Address?</h2>
+      <p>
+        In virtually every jurisdiction, yes — completely and without ambiguity. There is no law in the UK, US, EU, Australia, or most other countries that restricts how many internet subscriptions a household may hold simultaneously. ISPs have no legal exclusivity rights over residential or commercial premises and cannot prevent a customer from contracting with a competing provider.
+      </p>
+      <p>
+        Residential service agreements from major ISPs typically contain terms governing acceptable use and bandwidth-sharing — but not exclusivity clauses preventing you from subscribing elsewhere. The key phrase to watch for in any contract is the prohibition on <strong>reselling or redistributing access</strong> to third parties. That clause is aimed at preventing customers from selling internet access to neighbours or running unauthorised hotspots — it does not apply to simply subscribing to two providers for your own household's use.
+      </p>
+      <div class="ir-callout-green">
+        <strong>Worth checking:</strong> A small number of municipalities in the US operate local franchise agreements with cable ISPs that include exclusivity provisions for that provider's infrastructure. These are rare and increasingly challenged legally, but if you are in a rural or semi-rural area with a single local cable provider, it is worth reviewing the specific franchise agreement language. In practice, the most reliable check is simply asking a second provider whether they can serve your address.
+      </div>
+
+      <!-- ── § 3  Dual-WAN Router ───────────────────────── -->
+      <h2>What Is a Dual-WAN Router and Why Do You Need One?</h2>
+      <p>
+        A dual-WAN router is the essential piece of hardware that makes a two-ISP home setup practical. It contains two separate WAN (wide area network) input ports — each accepting a live signal from a different provider's modem — and a routing engine that decides in real time which connection handles each outgoing data session. Without a dual-WAN router, running two ISPs means either managing two entirely separate networks or swapping cables manually, neither of which is a realistic household solution.
+      </p>
+      <p>
+        Dual-WAN routers operate in two primary modes, and most quality units support both simultaneously with a configurable priority policy.
+      </p>
+
+      <h3>Load Balancing Mode</h3>
+      <p>
+        In load balancing mode, the router distributes outgoing traffic sessions across both ISP connections based on a configurable policy — round-robin assignment, weighted by available bandwidth ratio, or custom per-application rules. If ISP A delivers 200 Mbps and ISP B delivers 100 Mbps, load balancing lets your household draw on up to 300 Mbps of total concurrent capacity. A video call routes through ISP A while a large file download simultaneously uses ISP B, with neither competing with the other.
+      </p>
+      <p>
+        The important technical caveat: a single TCP session — one file download, one streaming video, one game server connection — can only route through one ISP at a time. Load balancing improves total household throughput for <em>multiple simultaneous sessions</em>, not the peak speed of a single download. For that, connection bonding software is required (covered in the speed section below).
+      </p>
+
+      <h3>Failover Mode</h3>
+      <p>
+        In failover mode, the router designates one ISP as primary and routes all traffic through it exclusively. At regular intervals — typically every 5 to 30 seconds, configurable — it sends test pings to reliable external targets such as Google's public DNS (8.8.8.8) or Cloudflare (1.1.1.1). If the primary ISP fails to respond for a set number of consecutive checks, the router instantly reroutes all traffic to the secondary ISP. When the primary connection recovers, the router either switches back automatically or waits for a manual prompt, depending on your preference.
+      </p>
+      <p>
+        Failover is the right mode for home offices, live content creators, and anyone whose workflow cannot tolerate even a brief outage. Critically, the secondary ISP in a failover configuration does not need to be a high-performance plan — a modest 50 Mbps mobile broadband connection is entirely sufficient to keep email, video calls, and essential services running while the primary is restored.
+      </p>
+
+      <!-- ── TABLE 1  1 ISP vs 2 ISPs ──────────────────── -->
+      <h2>One ISP Versus Two ISPs: Head-to-Head</h2>
+      <div class="ir-table-wrap"
+           role="region"
+           aria-label="Comparison table: one ISP versus two ISPs"
+           tabindex="0">
+        <table class="ir-table">
+          <caption>
+            Side-by-side feature comparison of a single-ISP setup against a dual-ISP dual-WAN configuration
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Single ISP</th>
+              <th scope="col">Two ISPs — Dual-WAN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Protection against ISP outages</td>
+              <td class="ir-cross">✗ None — complete single point of failure</td>
+              <td class="ir-check">✓ Automatic failover to second ISP</td>
+            </tr>
+            <tr>
+              <td>Total household bandwidth (concurrent sessions)</td>
+              <td class="ir-neutral">Limited to one plan's speed</td>
+              <td class="ir-check">✓ Combined across simultaneous sessions</td>
+            </tr>
+            <tr>
+              <td>Monthly cost</td>
+              <td class="ir-check">✓ Lower — single bill</td>
+              <td class="ir-cross">✗ Higher — two contracts</td>
+            </tr>
+            <tr>
+              <td>Router required</td>
+              <td class="ir-check">✓ Any standard router</td>
+              <td class="ir-cross">✗ Dual-WAN capable router required</td>
+            </tr>
+            <tr>
+              <td>Setup complexity</td>
+              <td class="ir-check">✓ Minimal — plug in and go</td>
+              <td class="ir-cross">✗ Requires WAN configuration knowledge</td>
+            </tr>
+            <tr>
+              <td>Infrastructure redundancy</td>
+              <td class="ir-cross">✗ One physical path into the building</td>
+              <td class="ir-check">✓ Separate physical lines from separate providers</td>
+            </tr>
+            <tr>
+              <td>ISP throttling exposure</td>
+              <td class="ir-cross">✗ Throttled traffic affects everything</td>
+              <td class="ir-check">✓ Route around throttling via the second ISP</td>
+            </tr>
+            <tr>
+              <td>Ongoing network management</td>
+              <td class="ir-check">✓ Zero — fire and forget</td>
+              <td class="ir-cross">✗ Occasional router dashboard monitoring advised</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── § 4  Routers ──────────────────────────────── -->
+      <h2>What Kind of Router Supports Two ISP Connections?</h2>
+      <p>
+        Dual-WAN capability sits at the boundary between prosumer and enterprise networking hardware. The specifications that matter when evaluating options are: two physical WAN ports (or the ability to reassign a LAN port to WAN duty), built-in load balancing and failover logic, configurable WAN health monitoring with ping-based detection, and an admin dashboard that clearly shows both connections' live status.
+      </p>
+      <p>
+        At the enterprise level, vendors such as Peplink, Ubiquiti EdgeRouter, and Cisco RV series offer dual-WAN and multi-WAN appliances with policy-based routing, traffic steering, and hardware bonding. At the prosumer level, ASUS routers running Merlin custom firmware, certain TP-Link Deco Pro and Deco Business configurations, and Netgear Orbi Pro models bring dual-WAN within reach of less technical households without requiring command-line setup.
+      </p>
+      <div class="ir-callout-violet">
+        <strong>Before purchasing:</strong> Dual-WAN is a feature that varies at the individual SKU level — not all routers in a brand's lineup include it, even in the same series. Always verify the specific model's spec sheet for explicit mention of "Dual WAN," "WAN failover," or "load balancing" before buying. Product lines change frequently and marketing names do not always map to technical capability.
+      </div>
+
+      <!-- ── § 5  How to Check ISPs ─────────────────────── -->
+      <h2>How to Check Which ISPs Are Available in Your Area</h2>
+      <p>
+        Before signing a second ISP contract, confirm a second provider can physically serve your address. Coverage varies significantly at postcode and street level, and the method for checking availability differs by country.
+      </p>
+      <ul>
+        <li>
+          <strong>United States:</strong> The FCC National Broadband Map at
+          <a href="https://broadbandmap.fcc.gov" target="_blank" rel="noopener noreferrer">broadbandmap.fcc.gov</a>
+          lists every provider that has filed availability data for any address in the country. BroadbandNow and BroadbandSearch aggregate and simplify the same data with address-level lookups.
+        </li>
+        <li>
+          <strong>United Kingdom:</strong> Ofcom's Connected Nations interactive map and individual ISP postcode checkers from BT Openreach Wholesale, Virgin Media, Sky, and TalkTalk confirm availability at address level. Note that most UK broadband runs over Openreach's physical infrastructure — multiple ISPs may share the same copper or fiber line, meaning a second ISP may not bring a genuinely separate physical path.
+        </li>
+        <li>
+          <strong>European Union:</strong> Each EU member state's national telecommunications regulator publishes an official broadband coverage map. Your regulator's website is accessible through the BEREC (Body of European Regulators for Electronic Communications) directory.
+        </li>
+        <li>
+          <strong>Universal method — call directly:</strong> ISP provisioning teams have real-time access to internal service databases that update significantly faster than any public-facing coverage map. Calling the provider with your full address takes two minutes and gives you the most current and accurate availability answer — especially for areas where fiber rollout is underway.
+        </li>
+      </ul>
+      <p>
+        Once connected, IntelReap's Network Route panel instantly displays your current ISP name, ASN number, and BGP routing path — letting you verify that each connection is genuinely coming from a separate provider and a separate network backbone.
+      </p>
+
+      <!-- ── CTA BLOCK 1 ─────────────────────────────────── -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Free Network Intelligence</span>
+        <h3>See Your Current ISP, ASN, and Full Network Route</h3>
+        <p>
+          Run a free scan to reveal your ISP name, Autonomous System Number, BGP routing path, geolocation, and complete network identity — directly from your browser, no account or installation required.
+        </p>
+        <a href="../intelligence/network-route.html"
+           class="ndic-btn-primary cta-rotate">
+          Check My Network Route
+        </a>
+      </div>
+
+      <!-- ── § 6  Setup Steps ───────────────────────────── -->
+      <h2>Setting Up Two ISPs in One House: A Practical Step-by-Step</h2>
+      <p>
+        The process is methodical rather than technically demanding. Follow these steps in order and you will have a working dual-WAN configuration without complications.
+      </p>
+      <ol class="ir-steps">
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">1</div>
+          <div class="ir-step-body">
+            <strong>Choose two ISPs with genuinely separate physical infrastructure</strong>
+            For real redundancy, the two providers must use different physical paths into your building. A cable ISP and a fiber ISP from separate companies with separate street-level cabling is ideal. Two providers that both resell the same Openreach copper or the same DOCSIS cable plant will both fail during the same infrastructure fault. If only one fixed-line path exists at your address, a 4G or 5G mobile broadband connection using a SIM card is a valid and practical secondary option.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">2</div>
+          <div class="ir-step-body">
+            <strong>Acquire and install a dual-WAN capable router</strong>
+            Connect your existing router's replacement to its power source and locate the two WAN ports (sometimes labelled WAN 1 / WAN 2, or WAN + WAN2). Some routers require a setting change in the admin panel to convert a LAN port to WAN duty for the second connection — check your specific model's documentation before cabling.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">3</div>
+          <div class="ir-step-body">
+            <strong>Connect each ISP modem to its WAN port</strong>
+            Each provider supplies or requires a compatible modem for their line type: a DOCSIS cable modem for cable broadband, a fiber ONT (Optical Network Terminal) for fiber-to-the-premises, or a DSL modem for ADSL and VDSL lines. Connect each modem to its respective WAN port using a standard ethernet cable. Power both modems and allow them to establish their respective ISP connections before proceeding to router configuration.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">4</div>
+          <div class="ir-step-body">
+            <strong>Configure each WAN interface in the router admin panel</strong>
+            Log in to your router's administration interface and navigate to the WAN or Internet settings section. Configure WAN 1 and WAN 2 independently with the connection type each ISP uses: DHCP (most cable and fiber consumer connections), PPPoE (DSL and some fiber services), or static IP for business-grade accounts. Enter any ISP-provided credentials such as PPPoE usernames and passwords.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">5</div>
+          <div class="ir-step-body">
+            <strong>Set your load balancing or failover policy</strong>
+            In the router's dual-WAN or WAN management section, choose between load balancing (both connections active simultaneously) and failover (primary plus standby). For load balancing, configure the bandwidth weighting to reflect your actual ISP speeds so the router distributes sessions proportionally. For failover, designate your faster or more reliable connection as primary and the secondary as the standby backup.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">6</div>
+          <div class="ir-step-body">
+            <strong>Enable WAN health monitoring on both interfaces</strong>
+            Configure ping-based health checks to reliable external DNS targets — 8.8.8.8 (Google) and 1.1.1.1 (Cloudflare) are the standard choices — on both WAN interfaces. Set the check interval (5–15 seconds is typical) and the failure threshold (3–5 consecutive failed pings before triggering failover). This is the mechanism that makes automatic switching work. Without it, the router will not detect a dropped ISP connection and will keep sending traffic into a black hole.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">7</div>
+          <div class="ir-step-body">
+            <strong>Verify both connections using IntelReap</strong>
+            While routing through each ISP in turn, run a scan on IntelReap's Network Route and Live Network Monitor panels. Confirm the correct ISP name and ASN appears for each connection. Compare each connection's latency, bandwidth, and stability score side by side. This gives you a reliable baseline for both ISPs before finalising your load-balance ratio or failover priority.
+          </div>
+        </li>
+      </ol>
+
+      <!-- ── § 7  What Does ISP Stand For ──────────────── -->
+      <h2>What Does ISP Stand For — and How Do ISPs Actually Work?</h2>
+      <p>
+        <strong>ISP stands for Internet Service Provider.</strong> It is the organisation that sells and delivers access to the public internet for homes, businesses, schools, and institutions. Your ISP is the first hop in the chain between your device and every website, service, or server you communicate with online.
+      </p>
+      <p>
+        Every ISP is assigned one or more <strong>Autonomous System Numbers (ASNs)</strong> by a Regional Internet Registry — ARIN for North America, RIPE NCC for Europe, APNIC for Asia Pacific, LACNIC for Latin America, and AFRINIC for Africa. The ASN is how that ISP's network is identified within the global BGP (Border Gateway Protocol) routing table — the internet's distributed address directory that determines how traffic travels between networks worldwide.
+      </p>
+      <p>
+        When you connect to the internet and check your IP address, the ISP name you see is resolved from the ASN associated with the IP address block your ISP has been allocated by its registry. This is why IntelReap's Network Identity panel can display not just your IP address but your ISP name, ASN, organisation name, and network routing hierarchy — all derived from publicly accessible, verified registry records.
+      </p>
+      <div class="ir-callout-violet">
+        <strong>ISP in education contexts:</strong> In schools and special education settings, the abbreviation ISP frequently refers to an <em>Individual Support Plan</em> — a tailored document that specifies a student's learning needs, support strategies, and academic targets. This meaning is entirely distinct from the networking term. In any technology course, IT classroom, or computer science context, ISP means Internet Service Provider without exception.
+      </div>
+
+      <!-- ── § 8  Speed ─────────────────────────────────── -->
+      <h2>Will Having Two ISPs Actually Double My Internet Speed?</h2>
+      <p>
+        This is the most common misconception about dual-WAN setups, and the honest answer is: <strong>it depends entirely on what you mean by speed.</strong>
+      </p>
+      <p>
+        <strong>For total household concurrent throughput — yes, roughly.</strong> If ISP A delivers 200 Mbps and ISP B delivers 100 Mbps, your household's total available bandwidth capacity across simultaneous sessions increases to approximately 300 Mbps. Multiple people running video calls, downloads, and cloud backups at the same time collectively draw on both ISPs' capacity simultaneously via load balancing.
+      </p>
+      <p>
+        <strong>For a single download or a single active session — no.</strong> A standard TCP connection travels through one ISP at a time. One person downloading one file is capped at whichever ISP that session routes through. The session cannot natively split itself across two connections.
+      </p>
+      <p>
+        The exception is <strong>connection bonding</strong>: software or hardware solutions that split a single session's traffic across multiple connections at the protocol level, effectively combining both ISPs' bandwidth for individual streams. Bonding requires either client-side software such as Speedify or a cloud endpoint that both connections tunnel to. It is a distinct product category from standard dual-WAN routing and introduces its own latency and cost considerations.
+      </p>
+
+      <!-- ── TABLE 2  Modes ──────────────────────────────── -->
+      <h2>Load Balancing vs Failover vs Bonding — Which Mode Is Right for You?</h2>
+      <div class="ir-table-wrap"
+           role="region"
+           aria-label="Comparison of dual-ISP operating modes"
+           tabindex="0">
+        <table class="ir-table">
+          <caption>
+            The three primary dual-ISP traffic modes compared by behaviour, use case, and performance characteristics
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Mode</th>
+              <th scope="col">How Traffic Is Handled</th>
+              <th scope="col">Best For</th>
+              <th scope="col">Single-Session Speed Gain</th>
+              <th scope="col">Uptime Benefit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Load Balancing</strong></td>
+              <td>Sessions distributed across both ISPs simultaneously</td>
+              <td>Multi-user households, heavy concurrent usage</td>
+              <td class="ir-cross">✗ No — each session capped at one ISP</td>
+              <td class="ir-neutral">Partial — degraded throughput if one ISP drops</td>
+            </tr>
+            <tr>
+              <td><strong>Failover Only</strong></td>
+              <td>All traffic on primary; secondary activates on failure</td>
+              <td>Home offices, live streamers, business continuity</td>
+              <td class="ir-cross">✗ No</td>
+              <td class="ir-check">✓ Near-zero downtime on ISP failure</td>
+            </tr>
+            <tr>
+              <td><strong>Load Balance + Failover</strong></td>
+              <td>Balanced when both up; automatic switch if one drops</td>
+              <td>Best of both — recommended for most setups</td>
+              <td class="ir-cross">✗ No — per session capped</td>
+              <td class="ir-check">✓ Automatic recovery</td>
+            </tr>
+            <tr>
+              <td><strong>Connection Bonding</strong></td>
+              <td>Single session split across both ISPs at protocol level</td>
+              <td>Content creators, large single-stream transfers</td>
+              <td class="ir-check">✓ Yes — genuine combined bandwidth</td>
+              <td class="ir-check">✓ Inherently redundant by design</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── § 9  Cost ──────────────────────────────────── -->
+      <h2>Cost Considerations for Running Two ISPs</h2>
+      <p>
+        The financial reality is simple: you pay two monthly bills instead of one. However, the calculation is not purely additive for households and small businesses. The cost of a single significant outage — lost working hours, a failed client call, a disrupted stream, a missed submission deadline — can easily exceed months of a secondary ISP subscription for anyone who relies on a consistent connection.
+      </p>
+      <p>
+        Common cost management strategies include: subscribing to a lower-tier speed plan on the secondary connection (a 50 Mbps failover plan is substantially cheaper than a 500 Mbps primary), using a mobile broadband SIM on a data-only plan as the secondary (typically the lowest-cost option for failover-only use), or negotiating a combined business broadband bundle if your primary provider also offers a second connection type at the same address — accepting the reduced redundancy trade-off for a lower combined monthly rate.
+      </p>
+      <p>
+        Router hardware is a one-time cost. Dual-WAN routers suitable for most households sit in the mid-range of the consumer networking market; enterprise-grade options with deeper traffic management features occupy the higher end and are generally unnecessary unless you are running significant traffic or need granular policy routing.
+      </p>
+
+      <!-- ── CTA BLOCK 2 ─────────────────────────────────── -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Live Connection Intelligence</span>
+        <h3>Test and Compare Your ISP Connections in Real Time</h3>
+        <p>
+          IntelReap's Live Network Monitor measures latency, bandwidth, packet loss, jitter, and stability index for your active connection — free, in your browser, with no installation. Switch between your two ISP WANs and run back-to-back scans to compare quality scores before finalising your dual-WAN configuration.
+        </p>
+        <a href="../intelligence/live-network.html"
+           class="ndic-btn-secondary">
+          Open Live Network Monitor →
+        </a>
+      </div>
+
+      <!-- ── LOGIC + METHODOLOGY ────────────────────────── -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>
+            Two ISPs justify their combined cost precisely when the productivity or revenue impact of a single outage exceeds the monthly price of the secondary connection.
+          </p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>
+            This guide synthesises published ISP terms-of-service language, dual-WAN router vendor documentation, Regional Internet Registry allocation records, and live network scan data verified across multiple residential and small-business connection types.
+          </p>
+        </div>
+      </div>
+
+      <!-- ── CITATIONS ──────────────────────────────────── -->
+      <section class="ndic-citation-section"
+               aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">
+          Sources &amp; References
+        </div>
+        <div class="ndic-citation-list">
+
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">
+              <a href="https://broadbandmap.fcc.gov"
+                 target="_blank" rel="noopener noreferrer">
+                FCC National Broadband Map — ISP Availability by Address, United States
+              </a>
+            </span>
+          </div>
+
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations"
+                 target="_blank" rel="noopener noreferrer">
+                Ofcom Connected Nations Report — UK Broadband Infrastructure and Coverage Data
+              </a>
+            </span>
+          </div>
+
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.iana.org/assignments/as-numbers/as-numbers.xhtml"
+                 target="_blank" rel="noopener noreferrer">
+                IANA Autonomous System Number Registry — Global ASN Allocation Records
+              </a>
+            </span>
+          </div>
+
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.ripe.net/analyse/internet-measurements/routing-information-service-ris"
+                 target="_blank" rel="noopener noreferrer">
+                RIPE NCC Routing Information Service — BGP Routing and ASN Data, Europe
+              </a>
+            </span>
+          </div>
+
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.arin.net/resources/guide/asn/"
+                 target="_blank" rel="noopener noreferrer">
+                ARIN — Autonomous System Number Allocation Guide, North America
+              </a>
+            </span>
+          </div>
+
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">06</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.apnic.net/get-ip/faqs/asn/"
+                 target="_blank" rel="noopener noreferrer">
+                APNIC — ASN Allocation and Routing Registry, Asia Pacific
+              </a>
+            </span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── DYNAMIC INTERNAL LINKS ────────────────────── -->
+      <div id="dynamic-internal-links"></div>
+
+      <!-- ── AD CAROUSEL ───────────────────────────────── -->
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <!-- ── SHARE SYSTEM ──────────────────────────────── -->
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills"
+             id="share-pills-container"
+             aria-label="Share this page on social platforms">
+          <!-- Populated by inline JS -->
+        </div>
+      </div>
+
+    </article>
+
+    <!-- ══════════════ FAQ SECTION ══════════════ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">
+          Frequently Asked Questions
+        </h2>
+        <p class="ir-faq-sub">
+          Twelve questions covering legality, terminology, router setup, speed expectations, and ISP availability — answered clearly.
+        </p>
+        <div class="ndic-faq-list">
+
+          <!-- FAQ 1 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-1">
+              <span>Can you legally have two ISPs in one house?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-1">
+              <div class="ndic-faq-answer-inner">
+                Yes — it is completely legal in most countries to subscribe to two or more ISPs at the same residential address. ISPs hold no legal exclusivity rights over your property, and standard residential service agreements do not prevent you from contracting with a competing provider. Always review each ISP's specific terms of service to confirm no unusual local provisions apply, particularly in areas served by municipal or rural franchise broadband arrangements.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-2">
+              <span>What does ISP stand for?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-2">
+              <div class="ndic-faq-answer-inner">
+                ISP stands for Internet Service Provider — the company that delivers your broadband connection and routes your data to and from the public internet. Every ISP is identified online by its Autonomous System Number (ASN), which is the technical identifier for its network within the global BGP routing table. Examples include Comcast and AT&T in the US, BT and Virgin Media in the UK, Telenet in Belgium, and Optus in Australia.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-3">
+              <span>What is a dual-WAN router?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-3">
+              <div class="ndic-faq-answer-inner">
+                A dual-WAN router is a router with two separate WAN (wide area network) ports, each accepting a live connection from a different ISP's modem. Its routing engine manages both connections simultaneously — distributing sessions across them for load balancing, or holding one as an automatic failover standby. All devices on your local network see one unified Wi-Fi network with no manual reconfiguration needed when the router switches between ISPs.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-4">
+              <span>Do I need two separate routers for two ISPs?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-4">
+              <div class="ndic-faq-answer-inner">
+                No — a single dual-WAN capable router manages both ISP connections from one device. You need two modems (one per ISP) and one dual-WAN router between them and your network. Two separate routers are only appropriate if you specifically want completely isolated networks — for example, a dedicated business network on ISP A that is physically separate from a personal network on ISP B. Otherwise, one router handles everything cleanly.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-5">
+              <span>How do I find out what ISPs are available in my area?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-5">
+              <div class="ndic-faq-answer-inner">
+                In the US, check the FCC National Broadband Map at broadbandmap.fcc.gov or BroadbandNow. In the UK, use Ofcom's Connected Nations checker or individual ISP postcode tools. In Europe, consult your national telecom regulator's coverage map. For the most accurate, up-to-date answer, call providers directly with your full address — provisioning teams have access to live service databases that update faster than any public map. IntelReap's Network Route panel identifies your current ISP and ASN in real time so you always know exactly who is serving your active connection.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-6">
+              <span>What is the difference between ISP load balancing and failover?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-6">
+              <div class="ndic-faq-answer-inner">
+                Load balancing runs both ISP connections simultaneously and distributes outgoing sessions across them to increase total concurrent household bandwidth. Failover designates one ISP as primary and keeps the second as a hot standby that only activates automatically when the primary drops — detected by the router's continuous ping health monitoring. Load balancing optimises for throughput; failover optimises for uptime. Most quality dual-WAN routers let you run both simultaneously: load balanced when both ISPs are healthy, with automatic failover to the surviving connection when one goes down.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-7">
+              <span>Will two ISPs double my internet download speed?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-7">
+              <div class="ndic-faq-answer-inner">
+                Not for a single file download or stream. Load balancing increases total household concurrent throughput by routing multiple simultaneous sessions across both ISPs — so everyone in the house can collectively draw on both connections' bandwidth at once. But a single person downloading one file is still capped at the speed of the one ISP connection that particular session routes through. To genuinely combine both ISPs for a single session, you need connection bonding software such as Speedify, which operates at a different protocol level than standard dual-WAN routing.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-8">
+              <span>What does ISP mean in education, school, or an academic context?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-8">
+              <div class="ndic-faq-answer-inner">
+                In schools and educational institutions, ISP most commonly stands for Individual Support Plan — a personalised learning document that specifies a student's educational needs, accommodations, support strategies, and academic goals. It is used by teachers, learning support assistants, and parents. In any networking, IT, or computer science classroom, however, ISP means Internet Service Provider without exception.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 9 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-9">
+              <span>Which term correctly describes the function of an ISP?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-9">
+              <div class="ndic-faq-answer-inner">
+                Internet Service Provider correctly describes the function of an ISP. Its technical role is to operate a network with an assigned Autonomous System Number, use BGP to exchange routing information with upstream transit providers and peering partners, allocate IP address blocks to customers from its Regional Internet Registry allocation, and route all customer data packets to their destinations on the public internet — acting as the gateway between your local network and the global internet infrastructure.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 10 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-10">
+              <span>How do I check which ISP my connection is using right now?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-10">
+              <div class="ndic-faq-answer-inner">
+                Visit IntelReap and run a free scan. The Network Route panel displays your current ISP name, ASN, organisation, and BGP routing path in real time — no account, no login, no software installation required. If you have a dual-WAN setup, switch between your two WAN connections and run a fresh scan on each to confirm that a different ISP name and ASN appears for each connection, verifying genuine separation between providers.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 11 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-11">
+              <span>Does having two ISPs from the same parent company give genuine redundancy?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-11">
+              <div class="ndic-faq-answer-inner">
+                No — and this distinction matters critically. Two brands owned by the same parent company frequently share physical infrastructure, network operations centres, and backbone routing arrangements. A regional outage, major infrastructure fault, or NOC-level incident can bring both connections down simultaneously, nullifying any intended redundancy. True redundancy requires two ISPs with genuinely separate physical lines, separate ASNs, and different upstream transit providers. Use IntelReap's Network Route tool to check each connection's ASN — if both show the same ASN or the same registered organisation, your redundancy protection is not real.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 12 -->
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-ans-12">
+              <span>Can a mobile broadband SIM work as a second ISP for failover?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.75" d="M2 5l5 5 5-5"/>
+                </svg>
+              </span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-ans-12">
+              <div class="ndic-faq-answer-inner">
+                Yes — and it is one of the most cost-effective dual-ISP configurations for most households. A 4G or 5G mobile broadband connection uses completely separate physical infrastructure (cellular towers and mobile backhaul) from any fixed cable or fiber line, providing genuine path diversity. Most dual-WAN routers support a USB LTE modem or secondary ethernet port for a cellular connection. In failover-only mode, a modest SIM-based data plan with 50–100 Mbps peak speed is more than sufficient to maintain video calls, email, and essential browser activity while the primary fixed-line ISP recovers from an outage.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /ndic-faq-list -->
+      </div><!-- /ir-faq-outer -->
+    </section>
+
+    <!-- ══════════════ CONTACT FORM ══════════════ -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">
+            Have a Question About This Guide?
+          </h2>
+          <p class="ir-contact-sub">
+            Ask about dual-WAN configuration, ISP availability at your address,<br>
+            network routing, or anything covered above.
+          </p>
+        </div>
+        <div class="ir-form-wrap">
+          <form
+            name="Request And Contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onsubmit="handleContactForm(event)"
+            aria-label="Contact and request form"
+          >
+            <input type="hidden" name="form-name" value="Request And Contact">
+
+            <div class="ir-form-card">
+
+              <!-- Honeypot — do not remove -->
+              <p class="ir-honeypot" aria-hidden="true">
+                <label>
+                  Leave this blank:
+                  <input name="bot-field" tabindex="-1" autocomplete="off">
+                </label>
+              </p>
+
+              <div class="ir-field">
+                <label for="cf-name">Name</label>
+                <input class="ir-input"
+                       id="cf-name"
+                       name="name"
+                       type="text"
+                       placeholder="Your name"
+                       required
+                       autocomplete="name">
+              </div>
+
+              <div class="ir-field">
+                <label for="cf-email">Email Address</label>
+                <input class="ir-input"
+                       id="cf-email"
+                       name="email"
+                       type="email"
+                       placeholder="you@example.com"
+                       required
+                       autocomplete="email">
+              </div>
+
+              <div class="ir-field">
+                <label for="cf-message">Your Question or Message</label>
+                <textarea class="ir-input ir-textarea"
+                          id="cf-message"
+                          name="message"
+                          placeholder="What would you like to know about dual-ISP setup, ISP availability, or network routing?"
+                          required></textarea>
+              </div>
+
+              <button type="submit" class="ir-submit">
+                Send Message
+              </button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER — populated by legal-engine.js
+  ═══════════════════════════════════════════════════════════════════ -->
+  <footer id="ndic-footer"></footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TOAST CONTAINER
+  ═══════════════════════════════════════════════════════════════════ -->
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       GLOBAL SHARED SCRIPTS — deferred, in exact load order
+  ═══════════════════════════════════════════════════════════════════ -->
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PAGE-LEVEL INLINE SCRIPTS
+       All dynamic behaviours in one IIFE — zero global scope pollution
+  ═══════════════════════════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ── 1. FAQ ACCORDION ───────────────────────────────────────── */
+    document.querySelectorAll('.ndic-faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.ndic-faq-item');
+        var wasOpen = item.classList.contains('ndic-faq-item--open');
+
+        // Close every open item first
+        document.querySelectorAll('.ndic-faq-item--open').forEach(function (i) {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question')
+           .setAttribute('aria-expanded', 'false');
+        });
+
+        // Open the clicked item if it was previously closed
+        if (!wasOpen) {
+          item.classList.add('ndic-faq-item--open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ── 2. SCROLL PROGRESS BAR ─────────────────────────────────── */
+    var progressBar = document.getElementById('scroll-progress-bar');
+    if (progressBar) {
+      window.addEventListener('scroll', function () {
+        var scrolled   = window.scrollY || document.documentElement.scrollTop;
+        var totalHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var pct = totalHeight > 0 ? (scrolled / totalHeight) * 100 : 0;
+        progressBar.style.width = pct.toFixed(2) + '%';
+      }, { passive: true });
+    }
+
+    /* ── 3. DYNAMIC CURRENT YEAR ────────────────────────────────── */
+    var currentYear = new Date().getFullYear().toString();
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+      el.textContent = currentYear;
+    });
+
+    /* ── 4. DYNAMIC dateModified — nearest Monday ───────────────── */
+    (function () {
+      var now  = new Date();
+      var dow  = now.getDay(); // 0 = Sunday … 6 = Saturday
+      // Offset to get to the most recent Monday (or today if Monday)
+      var diff = dow === 0 ? -6 : 1 - dow;
+      var mon  = new Date(now.getFullYear(), now.getMonth(), now.getDate() + diff);
+      var iso  = mon.toISOString().split('T')[0];
+
+      document.querySelectorAll('script[type="application/ld+json"]')
+        .forEach(function (s) {
+          if (s.textContent.indexOf('"dateModified"') !== -1) {
+            s.textContent = s.textContent.replace(
+              /"dateModified"\s*:\s*"[^"]*"/g,
+              '"dateModified": "' + iso + '"'
+            );
+          }
+        });
+    }());
+
+    /* ── 5. FRESHNESS BADGE ─────────────────────────────────────── */
+    (function () {
+      var badge = document.getElementById('freshness-badge');
+      if (!badge) return;
+      var d   = new Date();
+      var mon = ['Jan','Feb','Mar','Apr','May','Jun',
+                 'Jul','Aug','Sep','Oct','Nov','Dec'];
+      var txt = 'Last updated ' + mon[d.getMonth()] + '\u00a0' +
+                d.getDate() + ',\u00a0' + d.getFullYear();
+      badge.textContent = txt;
+      badge.setAttribute('aria-label', txt);
+    }());
+
+    /* ── 6. SEASONAL BANNER + HERO LABEL ────────────────────────── */
+    (function () {
+      var m = new Date().getMonth(); // 0–11
+
+      var banners = [
+        '\u2744\ufe0f Winter Edition', // 0 Jan
+        '\u2744\ufe0f Winter Edition', // 1 Feb
+        '\ud83c\udf38 Spring Edition', // 2 Mar
+        '\ud83c\udf38 Spring Edition', // 3 Apr
+        '\ud83c\udf38 Spring Edition', // 4 May
+        '\u2600\ufe0f Summer Edition', // 5 Jun
+        '\u2600\ufe0f Summer Edition', // 6 Jul
+        '\u2600\ufe0f Summer Edition', // 7 Aug
+        '\ud83c\udf42 Fall Edition',   // 8 Sep
+        '\ud83c\udf42 Fall Edition',   // 9 Oct
+        '\ud83c\udf42 Fall Edition',   // 10 Nov
+        '\u2744\ufe0f Winter Edition'  // 11 Dec
+      ];
+      var labels = [
+        'Winter Guide','Winter Guide','Spring Guide',
+        'Spring Guide','Spring Guide','Summer Guide',
+        'Summer Guide','Summer Guide','Fall Guide',
+        'Fall Guide','Fall Guide','Winter Guide'
+      ];
+
+      var bannerEl = document.getElementById('seasonal-banner');
+      if (bannerEl) {
+        bannerEl.textContent = banners[m];
+        bannerEl.setAttribute('style', [
+          'text-align:center',
+          'padding:0.375rem 1rem',
+          'font-size:0.8125rem',
+          'font-family:"Be Vietnam Pro",sans-serif',
+          'letter-spacing:0.03em',
+          'opacity:0.7'
+        ].join(';'));
+      }
+
+      var labelEl = document.getElementById('seasonal-label');
+      if (labelEl) labelEl.textContent = labels[m];
+    }());
+
+    /* ── 7. CTA BUTTON TEXT ROTATION ────────────────────────────── */
+    (function () {
+      var variants = [
+        'Check My Network Route',
+        'Reveal My ISP Details',
+        'Run Network Scan Now',
+        'Inspect My Connection',
+        'See My Network Intelligence',
+        'Analyse My Routing Path'
+      ];
+      var idx = Math.floor(Math.random() * variants.length);
+      document.querySelectorAll('.cta-rotate').forEach(function (el) {
+        el.textContent = variants[idx];
+      });
+    }());
+
+    /* ── 8. NETLIFY CONTACT FORM HANDLER ────────────────────────── */
+    /* DO NOT MODIFY THIS FUNCTION */
+    window.handleContactForm = function handleContactForm(e) {
+      e.preventDefault();
+
+      var myForm   = e.target;
+      var formData = new FormData(myForm);
+
+      fetch('/', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body:    new URLSearchParams(formData).toString()
+      })
+      .then(function () {
+        alert('Thank you! Your request has been transmitted.');
+        myForm.reset();
+      })
+      .catch(function (error) {
+        alert('Oops! There was a problem submitting your form.');
+        console.error('Form submission error:', error);
+      });
+    };
+
+    /* ── 9. SHARE PILLS — 15 PLATFORMS + COPY LINK ──────────────── */
+    (function () {
+      var rawUrl   = window.location.href;
+      var encUrl   = encodeURIComponent(rawUrl);
+      var encTitle = encodeURIComponent(document.title);
+
+      var platforms = [
+        { n: 'WhatsApp',  u: 'https://api.whatsapp.com/send?text=' + encTitle + '%20' + encUrl },
+        { n: 'Facebook',  u: 'https://www.facebook.com/sharer/sharer.php?u=' + encUrl },
+        { n: 'Twitter/X', u: 'https://twitter.com/intent/tweet?text=' + encTitle + '&url=' + encUrl },
+        { n: 'LinkedIn',  u: 'https://www.linkedin.com/sharing/share-offsite/?url=' + encUrl },
+        { n: 'Reddit',    u: 'https://www.reddit.com/submit?url=' + encUrl + '&title=' + encTitle },
+        { n: 'Quora',     u: 'https://www.quora.com/search?q=' + encTitle },
+        { n: 'Medium',    u: 'https://medium.com/new-story?url=' + encUrl },
+        { n: 'Telegram',  u: 'https://t.me/share/url?url=' + encUrl + '&text=' + encTitle },
+        { n: 'Pinterest', u: 'https://pinterest.com/pin/create/button/?url=' + encUrl + '&description=' + encTitle },
+        { n: 'Discord',   u: 'https://discord.com/channels/@me' },
+        { n: 'Snapchat',  u: 'https://www.snapchat.com/share?url=' + encUrl },
+        { n: 'Vimeo',     u: 'https://vimeo.com' },
+        { n: 'TikTok',    u: 'https://www.tiktok.com' },
+        { n: 'Instagram', u: 'https://www.instagram.com' },
+        { n: 'Email',     u: 'mailto:?subject=' + encTitle + '&body=I%20thought%20you%20might%20find%20this%20useful%3A%20' + encUrl },
+        { n: 'Copy Link', u: null }
+      ];
+
+      var container = document.getElementById('share-pills-container');
+      if (!container) return;
+
+      platforms.forEach(function (p) {
+        var el;
+
+        if (p.u === null) {
+          /* ── Copy Link button ── */
+          el       = document.createElement('button');
+          el.type  = 'button';
+          el.className    = 'ir-share-pill';
+          el.textContent  = 'Copy Link';
+          el.setAttribute('aria-label', 'Copy page URL to clipboard');
+
+          el.addEventListener('click', function () {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(rawUrl).then(function () {
+                el.textContent = '\u2713 Copied!';
+                setTimeout(function () { el.textContent = 'Copy Link'; }, 2400);
+                showToast('Link copied to clipboard');
+              }).catch(function () { legacyCopy(rawUrl, el); });
+            } else {
+              legacyCopy(rawUrl, el);
+            }
+          });
+
+        } else {
+          /* ── External share link ── */
+          el          = document.createElement('a');
+          el.href     = p.u;
+          el.target   = '_blank';
+          el.rel      = 'noopener noreferrer';
+          el.className    = 'ir-share-pill';
+          el.textContent  = p.n;
+          el.setAttribute('aria-label', 'Share on ' + p.n);
+        }
+
+        container.appendChild(el);
+      });
+    }());
+
+    /* ── Legacy clipboard fallback ─────────────────────────────── */
+    function legacyCopy(text, btn) {
+      var ta       = document.createElement('textarea');
+      ta.value     = text;
+      ta.setAttribute('style',
+        'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none');
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy');
+        if (btn) {
+          btn.textContent = '\u2713 Copied!';
+          setTimeout(function () { btn.textContent = 'Copy Link'; }, 2400);
+        }
+        showToast('Link copied to clipboard');
+      } catch (err) {
+        showToast('Copy failed — please select and copy the URL manually');
+      }
+      document.body.removeChild(ta);
+    }
+
+    /* ── Toast notification ─────────────────────────────────────── */
+    function showToast(msg) {
+      var tc = document.getElementById('toast-container');
+      if (!tc) return;
+
+      var t = document.createElement('div');
+      t.textContent = msg;
+      t.setAttribute('style', [
+        'display:inline-block',
+        'background:#059669',
+        'color:#fff',
+        'font-family:"Be Vietnam Pro",sans-serif',
+        'font-size:0.875rem',
+        'font-weight:500',
+        'padding:0.625rem 1.125rem',
+        'border-radius:0.5rem',
+        'box-shadow:0 4px 18px rgba(0,0,0,0.14)',
+        'margin-bottom:0.5rem',
+        'opacity:0',
+        'transition:opacity 0.25s ease',
+        'pointer-events:none'
+      ].join(';'));
+
+      tc.appendChild(t);
+
+      /* Fade in */
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { t.style.opacity = '1'; });
+      });
+
+      /* Fade out + remove */
+      setTimeout(function () {
+        t.style.opacity = '0';
+        setTimeout(function () {
+          if (t.parentNode) t.parentNode.removeChild(t);
+        }, 350);
+      }, 2700);
+    }
+
+  }());
+  </script>
+
+</body>
+</html>
