@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Directory | IntelReap</title>
+    <meta name="description" content="IntelReap Intelligence core directory routing hub. Secure automated redirection protocols active.">
+    <link rel="canonical" href="https://intelreap.com/intelligence/">
+    <meta property="og:title" content="Intelligence Directory | IntelReap">
+    <meta property="og:url" content="https://intelreap.com/intelligence/">
+    <meta property="og:type" content="website">
+    <meta http-equiv="refresh" content="3; url=/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #0a0f1a;
+            color: #e2e8f0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+        }
+        .progress-bar {
+            animation: shrink 3s linear forwards;
+        }
+        @keyframes shrink {
+            from { width: 100%; }
+            to { width: 0%; }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="glass max-w-xl w-full p-10 rounded-2xl shadow-2xl text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 h-[2px] bg-emerald-500 progress-bar"></div>
+        
+        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">Directory Routing Protocol</h2>
+        <h1 class="text-3xl font-light mb-4 text-white">IntelReap Core Hub</h1>
+        
+        <p class="text-slate-400 mb-8 text-sm leading-relaxed">
+            You have accessed the base intelligence directory path. Re-routing your terminal connection to the centralized engine index for active parameters.
+        </p>
+        
+        <div class="inline-flex items-center space-x-2 bg-slate-900/80 border border-slate-800 px-4 py-2 rounded-lg mb-8">
+            <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <p class="text-xs font-mono text-slate-300">
+                Redirecting in <span id="countdown" class="text-emerald-400 font-bold">3</span>s...
+            </p>
+        </div>
+
+        <div class="border-t border-slate-800/60 pt-6">
+            <a href="/" class="text-xs uppercase tracking-widest text-slate-500 hover:text-emerald-400 transition-colors">
+                Bypass Delay & Jump Immediately →
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let seconds = 3;
+        const countdownEl = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            seconds--;
+            if (countdownEl) {
+                countdownEl.innerText = seconds;
+            }
+            if (seconds <= 0) {
+                clearInterval(interval);
+                window.location.href = '/';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
