@@ -10,7 +10,9 @@ const NDIC_CONFIG = {
     ipIdentity:         '/api/ip-identity',
     ipDeep:             '/api/ip-deep',
     proxyIntelligence:  '/api/proxy-intelligence',
-    aiSummary:          '/api/ai-summary'
+    aiSummary:          '/api/ai-summary',
+    headersEcho:        '/api/headers-echo',
+    ipv6Check:          '/api/ipv6-check'
   },
 
   // Scan intervals in milliseconds
@@ -127,7 +129,8 @@ const NDIC_CONFIG = {
     canvas9:  '/intelligence/performance',
     canvas10: '/intelligence/rendering-speed',
     canvas11: '/intelligence/scoreboard',
-    canvas12: '/intelligence/live-feed'
+    canvas12: '/intelligence/live-feed',
+    canvas13: '/intelligence/fingerprinting'
   },
 
   // Deep dive link text per canvas
@@ -143,7 +146,8 @@ const NDIC_CONFIG = {
     canvas9:  'Deep dive into your performance analysis',
     canvas10: 'Deep dive into your rendering speed analysis',
     canvas11: 'Deep dive into your global score analysis',
-    canvas12: 'Deep dive into your live intelligence feed'
+    canvas12: 'Deep dive into your live intelligence feed',
+    canvas13: 'Deep dive into your fingerprint and leak exposure analysis'
   },
 
   // Canvas headings
@@ -195,6 +199,10 @@ const NDIC_CONFIG = {
     canvas12: {
       technical: 'Live Intelligence Feed',
       plain:     'What Just Happened?'
+    },
+    canvas13: {
+      technical: 'Advanced Fingerprint & Leak Detection',
+      plain:     'How Easily Can You Be Tracked?'
     }
   },
 
