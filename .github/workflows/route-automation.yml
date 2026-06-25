@@ -1,0 +1,63 @@
+name: Dynamic Route Automation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.html'
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate-and-generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Inspect Git Tree for Added Files
+        id: filter-additions
+        run: |
+          echo "Evaluating commit diff maps..."
+          
+          # Safely handle fresh branch initial baselines versus ongoing standard pushes
+          if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            DIFF_MAP=$(git diff-tree --no-commit-id --name-status -r HEAD)
+          else
+            DIFF_MAP=$(git diff --name-status ${{ github.event.before }} ${{ github.sha }})
+          fi
+          
+          # Strictly isolate files with status 'A' (Added) matching the .html pattern
+          NEW_HTML_FILES=$(echo "$DIFF_MAP" | grep -E '^A.*\.html$' || true)
+          
+          if [ -z "$NEW_HTML_FILES" ]; then
+            echo "Pipeline Condition Met: Content changes detected, but no newly created HTML files introduced."
+            echo "execute_step=false" >> $GITHUB_OUTPUT
+          else
+            echo "Confirmed new HTML entry points introduced into repo:"
+            echo "$NEW_HTML_FILES"
+            echo "execute_step=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Setup Node.js Runtime
+        if: steps:filter-additions.outputs.execute_step == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Execute Route Generation
+        if: steps:filter-additions.outputs.execute_step == 'true'
+        run: node scripts/generate-routes.js
+
+      - name: Write Assets and Push to Origin
+        if: steps:filter-additions.outputs.execute_step == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: patch automated sitemap.xml and pages.json [skip ci]"
+          file_pattern: "sitemap.xml pages.json"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
