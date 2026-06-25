@@ -328,12 +328,176 @@ const LeafletMapViz = (() => {
 
   const isReady = () => initialized
 
+  // ───────────────────────────────────────
+  // DUAL-PIN MAP — CANVAS 13
+  // Shows GPS-reported location alongside
+  // IP-reported location on one map, with
+  // a connecting line when they differ.
+  // Entirely independent state from the
+  // single-pin map above, since they live
+  // in different containers and can both
+  // be on screen at once.
+  // ───────────────────────────────────────
+
+  let dualMap = null
+  let dualMapInitialized = false
+
+  const createGpsIcon = () => {
+    if (typeof L === 'undefined') return null
+
+    return L.divIcon({
+      className: 'ndic-map-marker ndic-map-marker--gps',
+      html: `
+        <div class="ndic-marker-outer ndic-marker-outer--gps">
+          <div class="ndic-marker-inner">
+            <div class="ndic-marker-dot"></div>
+          </div>
+          <div class="ndic-marker-pulse"></div>
+        </div>
+      `,
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
+      popupAnchor: [0, -25]
+    })
+  }
+
+  const initDualPinMap = (
+    gpsLat, gpsLng, ipLat, ipLng
+  ) => {
+    if (typeof L === 'undefined') {
+      logError('Leaflet library not loaded')
+      return
+    }
+
+    const mapContainer = el('canvas13-dual-map')
+    if (!mapContainer) {
+      logError(
+        'Dual map container canvas13-dual-map not found'
+      )
+      return
+    }
+
+    if (!gpsLat || !gpsLng) {
+      // Nothing meaningful to show without a
+      // real GPS reading
+      return
+    }
+
+    try {
+      if (dualMap) {
+        dualMap.remove()
+        dualMap = null
+        dualMapInitialized = false
+      }
+
+      const hasIpPoint =
+        ipLat !== null && ipLat !== undefined &&
+        ipLng !== null && ipLng !== undefined
+
+      const points = hasIpPoint
+        ? [[gpsLat, gpsLng], [ipLat, ipLng]]
+        : [[gpsLat, gpsLng]]
+
+      dualMap = L.map('canvas13-dual-map', {
+        zoomControl: true,
+        scrollWheelZoom: false,
+        attributionControl: true,
+        dragging: true,
+        tap: true
+      })
+
+      let tileLayerAdded = false
+      for (const provider of TILE_PROVIDERS) {
+        try {
+          L.tileLayer(provider.url, {
+            attribution: provider.attribution,
+            subdomains: provider.subdomains,
+            maxZoom: provider.maxZoom
+          }).addTo(dualMap)
+          tileLayerAdded = true
+          break
+        } catch {
+          // Try next provider
+        }
+      }
+
+      if (!tileLayerAdded) {
+        logError('All map tile providers failed')
+      }
+
+      // GPS pin
+      const gpsIcon = createGpsIcon()
+      const gpsMarker = gpsIcon
+        ? L.marker([gpsLat, gpsLng], { icon: gpsIcon })
+        : L.marker([gpsLat, gpsLng])
+      gpsMarker
+        .addTo(dualMap)
+        .bindPopup(
+          '<div class="ndic-map-popup">' +
+          '<div class="ndic-popup-header">' +
+          '<span class="ndic-popup-ip">GPS Location</span>' +
+          '</div>' +
+          `<div class="ndic-popup-location">${gpsLat.toFixed(4)}, ${gpsLng.toFixed(4)}</div>` +
+          '</div>',
+          { className: 'ndic-leaflet-popup', maxWidth: 200 }
+        )
+
+      // IP pin, if we have one to compare against
+      if (hasIpPoint) {
+        const ipIcon = createCustomIcon()
+        const ipMarker = ipIcon
+          ? L.marker([ipLat, ipLng], { icon: ipIcon })
+          : L.marker([ipLat, ipLng])
+        ipMarker
+          .addTo(dualMap)
+          .bindPopup(
+            '<div class="ndic-map-popup">' +
+            '<div class="ndic-popup-header">' +
+            '<span class="ndic-popup-ip">IP Location</span>' +
+            '</div>' +
+            `<div class="ndic-popup-location">${ipLat.toFixed(4)}, ${ipLng.toFixed(4)}</div>` +
+            '</div>',
+            { className: 'ndic-leaflet-popup', maxWidth: 200 }
+          )
+
+        // Connecting line between the two points
+        L.polyline(points, {
+          color: 'var(--color-warning)',
+          weight: 2,
+          dashArray: '6, 6',
+          opacity: 0.7
+        }).addTo(dualMap)
+
+        dualMap.fitBounds(points, {
+          padding: [30, 30],
+          maxZoom: 12
+        })
+      } else {
+        dualMap.setView([gpsLat, gpsLng], 11)
+      }
+
+      dualMapInitialized = true
+
+      logSystem(
+        'INFO',
+        'Dual-pin fingerprint map initialized'
+      )
+
+    } catch (error) {
+      logError(
+        'Dual-pin map initialization failed: ' +
+        error.message
+      )
+    }
+  }
+
   return {
     initialize,
     update,
     resize,
     destroy,
-    isReady
+    isReady,
+    initDualPinMap
   }
 
 })()
