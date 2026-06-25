@@ -61,6 +61,7 @@ const CoreEngine = (() => {
       ProxyEngine:       typeof ProxyEngine !== 'undefined' ? ProxyEngine : undefined,
       ScoringEngine:     typeof ScoringEngine !== 'undefined' ? ScoringEngine : undefined,
       AISummaryEngine:   typeof AISummaryEngine !== 'undefined' ? AISummaryEngine : undefined,
+      FingerprintEngine: typeof FingerprintEngine !== 'undefined' ? FingerprintEngine : undefined,
       MonitoringEngine:  typeof MonitoringEngine !== 'undefined' ? MonitoringEngine : undefined
     }
 
@@ -141,6 +142,19 @@ const CoreEngine = (() => {
       // Network monitoring
       NetworkEngine.collect().then(() => {
         MonitoringEngine.onEngineComplete('network')
+      }),
+
+      // Fingerprint and leak detection
+      // NOTE: this engine bundles 2 backend
+      // calls (headers echo, IPv6 check)
+      // alongside its instant client-only
+      // checks, so it can take slightly
+      // longer than its Phase 1 siblings —
+      // does not block them individually,
+      // only delays the "Phase 1 complete"
+      // log until it finishes too
+      FingerprintEngine.collect().then(() => {
+        MonitoringEngine.onEngineComplete('fingerprinting')
       })
     ])
 
@@ -307,7 +321,8 @@ const CoreEngine = (() => {
     const canvasRenderers = {
       Canvas1, Canvas2, Canvas3, Canvas4,
       Canvas5, Canvas6, Canvas7, Canvas8,
-      Canvas9, Canvas10, Canvas11, Canvas12
+      Canvas9, Canvas10, Canvas11, Canvas12,
+      Canvas13
     }
 
     Object.entries(canvasRenderers).forEach(
