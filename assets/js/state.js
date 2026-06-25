@@ -282,6 +282,78 @@ const STATE = {
     source: null
   },
 
+  fingerprinting: {
+    // Audio fingerprint
+    audioSupported: null,
+    audioHash: null,
+    audioSampleRate: null,
+    audioEntropyScore: null,
+    audioHardwareVariance: null,
+    // Canvas fingerprint
+    canvasSupported: null,
+    canvasHash: null,
+    canvasAnomalyDetected: null,
+    // Font fingerprint
+    fontCount: null,
+    fontTotalChecked: null,
+    fontUniquenessScore: null,
+    fontDetectionMethod: null,
+    fontsDetected: [],
+    // ClientRects fingerprint
+    clientRectsSupported: null,
+    clientRectsHash: null,
+    clientRectsVariance: null,
+    // Bot and automation
+    webdriverDetected: null,
+    botSignals: [],
+    botConfidence: null,
+    // Incognito detection
+    incognitoDetected: null,
+    incognitoQuotaMB: null,
+    incognitoMethod: null,
+    // Ad blocker
+    adBlockerDetected: null,
+    adBlockerMethod: null,
+    // HTTP headers
+    acceptLanguageHeader: null,
+    acceptEncodingHeader: null,
+    totalHeadersSent: null,
+    fullHeaders: null,
+    // IPv6 leak test
+    ipv6Connectivity: null,
+    ipv6LeakDetected: null,
+    ipv6Source: null,
+    // Geolocation
+    geoPermission: null,
+    geoLatitude: null,
+    geoLongitude: null,
+    geoAccuracy: null,
+    geoIpMatch: null,
+    // CSS media query detection
+    mediaQueriesTested: null,
+    mediaQueriesMatched: null,
+    displayMode: null,
+    colorSchemePreference: null,
+    reducedMotionPreference: null,
+    // Extension detection
+    extensionCount: null,
+    extensionNames: [],
+    extensionDetectionMethod: null,
+    // Speech synthesis
+    voiceCount: null,
+    voiceListHash: null,
+    defaultVoice: null,
+    // Media devices
+    mediaAudioInputs: null,
+    mediaAudioOutputs: null,
+    mediaVideoInputs: null,
+    // Math engine fingerprint
+    mathEngineHash: null,
+    mathEngineConsistent: null,
+    // Composite score
+    uniquenessScore: null
+  },
+
   meta: {
     scanStartTime: null,
     lastFullScan: null,
@@ -303,7 +375,8 @@ const STATE = {
       network: false,
       ip: false,
       proxy: false,
-      scoring: false
+      scoring: false,
+      fingerprinting: false
     }
   }
 }
@@ -352,6 +425,9 @@ const updatePerformance = (data) =>
 
 const updateSpeed = (data) =>
   updateState('speed', data)
+
+const updateFingerprinting = (data) =>
+  updateState('fingerprinting', data)
 
 const updateScores = (data) =>
   updateState('scores', data)
