@@ -1924,6 +1924,16 @@ select {
               background-color var(--transition-base);
 }
 
+/* Canvas 13 — fingerprint uniqueness gauge,
+   identical track styling, own bar ID */
+#c13-uniqueness-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: var(--radius-pill);
+  transition: width 600ms ease,
+              background-color var(--transition-base);
+}
+
 
 /* ─────────────────────────────────────────
    23. VISUALIZATION CONTAINERS
@@ -1945,6 +1955,16 @@ select {
   overflow: hidden;
   z-index: 1;
 }
+
+#canvas13-dual-map {
+  width: 100%;
+  height: 220px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  z-index: 1;
+  margin-block-end: var(--space-4);
+}
+
 
 /* Chart containers */
 #canvas3-latency-chart,
@@ -2088,6 +2108,17 @@ select {
   border: 1.5px solid var(--color-accent-primary);
   animation: ndic-marker-pulse 2s ease-out infinite;
   z-index: 1;
+}
+
+/* GPS pin variant — orange instead of cyan,
+   so it's visually distinct from the IP pin
+   when both appear on the same map */
+.ndic-marker-outer--gps .ndic-marker-dot {
+  background: var(--color-accent-tertiary);
+}
+
+.ndic-marker-outer--gps .ndic-marker-pulse {
+  border-color: var(--color-accent-tertiary);
 }
 
 /* Leaflet popup override */
