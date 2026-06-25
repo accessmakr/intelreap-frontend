@@ -29,7 +29,6 @@
   <meta property="og:url" content="https://intelreap.com">
   <meta property="og:site_name" content="IntelReap">
   <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
-  <meta property="og:image:alt" content="IntelReap Network and Device Intelligence Center dashboard">
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -37,6 +36,9 @@
   <meta name="twitter:description" content="Instantly reveal your network infrastructure, device fingerprint, and security posture in real time. Free. No login.">
   <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
   <meta name="twitter:site" content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="ICBM" content="51.5074, -0.1278">
 
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#00b4d8">
@@ -87,7 +89,7 @@
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://intelreap.com/?q={search_term_string}"
+            "urlTemplate": "https://intelreap.com/index.html?q={search_term_string}"
           },
           "query-input": "required name=search_term_string"
         }
@@ -114,7 +116,7 @@
           "GPU and graphics tier detection",
           "Global environment score"
         ],
-        "dateModified": "2026-06-22",
+        "dateModified": "2025-06-09",
         "inLanguage": "en-US"
       },
       {
@@ -419,6 +421,97 @@
                 <p class="ndic-ai-summary-text" id="canvas3-ai-summary">Analyzing your VPN and routing status...</p>
               </div>
               <a href="#" class="ndic-deep-dive-link" id="c3-deep-dive-link">Deep dive into your VPN and routing analysis</a>
+            </div>
+          </div>
+
+          <!-- ═══ CANVAS 13 — ADVANCED FINGERPRINT & LEAK DETECTION ═══ -->
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-13">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Advanced Fingerprint &amp; Leak Detection</span>
+                <span class="ndic-canvas-subheading">How Easily Can You Be Tracked?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c13-uniqueness-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <div id="canvas13-dual-map" class="ndic-map-wrapper"></div>
+              <div class="ndic-risk-bar-track">
+                <div id="c13-uniqueness-bar"></div>
+              </div>
+            </div>
+            <div class="ndic-canvas-params">
+
+              <div class="ndic-params-section-header">Fingerprinting Surface</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Fingerprint Support</span><span class="ndic-param-value" id="c13-audio-supported">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Fingerprint Hash</span><span class="ndic-param-value" id="c13-audio-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Sample Rate</span><span class="ndic-param-value" id="c13-audio-sample-rate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Entropy Score</span><span class="ndic-param-value" id="c13-audio-entropy-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Hardware Variance</span><span class="ndic-param-value" id="c13-audio-hardware-variance">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Canvas Fingerprint Support</span><span class="ndic-param-value" id="c13-canvas-supported">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Canvas Fingerprint Hash</span><span class="ndic-param-value" id="c13-canvas-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Canvas Rendering Anomaly</span><span class="ndic-param-value" id="c13-canvas-anomaly">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Fonts Detected</span><span class="ndic-param-value" id="c13-font-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Font Uniqueness Score</span><span class="ndic-param-value" id="c13-font-uniqueness">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Font Detection Method</span><span class="ndic-param-value" id="c13-font-method">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Notable Fonts Found</span><span class="ndic-param-value" id="c13-font-notable">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ClientRects Support</span><span class="ndic-param-value" id="c13-clientrects-supported">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ClientRects Hash</span><span class="ndic-param-value" id="c13-clientrects-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Sub-Pixel Rendering Variance</span><span class="ndic-param-value" id="c13-clientrects-variance">—</span></div>
+
+              <div class="ndic-params-section-header">Bot &amp; Automation</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Webdriver Detected</span><span class="ndic-param-value" id="c13-webdriver-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Automation Signals</span><span class="ndic-param-value" id="c13-bot-signals">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Bot Detection Confidence</span><span class="ndic-param-value" id="c13-bot-confidence">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Private Browsing Detected</span><span class="ndic-param-value" id="c13-incognito-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Storage Quota</span><span class="ndic-param-value" id="c13-incognito-quota">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Incognito Detection Method</span><span class="ndic-param-value" id="c13-incognito-method">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Ad Blocker Detected</span><span class="ndic-param-value" id="c13-adblock-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Ad Blocker Detection Method</span><span class="ndic-param-value" id="c13-adblock-method">—</span></div>
+
+              <div class="ndic-params-section-header">Leak &amp; Network Signals</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Accept-Language Header</span><span class="ndic-param-value" id="c13-accept-language">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Accept-Encoding Header</span><span class="ndic-param-value" id="c13-accept-encoding">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Total Headers Sent</span><span class="ndic-param-value" id="c13-total-headers">—</span></div>
+              <div id="c13-header-table"></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IPv6 Connectivity</span><span class="ndic-param-value" id="c13-ipv6-connectivity">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IPv6 Leak Detected</span><span class="ndic-param-value" id="c13-ipv6-leak">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IPv6 Detection Source</span><span class="ndic-param-value" id="c13-ipv6-source">—</span></div>
+
+              <div class="ndic-params-section-header">Geolocation</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Geolocation Permission</span><span class="ndic-param-value" id="c13-geo-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPS Latitude</span><span class="ndic-param-value" id="c13-geo-latitude">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPS Longitude</span><span class="ndic-param-value" id="c13-geo-longitude">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPS Accuracy Radius</span><span class="ndic-param-value" id="c13-geo-accuracy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPS vs IP Location Match</span><span class="ndic-param-value" id="c13-geo-ip-match">—</span></div>
+
+              <div class="ndic-params-section-header">Environment Signals</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Media Queries Tested</span><span class="ndic-param-value" id="c13-media-queries-tested">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Media Queries Matched</span><span class="ndic-param-value" id="c13-media-queries-matched">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Display Mode</span><span class="ndic-param-value" id="c13-display-mode">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Color Scheme Preference</span><span class="ndic-param-value" id="c13-color-scheme">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Reduced Motion Preference</span><span class="ndic-param-value" id="c13-reduced-motion">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Extensions Detected</span><span class="ndic-param-value" id="c13-extension-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Detected Extension Names</span><span class="ndic-param-value" id="c13-extension-names">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Extension Detection Method</span><span class="ndic-param-value" id="c13-extension-method">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Speech Synthesis Voice Count</span><span class="ndic-param-value" id="c13-voice-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Voice List Hash</span><span class="ndic-param-value" id="c13-voice-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Default Voice</span><span class="ndic-param-value" id="c13-default-voice">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Input Devices</span><span class="ndic-param-value" id="c13-media-audio-inputs">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Output Devices</span><span class="ndic-param-value" id="c13-media-audio-outputs">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Video Input Devices</span><span class="ndic-param-value" id="c13-media-video-inputs">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Math Engine Hash</span><span class="ndic-param-value" id="c13-math-engine-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Math Engine Consistency</span><span class="ndic-param-value" id="c13-math-engine-consistent">—</span></div>
+
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas13-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas13-ai-summary">Analyzing your fingerprint and leak exposure...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c13-deep-dive-link">Deep dive into your fingerprint and leak exposure analysis</a>
             </div>
           </div>
 
@@ -1027,6 +1120,7 @@
   <script defer src="./assets/js/engines/scoring.js"></script>
   <script defer src="./assets/js/engines/ai-summary.js"></script>
   <script defer src="./assets/js/engines/monitoring.js"></script>
+  <script defer src="./assets/js/engines/fingerprint.js"></script>
 
   <!-- ═══════════ NDIC VISUALIZATION WRAPPERS ═══════════ -->
   <script defer src="./assets/js/visualizations/leaflet-map.js"></script>
@@ -1046,6 +1140,7 @@
   <script defer src="./assets/js/canvases/canvas-10.js"></script>
   <script defer src="./assets/js/canvases/canvas-11.js"></script>
   <script defer src="./assets/js/canvases/canvas-12.js"></script>
+  <script defer src="./assets/js/canvases/canvas-13.js"></script>
 
   <!-- ═══════════ NDIC ORCHESTRATOR — loads last, calls all engines + canvases above ═══════════ -->
   <script defer src="./assets/js/engines/core.js"></script>
