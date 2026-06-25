@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ndic_theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Why Does My Internet Speed Fluctuate? Causes & Fixes — IntelReap</title>
+  <meta name="description" content="Internet speed fluctuates due to congestion, modem age, router limits, Wi-Fi interference, or ISP throttling. Diagnose the exact cause and fix it with this complete 2026 guide.">
+  <meta name="keywords" content="why does my internet speed fluctuate so much, why does my internet speed fluctuate, does modem affect internet speed, can a router affect internet speed, do wifi boosters increase internet speed, how to increase upload speed 5g internet, does a router boost internet speed, can modem affect internet speed, internet speed unstable, fix internet speed fluctuation">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/learn/why-does-my-internet-speed-fluctuate">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/learn/why-does-my-internet-speed-fluctuate">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/why-does-my-internet-speed-fluctuate">
+
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="Why Does My Internet Speed Fluctuate? Causes & Fixes — IntelReap">
+  <meta property="og:description"  content="Speed fluctuation is caused by congestion, modem limits, router age, Wi-Fi interference, or ISP throttling. Find the exact cause and fix it — complete 2026 diagnostic guide.">
+  <meta property="og:url"          content="https://intelreap.com/learn/why-does-my-internet-speed-fluctuate">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Why Does My Internet Speed Fluctuate? — IntelReap">
+  <meta name="twitter:description" content="Congestion, modem age, router limits, Wi-Fi interference, ISP throttling — find the exact cause and fix your fluctuating internet speed.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+
+  <meta name="geo.region"   content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM"         content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color"                         content="#0ea5e9">
+  <meta name="mobile-web-app-capable"              content="yes">
+  <meta name="apple-mobile-web-app-capable"        content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title"          content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#0ea5e9">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <style>
+
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--color-accent, #0ea5e9), #06b6d4);
+      z-index: 9999;
+      transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    .ir-breadcrumb {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.75rem;
+      color: var(--color-text-tertiary, #475569);
+    }
+    .ir-breadcrumb a { color: var(--color-accent, #0ea5e9); text-decoration: none; }
+    .ir-breadcrumb a:hover { text-decoration: underline; }
+    .ir-breadcrumb-sep { opacity: 0.4; }
+    .ir-breadcrumb-current { color: var(--color-text-secondary, #94a3b8); font-weight: 500; }
+
+    .ir-article {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .ir-article h2 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0);
+      margin: 2.75rem 0 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      line-height: 1.35;
+      scroll-margin-top: 5rem;
+    }
+    .ir-article h3 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 0.975rem;
+      font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0);
+      margin: 1.75rem 0 0.6rem;
+      line-height: 1.4;
+    }
+    .ir-article p {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: var(--color-text-secondary, #94a3b8);
+      margin-bottom: 1rem;
+    }
+    .ir-article ul,
+    .ir-article ol {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary, #94a3b8);
+      margin: 0.5rem 0 1.25rem 1.25rem;
+    }
+    .ir-article li { margin-bottom: 0.4rem; padding-left: 0.25rem; }
+    .ir-article li::marker { color: var(--color-accent, #0ea5e9); }
+    .ir-article strong { font-weight: 600; color: var(--color-text-primary, #e2e8f0); }
+    .ir-article em { font-style: italic; }
+    .ir-article a { color: var(--color-accent, #0ea5e9); text-decoration: underline; text-underline-offset: 2px; }
+    .ir-article a:hover { opacity: 0.8; }
+
+    .section-num {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem;
+      color: var(--color-accent, #0ea5e9);
+      font-weight: 500;
+      background: rgba(14,165,233,0.1);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .ir-callout {
+      background: rgba(14,165,233,0.05);
+      border: 1px solid rgba(14,165,233,0.15);
+      border-left: 3px solid var(--color-accent, #0ea5e9);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .ir-callout p { margin-bottom: 0; color: var(--color-text-primary, #e2e8f0) !important; font-weight: 500; }
+
+    .ir-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1.25rem 0 2rem;
+      border-radius: 6px;
+      border: 1px solid var(--color-border, rgba(255,255,255,0.07));
+      -webkit-overflow-scrolling: touch;
+    }
+    .ir-table {
+      width: 100%;
+      min-width: 500px;
+      border-collapse: collapse;
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.875rem;
+    }
+    .ir-table caption {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.75rem;
+      color: var(--color-text-tertiary, #475569);
+      text-align: left;
+      padding: 0.5rem 1rem 0;
+      caption-side: top;
+    }
+    .ir-table th {
+      background: rgba(255,255,255,0.04);
+      color: var(--color-text-primary, #e2e8f0);
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.07));
+      white-space: nowrap;
+    }
+    .ir-table td {
+      padding: 0.75rem 1rem;
+      color: var(--color-text-secondary, #94a3b8);
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      vertical-align: middle;
+      line-height: 1.55;
+    }
+    .ir-table tr:last-child td { border-bottom: none; }
+    .ir-check   { color: #34d399; font-weight: 600; }
+    .ir-cross   { color: #f87171; }
+    .ir-neutral { color: var(--color-text-tertiary, #475569); }
+
+    .ir-steps { list-style: none; margin: 0.5rem 0 1.75rem; padding: 0; }
+    .ir-step { display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .ir-step-num {
+      flex-shrink: 0;
+      width: 1.875rem; height: 1.875rem;
+      border-radius: 50%;
+      background: var(--color-accent, #0ea5e9);
+      color: #fff;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-weight: 700; font-size: 0.75rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 0.1rem;
+    }
+    .ir-step-body {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.9rem; line-height: 1.8;
+      color: var(--color-text-secondary, #94a3b8);
+    }
+    .ir-step-body strong {
+      font-weight: 600; display: block;
+      color: var(--color-text-primary, #e2e8f0);
+      margin-bottom: 0.2rem;
+    }
+
+    .ir-cta-block {
+      background: rgba(14,165,233,0.05);
+      border: 1px solid rgba(14,165,233,0.15);
+      border-radius: 8px;
+      padding: 1.875rem 1.75rem;
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    .ir-cta-eyebrow {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-accent, #0ea5e9);
+      margin-bottom: 0.625rem; display: block;
+    }
+    .ir-cta-block h3 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0);
+      margin: 0 0 0.5rem; line-height: 1.3;
+    }
+    .ir-cta-block > p {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.875rem; line-height: 1.7;
+      color: var(--color-text-secondary, #94a3b8);
+      margin: 0 0 1.375rem;
+      max-width: 520px; margin-left: auto; margin-right: auto;
+    }
+
+    .ir-logic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+    @media (max-width: 560px) { .ir-logic-grid { grid-template-columns: 1fr; } }
+    .ir-logic-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      border-radius: 6px; padding: 1.25rem 1.5rem;
+    }
+    .ir-logic-eyebrow {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-accent, #0ea5e9);
+      margin-bottom: 0.5rem; display: block;
+    }
+    .ir-logic-card p {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.875rem; line-height: 1.75;
+      color: var(--color-text-secondary, #94a3b8); margin: 0;
+    }
+
+    .ir-share-wrap {
+      margin: 2.5rem 0; padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      border: 1px solid var(--color-border, rgba(255,255,255,0.06));
+    }
+    .ir-share-label {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-text-tertiary, #475569);
+      margin-bottom: 0.875rem; display: block;
+    }
+    .ir-share-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .ir-share-pill {
+      display: inline-flex; align-items: center;
+      padding: 0.375rem 0.875rem; border-radius: 9999px;
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.8rem; font-weight: 500;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--color-border, rgba(255,255,255,0.08));
+      color: var(--color-text-secondary, #94a3b8);
+      cursor: pointer; text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .ir-share-pill:hover { border-color: var(--color-accent, #0ea5e9); color: var(--color-accent, #0ea5e9); text-decoration: none; }
+
+    .ir-faq-outer { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 1rem; }
+    .ir-faq-heading {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0);
+      margin: 0 0 0.375rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+    }
+    .ir-faq-sub {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.875rem;
+      color: var(--color-text-secondary, #94a3b8);
+      margin: 0.5rem 0 1.5rem; line-height: 1.65;
+    }
+
+    .ir-contact-outer { max-width: 760px; margin: 2.5rem auto 0; padding: 0 1.5rem 4rem; }
+    .ir-contact-header { text-align: center; margin-bottom: 1.75rem; }
+    .ir-contact-title {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0); margin-bottom: 0.375rem;
+    }
+    .ir-contact-sub {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.8rem; color: var(--color-text-tertiary, #475569); line-height: 1.6;
+    }
+    .ir-form-wrap { max-width: 400px; margin: 0 auto; }
+    .ir-form-card {
+      background: rgba(13,18,37,0.8);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px; padding: 2rem;
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block; font-size: 0.75rem; font-weight: 500;
+      color: var(--color-text-secondary, #94a3b8);
+      margin-bottom: 0.35rem; letter-spacing: 0.03em;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
+      padding: 0.65rem 0.9rem; font-size: 0.875rem;
+      color: var(--color-text-primary, #e2e8f0);
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      transition: border-color 0.2s; box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--color-accent, #0ea5e9); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-hidden { display: none; }
+    .form-submit {
+      width: 100%; background: var(--color-accent, #0ea5e9);
+      color: #fff; border: none; border-radius: 6px;
+      padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; font-family: var(--font-display, 'Syne', sans-serif);
+      letter-spacing: 0.03em; transition: opacity 0.2s; margin-top: 0.5rem;
+    }
+    .form-submit:hover { opacity: 0.9; }
+
+    #dynamic-internal-links {
+      margin: 3rem 0;
+      border-top: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      padding-top: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .ir-article h2  { font-size: 1rem; margin-top: 2rem; }
+      .ir-article h3  { font-size: 0.9375rem; }
+      .ir-article p,
+      .ir-article li  { font-size: 0.875rem; }
+      .ir-cta-block   { padding: 1.5rem 1.25rem; }
+      .ir-cta-block h3 { font-size: 1rem; }
+      .ir-form-card   { padding: 1.5rem 1.125rem; }
+      .ir-faq-outer,
+      .ir-contact-outer,
+      .ir-article     { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://intelreap.com/learn/why-does-my-internet-speed-fluctuate#article",
+        "headline": "Why Does My Internet Speed Fluctuate? Causes and Fixes Guide",
+        "description": "Internet speed fluctuates due to network congestion, modem age, router limits, Wi-Fi interference, or ISP throttling. This guide explains every cause, how to diagnose it in real time, and what to fix first.",
+        "url": "https://intelreap.com/learn/why-does-my-internet-speed-fluctuate",
+        "image": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/og-image.png", "width": 1200, "height": 630 },
+        "datePublished": "2026-01-17",
+        "dateModified": "2026-06-09",
+        "author": { "@type": "Organization", "@id": "https://intelreap.com/#organization" },
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://intelreap.com/learn/why-does-my-internet-speed-fluctuate" },
+        "inLanguage": "en-US",
+        "keywords": "why does my internet speed fluctuate, does modem affect internet speed, can a router affect internet speed, do wifi boosters increase internet speed, how to increase upload speed 5g internet",
+        "articleSection": "Network Guides",
+        "wordCount": 2850
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/intelreap-logo.svg" },
+        "sameAs": ["https://twitter.com/intelreap", "https://github.com/accessmakr/intelreap-frontend"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://intelreap.com/#website",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://intelreap.com/?q={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
+          { "@type": "ListItem", "position": 2, "name": "Learn",     "item": "https://intelreap.com/learn/" },
+          { "@type": "ListItem", "position": 3, "name": "Why Does My Internet Speed Fluctuate?", "item": "https://intelreap.com/learn/why-does-my-internet-speed-fluctuate" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Why does my internet speed fluctuate so much?", "acceptedAnswer": { "@type": "Answer", "text": "Internet speed fluctuates due to network congestion at peak hours, Wi-Fi interference, router or modem hardware limits, ISP throttling, background processes using bandwidth, or physical distance from your router. The fastest way to identify the specific cause is to test at different times, locations, and with a wired connection to isolate the variable." } },
+          { "@type": "Question", "name": "Does a modem affect internet speed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — directly. Your modem is the hardware gateway between your ISP's network and your home. An old DOCSIS 3.0 modem caps out at far lower speeds than your ISP plan may offer. A modem with too few bonded channels cannot sustain consistent high speeds. Upgrading to a DOCSIS 3.1 modem often resolves persistent speed fluctuation on cable broadband." } },
+          { "@type": "Question", "name": "Can a router affect internet speed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — significantly. A router with a weak CPU throttles under heavy multi-device load. Outdated wireless standards (Wi-Fi 4 or older) create a bottleneck even when your modem and ISP deliver full speed. Overheating, outdated firmware, and channel congestion all contribute. Testing with a wired ethernet connection from the router bypasses Wi-Fi and isolates whether the issue is the router's wireless performance or something deeper." } },
+          { "@type": "Question", "name": "Do Wi-Fi boosters actually increase internet speed?", "acceptedAnswer": { "@type": "Answer", "text": "Not always. A Wi-Fi range extender extends signal coverage but does not add bandwidth. Single-band extenders cut effective throughput roughly in half because they use the same frequency to receive and retransmit. Mesh Wi-Fi systems with a dedicated wireless backhaul or wired backhaul are significantly more effective for maintaining speed across a large space." } },
+          { "@type": "Question", "name": "How do I increase upload speed on 5G internet?", "acceptedAnswer": { "@type": "Answer", "text": "On 5G internet, upload speed is affected by signal strength, network band selection, distance from the cell tower, and congestion. Position your 5G router or gateway near a window facing the nearest tower. Prefer mid-band 5G (sub-6 GHz n77, n78) over low-band for better upload throughput. Test at off-peak hours to determine if congestion is the primary cause of low upload speeds." } },
+          { "@type": "Question", "name": "Why is my download speed fast but my upload speed slow?", "acceptedAnswer": { "@type": "Answer", "text": "Most residential broadband plans are asymmetric by design — ISPs allocate significantly more capacity to downloads than uploads, reflecting typical household usage patterns. On cable and DSL, upload is always a fraction of download. Fibre-to-the-premises (FTTP) connections offer closer symmetry. If upload is even slower than expected for your plan, check for ISP throttling, modem channel configuration, or background applications uploading large files." } },
+          { "@type": "Question", "name": "Does the number of devices connected affect internet speed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — when multiple devices use the internet simultaneously they share the available bandwidth of your broadband plan. A 100 Mbps connection split across ten active devices provides roughly 10 Mbps per device in simple terms, though QoS routing can prioritise critical traffic. The router's CPU also plays a role — cheap routers struggle to maintain performance with many simultaneous connections." } },
+          { "@type": "Question", "name": "What is network congestion and when does it cause speed drops?", "acceptedAnswer": { "@type": "Answer", "text": "Network congestion occurs when demand on shared infrastructure exceeds available capacity. ISPs share network segments between neighbourhoods — during peak hours (typically 7–11 PM in residential areas) heavy collective usage slows everyone's connection. This is why speed tests show lower results in the evening than early morning. Congestion is an ISP-side issue no home hardware upgrade can solve." } },
+          { "@type": "Question", "name": "Does a VPN affect internet speed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — VPNs add encryption overhead and route your traffic through an additional server, which increases latency and can reduce throughput. The speed impact varies by VPN provider, server distance, protocol used, and your device's processing power. If your speed improves when you disconnect a VPN, the VPN server or protocol is the bottleneck. Some ISPs throttle VPN traffic specifically — switching VPN protocol or server can help." } },
+          { "@type": "Question", "name": "How can I accurately test my internet speed?", "acceptedAnswer": { "@type": "Answer", "text": "For the most accurate test: connect via wired ethernet directly to your router, close all applications, pause any cloud backup or streaming services, and run the test during off-peak hours. Run multiple tests at different times of day and compare. IntelReap's Live Network Monitor measures latency, bandwidth, jitter, and stability in real time, giving you a more complete picture than a single snapshot speed test." } },
+          { "@type": "Question", "name": "Can ISP throttling cause speed fluctuation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — ISPs can deliberately reduce connection speeds for specific activities (such as video streaming or torrenting), after a soft data cap is reached in a billing period, or during congestion management. Signs of throttling include: fast speeds on speed test sites but slow performance on specific platforms, speeds dropping reliably after heavy use, or speeds improving noticeably when using a VPN that masks traffic type." } },
+          { "@type": "Question", "name": "When should I upgrade my modem or router to fix speed fluctuation?", "acceptedAnswer": { "@type": "Answer", "text": "Upgrade your modem if it is more than 4 years old, uses DOCSIS 3.0 with fewer than 8 downstream channels, or consistently shows errors in its admin logs. Upgrade your router if it runs Wi-Fi 4 (802.11n) or older, struggles with more than 10 simultaneous devices, or overheats under normal use. Before purchasing, test with a wired ethernet connection from modem to device — if speeds are good wired but poor wirelessly, the router's wireless hardware is the bottleneck." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/learn/">Learn</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="ir-breadcrumb-current" aria-current="page">Why Does My Internet Speed Fluctuate?</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Network Guide</span>
+        </div>
+        <h1 class="ndic-hero-title">
+          Why Does My Internet<br>
+          Speed <span class="ndic-highlight">Fluctuate?</span>
+        </h1>
+        <p class="ndic-hero-tagline">
+          Speed that dips, surges, and stalls without warning is one of the most frustrating networking problems — and one of the most diagnosable. This guide breaks down every cause of internet speed fluctuation, tells you which hardware is responsible, and shows you exactly what to test and fix first.
+        </p>
+        <div class="ndic-hero-cta-group">
+          <a href="/intelligence/live-network" class="ndic-btn-primary cta-rotate">
+            Monitor My Live Connection
+          </a>
+          <a href="/intelligence/performance" class="ndic-btn-secondary">
+            Check My Performance Score →
+          </a>
+        </div>
+        <div id="freshness-badge" aria-live="polite">Loading…</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">4.9★</span>
+            <span class="ndic-trust-label">satisfaction</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">234 data points</span>
+            <span class="ndic-trust-label">per scan</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">12 intelligence panels</span>
+            <span class="ndic-trust-label">per report</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">Zero data stored</span>
+            <span class="ndic-trust-label">privacy first</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">
+        Internet speed fluctuates because of congestion, hardware limits, Wi-Fi interference, or ISP throttling — and each cause has a different fix
+      </h2>
+      <p class="ndic-quick-answer-body">
+        Speed inconsistency is almost always traceable to one of eight root causes: shared network congestion at peak hours, Wi-Fi interference or weak signal, an underpowered or aging router, a modem that cannot handle your plan's speeds, ISP throttling, too many devices sharing bandwidth, background processes consuming upload capacity, or DNS latency making page loads feel slow even when speeds test fine. Identifying which one is responsible takes minutes with the right tools — and most fixes are free.
+      </p>
+    </section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+
+      <h2><span class="section-num">01</span> What Is Internet Speed Fluctuation — and Is It Normal?</h2>
+      <p>
+        Internet speed fluctuation means your connection speed varies over time rather than holding at a consistent level. You might get 200 Mbps at 9 AM, 45 Mbps at 8 PM, and 180 Mbps again at midnight — all on the same plan, same equipment, same house. This is different from a connection that is <em>consistently</em> slow, which points to different causes.
+      </p>
+      <p>
+        Some degree of fluctuation is completely normal. No broadband connection delivers a perfectly flat speed at all times because network routing, shared infrastructure, and radio signal conditions all change continuously. What matters is the <em>range</em> of the fluctuation and whether speeds ever drop far below what you need for the tasks you are trying to complete.
+      </p>
+      <p>
+        Fluctuation that causes buffering, dropped calls, or degraded stream quality is a solvable problem. The critical first step is distinguishing between a problem that sits inside your home network — and one that lives in your ISP's infrastructure where only they can fix it.
+      </p>
+
+      <h2><span class="section-num">02</span> The Eight Most Common Causes of Speed Fluctuation</h2>
+
+      <h3>Network Congestion at Peak Hours</h3>
+      <p>
+        ISPs share physical network infrastructure between many households in the same area — a process called contention. When a large portion of your neighbourhood is online simultaneously, that shared capacity fills up and everyone's speed drops. This is the most common cause of fluctuation that follows a predictable time pattern: faster in the morning, slower in the evening, faster again late at night.
+      </p>
+
+      <h3>Wi-Fi Interference and Signal Strength</h3>
+      <p>
+        Wireless signals on the 2.4 GHz band compete with neighbouring routers, baby monitors, microwaves, and Bluetooth devices. The 5 GHz band is faster but shorter range — walls, floors, and distance degrade the signal rapidly. If your speed is inconsistent only on certain devices or in certain rooms, Wi-Fi signal quality is almost certainly the culprit, not your ISP plan.
+      </p>
+
+      <h3>Router CPU and Processing Limits</h3>
+      <p>
+        Your router is the traffic controller for every data packet moving between your devices and the internet. A router with a weak processor struggles under the combined load of many simultaneous connections — streaming, gaming, video calls, and cloud backups all happening at once. This manifests as speed drops across all devices simultaneously rather than on one device specifically.
+      </p>
+
+      <h3>Modem Hardware Limitations</h3>
+      <p>
+        On cable broadband, your modem's DOCSIS version and the number of bonded channels it supports determines the maximum speed it can physically sustain. A DOCSIS 3.0 modem with 8 downstream channels tops out at roughly 340 Mbps under ideal conditions — if your ISP plan is faster than that, the modem is your bottleneck regardless of what the plan promises.
+      </p>
+
+      <h3>ISP Throttling</h3>
+      <p>
+        Some ISPs deliberately reduce connection speeds in specific circumstances: after a soft data threshold is reached in a billing period, for certain traffic types such as video streaming or peer-to-peer applications, or as a network management response during congestion events. Throttling is detectable: if your general speed tests fine but a specific platform or activity is consistently slow, or if speed improves when using a VPN that masks your traffic type, throttling is the likely cause.
+      </p>
+
+      <h3>Background Processes Consuming Bandwidth</h3>
+      <p>
+        Operating system updates, cloud backup services (iCloud, Google Drive, OneDrive, Backblaze), and other background sync processes can saturate your upload connection without any visible indication on screen. Since upload and download share the same network path in many home setups, a saturated upload pipe increases latency and makes downloads feel slower even when download bandwidth is technically available.
+      </p>
+
+      <h3>Too Many Devices on a Single Connection</h3>
+      <p>
+        Every active device on your network competes for available bandwidth. Ten devices each doing something moderately data-intensive divides your total throughput ten ways. The issue compounds when the router itself runs out of processing capacity to manage that many simultaneous connections, leading to jitter and packet loss that shows up as fluctuating performance across the board.
+      </p>
+
+      <h3>DNS Latency Making Speed Feel Inconsistent</h3>
+      <p>
+        DNS (Domain Name System) resolvers translate website names into IP addresses before any content loads. If your ISP's default DNS resolver is slow or overloaded, page loads feel sluggish even when your actual download and upload speeds are fine. Switching to a fast public resolver such as Cloudflare (1.1.1.1) or Google (8.8.8.8) is free and takes two minutes — and is frequently the fix for connections that test fast but feel slow during normal browsing.
+      </p>
+
+      <h2><span class="section-num">03</span> Does Your Modem Affect Internet Speed?</h2>
+      <p>
+        Yes — directly and significantly. Your modem is the physical gateway between your ISP's cable or fiber plant and your home network. Every bit of data passing between you and the internet passes through it, and its hardware capabilities set a hard ceiling on what speeds are achievable regardless of what your plan promises.
+      </p>
+      <p>
+        On cable broadband, the relevant specification is DOCSIS version and channel bonding. DOCSIS 3.0 modems with 8 bonded downstream channels support roughly 340 Mbps maximum. DOCSIS 3.1 modems support 10 Gbps downstream in theory and 1–2 Gbps in practice on current cable infrastructure — a completely different league. If your ISP offers a 500 Mbps or 1 Gbps plan and you are using an old DOCSIS 3.0 modem, the modem is physically preventing you from receiving those speeds.
+      </p>
+      <p>
+        Beyond version, modems degrade with age. Flash memory corruption, capacitor wear, and overheating cause random disconnects and speed drops that look like ISP problems from the outside. A modem older than 4–5 years on a high-speed plan is a prime candidate for replacement.
+      </p>
+      <div class="ir-callout">
+        <p><strong>Quick check:</strong> Log in to your modem's admin panel (usually at 192.168.100.1) and look for the "Event Log" or "Status" page. Frequent T3 or T4 timeout errors indicate the modem is losing its signal lock with the cable plant — a hardware or line quality issue, not an ISP plan issue.</p>
+      </div>
+
+      <h2><span class="section-num">04</span> Can a Router Affect Your Internet Speed?</h2>
+      <p>
+        Yes — in multiple ways. A router that cannot keep pace with your modem and ISP plan is an internal bottleneck that causes consistent speed underperformance and fluctuation under load.
+      </p>
+      <p>
+        <strong>Wireless standard matters most for wireless clients.</strong> Wi-Fi 4 (802.11n) has a theoretical maximum of 600 Mbps but real-world performance on 2.4 GHz is far lower. Wi-Fi 5 (802.11ac) delivers practical speeds up to 1.3 Gbps on 5 GHz under good conditions. Wi-Fi 6 (802.11ax) adds OFDMA, improved performance in congested environments, and better handling of many simultaneous devices. If your router is older than 5 years, its wireless hardware is almost certainly the limiting factor for wireless clients.
+      </p>
+      <p>
+        <strong>Router CPU affects wired performance under load.</strong> Consumer routers with weak processors struggle to sustain routing table lookups, NAT translation, firewall processing, and QoS simultaneously. Under peak multi-device load, the router CPU becomes the bottleneck and speed drops across all connections — wired and wireless.
+      </p>
+      <p>
+        <strong>Firmware matters more than most people realise.</strong> Router manufacturers release firmware updates that fix memory leaks, improve performance under load, and patch security vulnerabilities that can be exploited to throttle or redirect traffic. A router running 3-year-old firmware may have software-level issues causing speed degradation that a firmware update would eliminate in minutes.
+      </p>
+
+      <h2><span class="section-num">05</span> Do Wi-Fi Boosters Actually Increase Internet Speed?</h2>
+      <p>
+        The honest answer is: not always, and often not in the way most people expect. A Wi-Fi range extender extends the <em>coverage area</em> of your wireless network — it does not add bandwidth to your internet connection. Whether it improves your experienced speed depends entirely on what was limiting you in the first place.
+      </p>
+      <p>
+        If your device previously had a weak signal to your main router, a booster placed closer to it improves signal quality and allows the device to connect at a higher modulation rate — which can dramatically improve throughput. In this scenario, yes, a booster can increase internet speed for that device in that location.
+      </p>
+      <p>
+        However, the most common type of extender — a single-band or dual-band wireless repeater — creates a new problem: it uses the same radio frequency to receive signal from the router AND transmit to your devices simultaneously. This relay process roughly halves the available bandwidth on that channel. A device connected to the extender at 200 Mbps may only receive 100 Mbps of actual throughput because the extender is spending half its time transmitting back to the router.
+      </p>
+      <div class="ir-callout">
+        <p><strong>Mesh systems are different:</strong> Mesh Wi-Fi systems (such as those from Eero, Netgear Orbi, TP-Link Deco) use either a dedicated wireless backhaul channel or wired ethernet backhaul between nodes — eliminating the halving problem. For large homes or persistent weak-signal rooms, a mesh system delivers genuine speed improvement where a simple extender does not.</p>
+      </div>
+
+      <h2><span class="section-num">06</span> How to Increase Upload Speed on 5G Internet</h2>
+      <p>
+        Upload speed on 5G fixed wireless access depends on several factors you can influence, and several you cannot. Understanding which is which makes troubleshooting significantly faster.
+      </p>
+      <p>
+        <strong>Signal strength and line of sight</strong> are the primary determinants of 5G upload performance. 5G millimetre wave (mmWave) connections above 24 GHz deliver very high speeds but have minimal penetration through walls and require near-direct line of sight to the transmitting tower. Sub-6 GHz 5G (bands such as n77, n78) penetrates buildings better and covers longer distances, but at lower peak speeds. Positioning your 5G router or gateway near a window on the side of your building closest to the cell tower is the single most impactful step.
+      </p>
+      <p>
+        <strong>Band and network mode selection</strong> matters on 5G gateways that let you lock to a specific band or 5G NR mode. If your gateway allows band selection in its admin panel, test upload performance with different bands — the automatically selected band is not always the fastest one for your specific location and usage pattern.
+      </p>
+      <p>
+        <strong>Time of day</strong> has a large effect on 5G upload speed. 5G towers, like cable infrastructure, are shared between many simultaneous users. Upload contention is often worse than download contention on mobile networks because towers allocate more capacity to downlink than uplink by design. Testing upload speed at off-peak hours (before 8 AM or after 11 PM) establishes a baseline ceiling — if off-peak upload is also low, hardware positioning or plan tier is the constraint; if only peak-hour upload is low, it is congestion.
+      </p>
+
+      <!-- CTA BLOCK 1 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Live Connection Intelligence</span>
+        <h3>Measure Latency, Bandwidth, and Jitter in Real Time</h3>
+        <p>IntelReap's Live Network Monitor captures your connection quality as it happens — latency spikes, bandwidth drops, jitter, and stability score — directly in your browser. No installation, no account. Run it while your connection fluctuates to catch the pattern live.</p>
+        <a href="/intelligence/live-network" class="ndic-btn-primary cta-rotate">
+          Monitor My Live Connection
+        </a>
+      </div>
+
+      <h2><span class="section-num">07</span> How to Diagnose Speed Fluctuation Step by Step</h2>
+      <p>The key to diagnosing internet speed fluctuation is isolating variables systematically. Each step below eliminates one possible cause.</p>
+      <ol class="ir-steps">
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">1</div>
+          <div class="ir-step-body">
+            <strong>Test wired vs wireless</strong>
+            Connect a laptop or desktop directly to your router via ethernet cable and run a speed test. If wired speeds are consistent but wireless speeds fluctuate, the problem is your Wi-Fi — router placement, interference, or wireless hardware. If wired speeds also fluctuate, the problem is upstream of the router: modem, ISP line, or ISP network.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">2</div>
+          <div class="ir-step-body">
+            <strong>Test at different times of day</strong>
+            Run speed tests at 7 AM, 12 PM, 6 PM, and 11 PM over two days. If speeds are consistently lower in the evening, network congestion at the ISP level is the primary cause. If fluctuation is random with no time pattern, look to hardware or line quality.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">3</div>
+          <div class="ir-step-body">
+            <strong>Check background processes</strong>
+            Open your device's task manager and sort by network usage. Pause any cloud backup, software update, or sync service. If speeds immediately improve, background bandwidth consumption was the cause. Schedule these processes to run outside peak usage hours.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">4</div>
+          <div class="ir-step-body">
+            <strong>Test on a single device with all others disconnected</strong>
+            Disconnect every device except the one you are testing. If speeds improve significantly, too many concurrent connections were saturating your router's CPU or your available bandwidth. Add devices back one by one to find the threshold.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">5</div>
+          <div class="ir-step-body">
+            <strong>Check modem signal levels and event logs</strong>
+            Log in to your modem's admin interface and check the downstream signal levels and the event log. Downstream power levels outside the range of −7 to +7 dBmV, or frequent T3/T4 timeout errors, indicate a line quality problem that requires an ISP technician visit — not a router or device fix.
+          </div>
+        </li>
+        <li class="ir-step">
+          <div class="ir-step-num" aria-hidden="true">6</div>
+          <div class="ir-step-body">
+            <strong>Run IntelReap's Live Network Monitor</strong>
+            Use IntelReap's Live Network Monitor while your connection is actively fluctuating. It captures latency spikes, bandwidth variability, jitter, and connection stability in real time. The pattern of what drops — latency alone vs bandwidth vs both — tells you whether the issue is congestion, packet loss, or hardware processing. Screenshot the results before calling your ISP.
+          </div>
+        </li>
+      </ol>
+
+      <h2><span class="section-num">08</span> Causes, Fixes, and What to Test: Reference Table</h2>
+      <div class="ir-table-wrap" role="region" aria-label="Internet speed fluctuation causes and fixes" tabindex="0">
+        <table class="ir-table">
+          <caption>Each cause of speed fluctuation mapped to its primary symptom, the correct fix, and how to confirm it</caption>
+          <thead>
+            <tr>
+              <th scope="col">Cause</th>
+              <th scope="col">Primary Symptom</th>
+              <th scope="col">Fix</th>
+              <th scope="col">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Network congestion</strong></td>
+              <td>Slow in evenings, fast in mornings</td>
+              <td>Change usage time; upgrade to a less-contended plan</td>
+              <td class="ir-check">Free / Plan upgrade</td>
+            </tr>
+            <tr>
+              <td><strong>Wi-Fi interference</strong></td>
+              <td>Drops in specific rooms; wireless worse than wired</td>
+              <td>Change Wi-Fi channel; switch to 5 GHz; move router</td>
+              <td class="ir-check">Free</td>
+            </tr>
+            <tr>
+              <td><strong>Old or underpowered modem</strong></td>
+              <td>Speeds below plan even wired; modem log errors</td>
+              <td>Upgrade to DOCSIS 3.1 modem compatible with your ISP</td>
+              <td class="ir-neutral">£50–£120</td>
+            </tr>
+            <tr>
+              <td><strong>Underpowered router</strong></td>
+              <td>All devices slow simultaneously under load</td>
+              <td>Upgrade router or update firmware first</td>
+              <td class="ir-neutral">Free / £60–£200</td>
+            </tr>
+            <tr>
+              <td><strong>ISP throttling</strong></td>
+              <td>Specific platforms slow; VPN improves speed</td>
+              <td>Switch ISP; use a VPN; check data cap usage</td>
+              <td class="ir-neutral">Free / Plan change</td>
+            </tr>
+            <tr>
+              <td><strong>Too many devices</strong></td>
+              <td>Speeds improve when devices disconnected</td>
+              <td>Upgrade plan; add QoS rules; upgrade router</td>
+              <td class="ir-neutral">Free / Plan upgrade</td>
+            </tr>
+            <tr>
+              <td><strong>Background processes</strong></td>
+              <td>Upload saturated; browsing slow despite fast speeds</td>
+              <td>Schedule backups and updates for off-peak hours</td>
+              <td class="ir-check">Free</td>
+            </tr>
+            <tr>
+              <td><strong>Slow DNS resolver</strong></td>
+              <td>Pages slow to load; downloads fast once started</td>
+              <td>Change DNS to 1.1.1.1 (Cloudflare) or 8.8.8.8 (Google)</td>
+              <td class="ir-check">Free</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2><span class="section-num">09</span> When Should You Call Your ISP?</h2>
+      <p>
+        After working through the diagnostic steps above, call your ISP when you can demonstrate that the problem is not inside your home network. The evidence you want before calling:
+      </p>
+      <ul>
+        <li>Speed tests via wired ethernet showing speeds consistently below your plan's advertised download speed (accounting for the fact that most ISPs advertise "up to" speeds)</li>
+        <li>IntelReap's Live Network Monitor showing high latency or packet loss on a wired connection — not Wi-Fi</li>
+        <li>Modem event logs showing T3/T4 timeout errors or signal levels outside acceptable range</li>
+        <li>The problem occurs at multiple times of day, ruling out simple peak-hour congestion as the sole cause</li>
+        <li>A second device connected directly to the modem via ethernet shows the same problem, ruling out your router</li>
+      </ul>
+      <p>
+        Having this documentation when you call removes ambiguity and significantly increases the likelihood of an ISP technician being dispatched to check the line rather than a support agent asking you to restart your router three times.
+      </p>
+
+      <!-- CTA BLOCK 2 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Page Performance Intelligence</span>
+        <h3>Check Your Full Connection Performance Profile</h3>
+        <p>IntelReap's Performance panel analyses your browser's connection timing — DNS resolution, TCP handshake, first byte, and full load — giving you a complete picture of where speed is being lost, layer by layer. Free, in-browser, no account needed.</p>
+        <a href="/intelligence/performance" class="ndic-btn-secondary">
+          Check My Performance Score →
+        </a>
+      </div>
+
+      <!-- LOGIC + METHODOLOGY -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>Speed fluctuation is a symptom, not a cause — the correct fix depends entirely on which layer of the network stack is responsible, which is why systematic isolation outperforms all guesswork.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>This guide draws on published DOCSIS 3.0 and 3.1 specifications, IEEE 802.11 wireless standards documentation, ISP network management policy disclosures, and live connection data reviewed across residential and mobile broadband connection types.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.cablelabs.com/technologies/docsis" target="_blank" rel="noopener noreferrer">CableLabs — DOCSIS Technology Overview and Specification Documents</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.ieee802.org/11/" target="_blank" rel="noopener noreferrer">IEEE 802.11 Working Group — Wi-Fi Standards and Technical Specifications</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.ofcom.org.uk/research-and-data/telecoms-research/broadband-speeds" target="_blank" rel="noopener noreferrer">Ofcom — UK Home Broadband Performance Research and Speed Reports</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.fcc.gov/consumers/guides/broadband-speed-guide" target="_blank" rel="noopener noreferrer">FCC — Broadband Speed Guide and Consumer Information</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link">
+              <a href="https://1.1.1.1/dns/" target="_blank" rel="noopener noreferrer">Cloudflare — 1.1.1.1 DNS Resolver: Privacy, Speed, and Setup</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">06</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.3gpp.org/technologies/5g-nr" target="_blank" rel="noopener noreferrer">3GPP — 5G NR (New Radio) Technical Specifications and Band Definitions</a>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Twelve questions on speed fluctuation causes, modem and router impact, Wi-Fi boosters, 5G upload, and ISP throttling — answered plainly.</p>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1">
+              <span>Why does my internet speed fluctuate so much?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">Internet speed fluctuates due to network congestion at peak hours, Wi-Fi interference, router or modem hardware limits, ISP throttling, background processes using bandwidth, or distance from your router. The fastest way to identify the specific cause is to test at different times, in different locations, and with a wired connection to isolate the variable. IntelReap's Live Network Monitor can capture the fluctuation pattern in real time.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2">
+              <span>Does a modem affect internet speed?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">Yes — directly. Your modem is the hardware gateway between your ISP's network and your home. An old DOCSIS 3.0 modem caps at far lower speeds than a modern plan offers. A modem with too few bonded channels cannot sustain consistent high speeds under load. Upgrading to a DOCSIS 3.1 modem often resolves persistent speed fluctuation on cable broadband, particularly on plans above 200 Mbps.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3">
+              <span>Can a router affect internet speed?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">Yes — significantly. A router with a weak CPU throttles under heavy multi-device load. Outdated wireless standards (Wi-Fi 4 or older) create a bottleneck even when your modem and ISP deliver full speed. Testing with a wired ethernet connection from the router bypasses Wi-Fi and isolates whether the issue is the router's wireless performance or something deeper upstream.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4">
+              <span>Do Wi-Fi boosters actually increase internet speed?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Not always. A Wi-Fi range extender extends signal coverage but does not add bandwidth. Single-band extenders cut effective throughput roughly in half because they use the same frequency to receive and retransmit simultaneously. Mesh Wi-Fi systems with a dedicated wireless or wired backhaul eliminate this problem and deliver genuine speed improvement in hard-to-reach areas.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5">
+              <span>How do I increase upload speed on 5G internet?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">On 5G internet, position your gateway near a window facing the nearest cell tower to maximise signal strength. Prefer mid-band 5G frequencies (sub-6 GHz, n77 or n78 bands) over low-band for better upload throughput. If your gateway allows band selection in its admin panel, test upload performance on different bands. Test at off-peak hours to separate congestion from a hardware or signal positioning issue.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6">
+              <span>Why is my download speed fast but my upload speed slow?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">Most residential broadband plans are asymmetric by design — ISPs allocate significantly more capacity to downloads than uploads, reflecting typical household usage. Cable and DSL connections always have slower uploads by design. If upload is even slower than expected for your plan, check for ISP throttling, modem DOCSIS channel configuration, or background applications uploading large files without your knowledge.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7">
+              <span>Does the number of connected devices affect internet speed?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">Yes — when multiple devices use the internet simultaneously they share available bandwidth and place processing load on your router. A cheap router struggles to manage many concurrent connections, causing jitter and speed drops across all devices. If speeds improve significantly when you disconnect most devices, either your plan's bandwidth is insufficient for your household's concurrent usage, or your router is the processing bottleneck.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8">
+              <span>What is network congestion and when does it cause speed drops?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Network congestion occurs when demand on shared ISP infrastructure exceeds available capacity. ISPs share network segments between neighbourhoods — during peak hours (typically 7–11 PM in residential areas) heavy collective usage slows everyone's connection simultaneously. This produces a reliable time pattern: slow in the evening, faster in the morning. Congestion is an ISP-side issue that no home hardware upgrade can solve — it requires an ISP infrastructure investment or a plan change to a less-contended service tier.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9">
+              <span>Does a VPN slow down internet speed?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">Yes — VPNs add encryption overhead and route traffic through an additional server, which increases latency and can reduce throughput. The speed impact varies by provider, server distance, and VPN protocol. If your speed improves when you disconnect a VPN, the VPN server or protocol is the bottleneck. Conversely, if speed improves when you connect a VPN, your ISP is throttling specific traffic types and the VPN is masking them.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10">
+              <span>How can I accurately test my internet speed?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">For accurate results: connect via wired ethernet directly to your router, close all applications, pause cloud backup and streaming services, and test during off-peak hours. Run multiple tests and compare results across times of day. IntelReap's Live Network Monitor measures latency, bandwidth, jitter, and stability in real time, giving a more complete picture than a single snapshot speed test — including the variance between readings that simple speed tests don't show.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11">
+              <span>Can ISP throttling cause speed fluctuation?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">Yes — ISPs can deliberately reduce connection speeds for specific activities (video streaming, torrenting), after a soft data cap is reached, or during congestion management events. Signs of throttling include fast speed test results but slow performance on specific platforms, speeds dropping reliably after heavy use, and speeds improving noticeably when using a VPN that masks traffic type from your ISP.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12">
+              <span>When should I upgrade my modem or router to fix speed fluctuation?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">Upgrade your modem if it is more than 4 years old, uses DOCSIS 3.0 with fewer than 8 downstream channels, or shows T3/T4 errors in its admin log. Upgrade your router if it runs Wi-Fi 4 or older, struggles with more than 10 simultaneous devices, or consistently overheats. Always test with wired ethernet from modem to device first — if wired speeds are good but wireless is poor, it is the router's wireless hardware causing the fluctuation, not the modem or ISP line.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">Still Experiencing Speed Issues?</h2>
+          <p class="ir-contact-sub">Describe your situation and we will help identify the most likely cause. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="cf-message">Describe your speed issue</label>
+                <textarea id="cf-message" name="message" placeholder="What speeds are you getting vs what you pay for? When does it happen? What have you already tried?" required></textarea>
+              </div>
+              <button type="submit" class="form-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+  (function () {
+    'use strict';
+
+    document.querySelectorAll('.ndic-faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const item    = btn.closest('.ndic-faq-item');
+        const wasOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(function (i) {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!wasOpen) { item.classList.add('ndic-faq-item--open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+
+    const bar = document.getElementById('scroll-progress-bar');
+    if (bar) {
+      window.addEventListener('scroll', function () {
+        const s = window.scrollY || document.documentElement.scrollTop;
+        const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        bar.style.width = (h > 0 ? (s / h) * 100 : 0).toFixed(2) + '%';
+      }, { passive: true });
+    }
+
+    const yr = new Date().getFullYear().toString();
+    document.querySelectorAll('[data-year]').forEach(el => { el.textContent = yr; });
+
+    (() => {
+      const now = new Date(), dow = now.getDay();
+      const diff = dow === 0 ? -6 : 1 - dow;
+      const mon = new Date(now.getFullYear(), now.getMonth(), now.getDate() + diff);
+      const iso = mon.toISOString().split('T')[0];
+      document.querySelectorAll('script[type="application/ld+json"]').forEach(s => {
+        if (s.textContent.includes('"dateModified"'))
+          s.textContent = s.textContent.replace(/"dateModified"\s*:\s*"[^"]*"/g, `"dateModified": "${iso}"`);
+      });
+    })();
+
+    (() => {
+      const badge = document.getElementById('freshness-badge');
+      if (!badge) return;
+      const d = new Date(), mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const txt = `Last updated ${mo[d.getMonth()]}\u00a0${d.getDate()},\u00a0${d.getFullYear()}`;
+      badge.textContent = txt; badge.setAttribute('aria-label', txt);
+    })();
+
+    (() => {
+      const m = new Date().getMonth();
+      const banners = ['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'];
+      const labels  = ['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];
+      const el = document.getElementById('seasonal-banner');
+      if (el) { el.textContent = banners[m]; el.style.cssText = 'text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;'; }
+      const lbl = document.getElementById('seasonal-label');
+      if (lbl) lbl.textContent = labels[m];
+    })();
+
+    (() => {
+      const variants = ['Monitor My Live Connection','Test My Connection Now','Check My Live Network','Measure My Speed Live','Run Live Network Scan','See My Connection Stats'];
+      const pick = variants[Math.floor(Math.random() * variants.length)];
+      document.querySelectorAll('.cta-rotate').forEach(el => { el.textContent = pick; });
+    })();
+
+    (() => {
+      const rawUrl = window.location.href, encUrl = encodeURIComponent(rawUrl), encTitle = encodeURIComponent(document.title);
+      const platforms = [
+        { n: 'WhatsApp',  u: `https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}` },
+        { n: 'Facebook',  u: `https://www.facebook.com/sharer/sharer.php?u=${encUrl}` },
+        { n: 'Twitter/X', u: `https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}` },
+        { n: 'LinkedIn',  u: `https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}` },
+        { n: 'Reddit',    u: `https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}` },
+        { n: 'Quora',     u: `https://www.quora.com/search?q=${encTitle}` },
+        { n: 'Medium',    u: `https://medium.com/new-story?url=${encUrl}` },
+        { n: 'Telegram',  u: `https://t.me/share/url?url=${encUrl}&text=${encTitle}` },
+        { n: 'Pinterest', u: `https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}` },
+        { n: 'Discord',   u: 'https://discord.com/channels/@me' },
+        { n: 'Snapchat',  u: `https://www.snapchat.com/share?url=${encUrl}` },
+        { n: 'Vimeo',     u: 'https://vimeo.com' },
+        { n: 'TikTok',    u: 'https://www.tiktok.com' },
+        { n: 'Instagram', u: 'https://www.instagram.com' },
+        { n: 'Email',     u: `mailto:?subject=${encTitle}&body=I%20thought%20you%20might%20find%20this%20useful%3A%20${encUrl}` },
+        { n: 'Copy Link', u: null }
+      ];
+      const container = document.getElementById('share-pills-container');
+      if (!container) return;
+      platforms.forEach(p => {
+        let el;
+        if (p.u === null) {
+          el = document.createElement('button'); el.type = 'button'; el.textContent = 'Copy Link';
+          el.setAttribute('aria-label', 'Copy page URL to clipboard');
+          el.addEventListener('click', () => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(rawUrl).then(() => { el.textContent = '\u2713 Copied!'; setTimeout(() => { el.textContent = 'Copy Link'; }, 2400); showToast('Link copied to clipboard'); }).catch(() => legacyCopy(rawUrl, el));
+            } else { legacyCopy(rawUrl, el); }
+          });
+        } else {
+          el = document.createElement('a'); el.href = p.u; el.target = '_blank'; el.rel = 'noopener noreferrer';
+          el.textContent = p.n; el.setAttribute('aria-label', `Share on ${p.n}`);
+        }
+        el.className = 'ir-share-pill'; container.appendChild(el);
+      });
+    })();
+
+    function legacyCopy(text, btn) {
+      const ta = document.createElement('textarea'); ta.value = text;
+      ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      try { document.execCommand('copy'); if (btn) { btn.textContent = '\u2713 Copied!'; setTimeout(() => { btn.textContent = 'Copy Link'; }, 2400); } showToast('Link copied to clipboard'); }
+      catch (e) { showToast('Copy failed — please copy the URL manually'); }
+      document.body.removeChild(ta);
+    }
+
+    function showToast(msg) {
+      const tc = document.getElementById('toast-container'); if (!tc) return;
+      const t = document.createElement('div'); t.textContent = msg;
+      t.style.cssText = 'display:inline-block;background:var(--color-accent,#0ea5e9);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';
+      tc.appendChild(t);
+      requestAnimationFrame(() => requestAnimationFrame(() => { t.style.opacity = '1'; }));
+      setTimeout(() => { t.style.opacity = '0'; setTimeout(() => { if (t.parentNode) t.parentNode.removeChild(t); }, 350); }, 2700);
+    }
+
+  }());
+  </script>
+
+  <script>
+    function handleContactForm(e) {
+      e.preventDefault();
+      const myForm = e.target;
+      const formData = new FormData(myForm);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        alert("Thank you! Your request has been transmitted.");
+        myForm.reset();
+      })
+      .catch((error) => {
+        alert("Oops! There was a problem submitting your form.");
+        console.error("Form submission error:", error);
+      });
+    }
+  </script>
+
+</body>
+</html>
