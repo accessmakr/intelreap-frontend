@@ -45,17 +45,17 @@ jobs:
           fi
 
       - name: Setup Node.js Runtime
-        if: steps:filter-additions.outputs.execute_step == 'true'
+        if: steps.filter-additions.outputs.execute_step == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Execute Route Generation
-        if: steps:filter-additions.outputs.execute_step == 'true'
+        if: steps.filter-additions.outputs.execute_step == 'true'
         run: node scripts/generate-routes.js
 
       - name: Write Assets and Push to Origin
-        if: steps:filter-additions.outputs.execute_step == 'true'
+        if: steps.filter-additions.outputs.execute_step == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: patch automated sitemap.xml and pages.json [skip ci]"
