@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <script>
+    (function () {
+      try { var t = localStorage.getItem('ndic_theme'); if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (e) {}
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>How to Enable WebGL in Chrome, Firefox & Safari — Complete 2026 Guide — IntelReap</title>
+  <meta name="description" content="WebGL is disabled or broken in your browser? Step-by-step guide to enable WebGL in Chrome, Firefox, Safari, and Edge — plus how to fix 'a WebGL context could not be created'.">
+  <meta name="keywords" content="how to enable webgl in chrome, how to enable webgl in firefox, how to enable webgl on firefox, how to enable webgl firefox, how do i enable webgl in firefox, how do i enable webgl, a webgl context could not be created, enable webgl browser, webgl not working fix">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/guides/how-to-enable-webgl">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/guides/how-to-enable-webgl">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/guides/how-to-enable-webgl">
+
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="How to Enable WebGL in Chrome, Firefox & Safari — IntelReap">
+  <meta property="og:description"  content="Step-by-step instructions to enable WebGL in every major browser — plus how to fix the 'WebGL context could not be created' error. Updated for 2026.">
+  <meta property="og:url"          content="https://intelreap.com/guides/how-to-enable-webgl">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="How to Enable WebGL in Chrome, Firefox & Safari — IntelReap">
+  <meta name="twitter:description" content="Enable WebGL in any browser in under two minutes. Chrome, Firefox, Safari, and Edge — with fixes for the WebGL context error.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+
+  <meta name="geo.region"   content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM"         content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color"                         content="#0ea5e9">
+  <meta name="mobile-web-app-capable"              content="yes">
+  <meta name="apple-mobile-web-app-capable"        content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title"          content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#0ea5e9">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <style>
+
+    #scroll-progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--color-accent, #0ea5e9), #06b6d4);
+      z-index: 9999; transition: width 0.1s linear; pointer-events: none;
+    }
+
+    .ir-breadcrumb {
+      max-width: 760px; margin: 0 auto; padding: 1rem 1.5rem 0;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.75rem; color: var(--color-text-tertiary, #475569);
+    }
+    .ir-breadcrumb a { color: var(--color-accent, #0ea5e9); text-decoration: none; }
+    .ir-breadcrumb a:hover { text-decoration: underline; }
+    .ir-breadcrumb-sep { opacity: 0.4; }
+    .ir-breadcrumb-current { color: var(--color-text-secondary, #94a3b8); font-weight: 500; }
+
+    .ir-article { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+    .ir-article h2 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0);
+      margin: 2.75rem 0 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      display: flex; align-items: center; gap: 0.6rem;
+      line-height: 1.35; scroll-margin-top: 5rem;
+    }
+    .ir-article h3 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 0.975rem; font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0);
+      margin: 1.75rem 0 0.6rem; line-height: 1.4;
+    }
+    .ir-article p {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.9rem; line-height: 1.85;
+      color: var(--color-text-secondary, #94a3b8); margin-bottom: 1rem;
+    }
+    .ir-article ul, .ir-article ol {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.9rem; line-height: 1.8;
+      color: var(--color-text-secondary, #94a3b8);
+      margin: 0.5rem 0 1.25rem 1.25rem;
+    }
+    .ir-article li { margin-bottom: 0.4rem; padding-left: 0.25rem; }
+    .ir-article li::marker { color: var(--color-accent, #0ea5e9); }
+    .ir-article strong { font-weight: 600; color: var(--color-text-primary, #e2e8f0); }
+    .ir-article em { font-style: italic; }
+    .ir-article a { color: var(--color-accent, #0ea5e9); text-decoration: underline; text-underline-offset: 2px; }
+    .ir-article a:hover { opacity: 0.8; }
+
+    /* inline code */
+    .ir-article code {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.8125rem; color: var(--color-accent, #0ea5e9);
+      background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.15);
+      border-radius: 4px; padding: 0.1rem 0.4rem; white-space: nowrap;
+    }
+
+    .section-num {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem; color: var(--color-accent, #0ea5e9); font-weight: 500;
+      background: rgba(14,165,233,0.1); padding: 0.15rem 0.4rem;
+      border-radius: 3px; flex-shrink: 0;
+    }
+
+    .ir-callout {
+      background: rgba(14,165,233,0.05);
+      border: 1px solid rgba(14,165,233,0.15);
+      border-left: 3px solid var(--color-accent, #0ea5e9);
+      border-radius: 6px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .ir-callout p { margin-bottom: 0; color: var(--color-text-primary, #e2e8f0) !important; font-weight: 500; }
+
+    /* browser step blocks */
+    .ir-browser-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--color-border, rgba(255,255,255,0.07));
+      border-radius: 8px; padding: 1.5rem 1.5rem 1rem; margin: 1.5rem 0;
+    }
+    .ir-browser-label {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-accent, #0ea5e9); margin-bottom: 1rem; display: block;
+    }
+    .ir-browser-steps { list-style: none; margin: 0; padding: 0; }
+    .ir-browser-step {
+      display: flex; gap: 0.875rem; margin-bottom: 0.875rem; align-items: flex-start;
+    }
+    .ir-browser-step-num {
+      flex-shrink: 0; width: 1.5rem; height: 1.5rem; border-radius: 50%;
+      background: rgba(14,165,233,0.15); color: var(--color-accent, #0ea5e9);
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-weight: 700; font-size: 0.7rem;
+      display: flex; align-items: center; justify-content: center; margin-top: 0.1rem;
+    }
+    .ir-browser-step-text {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.9rem; line-height: 1.75; color: var(--color-text-secondary, #94a3b8);
+    }
+
+    .ir-table-wrap {
+      width: 100%; overflow-x: auto; margin: 1.25rem 0 2rem;
+      border-radius: 6px; border: 1px solid var(--color-border, rgba(255,255,255,0.07));
+      -webkit-overflow-scrolling: touch;
+    }
+    .ir-table {
+      width: 100%; min-width: 480px; border-collapse: collapse;
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif); font-size: 0.875rem;
+    }
+    .ir-table caption {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif); font-size: 0.75rem;
+      color: var(--color-text-tertiary, #475569); text-align: left; padding: 0.5rem 1rem 0; caption-side: top;
+    }
+    .ir-table th {
+      background: rgba(255,255,255,0.04); color: var(--color-text-primary, #e2e8f0);
+      font-family: var(--font-display, 'Syne', sans-serif); font-weight: 600; font-size: 0.8rem;
+      padding: 0.75rem 1rem; text-align: left;
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.07)); white-space: nowrap;
+    }
+    .ir-table td {
+      padding: 0.75rem 1rem; color: var(--color-text-secondary, #94a3b8);
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      vertical-align: middle; line-height: 1.55;
+    }
+    .ir-table tr:last-child td { border-bottom: none; }
+    .ir-check { color: #34d399; font-weight: 600; }
+    .ir-cross { color: #f87171; }
+    .ir-neutral { color: var(--color-text-tertiary, #475569); }
+
+    .ir-cta-block {
+      background: rgba(14,165,233,0.05); border: 1px solid rgba(14,165,233,0.15);
+      border-radius: 8px; padding: 1.875rem 1.75rem; margin: 2.5rem 0; text-align: center;
+    }
+    .ir-cta-eyebrow {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-accent, #0ea5e9); margin-bottom: 0.625rem; display: block;
+    }
+    .ir-cta-block h3 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0); margin: 0 0 0.5rem; line-height: 1.3;
+    }
+    .ir-cta-block > p {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.875rem; line-height: 1.7; color: var(--color-text-secondary, #94a3b8);
+      margin: 0 0 1.375rem; max-width: 520px; margin-left: auto; margin-right: auto;
+    }
+
+    .ir-logic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+    @media (max-width: 560px) { .ir-logic-grid { grid-template-columns: 1fr; } }
+    .ir-logic-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      border-radius: 6px; padding: 1.25rem 1.5rem;
+    }
+    .ir-logic-eyebrow {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-accent, #0ea5e9); margin-bottom: 0.5rem; display: block;
+    }
+    .ir-logic-card p {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.875rem; line-height: 1.75; color: var(--color-text-secondary, #94a3b8); margin: 0;
+    }
+
+    .ir-share-wrap {
+      margin: 2.5rem 0; padding: 1.5rem; background: rgba(255,255,255,0.03);
+      border-radius: 8px; border: 1px solid var(--color-border, rgba(255,255,255,0.06));
+    }
+    .ir-share-label {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-text-tertiary, #475569); margin-bottom: 0.875rem; display: block;
+    }
+    .ir-share-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .ir-share-pill {
+      display: inline-flex; align-items: center; padding: 0.375rem 0.875rem; border-radius: 9999px;
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif); font-size: 0.8rem; font-weight: 500;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--color-border, rgba(255,255,255,0.08));
+      color: var(--color-text-secondary, #94a3b8); cursor: pointer; text-decoration: none;
+      transition: border-color 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .ir-share-pill:hover { border-color: var(--color-accent, #0ea5e9); color: var(--color-accent, #0ea5e9); text-decoration: none; }
+
+    .ir-faq-outer { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 1rem; }
+    .ir-faq-heading {
+      font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.1rem; font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0); margin: 0 0 0.375rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+    }
+    .ir-faq-sub {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif); font-size: 0.875rem;
+      color: var(--color-text-secondary, #94a3b8); margin: 0.5rem 0 1.5rem; line-height: 1.65;
+    }
+
+    .ir-contact-outer { max-width: 760px; margin: 2.5rem auto 0; padding: 0 1.5rem 4rem; }
+    .ir-contact-header { text-align: center; margin-bottom: 1.75rem; }
+    .ir-contact-title {
+      font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.1rem; font-weight: 600;
+      color: var(--color-text-primary, #e2e8f0); margin-bottom: 0.375rem;
+    }
+    .ir-contact-sub {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 0.8rem; color: var(--color-text-tertiary, #475569); line-height: 1.6;
+    }
+    .ir-form-wrap { max-width: 400px; margin: 0 auto; }
+    .ir-form-card { background: rgba(13,18,37,0.8); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 2rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block; font-size: 0.75rem; font-weight: 500;
+      color: var(--color-text-secondary, #94a3b8); margin-bottom: 0.35rem; letter-spacing: 0.03em;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px; padding: 0.65rem 0.9rem; font-size: 0.875rem;
+      color: var(--color-text-primary, #e2e8f0);
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      transition: border-color 0.2s; box-sizing: border-box;
+    }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-accent, #0ea5e9); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-hidden { display: none; }
+    .form-submit {
+      width: 100%; background: var(--color-accent, #0ea5e9); color: #fff; border: none;
+      border-radius: 6px; padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; font-family: var(--font-display, 'Syne', sans-serif);
+      letter-spacing: 0.03em; transition: opacity 0.2s; margin-top: 0.5rem;
+    }
+    .form-submit:hover { opacity: 0.9; }
+
+    #dynamic-internal-links {
+      margin: 3rem 0; border-top: 1px solid var(--color-border, rgba(255,255,255,0.06)); padding-top: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .ir-article h2 { font-size: 1rem; margin-top: 2rem; }
+      .ir-article h3 { font-size: 0.9375rem; }
+      .ir-article p, .ir-article li { font-size: 0.875rem; }
+      .ir-cta-block { padding: 1.5rem 1.25rem; }
+      .ir-form-card { padding: 1.5rem 1.125rem; }
+      .ir-browser-block { padding: 1.25rem 1rem 0.75rem; }
+      .ir-faq-outer, .ir-contact-outer, .ir-article { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://intelreap.com/guides/how-to-enable-webgl#article",
+        "headline": "How to Enable WebGL in Chrome, Firefox, Safari, and Edge",
+        "description": "Step-by-step instructions to enable WebGL in every major browser, fix the 'WebGL context could not be created' error, verify WebGL is working, and understand browser support differences.",
+        "url": "https://intelreap.com/guides/how-to-enable-webgl",
+        "image": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/og-image.png", "width": 1200, "height": 630 },
+        "datePublished": "2026-01-31",
+        "dateModified": "2026-06-09",
+        "author": { "@type": "Organization", "@id": "https://intelreap.com/#organization" },
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://intelreap.com/guides/how-to-enable-webgl" },
+        "inLanguage": "en-US",
+        "keywords": "how to enable webgl in chrome, how to enable webgl in firefox, enable webgl safari, webgl context could not be created, how do i enable webgl",
+        "articleSection": "Browser Guides",
+        "wordCount": 2700
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "name": "IntelReap", "url": "https://intelreap.com",
+        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/intelreap-logo.svg" },
+        "sameAs": ["https://twitter.com/intelreap", "https://github.com/accessmakr/intelreap-frontend"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://intelreap.com/#website",
+        "name": "IntelReap", "url": "https://intelreap.com",
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://intelreap.com/?q={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
+          { "@type": "ListItem", "position": 2, "name": "Guides",    "item": "https://intelreap.com/guides/" },
+          { "@type": "ListItem", "position": 3, "name": "How to Enable WebGL", "item": "https://intelreap.com/guides/how-to-enable-webgl" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I enable WebGL in Chrome?", "acceptedAnswer": { "@type": "Answer", "text": "WebGL is enabled by default in Chrome. If it is not working, go to chrome://settings/system and turn on 'Use hardware acceleration when available', then relaunch Chrome. If still broken, update your GPU drivers and update Chrome to the latest version. For blocklisted GPUs, launch Chrome with the --ignore-gpu-blocklist command-line flag." } },
+          { "@type": "Question", "name": "How do I enable WebGL in Firefox?", "acceptedAnswer": { "@type": "Answer", "text": "Type about:config in the Firefox address bar and press Enter. Search for webgl.disabled and confirm it is set to false — if true, double-click it to toggle to false. Also search for layers.acceleration.disabled and confirm it is false. Restart Firefox after making changes." } },
+          { "@type": "Question", "name": "How do I enable WebGL in Safari?", "acceptedAnswer": { "@type": "Answer", "text": "First enable the Develop menu: Safari menu → Settings (or Preferences) → Advanced tab → check 'Show Develop menu in menu bar'. Then go to Develop → Experimental Features and confirm WebGL is checked. On iOS Safari, WebGL is enabled by default since iOS 8 and cannot be disabled by the user." } },
+          { "@type": "Question", "name": "What is WebGL used for?", "acceptedAnswer": { "@type": "Answer", "text": "WebGL (Web Graphics Library) is a JavaScript API that lets browsers render 2D and 3D graphics using the device's GPU without any plugin. It powers browser-based 3D games, interactive data visualisations, 3D product configurators, CAD tools, mapping applications, and GPU-accelerated image processing. It is also used by browser intelligence tools like IntelReap to read GPU renderer capabilities." } },
+          { "@type": "Question", "name": "Why does it say 'a WebGL context could not be created'?", "acceptedAnswer": { "@type": "Answer", "text": "This error means the browser attempted to initialise a WebGL rendering context but the GPU driver refused or was unavailable. Common causes: GPU is on the browser's blocklist (outdated drivers), hardware acceleration is disabled in browser settings, the system is using a remote desktop or virtual machine without GPU passthrough, or the GPU drivers are corrupted. Fix by updating GPU drivers, enabling hardware acceleration, and updating the browser." } },
+          { "@type": "Question", "name": "Does WebGL require a dedicated GPU?", "acceptedAnswer": { "@type": "Answer", "text": "No — WebGL works with integrated graphics. Intel HD/Iris Xe, AMD Radeon integrated, and Apple Silicon integrated GPUs all support WebGL fully. A dedicated GPU improves WebGL performance for complex 3D scenes but is not required for WebGL to function. The requirement is that hardware acceleration is enabled in the browser and GPU drivers are installed and up to date." } },
+          { "@type": "Question", "name": "How do I know if WebGL is enabled in my browser?", "acceptedAnswer": { "@type": "Answer", "text": "Visit get.webgl.org — if you see a spinning 3D cube, WebGL is working. Alternatively, open your browser's developer console (F12) and type: !!document.createElement('canvas').getContext('webgl') — if it returns true, WebGL 1 is enabled. IntelReap's Graphics Intelligence panel also shows your WebGL version and renderer string directly." } },
+          { "@type": "Question", "name": "Is it safe to enable WebGL?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — WebGL is a standard W3C web technology implemented in all major browsers and enabled by default. Browsers sandbox WebGL execution to prevent GPU memory access beyond the rendering context. Theoretical side-channel attacks via WebGL exist in academic research but require no action from typical users. The security risk of enabling WebGL is negligible compared to the functionality it unlocks." } },
+          { "@type": "Question", "name": "Can I enable WebGL on mobile browsers?", "acceptedAnswer": { "@type": "Answer", "text": "WebGL is enabled by default on modern mobile browsers. Chrome for Android supports WebGL 2.0 on devices running Android 5.0 and later with compatible GPU drivers. Safari on iOS has supported WebGL since iOS 8. Firefox for Android supports WebGL. On older or budget devices, WebGL may be limited to version 1.0 due to GPU driver constraints." } },
+          { "@type": "Question", "name": "What is the difference between WebGL 1 and WebGL 2?", "acceptedAnswer": { "@type": "Answer", "text": "WebGL 1 is based on OpenGL ES 2.0 and is supported in all modern browsers including Safari. WebGL 2 is based on OpenGL ES 3.0 and adds features including 3D textures, multiple render targets, transform feedback, and improved GLSL shader capabilities. Chrome, Firefox, and Edge all support WebGL 2. Safari added WebGL 2 support in version 15. Use IntelReap's Graphics panel to see which version your current browser reports." } },
+          { "@type": "Question", "name": "Why is WebGL blocked or disabled on some systems?", "acceptedAnswer": { "@type": "Answer", "text": "Browsers maintain GPU blocklists — databases of GPU and driver combinations with known bugs, crashes, or security issues. When your GPU or driver version appears on this list, the browser disables hardware-accelerated WebGL as a precaution. Updating GPU drivers is the most reliable fix, as newer drivers are usually removed from blocklists. The Chrome flag --ignore-gpu-blocklist forces WebGL on blocked GPUs for testing." } },
+          { "@type": "Question", "name": "Does IntelReap use WebGL?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — IntelReap's Graphics Intelligence panel uses WebGL to read your GPU renderer string, vendor, WebGL version, and supported extensions directly from the browser. This is how it identifies your specific GPU model and graphics capabilities without requiring any software installation or driver access. If WebGL is disabled in your browser, the Graphics panel will report a limited data set." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="ir-breadcrumb-current" aria-current="page">How to Enable WebGL</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Browser Guide</span>
+        </div>
+        <h1 class="ndic-hero-title">
+          How to Enable <span class="ndic-highlight">WebGL</span><br>
+          in Any Browser
+        </h1>
+        <p class="ndic-hero-tagline">
+          WebGL is enabled by default in all modern browsers — but hardware acceleration settings, outdated drivers, or GPU blocklists can prevent it from working. This guide gives you the exact steps for Chrome, Firefox, Safari, and Edge, plus a complete fix for the "WebGL context could not be created" error.
+        </p>
+        <div class="ndic-hero-cta-group">
+          <a href="/intelligence/graphics" class="ndic-btn-primary cta-rotate">
+            Verify My WebGL Status
+          </a>
+          <a href="/intelligence/capability" class="ndic-btn-secondary">
+            Check My Browser Capabilities →
+          </a>
+        </div>
+        <div id="freshness-badge" aria-live="polite">Loading…</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">4.9★</span>
+            <span class="ndic-trust-label">satisfaction</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">234 data points</span>
+            <span class="ndic-trust-label">per scan</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">12 intelligence panels</span>
+            <span class="ndic-trust-label">per report</span>
+          </div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item">
+            <span class="ndic-trust-value">Zero data stored</span>
+            <span class="ndic-trust-label">privacy first</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">
+        WebGL is on by default — if it is not working, the fix is almost always enabling hardware acceleration or updating your GPU drivers
+      </h2>
+      <p class="ndic-quick-answer-body">
+        In Chrome: go to <code>chrome://settings/system</code> and enable "Use hardware acceleration when available", then relaunch. In Firefox: go to <code>about:config</code>, find <code>webgl.disabled</code>, and confirm it is set to <code>false</code>. In Safari: enable the Develop menu and confirm WebGL is checked under Experimental Features. For the "WebGL context could not be created" error across any browser: update your GPU drivers — outdated drivers are the single most common cause.
+      </p>
+    </section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+
+      <h2><span class="section-num">01</span> What Is WebGL and Why Does It Matter?</h2>
+      <p>
+        WebGL — Web Graphics Library — is a JavaScript API that gives browsers direct access to the device's GPU for rendering 2D and 3D graphics. It is based on OpenGL ES (Embedded Systems) and runs entirely within the browser sandbox without requiring any plugin, extension, or software installation.
+      </p>
+      <p>
+        WebGL powers a significant and growing range of web experiences: browser-based 3D games, interactive data visualisations and charts, 3D product configurators for e-commerce, online CAD and design tools, mapping platforms (Google Maps uses WebGL for 3D map rendering), and scientific visualisation applications. It is also the technology that allows browser intelligence tools to query your GPU's identity and capabilities directly — which is precisely how IntelReap's Graphics Intelligence panel reads your GPU renderer string and WebGL version.
+      </p>
+      <p>
+        When WebGL is not working, these experiences either fail silently, display an error, or fall back to a slow CPU-rendered canvas — which is typically unusable for anything complex. Fixing it is almost always a two-minute task.
+      </p>
+
+      <h2><span class="section-num">02</span> Is WebGL Enabled by Default?</h2>
+      <p>
+        Yes — in all major desktop browsers released after 2014, WebGL is enabled by default and requires no manual activation under normal circumstances. Chrome has supported WebGL since version 9 (2011). Firefox since version 4 (2011). Safari added full WebGL support in version 8 (2014) and WebGL 2 in version 15 (2021). Edge (Chromium) supports WebGL 2 fully.
+      </p>
+      <p>
+        The reason you may land on a guide about enabling WebGL is almost never because the browser has it switched off — it is because one of three things has gone wrong:
+      </p>
+      <ul>
+        <li><strong>Hardware acceleration is disabled</strong> in the browser's settings, preventing it from using the GPU at all</li>
+        <li><strong>Your GPU or driver version is on the browser's blocklist</strong> — a database of hardware combinations with known rendering bugs that browsers disable GPU features for automatically</li>
+        <li><strong>GPU drivers are outdated, corrupted, or missing</strong>, causing the browser's WebGL initialisation to fail</li>
+      </ul>
+      <p>
+        Each of these has a specific fix, covered by browser below.
+      </p>
+
+      <h2><span class="section-num">03</span> How to Enable WebGL in Chrome</h2>
+      <p>
+        Chrome manages WebGL through its hardware acceleration setting. WebGL cannot function when hardware acceleration is off — that is the first thing to check.
+      </p>
+
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Chrome — Enable Hardware Acceleration</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">1</div>
+            <div class="ir-browser-step-text">Type <code>chrome://settings/system</code> in the address bar and press Enter</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">2</div>
+            <div class="ir-browser-step-text">Toggle <strong>Use hardware acceleration when available</strong> to On</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">3</div>
+            <div class="ir-browser-step-text">Click <strong>Relaunch</strong> — Chrome must fully restart for the change to take effect</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">4</div>
+            <div class="ir-browser-step-text">Verify WebGL is now working by visiting <a href="https://get.webgl.org" target="_blank" rel="noopener noreferrer">get.webgl.org</a> — a spinning cube confirms it is active</div>
+          </li>
+        </ol>
+      </div>
+
+      <h3>Chrome: Override the GPU Blocklist</h3>
+      <p>
+        If hardware acceleration is already on but WebGL still fails, your GPU may be on Chrome's internal blocklist. This is common with older integrated graphics drivers. You can force Chrome to ignore the blocklist:
+      </p>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Chrome — Override GPU Blocklist via Flags</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">1</div>
+            <div class="ir-browser-step-text">Type <code>chrome://flags</code> in the address bar and press Enter</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">2</div>
+            <div class="ir-browser-step-text">Search for <strong>Override software rendering list</strong> (also called "Ignore GPU blocklist")</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">3</div>
+            <div class="ir-browser-step-text">Set it to <strong>Enabled</strong> from the dropdown</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">4</div>
+            <div class="ir-browser-step-text">Click <strong>Relaunch</strong> and verify at get.webgl.org</div>
+          </li>
+        </ol>
+      </div>
+      <div class="ir-callout">
+        <p><strong>Long-term fix:</strong> Update your GPU drivers from your manufacturer's site (NVIDIA, AMD, or Intel). Fresh drivers are almost always removed from Chrome's blocklist. Use Windows Update or your GPU vendor's driver utility — not a third-party driver updater.</p>
+      </div>
+
+      <h2><span class="section-num">04</span> How to Enable WebGL in Firefox</h2>
+      <p>
+        Firefox uses a configuration flag to control WebGL independently of hardware acceleration. This flag can occasionally be toggled off by users, extensions, or corporate policy configurations — the fix is straightforward.
+      </p>
+
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Firefox — Enable via about:config</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">1</div>
+            <div class="ir-browser-step-text">Type <code>about:config</code> in the address bar and press Enter. Click <strong>Accept the Risk and Continue</strong> on the warning page</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">2</div>
+            <div class="ir-browser-step-text">In the search field, type <code>webgl.disabled</code>. The preference should show <strong>false</strong>. If it shows <strong>true</strong>, double-click it to toggle to false</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">3</div>
+            <div class="ir-browser-step-text">Search for <code>layers.acceleration.disabled</code>. Confirm it is set to <strong>false</strong>. If true, double-click to toggle</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">4</div>
+            <div class="ir-browser-step-text">Search for <code>webgl.force-enabled</code>. If WebGL is still failing after the above steps, set this to <strong>true</strong> to force-enable it regardless of blocklist status</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">5</div>
+            <div class="ir-browser-step-text">Restart Firefox and verify at get.webgl.org</div>
+          </li>
+        </ol>
+      </div>
+
+      <h3>Firefox: Enable Hardware Acceleration</h3>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Firefox — Hardware Acceleration Settings</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">1</div>
+            <div class="ir-browser-step-text">Click the hamburger menu (≡) → <strong>Settings</strong></div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">2</div>
+            <div class="ir-browser-step-text">Scroll to the <strong>Performance</strong> section under General</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">3</div>
+            <div class="ir-browser-step-text">Uncheck <strong>Use recommended performance settings</strong> to reveal the hardware acceleration option</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">4</div>
+            <div class="ir-browser-step-text">Ensure <strong>Use hardware acceleration when available</strong> is checked. Restart Firefox</div>
+          </li>
+        </ol>
+      </div>
+
+      <h2><span class="section-num">05</span> How to Enable WebGL in Safari</h2>
+      <p>
+        Safari on macOS manages WebGL through its hidden Develop menu. The process differs slightly between macOS Ventura and later versus earlier versions.
+      </p>
+
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Safari on macOS — Enable via Develop Menu</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">1</div>
+            <div class="ir-browser-step-text">Open Safari → click <strong>Safari</strong> in the menu bar → <strong>Settings</strong> (macOS Ventura and later) or <strong>Preferences</strong> (earlier versions)</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">2</div>
+            <div class="ir-browser-step-text">Go to the <strong>Advanced</strong> tab and check <strong>Show Develop menu in menu bar</strong> (macOS Ventura: Show features for web developers)</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">3</div>
+            <div class="ir-browser-step-text">Click the new <strong>Develop</strong> menu in the menu bar → <strong>Experimental Features</strong></div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">4</div>
+            <div class="ir-browser-step-text">Confirm <strong>WebGL</strong> and <strong>WebGL 2.0</strong> are checked. If unchecked, click to enable them</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">5</div>
+            <div class="ir-browser-step-text">Reload the page requiring WebGL — no browser restart is needed</div>
+          </li>
+        </ol>
+      </div>
+      <div class="ir-callout">
+        <p><strong>Safari on iOS:</strong> WebGL is enabled by default on iOS Safari since iOS 8 and cannot be disabled by the user. If WebGL is not working on iOS, the cause is almost always an outdated iOS version or a GPU driver issue resolved by updating iOS via Settings → General → Software Update.</p>
+      </div>
+
+      <h2><span class="section-num">06</span> How to Enable WebGL in Microsoft Edge</h2>
+      <p>
+        Edge uses the Chromium engine and has identical WebGL settings to Chrome. The steps are exactly the same.
+      </p>
+
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Edge — Enable Hardware Acceleration</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">1</div>
+            <div class="ir-browser-step-text">Type <code>edge://settings/system</code> in the address bar and press Enter</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">2</div>
+            <div class="ir-browser-step-text">Toggle <strong>Use hardware acceleration when available</strong> to On</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">3</div>
+            <div class="ir-browser-step-text">Click <strong>Restart</strong> — Edge must fully close and reopen</div>
+          </li>
+          <li class="ir-browser-step">
+            <div class="ir-browser-step-num" aria-hidden="true">4</div>
+            <div class="ir-browser-step-text">For blocklisted GPUs: type <code>edge://flags</code>, search for <strong>Override software rendering list</strong>, set to Enabled, restart</div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- CTA BLOCK 1 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Graphics Intelligence</span>
+        <h3>Verify WebGL Is Working — See Your GPU Renderer and Version</h3>
+        <p>IntelReap's Graphics Intelligence panel reads your WebGL version (1.0 or 2.0), GPU renderer string, vendor, and supported extensions directly from your browser. Run it now to confirm WebGL is active and see exactly what your browser reports to web applications.</p>
+        <a href="/intelligence/graphics" class="ndic-btn-primary cta-rotate">
+          Verify My WebGL Status
+        </a>
+      </div>
+
+      <h2><span class="section-num">07</span> Fixing "A WebGL Context Could Not Be Created"</h2>
+      <p>
+        This error appears when the browser tried to initialise a WebGL rendering context and the GPU driver refused the request or returned a failure. It is distinct from WebGL being disabled — it means the browser found WebGL enabled but the underlying hardware communication failed.
+      </p>
+      <p>
+        Work through these fixes in order, testing after each one:
+      </p>
+      <ul>
+        <li>
+          <strong>Update GPU drivers:</strong> This resolves the error in the majority of cases. Download the latest drivers directly from NVIDIA (<a href="https://www.nvidia.com/drivers" target="_blank" rel="noopener noreferrer">nvidia.com/drivers</a>), AMD (<a href="https://www.amd.com/support" target="_blank" rel="noopener noreferrer">amd.com/support</a>), or Intel (<a href="https://www.intel.com/content/www/us/en/download-center/home.html" target="_blank" rel="noopener noreferrer">intel.com/download</a>). Perform a clean install — not a simple update over the existing driver.
+        </li>
+        <li>
+          <strong>Enable hardware acceleration in your browser:</strong> Follow the browser-specific steps above. Without hardware acceleration, the GPU is never contacted and WebGL context creation always fails.
+        </li>
+        <li>
+          <strong>Override the GPU blocklist:</strong> Use <code>chrome://flags</code> → Override software rendering list (Chrome/Edge) or <code>webgl.force-enabled = true</code> in Firefox's <code>about:config</code>.
+        </li>
+        <li>
+          <strong>Check if you are using a remote desktop or virtual machine:</strong> RDP, VirtualBox, VMware, and similar environments do not pass through GPU hardware by default. WebGL context creation fails in these environments unless GPU passthrough (VMware SVGA 3D, VirtualBox 3D acceleration, or dedicated RDP clients with GPU support) is configured.
+        </li>
+        <li>
+          <strong>Try a different browser:</strong> If WebGL works in one browser but not another, the issue is browser-specific — driver update and blocklist override apply to the failing browser.
+        </li>
+        <li>
+          <strong>Reinstall the browser:</strong> A corrupted browser installation can cause persistent WebGL failures. Uninstall completely (including clearing profile data), reinstall from the official source, and retest before blaming GPU drivers.
+        </li>
+      </ul>
+
+      <h2><span class="section-num">08</span> How to Verify WebGL Is Working</h2>
+      <p>
+        Three reliable methods to confirm WebGL is active and functional in your current browser:
+      </p>
+      <ul>
+        <li><strong>get.webgl.org:</strong> The official WebGL test page maintained by the Khronos Group. A spinning 3D cube confirms WebGL 1 is working. The page also reports your WebGL renderer string.</li>
+        <li><strong>Browser developer console:</strong> Press F12, go to the Console tab, and type: <code>!!document.createElement('canvas').getContext('webgl')</code>. A result of <code>true</code> confirms WebGL 1. For WebGL 2: <code>!!document.createElement('canvas').getContext('webgl2')</code>.</li>
+        <li><strong>IntelReap Graphics Intelligence:</strong> Run a free scan at IntelReap — the Graphics panel reports your active WebGL version (1.0 or 2.0), GPU renderer string, vendor, and the full list of supported WebGL extensions. This gives the most comprehensive picture of your WebGL environment.</li>
+      </ul>
+
+      <h2><span class="section-num">09</span> Browser WebGL Support: Comparison Table</h2>
+      <div class="ir-table-wrap" role="region" aria-label="Browser WebGL support comparison" tabindex="0">
+        <table class="ir-table">
+          <caption>WebGL support status across major browsers as of 2026 — desktop and mobile</caption>
+          <thead>
+            <tr>
+              <th scope="col">Browser</th>
+              <th scope="col">WebGL 1.0</th>
+              <th scope="col">WebGL 2.0</th>
+              <th scope="col">Default State</th>
+              <th scope="col">Enable Method if Broken</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chrome (desktop)</strong></td>
+              <td class="ir-check">✓ Since v9</td>
+              <td class="ir-check">✓ Since v56</td>
+              <td class="ir-check">Enabled by default</td>
+              <td>Hardware accel in <code>chrome://settings/system</code></td>
+            </tr>
+            <tr>
+              <td><strong>Firefox (desktop)</strong></td>
+              <td class="ir-check">✓ Since v4</td>
+              <td class="ir-check">✓ Since v51</td>
+              <td class="ir-check">Enabled by default</td>
+              <td><code>webgl.disabled = false</code> in <code>about:config</code></td>
+            </tr>
+            <tr>
+              <td><strong>Safari (macOS)</strong></td>
+              <td class="ir-check">✓ Since v8</td>
+              <td class="ir-check">✓ Since v15</td>
+              <td class="ir-check">Enabled by default</td>
+              <td>Develop → Experimental Features → WebGL</td>
+            </tr>
+            <tr>
+              <td><strong>Edge (Chromium)</strong></td>
+              <td class="ir-check">✓ Full support</td>
+              <td class="ir-check">✓ Full support</td>
+              <td class="ir-check">Enabled by default</td>
+              <td>Hardware accel in <code>edge://settings/system</code></td>
+            </tr>
+            <tr>
+              <td><strong>Chrome (Android)</strong></td>
+              <td class="ir-check">✓ Android 5+</td>
+              <td class="ir-check">✓ Most devices</td>
+              <td class="ir-check">Enabled by default</td>
+              <td>Update Chrome + update Android</td>
+            </tr>
+            <tr>
+              <td><strong>Safari (iOS)</strong></td>
+              <td class="ir-check">✓ Since iOS 8</td>
+              <td class="ir-check">✓ Since iOS 15</td>
+              <td class="ir-check">Enabled — cannot be disabled</td>
+              <td>Update iOS via Settings</td>
+            </tr>
+            <tr>
+              <td><strong>Firefox (Android)</strong></td>
+              <td class="ir-check">✓ Full support</td>
+              <td class="ir-neutral">Limited devices</td>
+              <td class="ir-check">Enabled by default</td>
+              <td>Update Firefox for Android</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CTA BLOCK 2 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Browser Capability Intelligence</span>
+        <h3>See Everything Your Browser Exposes to Web Applications</h3>
+        <p>IntelReap's Capability panel reveals your browser's full feature matrix — WebGL, WebRTC, Canvas, audio context, storage APIs, codec support, and 40+ more capabilities — showing exactly what web applications can detect about your environment.</p>
+        <a href="/intelligence/capability" class="ndic-btn-secondary">
+          Check My Browser Capabilities →
+        </a>
+      </div>
+
+      <!-- LOGIC + METHODOLOGY -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>WebGL failures are almost always driver or hardware acceleration configuration problems — the browser setting itself is rarely the cause since all major browsers enable WebGL by default.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>This guide draws on Khronos WebGL specification documentation, browser-specific configuration references from Chrome, Firefox, and Safari developer documentation, and GPU driver release notes across major hardware vendors.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.khronos.org/webgl/" target="_blank" rel="noopener noreferrer">Khronos Group — WebGL Specification and Official Documentation</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noopener noreferrer">MDN Web Docs — WebGL API Reference and Browser Compatibility</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link">
+              <a href="https://chromium.googlesource.com/chromium/src/+/main/docs/gpu/gpu_blocklist.md" target="_blank" rel="noopener noreferrer">Chromium Source — GPU Blocklist Documentation and Override Instructions</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link">
+              <a href="https://wiki.mozilla.org/Blocklisting/Blocked_Graphics_Drivers" target="_blank" rel="noopener noreferrer">Mozilla Wiki — Blocked Graphics Drivers and WebGL Fallback Policy</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link">
+              <a href="https://webkit.org/blog/9784/new-webkit-features-in-safari-13/" target="_blank" rel="noopener noreferrer">WebKit Blog — Safari WebGL and Graphics Feature Support History</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">06</span>
+            <span class="ndic-citation-link">
+              <a href="https://caniuse.com/webgl2" target="_blank" rel="noopener noreferrer">Can I Use — WebGL 2.0 Browser Support Tables</a>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Twelve questions covering WebGL activation in every browser, the context error fix, mobile support, WebGL versions, and safety — answered directly.</p>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1">
+              <span>How do I enable WebGL in Chrome?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">WebGL is enabled by default in Chrome. If it is not working, go to <code>chrome://settings/system</code> and turn on "Use hardware acceleration when available", then click Relaunch. If WebGL still fails, your GPU may be on Chrome's blocklist — go to <code>chrome://flags</code>, find "Override software rendering list", set it to Enabled, and relaunch. Updating your GPU drivers is the permanent fix.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2">
+              <span>How do I enable WebGL in Firefox?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">Type <code>about:config</code> in the Firefox address bar and accept the warning. Search for <code>webgl.disabled</code> — if it is set to true, double-click it to toggle to false. Also check <code>layers.acceleration.disabled</code> is false. If WebGL still fails, set <code>webgl.force-enabled</code> to true. Restart Firefox after any changes.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3">
+              <span>How do I enable WebGL in Safari?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">Enable the Develop menu first: Safari → Settings → Advanced → check "Show Develop menu in menu bar". Then go to Develop → Experimental Features and confirm WebGL and WebGL 2.0 are checked. On iOS, WebGL is enabled by default and cannot be disabled — if it is not working, update iOS via Settings → General → Software Update.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4">
+              <span>What is WebGL used for?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">WebGL lets browsers render 2D and 3D graphics using your GPU without any plugin. It powers browser-based 3D games, interactive data visualisations, 3D product configurators, online CAD tools, mapping platforms (Google Maps 3D uses WebGL), scientific visualisations, and browser intelligence tools that read GPU capabilities. It is also what allows IntelReap's Graphics panel to identify your GPU renderer and WebGL version.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5">
+              <span>Why does it say "a WebGL context could not be created"?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">This error means the browser tried to initialise WebGL but the GPU driver refused or was unavailable. Common causes: your GPU is on the browser's blocklist (fix: update GPU drivers), hardware acceleration is disabled (fix: enable it in browser settings), you are using a remote desktop or VM without GPU passthrough, or GPU drivers are corrupted (fix: clean reinstall from manufacturer's site).</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6">
+              <span>Does WebGL require a dedicated GPU?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">No — WebGL works fully with integrated graphics. Intel HD/Iris Xe, AMD Radeon integrated, and Apple Silicon integrated GPUs all support WebGL without a discrete GPU. The requirement is up-to-date drivers and hardware acceleration enabled in the browser. A discrete GPU improves performance for complex 3D scenes but is not required for WebGL to function.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7">
+              <span>How do I know if WebGL is enabled in my browser?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">Visit get.webgl.org — a spinning 3D cube confirms WebGL is working. In your browser console (F12), type <code>!!document.createElement('canvas').getContext('webgl')</code> — true means WebGL 1 is enabled. IntelReap's Graphics Intelligence panel also reports your active WebGL version, renderer string, and vendor directly.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8">
+              <span>Is it safe to enable WebGL?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Yes — WebGL is a standard W3C web technology enabled by default in all major browsers. Browsers sandbox WebGL to prevent GPU memory access beyond the rendering context. Theoretical side-channel attack research exists but poses no practical risk for typical users. The functionality WebGL unlocks is far more significant than any theoretical security concern at the user level.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9">
+              <span>Can I enable WebGL on mobile browsers?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">WebGL is enabled by default on all modern mobile browsers. Chrome for Android supports WebGL 2.0 on devices running Android 5.0 and later. Safari on iOS has supported WebGL since iOS 8 and WebGL 2 since iOS 15. Firefox for Android supports WebGL fully. On older or budget devices WebGL may be limited to version 1.0 due to GPU driver constraints — update the device OS for the best support.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10">
+              <span>What is the difference between WebGL 1 and WebGL 2?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">WebGL 1 is based on OpenGL ES 2.0 and is supported in all modern browsers. WebGL 2 is based on OpenGL ES 3.0 and adds 3D textures, multiple render targets, transform feedback, and improved shader capabilities. Chrome, Firefox, and Edge fully support WebGL 2. Safari added WebGL 2 in version 15. Use IntelReap's Graphics panel to see which version your current browser reports.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11">
+              <span>Why is WebGL blocked or disabled on some systems?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">Browsers maintain GPU blocklists — databases of GPU and driver combinations with known bugs, crashes, or security issues. When your GPU or driver version appears on this list, the browser automatically disables hardware-accelerated WebGL. Updating GPU drivers is the most reliable fix, as newer drivers are routinely removed from blocklists. The Chrome flag to override the blocklist is available for testing but driver update is the permanent solution.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12">
+              <span>Does IntelReap use WebGL?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">Yes — IntelReap's Graphics Intelligence panel uses WebGL to read your GPU renderer string, vendor, WebGL version, and supported extensions directly from the browser. This is how it identifies your specific GPU model and graphics capabilities without any software installation. If WebGL is disabled in your browser, the Graphics panel reports a limited data set and notes the WebGL status accordingly.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">WebGL Still Not Working?</h2>
+          <p class="ir-contact-sub">Describe your browser, OS, and GPU — we will help identify what is blocking WebGL. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="cf-message">Describe your WebGL issue</label>
+                <textarea id="cf-message" name="message" placeholder="Which browser? Which OS? What GPU? What error message are you seeing?" required></textarea>
+              </div>
+              <button type="submit" class="form-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+  (function () {
+    'use strict';
+
+    document.querySelectorAll('.ndic-faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const item = btn.closest('.ndic-faq-item'), wasOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(function (i) {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!wasOpen) { item.classList.add('ndic-faq-item--open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+
+    const bar = document.getElementById('scroll-progress-bar');
+    if (bar) {
+      window.addEventListener('scroll', function () {
+        const s = window.scrollY || document.documentElement.scrollTop;
+        const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        bar.style.width = (h > 0 ? (s / h) * 100 : 0).toFixed(2) + '%';
+      }, { passive: true });
+    }
+
+    document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear().toString(); });
+
+    (() => {
+      const now = new Date(), dow = now.getDay();
+      const mon = new Date(now.getFullYear(), now.getMonth(), now.getDate() + (dow === 0 ? -6 : 1 - dow));
+      const iso = mon.toISOString().split('T')[0];
+      document.querySelectorAll('script[type="application/ld+json"]').forEach(s => {
+        if (s.textContent.includes('"dateModified"'))
+          s.textContent = s.textContent.replace(/"dateModified"\s*:\s*"[^"]*"/g, `"dateModified": "${iso}"`);
+      });
+    })();
+
+    (() => {
+      const badge = document.getElementById('freshness-badge'); if (!badge) return;
+      const d = new Date(), mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const txt = `Last updated ${mo[d.getMonth()]}\u00a0${d.getDate()},\u00a0${d.getFullYear()}`;
+      badge.textContent = txt; badge.setAttribute('aria-label', txt);
+    })();
+
+    (() => {
+      const m = new Date().getMonth();
+      const banners = ['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'];
+      const labels = ['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];
+      const el = document.getElementById('seasonal-banner');
+      if (el) { el.textContent = banners[m]; el.style.cssText = 'text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;'; }
+      const lbl = document.getElementById('seasonal-label'); if (lbl) lbl.textContent = labels[m];
+    })();
+
+    (() => {
+      const v = ['Verify My WebGL Status','Check My WebGL Version','Inspect My GPU Renderer','See My Graphics Intel','Test WebGL in Browser','View My WebGL Support'];
+      document.querySelectorAll('.cta-rotate').forEach(el => { el.textContent = v[Math.floor(Math.random() * v.length)]; });
+    })();
+
+    (() => {
+      const rawUrl = window.location.href, encUrl = encodeURIComponent(rawUrl), encTitle = encodeURIComponent(document.title);
+      const platforms = [
+        { n: 'WhatsApp',  u: `https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}` },
+        { n: 'Facebook',  u: `https://www.facebook.com/sharer/sharer.php?u=${encUrl}` },
+        { n: 'Twitter/X', u: `https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}` },
+        { n: 'LinkedIn',  u: `https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}` },
+        { n: 'Reddit',    u: `https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}` },
+        { n: 'Quora',     u: `https://www.quora.com/search?q=${encTitle}` },
+        { n: 'Medium',    u: `https://medium.com/new-story?url=${encUrl}` },
+        { n: 'Telegram',  u: `https://t.me/share/url?url=${encUrl}&text=${encTitle}` },
+        { n: 'Pinterest', u: `https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}` },
+        { n: 'Discord',   u: 'https://discord.com/channels/@me' },
+        { n: 'Snapchat',  u: `https://www.snapchat.com/share?url=${encUrl}` },
+        { n: 'Vimeo',     u: 'https://vimeo.com' },
+        { n: 'TikTok',    u: 'https://www.tiktok.com' },
+        { n: 'Instagram', u: 'https://www.instagram.com' },
+        { n: 'Email',     u: `mailto:?subject=${encTitle}&body=I%20thought%20you%20might%20find%20this%20useful%3A%20${encUrl}` },
+        { n: 'Copy Link', u: null }
+      ];
+      const container = document.getElementById('share-pills-container'); if (!container) return;
+      platforms.forEach(p => {
+        let el;
+        if (p.u === null) {
+          el = document.createElement('button'); el.type = 'button'; el.textContent = 'Copy Link';
+          el.setAttribute('aria-label', 'Copy page URL to clipboard');
+          el.addEventListener('click', () => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(rawUrl).then(() => { el.textContent = '\u2713 Copied!'; setTimeout(() => { el.textContent = 'Copy Link'; }, 2400); showToast('Link copied to clipboard'); }).catch(() => legacyCopy(rawUrl, el));
+            } else legacyCopy(rawUrl, el);
+          });
+        } else {
+          el = document.createElement('a'); el.href = p.u; el.target = '_blank'; el.rel = 'noopener noreferrer';
+          el.textContent = p.n; el.setAttribute('aria-label', `Share on ${p.n}`);
+        }
+        el.className = 'ir-share-pill'; container.appendChild(el);
+      });
+    })();
+
+    function legacyCopy(text, btn) {
+      const ta = document.createElement('textarea'); ta.value = text;
+      ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      try { document.execCommand('copy'); if (btn) { btn.textContent = '\u2713 Copied!'; setTimeout(() => { btn.textContent = 'Copy Link'; }, 2400); } showToast('Link copied to clipboard'); }
+      catch (e) { showToast('Copy failed — please copy the URL manually'); }
+      document.body.removeChild(ta);
+    }
+
+    function showToast(msg) {
+      const tc = document.getElementById('toast-container'); if (!tc) return;
+      const t = document.createElement('div'); t.textContent = msg;
+      t.style.cssText = 'display:inline-block;background:var(--color-accent,#0ea5e9);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';
+      tc.appendChild(t);
+      requestAnimationFrame(() => requestAnimationFrame(() => { t.style.opacity = '1'; }));
+      setTimeout(() => { t.style.opacity = '0'; setTimeout(() => { if (t.parentNode) t.parentNode.removeChild(t); }, 350); }, 2700);
+    }
+
+  }());
+  </script>
+
+  <script>
+    function handleContactForm(e) {
+      e.preventDefault();
+      const myForm = e.target;
+      const formData = new FormData(myForm);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        alert("Thank you! Your request has been transmitted.");
+        myForm.reset();
+      })
+      .catch((error) => {
+        alert("Oops! There was a problem submitting your form.");
+        console.error("Form submission error:", error);
+      });
+    }
+  </script>
+
+</body>
+</html>
