@@ -253,11 +253,17 @@ const FingerprintEngine = (() => {
       document.body.appendChild(div)
 
       const rect = div.firstChild.getBoundingClientRect()
+
+      // Only width/height carry real rendering-
+      // engine signal here. top/left would just
+      // echo back the fixed -9999px position we
+      // set ourselves — zero entropy, and their
+      // negative sign collided with the "-"
+      // separator below, which is what produced
+      // the double-dash artifact seen in testing.
       const raw =
         `${rect.width.toFixed(2)}-` +
-        `${rect.height.toFixed(2)}-` +
-        `${rect.top.toFixed(2)}-` +
-        `${rect.left.toFixed(2)}`
+        `${rect.height.toFixed(2)}`
 
       document.body.removeChild(div)
 

@@ -211,6 +211,24 @@ const AISummaryEngine = (() => {
           `${warnings > 0
             ? `${warnings} warning${warnings > 1 ? 's' : ''} active.`
             : 'No warnings active.'}`
+      },
+
+      canvas13: () => {
+        const fp = STATE.fingerprinting
+        if (fp.uniquenessScore === null) {
+          return 'Fingerprint analysis in progress.'
+        }
+        const flags = []
+        if (fp.webdriverDetected) flags.push('automation detected')
+        if (fp.adBlockerDetected) flags.push('ad blocker active')
+        if (fp.incognitoDetected) flags.push('private browsing likely')
+        if (fp.ipv6LeakDetected) flags.push('IPv6 leak detected')
+
+        return `Your fingerprint uniqueness score is ` +
+          `${fp.uniquenessScore}/100. ` +
+          `${flags.length > 0
+            ? flags.join(', ') + '.'
+            : 'No automation, leak, or ad blocker signals detected.'}`
       }
     }
 
@@ -583,7 +601,8 @@ const AISummaryEngine = (() => {
       'canvas1', 'canvas2', 'canvas3',
       'canvas4', 'canvas5', 'canvas6',
       'canvas7', 'canvas8', 'canvas9',
-      'canvas10', 'canvas11', 'canvas12'
+      'canvas10', 'canvas11', 'canvas12',
+      'canvas13'
     ]
 
     logAI(
