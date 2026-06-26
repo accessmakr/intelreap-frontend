@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://intelreap.com/guides/how-to-enable-webgl</loc>
+    <lastmod>2026-06-26T05:22:30+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://intelreap.com</loc>
     <lastmod>2026-06-25T09:03:53+01:00</lastmod>
     <changefreq>weekly</changefreq>

@@ -20,6 +20,11 @@
     "file": "guides/gpu-troubleshooting-guide.html"
   },
   {
+    "url": "https://intelreap.com/guides/how-to-enable-webgl",
+    "lastmod": "2026-06-26T05:22:30+01:00",
+    "file": "guides/how-to-enable-webgl.html"
+  },
+  {
     "url": "https://intelreap.com",
     "lastmod": "2026-06-25T09:03:53+01:00",
     "file": "index.html"
