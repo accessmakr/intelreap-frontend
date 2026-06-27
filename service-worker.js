@@ -8,7 +8,7 @@
 // Images            → Stale while revalidate
 // ─────────────────────────────────────────
 
-const SW_VERSION = 'intelreap-v1.0.0'
+const SW_VERSION = 'intelreap-v1.1.0'
 
 // Cache names per resource type
 const CACHES = {
@@ -273,13 +273,18 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  // CSS and JS — cache first
+  // CSS and JS — stale while revalidate
+  // Returns cached version immediately for
+  // speed, but always refreshes the cache in
+  // the background — so even if SW_VERSION
+  // isn't bumped, staleness self-heals after
+  // one reload instead of persisting forever
   if (
     pathname.endsWith('.css') ||
     pathname.endsWith('.js')
   ) {
     event.respondWith(
-      cacheFirst(request, CACHES.static)
+      staleWhileRevalidate(request, CACHES.static)
     )
     return
   }
