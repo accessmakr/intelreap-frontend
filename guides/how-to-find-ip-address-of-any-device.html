@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('ndic_theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>How to Find the IP Address of Any Device — Printer, Roku, Minecraft & More — IntelReap</title>
+  <meta name="description" content="Where to find the IP address on a printer, Roku without a remote, a Minecraft server via CMD, or any device on your network — every method explained step by step.">
+  <meta name="keywords" content="where to find ip address on printer, how to find the ip address of a printer, how to find hp printer ip address, where to find roku ip address without remote and wifi, what cmd command to find ip address for minecraft, how to check the ip address of a minecraft server, how do you find ip address of printer, where is the ip address on a printer, find ip address any device network">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/guides/how-to-find-ip-address-of-any-device">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/guides/how-to-find-ip-address-of-any-device">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/guides/how-to-find-ip-address-of-any-device">
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="How to Find the IP Address of Any Device — Printer, Roku, Minecraft & More — IntelReap">
+  <meta property="og:description"  content="Step-by-step methods to find the IP address of a printer, Roku without a remote, a Minecraft server via CMD, and any device on your network.">
+  <meta property="og:url"          content="https://intelreap.com/guides/how-to-find-ip-address-of-any-device">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_US">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="How to Find the IP Address of Any Device — IntelReap">
+  <meta name="twitter:description" content="Printer, Roku, Minecraft server, or any network device — every IP address lookup method in one guide.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+  <meta name="geo.region" content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM" content="51.5074, -0.1278">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#0ea5e9">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <style>
+    #scroll-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent,#0ea5e9),#06b6d4);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
+    .ir-breadcrumb{max-width:760px;margin:0 auto;padding:1rem 1.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:0.375rem;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.75rem;color:var(--color-text-tertiary,#475569);}
+    .ir-breadcrumb a{color:var(--color-accent,#0ea5e9);text-decoration:none;}
+    .ir-breadcrumb a:hover{text-decoration:underline;}
+    .ir-breadcrumb-sep{opacity:0.4;}
+    .ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
+    .ir-article{max-width:760px;margin:0 auto;padding:0 1.5rem 4rem;}
+    .ir-article h2{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:2.75rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));display:flex;align-items:center;gap:0.6rem;line-height:1.35;scroll-margin-top:5rem;}
+    .ir-article h3{font-family:var(--font-display,'Syne',sans-serif);font-size:0.975rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:1.75rem 0 0.6rem;line-height:1.4;}
+    .ir-article p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.85;color:var(--color-text-secondary,#94a3b8);margin-bottom:1rem;}
+    .ir-article ul,.ir-article ol{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.8;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.25rem 1.25rem;}
+    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}
+    .ir-article li::marker{color:var(--color-accent,#0ea5e9);}
+    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}
+    .ir-article em{font-style:italic;}
+    .ir-article a{color:var(--color-accent,#0ea5e9);text-decoration:underline;text-underline-offset:2px;}
+    .ir-article a:hover{opacity:0.8;}
+    .ir-article code{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.8125rem;color:var(--color-accent,#0ea5e9);background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.15);border-radius:4px;padding:0.1rem 0.4rem;white-space:nowrap;}
+    .section-num{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;color:var(--color-accent,#0ea5e9);font-weight:500;background:rgba(14,165,233,0.1);padding:0.15rem 0.4rem;border-radius:3px;flex-shrink:0;}
+    .ir-callout{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-left:3px solid var(--color-accent,#0ea5e9);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .ir-callout p{margin-bottom:0;color:var(--color-text-primary,#e2e8f0)!important;font-weight:500;}
+    .ir-browser-block{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.07));border-radius:8px;padding:1.5rem 1.5rem 1rem;margin:1.5rem 0;}
+    .ir-browser-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:1rem;display:block;}
+    .ir-browser-steps{list-style:none;margin:0;padding:0;}
+    .ir-browser-step{display:flex;gap:0.875rem;margin-bottom:0.875rem;align-items:flex-start;}
+    .ir-browser-step-num{flex-shrink:0;width:1.5rem;height:1.5rem;border-radius:50%;background:rgba(14,165,233,0.15);color:var(--color-accent,#0ea5e9);font-family:var(--font-mono,'JetBrains Mono',monospace);font-weight:700;font-size:0.7rem;display:flex;align-items:center;justify-content:center;margin-top:0.1rem;}
+    .ir-browser-step-text{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);}
+    .ir-table-wrap{width:100%;overflow-x:auto;margin:1.25rem 0 2rem;border-radius:6px;border:1px solid var(--color-border,rgba(255,255,255,0.07));-webkit-overflow-scrolling:touch;}
+    .ir-table{width:100%;min-width:500px;border-collapse:collapse;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;}
+    .ir-table caption{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.75rem;color:var(--color-text-tertiary,#475569);text-align:left;padding:0.5rem 1rem 0;caption-side:top;}
+    .ir-table th{background:rgba(255,255,255,0.04);color:var(--color-text-primary,#e2e8f0);font-family:var(--font-display,'Syne',sans-serif);font-weight:600;font-size:0.8rem;padding:0.75rem 1rem;text-align:left;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.07));white-space:nowrap;}
+    .ir-table td{padding:0.75rem 1rem;color:var(--color-text-secondary,#94a3b8);border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));vertical-align:middle;line-height:1.55;}
+    .ir-table tr:last-child td{border-bottom:none;}
+    .ir-check{color:#34d399;font-weight:600;}
+    .ir-cross{color:#f87171;}
+    .ir-neutral{color:var(--color-text-tertiary,#475569);}
+    .ir-cta-block{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-radius:8px;padding:1.875rem 1.75rem;margin:2.5rem 0;text-align:center;}
+    .ir-cta-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.625rem;display:block;}
+    .ir-cta-block h3{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.5rem;line-height:1.3;}
+    .ir-cta-block>p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary,#94a3b8);margin:0 0 1.375rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .ir-logic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+    @media(max-width:560px){.ir-logic-grid{grid-template-columns:1fr;}}
+    .ir-logic-card{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.06));border-radius:6px;padding:1.25rem 1.5rem;}
+    .ir-logic-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.5rem;display:block;}
+    .ir-logic-card p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);margin:0;}
+    .ir-share-wrap{margin:2.5rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-share-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-tertiary,#475569);margin-bottom:0.875rem;display:block;}
+    .ir-share-pills{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .ir-share-pill{display:inline-flex;align-items:center;padding:0.375rem 0.875rem;border-radius:9999px;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;font-weight:500;background:rgba(255,255,255,0.04);border:1px solid var(--color-border,rgba(255,255,255,0.08));color:var(--color-text-secondary,#94a3b8);cursor:pointer;text-decoration:none;transition:border-color 0.15s,color 0.15s;white-space:nowrap;}
+    .ir-share-pill:hover{border-color:var(--color-accent,#0ea5e9);color:var(--color-accent,#0ea5e9);text-decoration:none;}
+    .ir-faq-outer{max-width:760px;margin:0 auto;padding:0 1.5rem 1rem;}
+    .ir-faq-heading{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.375rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-faq-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.5rem;line-height:1.65;}
+    .ir-contact-outer{max-width:760px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;}
+    .ir-contact-header{text-align:center;margin-bottom:1.75rem;}
+    .ir-contact-title{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin-bottom:0.375rem;}
+    .ir-contact-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;color:var(--color-text-tertiary,#475569);line-height:1.6;}
+    .ir-form-wrap{max-width:400px;margin:0 auto;}
+    .ir-form-card{background:rgba(13,18,37,0.8);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:2rem;}
+    .form-group{margin-bottom:1rem;}
+    .form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
+    .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.65rem 0.9rem;font-size:0.875rem;color:var(--color-text-primary,#e2e8f0);font-family:var(--font-body,'Be Vietnam Pro',sans-serif);transition:border-color 0.2s;box-sizing:border-box;}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent,#0ea5e9);}
+    .form-group textarea{resize:vertical;min-height:100px;}
+    .form-hidden{display:none;}
+    .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
+    .form-submit:hover{opacity:0.9;}
+    #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"Article","@id":"https://intelreap.com/guides/how-to-find-ip-address-of-any-device#article","headline":"How to Find the IP Address of Any Device — Printer, Roku, Minecraft and More","description":"Step-by-step methods to find the IP address of a printer, Roku without a remote, a Minecraft server via CMD command, and any device on your network.","url":"https://intelreap.com/guides/how-to-find-ip-address-of-any-device","image":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/og-image.png","width":1200,"height":630},"datePublished":"2026-02-07","dateModified":"2026-06-09","author":{"@type":"Organization","@id":"https://intelreap.com/#organization"},"publisher":{"@id":"https://intelreap.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://intelreap.com/guides/how-to-find-ip-address-of-any-device"},"inLanguage":"en-US","keywords":"where to find ip address on printer, how to find ip address of printer, find hp printer ip, roku ip address without remote, cmd command find ip address minecraft","articleSection":"Network Guides","wordCount":2800},
+      {"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com","logo":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/intelreap-logo.svg"},"sameAs":["https://twitter.com/intelreap","https://github.com/accessmakr/intelreap-frontend"]},
+      {"@type":"WebSite","@id":"https://intelreap.com/#website","name":"IntelReap","url":"https://intelreap.com","publisher":{"@id":"https://intelreap.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://intelreap.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://intelreap.com/guides/"},{"@type":"ListItem","position":3,"name":"How to Find the IP Address of Any Device","item":"https://intelreap.com/guides/how-to-find-ip-address-of-any-device"}]},
+      {"@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What CMD command finds the IP address of a Minecraft server?","acceptedAnswer":{"@type":"Answer","text":"Open Command Prompt (Win + R, type cmd, press Enter) and run: nslookup followed by the server's hostname. For example: nslookup play.hypixel.net — the Address field in the output shows the server's IP address. Alternatively, use: ping play.hypixel.net -n 1 — the reply shows the IP in brackets. Both commands work for any hostname, not just Minecraft servers."}},
+        {"@type":"Question","name":"Where is the IP address on a printer?","acceptedAnswer":{"@type":"Answer","text":"The IP address is displayed on the printer's own control panel screen — navigate to Settings or Network on the printer's menu and look for Network Status or IP Address. Alternatively, print a Network Configuration Page or Wireless Test Report from the printer's menu — the IP address appears on that printed sheet. From a Windows PC, open Settings → Bluetooth & devices → Printers & scanners → select your printer → Printer properties → Ports tab — the IP shows in the port name."}},
+        {"@type":"Question","name":"How do I find my HP printer's IP address?","acceptedAnswer":{"@type":"Answer","text":"On the HP printer's control panel, tap the Wireless icon or go to Settings → Network Setup → View Wireless Summary — the IP address is listed there. Alternatively, press the Information button (i) to print an info page showing the IP. From the HP Smart app on your phone or PC, open the app, select your printer, and the IP address is displayed in the printer details section."}},
+        {"@type":"Question","name":"How do I find the Roku IP address without a remote or Wi-Fi?","acceptedAnswer":{"@type":"Answer","text":"Log in to your router's admin panel (usually at 192.168.1.1 or 192.168.0.1 in a browser) and check the DHCP client list — find the device named Roku. Alternatively, use the Roku mobile app on a phone connected to the same Wi-Fi — the app discovers the Roku and its IP is visible in the connection settings. If the Roku lost Wi-Fi entirely, a physical reset (pin in the reset hole) is required before reconnecting."}},
+        {"@type":"Question","name":"How do I find the IP address of any device on my network?","acceptedAnswer":{"@type":"Answer","text":"The most reliable method for any device: log into your router's admin panel (192.168.1.1 or 192.168.0.1) and check the DHCP lease table or connected devices list — every device connected to your network appears there with its IP and MAC address. From Windows CMD, run arp -a to see all IP-to-MAC mappings cached on your machine. The free Fing app (iOS/Android) or Advanced IP Scanner (Windows) scan your entire subnet and list every connected device."}},
+        {"@type":"Question","name":"What is the difference between a local IP address and a public IP address?","acceptedAnswer":{"@type":"Answer","text":"A local IP address (also called a private IP) is assigned by your router and is only visible within your home network — typically in the ranges 192.168.x.x, 10.x.x.x, or 172.16-31.x.x. A public IP address is assigned by your ISP and is the address the internet sees when your network makes outgoing connections. Your router uses NAT to translate between the two. Use IntelReap's Network Identity panel to see your current public IP address instantly."}},
+        {"@type":"Question","name":"How do I find a printer's IP address on a Mac?","acceptedAnswer":{"@type":"Answer","text":"Open System Settings (or System Preferences on older macOS) → Printers & Scanners. Select your printer from the list. Right-click or Control-click it and choose Print Queue. In the print queue window, look at the window title or go to Printer → Information — the IP address is shown. Alternatively, hold Option and click on the printer name in the list to reveal extended information including the IP."}},
+        {"@type":"Question","name":"Can I ping a printer to find its IP address?","acceptedAnswer":{"@type":"Answer","text":"You need to already know the IP or hostname to ping it — pinging does not discover the IP. However, if you know the printer's hostname (often the model name, visible in your router's DHCP list), you can ping it to confirm the IP: open CMD and run ping HP-LaserJet-xxxx (replacing with your printer's hostname). The reply shows the IP address in brackets. Use your router's DHCP client list to find the hostname first."}},
+        {"@type":"Question","name":"What is the default gateway IP address?","acceptedAnswer":{"@type":"Answer","text":"The default gateway is your router's local IP address — the device that routes traffic between your home network and the internet. On Windows, open CMD and run ipconfig — the Default Gateway line shows your router's IP, typically 192.168.1.1 or 192.168.0.1. On Mac, open Terminal and run netstat -nr | grep default. Typing your router's gateway IP into a browser address bar opens its admin panel."}},
+        {"@type":"Question","name":"How do I find the IP address of my router?","acceptedAnswer":{"@type":"Answer","text":"On Windows: open CMD and run ipconfig — the Default Gateway value is your router's IP. On Mac: open Terminal and run netstat -nr | grep default — the first result is the router IP. On Android: go to Settings → Wi-Fi → tap your connected network → Advanced or Network Details — Gateway shows the router IP. On iOS: Settings → Wi-Fi → tap the (i) next to your network → Router field shows the router IP."}},
+        {"@type":"Question","name":"How do I find the IP address of a Minecraft server I want to join?","acceptedAnswer":{"@type":"Answer","text":"Open Command Prompt and run: nslookup followed by the server address shown in Minecraft's multiplayer menu. For example: nslookup mc.hypixel.net — the Address field shows the server's IP. If the server uses a custom port (e.g., play.server.com:25565), run nslookup on just the hostname part without the colon and port number. The IP returned is the server's address at that moment — server IPs can change if the operator uses dynamic DNS."}},
+        {"@type":"Question","name":"What command shows all IP addresses on a local network?","acceptedAnswer":{"@type":"Answer","text":"On Windows, open CMD and run arp -a — this displays the ARP table showing all IP and MAC address pairs your machine has communicated with recently. For a full active scan of all devices: install Nmap and run nmap -sn 192.168.1.0/24 (replace with your actual subnet). The free Advanced IP Scanner application for Windows performs the same scan with a graphical interface. On Mac and Linux, run arp -a or nmap -sn 192.168.1.0/24 in Terminal."}}
+      ]}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="ir-breadcrumb-current" aria-current="page">How to Find the IP Address of Any Device</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Network Guide</span>
+        </div>
+        <h1 class="ndic-hero-title">
+          How to Find the <span class="ndic-highlight">IP Address</span><br>
+          of Any Device
+        </h1>
+        <p class="ndic-hero-tagline">
+          Printer, Roku, Minecraft server, router, or any device on your network — every method for finding an IP address explained clearly and in the right order. No networking degree required.
+        </p>
+        <div class="ndic-hero-cta-group">
+          <a href="/intelligence/network-identity" class="ndic-btn-primary cta-rotate">Reveal My Network Identity</a>
+          <a href="/intelligence/network-route" class="ndic-btn-secondary">See My Network Route →</a>
+        </div>
+        <div id="freshness-badge" aria-live="polite">Loading…</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item"><span class="ndic-trust-value">4.9★</span><span class="ndic-trust-label">satisfaction</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">234 data points</span><span class="ndic-trust-label">per scan</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">12 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">Zero data stored</span><span class="ndic-trust-label">privacy first</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">Every device has its IP visible in three places: its own screen, your router's admin panel, or Windows CMD — the right method depends on the device</h2>
+      <p class="ndic-quick-answer-body">
+        For a printer: press the menu button and look under Network, or print a configuration page. For a Minecraft server: open CMD and run <code>nslookup &lt;server-address&gt;</code>. For a Roku without a remote: log into your router at 192.168.1.1 and check the DHCP device list. For any device on your network: <code>arp -a</code> in Command Prompt shows all IP addresses currently in use. For your own public IP: IntelReap's Network Identity panel shows it instantly.
+      </p>
+    </section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+
+      <h2><span class="section-num">01</span> Local vs Public IP — Which One Do You Need?</h2>
+      <p>Before looking up an IP address, it is worth confirming which type you are after — because the methods are completely different.</p>
+      <p><strong>Local IP addresses</strong> (also called private IPs) are assigned by your router and only exist within your home or office network. They typically follow the pattern 192.168.x.x, 10.x.x.x, or 172.16–31.x.x. Printer IPs, Roku IPs, and the IP addresses of other devices on your network are all local IPs. They are not visible from the internet.</p>
+      <p><strong>Public IP addresses</strong> are assigned by your ISP and are the address the internet sees when any device on your network makes an outgoing connection. Your router sits between your devices and the internet, translating between local and public IPs using a process called NAT (Network Address Translation). Your public IP is the same regardless of which device you check from — all devices on the same network share one public IP.</p>
+      <div class="ir-callout"><p><strong>Rule of thumb:</strong> finding a printer, Roku, or gaming server IP = you want a local IP (use your router or device menu). Finding your own IP to share with someone = you want your public IP (use IntelReap's Network Identity panel).</p></div>
+
+      <h2><span class="section-num">02</span> Where to Find the IP Address on a Printer</h2>
+      <p>The fastest method for almost any printer — regardless of brand — is to check the printer's own control panel. Most printers display the IP address directly in their network settings menu, or will print it on a configuration page at the press of a button.</p>
+
+      <h3>Method 1 — Printer control panel</h3>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">All Brands — Control Panel Menu</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">On the printer's screen, press <strong>Menu</strong>, <strong>Home</strong>, or the <strong>Settings</strong> icon (varies by model)</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Navigate to <strong>Network Setup</strong>, <strong>Network Status</strong>, <strong>Wi-Fi</strong>, or <strong>Wireless Summary</strong> — the label varies by manufacturer</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">The IP address is listed on this screen — it will be a four-part number in the format 192.168.x.x</div></li>
+        </ol>
+      </div>
+
+      <h3>Method 2 — Print a Network Configuration Page</h3>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">All Brands — Configuration Page Print</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">On the printer menu, navigate to <strong>Reports</strong>, <strong>Print Reports</strong>, or <strong>Information</strong></div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Select <strong>Network Configuration Page</strong>, <strong>Configuration Report</strong>, or <strong>Wireless Test Report</strong></div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">The printer prints a single page — the IP address is shown in the network section of that page</div></li>
+        </ol>
+      </div>
+
+      <h3>Method 3 — From a Windows PC</h3>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Windows 10 / 11 — Printer Settings</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Open <strong>Settings</strong> → <strong>Bluetooth &amp; devices</strong> → <strong>Printers &amp; scanners</strong></div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Click your printer → select <strong>Printer properties</strong></div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">Go to the <strong>Ports</strong> tab — the IP address appears in the port name column next to the active (checked) port</div></li>
+        </ol>
+      </div>
+
+      <h3>Method 4 — From a Mac</h3>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">macOS — System Settings</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Open <strong>System Settings</strong> (or System Preferences) → <strong>Printers &amp; Scanners</strong></div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Select your printer from the list, then hold <strong>Option</strong> and click the printer name — or right-click and choose <strong>Print Queue</strong></div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">In the Print Queue window, click <strong>Printer</strong> in the menu bar → <strong>Information</strong> — the IP address is displayed</div></li>
+        </ol>
+      </div>
+
+      <h2><span class="section-num">03</span> How to Find HP Printer IP Address</h2>
+      <p>HP printers have some model-specific routes to the IP address that are faster than the general methods above. The most reliable for any HP model:</p>
+      <ul>
+        <li><strong>HP printers with a touchscreen:</strong> Tap the Wireless icon (signal bars icon) on the home screen. The IP address is shown directly on the wireless summary screen — no menu navigation required.</li>
+        <li><strong>HP printers without a screen (e.g., HP DeskJet, some OfficeJet models):</strong> Press and hold the Wireless button for 3 seconds to print a Wireless Test Report. The IP address is printed on that page under "IP Address" in the network section.</li>
+        <li><strong>HP Smart app:</strong> Open the HP Smart app on Windows, Mac, iOS, or Android → select your printer → the IP address is shown in the printer details panel under Network.</li>
+        <li><strong>HP Embedded Web Server:</strong> Once you have the IP address, type it directly into a browser address bar — HP printers host a built-in web management page that shows status, ink levels, and full network configuration.</li>
+      </ul>
+
+      <h2><span class="section-num">04</span> What CMD Command Finds the IP Address of a Minecraft Server?</h2>
+      <p>
+        The command is <code>nslookup</code> followed by the server's hostname. This is a DNS lookup tool built into Windows, macOS, and Linux that resolves any hostname to its IP address — not just Minecraft servers.
+      </p>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Windows CMD — nslookup Method</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Press <strong>Win + R</strong>, type <code>cmd</code>, and press Enter to open Command Prompt</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Type <code>nslookup play.hypixel.net</code> (replace with your target server address) and press Enter</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">The output shows a <strong>Name</strong> and <strong>Address</strong> field. The Address value is the server's IP address</div></li>
+        </ol>
+      </div>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Alternative — ping Method</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Open CMD and type <code>ping play.hypixel.net -n 1</code> and press Enter</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">The first reply line shows the IP address in square brackets, e.g. <code>Pinging play.hypixel.net [172.65.x.x]</code></div></li>
+        </ol>
+      </div>
+      <div class="ir-callout"><p><strong>Important:</strong> If the server address contains a port number (e.g. <code>play.server.com:25565</code>), run nslookup on only the hostname part — omit the colon and port. Minecraft server IPs can also change over time if the server uses dynamic DNS — the lookup reflects the IP at the moment you run it.</p></div>
+
+      <h2><span class="section-num">05</span> How to Find Roku IP Address Without Remote or Wi-Fi</h2>
+      <p>Without a physical remote, you have three practical routes to the Roku's IP address — each suited to a different situation.</p>
+      <h3>Option A — Router admin panel (most reliable)</h3>
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">Router DHCP List — Any Browser</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Open a browser on any device connected to your home network and type <code>192.168.1.1</code> or <code>192.168.0.1</code> in the address bar (try both if one does not work)</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Log in with your router's admin credentials (often printed on the router's label)</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">Navigate to <strong>Connected Devices</strong>, <strong>DHCP Clients</strong>, or <strong>Device List</strong> — find the entry named "Roku" — its IP is in the same row</div></li>
+        </ol>
+      </div>
+      <h3>Option B — Roku mobile app</h3>
+      <p>If your Roku is still connected to Wi-Fi (just without a physical remote), the free Roku app on iOS or Android detects it automatically. Open the app on a phone on the same Wi-Fi network → it will discover your Roku → once connected, go to Settings → the IP address is shown in the About or Network section.</p>
+      <h3>Option C — Reset and reconnect</h3>
+      <p>If the Roku has completely lost its Wi-Fi connection and you have no remote, locate the physical reset button on the device (a small pin hole on the back or bottom). Press and hold it for 10–15 seconds with a pin. After the factory reset, use the Roku app on your phone to complete the Wi-Fi setup from scratch.</p>
+
+      <h2><span class="section-num">06</span> How to Find the IP Address of Any Device on Your Network</h2>
+      <p>These methods work universally — for smart TVs, game consoles, smart home hubs, network storage devices, or any other connected hardware.</p>
+      <h3>Method 1 — Router DHCP table (most complete)</h3>
+      <p>Log into your router's admin panel as described above. The DHCP client list shows every device currently connected, with its hostname, IP address, and MAC address all in one view. This is the single most reliable method for any device.</p>
+      <h3>Method 2 — Windows CMD: <code>arp -a</code></h3>
+      <p>Open Command Prompt and run <code>arp -a</code>. This displays the ARP (Address Resolution Protocol) table — all IP-to-MAC address mappings your Windows machine has resolved. It shows every device your PC has communicated with recently on the local network. The output is fast and requires no extra software.</p>
+      <h3>Method 3 — Network scanner apps</h3>
+      <p><strong>Advanced IP Scanner</strong> (Windows, free) and the <strong>Fing</strong> app (iOS/Android, free) both scan your entire subnet and list every active device with its IP, MAC address, manufacturer name, and hostname. These tools are particularly useful for identifying devices whose names are not obvious in the router's DHCP list.</p>
+
+      <!-- CTA 1 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Network Identity Intelligence</span>
+        <h3>See Your Full Network Identity — IP, ISP, ASN, and Routing Path</h3>
+        <p>IntelReap's Network Identity panel instantly reveals your public IP address, ISP name, Autonomous System Number, geolocation, and organisation — directly in your browser, free, no account required.</p>
+        <a href="/intelligence/network-identity" class="ndic-btn-primary cta-rotate">Reveal My Network Identity</a>
+      </div>
+
+      <h2><span class="section-num">07</span> How to Find Your Own Public IP Address</h2>
+      <p>Your public IP is the address your ISP assigns to your router — it is what websites and servers see when you connect to them. There are three quick methods:</p>
+      <ul>
+        <li><strong>IntelReap Network Identity panel:</strong> Run a free scan — your public IP, ISP name, ASN, and geolocation are all displayed instantly, with no installation or login required.</li>
+        <li><strong>Windows/Mac/Linux terminal:</strong> Run <code>curl ifconfig.me</code> — the terminal prints your public IP address on a single line.</li>
+        <li><strong>Google search:</strong> Type "what is my IP" into Google — it shows your public IP at the top of the results page.</li>
+      </ul>
+      <div class="ir-callout"><p><strong>Note:</strong> If you are using a VPN, the IP shown by these methods is the VPN server's IP, not your real ISP-assigned IP. IntelReap's VPN &amp; Proxy panel will detect this and flag the connection type accordingly.</p></div>
+
+      <h2><span class="section-num">08</span> IP Address Lookup Methods: Reference Table</h2>
+      <div class="ir-table-wrap" role="region" aria-label="IP address finding methods by device type" tabindex="0">
+        <table class="ir-table">
+          <caption>Every common IP address lookup scenario mapped to the fastest method and tools required</caption>
+          <thead>
+            <tr>
+              <th scope="col">What You Need</th>
+              <th scope="col">Fastest Method</th>
+              <th scope="col">Command / Tool</th>
+              <th scope="col">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Printer IP (any brand)</strong></td>
+              <td>Printer control panel menu</td>
+              <td>Physical buttons on printer</td>
+              <td class="ir-check">10 seconds</td>
+            </tr>
+            <tr>
+              <td><strong>Printer IP (Windows)</strong></td>
+              <td>Printer Properties → Ports tab</td>
+              <td>Settings → Printers &amp; scanners</td>
+              <td class="ir-neutral">30 seconds</td>
+            </tr>
+            <tr>
+              <td><strong>HP printer IP</strong></td>
+              <td>Tap Wireless icon on printer screen</td>
+              <td>HP printer touchscreen</td>
+              <td class="ir-check">5 seconds</td>
+            </tr>
+            <tr>
+              <td><strong>Minecraft server IP</strong></td>
+              <td><code>nslookup &lt;hostname&gt;</code></td>
+              <td>Windows CMD / Terminal</td>
+              <td class="ir-check">10 seconds</td>
+            </tr>
+            <tr>
+              <td><strong>Roku IP (no remote)</strong></td>
+              <td>Router DHCP client list</td>
+              <td>Browser → 192.168.1.1</td>
+              <td class="ir-neutral">1 minute</td>
+            </tr>
+            <tr>
+              <td><strong>Any device on network</strong></td>
+              <td>Router DHCP table</td>
+              <td>Browser → router admin panel</td>
+              <td class="ir-neutral">1 minute</td>
+            </tr>
+            <tr>
+              <td><strong>All devices at once (Windows)</strong></td>
+              <td><code>arp -a</code> in CMD</td>
+              <td>Command Prompt</td>
+              <td class="ir-check">10 seconds</td>
+            </tr>
+            <tr>
+              <td><strong>All devices at once (visual)</strong></td>
+              <td>Advanced IP Scanner / Fing</td>
+              <td>Free third-party app</td>
+              <td class="ir-neutral">2 minutes</td>
+            </tr>
+            <tr>
+              <td><strong>Your public IP address</strong></td>
+              <td>IntelReap Network Identity</td>
+              <td>Browser → intelreap.com</td>
+              <td class="ir-check">Instant</td>
+            </tr>
+            <tr>
+              <td><strong>Your public IP (terminal)</strong></td>
+              <td><code>curl ifconfig.me</code></td>
+              <td>CMD / Terminal</td>
+              <td class="ir-check">5 seconds</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CTA 2 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Network Route Intelligence</span>
+        <h3>See the Full Routing Path of Your Network Connection</h3>
+        <p>IntelReap's Network Route panel shows your public IP, ISP, ASN, BGP routing path, and network topology — the complete picture of how your connection reaches the internet, free and in-browser.</p>
+        <a href="/intelligence/network-route" class="ndic-btn-secondary">See My Network Route →</a>
+      </div>
+
+      <!-- LOGIC + METHODOLOGY -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>The fastest IP lookup method is always the device's own display or configuration page — only reach for CMD or router admin when the device has no screen or menu access.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>This guide synthesises manufacturer documentation for HP, Epson, Canon, and Roku devices, Windows networking command references, and RFC 1918 private address range specifications verified against live network scan data.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link"><a href="https://support.hp.com/us-en/document/c03781399" target="_blank" rel="noopener noreferrer">HP Support — Finding the Printer IP Address on HP Printers</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/nslookup" target="_blank" rel="noopener noreferrer">Microsoft Learn — nslookup Command Reference</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link"><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/arp" target="_blank" rel="noopener noreferrer">Microsoft Learn — arp Command Reference</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link"><a href="https://datatracker.ietf.org/doc/html/rfc1918" target="_blank" rel="noopener noreferrer">RFC 1918 — Address Allocation for Private Internets (IETF)</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link"><a href="https://developer.roku.com/docs/developer-program/debugging/external-control-api.md" target="_blank" rel="noopener noreferrer">Roku Developer Documentation — External Control Protocol and Network Discovery</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">06</span>
+            <span class="ndic-citation-link"><a href="https://nmap.org/book/man-host-discovery.html" target="_blank" rel="noopener noreferrer">Nmap Reference — Host Discovery and Network Scanning</a></span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Twelve questions covering printers, Roku, Minecraft servers, CMD commands, routers, and the difference between local and public IP addresses.</p>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>What CMD command finds the IP address of a Minecraft server?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">Open Command Prompt (Win + R → <code>cmd</code>) and run <code>nslookup</code> followed by the server's hostname — for example: <code>nslookup play.hypixel.net</code>. The Address field in the output shows the server's IP. Alternatively: <code>ping play.hypixel.net -n 1</code> — the reply shows the IP in square brackets next to the hostname. Both commands work for any hostname, not just Minecraft.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>Where is the IP address on a printer?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">The IP address is shown on the printer's own control panel screen — press Menu or Settings and navigate to Network, Wireless, or Network Status. Alternatively, print a Network Configuration Page from the printer's Reports menu — the IP appears on that printed sheet. From Windows, go to Settings → Printers &amp; scanners → select printer → Printer properties → Ports tab — the IP is in the port name column.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>How do I find my HP printer's IP address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">Tap the Wireless icon on the HP printer's touchscreen — the IP address is shown on the wireless summary screen immediately. For printers without a screen, press and hold the Wireless button for 3 seconds to print a Wireless Test Report — the IP is printed on that page. The HP Smart app on any device also shows the IP in the printer details panel.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>How do I find the Roku IP address without a remote or Wi-Fi?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Log into your router's admin panel (192.168.1.1 or 192.168.0.1 in a browser) and check the DHCP client or connected devices list — find the entry named Roku and its IP is shown in that row. If the Roku is still on Wi-Fi but you have no physical remote, the free Roku mobile app on iOS or Android discovers it automatically on the same network and shows the IP in settings.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>How do I find the IP address of any device on my network?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">Log into your router's admin panel and check the DHCP client table — every device on your network appears there with its IP and MAC address. From Windows CMD, run <code>arp -a</code> to see all IP-to-MAC mappings. The free Fing app (iOS/Android) or Advanced IP Scanner (Windows) scan your subnet and list all active devices with names, IPs, and manufacturers.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>What is the difference between a local IP and a public IP address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">A local IP is assigned by your router and only exists within your home network — typical ranges are 192.168.x.x or 10.x.x.x. A public IP is assigned by your ISP and is the address the internet sees when any device on your network makes an outgoing connection. All devices on the same network share one public IP. IntelReap's Network Identity panel shows your public IP; your router's DHCP list shows all local IPs.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>How do I find a printer's IP address on a Mac?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">Open System Settings → Printers &amp; Scanners. Hold the Option key and click your printer's name — or right-click and choose Print Queue. In the print queue window, click Printer in the menu bar → Information. The IP address is displayed there. Alternatively, the printer's own control panel menu always shows the IP regardless of which computer you are using.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>Can I ping a printer to find its IP address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Pinging requires you to already know the IP or hostname — it confirms the IP rather than discovering it. If you find the printer's hostname in your router's DHCP list (often the model name), you can run <code>ping HP-LaserJet-xxxx</code> in CMD to confirm its IP. The better discovery method is the router DHCP list or the printer's own control panel, which reveal the IP without needing to know it first.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>What is the default gateway IP address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">The default gateway is your router's local IP address. On Windows, open CMD and run <code>ipconfig</code> — the Default Gateway line shows your router's IP, typically 192.168.1.1 or 192.168.0.1. On Mac, run <code>netstat -nr | grep default</code> in Terminal. Typing the gateway IP into a browser address bar opens your router's admin panel.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10"><span>How do I find the IP address of my router?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">On Windows: run <code>ipconfig</code> in CMD — the Default Gateway value is your router's local IP. On Mac: run <code>netstat -nr | grep default</code> in Terminal. On Android: Settings → Wi-Fi → tap your network → Advanced → Gateway. On iOS: Settings → Wi-Fi → tap the (i) next to your network → Router field. The router's IP is also printed on the label on the bottom or back of the device.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11"><span>How do I check the IP address of a Minecraft server I want to join?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">Open CMD and run <code>nslookup</code> followed by the server hostname shown in Minecraft's multiplayer menu — for example <code>nslookup mc.hypixel.net</code>. The Address field shows the current IP. If the address has a port after a colon (e.g., play.server.com:25565), use only the part before the colon in your nslookup command. Note that server IPs can change if the operator uses dynamic DNS records.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12"><span>What command shows all IP addresses on a local network?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">On Windows CMD, run <code>arp -a</code> — this shows all IP and MAC address pairs your machine has recently communicated with on the local network. For a full active scan: install Nmap and run <code>nmap -sn 192.168.1.0/24</code> (replace with your subnet). Advanced IP Scanner for Windows and the Fing app for iOS/Android perform the same scan visually with device names and manufacturers listed.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">Can't Find the IP Address You Need?</h2>
+          <p class="ir-contact-sub">Describe your device and situation — we will point you to the right method. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name"></div>
+              <div class="form-group"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+              <div class="form-group"><label for="cf-message">Describe your device and situation</label><textarea id="cf-message" name="message" placeholder="What device are you trying to find the IP of? What have you already tried?" required></textarea></div>
+              <button type="submit" class="form-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+  (function(){'use strict';
+    document.querySelectorAll('.ndic-faq-question').forEach(function(btn){btn.addEventListener('click',function(){const item=btn.closest('.ndic-faq-item'),wasOpen=item.classList.contains('ndic-faq-item--open');document.querySelectorAll('.ndic-faq-item--open').forEach(function(i){i.classList.remove('ndic-faq-item--open');i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');});if(!wasOpen){item.classList.add('ndic-faq-item--open');btn.setAttribute('aria-expanded','true');}});});
+    const bar=document.getElementById('scroll-progress-bar');if(bar){window.addEventListener('scroll',function(){const s=window.scrollY||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(s/h)*100:0).toFixed(2)+'%';},{passive:true});}
+    document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear().toString();});
+    (()=>{const now=new Date(),dow=now.getDay();const mon=new Date(now.getFullYear(),now.getMonth(),now.getDate()+(dow===0?-6:1-dow));const iso=mon.toISOString().split('T')[0];document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>{if(s.textContent.includes('"dateModified"'))s.textContent=s.textContent.replace(/"dateModified"\s*:\s*"[^"]*"/g,`"dateModified":"${iso}"`);});})();
+    (()=>{const badge=document.getElementById('freshness-badge');if(!badge)return;const d=new Date(),mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];const txt=`Last updated ${mo[d.getMonth()]}\u00a0${d.getDate()},\u00a0${d.getFullYear()}`;badge.textContent=txt;badge.setAttribute('aria-label',txt);})();
+    (()=>{const m=new Date().getMonth();const banners=['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'];const labels=['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];const el=document.getElementById('seasonal-banner');if(el){el.textContent=banners[m];el.style.cssText='text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;';}const lbl=document.getElementById('seasonal-label');if(lbl)lbl.textContent=labels[m];})();
+    (()=>{const v=['Reveal My Network Identity','See My Public IP Now','Check My Network Details','Inspect My IP Address','View My Network Identity','Scan My Network Now'];document.querySelectorAll('.cta-rotate').forEach(el=>{el.textContent=v[Math.floor(Math.random()*v.length)];});})();
+    (()=>{const rawUrl=window.location.href,encUrl=encodeURIComponent(rawUrl),encTitle=encodeURIComponent(document.title);const platforms=[{n:'WhatsApp',u:`https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}`},{n:'Facebook',u:`https://www.facebook.com/sharer/sharer.php?u=${encUrl}`},{n:'Twitter/X',u:`https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}`},{n:'LinkedIn',u:`https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`},{n:'Reddit',u:`https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`},{n:'Quora',u:`https://www.quora.com/search?q=${encTitle}`},{n:'Medium',u:`https://medium.com/new-story?url=${encUrl}`},{n:'Telegram',u:`https://t.me/share/url?url=${encUrl}&text=${encTitle}`},{n:'Pinterest',u:`https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}`},{n:'Discord',u:'https://discord.com/channels/@me'},{n:'Snapchat',u:`https://www.snapchat.com/share?url=${encUrl}`},{n:'Vimeo',u:'https://vimeo.com'},{n:'TikTok',u:'https://www.tiktok.com'},{n:'Instagram',u:'https://www.instagram.com'},{n:'Email',u:`mailto:?subject=${encTitle}&body=I%20thought%20you%20might%20find%20this%20useful%3A%20${encUrl}`},{n:'Copy Link',u:null}];
+    const container=document.getElementById('share-pills-container');if(!container)return;
+    platforms.forEach(p=>{let el;if(p.u===null){el=document.createElement('button');el.type='button';el.textContent='Copy Link';el.setAttribute('aria-label','Copy page URL to clipboard');el.addEventListener('click',()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(rawUrl).then(()=>{el.textContent='\u2713 Copied!';setTimeout(()=>{el.textContent='Copy Link';},2400);showToast('Link copied to clipboard');}).catch(()=>legacyCopy(rawUrl,el));}else legacyCopy(rawUrl,el);});}else{el=document.createElement('a');el.href=p.u;el.target='_blank';el.rel='noopener noreferrer';el.textContent=p.n;el.setAttribute('aria-label',`Share on ${p.n}`);}el.className='ir-share-pill';container.appendChild(el);});})();
+    function legacyCopy(text,btn){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');if(btn){btn.textContent='\u2713 Copied!';setTimeout(()=>{btn.textContent='Copy Link';},2400);}showToast('Link copied to clipboard');}catch(e){showToast('Copy failed — please copy the URL manually');}document.body.removeChild(ta);}
+    function showToast(msg){const tc=document.getElementById('toast-container');if(!tc)return;const t=document.createElement('div');t.textContent=msg;t.style.cssText='display:inline-block;background:var(--color-accent,#0ea5e9);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';tc.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>{t.style.opacity='1';}));setTimeout(()=>{t.style.opacity='0';setTimeout(()=>{if(t.parentNode)t.parentNode.removeChild(t);},350);},2700);}
+  }());
+  </script>
+
+  <script>
+    function handleContactForm(e){e.preventDefault();const myForm=e.target;const formData=new FormData(myForm);fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(formData).toString()}).then(()=>{alert("Thank you! Your request has been transmitted.");myForm.reset();}).catch((error)=>{alert("Oops! There was a problem submitting your form.");console.error("Form submission error:",error);});}
+  </script>
+</body>
+</html>
