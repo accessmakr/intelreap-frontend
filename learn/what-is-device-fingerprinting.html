@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('ndic_theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>What Is Device Fingerprinting? How It Works, How to Block It — IntelReap</title>
+  <meta name="description" content="Device fingerprinting identifies you without cookies by combining browser, hardware, and network signals. Learn how it works, who uses it, and how to reduce your fingerprint exposure.">
+  <meta name="keywords" content="what is device fingerprinting, what is a device fingerprint, device fingerprinting solutions, best providers for device fingerprinting and behavioral analytics, how does device fingerprinting work, how to block device fingerprinting, how to prevent device fingerprinting, how to change device fingerprint, what is my device fingerprint, device fingerprinting explained">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/learn/what-is-device-fingerprinting">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/learn/what-is-device-fingerprinting">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/what-is-device-fingerprinting">
+
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="What Is Device Fingerprinting? How It Works, How to Block It — IntelReap">
+  <meta property="og:description"  content="Device fingerprinting tracks you without cookies by combining dozens of browser and hardware signals into a unique identifier. Learn how it works, who uses it, and how to reduce your exposure.">
+  <meta property="og:url"          content="https://intelreap.com/learn/what-is-device-fingerprinting">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="What Is Device Fingerprinting? — IntelReap">
+  <meta name="twitter:description" content="No cookies needed. Device fingerprinting combines browser, hardware, and network signals to identify you uniquely. Full guide on how it works and how to reduce exposure.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+
+  <meta name="geo.region"   content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM"         content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#0ea5e9">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <style>
+    #scroll-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent,#0ea5e9),#06b6d4);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
+    .ir-breadcrumb{max-width:760px;margin:0 auto;padding:1rem 1.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:0.375rem;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.75rem;color:var(--color-text-tertiary,#475569);}
+    .ir-breadcrumb a{color:var(--color-accent,#0ea5e9);text-decoration:none;}.ir-breadcrumb a:hover{text-decoration:underline;}.ir-breadcrumb-sep{opacity:0.4;}.ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
+    .ir-article{max-width:760px;margin:0 auto;padding:0 1.5rem 4rem;}
+    .ir-article h2{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:2.75rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));display:flex;align-items:center;gap:0.6rem;line-height:1.35;scroll-margin-top:5rem;}
+    .ir-article h3{font-family:var(--font-display,'Syne',sans-serif);font-size:0.975rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:1.75rem 0 0.6rem;line-height:1.4;}
+    .ir-article p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.85;color:var(--color-text-secondary,#94a3b8);margin-bottom:1rem;}
+    .ir-article ul,.ir-article ol{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.8;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.25rem 1.25rem;}
+    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}.ir-article li::marker{color:var(--color-accent,#0ea5e9);}
+    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}.ir-article em{font-style:italic;}
+    .ir-article a{color:var(--color-accent,#0ea5e9);text-decoration:underline;text-underline-offset:2px;}.ir-article a:hover{opacity:0.8;}
+    .ir-article code{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.8125rem;color:var(--color-accent,#0ea5e9);background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.15);border-radius:4px;padding:0.1rem 0.4rem;white-space:nowrap;}
+    .section-num{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;color:var(--color-accent,#0ea5e9);font-weight:500;background:rgba(14,165,233,0.1);padding:0.15rem 0.4rem;border-radius:3px;flex-shrink:0;}
+    .ir-callout{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-left:3px solid var(--color-accent,#0ea5e9);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .ir-callout p{margin-bottom:0;color:var(--color-text-primary,#e2e8f0)!important;font-weight:500;}
+    /* Signal grid — fingerprint signals displayed as a visual list */
+    .ir-signal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.75rem;margin:1.25rem 0 1.75rem;}
+    .ir-signal-card{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.07));border-radius:6px;padding:0.875rem 1rem;}
+    .ir-signal-category{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.5rem;display:block;}
+    .ir-signal-list{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8125rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);}
+    .ir-table-wrap{width:100%;overflow-x:auto;margin:1.25rem 0 2rem;border-radius:6px;border:1px solid var(--color-border,rgba(255,255,255,0.07));-webkit-overflow-scrolling:touch;}
+    .ir-table{width:100%;min-width:500px;border-collapse:collapse;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;}
+    .ir-table caption{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.75rem;color:var(--color-text-tertiary,#475569);text-align:left;padding:0.5rem 1rem 0;caption-side:top;}
+    .ir-table th{background:rgba(255,255,255,0.04);color:var(--color-text-primary,#e2e8f0);font-family:var(--font-display,'Syne',sans-serif);font-weight:600;font-size:0.8rem;padding:0.75rem 1rem;text-align:left;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.07));white-space:nowrap;}
+    .ir-table td{padding:0.75rem 1rem;color:var(--color-text-secondary,#94a3b8);border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));vertical-align:middle;line-height:1.55;}
+    .ir-table tr:last-child td{border-bottom:none;}
+    .ir-check{color:#34d399;font-weight:600;}.ir-cross{color:#f87171;}.ir-neutral{color:var(--color-text-tertiary,#475569);}
+    .ir-cta-block{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-radius:8px;padding:1.875rem 1.75rem;margin:2.5rem 0;text-align:center;}
+    .ir-cta-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.625rem;display:block;}
+    .ir-cta-block h3{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.5rem;line-height:1.3;}
+    .ir-cta-block>p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary,#94a3b8);margin:0 0 1.375rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .ir-logic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+    @media(max-width:560px){.ir-logic-grid{grid-template-columns:1fr;}}
+    .ir-logic-card{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.06));border-radius:6px;padding:1.25rem 1.5rem;}
+    .ir-logic-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.5rem;display:block;}
+    .ir-logic-card p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);margin:0;}
+    .ir-share-wrap{margin:2.5rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-share-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-tertiary,#475569);margin-bottom:0.875rem;display:block;}
+    .ir-share-pills{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .ir-share-pill{display:inline-flex;align-items:center;padding:0.375rem 0.875rem;border-radius:9999px;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;font-weight:500;background:rgba(255,255,255,0.04);border:1px solid var(--color-border,rgba(255,255,255,0.08));color:var(--color-text-secondary,#94a3b8);cursor:pointer;text-decoration:none;transition:border-color 0.15s,color 0.15s;white-space:nowrap;}
+    .ir-share-pill:hover{border-color:var(--color-accent,#0ea5e9);color:var(--color-accent,#0ea5e9);text-decoration:none;}
+    .ir-faq-outer{max-width:760px;margin:0 auto;padding:0 1.5rem 1rem;}
+    .ir-faq-heading{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.375rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-faq-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.5rem;line-height:1.65;}
+    .ir-contact-outer{max-width:760px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;}
+    .ir-contact-header{text-align:center;margin-bottom:1.75rem;}
+    .ir-contact-title{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin-bottom:0.375rem;}
+    .ir-contact-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;color:var(--color-text-tertiary,#475569);line-height:1.6;}
+    .ir-form-wrap{max-width:400px;margin:0 auto;}
+    .ir-form-card{background:rgba(13,18,37,0.8);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:2rem;}
+    .form-group{margin-bottom:1rem;}.form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
+    .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.65rem 0.9rem;font-size:0.875rem;color:var(--color-text-primary,#e2e8f0);font-family:var(--font-body,'Be Vietnam Pro',sans-serif);transition:border-color 0.2s;box-sizing:border-box;}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent,#0ea5e9);}
+    .form-group textarea{resize:vertical;min-height:100px;}.form-hidden{display:none;}
+    .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
+    .form-submit:hover{opacity:0.9;}
+    #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}.ir-signal-grid{grid-template-columns:1fr 1fr;}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","@id":"https://intelreap.com/learn/what-is-device-fingerprinting#article","headline":"What Is Device Fingerprinting? How It Works, Who Uses It, and How to Block It","description":"Device fingerprinting identifies browsers and devices without cookies by combining dozens of signals — browser settings, hardware specs, fonts, canvas rendering, WebGL output — into a unique identifier. This guide explains how it works and how to reduce exposure.","url":"https://intelreap.com/learn/what-is-device-fingerprinting","image":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/og-image.png","width":1200,"height":630},"datePublished":"2026-02-21","dateModified":"2026-06-09","author":{"@type":"Organization","@id":"https://intelreap.com/#organization"},"publisher":{"@id":"https://intelreap.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://intelreap.com/learn/what-is-device-fingerprinting"},"inLanguage":"en-US","keywords":"what is device fingerprinting, how does device fingerprinting work, device fingerprinting solutions, how to block device fingerprinting, how to prevent device fingerprinting, best providers for device fingerprinting","articleSection":"Privacy Guides","wordCount":2900},
+    {"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com","logo":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/intelreap-logo.svg"},"sameAs":["https://twitter.com/intelreap","https://github.com/accessmakr/intelreap-frontend"]},
+    {"@type":"WebSite","@id":"https://intelreap.com/#website","name":"IntelReap","url":"https://intelreap.com","publisher":{"@id":"https://intelreap.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://intelreap.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://intelreap.com/learn/"},{"@type":"ListItem","position":3,"name":"What Is Device Fingerprinting?","item":"https://intelreap.com/learn/what-is-device-fingerprinting"}]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is device fingerprinting?","acceptedAnswer":{"@type":"Answer","text":"Device fingerprinting is a tracking technique that identifies a browser or device by combining dozens of observable characteristics — browser version, operating system, screen resolution, installed fonts, Canvas rendering output, WebGL renderer, timezone, language settings, and hardware specifications — into a unique identifier without using cookies. Because this identifier is derived from device characteristics rather than stored data, it persists even when cookies are cleared, private browsing is used, or browser history is deleted."}},
+      {"@type":"Question","name":"How does device fingerprinting work?","acceptedAnswer":{"@type":"Answer","text":"When you visit a website that uses fingerprinting, JavaScript running in your browser collects dozens of signals: your user agent string, screen dimensions, colour depth, timezone, language, installed plugins, Canvas element rendering output, WebGL renderer and vendor string, audio context characteristics, and hardware concurrency (CPU thread count). These signals are combined and hashed into a single identifier string. Because the combination of all these signals is statistically near-unique, the site can recognise your device on future visits without storing anything on your device."}},
+      {"@type":"Question","name":"What is a device fingerprint?","acceptedAnswer":{"@type":"Answer","text":"A device fingerprint is the unique identifier produced by combining multiple browser and hardware signals. It is not a file stored on your device — it is a value calculated from observable characteristics of your device and browser configuration. Two different browsers on the same device typically produce different fingerprints. The same browser on the same device typically produces the same fingerprint consistently across visits and across websites that use the same fingerprinting library."}},
+      {"@type":"Question","name":"Who uses device fingerprinting?","acceptedAnswer":{"@type":"Answer","text":"Device fingerprinting is used across several industries. In fraud prevention and security, banks, payment processors, and e-commerce platforms use it to detect account takeover attempts and flag suspicious device changes. In advertising, ad networks use it to track users across sites for targeting and attribution after cookie deprecation. In bot detection and security, companies like Cloudflare, Akamai, and Imperva use it to distinguish human visitors from automated bots and scrapers."}},
+      {"@type":"Question","name":"Is device fingerprinting legal?","acceptedAnswer":{"@type":"Answer","text":"The legal status of device fingerprinting depends on jurisdiction and use case. Under GDPR in the EU and UK, device fingerprinting is considered personal data processing and typically requires a lawful basis — usually either user consent or legitimate interest. The ePrivacy Directive requires consent for accessing device information in most cases. In the US, there is no federal law specifically regulating fingerprinting, but CCPA in California treats fingerprint data as personal information. Always consult legal counsel for compliance guidance specific to your use case."}},
+      {"@type":"Question","name":"How do I see my own device fingerprint?","acceptedAnswer":{"@type":"Answer","text":"Use IntelReap's Device Intelligence panel — it reads and displays the exact browser and hardware signals that fingerprinting systems collect: your GPU renderer string, hardware concurrency, screen resolution, colour depth, platform, and dozens of other data points. This shows you precisely what fingerprinting systems see when you visit a website. You can also run the open-source EFF Cover Your Tracks tool at coveryourtracks.eff.org to test your fingerprint uniqueness."}},
+      {"@type":"Question","name":"How do I block device fingerprinting?","acceptedAnswer":{"@type":"Answer","text":"Complete blocking of device fingerprinting is not practically achievable without severely degrading browser functionality. Effective mitigation includes: using Firefox with the resistFingerprinting privacy setting enabled (about:config → privacy.resistFingerprinting = true), using Brave browser which has built-in fingerprint randomisation, using the Tor Browser which normalises all fingerprinting signals to a standard profile, and using a privacy-focused browser extension like CanvasBlocker. Note that anti-fingerprinting measures can themselves make your browser more unique if used inconsistently."}},
+      {"@type":"Question","name":"How do I prevent device fingerprinting?","acceptedAnswer":{"@type":"Answer","text":"Prevention focuses on reducing signal uniqueness rather than blocking collection entirely. Use a mainstream browser on a common OS configuration to blend into the crowd rather than standing out. Avoid installing unusual fonts, plugins, or extensions that create unique signals. Enable Firefox's resistFingerprinting setting or use Brave browser. Use a VPN to mask your IP address component. Accept that a determined fingerprinting system will still collect signals — the goal is to make your fingerprint indistinguishable from millions of other users, not invisible."}},
+      {"@type":"Question","name":"What is the difference between device fingerprinting and cookies?","acceptedAnswer":{"@type":"Answer","text":"Cookies are files stored in your browser that websites can read — you can delete them, and regulations require consent for tracking cookies. Device fingerprinting collects observable browser and hardware characteristics without storing anything on your device — you cannot delete a fingerprint the way you delete cookies, and its regulatory status is more complex. Cookies are explicit and controllable; fingerprinting is implicit and harder to opt out of. Modern tracking systems increasingly combine both for more resilient identification."}},
+      {"@type":"Question","name":"Can private browsing or incognito mode defeat device fingerprinting?","acceptedAnswer":{"@type":"Answer","text":"No — private browsing and incognito mode do not prevent device fingerprinting. These modes prevent your browser from saving local session data (history, cookies, cached files) but do not change the browser and hardware signals that fingerprinting systems collect. Your GPU renderer, screen resolution, fonts, canvas output, and hardware configuration are identical in incognito mode and normal mode. A fingerprinting system will produce the same fingerprint for both sessions and can link them."}},
+      {"@type":"Question","name":"What are the best device fingerprinting solutions for fraud prevention?","acceptedAnswer":{"@type":"Answer","text":"Enterprise-grade device fingerprinting platforms include FingerprintJS (now Fingerprint) for web and mobile identity, BioCatch for behavioural biometrics combined with device signals, Sardine for fraud prevention in financial services, Sift for e-commerce fraud detection, and ThreatMetrix (now part of LexisNexis) for enterprise identity verification. The right choice depends on your specific use case, regulatory environment, and integration requirements. Evaluate providers on accuracy (false positive rate), privacy compliance posture, and SDK availability for your platform stack."}},
+      {"@type":"Question","name":"Does a VPN prevent device fingerprinting?","acceptedAnswer":{"@type":"Answer","text":"No — a VPN changes your IP address but does not affect the browser and hardware signals that device fingerprinting collects. Your GPU renderer, screen resolution, canvas output, installed fonts, and other fingerprinting signals are identical whether or not a VPN is active. A VPN addresses network-level identity (your IP); device fingerprinting addresses browser and hardware-level identity. They are complementary tracking vectors, not alternatives to each other."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/learn/">Learn</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="ir-breadcrumb-current" aria-current="page">What Is Device Fingerprinting?</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Privacy Guide</span>
+        </div>
+        <h1 class="ndic-hero-title">
+          What Is <span class="ndic-highlight">Device Fingerprinting?</span><br>
+          How It Works and How to Block It
+        </h1>
+        <p class="ndic-hero-tagline">
+          Device fingerprinting tracks you without cookies by combining dozens of browser and hardware signals into a unique identifier that persists even when you clear your history, use private browsing, or switch IP addresses. This guide explains exactly how it works, who uses it, and what you can realistically do to reduce your exposure.
+        </p>
+        <div class="ndic-hero-cta-group">
+          <a href="/intelligence/fingerprinting" class="ndic-btn-primary cta-rotate">See My Device Fingerprint</a>
+          <a href="/intelligence/security" class="ndic-btn-secondary">Check My Security Score →</a>
+        </div>
+        <div id="freshness-badge" aria-live="polite">Loading…</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item"><span class="ndic-trust-value">4.9★</span><span class="ndic-trust-label">satisfaction</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">290+ data points</span><span class="ndic-trust-label">per scan</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">13 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">Zero data stored</span><span class="ndic-trust-label">privacy first</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">Device fingerprinting identifies your browser by combining dozens of observable signals — no cookies, no storage, nothing to delete</h2>
+      <p class="ndic-quick-answer-body">
+        When you visit a site that uses fingerprinting, JavaScript in your browser silently reads your GPU renderer string, screen resolution, installed fonts, canvas rendering output, audio context behaviour, browser settings, hardware concurrency, and more — then combines them into a hash that is statistically unique to your device. Unlike cookies, this identifier is not stored on your device, so clearing your browser data does not remove it. It is recalculated fresh on every visit from your device's characteristics, and the result is typically the same.
+      </p>
+    </section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+
+      <h2><span class="section-num">01</span> What Is a Device Fingerprint?</h2>
+      <p>A device fingerprint is not a file stored on your computer. It is a value — a hash — calculated from observable characteristics of your browser and device configuration. Think of it as a portrait assembled from dozens of small details rather than a name badge pinned to your jacket.</p>
+      <p>When a fingerprinting system encounters your browser, it reads signals across multiple categories simultaneously: what browser and version you are using, what operating system and version, your screen dimensions and colour depth, your timezone and language, the fonts your system has installed, how your GPU renders a specific Canvas element, what your WebGL renderer reports itself as, how your audio processing stack behaves on a standard input, and many more. No single signal is unique to you. But the combination of all of them together — your specific browser version, on your specific OS version, on your specific screen, with your specific GPU, rendering fonts from your specific font collection — produces a combination that is statistically near-unique across all devices on the internet.</p>
+      <p>This combination is then hashed into a short identifier string. That string is what the fingerprinting system stores on its server, not on your device. On your next visit, the system recalculates your fingerprint from your device's current characteristics and compares it to its records. If it matches, it recognises you — without ever having stored a single byte on your browser.</p>
+
+      <h2><span class="section-num">02</span> The Signals That Make Up a Device Fingerprint</h2>
+      <p>Modern fingerprinting systems collect signals across five primary categories. Each category contributes entropy — statistical uniqueness — to the combined fingerprint.</p>
+
+      <div class="ir-signal-grid">
+        <div class="ir-signal-card">
+          <span class="ir-signal-category">Browser Signals</span>
+          <div class="ir-signal-list">User agent string<br>Browser version<br>Language &amp; locale<br>Do Not Track setting<br>Cookie enabled<br>JavaScript enabled<br>Installed plugins</div>
+        </div>
+        <div class="ir-signal-card">
+          <span class="ir-signal-category">Hardware Signals</span>
+          <div class="ir-signal-list">Screen resolution<br>Colour depth<br>Hardware concurrency<br>Device memory (GB)<br>Touch points<br>Max touch points<br>Platform string</div>
+        </div>
+        <div class="ir-signal-card">
+          <span class="ir-signal-category">Graphics Signals</span>
+          <div class="ir-signal-list">Canvas 2D rendering<br>WebGL renderer string<br>WebGL vendor string<br>WebGL extensions<br>GPU model (inferred)<br>Anti-aliasing behaviour<br>Font rendering output</div>
+        </div>
+        <div class="ir-signal-card">
+          <span class="ir-signal-category">System Signals</span>
+          <div class="ir-signal-list">Timezone offset<br>Timezone name<br>OS version<br>Installed fonts list<br>System language<br>Battery status API<br>Network info API</div>
+        </div>
+        <div class="ir-signal-card">
+          <span class="ir-signal-category">Behaviour Signals</span>
+          <div class="ir-signal-list">Audio context fingerprint<br>Mouse movement patterns<br>Keyboard timing<br>Scroll behaviour<br>Click force &amp; timing<br>Sensor data (mobile)<br>Typing cadence</div>
+        </div>
+        <div class="ir-signal-card">
+          <span class="ir-signal-category">Network Signals</span>
+          <div class="ir-signal-list">IP address<br>ISP / ASN<br>Connection type<br>RTT (round-trip time)<br>WebRTC local IP leak<br>DNS resolver identity<br>Proxy / VPN detection</div>
+        </div>
+      </div>
+
+      <div class="ir-callout"><p><strong>IntelReap exposes all of this:</strong> The Device Intelligence, Graphics Intelligence, Capability, and Security panels collectively read and display the same signals that fingerprinting systems collect — giving you a complete picture of what your browser reveals. Run a free scan to see your fingerprint surface area.</p></div>
+
+      <h2><span class="section-num">03</span> How Device Fingerprinting Actually Works — Step by Step</h2>
+      <p>Understanding the technical process demystifies why it is so effective and why simple countermeasures like clearing cookies or switching to incognito mode do not defeat it.</p>
+      <h3>Step 1 — JavaScript executes on page load</h3>
+      <p>When you visit a page that uses fingerprinting, a JavaScript library (typically loaded from the fingerprinting provider's CDN) executes in your browser. This happens during the normal page load process — it is indistinguishable from any other JavaScript on the page and requires no special permissions beyond what standard web pages already have.</p>
+      <h3>Step 2 — Signal collection across browser APIs</h3>
+      <p>The script queries browser APIs systematically: <code>navigator.userAgent</code> for browser and OS details, <code>screen.width</code> and <code>screen.colorDepth</code> for display properties, <code>navigator.hardwareConcurrency</code> for CPU thread count, <code>navigator.deviceMemory</code> for RAM tier, and so on. For Canvas and WebGL fingerprinting, the script draws specific shapes or text to an invisible canvas element and reads the pixel output — differences in how GPUs render identical instructions create a unique pattern.</p>
+      <h3>Step 3 — Audio context fingerprinting</h3>
+      <p>A particularly stable signal comes from the Web Audio API. The script creates an audio processing graph — an oscillator connected through a series of filters to an audio buffer — and reads the output values. Different hardware audio implementations produce numerically different outputs for the same processing graph, creating a stable hardware-level identifier that is extremely difficult to spoof without breaking audio functionality.</p>
+      <h3>Step 4 — Hashing and identifier generation</h3>
+      <p>All collected signals are serialised into a string and passed through a hash function (typically MurmurHash or a similar non-cryptographic hash). The output is a compact identifier — typically a 32-bit or 64-bit integer — that represents your device's entire signal set. This hash is then sent to the fingerprinting provider's server and stored against your session or account record.</p>
+      <h3>Step 5 — Cross-site and cross-session matching</h3>
+      <p>On any subsequent visit — to the same site or any other site using the same fingerprinting library — the same calculation runs and produces the same hash. The provider's server matches it to its records and identifies you as a returning visitor. Critically, this works across different IP addresses, across cookie clears, across private browsing windows, and across browser restarts.</p>
+
+      <h2><span class="section-num">04</span> Who Uses Device Fingerprinting and Why</h2>
+      <p>Device fingerprinting serves several fundamentally different purposes across industries. Understanding the use case context matters for evaluating whether a particular deployment is protective, commercial, or invasive.</p>
+      <h3>Fraud prevention and security — the protective use case</h3>
+      <p>Banks, payment processors, e-commerce platforms, and online gaming companies use device fingerprinting as a security layer. When a login attempt comes from a device that does not match any fingerprint associated with the account, the system flags it for additional verification — even if the correct password was entered. This is highly effective at detecting account takeover attempts where stolen credentials are used from a new device. This use case is broadly considered legitimate and is supported by most privacy regulations under a legitimate interests or security basis.</p>
+      <h3>Advertising and cross-site tracking — the commercial use case</h3>
+      <p>Ad networks and data brokers use device fingerprinting to track users across websites for advertising targeting and attribution. As third-party cookies are phased out across major browsers, fingerprinting has become a replacement tracking mechanism. This is the most controversial use case from a privacy perspective and is the subject of regulatory action in the EU under GDPR and ePrivacy.</p>
+      <h3>Bot detection and rate limiting — the infrastructure use case</h3>
+      <p>Security platforms including Cloudflare, Akamai, and Imperva use device fingerprinting to distinguish human visitors from automated bots, scrapers, and credential stuffing attacks. Headless browsers and bot frameworks produce distinctive fingerprint signatures that differ from real user browsers — fingerprinting is one of the most reliable bot detection signals available.</p>
+
+      <!-- CTA 1 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Device Intelligence</span>
+        <h3>See the Exact Signals Your Browser Is Exposing Right Now</h3>
+        <p>IntelReap's Device Intelligence panel reads your GPU renderer, hardware concurrency, screen configuration, platform, colour depth, and the full set of device signals that fingerprinting systems collect — free, in-browser, no account required.</p>
+        <a href="/intelligence/fingerprinting" class="ndic-btn-primary cta-rotate">See My Device Fingerprint</a>
+      </div>
+
+      <h2><span class="section-num">05</span> Device Fingerprinting vs Cookies — Key Differences</h2>
+      <div class="ir-table-wrap" role="region" aria-label="Device fingerprinting versus cookies comparison" tabindex="0">
+        <table class="ir-table">
+          <caption>How device fingerprinting compares to cookie-based tracking across storage, persistence, control, and regulatory treatment</caption>
+          <thead>
+            <tr>
+              <th scope="col">Property</th>
+              <th scope="col">Cookies</th>
+              <th scope="col">Device Fingerprinting</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Where stored</strong></td>
+              <td>On your device (browser storage)</td>
+              <td class="ir-neutral">On the server — nothing stored on device</td>
+            </tr>
+            <tr>
+              <td><strong>User can delete it</strong></td>
+              <td class="ir-check">✓ Yes — clear cookies</td>
+              <td class="ir-cross">✗ No — recalculated from device characteristics</td>
+            </tr>
+            <tr>
+              <td><strong>Survives incognito mode</strong></td>
+              <td class="ir-cross">✗ No — incognito does not share cookies</td>
+              <td class="ir-cross">✗ Yes — same device signals in incognito</td>
+            </tr>
+            <tr>
+              <td><strong>Survives browser reinstall</strong></td>
+              <td class="ir-check">No — cookies are deleted</td>
+              <td class="ir-cross">Often yes — hardware signals persist</td>
+            </tr>
+            <tr>
+              <td><strong>Works across different browsers</strong></td>
+              <td class="ir-cross">✗ No — cookies are browser-specific</td>
+              <td class="ir-neutral">Partially — some signals are browser-specific</td>
+            </tr>
+            <tr>
+              <td><strong>Regulatory consent required (EU)</strong></td>
+              <td class="ir-check">✓ Yes — ePrivacy Directive</td>
+              <td class="ir-neutral">Disputed — depends on purpose and implementation</td>
+            </tr>
+            <tr>
+              <td><strong>Visible to user</strong></td>
+              <td class="ir-check">✓ Yes — browser dev tools show cookies</td>
+              <td class="ir-cross">✗ No — collection is invisible by default</td>
+            </tr>
+            <tr>
+              <td><strong>Blocked by ad blockers</strong></td>
+              <td class="ir-check">Partially — third-party cookies blocked</td>
+              <td class="ir-cross">Partially — script blocking required</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2><span class="section-num">06</span> How to Reduce Your Device Fingerprint Exposure</h2>
+      <p>Complete elimination of device fingerprinting is not practically achievable for most users without unacceptable trade-offs in browsing functionality. The realistic goal is <strong>fingerprint normalisation</strong> — making your browser's fingerprint indistinguishable from millions of other users rather than trying to hide it entirely.</p>
+      <h3>Option 1 — Use Firefox with resistFingerprinting</h3>
+      <p>Firefox includes a built-in anti-fingerprinting mode that normalises many signals — canvas output, screen resolution, timezone, and more — to standardised values shared across all Firefox users with the setting enabled. To activate it: type <code>about:config</code> in the address bar, search for <code>privacy.resistFingerprinting</code>, and set it to <code>true</code>. Note that this may cause some sites to behave differently since it modifies how the browser reports its own characteristics.</p>
+      <h3>Option 2 — Use Brave Browser</h3>
+      <p>Brave has fingerprint randomisation built in by default. Rather than normalising all signals to fixed values, Brave introduces slight randomisation into canvas, WebGL, and audio fingerprinting outputs on a per-session basis — making your fingerprint slightly different on each visit without breaking site functionality. Go to brave://settings/shields and confirm Fingerprinting is set to "Randomise" or "Block."</p>
+      <h3>Option 3 — Use Tor Browser</h3>
+      <p>The Tor Browser applies the most comprehensive fingerprint normalisation available — all users share the same standardised fingerprint configuration, making individual identification within the Tor user population extremely difficult. The trade-off is significantly reduced browsing speed due to the onion routing network, and some sites actively block Tor exit node IPs.</p>
+      <h3>Option 4 — Browser extensions</h3>
+      <p>CanvasBlocker (Firefox) intercepts canvas and WebGL fingerprinting calls and either blocks them or returns randomised values. uBlock Origin in advanced mode can block known fingerprinting script domains. These are partial measures — they address some signal categories but not all.</p>
+      <h3>What does not work</h3>
+      <ul>
+        <li><strong>Clearing cookies</strong> — fingerprinting stores nothing on your device. Cookies are irrelevant.</li>
+        <li><strong>Private or incognito browsing</strong> — your hardware and browser configuration are identical in private mode.</li>
+        <li><strong>Using a VPN</strong> — a VPN changes your IP but does not affect browser or hardware signals.</li>
+        <li><strong>Changing your user agent</strong> — user agent spoofing alone changes one signal out of dozens and may actually make you more unique by presenting an unusual combination.</li>
+      </ul>
+
+      <h2><span class="section-num">07</span> Device Fingerprinting Solutions for Businesses</h2>
+      <p>For organisations evaluating fingerprinting platforms for fraud prevention, bot detection, or identity verification, the provider landscape falls into distinct tiers by capability and use case.</p>
+      <p><strong>Fingerprint (formerly FingerprintJS)</strong> is the most widely deployed open-source and commercial web fingerprinting library. Its Pro tier offers 99.5% accuracy, sub-100ms latency, and a REST API for server-side integration. It is purpose-built for fraud prevention and account security in web applications.</p>
+      <p><strong>BioCatch</strong> extends fingerprinting into behavioural biometrics — it analyses typing patterns, mouse movements, device handling, and interaction cadence continuously throughout a session, not just at login. Used primarily by financial institutions for account takeover and new account fraud detection.</p>
+      <p><strong>Sardine</strong> combines device fingerprinting with velocity checks, network intelligence, and behavioural signals specifically for fintech and payments fraud prevention. Particularly strong for detecting synthetic identity fraud.</p>
+      <p><strong>ThreatMetrix (LexisNexis Risk Solutions)</strong> offers enterprise-scale identity verification combining device fingerprinting with a shared global fraud intelligence network. Suited for large financial services and insurance organisations with complex compliance requirements.</p>
+      <p><strong>Cloudflare Bot Management</strong> uses device fingerprinting as one signal among many in its bot detection engine — alongside TLS fingerprinting, behavioural analysis, and threat intelligence — to provide infrastructure-level bot protection without requiring application-layer integration.</p>
+      <div class="ir-callout"><p><strong>Evaluation criteria:</strong> When comparing fingerprinting providers, prioritise accuracy (false positive rate in your specific traffic mix), privacy compliance documentation (GDPR Data Processing Agreements, CCPA compliance), SDK availability for your platform stack, latency impact on page load, and the provider's transparency about signal collection to end users.</p></div>
+
+      <!-- CTA 2 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Security Intelligence</span>
+        <h3>Check Your Browser's Privacy and Security Posture</h3>
+        <p>IntelReap's Security panel analyses your connection for privacy leaks, tracking exposure, VPN detection, and security signals — showing you the complete picture of what you are exposing to sites you visit. Free, no account, in-browser.</p>
+        <a href="/intelligence/security" class="ndic-btn-secondary">Check My Security Score →</a>
+      </div>
+
+      <!-- LOGIC + METHODOLOGY -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>Device fingerprinting is most effective precisely because it requires no storage — the device itself is the persistent identifier, and you cannot delete your own hardware.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>This guide draws on the EFF Panopticlick research, published FingerprintJS accuracy studies, W3C browser API specifications, GDPR/ePrivacy regulatory guidance on fingerprinting, and live device signal data reviewed across multiple browser and hardware configurations.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link"><a href="https://coveryourtracks.eff.org" target="_blank" rel="noopener noreferrer">EFF Cover Your Tracks — Browser Fingerprint Uniqueness Testing Tool</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link"><a href="https://www.w3.org/TR/fingerprinting-guidance/" target="_blank" rel="noopener noreferrer">W3C — Mitigating Browser Fingerprinting in Web Specifications</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link"><a href="https://arxiv.org/abs/1905.01051" target="_blank" rel="noopener noreferrer">Laperdrix et al. — Browser Fingerprinting: A Survey (arXiv 2019)</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link"><a href="https://edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-22019-processing-personal-data-through-video_en" target="_blank" rel="noopener noreferrer">EDPB — Guidelines on Processing Personal Data Through Technical Means</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas" target="_blank" rel="noopener noreferrer">MDN Web Docs — Canvas API and Pixel Manipulation (fingerprinting basis)</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">06</span>
+            <span class="ndic-citation-link"><a href="https://fingerprintjs.com/blog/audio-fingerprinting/" target="_blank" rel="noopener noreferrer">Fingerprint — Audio Fingerprinting Technical Explanation</a></span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Twelve questions on device fingerprinting — what it is, how it works, who uses it, legal status, and how to reduce your exposure.</p>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>What is device fingerprinting?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">Device fingerprinting identifies a browser or device by combining dozens of observable characteristics — browser version, OS, screen resolution, installed fonts, Canvas rendering output, WebGL renderer, timezone, language, and hardware specs — into a unique identifier without using cookies. Because this identifier is derived from device characteristics rather than stored data, it persists even when cookies are cleared, private browsing is used, or browser history is deleted.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>How does device fingerprinting work?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">JavaScript collects signals from your browser's APIs — user agent, screen dimensions, colour depth, timezone, installed fonts, Canvas element pixel output, WebGL renderer string, audio context processing output, and hardware concurrency. These are combined and hashed into a short identifier. On your next visit the same calculation runs, produces the same hash, and the system recognises your device without having stored anything on it.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>What is a device fingerprint?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">A device fingerprint is the unique identifier produced by combining multiple browser and hardware signals. It is not a file stored on your device — it is a value calculated from observable characteristics of your configuration. Two different browsers on the same device produce different fingerprints. The same browser on the same device typically produces the same fingerprint consistently across visits and across websites that use the same fingerprinting library.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>Who uses device fingerprinting?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Banks and payment processors use it to detect account takeover attempts from new devices. E-commerce platforms use it to detect fraud and bot activity. Ad networks use it to track users across sites after cookie deprecation. Security platforms like Cloudflare and Akamai use it to distinguish human visitors from bots. These different use cases have very different privacy implications — security use is broadly accepted; cross-site advertising tracking is the most contested.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>Is device fingerprinting legal?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">It depends on jurisdiction and purpose. Under GDPR in the EU and UK, device fingerprinting is personal data processing and typically requires a lawful basis — usually consent or legitimate interest. The ePrivacy Directive requires consent for accessing device information in most cases. In the US, CCPA in California treats fingerprint data as personal information. For security and fraud prevention purposes it is generally permitted; for advertising tracking it is increasingly regulated. Consult legal counsel for compliance guidance.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>How do I see my own device fingerprint?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">Use IntelReap's Device Intelligence panel — it reads and displays your GPU renderer string, hardware concurrency, screen resolution, colour depth, platform, and the other signals fingerprinting systems collect, showing you precisely what your browser exposes. You can also use the EFF's Cover Your Tracks tool at coveryourtracks.eff.org to test how unique your fingerprint is relative to other browsers in their database.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>How do I block device fingerprinting?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">Complete blocking is not practical without degrading browser functionality. Effective mitigation: use Firefox with <code>privacy.resistFingerprinting = true</code> in <code>about:config</code>, use Brave browser with built-in fingerprint randomisation enabled, or use Tor Browser which normalises all signals across its user base. The CanvasBlocker extension for Firefox provides partial blocking of canvas and WebGL fingerprinting calls. Note that anti-fingerprinting measures can make your browser more unique if used inconsistently.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>How do I prevent device fingerprinting?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Prevention focuses on reducing signal uniqueness — making your fingerprint blend in rather than stand out. Use a mainstream browser and OS configuration to match the most common profiles. Avoid unusual fonts, plugins, or extensions. Enable Firefox's resistFingerprinting setting or use Brave. Use a VPN to mask the IP component. The goal is to make your fingerprint indistinguishable from millions of other users, not invisible — complete invisibility is not achievable while maintaining full browser functionality.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>What is the difference between device fingerprinting and cookies?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">Cookies are files stored on your device that you can delete — regulations require consent for tracking cookies. Device fingerprinting stores nothing on your device — it is recalculated from your hardware and browser characteristics on every visit and cannot be deleted. Cookies are explicit and controllable; fingerprinting is implicit and harder to opt out of. Modern tracking systems increasingly combine both methods for more resilient identification as cookie-based tracking becomes more restricted.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10"><span>Can private browsing or incognito mode defeat device fingerprinting?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">No — private browsing and incognito mode do not prevent device fingerprinting. These modes prevent your browser from saving local session data but do not change the browser and hardware signals that fingerprinting systems collect. Your GPU renderer, screen resolution, fonts, canvas output, and hardware configuration are identical in incognito and normal mode. A fingerprinting system produces the same identifier for both sessions and can link them.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11"><span>What are the best device fingerprinting solutions for fraud prevention?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">Enterprise platforms include Fingerprint (FingerprintJS) for web and mobile identity, BioCatch for behavioural biometrics combined with device signals, Sardine for fintech and payments fraud prevention, Sift for e-commerce fraud detection, and ThreatMetrix (LexisNexis) for enterprise identity verification. Evaluate providers on false positive rate, GDPR and CCPA compliance documentation, SDK availability, latency impact on page load, and transparency about signal collection to end users.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12"><span>Does a VPN prevent device fingerprinting?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">No — a VPN changes your IP address but does not affect the browser and hardware signals that fingerprinting collects. Your GPU renderer, screen resolution, canvas output, fonts, and other fingerprint signals are identical whether a VPN is active or not. A VPN addresses network-level identity; device fingerprinting addresses browser and hardware-level identity. They are complementary tracking vectors — a VPN alone does not defeat fingerprinting.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">Questions About Device Fingerprinting?</h2>
+          <p class="ir-contact-sub">Ask about fingerprinting detection, privacy exposure, fraud prevention solutions, or anything covered above. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name"></div>
+              <div class="form-group"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+              <div class="form-group"><label for="cf-message">Your question</label><textarea id="cf-message" name="message" placeholder="What would you like to know about device fingerprinting, privacy, or security?" required></textarea></div>
+              <button type="submit" class="form-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script def
