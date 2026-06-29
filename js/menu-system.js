@@ -374,13 +374,22 @@ const MenuSystem = (() => {
     })
   }
 
+  // ─────────────────────────────────────
+  // DEPENDENCY RESILIENCE WRAPPER
+  // ─────────────────────────────────────
+
+  const waitForRegistry = () => {
+    if (typeof INTELREAP_REGISTRY !== 'undefined' && typeof INTELREAP_CONFIG !== 'undefined') {
+      init();
+    } else {
+      setTimeout(waitForRegistry, 50);
+    }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener(
-      'DOMContentLoaded',
-      init
-    )
+    document.addEventListener('DOMContentLoaded', waitForRegistry);
   } else {
-    init()
+    waitForRegistry();
   }
 
   return { init }
