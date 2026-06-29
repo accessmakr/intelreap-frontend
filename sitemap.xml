@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://intelreap.com</loc>
-    <lastmod>2026-06-25T09:03:53+01:00</lastmod>
+    <lastmod>2026-06-29T18:17:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -141,6 +141,12 @@
   <url>
     <loc>https://intelreap.com/learn</loc>
     <lastmod>2026-06-25T17:49:50+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intelreap.com/learn/what-is-device-fingerprinting</loc>
+    <lastmod>2026-06-29T22:40:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
