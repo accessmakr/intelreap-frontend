@@ -1,76 +1,582 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Fingerprinting Intelligence | IntelReap</title>
-    <meta name="description" content="Module deploying: Canvas hashing, AudioContext tracking, font enumeration, hardware concurrency, and WebGL renderer telemetry.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/fingerprinting">
-    <meta property="og:title" content="Device Fingerprinting Intelligence | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/fingerprinting">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background: #0a0f1a;
-            color: #e2e8f0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-        .glass {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(16, 185, 129, 0.15);
-        }
-    </style>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ndic_theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Advanced Fingerprint & Leak Detection — How Easily Can You Be Tracked? | IntelReap</title>
+  <meta name="description" content="A deep dive into browser fingerprinting and leak detection — audio, canvas, font and ClientRects fingerprinting, bot detection, ad blocker detection, DNS-adjacent leak signals, and GPS-vs-IP geolocation comparison, explained parameter by parameter.">
+  <meta name="keywords" content="browser fingerprinting, canvas fingerprint, audio fingerprint, font fingerprinting, ClientRects fingerprinting, bot detection, ad blocker detection, IPv6 leak test, geolocation leak, webdriver detection, incognito detection">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/intelligence/fingerprinting">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/fingerprinting">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/fingerprinting">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Advanced Fingerprint & Leak Detection — IntelReap">
+  <meta property="og:description" content="See exactly how trackable your browser is — audio, canvas, and font fingerprinting, bot detection, ad blocker detection, and leak signals, explained in plain English.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/fingerprinting">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Advanced Fingerprint & Leak Detection — IntelReap">
+  <meta name="twitter:description" content="See exactly how trackable your browser is, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#10141b">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#10141b">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/intelreap-logo.svg" },
+        "sameAs": ["https://twitter.com/intelreap"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://intelreap.com/#website",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "publisher": { "@id": "https://intelreap.com/#organization" }
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://intelreap.com/intelligence/fingerprinting#article",
+        "headline": "Advanced Fingerprint & Leak Detection",
+        "description": "A deep dive into browser fingerprinting and leak detection across audio, canvas, font, and ClientRects techniques, plus bot, ad blocker, and geolocation leak signals.",
+        "url": "https://intelreap.com/intelligence/fingerprinting",
+        "datePublished": "2026-06-22",
+        "dateModified": "2026-06-26",
+        "author": { "@id": "https://intelreap.com/#organization" },
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "isPartOf": { "@id": "https://intelreap.com/#website" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
+          { "@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html" },
+          { "@type": "ListItem", "position": 3, "name": "Advanced Fingerprint & Leak Detection", "item": "https://intelreap.com/intelligence/fingerprinting" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is browser fingerprinting?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Browser fingerprinting is a tracking technique that identifies your device using a combination of subtle hardware and software characteristics — such as audio rendering, canvas drawing, and installed fonts — instead of cookies. These characteristics are often unique enough to identify you even if you clear cookies or use a VPN." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I block browser fingerprinting?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Privacy-focused browsers and extensions can randomize or block some fingerprinting signals, particularly canvas and audio fingerprinting. However, blocking too aggressively can itself become a distinguishing signal, since very few real users have every fingerprinting surface disabled at once." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is a high fingerprint uniqueness score bad?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A high score means more of your tested signals are distinctive rather than common, which makes you easier to re-identify across visits and sites. It is not dangerous by itself, but it does mean less anonymity than a low score." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does VPN use stop fingerprinting?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. A VPN changes your IP address and apparent location, but fingerprinting techniques like audio, canvas, and font detection read characteristics of your browser and device, not your network connection, so they work identically whether or not a VPN is active." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Device Fingerprinting Intelligence</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">
-            Initializing deployment sequence for advanced tracking parameters:<br>
-            <strong class="text-slate-200">Canvas hashing, AudioContext tracking, font enumeration, hardware concurrency, WebGL telemetry</strong>
-        </p>
-        
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div>
-                <span class="days text-3xl font-bold text-emerald-400">00</span><br>
-                <span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span>
-            </div>
-            <div>
-                <span class="hours text-3xl font-bold text-white">00</span><br>
-                <span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span>
-            </div>
-            <div>
-                <span class="minutes text-3xl font-bold text-white">00</span><br>
-                <span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span>
-            </div>
-            <div>
-                <span class="seconds text-3xl font-bold text-white">00</span><br>
-                <span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span>
-            </div>
-        </div>
-        
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Fingerprint Surface Panel on Homepage</a>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
+  </header>
 
-    <script>
-        // Set exactly 12 days from execution
-        const target = new Date();
-        target.setDate(target.getDate() + 12);
-        const targetTime = target.getTime();
+  <div id="seasonal-banner" aria-live="polite"></div>
 
-        setInterval(() => {
-            const now = new Date().getTime();
-            const d = targetTime - now;
-            
-            if(d < 0) return;
-            
-            document.querySelector('.days').innerText = Math.floor(d / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.querySelector('.hours').innerText = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.querySelector('.minutes').innerText = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.querySelector('.seconds').innerText = Math.floor((d % (1000 * 60)) / 1000).toString().padStart(2, '0');
-        }, 1000);
-    </script>
+  <main>
+    <div class="ndic-deepdive-page">
+
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Advanced Fingerprint &amp; Leak Detection</span>
+      </nav>
+
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 13</div>
+        <h1 class="ndic-deepdive-title">Advanced Fingerprint &amp; Leak Detection</h1>
+        <p class="ndic-deepdive-subtitle">How Easily Can You Be Tracked?</p>
+        <p class="ndic-deepdive-intro">
+          Every browser broadcasts a combination of small, mostly invisible signals — how it renders audio, how it draws to a canvas, which fonts it has installed, how precisely it measures text on screen. None of these require your permission, and none of them show up as a cookie you can delete. Together, they form a fingerprint that can re-identify your device even across a VPN, in a private window, or after clearing all your cookies. This page runs all 51 of those signals live, explains what each one actually means, and tells you honestly which ones you can do something about and which ones you can't.
+        </p>
+      </div>
+
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-13">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Advanced Fingerprint &amp; Leak Detection</span>
+                <span class="ndic-canvas-subheading">How Easily Can You Be Tracked?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c13-uniqueness-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <div id="canvas13-dual-map" class="ndic-map-wrapper"></div>
+              <div class="ndic-risk-bar-track">
+                <div id="c13-uniqueness-bar"></div>
+              </div>
+            </div>
+            <div class="ndic-canvas-params">
+
+              <div class="ndic-params-section-header">Fingerprinting Surface</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Fingerprint Support</span><span class="ndic-param-value" id="c13-audio-supported">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Fingerprint Hash</span><span class="ndic-param-value" id="c13-audio-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Sample Rate</span><span class="ndic-param-value" id="c13-audio-sample-rate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Entropy Score</span><span class="ndic-param-value" id="c13-audio-entropy-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Hardware Variance</span><span class="ndic-param-value" id="c13-audio-hardware-variance">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Canvas Fingerprint Support</span><span class="ndic-param-value" id="c13-canvas-supported">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Canvas Fingerprint Hash</span><span class="ndic-param-value" id="c13-canvas-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Canvas Rendering Anomaly</span><span class="ndic-param-value" id="c13-canvas-anomaly">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Fonts Detected</span><span class="ndic-param-value" id="c13-font-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Font Uniqueness Score</span><span class="ndic-param-value" id="c13-font-uniqueness">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Font Detection Method</span><span class="ndic-param-value" id="c13-font-method">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Notable Fonts Found</span><span class="ndic-param-value" id="c13-font-notable">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ClientRects Support</span><span class="ndic-param-value" id="c13-clientrects-supported">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ClientRects Hash</span><span class="ndic-param-value" id="c13-clientrects-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Sub-Pixel Rendering Variance</span><span class="ndic-param-value" id="c13-clientrects-variance">—</span></div>
+
+              <div class="ndic-params-section-header">Bot &amp; Automation</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Webdriver Detected</span><span class="ndic-param-value" id="c13-webdriver-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Automation Signals</span><span class="ndic-param-value" id="c13-bot-signals">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Bot Detection Confidence</span><span class="ndic-param-value" id="c13-bot-confidence">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Private Browsing Detected</span><span class="ndic-param-value" id="c13-incognito-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Storage Quota</span><span class="ndic-param-value" id="c13-incognito-quota">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Incognito Detection Method</span><span class="ndic-param-value" id="c13-incognito-method">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Ad Blocker Detected</span><span class="ndic-param-value" id="c13-adblock-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Ad Blocker Detection Method</span><span class="ndic-param-value" id="c13-adblock-method">—</span></div>
+
+              <div class="ndic-params-section-header">Leak &amp; Network Signals</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Accept-Language Header</span><span class="ndic-param-value" id="c13-accept-language">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Accept-Encoding Header</span><span class="ndic-param-value" id="c13-accept-encoding">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Total Headers Sent</span><span class="ndic-param-value" id="c13-total-headers">—</span></div>
+              <div id="c13-header-table"></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IPv6 Connectivity</span><span class="ndic-param-value" id="c13-ipv6-connectivity">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IPv6 Leak Detected</span><span class="ndic-param-value" id="c13-ipv6-leak">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IPv6 Detection Source</span><span class="ndic-param-value" id="c13-ipv6-source">—</span></div>
+
+              <div class="ndic-params-section-header">Geolocation</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Geolocation Permission</span><span class="ndic-param-value" id="c13-geo-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPS Latitude</span><span class="ndic-param-value" id="c13-geo-latitude">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPS Longitude</span><span class="ndic-param-value" id="c13-geo-longitude">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPS Accuracy Radius</span><span class="ndic-param-value" id="c13-geo-accuracy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPS vs IP Location Match</span><span class="ndic-param-value" id="c13-geo-ip-match">—</span></div>
+
+              <div class="ndic-params-section-header">Environment Signals</div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Media Queries Tested</span><span class="ndic-param-value" id="c13-media-queries-tested">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Media Queries Matched</span><span class="ndic-param-value" id="c13-media-queries-matched">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Display Mode</span><span class="ndic-param-value" id="c13-display-mode">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Color Scheme Preference</span><span class="ndic-param-value" id="c13-color-scheme">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Reduced Motion Preference</span><span class="ndic-param-value" id="c13-reduced-motion">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Extensions Detected</span><span class="ndic-param-value" id="c13-extension-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Detected Extension Names</span><span class="ndic-param-value" id="c13-extension-names">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Extension Detection Method</span><span class="ndic-param-value" id="c13-extension-method">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Speech Synthesis Voice Count</span><span class="ndic-param-value" id="c13-voice-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Voice List Hash</span><span class="ndic-param-value" id="c13-voice-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Default Voice</span><span class="ndic-param-value" id="c13-default-voice">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Input Devices</span><span class="ndic-param-value" id="c13-media-audio-inputs">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Audio Output Devices</span><span class="ndic-param-value" id="c13-media-audio-outputs">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Video Input Devices</span><span class="ndic-param-value" id="c13-media-video-inputs">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Math Engine Hash</span><span class="ndic-param-value" id="c13-math-engine-hash">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Math Engine Consistency</span><span class="ndic-param-value" id="c13-math-engine-consistent">—</span></div>
+
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas13-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas13-ai-summary">Analyzing your fingerprint and leak exposure...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c13-deep-dive-link">Deep dive into your fingerprint and leak exposure analysis</a>
+            </div>
+          </div>
+
+
+      <!-- ═══ UNDERSTANDING EVERY SIGNAL ═══ -->
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each measurement above actually means, why it's measured this way, and whether there's anything you can realistically do about it.</p>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Fingerprinting Surface</h3>
+
+          <div class="ndic-explain-item">
+            <h4>Audio Fingerprint Hash &amp; Sample Rate</h4>
+            <p>Your browser is asked to silently render a short, heavily-distorted tone using the Web Audio API — nothing is actually played, it all happens in memory. The exact floating-point output of that rendering depends on your specific audio hardware, drivers, and CPU, so the resulting hash is often unique to your device. The sample rate (almost always 44100Hz) is reported alongside it as supporting context, not as a fingerprinting signal on its own.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Audio Entropy Score &amp; Hardware Variance</h4>
+            <p>This is a heuristic, not a measured population statistic — we don't have access to a database of every possible result to compare you against. Instead, it looks at how many decimal places of genuine precision appeared in the raw audio output. More precision suggests more hardware-specific variance was captured, and therefore more potential to be distinctive.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Canvas Fingerprint Hash &amp; Rendering Anomaly</h4>
+            <p>A hidden HTML5 canvas draws text and shapes using specific colors and font settings, then the resulting image is exported and hashed. Anti-aliasing, sub-pixel rendering, and font smoothing all vary subtly by GPU, operating system, and browser engine — enough that the hash is frequently unique. An "anomaly" simply means the exported image came back unusually small, which typically indicates a privacy extension blocked or spoofed the canvas read.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Fonts Detected &amp; Font Uniqueness Score</h4>
+            <p>We measure the rendered width and height of test text in 20 specific fonts and compare each against generic fallback fonts. If the measurement differs from the fallback, that font is installed on your system. The specific combination of installed fonts — especially less common ones — can narrow down your device, operating system, and sometimes even your region or profession.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Notable Fonts Found</h4>
+            <p>This lists exactly which of the 20 tested fonts were detected as installed. A short list here usually just means a clean, default device install — it isn't a red flag on its own, only one input into the overall uniqueness picture.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>ClientRects Hash &amp; Sub-Pixel Rendering Variance</h4>
+            <p>Every browser measures the exact pixel dimensions of rendered text slightly differently, down to fractions of a pixel, due to differences in font hinting and rendering engines. We measure one short string's bounding box and hash the width and height together. It's a quieter signal than canvas or audio fingerprinting, but it costs nothing extra to check and adds a bit more certainty when combined with the others.</p>
+          </div>
+
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Bot &amp; Automation</h3>
+
+          <div class="ndic-explain-item">
+            <h4>Webdriver Detected &amp; Automation Signals</h4>
+            <p>Automated browsers controlled by tools like Selenium or Puppeteer set a flag called <code>navigator.webdriver</code> to true, and some leave other traces too, like an empty languages list or a "HeadlessChrome" string in the user agent. None of these alone is conclusive proof, which is why we report a confidence level rather than a flat yes or no — this matters far more to website operators screening for bots than it does to an individual visitor.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Bot Detection Confidence</h4>
+            <p>High confidence means the webdriver flag itself was detected, which is a strong signal. Medium means one or more secondary signals appeared without the flag itself. Low means none of the signals we check for were present — consistent with an ordinary human-operated browser.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Private Browsing Detected &amp; Storage Quota</h4>
+            <p>This is a heuristic based on your browser's reported storage quota — private and incognito sessions typically get a much smaller quota than a normal session, often under 120MB versus several gigabytes. It isn't a guaranteed detection, since the exact threshold varies by browser and changes over time, but it's a reasonably reliable signal in practice.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Ad Blocker Detected</h4>
+            <p>We insert a hidden element using classic ad-related class names like "ad-banner" and "adsbox," then check whether it got hidden. Ad blockers that filter by class name will collapse it to zero size; if nothing intervenes, the element stays at its normal size. This is the same basic technique most ad-blocker-detection scripts use.</p>
+          </div>
+
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Leak &amp; Network Signals</h3>
+
+          <div class="ndic-explain-item">
+            <h4>HTTP Headers (Accept-Language, Accept-Encoding, and the full table)</h4>
+            <p>Your own page's JavaScript can't see the headers its own request sent — only the server receiving that request can. This is the one signal on this page that needs a backend round trip rather than running purely in your browser: a small server endpoint reads the real headers and echoes them straight back to you. Accept-Language in particular can reveal your true language preferences even if you've manually changed your browser's display language to mask your region.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>IPv6 Connectivity &amp; IPv6 Leak Detected</h4>
+            <p>Some VPNs only tunnel IPv4 traffic, leaving a device's native IPv6 connection exposed and able to bypass the VPN entirely — defeating its purpose without any obvious warning. This check asks our backend to report which IP version your specific request actually arrived over. Worth knowing honestly: this result depends partly on whether the hosting infrastructure between you and our server fully supports IPv6 end to end, so treat "IPv4 Only" as informative rather than a hard guarantee that IPv6 is unavailable to you elsewhere.</p>
+          </div>
+
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Geolocation</h3>
+
+          <div class="ndic-explain-item">
+            <h4>Geolocation Permission</h4>
+            <p>This page never asks your browser for a fresh location permission prompt of its own. It only reads real GPS coordinates if you'd already granted location access to this site previously, somewhere else. If the permission state is "prompt" or "unsupported," that's simply reported as-is — we'd rather show an honest gap than push for a permission grant that isn't already there.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>GPS Latitude, Longitude &amp; Accuracy Radius</h4>
+            <p>When available, this is your device's actual GPS-reported position, accurate to within the radius shown — typically a few meters on a phone with a clear sky view, much wider indoors or on a laptop with no GPS hardware at all, where it falls back to Wi-Fi or IP-based estimation.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>GPS vs IP Location Match</h4>
+            <p>Your IP address resolves to a location based on your ISP's registered infrastructure, which can be a city or more away from where you actually are. Comparing that against your real GPS position, when both are available, is one of the more reliable ways to catch a VPN or proxy in use — a large mismatch between the two is a meaningful signal that your apparent network location isn't your real one.</p>
+          </div>
+
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Environment Signals</h3>
+
+          <div class="ndic-explain-item">
+            <h4>Media Queries Tested &amp; Matched</h4>
+            <p>We check your browser's response to 15 specific CSS media features — things like color scheme preference, hover capability, pointer precision, and display mode. None of these need a stylesheet at all; they're tested directly through the same JavaScript API your browser already exposes. The specific combination of which features match can hint at your device type and accessibility settings.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Display Mode, Color Scheme &amp; Reduced Motion Preference</h4>
+            <p>Display mode tells us whether you're viewing this in an ordinary browser tab or as an installed app. Color scheme and reduced motion reflect your operating system's accessibility settings, which sites can use to adapt automatically — and which also feed into the broader fingerprint, since most users never change these from their device's default.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Extensions Detected &amp; Detection Method</h4>
+            <p>This checks for a short list of well-known browser extensions by attempting to load each one's own internal resource files, which only succeeds if that exact extension is installed. It only works in Chromium-based browsers, since the technique relies on a URL scheme specific to that browser family — Firefox and Safari correctly report "not applicable" rather than a fake zero.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Speech Synthesis Voice Count, Hash &amp; Default Voice</h4>
+            <p>Your operating system's installed text-to-speech voices vary by platform, region, and language packs installed, and the exact list is visible to any page without asking permission. We hash the sorted list of voice names into a single fingerprint value, since the precise combination is often distinctive even when individual voices like a default English voice are common.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Audio Input, Output &amp; Video Input Device Counts</h4>
+            <p>The number of microphones, speakers, and cameras connected to your device is visible without requiring camera or microphone permission — only the device names require that. A laptop with a built-in camera and mic typically shows small counts like one of each; a desktop with multiple monitors and audio outputs often shows more.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Math Engine Hash &amp; Consistency</h4>
+            <p>Transcendental math functions like tangent, sine, and logarithm can differ in their very last decimal digits depending on the exact JavaScript engine and CPU architecture running them. We run a small fixed set of these calculations and hash the combined result — a quiet but genuine signal that requires no special permissions and costs almost nothing to check.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ═══ EDUCATION ═══ -->
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">What You Can Actually Do About This</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>A VPN doesn't help here, and that's worth knowing plainly</h4>
+          <p>Every other panel on IntelReap focuses on your network connection — your IP, your ISP, whether a VPN is active. None of that touches what's measured on this page. Audio rendering, canvas drawing, and font lists are properties of your browser and device, not your network path, so they look identical whether you're on your home connection or routed through five different VPN servers. If reducing your fingerprint specifically matters to you, the tools that help are browser-level, not network-level: Firefox's strict tracking protection and resistFingerprinting setting, or privacy-focused browsers like Brave and Tor Browser, which deliberately randomize or normalize many of the signals measured here.</p>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>Blocking everything can backfire</h4>
+          <p>It's tempting to assume disabling every fingerprinting surface is automatically safer, but an unusually large number of disabled APIs is itself a distinguishing pattern — very few ordinary visitors have audio, canvas, and WebGL all blocked simultaneously. The browsers that handle this well, like Tor Browser, work by making everyone's fingerprint look the same as everyone else's, rather than making any one visitor's fingerprint look empty.</p>
+        </div>
+      </section>
+
+      <!-- ═══ PAGE FAQ ═══ -->
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Fingerprinting &amp; Leak Detection — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is browser fingerprinting?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Browser fingerprinting is a tracking technique that identifies your device using a combination of subtle hardware and software characteristics — such as audio rendering, canvas drawing, and installed fonts — instead of cookies. These characteristics are often unique enough to identify you even if you clear cookies or use a VPN.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Can I block browser fingerprinting?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Privacy-focused browsers and extensions can randomize or block some fingerprinting signals, particularly canvas and audio fingerprinting. However, blocking too aggressively can itself become a distinguishing signal, since very few real users have every fingerprinting surface disabled at once.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Is a high fingerprint uniqueness score bad?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">A high score means more of your tested signals are distinctive rather than common, which makes you easier to re-identify across visits and sites. It is not dangerous by itself, but it does mean less anonymity than a low score.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Does VPN use stop fingerprinting?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">No. A VPN changes your IP address and apparent location, but fingerprinting techniques like audio, canvas, and font detection read characteristics of your browser and device, not your network connection, so they work identically whether or not a VPN is active.</div></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ CITATIONS ═══ -->
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">W3C Web Audio API and Canvas 2D Context specifications</span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">W3C Geolocation API and CSS Media Queries specifications</span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link">Published browser fingerprinting research on canvas, audio, and font-based device identification</span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+
+    </div>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+
+  <script defer src="../assets/js/engines/core.js"></script>
+
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('ndic-faq-item--open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
