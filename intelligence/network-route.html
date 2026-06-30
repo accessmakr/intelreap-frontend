@@ -1,41 +1,463 @@
-<!-- /intelligence/network-route.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network Route Intelligence | IntelReap</title>
-    <meta name="description" content="Module deploying: BGP route status, IPv4/IPv6 prefix counts, upstream provider, PeeringDB traffic.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/network-route">
-    <meta property="og:title" content="Network Route Intelligence | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/network-route">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ndic_theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>ASN & Network Route Intelligence — What Network Are You On? | IntelReap</title>
+  <meta name="description" content="Live ASN lookup, network tier classification, BGP route status, allocation registry, and peering data — see exactly what network infrastructure you're connecting through, explained parameter by parameter.">
+  <meta name="keywords" content="ASN lookup, autonomous system number, BGP route, network tier, IP allocation registry, peering, network infrastructure, route origin">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/intelligence/network-route">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/network-route">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/network-route">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ASN & Network Route Intelligence — IntelReap">
+  <meta property="og:description" content="Live ASN lookup, network tier, BGP route status, and peering data, explained in plain English.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/network-route">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ASN & Network Route Intelligence — IntelReap">
+  <meta name="twitter:description" content="See exactly what network you're on, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#10141b">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#10141b">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/intelreap-logo.svg" },
+        "sameAs": ["https://twitter.com/intelreap"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://intelreap.com/#website",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "publisher": { "@id": "https://intelreap.com/#organization" }
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://intelreap.com/intelligence/network-route#article",
+        "headline": "ASN & Network Route Intelligence",
+        "description": "A deep dive into Autonomous System Number lookup, network tier classification, BGP route status, and peering infrastructure.",
+        "url": "https://intelreap.com/intelligence/network-route",
+        "datePublished": "2026-06-22",
+        "dateModified": "2026-06-27",
+        "author": { "@id": "https://intelreap.com/#organization" },
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "isPartOf": { "@id": "https://intelreap.com/#website" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
+          { "@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html" },
+          { "@type": "ListItem", "position": 3, "name": "ASN & Network Route Intelligence", "item": "https://intelreap.com/intelligence/network-route" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an ASN?",
+            "acceptedAnswer": { "@type": "Answer", "text": "An Autonomous System Number is a unique identifier assigned to a network or group of networks that share a single routing policy on the internet. Every major ISP, hosting provider, and large organization operates under at least one ASN, and it's the basic unit BGP routing uses to direct traffic across the internet." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does network tier mean?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Network tier classifies how close a network is to the internet's core backbone. Tier 1 networks can reach the entire internet without paying for transit. Tier 2 networks are regional providers that pay for some transit and sell to others. Tier 3 networks are local providers that only buy transit and serve end users directly." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is BGP route status?",
+            "acceptedAnswer": { "@type": "Answer", "text": "BGP, or Border Gateway Protocol, is how networks announce which IP ranges they're responsible for to the rest of the internet. An active, announced route means the network's ownership of that IP range is currently visible and accepted by other networks, which is the normal healthy state." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does my upstream provider matter?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Your upstream provider is the larger network your ISP connects through to reach the rest of the internet. It affects routing efficiency, latency to distant destinations, and resilience if your direct ISP has an outage, since traffic often has alternate paths through the upstream provider's wider network." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Network Route Intelligence</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for advanced routing parameters:<br><strong class="text-slate-200">BGP route status, IPv4/IPv6 prefix counts, upstream provider, PeeringDB traffic</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">←See Your Network Route Intelligence Panel on Homepage</a>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => {
-            const d = target - new Date().getTime();
-            if(d < 0) return;
-            document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0');
-            document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0');
-            document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0');
-            document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0');
-        }, 1000);
-    </script>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-deepdive-page">
+
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">ASN &amp; Network Route Intelligence</span>
+      </nav>
+
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 1</div>
+        <h1 class="ndic-deepdive-title">ASN &amp; Network Route Intelligence</h1>
+        <p class="ndic-deepdive-subtitle">What Network Are You On?</p>
+        <p class="ndic-deepdive-intro">
+          Live ASN, route, and peering data for your exact connection, scanned the moment this page loads.
+        </p>
+      </div>
+
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-1">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">ASN &amp; Network Route Intelligence</span>
+                <span class="ndic-canvas-subheading">What Network Are You On?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c1-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <svg id="canvas1-routing-diagram" class="ndic-routing-svg"></svg>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">ASN Number</span><span class="ndic-param-value" id="c1-asn-number">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ASN Owner</span><span class="ndic-param-value" id="c1-asn-owner">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ASN Type</span><span class="ndic-param-value" id="c1-asn-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Network Tier</span><span class="ndic-param-value" id="c1-network-tier">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IP Range</span><span class="ndic-param-value" id="c1-ip-range">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Allocation Registry</span><span class="ndic-param-value" id="c1-allocation-registry">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Route Origin</span><span class="ndic-param-value" id="c1-route-origin">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Estimated Peering Count</span><span class="ndic-param-value" id="c1-peering-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Upstream Provider</span><span class="ndic-param-value" id="c1-upstream-provider">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Announcement Status</span><span class="ndic-param-value" id="c1-announcement-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">BGP Route Status</span><span class="ndic-param-value" id="c1-bgp-route-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Network Health</span><span class="ndic-param-value" id="c1-network-health">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Classification Source</span><span class="ndic-param-value" id="c1-classification-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Classification Confidence</span><span class="ndic-param-value" id="c1-classification-confidence">—</span></div>
+              <div class="ndic-param-row ndic-hidden" id="c1-known-provider-row"><span class="ndic-param-label">Known Provider</span><span class="ndic-param-value" id="c1-known-provider">—</span></div>
+              <div class="ndic-hidden" id="c1-peeringdb-section">
+                <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB Traffic</span><span class="ndic-param-value" id="c1-peeringdb-traffic">—</span></div>
+                <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB IPv4 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes4">—</span></div>
+                <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB IPv6 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes6">—</span></div>
+              </div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Hosting Network</span><span class="ndic-param-value" id="c1-is-hosting">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Mobile Network</span><span class="ndic-param-value" id="c1-is-mobile">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Proxy Network</span><span class="ndic-param-value" id="c1-is-proxy">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas1-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas1-ai-summary">Analyzing your network route...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c1-deep-dive-link">Deep dive into your network infrastructure analysis</a>
+            </div>
+          </div>
+
+      <!-- ═══ UNDERSTANDING EVERY SIGNAL ═══ -->
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each measurement above actually means, and why it's worth knowing.</p>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Network Route</h3>
+
+          <div class="ndic-explain-item">
+            <h4>ASN Number &amp; ASN Owner</h4>
+            <p>Your Autonomous System Number identifies the specific network operator responsible for routing your traffic — almost always your ISP, though sometimes a VPN provider, hosting company, or mobile carrier instead. The owner name is the organization registered against that number.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>ASN Type</h4>
+            <p>Classifies what kind of organization operates this ASN — residential ISP, mobile carrier, hosting provider, or proxy/VPN service. This is one of the strongest individual signals for telling apart a normal home connection from a VPN or datacenter route.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Network Tier</h4>
+            <p>Tier 1 networks reach the entire internet without paying for transit. Tier 2 networks are regional providers that both buy and sell transit. Tier 3 networks are local providers that only buy transit and connect directly to end users — most home and mobile connections fall into Tier 2 or 3.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>IP Range &amp; Allocation Registry</h4>
+            <p>The IP range is the full block of addresses your specific IP belongs to, as registered with one of the five Regional Internet Registries. The registry shown — ARIN, RIPE NCC, APNIC, LACNIC, or AFRINIC — depends on which world region that block was originally allocated to.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Route Origin &amp; Upstream Provider</h4>
+            <p>Route origin describes how your traffic enters the wider internet — directly through your ISP, or via a mobile network's gateway. Upstream provider is the larger transit network your ISP itself connects through to reach destinations outside its own network.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Estimated Peering Count</h4>
+            <p>An approximate count of how many other networks this ASN exchanges traffic with directly. Higher peering counts generally mean shorter, more efficient routes to popular destinations, since traffic doesn't need to pass through as many intermediate networks.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Announcement Status &amp; BGP Route Status</h4>
+            <p>BGP, the Border Gateway Protocol, is how networks announce which IP ranges they're responsible for. "Announced" and "active" together mean this network's ownership of your IP range is currently visible and accepted across the internet — the normal, healthy state.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Network Health</h4>
+            <p>A composite score reflecting routing stability, peering quality, and tier — not your live connection speed, which is measured separately on the Live Network panel. A lower score here usually points to a smaller or less-connected network rather than an active problem.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Classification Source &amp; Confidence</h4>
+            <p>Shows which data source classified this network and how confident that classification is, so you can judge how much weight to put on the ASN type and tier shown above.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Hosting, Mobile &amp; Proxy Network Flags</h4>
+            <p>Three independent yes/no checks: whether this ASN is a datacenter or hosting provider, whether it's a mobile carrier network, and whether it's flagged as proxy or VPN infrastructure. A network can only really be one of the first two, but the proxy flag can apply alongside either.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ EDUCATION ═══ -->
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">Why Your Network Route Matters</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>It's the foundation everything else builds on</h4>
+          <p>Every other intelligence panel on this site — your identity, VPN detection, live speed — is built on top of the routing data shown here. A datacenter ASN with a proxy flag is often the single strongest signal that a connection isn't a normal residential one, well before any active VPN detection even runs.</p>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>It changes when your network changes, not when you do</h4>
+          <p>This data reflects your ISP's infrastructure, not anything personal about you. Switching from Wi-Fi to mobile data, changing ISPs, or connecting through a VPN will all change every value on this page — your device and browser stay completely irrelevant to it.</p>
+        </div>
+      </section>
+
+      <!-- ═══ PAGE FAQ ═══ -->
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Network Route — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is an ASN?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">An Autonomous System Number is a unique identifier assigned to a network or group of networks that share a single routing policy on the internet. Every major ISP, hosting provider, and large organization operates under at least one ASN, and it's the basic unit BGP routing uses to direct traffic across the internet.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What does network tier mean?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Network tier classifies how close a network is to the internet's core backbone. Tier 1 networks can reach the entire internet without paying for transit. Tier 2 networks are regional providers that pay for some transit and sell to others. Tier 3 networks are local providers that only buy transit and serve end users directly.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is BGP route status?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">BGP, or Border Gateway Protocol, is how networks announce which IP ranges they're responsible for to the rest of the internet. An active, announced route means the network's ownership of that IP range is currently visible and accepted by other networks, which is the normal healthy state.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Why does my upstream provider matter?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Your upstream provider is the larger network your ISP connects through to reach the rest of the internet. It affects routing efficiency, latency to distant destinations, and resilience if your direct ISP has an outage, since traffic often has alternate paths through the upstream provider's wider network.</div></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ CITATIONS ═══ -->
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">Regional Internet Registry allocation records (ARIN, RIPE, APNIC, LACNIC, AFRINIC)</span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">Global ASN and BGP routing reference databases</span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link">Internet exchange and peering infrastructure registries</span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+
+    </div>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+
+  <script defer src="../assets/js/engines/core.js"></script>
+
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('ndic-faq-item--open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
