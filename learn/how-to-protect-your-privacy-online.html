@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('ndic_theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>How to Protect Your Privacy Online — A Practical, No-Nonsense Guide — IntelReap</title>
+  <meta name="description" content="Practical steps to protect your privacy online in 2026 — VPNs, browser fingerprinting, password security, DNS privacy, mobile tracking, and the tools that actually make a difference.">
+  <meta name="keywords" content="how to protect your privacy online, how to protect your internet privacy, how to keep your privacy online, how to protect yourself online, online privacy tips, how to be more private online, how to protect personal information online, internet privacy guide 2026">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/learn/how-to-protect-your-privacy-online">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/learn/how-to-protect-your-privacy-online">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/how-to-protect-your-privacy-online">
+
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="How to Protect Your Privacy Online — A Practical Guide — IntelReap">
+  <meta property="og:description"  content="VPNs, browser fingerprinting, password managers, DNS privacy, and mobile tracking — every practical step to protect your privacy online in 2026, with honest assessments of what works and what does not.">
+  <meta property="og:url"          content="https://intelreap.com/learn/how-to-protect-your-privacy-online">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="How to Protect Your Privacy Online — IntelReap">
+  <meta name="twitter:description" content="The practical steps that actually move the needle on online privacy — not vague advice, but specific tools, settings, and decisions with honest trade-offs.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#0ea5e9">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <style>
+    #scroll-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent,#0ea5e9),#06b6d4);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
+    .ir-breadcrumb{max-width:760px;margin:0 auto;padding:1rem 1.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:0.375rem;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.75rem;color:var(--color-text-tertiary,#475569);}
+    .ir-breadcrumb a{color:var(--color-accent,#0ea5e9);text-decoration:none;}.ir-breadcrumb a:hover{text-decoration:underline;}.ir-breadcrumb-sep{opacity:0.4;}.ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
+    .ir-article{max-width:760px;margin:0 auto;padding:0 1.5rem 4rem;}
+    .ir-article h2{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:2.75rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));display:flex;align-items:center;gap:0.6rem;line-height:1.35;scroll-margin-top:5rem;}
+    .ir-article h3{font-family:var(--font-display,'Syne',sans-serif);font-size:0.975rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:1.75rem 0 0.6rem;line-height:1.4;}
+    .ir-article p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.85;color:var(--color-text-secondary,#94a3b8);margin-bottom:1rem;}
+    .ir-article ul,.ir-article ol{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.8;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.25rem 1.25rem;}
+    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}.ir-article li::marker{color:var(--color-accent,#0ea5e9);}
+    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}.ir-article em{font-style:italic;}
+    .ir-article a{color:var(--color-accent,#0ea5e9);text-decoration:underline;text-underline-offset:2px;}.ir-article a:hover{opacity:0.8;}
+    .ir-article code{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.8125rem;color:var(--color-accent,#0ea5e9);background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.15);border-radius:4px;padding:0.1rem 0.4rem;white-space:nowrap;}
+    .section-num{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;color:var(--color-accent,#0ea5e9);font-weight:500;background:rgba(14,165,233,0.1);padding:0.15rem 0.4rem;border-radius:3px;flex-shrink:0;}
+    .ir-callout{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-left:3px solid var(--color-accent,#0ea5e9);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .ir-callout p{margin-bottom:0;color:var(--color-text-primary,#e2e8f0)!important;font-weight:500;}
+    .ir-table-wrap{width:100%;overflow-x:auto;margin:1.25rem 0 2rem;border-radius:6px;border:1px solid var(--color-border,rgba(255,255,255,0.07));-webkit-overflow-scrolling:touch;}
+    .ir-table{width:100%;min-width:500px;border-collapse:collapse;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;}
+    .ir-table caption{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.75rem;color:var(--color-text-tertiary,#475569);text-align:left;padding:0.5rem 1rem 0;caption-side:top;}
+    .ir-table th{background:rgba(255,255,255,0.04);color:var(--color-text-primary,#e2e8f0);font-family:var(--font-display,'Syne',sans-serif);font-weight:600;font-size:0.8rem;padding:0.75rem 1rem;text-align:left;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.07));white-space:nowrap;}
+    .ir-table td{padding:0.75rem 1rem;color:var(--color-text-secondary,#94a3b8);border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));vertical-align:middle;line-height:1.55;}
+    .ir-table tr:last-child td{border-bottom:none;}
+    .ir-check{color:#34d399;font-weight:600;}.ir-cross{color:#f87171;}.ir-neutral{color:var(--color-text-tertiary,#475569);}
+    .ir-cta-block{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-radius:8px;padding:1.875rem 1.75rem;margin:2.5rem 0;text-align:center;}
+    .ir-cta-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.625rem;display:block;}
+    .ir-cta-block h3{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.5rem;line-height:1.3;}
+    .ir-cta-block>p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary,#94a3b8);margin:0 0 1.375rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .ir-logic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+    @media(max-width:560px){.ir-logic-grid{grid-template-columns:1fr;}}
+    .ir-logic-card{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.06));border-radius:6px;padding:1.25rem 1.5rem;}
+    .ir-logic-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.5rem;display:block;}
+    .ir-logic-card p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);margin:0;}
+    .ir-share-wrap{margin:2.5rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-share-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-tertiary,#475569);margin-bottom:0.875rem;display:block;}
+    .ir-share-pills{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .ir-share-pill{display:inline-flex;align-items:center;padding:0.375rem 0.875rem;border-radius:9999px;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;font-weight:500;background:rgba(255,255,255,0.04);border:1px solid var(--color-border,rgba(255,255,255,0.08));color:var(--color-text-secondary,#94a3b8);cursor:pointer;text-decoration:none;transition:border-color 0.15s,color 0.15s;white-space:nowrap;}
+    .ir-share-pill:hover{border-color:var(--color-accent,#0ea5e9);color:var(--color-accent,#0ea5e9);text-decoration:none;}
+    .ir-faq-outer{max-width:760px;margin:0 auto;padding:0 1.5rem 1rem;}
+    .ir-faq-heading{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.375rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-faq-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.5rem;line-height:1.65;}
+    .ir-contact-outer{max-width:760px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;}
+    .ir-contact-header{text-align:center;margin-bottom:1.75rem;}
+    .ir-contact-title{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin-bottom:0.375rem;}
+    .ir-contact-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;color:var(--color-text-tertiary,#475569);line-height:1.6;}
+    .ir-form-wrap{max-width:400px;margin:0 auto;}
+    .ir-form-card{background:rgba(13,18,37,0.8);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:2rem;}
+    .form-group{margin-bottom:1rem;}.form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
+    .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.65rem 0.9rem;font-size:0.875rem;color:var(--color-text-primary,#e2e8f0);font-family:var(--font-body,'Be Vietnam Pro',sans-serif);transition:border-color 0.2s;box-sizing:border-box;}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent,#0ea5e9);}
+    .form-group textarea{resize:vertical;min-height:100px;}.form-hidden{display:none;}
+    .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
+    .form-submit:hover{opacity:0.9;}
+    #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","@id":"https://intelreap.com/learn/how-to-protect-your-privacy-online#article","headline":"How to Protect Your Privacy Online — A Practical, No-Nonsense Guide","description":"Practical steps to protect your privacy online in 2026 — VPNs and their real limits, browser fingerprinting, password security, DNS-over-HTTPS, mobile tracking, and the tools that genuinely move the needle.","url":"https://intelreap.com/learn/how-to-protect-your-privacy-online","image":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/og-image.png","width":1200,"height":630},"datePublished":"2026-02-28","dateModified":"2026-06-09","author":{"@type":"Organization","@id":"https://intelreap.com/#organization"},"publisher":{"@id":"https://intelreap.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://intelreap.com/learn/how-to-protect-your-privacy-online"},"inLanguage":"en-US","keywords":"how to protect your privacy online, how to protect your internet privacy, online privacy tips, how to be more private online, how to protect personal information online","articleSection":"Privacy Guides","wordCount":3000},
+    {"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com","logo":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/intelreap-logo.svg"},"sameAs":["https://twitter.com/intelreap","https://github.com/accessmakr/intelreap-frontend"]},
+    {"@type":"WebSite","@id":"https://intelreap.com/#website","name":"IntelReap","url":"https://intelreap.com","publisher":{"@id":"https://intelreap.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://intelreap.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://intelreap.com/learn/"},{"@type":"ListItem","position":3,"name":"How to Protect Your Privacy Online","item":"https://intelreap.com/learn/how-to-protect-your-privacy-online"}]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is the single most effective thing I can do to protect my privacy online?","acceptedAnswer":{"@type":"Answer","text":"Use a password manager and enable two-factor authentication on every account that supports it. This does more for your practical security than any other single step because most privacy breaches that affect real people are not surveillance events — they are compromised accounts. A password manager removes the risk of reused passwords; 2FA removes the risk of a stolen password being enough to access an account."}},
+      {"@type":"Question","name":"Does a VPN protect my privacy online?","acceptedAnswer":{"@type":"Answer","text":"Partially. A VPN hides your IP address from websites and encrypts your traffic from your ISP — so your ISP cannot read the content of what you browse. But a VPN does not protect against browser fingerprinting, cookie tracking, account-based tracking, or malware. It also shifts trust to the VPN provider, who can see your traffic. A VPN is one layer in a broader privacy approach, not a complete solution on its own."}},
+      {"@type":"Question","name":"What is the most private browser?","acceptedAnswer":{"@type":"Answer","text":"For most people, Firefox with privacy settings enabled or Brave browser offers the best balance of privacy and usability. Brave blocks trackers and fingerprinting by default without requiring manual configuration. Firefox with uBlock Origin, resistFingerprinting enabled, and DNS-over-HTTPS configured is equally effective. The Tor Browser provides the strongest privacy but is significantly slower and blocked by some sites. Chrome, Edge, and Safari in their default configurations do relatively little to prevent tracking."}},
+      {"@type":"Question","name":"Can websites track me if I use incognito or private browsing mode?","acceptedAnswer":{"@type":"Answer","text":"Yes. Incognito mode prevents your browser from saving local session data — history, cookies, and cached files — but it does not change what websites can see about your connection. Your IP address, browser fingerprint, and all hardware signals are identical in incognito mode. Websites using fingerprinting can identify you across both regular and incognito sessions. Incognito is useful for preventing local tracking on a shared device, not for preventing server-side tracking."}},
+      {"@type":"Question","name":"How do I stop websites tracking me across the internet?","acceptedAnswer":{"@type":"Answer","text":"Use a browser that blocks third-party trackers (Brave, Firefox with uBlock Origin), enable DNS-over-HTTPS to prevent DNS-based tracking, use a VPN to mask your IP address, and reduce your browser fingerprint by using Firefox with resistFingerprinting enabled or Brave's built-in fingerprint randomisation. Accept that account-based tracking — being logged into Google, Facebook, or similar services — cannot be blocked by any of these tools while you remain logged in."}},
+      {"@type":"Question","name":"What is DNS-over-HTTPS and why does it matter for privacy?","acceptedAnswer":{"@type":"Answer","text":"DNS-over-HTTPS (DoH) encrypts your DNS queries — the requests your browser sends to look up website addresses. Without DoH, these queries travel in plain text and are visible to your ISP, network operators, and anyone monitoring your connection. With DoH enabled, your DNS queries are encrypted and sent to a resolver of your choice (Cloudflare, NextDNS, Google, etc.) rather than your ISP's default resolver. Enable it in Firefox via Settings → General → Network Settings → Enable DNS over HTTPS. Chrome enables it automatically when using a compatible DNS provider."}},
+      {"@type":"Question","name":"Is it safe to use public Wi-Fi?","acceptedAnswer":{"@type":"Answer","text":"Modern HTTPS encryption means that simply being on public Wi-Fi does not expose the content of your web browsing to other users on the network. However, public networks can be used to intercept unencrypted traffic (apps that do not use HTTPS), expose your device to local network scanning, and facilitate captive portal attacks. Using a VPN on public Wi-Fi adds a meaningful layer of protection by encrypting all traffic before it leaves your device. Avoid accessing sensitive accounts on public networks without a VPN."}},
+      {"@type":"Question","name":"How do I protect my personal information on social media?","acceptedAnswer":{"@type":"Answer","text":"Use strong unique passwords and enable two-factor authentication. Set your profile to private or friends-only where the platform allows. Audit the third-party apps connected to your social accounts and revoke access to any you no longer use — they often retain data permission long after you stop using the app. Avoid posting identifiable information such as your full date of birth, home location, or phone number in publicly visible profiles. Review your account's advertising data settings and opt out of personalised advertising data collection where available."}},
+      {"@type":"Question","name":"What is the difference between privacy and security online?","acceptedAnswer":{"@type":"Answer","text":"Security is about preventing unauthorised access to your accounts and data — strong passwords, two-factor authentication, and up-to-date software address this. Privacy is about controlling who can observe and track your behaviour and personal information — VPNs, tracker blocking, and fingerprint resistance address this. They overlap but are not the same: you can have strong security on an account while still being heavily tracked by advertisers, and you can have good tracking protection while using weak passwords that put your accounts at risk."}},
+      {"@type":"Question","name":"How do I know what information websites can see about me?","acceptedAnswer":{"@type":"Answer","text":"Use IntelReap's intelligence panels — they read the same signals websites collect and display them to you: your public IP address and ISP, network routing path, browser fingerprint signals, GPU renderer, hardware concurrency, screen configuration, VPN and proxy detection status, and security posture. Running a free scan gives you a precise picture of what you expose on every site visit, which is the starting point for knowing what to actually protect."}},
+      {"@type":"Question","name":"Do I need to pay for privacy tools to be protected?","acceptedAnswer":{"@type":"Answer","text":"No. The most impactful privacy steps are free: Firefox or Brave browser (free), uBlock Origin extension (free), Bitwarden password manager (free tier is sufficient), DNS-over-HTTPS via Cloudflare 1.1.1.1 (free), and two-factor authentication apps like Aegis or Ente Auth (free). Paid VPNs provide stronger privacy guarantees than free VPNs — free VPN services often monetise through data collection, which defeats the purpose. If you use a VPN, pay for one from a provider with an independently audited no-logs policy."}},
+      {"@type":"Question","name":"How do I protect my privacy on my phone?","acceptedAnswer":{"@type":"Answer","text":"Review app permissions regularly — revoke location, microphone, camera, and contacts access for any app that does not genuinely need them. Enable private Wi-Fi address (MAC randomisation) in your Wi-Fi settings to prevent tracking across networks. Use a privacy-focused browser for mobile browsing. Enable full-disk encryption on your device (enabled by default on iOS; verify on Android in Settings → Security). Use a VPN when on public Wi-Fi. Disable ad ID tracking: on iOS go to Settings → Privacy → Tracking → disable Allow Apps to Request to Track; on Android go to Settings → Privacy → Ads → Delete advertising ID."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/learn/">Learn</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="ir-breadcrumb-current" aria-current="page">How to Protect Your Privacy Online</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Privacy Guide</span>
+        </div>
+        <h1 class="ndic-hero-title">
+          How to Protect Your<br>
+          <span class="ndic-highlight">Privacy Online</span>
+        </h1>
+        <p class="ndic-hero-tagline">
+          Most online privacy guides bury the practical steps under theory. This one does not. You will find the specific tools, settings, and decisions that actually move the needle — along with honest assessments of what each one covers and where it falls short, so you can build a layered approach that fits how you actually use the internet.
+        </p>
+        <div class="ndic-hero-cta-group">
+          <a href="/intelligence/security" class="ndic-btn-primary cta-rotate">Check My Privacy Exposure</a>
+          <a href="/intelligence/vpn-proxy" class="ndic-btn-secondary">Detect My VPN &amp; Proxy →</a>
+        </div>
+        <div id="freshness-badge" aria-live="polite">Loading…</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item"><span class="ndic-trust-value">4.9★</span><span class="ndic-trust-label">satisfaction</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">290+ data points</span><span class="ndic-trust-label">per scan</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">13 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">Zero data stored</span><span class="ndic-trust-label">privacy first</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">Online privacy is not one setting or one tool — it is a stack of overlapping protections, each covering a different tracking vector</h2>
+      <p class="ndic-quick-answer-body">
+        Start with the highest-impact steps: a password manager with two-factor authentication on every account, a browser that blocks trackers by default, and DNS-over-HTTPS to encrypt your DNS queries. Add a reputable paid VPN if your ISP or network environment is a concern. Reduce your browser fingerprint using Firefox or Brave. On mobile, audit app permissions quarterly. None of these alone is sufficient — together they close the most common tracking and exposure vectors without requiring a significant change to how you use the internet.
+      </p>
+    </section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+
+      <h2><span class="section-num">01</span> Why Online Privacy Is Harder Than It Used to Be</h2>
+      <p>Ten years ago, blocking cookies was a meaningful privacy step. Today, tracking systems have evolved well beyond cookie dependence. Browser fingerprinting identifies you from hardware and software signals without storing anything on your device — <a href="/learn/what-is-device-fingerprinting">your browser's GPU renderer, screen resolution, and audio processing behaviour combine into an identifier that persists even after you clear your history</a>. Third-party cookies are being phased out across browsers, but the advertising industry has already moved to fingerprinting and cohort-based targeting as replacements.</p>
+      <p>At the same time, the number of tracking vectors has increased. Your IP address, ISP, and approximate location are visible on every connection. Your DNS queries — the lookups your browser makes before it even connects to a site — are often unencrypted and visible to your ISP and network operator. Mobile apps request permissions far beyond their core function and share data with dozens of third-party SDKs running inside them. Account-based tracking by major platforms follows you across every site where their code is embedded, regardless of your IP or device configuration.</p>
+      <p>None of this means privacy is hopeless. It means the approach has to be layered — different tools covering different vectors — and the decisions have to be informed by what each tool actually protects against. That is what this guide covers.</p>
+
+      <h2><span class="section-num">02</span> Start Here — Know What You Are Already Exposing</h2>
+      <p>Before adding any privacy tools, it is worth knowing your current baseline. Most people are surprised by the specific detail their browser exposes on every site visit — not just an IP address, but an ISP name, approximate city, connection type, VPN or proxy status, GPU model, screen configuration, and browser fingerprint signals, all readable by any site without any permission prompt.</p>
+      <p>IntelReap reads these signals and <a href="/intelligence/network-identity">shows you exactly what your connection exposes to the websites you visit</a> — your public IP, ISP, routing path, and the full set of identifiers your browser transmits. Running this before making any changes gives you a precise starting point, so you can measure whether the steps you take are actually reducing your exposure rather than guessing.</p>
+      <div class="ir-callout"><p><strong>The baseline check matters:</strong> Many people add a VPN and assume they are now private, when in reality their browser fingerprint, account sessions, and DNS queries are still fully visible. Knowing the specific vectors you need to address is more useful than applying generic advice.</p></div>
+
+      <h2><span class="section-num">03</span> VPNs — What They Protect and What They Do Not</h2>
+      <p>A VPN does three things: it replaces your public IP address with the VPN server's IP, it encrypts traffic between your device and the VPN server so your ISP cannot read it, and it changes your apparent geographic location. These are genuinely useful protections. Your ISP cannot log your browsing destinations. Websites see the VPN server's IP instead of yours. Surveillance at the network level — by your ISP, a public Wi-Fi operator, or a network-level monitor — cannot read your traffic content.</p>
+      <p>What a VPN does not do is equally important to understand. It does not prevent browser fingerprinting — your GPU renderer, screen resolution, and installed fonts are identical whether the VPN is active or not. It does not clear cookies or account sessions. It does not prevent tracking by platforms where you are logged in. And it shifts trust rather than removing it: your VPN provider can see your traffic in place of your ISP. Choose a provider with an independently audited no-logs policy, not just a self-declared one. For a full breakdown of the limits, our guide on <a href="/learn/does-a-vpn-change-your-mac-address">what a VPN actually changes about your connection</a> covers each vector specifically.</p>
+
+      <h2><span class="section-num">04</span> Your Browser Is the Biggest Privacy Variable</h2>
+      <p>Your choice of browser and how you configure it matters more than almost any other single decision. The default configurations of Chrome, Edge, and Safari permit significant third-party tracking. Firefox and Brave are meaningfully better out of the box, and they are meaningfully better still with a few targeted settings changes.</p>
+      <h3>Firefox — most configurable</h3>
+      <p>In Firefox, go to Settings → Privacy &amp; Security and set Enhanced Tracking Protection to Strict. Enable DNS over HTTPS in the Network Settings section. In <code>about:config</code>, set <code>privacy.resistFingerprinting</code> to <code>true</code> — this normalises many fingerprinting signals to standard values. Install uBlock Origin from the Firefox Add-ons store; in its settings, enable the Extra lists including uBlock filters — Annoyances and EasyPrivacy. These three changes together block the vast majority of third-party trackers and significantly reduce your fingerprint entropy.</p>
+      <h3>Brave — least configuration required</h3>
+      <p>Brave blocks third-party ads and trackers by default with no extension needed, and its Shields feature includes fingerprint randomisation — introducing slight variation in canvas, WebGL, and audio fingerprint outputs on each session. Go to brave://settings/shields and confirm Fingerprinting is set to Standard or Strict. Enable Brave's built-in VPN or configure DNS-over-HTTPS under brave://settings/privacy. For most users Brave requires the least setup to achieve a strong privacy baseline.</p>
+      <h3>Chrome and Edge — possible but limited</h3>
+      <p>Both support extensions including uBlock Origin, which provides significant tracker blocking. But neither browser offers fingerprint resistance, and both have built-in telemetry and data collection that cannot be fully disabled by the user. They are meaningfully less private than Firefox or Brave even with the best extension configuration, because the underlying engines are designed for a different set of trade-offs.</p>
+
+      <h2><span class="section-num">05</span> Passwords and Accounts — The Most Overlooked Privacy Problem</h2>
+      <p>Most real-world privacy breaches that affect ordinary people are not surveillance events. They are compromised accounts — usually from a reused password exposed in a data breach at one service being tested against other services automatically. This is called credential stuffing, and it is vastly more common than targeted tracking or ISP surveillance for most individuals.</p>
+      <p>A password manager solves this completely. Use a unique randomly generated password for every account — the manager stores and fills them, so the memorisation burden is zero. Bitwarden is free, open source, and independently audited. 1Password and Dashlane offer polished paid alternatives. Beyond the password manager, enable two-factor authentication on every account that supports it — especially email, banking, and social media accounts. A hardware key (YubiKey) is the most phishing-resistant form; an authenticator app (Aegis on Android, Ente Auth on iOS) is a solid middle ground. SMS-based 2FA is better than nothing but vulnerable to SIM-swapping attacks.</p>
+
+      <h2><span class="section-num">06</span> DNS Privacy — The Tracking Vector Most Guides Skip</h2>
+      <p>Every time your browser loads a website, it first sends a DNS query to look up the site's IP address. By default this query travels in plain text, visible to your ISP and any network operator between you and the DNS resolver. Your ISP can log every domain you visit from a DNS record alone — without needing to decrypt any of your HTTPS traffic.</p>
+      <p>DNS-over-HTTPS (DoH) encrypts these queries and sends them to a resolver of your choice rather than your ISP's default. In Firefox it is in Settings → General → Network Settings → Enable DNS over HTTPS. In Chrome it is in Settings → Privacy and security → Security → Use secure DNS. Cloudflare's 1.1.1.1 is the most widely used privacy-focused resolver; NextDNS offers more control including per-device filtering rules and query logging you control. Neither charges for basic use. This is a five-minute change that closes a tracking vector most privacy guides do not even mention.</p>
+
+      <h2><span class="section-num">07</span> Mobile Privacy — What Most Guides Miss</h2>
+      <p>Mobile devices introduce tracking vectors that desktop browsers do not face. Apps can request background location access, access to contacts and photos, and persistent identifiers like the advertising ID — all of which browsers cannot access. The advertising ID (IDFA on iOS, GAID on Android) is a platform-level identifier that ad networks use to link your behaviour across apps, and it is not affected by VPNs or browser settings at all.</p>
+      <p>On iOS, go to Settings → Privacy &amp; Tracking and disable Allow Apps to Request to Track. This prevents apps from accessing the IDFA entirely. Go to Settings → Privacy &amp; Security → Location Services and review every app's location permission — set all non-essential apps to Never or While Using. On Android, go to Settings → Privacy → Ads and delete your advertising ID. Review app permissions in Settings → Apps → select each app → Permissions, and revoke anything that is not essential to the app's function. These steps reduce mobile tracking more than any VPN or browser change because they address the vectors that are unique to the mobile environment. If you want to see exactly which network-level signals your own device exposes once you are back on a desktop or laptop connection, <a href="/guides/how-to-find-ip-address-of-any-device">our guide on finding the IP address of any device on your network</a> is a useful companion reference.</p>
+
+      <!-- CTA 1 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Security Intelligence</span>
+        <h3>See Your Full Privacy Exposure Right Now</h3>
+        <p>IntelReap's Security panel analyses your connection and browser for privacy leaks, tracking exposure, VPN detection status, and security signals — showing you the complete picture of what you are exposing on every site visit, free and in-browser.</p>
+        <a href="/intelligence/security" class="ndic-btn-primary cta-rotate">Check My Privacy Exposure</a>
+      </div>
+
+      <h2><span class="section-num">08</span> The Privacy Stack — A Layered Approach That Actually Works</h2>
+      <p>Privacy is not a single setting. Every tracking vector requires a specific countermeasure. Here is the layered stack in priority order — start at the top and work down, since the higher entries have the largest impact per unit of effort.</p>
+      <div class="ir-table-wrap" role="region" aria-label="Online privacy protection stack" tabindex="0">
+        <table class="ir-table">
+          <caption>Privacy protection tools and settings ordered by impact, covering the tracking vectors each one addresses</caption>
+          <thead>
+            <tr>
+              <th scope="col">Layer</th>
+              <th scope="col">Tool / Setting</th>
+              <th scope="col">Protects Against</th>
+              <th scope="col">Does NOT Protect Against</th>
+              <th scope="col">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1 — Accounts</strong></td>
+              <td>Password manager + 2FA</td>
+              <td>Credential stuffing, account takeover</td>
+              <td class="ir-neutral">Tracking, fingerprinting</td>
+              <td class="ir-check">Free (Bitwarden)</td>
+            </tr>
+            <tr>
+              <td><strong>2 — Browser</strong></td>
+              <td>Brave or Firefox + uBlock Origin</td>
+              <td>Third-party trackers, ad networks, some fingerprinting</td>
+              <td class="ir-neutral">IP tracking, DNS logging, account tracking</td>
+              <td class="ir-check">Free</td>
+            </tr>
+            <tr>
+              <td><strong>3 — DNS</strong></td>
+              <td>DNS-over-HTTPS (Cloudflare / NextDNS)</td>
+              <td>ISP DNS logging, DNS-based tracking</td>
+              <td class="ir-neutral">IP tracking, fingerprinting, account tracking</td>
+              <td class="ir-check">Free</td>
+            </tr>
+            <tr>
+              <td><strong>4 — IP / Network</strong></td>
+              <td>Paid VPN (audited no-logs)</td>
+              <td>ISP traffic visibility, IP tracking, geolocation</td>
+              <td class="ir-neutral">Fingerprinting, cookie tracking, account tracking</td>
+              <td class="ir-neutral">Paid (~£3–8/mo)</td>
+            </tr>
+            <tr>
+              <td><strong>5 — Fingerprint</strong></td>
+              <td>Firefox resistFingerprinting / Brave Shields</td>
+              <td>Canvas, WebGL, audio fingerprinting</td>
+              <td class="ir-neutral">IP tracking, account tracking, DNS logging</td>
+              <td class="ir-check">Free</td>
+            </tr>
+            <tr>
+              <td><strong>6 — Mobile IDs</strong></td>
+              <td>Disable advertising ID + audit app permissions</td>
+              <td>Cross-app advertising tracking, background data collection</td>
+              <td class="ir-neutral">Browser tracking on mobile, account tracking</td>
+              <td class="ir-check">Free</td>
+            </tr>
+            <tr>
+              <td><strong>7 — Email</strong></td>
+              <td>Email aliases (SimpleLogin / Apple Hide My Email)</td>
+              <td>Email-based tracking, spam, data breach exposure</td>
+              <td class="ir-neutral">Account tracking, browser fingerprinting</td>
+              <td class="ir-neutral">Freemium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CTA 2 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">VPN &amp; Proxy Detection</span>
+        <h3>Check Whether Your VPN Is Actually Protecting You</h3>
+        <p>IntelReap's VPN &amp; Proxy panel analyses your connection and reports whether it appears as a VPN, data centre, proxy, or residential IP — exactly what websites see. If your VPN is leaking your real identity, this will show it.</p>
+        <a href="/intelligence/vpn-proxy" class="ndic-btn-secondary">Detect My VPN &amp; Proxy →</a>
+      </div>
+
+      <!-- LOGIC + METHODOLOGY -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>No single privacy tool closes all tracking vectors. The goal is layered coverage — each tool addressing a specific vector the others do not touch — not the illusion of complete invisibility from one setting.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>This guide draws on EFF privacy research, Mozilla Foundation browser privacy documentation, GDPR and CCPA regulatory guidance, independently audited VPN provider reports, and live browser signal data reviewed across multiple device and browser configurations.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link"><a href="https://www.eff.org/pages/privacy" target="_blank" rel="noopener noreferrer">Electronic Frontier Foundation — Privacy Research and Browser Tracking Analysis</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link"><a href="https://foundation.mozilla.org/en/privacynotincluded/" target="_blank" rel="noopener noreferrer">Mozilla Foundation — Privacy Not Included: App and Device Privacy Assessments</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc8484" target="_blank" rel="noopener noreferrer">RFC 8484 — DNS Queries over HTTPS (DoH) Specification</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link"><a href="https://bitwarden.com/open-source/" target="_blank" rel="noopener noreferrer">Bitwarden — Open Source Password Manager Security Audit Documentation</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link"><a href="https://brave.com/privacy-features/" target="_blank" rel="noopener noreferrer">Brave Browser — Privacy and Fingerprinting Protection Features Documentation</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">06</span>
+            <span class="ndic-citation-link"><a href="https://support.apple.com/en-gb/guide/iphone/iph251e92810/ios" target="_blank" rel="noopener noreferrer">Apple Support — App Tracking Transparency and Advertising ID Settings on iOS</a></span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Twelve questions on online privacy — VPNs, browsers, incognito mode, tracking, DNS, mobile privacy, and the tools that actually make a difference.</p>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>What is the single most effective thing I can do to protect my privacy online?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">Use a password manager and enable two-factor authentication on every account that supports it. This addresses the most common real-world privacy breach vector: compromised accounts from reused passwords. A password manager generates unique credentials for every service; 2FA ensures a stolen password alone is not enough to access the account. The impact of these two steps exceeds any VPN or browser change for most people.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>Does a VPN protect my privacy online?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">Partially. A VPN hides your IP from websites and encrypts traffic from your ISP — so your ISP cannot log your browsing destinations. It does not protect against browser fingerprinting, cookie tracking, account-based tracking, DNS leaks (unless the VPN handles DNS), or malware. It also shifts trust to the VPN provider. It is one layer in a broader approach, not a complete solution.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>What is the most private browser?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">Brave and Firefox with privacy settings enabled offer the best balance of privacy and usability. Brave blocks trackers and fingerprinting by default with no extension needed. Firefox with uBlock Origin, resistFingerprinting enabled, and DNS-over-HTTPS configured matches Brave's protection level. The Tor Browser is the strongest but significantly slower and blocked by some sites. Chrome and Edge in default configurations do relatively little to prevent tracking.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>Can websites track me if I use incognito or private browsing mode?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Yes. Incognito mode prevents your browser from saving local session data but does not change what websites see about your connection. Your IP address, browser fingerprint, and hardware signals are identical in incognito mode. Fingerprinting systems can link incognito and regular sessions from the same device. Incognito is useful for preventing local tracking on a shared device — not for preventing server-side tracking.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>How do I stop websites tracking me across the internet?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">Use Brave or Firefox with uBlock Origin to block third-party trackers. Enable DNS-over-HTTPS to prevent DNS-based tracking. Use a VPN to mask your IP. Enable Firefox's resistFingerprinting or Brave's Shields for fingerprint resistance. Accept that account-based tracking by platforms where you remain logged in cannot be blocked by any of these tools — logging out or using a separate browser profile for those services is the only countermeasure.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>What is DNS-over-HTTPS and why does it matter for privacy?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">DNS-over-HTTPS encrypts the domain lookup requests your browser sends before connecting to any website. Without it, these queries travel in plain text and are visible to your ISP and network operators — giving them a log of every domain you visit even if all your web traffic is HTTPS. Enable it in Firefox via Settings → General → Network Settings → Enable DNS over HTTPS. Use Cloudflare 1.1.1.1 or NextDNS as the resolver. It is a five-minute change that closes a significant privacy gap.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>Is it safe to use public Wi-Fi?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">Modern HTTPS encryption means public Wi-Fi does not expose the content of your web browsing to other users on the network. But public networks can expose unencrypted app traffic, make your device visible to local network scanning, and facilitate captive portal attacks. Using a VPN on public Wi-Fi encrypts all traffic before it leaves your device, providing meaningful protection. Avoid accessing sensitive accounts on public networks without a VPN active.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>How do I protect my personal information on social media?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Use a unique strong password and enable 2FA. Set your profile to private where available. Audit third-party apps connected to your account and revoke access to any you no longer use — they retain data permission indefinitely otherwise. Avoid posting your full date of birth, home address, or phone number in publicly visible profiles. Review advertising data settings and opt out of personalised ad targeting where the platform allows.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>What is the difference between privacy and security online?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">Security prevents unauthorised access to your accounts and data — strong passwords, 2FA, and up-to-date software address this. Privacy controls who can observe and track your behaviour — VPNs, tracker blocking, and fingerprint resistance address this. They overlap but serve different goals: you can have strong security on an account while being heavily tracked by advertisers, and you can have good tracking protection while using weak passwords that put your accounts at risk.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10"><span>How do I know what information websites can see about me?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">Use IntelReap's intelligence panels — they read and display your public IP, ISP, network routing path, browser fingerprint signals, GPU renderer, hardware concurrency, screen configuration, and VPN and proxy detection status. This gives you a precise picture of what you expose on every site visit, which is the starting point for knowing what to actually protect rather than applying advice blindly.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11"><span>Do I need to pay for privacy tools to be protected?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">The most impactful privacy steps are free: Firefox or Brave, uBlock Origin, Bitwarden password manager, DNS-over-HTTPS via Cloudflare 1.1.1.1, and 2FA via a free authenticator app. The one area where paying makes a meaningful difference is VPNs — free VPN services often monetise through data collection, which defeats the purpose. If you use a VPN, choose a paid provider with an independently audited no-logs policy.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12"><span>How do I protect my privacy on my phone?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">On iOS: Settings → Privacy &amp; Tracking → disable Allow Apps to Request to Track, then review Location Services and set non-essential apps to Never. On Android: Settings → Privacy → Ads → delete your advertising ID, then audit app permissions individually. Enable private Wi-Fi address (MAC randomisation) in Wi-Fi settings. Use a privacy-focused mobile browser. Apply a VPN on public Wi-Fi. These steps address the mobile-specific tracking vectors that browser and VPN settings alone do not reach.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">Privacy Question Not Covered Here?</h2>
+          <p class="ir-contact-sub">Ask about any privacy tool, setting, or tracking vector you want to understand better. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name"></div>
+              <div class="form-group"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+              <div class="form-group"><label for="cf-message">Your question</label><textarea id="cf-message" name="message" placeholder="What would you like to know about protecting your privacy online?" required></textarea></div>
+              <button type="submit" class="form-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+  (function(){'use strict';
+    document.querySelectorAll('.ndic-faq-question').forEach(function(btn){btn.addEventListener('click',function(){const item=btn.closest('.ndic-faq-item'),wasOpen=item.classList.contains('ndic-faq-item--open');document.querySelectorAll('.ndic-faq-item--open').forEach(function(i){i.classList.remove('ndic-faq-item--open');i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');});if(!wasOpen){item.classList.add('ndic-faq-item--open');btn.setAttribute('aria-expanded','true');}});});
+    const bar=document.getElementById('scroll-progress-bar');if(bar){window.addEventListener('scroll',function(){const s=window.scrollY||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(s/h)*100:0).toFixed(2)+'%';},{passive:true});}
+    (()=>{const now=new Date(),dow=now.getDay(),mon=new Date(now.getFullYear(),now.getMonth(),now.getDate()+(dow===0?-6:1-dow)),iso=mon.toISOString().split('T')[0];document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>{if(s.textContent.includes('"dateModified"'))s.textContent=s.textContent.replace(/"dateModified"\s*:\s*"[^"]*"/g,`"dateModified":"${iso}"`);});})();
+    (()=>{const badge=document.getElementById('freshness-badge');if(!badge)return;const d=new Date(),mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],txt=`Last updated ${mo[d.getMonth()]}\u00a0${d.getDate()},\u00a0${d.getFullYear()}`;badge.textContent=txt;badge.setAttribute('aria-label',txt);})();
+    (()=>{const m=new Date().getMonth(),banners=['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'],labels=['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];const el=document.getElementById('seasonal-banner');if(el){el.textContent=banners[m];el.style.cssText='text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;';}const lbl=document.getElementById('seasonal-label');if(lbl)lbl.textContent=labels[m];})();
+    (()=>{const v=['Check My Privacy Exposure','Analyse My Security Posture','Scan My Privacy Leaks','See My Security Score','Inspect My Privacy Data','Audit My Browser Exposure'];document.querySelectorAll('.cta-rotate').forEach(el=>{el.textContent=v[Math.floor(Math.random()*v.length)];});})();
+    (()=>{const rawUrl=window.location.href,encUrl=encodeURIComponent(rawUrl),encTitle=encodeURIComponent(document.title);const platforms=[{n:'WhatsApp',u:`https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}`},{n:'Facebook',u:`https://www.facebook.com/sharer/sharer.php?u=${encUrl}`},{n:'Twitter/X',u:`https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}`},{n:'LinkedIn',u:`https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`},{n:'Reddit',u:`https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`},{n:'Quora',u:`https://www.quora.com/search?q=${encTitle}`},{n:'Medium',u:`https://medium.com/new-story?url=${encUrl}`},{n:'Telegram',u:`https://t.me/share/url?url=${encUrl}&text=${encTitle}`},{n:'Pinterest',u:`https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}`},{n:'Discord',u:'https://discord.com/channels/@me'},{n:'Snapchat',u:`https://www.snapchat.com/share?url=${encUrl}`},{n:'Vimeo',u:'https://vimeo.com'},{n:'TikTok',u:'https://www.tiktok.com'},{n:'Instagram',u:'https://www.instagram.com'},{n:'Email',u:`mailto:?subject=${encTitle}&body=${encUrl}`},{n:'Copy Link',u:null}];
+    const container=document.getElementById('share-pills-container');if(!container)return;
+    platforms.forEach(p=>{let el;if(p.u===null){el=document.createElement('button');el.type='button';el.textContent='Copy Link';el.setAttribute('aria-label','Copy page URL to clipboard');el.addEventListener('click',()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(rawUrl).then(()=>{el.textContent='\u2713 Copied!';setTimeout(()=>{el.textContent='Copy Link';},2400);showToast('Link copied to clipboard');}).catch(()=>legacyCopy(rawUrl,el));}else legacyCopy(rawUrl,el);});}else{el=document.createElement('a');el.href=p.u;el.target='_blank';el.rel='noopener noreferrer';el.textContent=p.n;el.setAttribute('aria-label',`Share on ${p.n}`);}el.className='ir-share-pill';container.appendChild(el);});})();
+    function legacyCopy(text,btn){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');if(btn){btn.textContent='\u2713 Copied!';setTimeout(()=>{btn.textContent='Copy Link';},2400);}showToast('Link copied to clipboard');}catch(e){showToast('Copy failed — please copy the URL manually');}document.body.removeChild(ta);}
+    function showToast(msg){const tc=document.getElementById('toast-container');if(!tc)return;const t=document.createElement('div');t.textContent=msg;t.style.cssText='display:inline-block;background:var(--color-accent,#0ea5e9);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';tc.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>{t.style.opacity='1';}));setTimeout(()=>{t.style.opacity='0';setTimeout(()=>{if(t.parentNode)t.parentNode.removeChild(t);},350);},2700);}
+  }());
+  </script>
+  <script>
+    function handleContactForm(e){e.preventDefault();const myForm=e.target,formData=new FormData(myForm);fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(formData).toString()}).then(()=>{alert("Thank you! Your request has been transmitted.");myForm.reset();}).catch((error)=>{alert("Oops! There was a problem submitting your form.");console.error("Form submission error:",error);});}
+  </script>
+</body>
+</html>
