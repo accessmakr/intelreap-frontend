@@ -1,34 +1,468 @@
-<!-- /intelligence/vpn-proxy.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPN, Proxy & Routing Intelligence | IntelReap</title>
-    <meta name="description" content="Module deploying: Trust score, heat bar, IP rotation heuristics, mismatch alerts.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/vpn-proxy">
-    <meta property="og:title" content="VPN, Proxy & Routing Intelligence | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/vpn-proxy">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ndic_theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>VPN, Proxy & Routing Intelligence — Are You Hidden Online? | IntelReap</title>
+  <meta name="description" content="Live VPN detection, proxy detection, TOR exit node check, datacenter routing, trust score, fraud score, and route classification — your routing exposure explained parameter by parameter.">
+  <meta name="keywords" content="VPN detection, proxy detection, TOR detection, datacenter routing, trust score, fraud score, IP classification, WebRTC leak, timezone match">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/intelligence/vpn-proxy">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/vpn-proxy">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/vpn-proxy">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="VPN, Proxy & Routing Intelligence — IntelReap">
+  <meta property="og:description" content="Live VPN, proxy, and TOR detection with trust score and route classification, explained in plain English.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/vpn-proxy">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VPN, Proxy & Routing Intelligence — IntelReap">
+  <meta name="twitter:description" content="See whether your VPN is actually working, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#10141b">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#10141b">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/intelreap-logo.svg" },
+        "sameAs": ["https://twitter.com/intelreap"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://intelreap.com/#website",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "publisher": { "@id": "https://intelreap.com/#organization" }
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://intelreap.com/intelligence/vpn-proxy#article",
+        "headline": "VPN, Proxy & Routing Intelligence",
+        "description": "A deep dive into VPN detection, proxy detection, TOR identification, trust scoring, and route classification using multi-signal heuristics.",
+        "url": "https://intelreap.com/intelligence/vpn-proxy",
+        "datePublished": "2026-06-22",
+        "dateModified": "2026-06-27",
+        "author": { "@id": "https://intelreap.com/#organization" },
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "isPartOf": { "@id": "https://intelreap.com/#website" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
+          { "@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html" },
+          { "@type": "ListItem", "position": 3, "name": "VPN, Proxy & Routing Intelligence", "item": "https://intelreap.com/intelligence/vpn-proxy" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does IntelReap detect a VPN?",
+            "acceptedAnswer": { "@type": "Answer", "text": "IntelReap uses multiple signals simultaneously rather than relying on any single check: ASN classification to identify datacenter or VPN provider IP ranges, timezone and language consistency checks, WebRTC IP comparison, and reverse DNS patterns. No method is perfect, but combining signals produces a reliable confidence score." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the trust score?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The trust score is a 0-100 composite rating of how consistent and legitimate your connection appears across all measured signals. A high score means signals align as expected for a normal residential or mobile connection. A low score means multiple signals suggest non-residential routing." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a TOR exit node?",
+            "acceptedAnswer": { "@type": "Answer", "text": "TOR is a privacy network that routes your traffic through multiple relays. The exit node is the final relay whose IP address appears as the source of your connection to any destination website. Exit node IP ranges are publicly listed, which is how they're detected." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a VPN be detected even if no DNS or WebRTC leak exists?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Even a correctly configured VPN with no leaks is often identifiable through ASN classification alone, since most VPN providers operate from datacenter IP ranges that are well-documented. The absence of leaks confirms the VPN is working as intended — it doesn't make the IP itself look residential." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">VPN, Proxy & Routing Intelligence</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for obfuscation parameters:<br><strong class="text-slate-200">Trust score, heat bar, IP rotation heuristics, mismatch alerts</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Vpn Proxy Routing Intelligence Panel on Hompage</a>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-deepdive-page">
+
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">VPN, Proxy &amp; Routing Intelligence</span>
+      </nav>
+
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 3</div>
+        <h1 class="ndic-deepdive-title">VPN, Proxy &amp; Routing Intelligence</h1>
+        <p class="ndic-deepdive-subtitle">Are You Hidden Online?</p>
+        <p class="ndic-deepdive-intro">Multi-signal VPN, proxy, and TOR detection with a live trust score — scanned the moment this page loads.</p>
+      </div>
+
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-3">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">VPN, Proxy &amp; Routing Intelligence</span>
+                <span class="ndic-canvas-subheading">Are You Hidden Online?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c3-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <div class="ndic-trust-score-display">
+                <span class="ndic-score-large" id="c3-trust-score">—</span>
+                <span class="ndic-canvas-subheading" style="font-size:var(--text-xs);">Trust Score</span>
+              </div>
+              <div class="ndic-risk-bar-track">
+                <div id="c3-risk-heat-bar"></div>
+              </div>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">VPN Detected</span><span class="ndic-param-value" id="c3-vpn-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Proxy Detected</span><span class="ndic-param-value" id="c3-proxy-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">TOR Exit Node Detected</span><span class="ndic-param-value" id="c3-tor-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Datacenter Routing Detected</span><span class="ndic-param-value" id="c3-datacenter-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IP Classification</span><span class="ndic-param-value" id="c3-ip-classification">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ASN Ownership Type</span><span class="ndic-param-value" id="c3-asn-ownership-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Timezone Match</span><span class="ndic-param-value" id="c3-timezone-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Language Match</span><span class="ndic-param-value" id="c3-language-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC Match</span><span class="ndic-param-value" id="c3-webrtc-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Reverse DNS Match</span><span class="ndic-param-value" id="c3-reverse-dns-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Fraud Score</span><span class="ndic-param-value" id="c3-fraud-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Abuse Score</span><span class="ndic-param-value" id="c3-abuse-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Bot Detected</span><span class="ndic-param-value" id="c3-bot-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Route Classification</span><span class="ndic-param-value" id="c3-route-classification">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Detection Flags</span><span class="ndic-param-value" id="c3-detection-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Primary Detection Source</span><span class="ndic-param-value" id="c3-primary-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Detection Confidence</span><span class="ndic-param-value" id="c3-confidence">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Paid API Consulted</span><span class="ndic-param-value" id="c3-paid-api-consulted">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas3-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas3-ai-summary">Analyzing your VPN and routing status...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c3-deep-dive-link">Deep dive into your VPN and routing analysis</a>
+            </div>
+          </div>
+
+
+      <!-- ═══ UNDERSTANDING EVERY SIGNAL ═══ -->
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each detection signal above actually measures, and why no single check is enough on its own.</p>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Detection Signals</h3>
+
+          <div class="ndic-explain-item">
+            <h4>VPN Detected, Proxy Detected &amp; TOR Exit Node</h4>
+            <p>Three independent checks. VPN detection looks at whether your ASN belongs to known VPN provider infrastructure. Proxy detection checks for known proxy service IP ranges and behavioral markers. TOR exit node detection cross-references your IP against the publicly maintained list of active TOR exit relays, which is updated frequently. Each is a yes/no result; the combination feeds into the trust score below.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Datacenter Routing Detected</h4>
+            <p>A positive here means your connection exits through a datacenter IP range rather than a residential or mobile one. This covers cloud provider IPs (AWS, Azure, GCP and similar), hosting provider ranges, and dedicated VPN server infrastructure. A datacenter flag alone doesn't confirm a VPN is in use — corporate networks and some ISPs legitimately route through datacenters — but it's a strong supporting signal.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>IP Classification &amp; ASN Ownership Type</h4>
+            <p>IP classification is a broader category label — residential, mobile, hosting, or proxy. ASN ownership type narrows it further to the category of organization operating your network. Together these are often enough to determine the likely nature of a connection without any active detection running at all.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Timezone Match &amp; Language Match</h4>
+            <p>These check whether your browser's reported timezone and preferred language are consistent with the country your IP is geolocated to. A mismatch — for example, a timezone set to Europe while the IP resolves to Southeast Asia — is a common signal that a VPN is routing traffic through a different region than the device is actually in. Neither alone is conclusive; both together are meaningful.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>WebRTC Match</h4>
+            <p>WebRTC is a browser API that can reveal your real local and public IP addresses even when a VPN is active, because it communicates directly rather than through the VPN tunnel. This field checks whether the IP WebRTC reports matches what the VPN is supposed to be presenting. A mismatch here is a WebRTC leak — one of the most common ways VPNs unintentionally expose the real IP they're supposed to be hiding.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Reverse DNS Match</h4>
+            <p>Checks whether the hostname that reverse-resolves from your IP is consistent with your stated ISP or network type. VPN servers often have reverse DNS entries that reveal the provider's infrastructure naming, even when the IP itself is designed to look residential.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Fraud Score &amp; Abuse Score</h4>
+            <p>Both are derived from historical reports associated with this IP range — spam, credential-stuffing attacks, scraping, and similar abuse patterns. These scores don't reflect anything about you personally; they reflect how the IP range you're connecting from has been used by others who've connected through the same infrastructure previously. VPN and proxy IPs tend to have elevated scores because they're shared across many users with varying intentions.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Bot Detected</h4>
+            <p>Flags whether the connection itself has characteristics consistent with automated rather than human browsing. This is a network-level check, distinct from the browser-level bot detection on the Fingerprinting panel — both can independently signal automation even if the other doesn't.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Trust Score</h4>
+            <p>A 0–100 composite of all signals above. 100 means every signal is consistent with a normal residential or mobile connection. Lower scores reflect the number and strength of signals suggesting non-residential routing — the gauge bar's color moves from green through amber to red as confidence in non-standard routing grows.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Route Classification &amp; Detection Flags</h4>
+            <p>Route classification is the final summary label — Residential, Mobile, Datacenter, VPN, Proxy, or TOR. Detection flags lists every individual signal that fired during analysis, so you can see exactly which checks contributed to the classification rather than just accepting the final label.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Detection Source, Confidence &amp; Paid API Consulted</h4>
+            <p>Detection source names which data layer produced the primary classification. Confidence reflects how many independent signals agreed. Paid API consulted tells you whether the richer, lower-latency commercial lookup was used or whether the free-tier fallback applied — which matters for how much weight to give the fraud and abuse scores specifically.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ EDUCATION ═══ -->
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">Why No VPN Detection Is Ever Certain</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>The same IP can be residential and a VPN exit simultaneously</h4>
+          <p>Residential proxy services route traffic through real home broadband connections, which means the ASN, IP type, and geolocation all look completely legitimate — because they are. These are among the hardest connections to classify correctly, since none of the infrastructure-based signals fire. The timezone, language, and WebRTC consistency checks are often the only available signals in these cases.</p>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>A low trust score doesn't mean you're doing something wrong</h4>
+          <p>Corporate networks, university connections, satellite internet, and some mobile carriers all legitimately route through datacenter infrastructure. A trust score of 40 on an office network is expected and normal — it just reflects what the infrastructure looks like from the outside, not anything about the user's intent.</p>
+        </div>
+      </section>
+
+      <!-- ═══ PAGE FAQ ═══ -->
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">VPN &amp; Proxy Detection — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>How does IntelReap detect a VPN?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">IntelReap uses multiple signals simultaneously: ASN classification to identify datacenter or VPN provider IP ranges, timezone and language consistency checks, WebRTC IP comparison, and reverse DNS patterns. No method is perfect, but combining signals produces a reliable confidence score.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is the trust score?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The trust score is a 0–100 composite rating of how consistent and legitimate your connection appears across all measured signals. A high score means signals align as expected for a normal residential or mobile connection. A low score means multiple signals suggest non-residential routing.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is a TOR exit node?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">TOR is a privacy network that routes your traffic through multiple relays. The exit node is the final relay whose IP address appears as the source of your connection to any destination website. Exit node IP ranges are publicly listed, which is how they're detected.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Can a VPN be detected even if no DNS or WebRTC leak exists?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Yes. Even a correctly configured VPN with no leaks is often identifiable through ASN classification alone, since most VPN providers operate from datacenter IP ranges that are well-documented. The absence of leaks confirms the VPN is working as intended — it doesn't make the IP itself look residential.</div></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ CITATIONS ═══ -->
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">Global IP geolocation and ASN reference databases</span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">Publicly maintained TOR exit node relay lists</span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link">W3C WebRTC specification and IP exposure research</span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+
+    </div>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+
+  <script defer src="../assets/js/engines/core.js"></script>
+
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('ndic-faq-item--open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
