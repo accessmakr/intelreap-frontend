@@ -71,7 +71,7 @@
   },
   {
     "url": "https://intelreap.com/intelligence/network-identity",
-    "lastmod": "2026-06-24T18:20:28+01:00",
+    "lastmod": "2026-07-01T05:27:30+01:00",
     "file": "intelligence/network-identity.html"
   },
   {
@@ -123,6 +123,11 @@
     "url": "https://intelreap.com/learn",
     "lastmod": "2026-06-25T17:49:50+01:00",
     "file": "learn/index.html"
+  },
+  {
+    "url": "https://intelreap.com/learn/webrtc-leak-test-and-shield",
+    "lastmod": "2026-07-01T06:54:13+01:00",
+    "file": "learn/webrtc-leak-test-and-shield.html"
   },
   {
     "url": "https://intelreap.com/learn/what-is-device-fingerprinting",

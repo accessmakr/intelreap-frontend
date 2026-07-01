@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/network-identity</loc>
-    <lastmod>2026-06-24T18:20:28+01:00</lastmod>
+    <lastmod>2026-07-01T05:27:30+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -147,6 +147,12 @@
   <url>
     <loc>https://intelreap.com/learn</loc>
     <lastmod>2026-06-25T17:49:50+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intelreap.com/learn/webrtc-leak-test-and-shield</loc>
+    <lastmod>2026-07-01T06:54:13+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
