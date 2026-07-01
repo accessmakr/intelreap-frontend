@@ -1,41 +1,500 @@
-<!-- /intelligence/network-identity.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network Identity Panel | IntelReap</title>
-    <meta name="description" content="Module deploying: Public IP, ISP, network geolocation, map coordinates.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/network-identity">
-    <meta property="og:title" content="Network Identity Panel | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/network-identity">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ndic_theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Network Identity Panel — Who Are You On The Internet? | IntelReap</title>
+  <meta name="description" content="Live IP address lookup, ISP, geolocation, timezone, connection type, and mobile/proxy/hosting flags — your full network identity explained parameter by parameter.">
+  <meta name="keywords" content="IP address lookup, ISP lookup, geolocation, public IP, IP version, timezone detection, connection type, proxy flag, hosting flag, mobile network">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/intelligence/network-identity">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/network-identity">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/network-identity">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Network Identity Panel — IntelReap">
+  <meta property="og:description" content="Live IP address, ISP, geolocation, timezone, and connection type — your full network identity explained in plain English.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/network-identity">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Network Identity Panel — IntelReap">
+  <meta name="twitter:description" content="See exactly who you look like on the internet, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#10141b">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#10141b">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/intelreap-logo.svg" },
+        "sameAs": ["https://twitter.com/intelreap"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://intelreap.com/#website",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "publisher": { "@id": "https://intelreap.com/#organization" }
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://intelreap.com/intelligence/network-identity#article",
+        "headline": "Network Identity Panel",
+        "description": "A deep dive into public IP address, ISP identification, geolocation accuracy, timezone detection, and connection type classification.",
+        "url": "https://intelreap.com/intelligence/network-identity",
+        "datePublished": "2026-06-22",
+        "dateModified": "2026-06-27",
+        "author": { "@id": "https://intelreap.com/#organization" },
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "isPartOf": { "@id": "https://intelreap.com/#website" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
+          { "@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html" },
+          { "@type": "ListItem", "position": 3, "name": "Network Identity Panel", "item": "https://intelreap.com/intelligence/network-identity" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does my IP address show a different city than I'm in?",
+            "acceptedAnswer": { "@type": "Answer", "text": "IP geolocation is based on where your ISP's infrastructure is registered, not your physical location. Mobile carriers and VPNs in particular often route through a regional hub city that may be far from where you actually are." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between ISP and Organization?",
+            "acceptedAnswer": { "@type": "Answer", "text": "ISP is the company providing your internet access. Organization is the entity registered as the owner of the specific IP block you're connecting from — for most home users these are the same, but on corporate or university networks they differ, since the organization owns the IPs and the ISP provides the transit." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the proxy or hosting flag mean?",
+            "acceptedAnswer": { "@type": "Answer", "text": "These flags indicate that your IP address belongs to a range commonly associated with proxy services, VPNs, or datacenter hosting rather than a residential or mobile network. A hosting flag does not mean you are definitely using a VPN — it means your connection exits through infrastructure that's also used for those purposes." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is IPv4 vs IPv6?",
+            "acceptedAnswer": { "@type": "Answer", "text": "IPv4 is the older address format using four groups of numbers, like 192.168.1.1, and is still the dominant protocol. IPv6 is the newer format using eight groups of hexadecimal values, designed to solve the exhaustion of IPv4 addresses. Most connections today use IPv4, with IPv6 available on some modern ISPs and mobile networks." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Network Identity Panel</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for identity parameters:<br><strong class="text-slate-200">Public IP, ISP, network geolocation, map coordinates</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Network Identity Panel on Homepage</a>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => {
-            const d = target - new Date().getTime();
-            if(d < 0) return;
-            document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0');
-            document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0');
-            document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0');
-            document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0');
-        }, 1000);
-    </script>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-deepdive-page">
+
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Network Identity Panel</span>
+      </nav>
+
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 2</div>
+        <h1 class="ndic-deepdive-title">Network Identity Panel</h1>
+        <p class="ndic-deepdive-subtitle">Who Are You On The Internet?</p>
+        <p class="ndic-deepdive-intro">Your public IP, ISP, geolocation, and connection classification — live, the moment this page loads.</p>
+      </div>
+
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-2">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Network Identity Panel</span>
+                <span class="ndic-canvas-subheading">Who Are You On The Internet?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c2-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <div id="canvas2-map" class="ndic-map-wrapper"></div>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">Public IP Address</span><span class="ndic-param-value" id="c2-public-ip">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IP Version</span><span class="ndic-param-value" id="c2-ip-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ISP</span><span class="ndic-param-value" id="c2-isp">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Organization</span><span class="ndic-param-value" id="c2-organization">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Country</span><span class="ndic-param-value" id="c2-country">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Country Code</span><span class="ndic-param-value" id="c2-country-code">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Region</span><span class="ndic-param-value" id="c2-region">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">City</span><span class="ndic-param-value" id="c2-city">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Postal Code</span><span class="ndic-param-value" id="c2-postal">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Coordinates</span><span class="ndic-param-value" id="c2-coordinates">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Latitude</span><span class="ndic-param-value" id="c2-latitude">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Longitude</span><span class="ndic-param-value" id="c2-longitude">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Timezone</span><span class="ndic-param-value" id="c2-timezone">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">UTC Offset</span><span class="ndic-param-value" id="c2-utc-offset">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Connection Type</span><span class="ndic-param-value" id="c2-connection-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Mobile Connection</span><span class="ndic-param-value" id="c2-mobile-flag">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Proxy Flag</span><span class="ndic-param-value" id="c2-proxy-flag">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Hosting Flag</span><span class="ndic-param-value" id="c2-hosting-flag">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Continent</span><span class="ndic-param-value" id="c2-continent">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Data Source</span><span class="ndic-param-value" id="c2-data-source">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas2-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas2-ai-summary">Analyzing your network identity...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c2-deep-dive-link">Deep dive into your network identity analysis</a>
+            </div>
+          </div>
+
+          <!-- ═══ CANVAS 3 — VPN, PROXY & ROUTING ═══ -->
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-3">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">VPN, Proxy &amp; Routing Intelligence</span>
+                <span class="ndic-canvas-subheading">Are You Hidden Online?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c3-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <div class="ndic-trust-score-display">
+                <span class="ndic-score-large" id="c3-trust-score">—</span>
+                <span class="ndic-canvas-subheading" style="font-size:var(--text-xs);">Trust Score</span>
+              </div>
+              <div class="ndic-risk-bar-track">
+                <div id="c3-risk-heat-bar"></div>
+              </div>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">VPN Detected</span><span class="ndic-param-value" id="c3-vpn-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Proxy Detected</span><span class="ndic-param-value" id="c3-proxy-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">TOR Exit Node Detected</span><span class="ndic-param-value" id="c3-tor-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Datacenter Routing Detected</span><span class="ndic-param-value" id="c3-datacenter-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IP Classification</span><span class="ndic-param-value" id="c3-ip-classification">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">ASN Ownership Type</span><span class="ndic-param-value" id="c3-asn-ownership-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Timezone Match</span><span class="ndic-param-value" id="c3-timezone-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Language Match</span><span class="ndic-param-value" id="c3-language-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC Match</span><span class="ndic-param-value" id="c3-webrtc-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Reverse DNS Match</span><span class="ndic-param-value" id="c3-reverse-dns-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Fraud Score</span><span class="ndic-param-value" id="c3-fraud-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Abuse Score</span><span class="ndic-param-value" id="c3-abuse-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Bot Detected</span><span class="ndic-param-value" id="c3-bot-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Route Classification</span><span class="ndic-param-value" id="c3-route-classification">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Detection Flags</span><span class="ndic-param-value" id="c3-detection-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Primary Detection Source</span><span class="ndic-param-value" id="c3-primary-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Detection Confidence</span><span class="ndic-param-value" id="c3-confidence">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Paid API Consulted</span><span class="ndic-param-value" id="c3-paid-api-consulted">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas3-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas3-ai-summary">Analyzing your VPN and routing status...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c3-deep-dive-link">Deep dive into your VPN and routing analysis</a>
+            </div>
+          </div>
+
+
+      <!-- ═══ UNDERSTANDING EVERY SIGNAL ═══ -->
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each value above actually means, and why it matters.</p>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Network Identity</h3>
+
+          <div class="ndic-explain-item">
+            <h4>Public IP Address &amp; IP Version</h4>
+            <p>Your public IP is the address the rest of the internet sees when you connect — assigned by your ISP, not fixed to your device. IP version tells you whether your connection is using the older IPv4 format (four number groups) or the newer IPv6 format (eight hexadecimal groups). Most connections worldwide still use IPv4.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>ISP &amp; Organization</h4>
+            <p>ISP is the company providing your internet access. Organization is the entity registered as owner of your specific IP block. For most home connections these are the same; on corporate, university, or VPN connections they often differ — the organization owns the IPs but the ISP provides the physical transit.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Country, Country Code, Region &amp; City</h4>
+            <p>These come from your IP address's registered location in geolocation databases, not from GPS. They reflect where your ISP's infrastructure is registered, which can be a different city — sometimes a different region — from where you physically are. Mobile carriers and VPNs in particular often route through a regional hub.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Postal Code &amp; Coordinates</h4>
+            <p>The most granular geolocation estimates available from IP data. Postal code accuracy varies widely by country and ISP — in some regions it's reliable to the local area; in others it reflects the ISP's billing address city rather than any geographic precision. Coordinates carry the same accuracy caveat as city-level data.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Latitude &amp; Longitude</h4>
+            <p>The numeric coordinates behind the map pin above. These are IP-derived, not GPS — accuracy is typically within 50 kilometres for most ISPs in well-mapped regions, but can be off by much more for mobile and satellite connections where the registered infrastructure location differs significantly from where subscribers actually are.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Timezone &amp; UTC Offset</h4>
+            <p>The timezone derived from your IP's registered location — not your device's system clock, which you could set to anything. A mismatch between this and the timezone your browser reports can be a signal that a VPN is routing your traffic through a different region. The UTC offset is the numeric version of the same information, useful for programmatic comparisons.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Connection Type &amp; Mobile Connection</h4>
+            <p>Connection type classifies your access method — broadband, mobile, satellite, or corporate/datacenter. The mobile flag is a direct yes/no answer: is this connection coming from a mobile carrier network? Mobile connections are significant because they almost always use carrier-grade NAT, meaning your public IP is shared with many other subscribers on the same cell tower or carrier gateway.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Proxy Flag, Hosting Flag &amp; Continent</h4>
+            <p>Proxy flag means your IP range is associated with VPN or proxy services. Hosting flag means the IP is in a datacenter or hosting provider's allocation rather than a residential block. Both flags together strongly suggest a non-residential connection. Continent is included as context since some detection logic and rate-limiting systems operate at continental rather than country level.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Data Source</h4>
+            <p>Shows which geolocation source produced the values above — your backend has a priority chain (cached result → primary lookup → local database fallback) and this confirms which tier was actually used, so you know how fresh and reliable to consider the data.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ EDUCATION ═══ -->
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">What Your Network Identity Actually Exposes</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>Everything here is already visible to every site you visit</h4>
+          <p>This panel doesn't collect anything unusual — it shows exactly what any web server already receives the moment your browser makes a request. Your public IP, ISP, and approximate location are visible to every website, API, and service you connect to, without any consent or action on your part. IntelReap just makes that information visible to you.</p>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>A VPN changes everything on this panel — and nothing on the fingerprinting panel</h4>
+          <p>Connecting through a VPN replaces every value shown here with data reflecting your VPN exit server's location and ISP, not yours. That's exactly what VPNs are designed to do. What it doesn't change is your browser's fingerprint — the audio, canvas, and font signals measured in the Fingerprinting panel stay identical regardless of which network you're routed through.</p>
+        </div>
+      </section>
+
+      <!-- ═══ PAGE FAQ ═══ -->
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Network Identity — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Why does my IP address show a different city than I'm in?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">IP geolocation is based on where your ISP's infrastructure is registered, not your physical location. Mobile carriers and VPNs in particular often route through a regional hub city that may be far from where you actually are.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is the difference between ISP and Organization?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">ISP is the company providing your internet access. Organization is the entity registered as the owner of the specific IP block you're connecting from — for most home users these are the same, but on corporate or university networks they differ, since the organization owns the IPs and the ISP provides the transit.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What does the proxy or hosting flag mean?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">These flags indicate that your IP address belongs to a range commonly associated with proxy services, VPNs, or datacenter hosting rather than a residential or mobile network. A hosting flag does not mean you are definitely using a VPN — it means your connection exits through infrastructure that's also used for those purposes.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is IPv4 vs IPv6?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">IPv4 is the older address format using four groups of numbers, like 192.168.1.1, and is still the dominant protocol. IPv6 is the newer format using eight groups of hexadecimal values, designed to solve the exhaustion of IPv4 addresses. Most connections today use IPv4, with IPv6 available on some modern ISPs and mobile networks.</div></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ CITATIONS ═══ -->
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">Global IP geolocation and ASN reference databases</span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">Regional Internet Registry allocation records (ARIN, RIPE, APNIC, LACNIC, AFRINIC)</span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+
+    </div>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+
+  <script defer src="../assets/js/engines/core.js"></script>
+
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('ndic-faq-item--open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
