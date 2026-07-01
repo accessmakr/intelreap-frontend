@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('ndic_theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>What Is a VPN Concentrator? How It Works, Use Cases & Comparison — IntelReap</title>
+  <meta name="description" content="A VPN concentrator is a dedicated network device that handles hundreds or thousands of simultaneous VPN tunnels. Learn how it works, how it differs from a VPN router and gateway, and when to use one.">
+  <meta name="keywords" content="what is a vpn concentrator, how does a vpn concentrator work, vpn concentrator vs vpn gateway, vpn concentrator vs router, vpn concentrator cisco, enterprise vpn concentrator, site to site vpn concentrator, what does a vpn concentrator do, remote access vpn concentrator">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/learn/what-is-a-vpn-concentrator">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/learn/what-is-a-vpn-concentrator">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/what-is-a-vpn-concentrator">
+
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="What Is a VPN Concentrator? How It Works, Use Cases & Comparison — IntelReap">
+  <meta property="og:description"  content="VPN concentrators handle hundreds to thousands of simultaneous VPN tunnels in enterprise environments. Learn how they work, how they differ from VPN routers and gateways, and when your organisation needs one.">
+  <meta property="og:url"          content="https://intelreap.com/learn/what-is-a-vpn-concentrator">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="What Is a VPN Concentrator? — IntelReap">
+  <meta name="twitter:description" content="Purpose-built for scale — a VPN concentrator aggregates hundreds or thousands of encrypted tunnels at a single point. How it works, when you need one, and how it compares to a VPN router.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#0ea5e9">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <style>
+    #scroll-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent,#0ea5e9),#06b6d4);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
+    .ir-breadcrumb{max-width:760px;margin:0 auto;padding:1rem 1.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:0.375rem;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.75rem;color:var(--color-text-tertiary,#475569);}
+    .ir-breadcrumb a{color:var(--color-accent,#0ea5e9);text-decoration:none;}.ir-breadcrumb a:hover{text-decoration:underline;}.ir-breadcrumb-sep{opacity:0.4;}.ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
+    .ir-article{max-width:760px;margin:0 auto;padding:0 1.5rem 4rem;}
+    .ir-article h2{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:2.75rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));display:flex;align-items:center;gap:0.6rem;line-height:1.35;scroll-margin-top:5rem;}
+    .ir-article h3{font-family:var(--font-display,'Syne',sans-serif);font-size:0.975rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:1.75rem 0 0.6rem;line-height:1.4;}
+    .ir-article p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.85;color:var(--color-text-secondary,#94a3b8);margin-bottom:1rem;}
+    .ir-article ul,.ir-article ol{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.8;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.25rem 1.25rem;}
+    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}.ir-article li::marker{color:var(--color-accent,#0ea5e9);}
+    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}.ir-article em{font-style:italic;}
+    .ir-article a{color:var(--color-accent,#0ea5e9);text-decoration:underline;text-underline-offset:2px;}.ir-article a:hover{opacity:0.8;}
+    .ir-article code{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.8125rem;color:var(--color-accent,#0ea5e9);background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.15);border-radius:4px;padding:0.1rem 0.4rem;white-space:nowrap;}
+    .section-num{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;color:var(--color-accent,#0ea5e9);font-weight:500;background:rgba(14,165,233,0.1);padding:0.15rem 0.4rem;border-radius:3px;flex-shrink:0;}
+    .ir-callout{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-left:3px solid var(--color-accent,#0ea5e9);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .ir-callout p{margin-bottom:0;color:var(--color-text-primary,#e2e8f0)!important;font-weight:500;}
+    .ir-table-wrap{width:100%;overflow-x:auto;margin:1.25rem 0 2rem;border-radius:6px;border:1px solid var(--color-border,rgba(255,255,255,0.07));-webkit-overflow-scrolling:touch;}
+    .ir-table{width:100%;min-width:500px;border-collapse:collapse;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;}
+    .ir-table caption{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.75rem;color:var(--color-text-tertiary,#475569);text-align:left;padding:0.5rem 1rem 0;caption-side:top;}
+    .ir-table th{background:rgba(255,255,255,0.04);color:var(--color-text-primary,#e2e8f0);font-family:var(--font-display,'Syne',sans-serif);font-weight:600;font-size:0.8rem;padding:0.75rem 1rem;text-align:left;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.07));white-space:nowrap;}
+    .ir-table td{padding:0.75rem 1rem;color:var(--color-text-secondary,#94a3b8);border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));vertical-align:middle;line-height:1.55;}
+    .ir-table tr:last-child td{border-bottom:none;}
+    .ir-check{color:#34d399;font-weight:600;}.ir-cross{color:#f87171;}.ir-neutral{color:var(--color-text-tertiary,#475569);}
+
+    /* ── NEW ENTERPRISE CTA BLOCK ── */
+    .ir-cta-block{background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.18);border-radius:10px;padding:2rem 2rem 1.75rem;margin:2.5rem 0;text-align:center;}
+    .ir-cta-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.625rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.625rem;display:block;}
+    .ir-cta-block h3{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.5rem;line-height:1.3;}
+    .ir-cta-block>p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary,#94a3b8);margin:0 0 1.5rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .ir-btn-row{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
+    .ir-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:var(--color-accent,#0ea5e9);color:#ffffff;border:2px solid var(--color-accent,#0ea5e9);border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-primary:hover{background:#0284c7;border-color:#0284c7;transform:translateY(-1px);text-decoration:none;opacity:1;}
+    .ir-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#f0f9ff;color:#0c2340;border:2px solid #e0f2fe;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-secondary:hover{background:#ffffff;border-color:#bae6fd;transform:translateY(-1px);text-decoration:none;}
+
+    .ir-logic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+    @media(max-width:560px){.ir-logic-grid{grid-template-columns:1fr;}}
+    .ir-logic-card{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.06));border-radius:6px;padding:1.25rem 1.5rem;}
+    .ir-logic-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.5rem;display:block;}
+    .ir-logic-card p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);margin:0;}
+    .ir-share-wrap{margin:2.5rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-share-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-tertiary,#475569);margin-bottom:0.875rem;display:block;}
+    .ir-share-pills{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .ir-share-pill{display:inline-flex;align-items:center;padding:0.375rem 0.875rem;border-radius:9999px;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;font-weight:500;background:rgba(255,255,255,0.04);border:1px solid var(--color-border,rgba(255,255,255,0.08));color:var(--color-text-secondary,#94a3b8);cursor:pointer;text-decoration:none;transition:border-color 0.15s,color 0.15s;white-space:nowrap;}
+    .ir-share-pill:hover{border-color:var(--color-accent,#0ea5e9);color:var(--color-accent,#0ea5e9);text-decoration:none;}
+    .ir-faq-outer{max-width:760px;margin:0 auto;padding:0 1.5rem 1rem;}
+    .ir-faq-heading{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.375rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-faq-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.5rem;line-height:1.65;}
+    .ir-contact-outer{max-width:760px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;}
+    .ir-contact-header{text-align:center;margin-bottom:1.75rem;}
+    .ir-contact-title{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin-bottom:0.375rem;}
+    .ir-contact-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;color:var(--color-text-tertiary,#475569);line-height:1.6;}
+    .ir-form-wrap{max-width:400px;margin:0 auto;}
+    .ir-form-card{background:rgba(13,18,37,0.8);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:2rem;}
+    .form-group{margin-bottom:1rem;}.form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
+    .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.65rem 0.9rem;font-size:0.875rem;color:var(--color-text-primary,#e2e8f0);font-family:var(--font-body,'Be Vietnam Pro',sans-serif);transition:border-color 0.2s;box-sizing:border-box;}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent,#0ea5e9);}
+    .form-group textarea{resize:vertical;min-height:100px;}.form-hidden{display:none;}
+    .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
+    .form-submit:hover{opacity:0.9;}
+    #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}.ir-btn-primary,.ir-btn-secondary{min-width:0;width:100%;}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","@id":"https://intelreap.com/learn/what-is-a-vpn-concentrator#article","headline":"What Is a VPN Concentrator? How It Works, Use Cases and Comparison","description":"A VPN concentrator is a purpose-built network device that handles hundreds to thousands of simultaneous VPN tunnels for enterprise remote access and site-to-site connectivity. This guide explains how it works, how it compares to a VPN router and VPN gateway, and when your organisation actually needs one.","url":"https://intelreap.com/learn/what-is-a-vpn-concentrator","image":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/og-image.png","width":1200,"height":630},"datePublished":"2026-03-14","dateModified":"2026-06-09","author":{"@type":"Organization","@id":"https://intelreap.com/#organization"},"publisher":{"@id":"https://intelreap.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://intelreap.com/learn/what-is-a-vpn-concentrator"},"inLanguage":"en-US","keywords":"what is a vpn concentrator, how does a vpn concentrator work, vpn concentrator vs vpn gateway, vpn concentrator vs router, enterprise vpn concentrator, remote access vpn concentrator, site to site vpn","articleSection":"Network Guides","wordCount":2800},
+    {"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com","logo":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/intelreap-logo.svg"},"sameAs":["https://twitter.com/intelreap","https://github.com/accessmakr/intelreap-frontend"]},
+    {"@type":"WebSite","@id":"https://intelreap.com/#website","name":"IntelReap","url":"https://intelreap.com","publisher":{"@id":"https://intelreap.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://intelreap.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://intelreap.com/learn/"},{"@type":"ListItem","position":3,"name":"What Is a VPN Concentrator?","item":"https://intelreap.com/learn/what-is-a-vpn-concentrator"}]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is a VPN concentrator?","acceptedAnswer":{"@type":"Answer","text":"A VPN concentrator is a specialised network device designed to manage a large number of simultaneous VPN connections — often hundreds or thousands — at a single termination point. Unlike a standard router or firewall that handles VPN as a secondary function, a concentrator is purpose-built for it: it handles encryption and decryption at scale, authenticates users or sites, manages tunnel lifecycle, and routes traffic between VPN clients and the internal network. Organisations deploy them when basic VPN capabilities on a router or firewall become a performance or scalability bottleneck."}},
+      {"@type":"Question","name":"How does a VPN concentrator work?","acceptedAnswer":{"@type":"Answer","text":"When a remote user or branch office initiates a VPN connection, they connect to the concentrator's public IP address. The concentrator authenticates the connection — typically through certificates, RADIUS, LDAP, or multi-factor authentication — then establishes an encrypted tunnel using a protocol such as IPsec, SSL/TLS, or IKEv2. The concentrator decrypts incoming traffic and routes it into the internal network, and encrypts outbound responses before sending them back through the tunnel. This process runs in parallel for every active connection the concentrator is managing simultaneously."}},
+      {"@type":"Question","name":"What is the difference between a VPN concentrator and a VPN router?","acceptedAnswer":{"@type":"Answer","text":"A VPN router is a general-purpose router with VPN capability added alongside its primary routing functions. It handles a small number of VPN connections — typically 5 to 50 for consumer and SMB models. A VPN concentrator is a dedicated device whose primary function is VPN termination at scale. It offloads the cryptographic processing to dedicated hardware acceleration, handles centralised policy management for all tunnels, and is designed for concurrent connection counts that would overwhelm a router. The right choice depends on the number of simultaneous tunnels you need to support."}},
+      {"@type":"Question","name":"What is the difference between a VPN concentrator and a VPN gateway?","acceptedAnswer":{"@type":"Answer","text":"The terms are often used interchangeably in vendor documentation, but technically a VPN gateway refers to any network device that acts as the entry or exit point for VPN traffic — it could be a router, firewall, or dedicated appliance. A VPN concentrator is a specific category of VPN gateway distinguished by its purpose-built design for high tunnel density and cryptographic scalability. All VPN concentrators are gateways, but not all VPN gateways are concentrators."}},
+      {"@type":"Question","name":"When does an organisation need a VPN concentrator?","acceptedAnswer":{"@type":"Answer","text":"An organisation typically needs a VPN concentrator when the number of simultaneous VPN sessions exceeds the capacity of an existing firewall or router's VPN capabilities, when VPN processing is consuming too much CPU on a general-purpose device and impacting other network functions, when the organisation needs centralised management and policy enforcement across hundreds of remote users or branch sites, or when high availability and failover for VPN access is a compliance or business continuity requirement."}},
+      {"@type":"Question","name":"What VPN protocols do concentrators support?","acceptedAnswer":{"@type":"Answer","text":"Enterprise VPN concentrators typically support IPsec (IKEv1 and IKEv2), SSL/TLS-based VPN (for clientless browser access and full-tunnel clients), L2TP over IPsec, and increasingly WireGuard on modern platforms. The protocol mix depends on the vendor and use case: IPsec is most common for site-to-site tunnels; SSL/TLS is preferred for remote access because it traverses firewalls on port 443 without requiring firewall rule changes."}},
+      {"@type":"Question","name":"What are examples of VPN concentrator hardware?","acceptedAnswer":{"@type":"Answer","text":"The Cisco VPN 3000 Series was the original dedicated concentrator product line, now deprecated and replaced by the Cisco ASA (Adaptive Security Appliance) and Cisco Firepower NGFW which include concentrator-class VPN capabilities. Palo Alto Networks GlobalProtect, Juniper Networks SRX Series, Check Point Security Gateway, and Fortinet FortiGate appliances all serve the VPN concentrator function. In cloud environments, AWS Site-to-Site VPN and Azure VPN Gateway are managed concentrators as infrastructure services."}},
+      {"@type":"Question","name":"Can a VPN concentrator be software-based?","acceptedAnswer":{"@type":"Answer","text":"Yes — virtual VPN concentrators run on standard server hardware or cloud instances. Examples include OpenVPN Access Server, HashiCorp Boundary, Pritunl, and the virtual appliance versions of enterprise platforms like Cisco ASAv and Palo Alto VM-Series. Software concentrators trade the dedicated hardware acceleration of physical appliances for flexibility and lower capital cost, making them practical for cloud-native environments and organisations without on-premises infrastructure."}},
+      {"@type":"Question","name":"What is split tunnelling in a VPN concentrator?","acceptedAnswer":{"@type":"Answer","text":"Split tunnelling is a configuration option on VPN concentrators that determines which traffic travels through the VPN tunnel and which goes directly to the internet via the user's local connection. With full tunnelling, all user traffic routes through the concentrator — providing complete visibility and policy enforcement but adding latency and bandwidth cost at the concentrator. With split tunnelling, only traffic destined for internal corporate resources goes through the tunnel; internet traffic exits locally. Many organisations use split tunnelling to reduce concentrator load while routing sensitive traffic through the VPN."}},
+      {"@type":"Question","name":"How many connections can a VPN concentrator handle?","acceptedAnswer":{"@type":"Answer","text":"Capacity ranges from hundreds to hundreds of thousands of simultaneous sessions depending on the platform. Entry-level enterprise appliances typically support 500 to 5,000 concurrent tunnels. Mid-range platforms handle 5,000 to 50,000. High-end data centre appliances from Cisco, Palo Alto, and Juniper can support 100,000 or more simultaneous VPN sessions with dedicated cryptographic ASICs. Cloud-based concentrator services scale elastically without fixed limits. The right sizing depends on your peak concurrent user count plus headroom for growth."}},
+      {"@type":"Question","name":"Is a VPN concentrator the same as a firewall?","acceptedAnswer":{"@type":"Answer","text":"Not the same, but they overlap significantly in modern enterprise platforms. A standalone VPN concentrator's only job is VPN termination. A next-generation firewall (NGFW) combines packet filtering, deep packet inspection, IDS/IPS, and VPN concentrator functionality in one appliance — which is why most organisations now buy NGFWs with integrated concentrator capabilities rather than separate dedicated concentrator hardware. Pure standalone concentrators are increasingly rare outside legacy environments."}},
+      {"@type":"Question","name":"How does a VPN concentrator affect network performance?","acceptedAnswer":{"@type":"Answer","text":"A well-sized concentrator adds minimal latency — typically 1 to 5 milliseconds for the cryptographic processing overhead. The more significant performance variable is the concentrator's placement in the network topology and the protocol configuration. Full tunnelling routes all user traffic through the concentrator, which can create a bottleneck if the device is undersized for peak load. Dedicated hardware acceleration (AES-NI, custom ASICs) keeps cryptographic overhead minimal even at high tunnel density. Underpowered or undersized concentrators cause packet loss, connection instability, and high CPU on the device."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/learn/">Learn</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="ir-breadcrumb-current" aria-current="page">What Is a VPN Concentrator?</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Network Guide</span>
+        </div>
+        <h1 class="ndic-hero-title">
+          What Is a<br>
+          <span class="ndic-highlight">VPN Concentrator?</span>
+        </h1>
+        <p class="ndic-hero-tagline">
+          A VPN concentrator is the device sitting at the edge of an enterprise network handling hundreds or thousands of encrypted tunnels simultaneously — authenticating users, terminating sessions, and routing traffic at a scale no ordinary router was built for. Here is exactly how it works, how it differs from a VPN router and gateway, and when an organisation actually needs one.
+        </p>
+        <div class="ndic-hero-cta-group">
+          <a href="/intelligence/vpn-proxy" class="ndic-btn-primary cta-rotate">Analyse My VPN Connection</a>
+          <a href="/intelligence/network-route" class="ndic-btn-secondary">See My Network Route &#8594;</a>
+        </div>
+        <div id="freshness-badge" aria-live="polite">Loading…</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item"><span class="ndic-trust-value">4.9&#9733;</span><span class="ndic-trust-label">satisfaction</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">290+ data points</span><span class="ndic-trust-label">per scan</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">13 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">Zero data stored</span><span class="ndic-trust-label">privacy first</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">A VPN concentrator is a dedicated device that aggregates and manages large numbers of VPN tunnels — doing at enterprise scale what a router does for a handful of connections</h2>
+      <p class="ndic-quick-answer-body">
+        Where a home or SMB router might handle 5 to 50 VPN sessions as a secondary function, a VPN concentrator's only job is terminating encrypted tunnels — hundreds to hundreds of thousands of them simultaneously. It authenticates each connection, manages tunnel state, decrypts inbound traffic, routes it onto the internal network, and encrypts outbound responses. The hardware typically includes dedicated cryptographic accelerators so that encryption processing does not consume general CPU resources. Cisco, Palo Alto, Juniper, and Fortinet all produce platforms with concentrator-class VPN capabilities, though the standalone concentrator category has largely been absorbed into next-generation firewalls.
+      </p>
+    </section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+
+      <h2><span class="section-num">01</span> What Does a VPN Concentrator Actually Do?</h2>
+      <p>The name is the most precise description possible. A concentrator takes many things and brings them to a single point. In networking, that means taking VPN tunnel connections from remote users, branch offices, and partner sites — potentially hundreds or thousands at once — and concentrating them at a single device that handles authentication, encryption, decryption, and routing for all of them.</p>
+      <p>Every time a remote employee connects to the corporate VPN, they are connecting to a concentrator. The concentrator validates their identity through whatever authentication system is configured — RADIUS, Active Directory, LDAP, certificate authorities, or MFA — then establishes an encrypted tunnel. From that point forward, every packet the remote user sends to the corporate network travels encrypted through that tunnel, arrives at the concentrator, gets decrypted, and is forwarded onto the internal network as if the user were sitting in the office. The reverse journey — corporate resources responding to the user — follows the same path in the opposite direction.</p>
+      <p>The concentrator manages this lifecycle for every active tunnel simultaneously. It tracks session state, enforces access policies, monitors for dead tunnels, and handles re-authentication when sessions expire. On a busy morning when 2,000 staff connect from home, the concentrator is establishing and managing 2,000 of these lifecycles in parallel — something a general-purpose router physically cannot scale to without dedicated hardware.</p>
+
+      <h2><span class="section-num">02</span> How a VPN Concentrator Differs from a VPN Router</h2>
+      <p>The distinction is purpose and scale, not technology. Both devices create and manage encrypted VPN tunnels. The difference is that a router does this as one of many jobs it performs — alongside routing, DHCP, NAT, firewall rules, and whatever else the network needs from it — while a concentrator's architecture is built around VPN as the primary function.</p>
+      <p>A typical SMB-grade router with VPN capability handles between 5 and 50 simultaneous tunnels before CPU becomes a bottleneck. The cryptographic processing for each tunnel — AES encryption and decryption, key exchange, HMAC verification — runs on the router's general-purpose CPU alongside everything else it is doing. This is perfectly adequate for a company with 20 remote workers. It breaks down at 200.</p>
+      <p>A concentrator solves this through dedicated hardware. Most enterprise-class concentrators include ASICs (application-specific integrated circuits) or at minimum AES-NI instruction sets specifically for cryptographic operations. The encryption engine runs independently of the main CPU, allowing the device to process thousands of tunnel's worth of encryption and decryption without impacting routing or management functions. This hardware separation is the core architectural difference — <a href="/learn/does-a-vpn-change-your-mac-address">not unlike how a VPN changes your network identity at the IP layer while leaving lower-layer hardware identifiers entirely untouched</a>.</p>
+
+      <h2><span class="section-num">03</span> VPN Concentrator vs VPN Gateway — Is There a Difference?</h2>
+      <p>In vendor documentation these terms appear interchangeably often enough that the distinction feels academic. But there is a technical difference worth knowing.</p>
+      <p>A VPN gateway is any network device that acts as the termination point for VPN traffic — the endpoint that establishes or receives a VPN tunnel. This is a broad category. A consumer router creating a site-to-site tunnel to AWS is acting as a VPN gateway. A Cisco ASA terminating 10,000 remote access sessions is also a VPN gateway. The term describes the role, not the capability tier.</p>
+      <p>A VPN concentrator is a specific category of VPN gateway defined by its purpose-built design for high connection density. The distinction is analogous to the difference between a car and a bus — both are vehicles that transport people, but one is architected for scale. Every concentrator is a gateway; not every gateway is a concentrator. In practical procurement conversations, "VPN gateway" typically refers to a platform where VPN is one of several functions, while "VPN concentrator" implies a platform where high-density VPN termination is the primary design goal.</p>
+
+      <h2><span class="section-num">04</span> How Does a VPN Concentrator Work — Technically</h2>
+      <p>The process for a remote access VPN session follows a consistent sequence regardless of protocol or vendor.</p>
+      <p>The remote client — typically a VPN client application on the user's device — initiates a connection to the concentrator's public IP address or hostname. The concentrator and client perform a handshake to negotiate the protocol version, encryption algorithm, and authentication method. For IPsec connections this is the IKE (Internet Key Exchange) phase; for TLS-based VPNs this is the TLS handshake. The authentication system — whatever the organisation has configured — validates the user's credentials. A session key is derived and the encrypted tunnel is established.</p>
+      <p>From this point, the concentrator maintains two logical paths for each session. Inbound encrypted packets from the remote client arrive, are decrypted using the session key, and are forwarded into the internal network as normal unencrypted traffic. Outbound traffic from internal resources destined for that user is encrypted using the session key and sent back through the tunnel. The concentrator does this for every active session simultaneously, and the traffic for different sessions never mixes — each tunnel has its own cryptographic context and routing state.</p>
+      <p>Split tunnelling configuration determines whether <em>all</em> client traffic routes through the tunnel (full tunnel) or only traffic destined for internal resources (split tunnel), with internet-bound traffic exiting the client's local connection directly. This choice significantly affects concentrator load and is a central design decision in any VPN concentrator deployment. You can see how your own current connection is being routed by running a check through <a href="/intelligence/network-route">IntelReap's Network Route panel</a>, which traces the path your traffic takes and shows whether it is being sent through a VPN hop before reaching its destination.</p>
+
+      <h2><span class="section-num">05</span> Remote Access vs Site-to-Site — Two Distinct Use Cases</h2>
+      <p>VPN concentrators serve two fundamentally different deployment scenarios, and the architecture differs between them.</p>
+      <h3>Remote access VPN</h3>
+      <p>Remote access VPN connects individual users to the corporate network. Each user runs a VPN client on their laptop or mobile device, authenticates to the concentrator, and gets a session that lets them access internal resources as if on the office network. This is the dominant enterprise VPN use case since 2020, with mass remote work driving deployment scales that previously only existed in large organisations. The concentrator here needs to handle many simultaneous sessions, strong per-user authentication, and ideally multi-factor authentication integration.</p>
+      <h3>Site-to-site VPN</h3>
+      <p>Site-to-site VPN connects two networks permanently — for example, a branch office to headquarters, or a corporate data centre to a cloud environment. Instead of individual user clients, each site has a VPN device (a router, firewall, or concentrator) that maintains a persistent encrypted tunnel between the two networks. All traffic between the sites flows through this tunnel without individual users needing to do anything. The concentrator here handles a smaller number of permanent high-throughput tunnels rather than many dynamic user sessions. Large enterprises with dozens of branch offices may have a hub-and-spoke topology where a central concentrator aggregates tunnels from all branches simultaneously.</p>
+
+      <!-- CTA 1 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">VPN &amp; Proxy Intelligence</span>
+        <h3>Analyse Your VPN Connection Type and Routing Path</h3>
+        <p>IntelReap's VPN &amp; Proxy panel identifies your connection type — VPN, proxy, Tor, data centre, or residential — and shows exactly what the network sees when you connect. Useful for verifying VPN tunnel activity, testing split tunnelling behaviour, and auditing connection routing.</p>
+        <div class="ir-btn-row">
+          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Analyse My VPN Connection</a>
+        </div>
+      </div>
+
+      <h2><span class="section-num">06</span> VPN Concentrator vs Firewall vs NGFW — Where Does Each Fit?</h2>
+      <p>The market has largely consolidated around next-generation firewalls (NGFWs) that bundle VPN concentrator functionality alongside deep packet inspection, intrusion prevention, and application-layer policy enforcement. Understanding where the categories overlap helps evaluate modern procurement options.</p>
+      <div class="ir-table-wrap" role="region" aria-label="VPN concentrator versus firewall versus NGFW comparison" tabindex="0">
+        <table class="ir-table">
+          <caption>Comparison of VPN concentrator, traditional firewall, and next-generation firewall across key capabilities</caption>
+          <thead>
+            <tr>
+              <th scope="col">Capability</th>
+              <th scope="col">Standalone VPN Concentrator</th>
+              <th scope="col">Traditional Firewall</th>
+              <th scope="col">Next-Generation Firewall (NGFW)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>VPN termination at scale</strong></td>
+              <td class="ir-check">&#10003; Primary function</td>
+              <td class="ir-neutral">Limited</td>
+              <td class="ir-check">&#10003; Integrated</td>
+            </tr>
+            <tr>
+              <td><strong>Packet filtering</strong></td>
+              <td class="ir-neutral">Basic only</td>
+              <td class="ir-check">&#10003; Core function</td>
+              <td class="ir-check">&#10003; Advanced</td>
+            </tr>
+            <tr>
+              <td><strong>Deep packet inspection</strong></td>
+              <td class="ir-cross">&#10007; No</td>
+              <td class="ir-neutral">Basic/limited</td>
+              <td class="ir-check">&#10003; Core function</td>
+            </tr>
+            <tr>
+              <td><strong>IDS/IPS</strong></td>
+              <td class="ir-cross">&#10007; No</td>
+              <td class="ir-cross">&#10007; Typically no</td>
+              <td class="ir-check">&#10003; Integrated</td>
+            </tr>
+            <tr>
+              <td><strong>Application awareness</strong></td>
+              <td class="ir-cross">&#10007; No</td>
+              <td class="ir-cross">&#10007; No</td>
+              <td class="ir-check">&#10003; Layer 7</td>
+            </tr>
+            <tr>
+              <td><strong>Dedicated crypto hardware</strong></td>
+              <td class="ir-check">&#10003; Yes</td>
+              <td class="ir-neutral">Varies</td>
+              <td class="ir-check">&#10003; Typically yes</td>
+            </tr>
+            <tr>
+              <td><strong>Centralised VPN management</strong></td>
+              <td class="ir-check">&#10003; Yes</td>
+              <td class="ir-cross">&#10007; No</td>
+              <td class="ir-check">&#10003; Yes</td>
+            </tr>
+            <tr>
+              <td><strong>Modern deployment status</strong></td>
+              <td class="ir-neutral">Legacy/specialised</td>
+              <td class="ir-neutral">Being replaced by NGFW</td>
+              <td class="ir-check">&#10003; Current standard</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>For most new deployments today, an NGFW with integrated VPN concentrator capabilities — from Palo Alto, Fortinet, Check Point, or Cisco Firepower — is the practical choice. Standalone concentrators remain in use primarily in existing environments where they have not yet been replaced, or in highly specialised deployments with extreme VPN density requirements that benefit from single-purpose hardware focus.</p>
+
+      <h2><span class="section-num">07</span> When Does Your Organisation Actually Need One?</h2>
+      <p>Not every organisation needs a dedicated VPN concentrator. The right answer depends on the number of concurrent tunnels, the budget for hardware versus software solutions, and whether you are building new infrastructure or scaling an existing deployment.</p>
+      <p>A reasonable heuristic: if you have fewer than 100 simultaneous VPN users, a firewall with integrated VPN capability handles it. 100 to 500 concurrent users is where purpose-built VPN appliances or NGFW with dedicated VPN modules become worth evaluating. Above 500 simultaneous sessions, the scalability and dedicated cryptographic processing of concentrator-class hardware typically delivers a better return than trying to scale general-purpose firewall VPN.</p>
+      <p>Organisations also reach for concentrators when VPN processing is measurably impacting other firewall functions — elevated latency on firewall policy decisions, CPU saturation during peak connection windows, or dropped sessions under load. Separating VPN termination onto dedicated hardware resolves this by removing cryptographic processing from the general-purpose device entirely. If you want to see what your current connection reveals about the VPN infrastructure you are sitting behind, <a href="/intelligence/vpn-proxy">IntelReap's VPN detection panel</a> shows your connection classification, ASN, and whether traffic appears to be routing through a data centre or enterprise infrastructure.</p>
+
+      <h2><span class="section-num">08</span> Cloud-Based VPN Concentrators</h2>
+      <p>Cloud providers offer managed VPN gateway services that provide concentrator-equivalent functionality as infrastructure rather than hardware. AWS Site-to-Site VPN, Azure VPN Gateway, and Google Cloud VPN all terminate IPsec tunnels from on-premises networks to cloud VPCs, scaling to the provider's infrastructure without requiring the customer to manage physical devices.</p>
+      <p>For remote access specifically, cloud-delivered SASE (Secure Access Service Edge) platforms — from Zscaler, Netskope, Cloudflare Access, and others — reframe the concentrator model entirely. Instead of routing all traffic back through a corporate data centre concentrator, SASE platforms distribute access policy enforcement across edge nodes geographically close to the user. The result is lower latency, no centralised bottleneck, and a model that works better for cloud-hosted applications than a traditional hub-and-spoke concentrator architecture. The trade-off is that all traffic and policy enforcement shift to a third-party vendor's infrastructure. For organisations with strict data sovereignty requirements, on-premises concentrators remain necessary.</p>
+      <p>For the complete picture of privacy and security implications when routing traffic through any VPN infrastructure — concentrator-based or otherwise — <a href="/learn/how-to-protect-your-privacy-online">our guide to protecting your privacy online</a> covers the full layered approach, including what VPN architecture choices mean for end-user privacy exposure.</p>
+
+      <!-- CTA 2 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Network Route Intelligence</span>
+        <h3>Trace Your Network Route and See Every Hop</h3>
+        <p>IntelReap's Network Route panel shows your full routing path — from your device through your ISP, any VPN infrastructure, and on to the internet. See whether your connection routes through a concentrator, data centre, or residential path, and identify any unexpected hops.</p>
+        <div class="ir-btn-row">
+          <a href="/intelligence/network-route" class="ir-btn-secondary">See My Network Route &#8594;</a>
+        </div>
+      </div>
+
+      <!-- LOGIC + METHODOLOGY -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>The concentrator exists because cryptographic processing at scale requires dedicated hardware — the same reason you do not run a database on a web server when traffic grows. Function separation is the answer to scale.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>This guide draws on Cisco VPN architecture documentation, IETF IPsec and IKEv2 specifications (RFC 7296, RFC 4301), Palo Alto and Fortinet NGFW technical references, and AWS and Azure VPN Gateway architecture documentation.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc7296" target="_blank" rel="noopener noreferrer">RFC 7296 — Internet Key Exchange Protocol Version 2 (IKEv2)</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc4301" target="_blank" rel="noopener noreferrer">RFC 4301 — Security Architecture for the Internet Protocol (IPsec)</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link"><a href="https://www.cisco.com/c/en/us/products/security/adaptive-security-appliance-asa-software/index.html" target="_blank" rel="noopener noreferrer">Cisco — Adaptive Security Appliance (ASA) VPN Architecture Documentation</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link"><a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html" target="_blank" rel="noopener noreferrer">AWS Documentation — Site-to-Site VPN Architecture and Concentrator Configuration</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link"><a href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways" target="_blank" rel="noopener noreferrer">Microsoft Azure — VPN Gateway Architecture, SKUs, and Tunnel Capacity</a></span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Twelve questions on VPN concentrators — what they do, how they work, how they compare to routers and firewalls, and when to deploy one.</p>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>What is a VPN concentrator?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">A VPN concentrator is a specialised network device that manages large numbers of simultaneous VPN connections — often hundreds or thousands — at a single termination point. Unlike a router or firewall that handles VPN as a secondary function, a concentrator is purpose-built for it: it authenticates connections, manages encrypted tunnel lifecycle, decrypts inbound traffic, and routes it to the internal network, all with dedicated cryptographic hardware to maintain performance at scale.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>How does a VPN concentrator work?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">A remote client connects to the concentrator's public address and negotiates an encrypted tunnel through an IKE or TLS handshake. The concentrator authenticates the user via RADIUS, LDAP, certificates, or MFA, then establishes the session. All inbound encrypted packets are decrypted and forwarded onto the internal network; outbound traffic is encrypted and sent back through the tunnel. The concentrator runs this process simultaneously for every active connection using dedicated hardware acceleration.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>What is the difference between a VPN concentrator and a VPN router?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">A VPN router is a general-purpose device that handles VPN as one of many functions, typically supporting 5 to 50 simultaneous tunnels before CPU becomes a bottleneck. A VPN concentrator is purpose-built for high-density VPN termination, with dedicated cryptographic ASICs that allow thousands of concurrent encrypted sessions without impacting other network functions. The right choice depends entirely on your peak concurrent connection count.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>What is the difference between a VPN concentrator and a VPN gateway?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">A VPN gateway is any device that acts as the termination point for VPN traffic — a broad category that includes routers, firewalls, and dedicated appliances. A VPN concentrator is a specific type of VPN gateway distinguished by its purpose-built design for high tunnel density and dedicated cryptographic processing. All concentrators are gateways; not all gateways are concentrators. The terms are often used interchangeably in vendor documentation.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>When does an organisation need a VPN concentrator?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">When the number of simultaneous VPN sessions exceeds the capacity of an existing firewall or router's VPN capabilities, when VPN processing is consuming too much CPU on a general-purpose device and degrading other functions, or when centralised management and high availability for hundreds to thousands of remote users is required. A practical heuristic: under 100 concurrent users, a firewall with integrated VPN handles it; over 500, concentrator-class hardware is worth evaluating.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>What VPN protocols do concentrators support?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">Enterprise concentrators typically support IPsec (IKEv1 and IKEv2), SSL/TLS-based VPN (for clientless browser access and full-tunnel clients), L2TP over IPsec, and WireGuard on modern platforms. IPsec is most common for site-to-site tunnels; SSL/TLS is preferred for remote access because it traverses firewalls on port 443 without requiring rule changes at the client's network.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>What are examples of VPN concentrator hardware?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">The Cisco VPN 3000 Series was the original dedicated concentrator product line, now deprecated and succeeded by the Cisco ASA and Firepower NGFW. Palo Alto Networks GlobalProtect Gateway, Juniper Networks SRX Series, Check Point Security Gateway, and Fortinet FortiGate all serve the concentrator function in modern deployments. In cloud environments, AWS Site-to-Site VPN and Azure VPN Gateway are managed concentrators delivered as infrastructure services.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>Can a VPN concentrator be software-based?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Yes — virtual concentrators run on standard server hardware or cloud instances. OpenVPN Access Server, Pritunl, and the virtual appliance versions of enterprise platforms like Cisco ASAv and Palo Alto VM-Series are common examples. Software concentrators trade dedicated cryptographic ASICs for flexibility and lower capital cost, making them practical for cloud-native environments and organisations without on-premises infrastructure requirements.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>What is split tunnelling in a VPN concentrator?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">Split tunnelling determines which traffic routes through the VPN tunnel and which goes directly to the internet via the user's local connection. Full tunnelling routes everything through the concentrator — complete visibility and policy enforcement but higher bandwidth cost. Split tunnelling routes only internal-destined traffic through the tunnel — lower concentrator load but reduced visibility of user internet activity. It is a central design decision in any concentrator deployment.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10"><span>How many connections can a VPN concentrator handle?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">Capacity ranges from hundreds to hundreds of thousands of simultaneous sessions. Entry-level enterprise appliances typically support 500 to 5,000 concurrent tunnels. Mid-range platforms handle 5,000 to 50,000. High-end data centre appliances can support over 100,000 simultaneous VPN sessions with dedicated cryptographic ASICs. Cloud-based concentrators scale elastically. Right-sizing depends on peak concurrent user count plus capacity headroom for growth.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11"><span>Is a VPN concentrator the same as a firewall?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">Not the same, but they overlap significantly in modern enterprise platforms. A standalone concentrator's only job is VPN termination. A next-generation firewall (NGFW) combines packet filtering, deep packet inspection, IDS/IPS, and VPN concentrator functionality in one appliance. Most organisations now buy NGFWs with integrated concentrator capabilities rather than separate dedicated concentrator hardware — standalone concentrators are increasingly rare outside legacy or highly specialised environments.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12"><span>How does a VPN concentrator affect network performance?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">A well-sized concentrator adds minimal latency — typically 1 to 5 milliseconds for cryptographic processing overhead. The bigger performance variable is full versus split tunnelling and the concentrator's placement in network topology. Dedicated hardware acceleration (AES-NI, custom ASICs) keeps cryptographic overhead minimal at high tunnel density. An undersized or overloaded concentrator causes packet loss, connection instability, and high CPU — the same symptoms as any bottleneck device.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">VPN Architecture Question?</h2>
+          <p class="ir-contact-sub">Ask about concentrator sizing, protocol selection, or specific deployment scenarios. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name"></div>
+              <div class="form-group"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+              <div class="form-group"><label for="cf-message">Your question</label><textarea id="cf-message" name="message" placeholder="What would you like to know about VPN concentrators or enterprise VPN architecture?" required></textarea></div>
+              <button type="submit" class="form-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+  (function(){'use strict';
+    document.querySelectorAll('.ndic-faq-question').forEach(function(btn){btn.addEventListener('click',function(){const item=btn.closest('.ndic-faq-item'),wasOpen=item.classList.contains('ndic-faq-item--open');document.querySelectorAll('.ndic-faq-item--open').forEach(function(i){i.classList.remove('ndic-faq-item--open');i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');});if(!wasOpen){item.classList.add('ndic-faq-item--open');btn.setAttribute('aria-expanded','true');}});});
+    const bar=document.getElementById('scroll-progress-bar');if(bar){window.addEventListener('scroll',function(){const s=window.scrollY||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(s/h)*100:0).toFixed(2)+'%';},{passive:true});}
+    (()=>{const now=new Date(),dow=now.getDay(),mon=new Date(now.getFullYear(),now.getMonth(),now.getDate()+(dow===0?-6:1-dow)),iso=mon.toISOString().split('T')[0];document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>{if(s.textContent.includes('"dateModified"'))s.textContent=s.textContent.replace(/"dateModified"\s*:\s*"[^"]*"/g,`"dateModified":"${iso}"`);});})();
+    (()=>{const badge=document.getElementById('freshness-badge');if(!badge)return;const d=new Date(),mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],txt=`Last updated ${mo[d.getMonth()]}\u00a0${d.getDate()},\u00a0${d.getFullYear()}`;badge.textContent=txt;badge.setAttribute('aria-label',txt);})();
+    (()=>{const m=new Date().getMonth(),banners=['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'],labels=['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];const el=document.getElementById('seasonal-banner');if(el){el.textContent=banners[m];el.style.cssText='text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;';}const lbl=document.getElementById('seasonal-label');if(lbl)lbl.textContent=labels[m];})();
+    (()=>{const v=['Analyse My VPN Connection','Detect My VPN Type','Check My VPN Status','Inspect My VPN Route','Verify My VPN Connection','Scan My Network VPN'];document.querySelectorAll('.cta-rotate').forEach(el=>{el.textContent=v[Math.floor(Math.random()*v.length)];});})();
+    (()=>{const rawUrl=window.location.href,encUrl=encodeURIComponent(rawUrl),encTitle=encodeURIComponent(document.title);const platforms=[{n:'WhatsApp',u:`https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}`},{n:'Facebook',u:`https://www.facebook.com/sharer/sharer.php?u=${encUrl}`},{n:'Twitter/X',u:`https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}`},{n:'LinkedIn',u:`https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`},{n:'Reddit',u:`https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`},{n:'Quora',u:`https://www.quora.com/search?q=${encTitle}`},{n:'Medium',u:`https://medium.com/new-story?url=${encUrl}`},{n:'Telegram',u:`https://t.me/share/url?url=${encUrl}&text=${encTitle}`},{n:'Pinterest',u:`https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}`},{n:'Discord',u:'https://discord.com/channels/@me'},{n:'Snapchat',u:`https://www.snapchat.com/share?url=${encUrl}`},{n:'Vimeo',u:'https://vimeo.com'},{n:'TikTok',u:'https://www.tiktok.com'},{n:'Instagram',u:'https://www.instagram.com'},{n:'Email',u:`mailto:?subject=${encTitle}&body=${encUrl}`},{n:'Copy Link',u:null}];
+    const container=document.getElementById('share-pills-container');if(!container)return;
+    platforms.forEach(p=>{let el;if(p.u===null){el=document.createElement('button');el.type='button';el.textContent='Copy Link';el.setAttribute('aria-label','Copy page URL to clipboard');el.addEventListener('click',()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(rawUrl).then(()=>{el.textContent='\u2713 Copied!';setTimeout(()=>{el.textContent='Copy Link';},2400);showToast('Link copied to clipboard');}).catch(()=>legacyCopy(rawUrl,el));}else legacyCopy(rawUrl,el);});}else{el=document.createElement('a');el.href=p.u;el.target='_blank';el.rel='noopener noreferrer';el.textContent=p.n;el.setAttribute('aria-label',`Share on ${p.n}`);}el.className='ir-share-pill';container.appendChild(el);});})();
+    function legacyCopy(text,btn){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');if(btn){btn.textContent='\u2713 Copied!';setTimeout(()=>{btn.textContent='Copy Link';},2400);}showToast('Link copied to clipboard');}catch(e){showToast('Copy failed — please copy the URL manually');}document.body.removeChild(ta);}
+    function showToast(msg){const tc=document.getElementById('toast-container');if(!tc)return;const t=document.createElement('div');t.textContent=msg;t.style.cssText='display:inline-block;background:var(--color-accent,#0ea5e9);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';tc.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>{t.style.opacity='1';}));setTimeout(()=>{t.style.opacity='0';setTimeout(()=>{if(t.parentNode)t.parentNode.removeChild(t);},350);},2700);}
+  }());
+  </script>
+  <script>
+    function handleContactForm(e){e.preventDefault();const myForm=e.target,formData=new FormData(myForm);fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(formData).toString()}).then(()=>{alert("Thank you! Your request has been transmitted.");myForm.reset();}).catch((error)=>{alert("Oops! There was a problem submitting your form.");console.error("Form submission error:",error);});}
+  </script>
+</body>
+</html>
