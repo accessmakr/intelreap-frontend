@@ -1,34 +1,435 @@
-<!-- /intelligence/live-network.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Network Monitor | IntelReap</title>
-    <meta name="description" content="Module deploying: Latency, bandwidth, jitter, packet loss metrics.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/live-network">
-    <meta property="og:title" content="Live Network Monitor | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/live-network">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ndic_theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Live Network Monitor — How Fast Is Your Connection? | IntelReap</title>
+  <meta name="description" content="Real-time latency, bandwidth, stability index, packet loss estimate, jitter, and connection quality — your live network performance explained parameter by parameter.">
+  <meta name="keywords" content="live network monitor, latency test, bandwidth test, ping test, jitter, packet loss, stability index, connection quality, network information API">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/intelligence/live-network">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/live-network">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/live-network">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Live Network Monitor — IntelReap">
+  <meta property="og:description" content="Real-time latency, bandwidth, jitter, and connection quality, explained in plain English.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/live-network">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Live Network Monitor — IntelReap">
+  <meta name="twitter:description" content="See your real-time connection performance, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#10141b">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#10141b">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/intelreap-logo.svg" },
+        "sameAs": ["https://twitter.com/intelreap"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://intelreap.com/#website",
+        "name": "IntelReap",
+        "url": "https://intelreap.com",
+        "publisher": { "@id": "https://intelreap.com/#organization" }
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://intelreap.com/intelligence/live-network#article",
+        "headline": "Live Network Monitor",
+        "description": "A deep dive into real-time latency, bandwidth estimation, stability index, jitter, packet loss, and connection quality scoring.",
+        "url": "https://intelreap.com/intelligence/live-network",
+        "datePublished": "2026-06-22",
+        "dateModified": "2026-06-27",
+        "author": { "@id": "https://intelreap.com/#organization" },
+        "publisher": { "@id": "https://intelreap.com/#organization" },
+        "isPartOf": { "@id": "https://intelreap.com/#website" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
+          { "@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html" },
+          { "@type": "ListItem", "position": 3, "name": "Live Network Monitor", "item": "https://intelreap.com/intelligence/live-network" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is latency and why does it matter?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Latency is the time in milliseconds it takes for a request to travel from your device to a server and back. Low latency means fast, responsive connections for real-time activities like gaming and video calls. High latency makes everything feel sluggish even when your bandwidth is high." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is jitter?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jitter is the variation in latency between consecutive requests. A consistent latency of 60ms is much better for real-time use than latency that swings between 20ms and 200ms, even if the average is similar. High jitter causes choppy video calls, audio dropouts, and unpredictable gaming performance." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the stability index measure?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Stability index is a 0-100 score combining latency consistency, jitter level, and the absence of connection resets over the monitoring window. A high stability index means your connection quality has been consistent, not just fast at one moment." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does the Network Information API sometimes show no data?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The Network Information API is a browser feature that reports connection type and estimated bandwidth. It's well-supported in Chrome and Android browsers but not implemented in Safari or Firefox, which explains why those fields show as unavailable on those platforms." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Live Network Monitor</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for network connection parameters:<br><strong class="text-slate-200">Latency, bandwidth, jitter, packet loss metrics</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Live Intelligence Network on Homepage</a>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-deepdive-page">
+
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Live Network Monitor</span>
+      </nav>
+
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 4</div>
+        <h1 class="ndic-deepdive-title">Live Network Monitor</h1>
+        <p class="ndic-deepdive-subtitle">How Fast Is Your Connection?</p>
+        <p class="ndic-deepdive-intro">Real-time latency, bandwidth, jitter, and stability — updated continuously from the moment this page loads.</p>
+      </div>
+
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-4">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Live Network Monitor</span>
+                <span class="ndic-canvas-subheading">How Fast Is Your Connection?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c4-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <canvas id="canvas3-latency-chart"></canvas>
+              <canvas id="canvas3-bandwidth-chart"></canvas>
+              <canvas id="canvas3-stability-chart"></canvas>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">Current Latency</span><span class="ndic-param-value" id="c4-current-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Average Latency</span><span class="ndic-param-value" id="c4-average-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Peak Latency</span><span class="ndic-param-value" id="c4-peak-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Lowest Latency</span><span class="ndic-param-value" id="c4-lowest-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Bandwidth</span><span class="ndic-param-value" id="c4-bandwidth">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Effective Connection Type</span><span class="ndic-param-value" id="c4-effective-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Data Saver Mode</span><span class="ndic-param-value" id="c4-save-data">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Stability Index</span><span class="ndic-param-value" id="c4-stability-index">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Packet Loss Estimate</span><span class="ndic-param-value" id="c4-packet-loss">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Connection Quality</span><span class="ndic-param-value" id="c4-quality-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Jitter Estimate</span><span class="ndic-param-value" id="c4-jitter-estimate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Session Uptime</span><span class="ndic-param-value" id="c4-uptime">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Connection Changes</span><span class="ndic-param-value" id="c4-connection-changes">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Network API Status</span><span class="ndic-param-value" id="c4-api-available">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas4-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas4-ai-summary">Analyzing your live connection...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c4-deep-dive-link">Deep dive into your live network analysis</a>
+            </div>
+          </div>
+
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each measurement above actually means, and why the combination matters more than any single number.</p>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Latency</h3>
+
+          <div class="ndic-explain-item">
+            <h4>Current, Average, Peak &amp; Lowest Latency</h4>
+            <p>Latency is the round-trip time in milliseconds between your device and IntelReap's server. Current is the most recent measurement. Average smooths across the monitoring window to filter out momentary spikes. Peak is the worst single measurement seen — important for understanding worst-case conditions during a session. Lowest shows how fast your connection can actually be when conditions are ideal.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Jitter Estimate</h4>
+            <p>Jitter is the variation in latency between consecutive requests. A steady 80ms connection is dramatically better for voice and video than one oscillating between 20ms and 200ms. The jitter estimate compares consecutive measurements against the session average — high jitter here explains choppy calls or audio dropouts even when average latency looks acceptable.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Bandwidth &amp; Connection Type</h3>
+
+          <div class="ndic-explain-item">
+            <h4>Bandwidth &amp; Effective Connection Type</h4>
+            <p>Bandwidth is reported by the browser's Network Information API — an estimated downstream throughput, not a full speed test. Effective connection type (4g, 3g, 2g, slow-2g) is the browser's own classification of the connection quality. Both are unavailable on Safari and Firefox, which don't implement this API — those platforms correctly show "—" rather than a fabricated value.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Data Saver Mode</h4>
+            <p>Indicates whether the user has enabled data saver in their browser or operating system. When active, the browser may signal to servers that lower-bandwidth responses are preferred. Reported as-is from the Network Information API — only meaningful on platforms that expose it.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Stability &amp; Quality</h3>
+
+          <div class="ndic-explain-item">
+            <h4>Stability Index &amp; Packet Loss Estimate</h4>
+            <p>Stability index is a 0–100 score combining latency consistency, jitter level, and the absence of failed requests over the monitoring window. Packet loss estimate is inferred from failed or timed-out pings within that same window — browsers can't read raw packet-level data, so this is always an approximation based on observable failures rather than a direct measurement.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Connection Quality</h4>
+            <p>A plain-English label — Excellent, Good, Fair, Poor — derived from combining latency, jitter, and stability into one human-readable verdict. Useful as a quick summary when the raw numbers are being interpreted by someone unfamiliar with what specific latency values mean in practice.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Session Uptime &amp; Connection Changes</h4>
+            <p>Session uptime counts how long continuous monitoring has been running since this page loaded. Connection changes counts how many times the Network Information API detected a network type change during that window — useful for identifying unstable connections that are alternating between Wi-Fi and mobile data, or dropping and reconnecting.</p>
+          </div>
+
+          <div class="ndic-explain-item">
+            <h4>Network API Status</h4>
+            <p>Confirms whether the browser's Network Information API is available on your platform. Safari and Firefox do not implement it, which is why bandwidth and effective connection type show as "—" there — this field makes that explicit rather than leaving those gaps unexplained.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">What These Numbers Mean in Practice</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>Latency matters more than bandwidth for most real-time use</h4>
+          <p>A 1Gbps connection with 300ms latency will feel worse for video calls and remote work than a 50Mbps connection with 20ms latency. Bandwidth determines how fast large files transfer; latency determines how responsive every interaction feels. Most people optimize for bandwidth and ignore latency, but for day-to-day internet use the latency number is the one that drives experience.</p>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>This panel updates in real time</h4>
+          <p>Unlike the other intelligence panels that run once on load, the Live Network Monitor continues measuring throughout your session. Latency charts update every few seconds, and the stability index accumulates data over time — meaning values seen after 5 minutes of monitoring are more representative than what shows immediately on page load.</p>
+        </div>
+      </section>
+
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Live Network Monitor — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is latency and why does it matter?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Latency is the time in milliseconds it takes for a request to travel from your device to a server and back. Low latency means fast, responsive connections for real-time activities like gaming and video calls. High latency makes everything feel sluggish even when your bandwidth is high.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is jitter?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Jitter is the variation in latency between consecutive requests. A consistent latency of 60ms is much better for real-time use than latency that swings between 20ms and 200ms, even if the average is similar. High jitter causes choppy video calls, audio dropouts, and unpredictable gaming performance.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What does the stability index measure?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Stability index is a 0–100 score combining latency consistency, jitter level, and the absence of connection resets over the monitoring window. A high stability index means your connection quality has been consistent, not just fast at one moment.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Why does the Network Information API sometimes show no data?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The Network Information API is a browser feature that reports connection type and estimated bandwidth. It's well-supported in Chrome and Android browsers but not implemented in Safari or Firefox, which explains why those fields show as unavailable on those platforms.</div></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">W3C Network Information API specification</span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">W3C Performance Observer and Resource Timing specifications</span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+
+    </div>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+  <script defer src="../assets/js/engines/core.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('ndic-faq-item--open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
