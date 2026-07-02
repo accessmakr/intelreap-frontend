@@ -1,34 +1,348 @@
-<!-- /intelligence/device.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Intelligence Panel | IntelReap</title>
-    <meta name="description" content="Module deploying: Operating System, browser, CPU, RAM, screen matrix, touch, orientation.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/device">
-    <meta property="og:title" content="Device Intelligence Panel | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/device">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ndic_theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Device Intelligence Panel | IntelReap</title>
+  <meta name="description" content="Live OS, browser, CPU, RAM, screen, and sensor data — your complete device profile explained parameter by parameter.">
+  <meta name="keywords" content="device intelligence, OS detection, browser detection, CPU cores, RAM, screen resolution, device type, user agent, client hints">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/intelligence/device">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/device">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/device">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Device Intelligence Panel — IntelReap">
+  <meta property="og:description" content="Live OS, browser, CPU, RAM, screen, and sensor data — your complete device profile explained parameter by parameter.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/device">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Device Intelligence Panel — IntelReap">
+  <meta name="twitter:description" content="Live OS, browser, CPU, RAM, screen, and sensor data — your complete device profile explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+  <meta name="geo.region" content="GB">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {"@type": "Organization", "@id": "https://intelreap.com/#organization", "name": "IntelReap", "url": "https://intelreap.com"},
+      {"@type": "TechArticle", "headline": "Device Intelligence Panel", "url": "https://intelreap.com/intelligence/device", "datePublished": "2026-06-22", "dateModified": "2026-06-27", "author": {"@id": "https://intelreap.com/#organization"}, "inLanguage": "en-US"},
+      {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com"}, {"@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html"}, {"@type": "ListItem", "position": 3, "name": "Device Intelligence Panel", "item": "https://intelreap.com/intelligence/device"}]}
+    ]
+  }
+  </script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap System Upgrade</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Device Intelligence Panel</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for hardware identification:<br><strong class="text-slate-200">OS, browser, CPU, RAM, screen matrix, touch, orientation</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Device intelligence Panel on Homepage</a>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+  <div id="seasonal-banner" aria-live="polite"></div>
+  <main>
+    <div class="ndic-deepdive-page">
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Device Intelligence Panel</span>
+      </nav>
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 5</div>
+        <h1 class="ndic-deepdive-title">Device Intelligence Panel</h1>
+        <p class="ndic-deepdive-subtitle">What Device Are You Using?</p>
+        <p class="ndic-deepdive-intro">OS, browser, hardware, screen, and sensor capabilities — scanned live from the moment this page loads.</p>
+      </div>
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-5">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Device Intelligence Panel</span>
+                <span class="ndic-canvas-subheading">What Device Are You Using?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c5-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <span class="ndic-health-badge" id="c5-capability-tier" data-tier="">—</span>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">Operating System</span><span class="ndic-param-value" id="c5-os">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">OS Version</span><span class="ndic-param-value" id="c5-os-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Browser</span><span class="ndic-param-value" id="c5-browser">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Browser Version</span><span class="ndic-param-value" id="c5-browser-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Browser Engine</span><span class="ndic-param-value" id="c5-browser-engine">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Device Type</span><span class="ndic-param-value" id="c5-device-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Device Brand</span><span class="ndic-param-value" id="c5-device-brand">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">CPU Cores</span><span class="ndic-param-value" id="c5-cpu-cores">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">RAM Estimate</span><span class="ndic-param-value" id="c5-ram-estimate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Screen Width</span><span class="ndic-param-value" id="c5-screen-width">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Screen Height</span><span class="ndic-param-value" id="c5-screen-height">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Viewport Width</span><span class="ndic-param-value" id="c5-viewport-width">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Viewport Height</span><span class="ndic-param-value" id="c5-viewport-height">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Pixel Ratio</span><span class="ndic-param-value" id="c5-pixel-ratio">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Color Depth</span><span class="ndic-param-value" id="c5-color-depth">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Color Gamut</span><span class="ndic-param-value" id="c5-color-gamut">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">HDR Support</span><span class="ndic-param-value" id="c5-hdr-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Touch Support</span><span class="ndic-param-value" id="c5-touch-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Max Touch Points</span><span class="ndic-param-value" id="c5-max-touch-points">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Orientation Support</span><span class="ndic-param-value" id="c5-orientation-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Current Orientation</span><span class="ndic-param-value" id="c5-orientation">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Pointer Support</span><span class="ndic-param-value" id="c5-pointer-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Vibration Support</span><span class="ndic-param-value" id="c5-vibration-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Architecture</span><span class="ndic-param-value" id="c5-architecture">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Bitness</span><span class="ndic-param-value" id="c5-bitness">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Detection Source</span><span class="ndic-param-value" id="c5-detection-source">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas5-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas5-ai-summary">Analyzing your device...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c5-deep-dive-link">Deep dive into your device analysis</a>
+            </div>
+          </div>
+
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each device property above actually means and how it was detected.</p>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Operating System & Browser</h3>
+          <div class="ndic-explain-item">
+            <h4>Operating System, Version &amp; Browser Engine</h4>
+            <p>Detected using the User-Agent Client Hints API where available (Chrome-based browsers on Android and Windows), falling back to traditional User-Agent string parsing. Client Hints are more reliable because they're structured data the browser explicitly provides; UA string parsing is heuristic and can be spoofed.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Browser &amp; Browser Version</h4>
+            <p>The browser name and version reported by your device. Version detection via Client Hints is exact. Via User-Agent string it's accurate for most browsers but some browsers deliberately report modified UA strings for privacy reasons — Brave, for example, reports as Chrome.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Architecture, Bitness &amp; Detection Source</h4>
+            <p>Architecture (x86, ARM) and bitness (32 or 64-bit) are available through Client Hints on modern Chromium browsers. Detection source confirms whether data came from the structured Client Hints API or fell back to UA string parsing, so you know how much confidence to place in the version and architecture values.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Device & Hardware</h3>
+          <div class="ndic-explain-item">
+            <h4>Device Type &amp; Brand</h4>
+            <p>Type classifies the device as desktop, mobile, or tablet based on screen size, touch support, and pointer capabilities. Brand is extracted from Client Hints where available — this is the manufacturer name (Samsung, Apple, Google) that the device reports directly, not inferred from the UA string.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>CPU Cores &amp; RAM Estimate</h4>
+            <p>CPU core count comes from <code>navigator.hardwareConcurrency</code> — the number of logical processors available to JavaScript. RAM estimate comes from <code>navigator.deviceMemory</code>, which deliberately reports only coarse values (0.25, 0.5, 1, 2, 4, 8 GB) to limit its use as a fingerprinting signal. The real RAM may be higher than shown.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Screen & Display</h3>
+          <div class="ndic-explain-item">
+            <h4>Screen Dimensions, Viewport &amp; Pixel Ratio</h4>
+            <p>Screen width and height are the physical resolution of the display. Viewport is the visible area your browser content actually occupies — smaller than screen size on desktop due to browser chrome, and often scaled differently on mobile. Pixel ratio shows the density of physical pixels per CSS pixel — high-DPI retina screens typically show 2 or 3 here.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Color Depth, Color Gamut &amp; HDR Support</h4>
+            <p>Color depth is the bits used per pixel (almost always 24). Color gamut confirms whether the display can render wider-than-sRGB color spaces. HDR support indicates whether the display and browser combination can show high dynamic range content. These together describe the display's visual capability beyond raw resolution.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Input & Sensors</h3>
+          <div class="ndic-explain-item">
+            <h4>Touch Support, Max Touch Points &amp; Pointer Support</h4>
+            <p>Touch support confirms whether the screen is touch-enabled. Max touch points shows the maximum simultaneous touches detected — phones typically report 5 or 10; a non-touch laptop reports 0. Pointer support distinguishes between fine (mouse/trackpad) and coarse (touch/stylus) pointing devices, which matters for how interfaces should be sized.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Orientation Support, Current Orientation &amp; Vibration Support</h4>
+            <p>Orientation support confirms whether the device can detect and report physical rotation. Current orientation tells you whether you're in portrait or landscape right now. Vibration support is a simple check for the Vibration API — present on most Android devices, not available on iOS or desktop.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">Why Device Data Matters Beyond Just Knowing Your Specs</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>It's a major component of your fingerprint</h4>
+          <p>Screen resolution, pixel ratio, CPU core count, and RAM estimate together are among the most distinctive combinations in fingerprinting databases. Unlike network-level data, this information doesn't change when you use a VPN — it's tied to the physical device, not the network path.</p>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>Browser privacy features are closing some of these gaps</h4>
+          <p>The deliberate coarsening of <code>deviceMemory</code> to only a few possible values is an example of browsers actively reducing fingerprint surface. Firefox's strict mode randomizes screen dimensions. Brave normalizes several hardware-concurrent values. The trend is toward browsers deliberately limiting what device intelligence is available to pages — which makes the values shown here more meaningful to check now rather than later.</p>
+        </div>
+      </section>
+
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Device Intelligence — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Why does RAM show a lower value than my device actually has?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The browser's device memory API deliberately returns only coarse values (0.25, 0.5, 1, 2, 4, or 8 GB) regardless of your actual RAM, to limit its usefulness as a fingerprinting signal. A device with 16GB RAM reports 8GB through this API.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is the difference between screen size and viewport?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Screen size is your display's physical resolution. Viewport is the usable content area inside your browser window — smaller on desktop because of the address bar, tabs, and bookmarks toolbar, and scaled on mobile because browsers zoom pages by default.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Can websites use this data to track me?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Yes. The specific combination of screen resolution, pixel ratio, CPU cores, and platform is distinctive enough that many fingerprinting systems use it as a core signal. Unlike cookies, you can't clear it — it's derived from your physical hardware and browser configuration.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is Client Hints and why does it matter?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Client Hints is a structured API where the browser explicitly sends specific device properties to the server in response to a request. Unlike the User-Agent string — which is an unstructured text blob that browsers and privacy tools often modify — Client Hints data is more accurate and harder to accidentally break through UA spoofing.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link">W3C User Agent Client Hints specification</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link">W3C Screen Orientation, DeviceMemory and HardwareConcurrency specifications</span></div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+    </div>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+  <script defer src="../assets/js/engines/core.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+  <script>
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');
+        });
+        if (!isOpen) { item.classList.add('ndic-faq-item--open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+  </script>
 </body>
 </html>
