@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('ndic_theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>What Is VPN Passthrough? IPsec, PPTP, L2TP Explained — IntelReap</title>
+  <meta name="description" content="VPN passthrough lets VPN client traffic travel through a NAT router to an external VPN server. Learn what it is, when you need it, and how to enable it — plus why most modern VPNs don't require it at all.">
+  <meta name="keywords" content="what is vpn passthrough, what is vpn passthrough on a router, how to enable vpn passthrough, ipsec passthrough, pptp passthrough, l2tp passthrough, do i need vpn passthrough, vpn passthrough vs vpn client, what does vpn passthrough do, vpn passthrough router setting">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/learn/what-is-vpn-passthrough">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/learn/what-is-vpn-passthrough">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/what-is-vpn-passthrough">
+
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="What Is VPN Passthrough? IPsec, PPTP, L2TP Explained — IntelReap">
+  <meta property="og:description"  content="VPN passthrough allows VPN client connections to traverse a NAT router to reach an external VPN server. Explains what it is, the three protocol types, how to enable it, and why most modern VPNs no longer need it.">
+  <meta property="og:url"          content="https://intelreap.com/learn/what-is-vpn-passthrough">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="What Is VPN Passthrough? — IntelReap">
+  <meta name="twitter:description" content="VPN passthrough is not the same as having a VPN on your router. Here is what it actually does, the three protocol variants, and whether you need it with a modern VPN.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#0ea5e9">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <style>
+    #scroll-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent,#0ea5e9),#06b6d4);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
+    .ir-breadcrumb{max-width:760px;margin:0 auto;padding:1rem 1.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:0.375rem;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.75rem;color:var(--color-text-tertiary,#475569);}
+    .ir-breadcrumb a{color:var(--color-accent,#0ea5e9);text-decoration:none;}.ir-breadcrumb a:hover{text-decoration:underline;}.ir-breadcrumb-sep{opacity:0.4;}.ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
+    .ir-article{max-width:760px;margin:0 auto;padding:0 1.5rem 4rem;}
+    .ir-article h2{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:2.75rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));display:flex;align-items:center;gap:0.6rem;line-height:1.35;scroll-margin-top:5rem;}
+    .ir-article h3{font-family:var(--font-display,'Syne',sans-serif);font-size:0.975rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:1.75rem 0 0.6rem;line-height:1.4;}
+    .ir-article p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.85;color:var(--color-text-secondary,#94a3b8);margin-bottom:1rem;}
+    .ir-article ul,.ir-article ol{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.8;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.25rem 1.25rem;}
+    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}.ir-article li::marker{color:var(--color-accent,#0ea5e9);}
+    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}.ir-article em{font-style:italic;}
+    .ir-article a{color:var(--color-accent,#0ea5e9);text-decoration:underline;text-underline-offset:2px;}.ir-article a:hover{opacity:0.8;}
+    .ir-article code{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.8125rem;color:var(--color-accent,#0ea5e9);background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.15);border-radius:4px;padding:0.1rem 0.4rem;white-space:nowrap;}
+    .section-num{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;color:var(--color-accent,#0ea5e9);font-weight:500;background:rgba(14,165,233,0.1);padding:0.15rem 0.4rem;border-radius:3px;flex-shrink:0;}
+    .ir-callout{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-left:3px solid var(--color-accent,#0ea5e9);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .ir-callout p{margin-bottom:0;color:var(--color-text-primary,#e2e8f0)!important;font-weight:500;}
+    .ir-browser-block{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.07));border-radius:8px;padding:1.5rem 1.5rem 1rem;margin:1.5rem 0;}
+    .ir-browser-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:1rem;display:block;}
+    .ir-browser-steps{list-style:none;margin:0;padding:0;}
+    .ir-browser-step{display:flex;gap:0.875rem;margin-bottom:0.875rem;align-items:flex-start;}
+    .ir-browser-step-num{flex-shrink:0;width:1.5rem;height:1.5rem;border-radius:50%;background:rgba(14,165,233,0.15);color:var(--color-accent,#0ea5e9);font-family:var(--font-mono,'JetBrains Mono',monospace);font-weight:700;font-size:0.7rem;display:flex;align-items:center;justify-content:center;margin-top:0.1rem;}
+    .ir-browser-step-text{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);}
+    .ir-table-wrap{width:100%;overflow-x:auto;margin:1.25rem 0 2rem;border-radius:6px;border:1px solid var(--color-border,rgba(255,255,255,0.07));-webkit-overflow-scrolling:touch;}
+    .ir-table{width:100%;min-width:500px;border-collapse:collapse;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;}
+    .ir-table caption{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.75rem;color:var(--color-text-tertiary,#475569);text-align:left;padding:0.5rem 1rem 0;caption-side:top;}
+    .ir-table th{background:rgba(255,255,255,0.04);color:var(--color-text-primary,#e2e8f0);font-family:var(--font-display,'Syne',sans-serif);font-weight:600;font-size:0.8rem;padding:0.75rem 1rem;text-align:left;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.07));white-space:nowrap;}
+    .ir-table td{padding:0.75rem 1rem;color:var(--color-text-secondary,#94a3b8);border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));vertical-align:middle;line-height:1.55;}
+    .ir-table tr:last-child td{border-bottom:none;}
+    .ir-check{color:#34d399;font-weight:600;}.ir-cross{color:#f87171;}.ir-neutral{color:var(--color-text-tertiary,#475569);}
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-cta-block{background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.18);border-radius:10px;padding:2rem 2rem 1.75rem;margin:2.5rem 0;text-align:center;}
+    .ir-cta-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.625rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.625rem;display:block;}
+    .ir-cta-block h3{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.5rem;line-height:1.3;}
+    .ir-cta-block>p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary,#94a3b8);margin:0 0 1.5rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .ir-btn-row{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
+    .ir-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#0ea5e9 !important;color:#ffffff !important;border:2px solid #0ea5e9 !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-primary:hover{background:#0284c7 !important;border-color:#0284c7 !important;transform:translateY(-1px);}
+    .ir-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#f0f9ff !important;color:#0c2340 !important;border:2px solid #bae6fd !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-secondary:hover{background:#ffffff !important;border-color:#7dd3fc !important;transform:translateY(-1px);}
+    .ir-logic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+    @media(max-width:560px){.ir-logic-grid{grid-template-columns:1fr;}}
+    .ir-logic-card{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.06));border-radius:6px;padding:1.25rem 1.5rem;}
+    .ir-logic-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.5rem;display:block;}
+    .ir-logic-card p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);margin:0;}
+    .ir-share-wrap{margin:2.5rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-share-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-tertiary,#475569);margin-bottom:0.875rem;display:block;}
+    .ir-share-pills{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .ir-share-pill{display:inline-flex;align-items:center;padding:0.375rem 0.875rem;border-radius:9999px;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;font-weight:500;background:rgba(255,255,255,0.04);border:1px solid var(--color-border,rgba(255,255,255,0.08));color:var(--color-text-secondary,#94a3b8);cursor:pointer;text-decoration:none;transition:border-color 0.15s,color 0.15s;white-space:nowrap;}
+    .ir-share-pill:hover{border-color:var(--color-accent,#0ea5e9);color:var(--color-accent,#0ea5e9);text-decoration:none;}
+    .ir-faq-outer{max-width:760px;margin:0 auto;padding:0 1.5rem 1rem;}
+    .ir-faq-heading{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.375rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-faq-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.5rem;line-height:1.65;}
+    .ir-contact-outer{max-width:760px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;}
+    .ir-contact-header{text-align:center;margin-bottom:1.75rem;}
+    .ir-contact-title{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin-bottom:0.375rem;}
+    .ir-contact-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;color:var(--color-text-tertiary,#475569);line-height:1.6;}
+    .ir-form-wrap{max-width:400px;margin:0 auto;}
+    .ir-form-card{background:rgba(13,18,37,0.8);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:2rem;}
+    .form-group{margin-bottom:1rem;}.form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
+    .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.65rem 0.9rem;font-size:0.875rem;color:var(--color-text-primary,#e2e8f0);font-family:var(--font-body,'Be Vietnam Pro',sans-serif);transition:border-color 0.2s;box-sizing:border-box;}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent,#0ea5e9);}
+    .form-group textarea{resize:vertical;min-height:100px;}.form-hidden{display:none;}
+    .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
+    .form-submit:hover{opacity:0.9;}
+    #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}.ir-btn-primary,.ir-btn-secondary{min-width:0;width:100%;}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","@id":"https://intelreap.com/learn/what-is-vpn-passthrough#article","headline":"What Is VPN Passthrough? IPsec, PPTP, and L2TP Passthrough Explained","description":"VPN passthrough is a router feature that allows VPN client traffic to traverse NAT to reach an external VPN server. This guide explains what it does, the three protocol types, how to enable it, and why most modern VPNs no longer require it.","url":"https://intelreap.com/learn/what-is-vpn-passthrough","image":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/og-image.png","width":1200,"height":630},"datePublished":"2026-03-21","dateModified":"2026-06-09","author":{"@type":"Organization","@id":"https://intelreap.com/#organization"},"publisher":{"@id":"https://intelreap.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://intelreap.com/learn/what-is-vpn-passthrough"},"inLanguage":"en-US","keywords":"what is vpn passthrough, ipsec passthrough, pptp passthrough, l2tp passthrough, how to enable vpn passthrough, do i need vpn passthrough","articleSection":"Network Guides","wordCount":2750},
+    {"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com","logo":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/intelreap-logo.svg"},"sameAs":["https://twitter.com/intelreap","https://github.com/accessmakr/intelreap-frontend"]},
+    {"@type":"WebSite","@id":"https://intelreap.com/#website","name":"IntelReap","url":"https://intelreap.com","publisher":{"@id":"https://intelreap.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://intelreap.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://intelreap.com/learn/"},{"@type":"ListItem","position":3,"name":"What Is VPN Passthrough?","item":"https://intelreap.com/learn/what-is-vpn-passthrough"}]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is VPN passthrough?","acceptedAnswer":{"@type":"Answer","text":"VPN passthrough is a feature on home routers and NAT firewalls that allows VPN client connections originating from devices on the local network to pass through to an external VPN server without being blocked or mangled by NAT. It does not create a VPN connection itself — it simply allows VPN traffic from client devices to traverse the router transparently. The three types correspond to the three older VPN protocols most affected by NAT: IPsec passthrough, PPTP passthrough, and L2TP passthrough."}},
+      {"@type":"Question","name":"What is VPN passthrough on a router?","acceptedAnswer":{"@type":"Answer","text":"VPN passthrough on a router is a setting in the router's admin panel — usually found under Advanced, Security, or VPN settings — that enables specific VPN protocols to traverse NAT without interference. When enabled, the router forwards GRE packets (for PPTP), ESP packets (for IPsec), and UDP 1701 traffic (for L2TP) from local devices through to external VPN servers. It is a receive-side setting: the router is not creating or terminating the VPN — it is letting client-initiated VPN traffic pass through it."}},
+      {"@type":"Question","name":"What is the difference between VPN passthrough and a VPN router?","acceptedAnswer":{"@type":"Answer","text":"VPN passthrough allows client devices behind the router to connect to an external VPN server through the router's NAT — the router itself is not involved in the VPN. A VPN router runs the VPN client directly on the router hardware, creating an encrypted tunnel for all traffic from all devices on the network without requiring individual device configuration. They are completely different concepts: passthrough is about allowing traffic through; a VPN router is about creating the tunnel itself."}},
+      {"@type":"Question","name":"Do I need VPN passthrough?","acceptedAnswer":{"@type":"Answer","text":"Probably not if you are using a modern consumer VPN service in 2026. Services using OpenVPN, WireGuard, or IKEv2 with NAT Traversal (NAT-T) work through standard NAT without needing passthrough settings. VPN passthrough is primarily relevant when connecting to corporate VPNs using older IPsec configurations without NAT-T support, or when using PPTP or L2TP-based connections. If your VPN client is failing to connect and you have eliminated other causes, checking passthrough settings is a reasonable troubleshooting step."}},
+      {"@type":"Question","name":"How do I enable VPN passthrough on my router?","acceptedAnswer":{"@type":"Answer","text":"Log into your router's admin panel — typically by typing 192.168.1.1 or 192.168.0.1 in a browser. Look for a section labelled VPN, Advanced, or Security. Find the VPN Passthrough settings and enable the toggles for IPsec Passthrough, PPTP Passthrough, and L2TP Passthrough as needed. Save the settings and test the VPN connection. The exact location varies by router manufacturer — consult your router's manual for the specific menu path."}},
+      {"@type":"Question","name":"What is IPsec passthrough?","acceptedAnswer":{"@type":"Answer","text":"IPsec passthrough enables IPsec VPN traffic — specifically ESP (Encapsulating Security Payload) packets on IP protocol 50 and IKE packets on UDP 500 — to traverse NAT from client devices to an external IPsec VPN server. Standard NAT has difficulty with IPsec because ESP packets do not contain port numbers, making it hard for the router to track the connection state. IPsec passthrough works around this by specifically handling ESP packet forwarding. Modern IPsec implementations use NAT-T (NAT Traversal), which encapsulates ESP inside UDP 4500 and eliminates the need for passthrough."}},
+      {"@type":"Question","name":"What is PPTP passthrough?","acceptedAnswer":{"@type":"Answer","text":"PPTP passthrough enables PPTP VPN traffic — specifically GRE (Generic Routing Encapsulation) packets on IP protocol 47 — to traverse NAT from a local device to a PPTP VPN server. PPTP relies on GRE for its data tunnel, and standard NAT typically blocks or mishandles GRE packets because they do not use TCP or UDP port numbers. PPTP itself is considered cryptographically weak and should not be used for privacy-sensitive applications. Most security professionals recommend migrating away from PPTP entirely."}},
+      {"@type":"Question","name":"What is L2TP passthrough?","acceptedAnswer":{"@type":"Answer","text":"L2TP passthrough enables L2TP/IPsec VPN traffic — using UDP port 1701 for L2TP and UDP 500/4500 for the IPsec component — to traverse NAT from a client device to an L2TP/IPsec VPN server. L2TP on its own provides no encryption; it is always combined with IPsec for security. Because L2TP uses UDP, NAT handling is generally less problematic than with PPTP or pure IPsec, but some router configurations still require the passthrough setting to be explicitly enabled for reliable operation."}},
+      {"@type":"Question","name":"Does VPN passthrough affect performance?","acceptedAnswer":{"@type":"Answer","text":"No meaningful performance impact. VPN passthrough is a routing configuration that tells the router how to handle specific packet types — it does not add processing overhead or throttle connections. The VPN encryption and decryption still happen on the client device and the VPN server, not on the router. The router's role in a passthrough scenario is simply to forward packets correctly rather than drop or mangle them."}},
+      {"@type":"Question","name":"Why do modern VPNs not need passthrough?","acceptedAnswer":{"@type":"Answer","text":"Modern VPN protocols solve the NAT traversal problem at the protocol level rather than requiring the router to have special handling. WireGuard uses UDP natively, which traverses NAT without any special treatment. OpenVPN typically runs on UDP or TCP and uses standard ports. IKEv2 includes NAT-T by default, which encapsulates IPsec inside UDP 4500. SSL/TLS VPNs operate on port 443 and pass through NAT identically to normal HTTPS traffic. The passthrough setting was a workaround for older protocol limitations that newer protocols have eliminated architecturally."}},
+      {"@type":"Question","name":"Can I have multiple VPN passthroughs active simultaneously?","acceptedAnswer":{"@type":"Answer","text":"Yes — most routers allow IPsec, PPTP, and L2TP passthrough to be enabled simultaneously with no conflict between them. However, older routers may have issues when multiple devices on the local network simultaneously try to use the same passthrough protocol to different VPN servers, because GRE and ESP packets do not carry port numbers that the router can use to distinguish between sessions. This limitation is another reason modern NAT-T-based protocols are preferred over legacy passthrough-dependent configurations."}},
+      {"@type":"Question","name":"Is VPN passthrough a security risk?","acceptedAnswer":{"@type":"Answer","text":"Enabling VPN passthrough is not inherently a security risk. It allows specific VPN traffic to pass through the router's NAT, but the VPN protocols themselves remain encrypted end-to-end — the router only facilitates the connection, it does not decrypt or inspect the traffic. The security considerations are those of the underlying VPN protocol: PPTP has well-documented cryptographic weaknesses and should be avoided; IPsec and L2TP/IPsec are substantially more secure when properly configured."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="/learn/">Learn</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span class="ir-breadcrumb-current" aria-current="page">What Is VPN Passthrough?</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Network Guide</span>
+        </div>
+        <h1 class="ndic-hero-title">
+          What Is<br>
+          <span class="ndic-highlight">VPN Passthrough?</span>
+        </h1>
+        <p class="ndic-hero-tagline">
+          VPN passthrough is one of the most misunderstood router settings — and one of the least necessary in 2026. It does not give you a VPN, it does not secure your connection, and with modern VPN protocols you probably do not need it at all. Here is what it actually does, why it exists, and when you genuinely need to touch it.
+        </p>
+        <div class="ndic-hero-cta-group">
+          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Check My VPN Status</a>
+          <a href="/intelligence/security" class="ir-btn-secondary">Check My Security Score &#8594;</a>
+        </div>
+        <div id="freshness-badge" aria-live="polite">Loading&#8230;</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item"><span class="ndic-trust-value">4.9&#9733;</span><span class="ndic-trust-label">satisfaction</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">290+ data points</span><span class="ndic-trust-label">per scan</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">13 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">Zero data stored</span><span class="ndic-trust-label">privacy first</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">VPN passthrough lets devices behind your router connect to an external VPN server — the router is not creating the VPN, it is simply not blocking it</h2>
+      <p class="ndic-quick-answer-body">
+        When a device on your home network tries to connect to a corporate or consumer VPN server, that connection has to travel through your router's NAT. Some older VPN protocols — particularly IPsec, PPTP, and L2TP — use packet types that standard NAT does not handle well, and the connection fails. VPN passthrough is the router setting that tells the NAT layer to let those specific packet types through. It is purely a compatibility feature. It does not encrypt anything, does not create any tunnel, and with modern VPN protocols like WireGuard, OpenVPN, and IKEv2, you almost certainly do not need it.
+      </p>
+    </section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+
+      <h2><span class="section-num">01</span> What Problem Does VPN Passthrough Actually Solve?</h2>
+      <p>To understand VPN passthrough you need to understand what NAT (Network Address Translation) does. Your home router assigns a private IP address to each device — 192.168.1.x range — and then translates all outgoing traffic to use its single public IP address. This is how multiple devices share one internet connection. The router keeps a translation table tracking which device sent which traffic, so it can route incoming responses back to the right device.</p>
+      <p>NAT works well for TCP and UDP traffic because those protocols include port numbers, which the router uses as a reference in its translation table. The problem arises with VPN protocols that do not use standard TCP or UDP for their data tunnels. PPTP uses GRE (Generic Routing Encapsulation) on IP protocol 47 — which carries no port number. IPsec uses ESP (Encapsulating Security Payload) on IP protocol 50 — also port-less. When NAT encounters these packets, it has no port number to track, so it either drops them or fails to route responses correctly, and the VPN connection dies before it is established.</p>
+      <p>VPN passthrough solves this by adding special handling for these packet types in the router's NAT engine. The router learns to track GRE sessions and ESP sessions differently, forwarding them correctly without needing port numbers. That is the whole mechanism — nothing more. It is a compatibility shim for protocols that predated widespread NAT deployment.</p>
+
+      <h2><span class="section-num">02</span> VPN Passthrough Is Not the Same as a VPN Router</h2>
+      <p>This is the most common confusion around VPN passthrough, and it matters enough to address directly. A VPN router runs a VPN client on the router itself, establishing an encrypted tunnel that all devices on the network use automatically — every phone, laptop, and smart TV behind the router gets VPN protection without any individual configuration. The router is an active participant in the VPN connection.</p>
+      <p>VPN passthrough is completely different. The router is a passive bystander. The VPN client is on one of the devices behind the router — your laptop, your phone — and it is trying to reach an external VPN server somewhere on the internet. The passthrough setting simply tells the router not to interfere with that device's VPN traffic as it passes through the NAT layer on the way out. The router has no VPN configuration, no encryption keys, no tunnel of its own. It is the networking equivalent of a door that opens wide enough to let something through rather than blocking it.</p>
+      <p>Enabling VPN passthrough on your router does not give you a VPN. Disabling it does not remove any VPN protection. It only determines whether specific protocol traffic can traverse the router's NAT without being dropped. For the full picture of what a VPN actually changes about your connection and what it does not, <a href="/learn/does-a-vpn-change-your-mac-address">our guide on VPN connection behaviour covers each layer specifically</a> — including the common misconceptions about what enabling or disabling a VPN actually protects.</p>
+
+      <h2><span class="section-num">03</span> The Three Passthrough Types — IPsec, PPTP, and L2TP</h2>
+      <p>Most routers with passthrough settings offer three separate toggles, one for each protocol. They are independent — you can enable any combination without the others affecting it.</p>
+
+      <h3>IPsec Passthrough</h3>
+      <p>IPsec is the most commonly needed passthrough type for corporate VPN connections. The problem is ESP (Encapsulating Security Payload, IP protocol 50), which IPsec uses for encrypted data — ESP has no port number, making standard NAT tracking impossible. IPsec passthrough adds special ESP packet handling to the NAT engine. The same issue affects IKE key exchange packets (UDP 500), though these are UDP and handled slightly differently.</p>
+      <p>Modern IPsec implementations use NAT-T (NAT Traversal, RFC 3947), which wraps ESP packets inside UDP 4500. This makes IPsec look like regular UDP traffic to the router, eliminating the NAT problem entirely without any passthrough setting. If your corporate VPN requires IPsec passthrough, it is likely using an older configuration without NAT-T enabled on the server side.</p>
+
+      <h3>PPTP Passthrough</h3>
+      <p>PPTP (Point-to-Point Tunneling Protocol) uses GRE (Generic Routing Encapsulation, IP protocol 47) for its data tunnel, which has the same NAT problem as ESP. PPTP passthrough adds GRE tracking to the NAT engine. There is an important caveat here: PPTP is cryptographically broken. Microsoft deprecated it; security researchers have demonstrated practical attacks against MS-CHAPv2, its primary authentication method. If you are using PPTP for anything beyond a non-sensitive internal network purpose, the passthrough question is secondary to the protocol choice itself.</p>
+
+      <h3>L2TP Passthrough</h3>
+      <p>L2TP (Layer 2 Tunneling Protocol) uses UDP port 1701, making it easier to handle in NAT than GRE or ESP. However, the IPsec component that provides its security (L2TP is always paired with IPsec for encryption) still involves UDP 500 and the ESP issue. L2TP passthrough is the least commonly needed of the three, since UDP-based traffic is generally handled well by modern NAT without special treatment.</p>
+
+      <!-- CTA 1 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">VPN &amp; Proxy Intelligence</span>
+        <h3>Verify Your VPN Is Connected and Routing Correctly</h3>
+        <p>IntelReap's VPN &amp; Proxy panel checks whether your connection is classified as a VPN, proxy, data centre, or residential IP — confirming your VPN is active and routing as expected, or flagging if something is leaking your real identity.</p>
+        <div class="ir-btn-row">
+          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Check My VPN Status</a>
+        </div>
+      </div>
+
+      <h2><span class="section-num">04</span> How to Enable VPN Passthrough on Your Router</h2>
+      <p>The setting is in your router's admin panel, but the exact location varies significantly by manufacturer. The general path is consistent across most brands.</p>
+
+      <div class="ir-browser-block">
+        <span class="ir-browser-label">General Router — VPN Passthrough Steps</span>
+        <ol class="ir-browser-steps">
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Open a browser on a device connected to your network and type <strong>192.168.1.1</strong> or <strong>192.168.0.1</strong> in the address bar — one of these is almost always the default gateway for your router</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Log in with your router's admin credentials — often printed on the label on the back or bottom of the device</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">Navigate to <strong>Advanced</strong>, <strong>Security</strong>, or <strong>VPN</strong> — the label depends on your manufacturer. On ASUS routers it is under Advanced Settings → VPN. On TP-Link it is under Advanced → VPN Passthrough. On Netgear it is under Advanced → Advanced Setup → WAN Setup</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">4</div><div class="ir-browser-step-text">Find the VPN Passthrough section and enable the toggles for <strong>IPsec Passthrough</strong>, <strong>PPTP Passthrough</strong>, and <strong>L2TP Passthrough</strong> as needed for your specific VPN protocol</div></li>
+          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">5</div><div class="ir-browser-step-text">Save the settings — most routers apply them immediately without a restart. Test your VPN connection from the client device</div></li>
+        </ol>
+      </div>
+      <div class="ir-callout"><p><strong>If you cannot find the passthrough settings:</strong> Many newer routers enable all passthrough types by default and do not display the toggle unless something is explicitly disabled. If your router's admin panel has no VPN passthrough section, the functionality is almost certainly already enabled and not the source of your connection problem.</p></div>
+
+      <h2><span class="section-num">05</span> Do You Actually Need VPN Passthrough in 2026?</h2>
+      <p>For the vast majority of users — no. Here is why the answer has shifted so decisively in the last decade.</p>
+      <p>Consumer VPN services — NordVPN, ExpressVPN, Mullvad, ProtonVPN, and their equivalents — use WireGuard, OpenVPN, or IKEv2 as their primary protocols. WireGuard is UDP-based and traverses NAT natively. OpenVPN on UDP or TCP uses standard port-based traffic that NAT handles without any special treatment. IKEv2 includes NAT-T by default, wrapping ESP in UDP 4500. None of these require passthrough settings on the router. You install the VPN app, connect, and it works regardless of what your router's VPN passthrough toggles are set to.</p>
+      <p>The scenario where passthrough remains relevant is connecting to a corporate VPN that uses legacy IPsec without NAT-T — a configuration that is increasingly uncommon as organisations upgrade their VPN infrastructure. If you are trying to connect to a company network and the VPN client is failing, and you have already ruled out firewall rules, client configuration, and server availability, then checking passthrough is a reasonable next diagnostic step. It is rarely the answer, but it is a quick check. If you want to see exactly how your VPN connection is classified and whether it is routing as expected, <a href="/intelligence/vpn-proxy">IntelReap's VPN detection panel</a> shows your connection type and ASN in real time.</p>
+
+      <h2><span class="section-num">06</span> VPN Passthrough Protocol Comparison</h2>
+      <div class="ir-table-wrap" role="region" aria-label="VPN passthrough protocol comparison table" tabindex="0">
+        <table class="ir-table">
+          <caption>IPsec, PPTP, and L2TP passthrough compared across NAT problem, NAT-T support, security, and 2026 relevance</caption>
+          <thead>
+            <tr>
+              <th scope="col">Protocol</th>
+              <th scope="col">Why NAT Has a Problem</th>
+              <th scope="col">Modern NAT-T Available?</th>
+              <th scope="col">Security</th>
+              <th scope="col">Still Relevant in 2026?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>IPsec</strong></td>
+              <td>ESP uses IP protocol 50 — no port number for NAT to track</td>
+              <td class="ir-check">&#10003; Yes — UDP 4500 encapsulation via RFC 3947</td>
+              <td class="ir-check">Strong — AES-256, SHA-2</td>
+              <td class="ir-neutral">Passthrough mostly replaced by NAT-T</td>
+            </tr>
+            <tr>
+              <td><strong>PPTP</strong></td>
+              <td>GRE uses IP protocol 47 — no port number for NAT to track</td>
+              <td class="ir-cross">&#10007; No — no modern traversal solution</td>
+              <td class="ir-cross">Weak — MS-CHAPv2 broken, deprecated</td>
+              <td class="ir-cross">Avoid — protocol should be retired</td>
+            </tr>
+            <tr>
+              <td><strong>L2TP/IPsec</strong></td>
+              <td>IPsec component has ESP issue; L2TP itself is UDP 1701</td>
+              <td class="ir-check">&#10003; Yes — IPsec component uses NAT-T</td>
+              <td class="ir-neutral">Adequate — depends on IPsec config</td>
+              <td class="ir-neutral">Rarely needed — legacy corporate VPNs</td>
+            </tr>
+            <tr>
+              <td><strong>OpenVPN</strong></td>
+              <td>No NAT issue — uses standard UDP or TCP with port numbers</td>
+              <td class="ir-neutral">N/A — no passthrough needed</td>
+              <td class="ir-check">Strong — TLS, AES-256-GCM</td>
+              <td class="ir-check">No passthrough needed</td>
+            </tr>
+            <tr>
+              <td><strong>WireGuard</strong></td>
+              <td>No NAT issue — uses UDP with port numbers</td>
+              <td class="ir-neutral">N/A — no passthrough needed</td>
+              <td class="ir-check">Strong — ChaCha20, Poly1305</td>
+              <td class="ir-check">No passthrough needed</td>
+            </tr>
+            <tr>
+              <td><strong>IKEv2</strong></td>
+              <td>ESP issue resolved by built-in NAT-T on both client and server</td>
+              <td class="ir-check">&#10003; Yes — built into the protocol</td>
+              <td class="ir-check">Strong — AES-256, SHA-2</td>
+              <td class="ir-check">No passthrough needed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2><span class="section-num">07</span> Troubleshooting VPN Connection Failures — Where Passthrough Fits</h2>
+      <p>VPN connection failures have many causes. Passthrough is one of the less common ones, but it is worth including in a systematic diagnosis. Work through this order before changing router settings.</p>
+      <p>First, confirm the VPN server is reachable and accepting connections — try connecting from a different network (a mobile hotspot) to isolate whether the problem is network-specific or universal. If it connects on the hotspot but fails on your home network, the issue is something between your router and the VPN server. Second, check your router's firewall rules — some routers block outbound UDP 500, UDP 4500, or specific IP protocols by default. Third, if the VPN client gives a specific error code, look that up in the VPN provider's documentation before touching router settings. Only after ruling out these causes does the passthrough setting become relevant to investigate.</p>
+      <p>The VPN passthrough setting becoming the actual cause of a failure typically presents as: connection attempts time out without any error from the VPN server, the VPN client connects but immediately disconnects, or the connection appears to establish but no traffic flows. These symptoms are consistent with NAT mangling the packets rather than a server-side rejection. Your security posture also has independent privacy considerations even when the VPN connects successfully — <a href="/learn/webrtc-leak-test-and-shield">WebRTC leaks can expose your real IP even through an active VPN tunnel</a>, which is worth checking alongside any VPN troubleshooting.</p>
+
+      <!-- CTA 2 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Security Intelligence</span>
+        <h3>Check Your Full Security and Privacy Posture</h3>
+        <p>IntelReap's Security panel analyses your connection for VPN leaks, WebRTC exposure, DNS leak risks, and overall security posture — giving you a complete picture of what your VPN is and is not protecting.</p>
+        <div class="ir-btn-row">
+          <a href="/intelligence/security" class="ir-btn-secondary">Check My Security Score &#8594;</a>
+        </div>
+      </div>
+
+      <!-- LOGIC + METHODOLOGY -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>VPN passthrough is a solution to a problem that modern protocols have solved architecturally. Understanding why it existed makes it obvious why most users will never need to touch it.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>This guide draws on IETF IPsec, PPTP, and L2TP specifications, RFC 3947 NAT-T documentation, router manufacturer documentation for ASUS, TP-Link, Netgear, and Linksys, and live VPN protocol testing across NAT environments.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc3947" target="_blank" rel="noopener noreferrer">RFC 3947 — Negotiation of NAT-Traversal in the IKE Protocol</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc2637" target="_blank" rel="noopener noreferrer">RFC 2637 — Point-to-Point Tunneling Protocol (PPTP)</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc3193" target="_blank" rel="noopener noreferrer">RFC 3193 — Securing L2TP using IPsec</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc4301" target="_blank" rel="noopener noreferrer">RFC 4301 — Security Architecture for the Internet Protocol (IPsec)</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link"><a href="https://www.wireguard.com/papers/wireguard.pdf" target="_blank" rel="noopener noreferrer">WireGuard — Technical Whitepaper: Simple and Fast VPN Tunnelling</a></span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Twelve questions on VPN passthrough — what it is, when you need it, how to enable it, and how each protocol variant differs.</p>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>What is VPN passthrough?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">VPN passthrough is a router feature that allows VPN client connections from devices on your local network to pass through NAT to an external VPN server. The router does not create a VPN or encrypt anything — it simply handles specific VPN protocol packet types (GRE, ESP) that standard NAT would otherwise drop or mangle. The three types are IPsec passthrough, PPTP passthrough, and L2TP passthrough.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>What is VPN passthrough on a router?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">It is a setting in the router's admin panel — found under Advanced, Security, or VPN sections — that enables specific VPN protocols to traverse NAT without interference. When enabled, the router correctly forwards GRE packets (PPTP), ESP packets (IPsec), and the associated key exchange traffic through to external VPN servers. It is a receive-side configuration: the router is not creating the VPN, it is allowing client-initiated VPN traffic to flow through it unimpeded.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>What is the difference between VPN passthrough and a VPN router?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">VPN passthrough allows devices behind the router to connect to an external VPN server through the router's NAT — the router itself is passive and uninvolved in the VPN. A VPN router runs the VPN client on the router hardware, creating an encrypted tunnel for all devices on the network without individual setup. Passthrough is about letting traffic through; a VPN router is about creating the tunnel itself. They are completely different functions.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>Do I need VPN passthrough?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Probably not if you use a modern consumer VPN service. WireGuard, OpenVPN, and IKEv2 all traverse NAT natively without requiring passthrough settings. VPN passthrough is relevant when connecting to corporate VPNs using older IPsec configurations without NAT-T, or PPTP/L2TP-based connections. If your VPN fails to connect, checking passthrough is a valid diagnostic step — but it is rarely the actual cause.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>How do I enable VPN passthrough on my router?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">Log into your router admin panel at 192.168.1.1 or 192.168.0.1. Navigate to Advanced, Security, or VPN settings. Find VPN Passthrough and enable the toggles for IPsec, PPTP, and L2TP as needed. On ASUS: Advanced Settings &#8594; VPN. On TP-Link: Advanced &#8594; VPN Passthrough. On Netgear: Advanced &#8594; Advanced Setup &#8594; WAN Setup. If you cannot find the section, passthrough is likely enabled by default on your router.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>What is IPsec passthrough?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">IPsec passthrough enables the router's NAT to correctly handle ESP packets (IP protocol 50) and IKE key exchange (UDP 500) from IPsec VPN clients on the local network. ESP carries no port number, making standard NAT tracking impossible. Passthrough adds special ESP handling. Modern IPsec uses NAT-T (RFC 3947), which wraps ESP inside UDP 4500 — eliminating the need for passthrough entirely on both sides of the connection.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>What is PPTP passthrough?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">PPTP passthrough enables GRE packets (IP protocol 47), which PPTP uses for its data tunnel, to traverse NAT correctly. GRE has no port number, causing standard NAT to drop or mangle PPTP sessions. A critical note: PPTP itself is cryptographically broken — MS-CHAPv2, its primary authentication method, has been compromised. PPTP passthrough is relevant only for legacy networks where PPTP cannot yet be replaced with a modern protocol.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>What is L2TP passthrough?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">L2TP passthrough enables L2TP/IPsec VPN traffic — UDP 1701 for L2TP and UDP 500/4500 for the IPsec component — to traverse NAT from a client device to an L2TP/IPsec server. L2TP uses UDP, so the NAT issue is less severe than with PPTP or pure IPsec. Some routers still require the setting to be explicitly enabled for reliable L2TP/IPsec operation. L2TP itself provides no encryption — it must always be paired with IPsec.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>Does VPN passthrough affect performance?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">No meaningful impact. VPN passthrough is a routing configuration change — it tells the NAT engine how to handle specific packet types. It adds no processing overhead and does not throttle connections. The VPN encryption and decryption still happen on the client device and the VPN server, not on the router. The router's role is simply to forward packets correctly rather than drop them.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10"><span>Why do modern VPNs not need passthrough?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">Modern VPN protocols solve NAT traversal at the protocol level. WireGuard is UDP-based and traverses NAT natively. OpenVPN uses standard TCP or UDP ports. IKEv2 includes NAT-T by default, wrapping IPsec inside UDP 4500. SSL/TLS VPNs run on port 443 and traverse NAT identically to normal HTTPS. VPN passthrough was a workaround for protocol limitations that modern protocols have eliminated by design.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11"><span>Can I have multiple VPN passthroughs active simultaneously?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">Yes — IPsec, PPTP, and L2TP passthrough can all be enabled simultaneously without conflict. A limitation exists on older routers when multiple local devices simultaneously use the same passthrough protocol to different servers: since GRE and ESP carry no port numbers, the router may struggle to track multiple parallel sessions. This is another reason modern NAT-T-based protocols are preferred — they use UDP port numbers that enable proper multi-session tracking.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12"><span>Is VPN passthrough a security risk?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">Enabling VPN passthrough is not inherently a security risk. It allows specific VPN traffic to pass through NAT, but the VPN protocols remain encrypted end-to-end — the router does not decrypt or inspect the traffic. The security considerations are those of the underlying protocol: PPTP has documented cryptographic weaknesses and should be avoided; IPsec and L2TP/IPsec are substantially more secure when properly configured with strong cipher suites.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">VPN Connection Still Not Working?</h2>
+          <p class="ir-contact-sub">Describe your router model, VPN protocol, and what happens when you try to connect — we will help identify the cause. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name"></div>
+              <div class="form-group"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+              <div class="form-group"><label for="cf-message">Describe your VPN connection issue</label><textarea id="cf-message" name="message" placeholder="Router model? VPN protocol? What error or behaviour are you seeing?" required></textarea></div>
+              <button type="submit" class="form-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+  (function(){'use strict';
+    document.querySelectorAll('.ndic-faq-question').forEach(function(btn){btn.addEventListener('click',function(){const item=btn.closest('.ndic-faq-item'),wasOpen=item.classList.contains('ndic-faq-item--open');document.querySelectorAll('.ndic-faq-item--open').forEach(function(i){i.classList.remove('ndic-faq-item--open');i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');});if(!wasOpen){item.classList.add('ndic-faq-item--open');btn.setAttribute('aria-expanded','true');}});});
+    const bar=document.getElementById('scroll-progress-bar');if(bar){window.addEventListener('scroll',function(){const s=window.scrollY||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(s/h)*100:0).toFixed(2)+'%';},{passive:true});}
+    (()=>{const now=new Date(),dow=now.getDay(),mon=new Date(now.getFullYear(),now.getMonth(),now.getDate()+(dow===0?-6:1-dow)),iso=mon.toISOString().split('T')[0];document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>{if(s.textContent.includes('"dateModified"'))s.textContent=s.textContent.replace(/"dateModified"\s*:\s*"[^"]*"/g,`"dateModified":"${iso}"`);});})();
+    (()=>{const badge=document.getElementById('freshness-badge');if(!badge)return;const d=new Date(),mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],txt=`Last updated ${mo[d.getMonth()]}\u00a0${d.getDate()},\u00a0${d.getFullYear()}`;badge.textContent=txt;badge.setAttribute('aria-label',txt);})();
+    (()=>{const m=new Date().getMonth(),banners=['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'],labels=['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];const el=document.getElementById('seasonal-banner');if(el){el.textContent=banners[m];el.style.cssText='text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;';}const lbl=document.getElementById('seasonal-label');if(lbl)lbl.textContent=labels[m];})();
+    (()=>{const v=['Check My VPN Status','Test My VPN Connection','Verify My VPN Activity','Analyse My VPN Route','Inspect My Connection','Scan My VPN Detection'];document.querySelectorAll('.cta-rotate').forEach(el=>{el.textContent=v[Math.floor(Math.random()*v.length)];});})();
+    (()=>{const rawUrl=window.location.href,encUrl=encodeURIComponent(rawUrl),encTitle=encodeURIComponent(document.title);const platforms=[{n:'WhatsApp',u:`https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}`},{n:'Facebook',u:`https://www.facebook.com/sharer/sharer.php?u=${encUrl}`},{n:'Twitter/X',u:`https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}`},{n:'LinkedIn',u:`https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`},{n:'Reddit',u:`https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`},{n:'Quora',u:`https://www.quora.com/search?q=${encTitle}`},{n:'Medium',u:`https://medium.com/new-story?url=${encUrl}`},{n:'Telegram',u:`https://t.me/share/url?url=${encUrl}&text=${encTitle}`},{n:'Pinterest',u:`https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}`},{n:'Discord',u:'https://discord.com/channels/@me'},{n:'Snapchat',u:`https://www.snapchat.com/share?url=${encUrl}`},{n:'Vimeo',u:'https://vimeo.com'},{n:'TikTok',u:'https://www.tiktok.com'},{n:'Instagram',u:'https://www.instagram.com'},{n:'Email',u:`mailto:?subject=${encTitle}&body=${encUrl}`},{n:'Copy Link',u:null}];
+    const container=document.getElementById('share-pills-container');if(!container)return;
+    platforms.forEach(p=>{let el;if(p.u===null){el=document.createElement('button');el.type='button';el.textContent='Copy Link';el.setAttribute('aria-label','Copy page URL to clipboard');el.addEventListener('click',()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(rawUrl).then(()=>{el.textContent='\u2713 Copied!';setTimeout(()=>{el.textContent='Copy Link';},2400);showToast('Link copied to clipboard');}).catch(()=>legacyCopy(rawUrl,el));}else legacyCopy(rawUrl,el);});}else{el=document.createElement('a');el.href=p.u;el.target='_blank';el.rel='noopener noreferrer';el.textContent=p.n;el.setAttribute('aria-label',`Share on ${p.n}`);}el.className='ir-share-pill';container.appendChild(el);});})();
+    function legacyCopy(text,btn){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');if(btn){btn.textContent='\u2713 Copied!';setTimeout(()=>{btn.textContent='Copy Link';},2400);}showToast('Link copied to clipboard');}catch(e){showToast('Copy failed \u2014 please copy the URL manually');}document.body.removeChild(ta);}
+    function showToast(msg){const tc=document.getElementById('toast-container');if(!tc)return;const t=document.createElement('div');t.textContent=msg;t.style.cssText='display:inline-block;background:var(--color-accent,#0ea5e9);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';tc.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>{t.style.opacity='1';}));setTimeout(()=>{t.style.opacity='0';setTimeout(()=>{if(t.parentNode)t.parentNode.removeChild(t);},350);},2700);}
+  }());
+  </script>
+  <script>
+    function handleContactForm(e){e.preventDefault();const myForm=e.target,formData=new FormData(myForm);fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(formData).toString()}).then(()=>{alert("Thank you! Your request has been transmitted.");myForm.reset();}).catch((error)=>{alert("Oops! There was a problem submitting your form.");console.error("Form submission error:",error);});}
+  </script>
+</body>
+</html>
