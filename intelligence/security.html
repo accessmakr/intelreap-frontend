@@ -1,34 +1,338 @@
-<!-- /intelligence/security.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security & Privacy Panel | IntelReap</title>
-    <meta name="description" content="Module deploying: HTTPS verification, WebRTC exposure, CSP, multi-server DNS leak test, AudioContext tracking.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/security">
-    <meta property="og:title" content="Security & Privacy Panel | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/security">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ndic_theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Security & Privacy Panel | IntelReap</title>
+  <meta name="description" content="Live security posture — HTTPS, WebRTC exposure, permissions, and your security score explained parameter by parameter.">
+  <meta name="keywords" content="HTTPS status, WebRTC leak test, secure context, permissions, Do Not Track, third-party cookies, security score, CSP">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/intelligence/security">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/security">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/security">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Security & Privacy Panel — IntelReap">
+  <meta property="og:description" content="Live security posture — HTTPS, WebRTC exposure, permissions, and your security score explained parameter by parameter.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/security">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Security & Privacy Panel — IntelReap">
+  <meta name="twitter:description" content="Live security posture — HTTPS, WebRTC exposure, permissions, and your security score explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+  <meta name="geo.region" content="GB">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com"},{"@type":"TechArticle","headline":"Security & Privacy Panel","url":"https://intelreap.com/intelligence/security","datePublished":"2026-06-22","dateModified":"2026-06-27","author":{"@id":"https://intelreap.com/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Intelligence Center","item":"https://intelreap.com/index.html"},{"@type":"ListItem","position":3,"name":"Security & Privacy Panel","item":"https://intelreap.com/intelligence/security"}]}]}</script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Security & Privacy Panel</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for vulnerability scanners:<br><strong class="text-slate-200">HTTPS, WebRTC exposure, CSP, multi-server DNS leak test, AudioContext tracking</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Security Intelligence Panel on Homepage</a>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+  <div id="seasonal-banner" aria-live="polite"></div>
+  <main>
+    <div class="ndic-deepdive-page">
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Security & Privacy Panel</span>
+      </nav>
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 7</div>
+        <h1 class="ndic-deepdive-title">Security & Privacy Panel</h1>
+        <p class="ndic-deepdive-subtitle">How Safe Are You Right Now?</p>
+        <p class="ndic-deepdive-intro">HTTPS status, WebRTC leaks, permissions, storage access, and your live security score — scanned the moment this page loads.</p>
+      </div>
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-7">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Security &amp; Privacy Panel</span>
+                <span class="ndic-canvas-subheading">How Safe Are You Right Now?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c7-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <span class="ndic-health-badge" id="c7-risk-level">—</span>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">HTTPS Status</span><span class="ndic-param-value" id="c7-https-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Secure Context</span><span class="ndic-param-value" id="c7-secure-context">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Mixed Content</span><span class="ndic-param-value" id="c7-mixed-content">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC Exposure</span><span class="ndic-param-value" id="c7-webrtc-exposure">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Local IP Leak</span><span class="ndic-param-value" id="c7-local-ip">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC IP Match</span><span class="ndic-param-value" id="c7-webrtc-ip-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Cookie Access</span><span class="ndic-param-value" id="c7-cookie-access">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">localStorage Access</span><span class="ndic-param-value" id="c7-localstorage-access">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">sessionStorage Access</span><span class="ndic-param-value" id="c7-sessionstorage-access">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">IndexedDB Access</span><span class="ndic-param-value" id="c7-indexeddb-access">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Camera Permission</span><span class="ndic-param-value" id="c7-camera-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Microphone Permission</span><span class="ndic-param-value" id="c7-microphone-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Location Permission</span><span class="ndic-param-value" id="c7-location-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Notification Permission</span><span class="ndic-param-value" id="c7-notification-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Clipboard Read</span><span class="ndic-param-value" id="c7-clipboard-read">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Clipboard Write</span><span class="ndic-param-value" id="c7-clipboard-write">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Do Not Track</span><span class="ndic-param-value" id="c7-do-not-track">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Third-Party Cookies</span><span class="ndic-param-value" id="c7-third-party-cookies">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Referrer Policy</span><span class="ndic-param-value" id="c7-referrer-policy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Content Security Policy</span><span class="ndic-param-value" id="c7-csp-presence">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Fingerprint Surfaces</span><span class="ndic-param-value" id="c7-fingerprint-surfaces">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Security Flags</span><span class="ndic-param-value" id="c7-security-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Security Warnings</span><span class="ndic-param-value" id="c7-security-warnings">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Security Score</span><span class="ndic-param-value" id="c7-security-score">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas7-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas7-ai-summary">Analyzing your security posture...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c7-deep-dive-link">Deep dive into your security and privacy analysis</a>
+            </div>
+          </div>
+
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each security check actually tests, and why the result matters.</p>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Connection Security</h3>
+          <div class="ndic-explain-item">
+            <h4>HTTPS Status &amp; Secure Context</h4>
+            <p>HTTPS confirms your connection to this site is encrypted in transit. Secure context is a stricter browser-level check — it confirms the browser will allow sensitive APIs (camera, microphone, geolocation, WebCrypto) to run. A page can technically be served over HTTPS but still fail the secure context check in edge cases involving mixed content or unusual origins.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Mixed Content</h4>
+            <p>Mixed content means an HTTPS page is loading resources (scripts, images, iframes) over HTTP. Even one HTTP resource weakens the security of an otherwise encrypted page, since that resource can be intercepted and modified in transit. Modern browsers block active mixed content (scripts and iframes) by default but may allow passive content (images) with a warning.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">WebRTC Exposure</h3>
+          <div class="ndic-explain-item">
+            <h4>WebRTC Exposure, Local IP Leak &amp; WebRTC IP Match</h4>
+            <p>WebRTC is a browser API for peer-to-peer communication. It can reveal your real local network IP address (typically 192.168.x.x or 10.x.x.x) even when accessed over a VPN, because it communicates directly rather than through the VPN tunnel. Local IP leak confirms whether your private network address is visible. WebRTC IP match checks whether the public IP WebRTC reports matches what the rest of your connection shows — a mismatch is a VPN leak.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Storage Access</h3>
+          <div class="ndic-explain-item">
+            <h4>Cookie, localStorage, sessionStorage &amp; IndexedDB Access</h4>
+            <p>These four confirm whether the browser will actually write to each storage mechanism. Users in private browsing, or with aggressive privacy settings, may have some or all of these blocked. Sites that rely on any of these for session management, preferences, or offline capability will behave differently when they're unavailable — knowing which are accessible explains unexpected behavior on some sites.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Permissions</h3>
+          <div class="ndic-explain-item">
+            <h4>Camera, Microphone, Location &amp; Notification Permission</h4>
+            <p>These report the current permission state — granted, denied, or prompt — for each sensitive API. The states shown here don't mean IntelReap has requested these permissions; it uses the Permissions API to read whatever state was previously set by user decisions on this site or through browser-level defaults, without triggering any new prompts.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Clipboard Read &amp; Write</h4>
+            <p>Clipboard access requires explicit user permission and is gated by a prompt in most browsers. Clipboard read permission is particularly sensitive since it would allow a page to read whatever you've copied system-wide. These are checked via the Permissions API — IntelReap never actually accesses your clipboard content.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Privacy Signals</h3>
+          <div class="ndic-explain-item">
+            <h4>Do Not Track, Third-Party Cookies &amp; Referrer Policy</h4>
+            <p>Do Not Track is a voluntary browser signal requesting sites not track browsing behaviour — most sites ignore it, but its presence confirms the user has opted in. Third-party cookie access tells you whether cross-site cookies can be set in your browser — increasingly blocked by default. Referrer policy reports what navigation origin information this page's server declares it will share with subsequent requests.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Content Security Policy, Fingerprint Surfaces, Security Flags &amp; Warnings</h4>
+            <p>CSP presence confirms whether this page is served with a Content Security Policy header, which restricts what resources can load and helps prevent XSS attacks. Fingerprint surfaces is a count of how many browser APIs that are commonly exploited for fingerprinting are accessible on your browser. Security flags and warnings are the specific issues found during the scan that contributed to lowering your security score.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">What Your Security Score Actually Reflects</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>It's about your browser's current configuration, not about you</h4>
+          <p>A low security score doesn't mean your device is compromised or that you're under attack. It means your current browser configuration exposes more surfaces than a hardened configuration would — an open WebRTC local IP, broad permissions previously granted, or storage fully accessible. Most of these are adjustable through browser settings or privacy-focused extensions.</p>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>The most impactful single change most users can make</h4>
+          <p>If only one security improvement were worth making, disabling WebRTC in browsers where it isn't needed for active use has the highest return for the effort. It eliminates the local IP leak entirely and removes the VPN bypass risk. Most desktop browsers expose a setting or extension option to do this without disabling other functionality.</p>
+        </div>
+      </section>
+
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Security &amp; Privacy — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is a WebRTC IP leak?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">WebRTC communicates directly between browsers rather than through web servers, which means it can expose your real IP address even when you're connected through a VPN. A local IP leak shows your private network address; a public IP mismatch means WebRTC is revealing your real internet IP instead of the VPN's exit IP.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Does Do Not Track actually stop tracking?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">No. Do Not Track is a voluntary signal — sending it asks sites to respect your preference, but there is no technical enforcement and the vast majority of sites ignore it. Its main practical effect is adding a small signal to your browser's fingerprint, since the population of users who send DNT is a subset distinguishable from those who don't.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What does a high fingerprint surface count mean?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">A high fingerprint surface count means more of the browser APIs commonly used to identify devices are accessible in your browser. More surfaces don't automatically mean you're more tracked — they mean more data is theoretically available to any site that chooses to collect it.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Should I block all permissions for better privacy?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Blocking permissions improves privacy but can break legitimate functionality — video calls need camera and microphone, navigation apps need location. The most practical approach is granting permissions only when prompted by a site you actively need them for, rather than pre-granting them globally.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link">W3C Permissions API specification</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link">W3C WebRTC specification and IP exposure research</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">03</span><span class="ndic-citation-link">W3C Content Security Policy Level 3 specification</span></div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+    </div>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+  <script defer src="../assets/js/engines/core.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+  <script>
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');
+        });
+        if (!isOpen) { item.classList.add('ndic-faq-item--open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+  </script>
 </body>
 </html>
