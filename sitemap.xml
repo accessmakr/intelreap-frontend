@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/live-network</loc>
-    <lastmod>2026-06-24T17:39:03+01:00</lastmod>
+    <lastmod>2026-07-02T06:28:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -158,13 +158,19 @@
   </url>
   <url>
     <loc>https://intelreap.com/learn/what-is-a-vpn-concentrator</loc>
-    <lastmod>2026-07-01T13:20:26+01:00</lastmod>
+    <lastmod>2026-07-02T07:58:41+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://intelreap.com/learn/what-is-device-fingerprinting</loc>
     <lastmod>2026-06-29T22:40:45+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intelreap.com/learn/what-is-vpn-passthrough</loc>
+    <lastmod>2026-07-02T08:13:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
