@@ -1,34 +1,318 @@
-<!-- /intelligence/graphics.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphics Engine Panel | IntelReap</title>
-    <meta name="description" content="Module deploying: GPU vendor, WebGL, WebGPU, shader precision, anisotropic filtering.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/graphics">
-    <meta property="og:title" content="Graphics Engine Panel | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/graphics">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('ndic_theme');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Graphics Engine Panel | IntelReap</title>
+  <meta name="description" content="Live GPU, WebGL, WebGPU, and graphics tier analysis — your rendering capability explained parameter by parameter.">
+  <meta name="keywords" content="GPU detection, WebGL, WebGPU, shader precision, hardware acceleration, graphics tier, GLSL version, texture size">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/intelligence/graphics">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/graphics">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/graphics">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Graphics Engine Panel — IntelReap">
+  <meta property="og:description" content="Live GPU, WebGL, WebGPU, and graphics tier analysis — your rendering capability explained parameter by parameter.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/graphics">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Graphics Engine Panel — IntelReap">
+  <meta name="twitter:description" content="Live GPU, WebGL, WebGPU, and graphics tier analysis — your rendering capability explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+  <meta name="geo.region" content="GB">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com"},{"@type":"TechArticle","headline":"Graphics Engine Panel","url":"https://intelreap.com/intelligence/graphics","datePublished":"2026-06-22","dateModified":"2026-06-27","author":{"@id":"https://intelreap.com/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Intelligence Center","item":"https://intelreap.com/index.html"},{"@type":"ListItem","position":3,"name":"Graphics Engine Panel","item":"https://intelreap.com/intelligence/graphics"}]}]}</script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Graphics Engine Panel</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for graphics telemetry parameters:<br><strong class="text-slate-200">GPU vendor, WebGL, WebGPU, shader precision, anisotropic filtering</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Graphics Engine Panel on Homepage</a>
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <span>Search</span>
+        <span class="trigger-search-kbd">⌘K</span>
+      </button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+  <div id="seasonal-banner" aria-live="polite"></div>
+  <main>
+    <div class="ndic-deepdive-page">
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a>
+        <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Graphics Engine Panel</span>
+      </nav>
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 6</div>
+        <h1 class="ndic-deepdive-title">Graphics Engine Panel</h1>
+        <p class="ndic-deepdive-subtitle">How Powerful Is Your Device?</p>
+        <p class="ndic-deepdive-intro">GPU vendor, WebGL support, shader precision, and hardware acceleration — detected live the moment this page loads.</p>
+      </div>
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-6">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Graphics Engine Panel</span>
+                <span class="ndic-canvas-subheading">How Powerful Is Your Device?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c6-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <span class="ndic-health-badge" id="c6-graphics-tier">—</span>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">GPU Vendor</span><span class="ndic-param-value" id="c6-gpu-vendor">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GPU Renderer</span><span class="ndic-param-value" id="c6-gpu-renderer">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebGL Version</span><span class="ndic-param-value" id="c6-webgl-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebGL Support Level</span><span class="ndic-param-value" id="c6-webgl-support-level">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Hardware Acceleration</span><span class="ndic-param-value" id="c6-hardware-acceleration">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Max Texture Size</span><span class="ndic-param-value" id="c6-max-texture-size">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Max Viewport Size</span><span class="ndic-param-value" id="c6-max-viewport-size">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Shader Precision</span><span class="ndic-param-value" id="c6-shader-precision">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebGL Extensions Count</span><span class="ndic-param-value" id="c6-extensions-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">GLSL Version</span><span class="ndic-param-value" id="c6-glsl-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Antialiasing</span><span class="ndic-param-value" id="c6-antialiasing">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Depth Buffer Bits</span><span class="ndic-param-value" id="c6-depth-buffer-bits">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Stencil Buffer Bits</span><span class="ndic-param-value" id="c6-stencil-buffer-bits">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Max Anisotropy</span><span class="ndic-param-value" id="c6-max-anisotropy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebGPU Supported</span><span class="ndic-param-value" id="c6-webgpu-supported">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebGPU Vendor</span><span class="ndic-param-value" id="c6-webgpu-vendor">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">WebGPU Architecture</span><span class="ndic-param-value" id="c6-webgpu-architecture">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Anisotropic Filtering</span><span class="ndic-param-value" id="c6-has-anisotropy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Float Textures</span><span class="ndic-param-value" id="c6-has-float-textures">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Depth Textures</span><span class="ndic-param-value" id="c6-has-depth-textures">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Multiple Draw Buffers</span><span class="ndic-param-value" id="c6-has-draw-buffers">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Instanced Rendering</span><span class="ndic-param-value" id="c6-has-instancing">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Compressed Textures</span><span class="ndic-param-value" id="c6-has-compressed-textures">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Rendering Score</span><span class="ndic-param-value" id="c6-rendering-score">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas6-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas6-ai-summary">Analyzing your graphics capabilities...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c6-deep-dive-link">Deep dive into your graphics engine analysis</a>
+            </div>
+          </div>
+
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each graphics parameter reveals about your device's rendering capability.</p>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">GPU Identity</h3>
+          <div class="ndic-explain-item">
+            <h4>GPU Vendor &amp; GPU Renderer</h4>
+            <p>Detected via WebGL's <code>WEBGL_debug_renderer_info</code> extension. Vendor identifies the GPU manufacturer — NVIDIA, AMD, Apple, ARM, Qualcomm, or Intel. Renderer is the specific GPU model string. Privacy note: some browsers (Firefox with resistFingerprinting, Tor Browser) return generic strings here deliberately — "Google Inc." and "ANGLE" instead of real hardware names — to reduce fingerprint surface. Those browsers correctly show those generic values rather than real hardware.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>WebGL Version &amp; Support Level</h4>
+            <p>WebGL 2.0 is the current standard and unlocks instanced rendering, multiple render targets, and improved shader support. WebGL 1.0 is the legacy version. Support level summarises the tier — WebGL 2 full support, WebGL 1 only, or not supported at all, which only applies to very old devices or browsers with WebGL disabled.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>GLSL Version &amp; WebGPU</h4>
+            <p>GLSL version identifies the shading language version your GPU's driver supports. WebGPU is the next-generation graphics API succeeding WebGL, offering lower CPU overhead and compute shader support. It's currently available in Chrome and Edge on modern hardware; Safari has partial support; Firefox is still implementing it.</p>
+          </div>
+        </div>
+
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Rendering Capabilities</h3>
+          <div class="ndic-explain-item">
+            <h4>Hardware Acceleration, Antialiasing &amp; Shader Precision</h4>
+            <p>Hardware acceleration confirms rendering is GPU-driven rather than software fallback. Antialiasing (MSAA) tells you whether the GPU is performing multi-sample anti-aliasing by default. Shader precision indicates whether the GPU supports full 32-bit float precision in fragment shaders — lower precision on mobile hardware causes subtle rendering differences that some WebGL applications can use as a fingerprinting signal.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Max Texture Size &amp; Max Viewport Size</h4>
+            <p>Max texture size is the largest single texture dimension the GPU supports — higher values indicate more powerful hardware. Consumer GPUs typically support 8192 or 16384; mobile hardware often maxes at 4096. Max viewport is the largest framebuffer the GPU can render into simultaneously.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Depth Buffer Bits, Stencil Buffer Bits &amp; Max Anisotropy</h4>
+            <p>Depth buffer bits controls the precision of depth testing in 3D scenes. Stencil buffer bits are used for masking and special rendering effects. Max anisotropy is the maximum level of anisotropic texture filtering supported — higher values improve texture clarity at oblique viewing angles. These together characterise the GPU's 3D rendering precision ceiling.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Extension Count &amp; Key Extensions</h4>
+            <p>WebGL extensions add capabilities beyond the core specification. The total count, combined with which specific extensions are present, is a fingerprinting signal — the exact combination varies significantly across GPU vendors, driver versions, and operating systems. Float textures, depth textures, draw buffers, instancing, and compressed textures are the most diagnostic extensions shown here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">Why Your GPU Is One of the Most Identifying Things About Your Browser</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>GPU strings are highly unique and hard to spoof without breaking rendering</h4>
+          <p>The WebGL renderer string is one of the most identifying pieces of data a browser can expose. Unlike a screen resolution or timezone, which millions of devices share, the specific combination of GPU vendor, renderer string, GLSL version, and extension set is often unique to a narrow set of hardware configurations. Spoofing it requires either blocking WebGL entirely or substituting a generic string — both of which are themselves distinctive signals.</p>
+        </div>
+      </section>
+
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Graphics Engine — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Why does my GPU show as "Google Inc." instead of my real GPU?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Some browsers deliberately return generic vendor and renderer strings to reduce fingerprint surface. Firefox with resistFingerprinting enabled and Tor Browser both do this. Seeing a generic string confirms those privacy protections are working as intended.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>What is WebGPU and is it available now?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">WebGPU is the modern successor to WebGL, offering better performance and compute shader support. It's available in Chrome 113 and later on Windows, macOS, and ChromeOS; Safari has partial support; Firefox is still implementing it. Older devices or browsers will show "Not Supported."</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Does hardware acceleration affect browser performance?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Yes, significantly. Hardware acceleration offloads compositing, animations, and video decoding from the CPU to the GPU, reducing CPU usage and enabling smoother rendering. When it's absent or disabled, the browser falls back to software rendering which is much slower and uses more battery on mobile devices.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false">
+              <span>Can the GPU be used to fingerprint me across sites?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Yes. WebGL canvas fingerprinting uses the GPU's rendering output — not just its name — and the exact pixel output of a test scene varies per GPU model and driver version. Combined with the vendor string and extension list, GPU data is one of the most stable cross-site identifiers available without cookies.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link">Khronos Group WebGL 1.0 and 2.0 specifications</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link">W3C WebGPU specification</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">03</span><span class="ndic-citation-link">Published research on WebGL-based canvas and GPU fingerprinting</span></div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+    </div>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+  <script defer src="../assets/js/engines/core.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+  <script>
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');
+        });
+        if (!isOpen) { item.classList.add('ndic-faq-item--open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+  </script>
 </body>
 </html>
