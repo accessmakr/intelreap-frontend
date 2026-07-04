@@ -1,34 +1,248 @@
-<!-- /intelligence/live-feed.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Intelligence Feed | IntelReap</title>
-    <meta name="description" content="Module deploying: Event log, API call count, backend node health, anti-bot simulation metrics.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/live-feed">
-    <meta property="og:title" content="Live Intelligence Feed | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/live-feed">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>(function(){var s=localStorage.getItem("ndic_theme");if(s==="dark")document.documentElement.setAttribute("data-theme","dark")})();</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Live Intelligence Feed — What Just Happened? | IntelReap</title>
+  <meta name="description" content="Real-time event log of every engine action, network change, API call, security flag, and AI summary — your live scan feed explained parameter by parameter.">
+  <meta name="keywords" content="live intelligence feed, real-time scan log, network events, security flags, API calls, scan monitoring, backend health">
+  <meta name="robots" content="index, follow"><meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/intelligence/live-feed">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/live-feed">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/live-feed">
+  <meta property="og:type" content="article"><meta property="og:title" content="Live Intelligence Feed — IntelReap">
+  <meta property="og:description" content="Real-time event log of every engine action, network change, and security flag during your scan.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/live-feed"><meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png"><meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Live Intelligence Feed — IntelReap">
+  <meta name="twitter:description" content="Real-time scan event log, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png"><meta name="twitter:site" content="@intelreap">
+  <meta name="geo.region" content="GB"><link rel="manifest" href="../manifest.json"><meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com"},{"@type":"TechArticle","headline":"Live Intelligence Feed","url":"https://intelreap.com/intelligence/live-feed","datePublished":"2026-06-22","dateModified":"2026-06-27","author":{"@id":"https://intelreap.com/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Intelligence Center","item":"https://intelreap.com/index.html"},{"@type":"ListItem","position":3,"name":"Live Intelligence Feed","item":"https://intelreap.com/intelligence/live-feed"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the live feed show?","acceptedAnswer":{"@type":"Answer","text":"The live feed is a real-time event log of every action IntelReap takes during a scan — engine starts and completions, backend API calls, security flags raised, network changes detected, and AI summary generation. It's the complete operational transcript of your scan session."}},{"@type":"Question","name":"What are critical events?","acceptedAnswer":{"@type":"Answer","text":"Critical events are high-severity findings logged during the scan — things like WebRTC IP leaks, VPN or TOR detection, failing security checks, or backend API errors. They're the events most likely to have contributed to a lower score on their respective panels."}},{"@type":"Question","name":"What does backend health mean?","acceptedAnswer":{"@type":"Answer","text":"Backend health reflects whether IntelReap's own server infrastructure responded correctly during this scan. A Healthy status means all backend calls succeeded. An Unhealthy status means at least one backend call failed, which can result in missing geolocation, VPN detection, or AI summary data."}},{"@type":"Question","name":"Why does API call count matter?","acceptedAnswer":{"@type":"Answer","text":"IntelReap makes exactly two or three backend API calls per full scan — one for IP identity, one for proxy intelligence, and optionally one for AI summary generation. Seeing more than three calls logged may indicate a retry due to a failed first attempt; seeing zero calls on a specific endpoint means that data wasn't available for this scan."}}]}]}</script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Live Intelligence Feed</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for streaming background processes:<br><strong class="text-slate-200">Event log, API call count, backend node health, anti-bot metrics</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Live Feed Intelligence Panel on Homepage</a>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home"><span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span></a>
+      <button type="button" class="trigger-search" aria-label="Open search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+  <div id="seasonal-banner" aria-live="polite"></div>
+  <main>
+    <div class="ndic-deepdive-page">
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Live Intelligence Feed</span>
+      </nav>
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 12</div>
+        <h1 class="ndic-deepdive-title">Live Intelligence Feed</h1>
+        <p class="ndic-deepdive-subtitle">What Just Happened?</p>
+        <p class="ndic-deepdive-intro">The complete real-time event log of your scan — every engine action, network change, API call, and security flag as it happens.</p>
+      </div>
+          <div class="ndic-canvas ndic-canvas-loaded" id="canvas-12">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Live Intelligence Feed</span>
+                <span class="ndic-canvas-subheading">What Just Happened?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c12-online-status">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <div class="ndic-feed-wrapper">
+                <div id="canvas12-feed"></div>
+              </div>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">Backend Health</span><span class="ndic-param-value" id="c12-backend-health">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Total Events</span><span class="ndic-param-value" id="c12-total-events">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Critical Events</span><span class="ndic-param-value" id="c12-critical-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Warning Events</span><span class="ndic-param-value" id="c12-warning-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">API Calls Made</span><span class="ndic-param-value" id="c12-api-calls">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Error Count</span><span class="ndic-param-value" id="c12-error-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Last Network Change</span><span class="ndic-param-value" id="c12-last-network-change">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Scan Start Time</span><span class="ndic-param-value" id="c12-scan-start-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">AI Summary Source</span><span class="ndic-param-value" id="c12-ai-summary-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">AI Last Updated</span><span class="ndic-param-value" id="c12-ai-last-updated">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <a href="#" class="ndic-deep-dive-link" id="c12-deep-dive-link">Deep dive into your live intelligence feed</a>
+            </div>
+          </div>
+
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each live feed metric tells you about this specific scan session.</p>
+        </div>
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Session Metadata</h3>
+          <div class="ndic-explain-item">
+            <h4>Backend Health</h4>
+            <p>Reflects whether IntelReap's backend responded correctly during this scan. Healthy means all backend calls succeeded. Unhealthy means at least one failed — which typically results in missing geolocation enrichment, incomplete VPN detection data, or no AI summary for the affected canvas. When Backend Health is Unhealthy, the live feed's error count will show where the failures occurred.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Total Events, Critical Events &amp; Warning Events</h4>
+            <p>Total events is the complete count of all log lines generated during this session — every engine start, completion, API call, and status update combined. Critical events are high-severity findings: WebRTC leaks, VPN or TOR detection, failing security checks, major backend errors. Warning events are lower-severity signals that may still be worth investigating.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>API Calls Made &amp; Error Count</h4>
+            <p>IntelReap makes two or three backend calls per full scan: IP identity, proxy intelligence, and optionally AI summary. More than three calls indicate a retry after a failed first attempt. Error count shows how many of those calls failed — a non-zero count here directly explains any missing data in the other panels.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Last Network Change &amp; Scan Start Time</h4>
+            <p>Last network change records if your connection switched during the session — Wi-Fi to mobile data, or a network reconnection. Scan start time anchors all the timestamps in the event log above, so you can read the log sequentially and understand how long each phase of the scan took relative to session start.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>AI Summary Source &amp; AI Last Updated</h4>
+            <p>AI Summary Source shows which layer generated the AI Analysis text visible under each canvas — Groq (fast cloud LLM), Gemini (fallback LLM), or Script (the instant built-in generator that runs even when both LLM services are unavailable). AI Last Updated is the timestamp of the most recent AI generation, so you can tell whether the summaries are fresh to this session or carried over from an earlier one.</p>
+          </div>
+        </div>
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">The Event Log Itself</h3>
+          <div class="ndic-explain-item">
+            <h4>Reading the log</h4>
+            <p>Each event line shows a timestamp, a category tag (SYSTEM, NETWORK, SECURITY, API, SCORE, DEVICE, PERFORMANCE, VPN, AI), and a message. The colour of the category tag indicates severity: cyan for informational system events, amber for warnings, red for critical findings. The log streams in real time as the scan runs — on a fresh page load, watching it populate gives you a live view of the scan's six-phase execution sequence.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Phase sequence visible in the log</h4>
+            <p>A complete scan runs six phases. Phase 1 runs all 13 engines in parallel. Phase 2 renders Canvas 1 and 2 as soon as IP data is ready. Phase 3 renders Canvas 3 and 13 as proxy and fingerprint data arrives. Phases 4 and 5 render the remaining canvases and generate AI summaries. Phase 6 calculates the global score and renders Canvas 11. This entire sequence, with timestamps, is visible in the live feed log.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">Why a Transparent Scan Log Matters</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>Every conclusion has a traceable source</h4>
+          <p>Most intelligence tools show you results without explaining how they got there. The live feed exists so that every flag, score, and summary in IntelReap's other 12 panels can be traced back to a specific logged event — you can see exactly when a security flag was raised, which API call returned which result, and how long each engine took to run. Nothing is a black box.</p>
+        </div>
+      </section>
+
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Live Intelligence Feed — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What does the live feed show?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The live feed is a real-time event log of every action IntelReap takes during a scan — engine starts and completions, backend API calls, security flags raised, network changes detected, and AI summary generation. It's the complete operational transcript of your scan session.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What are critical events?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Critical events are high-severity findings logged during the scan — things like WebRTC IP leaks, VPN or TOR detection, failing security checks, or backend API errors. They're the events most likely to have contributed to a lower score on their respective panels.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What does backend health mean?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Backend health reflects whether IntelReap's own server infrastructure responded correctly during this scan. A Healthy status means all backend calls succeeded. An Unhealthy status means at least one backend call failed, which can result in missing geolocation, VPN detection, or AI summary data.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>Why does API call count matter?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">IntelReap makes exactly two or three backend API calls per full scan. Seeing more than three may indicate a retry due to a failed first attempt; seeing zero calls on a specific endpoint means that data wasn't available for this scan.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link">W3C Performance Observer and Navigation Timing specifications</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link">W3C Network Information API specification</span></div>
+        </div>
+      </section>
+      <div id="dynamic-internal-links"></div>
+    </div>
+  </main>
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+  <script defer src="../assets/js/engines/core.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+  <script>
+    document.querySelectorAll(".ndic-faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".ndic-faq-item");
+        const isOpen = item.classList.contains("ndic-faq-item--open");
+        document.querySelectorAll(".ndic-faq-item--open").forEach(i => {
+          i.classList.remove("ndic-faq-item--open");
+          i.querySelector(".ndic-faq-question").setAttribute("aria-expanded","false");
+        });
+        if (!isOpen) { item.classList.add("ndic-faq-item--open"); btn.setAttribute("aria-expanded","true"); }
+      });
+    });
+  </script>
 </body>
 </html>
