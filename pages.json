@@ -36,12 +36,12 @@
   },
   {
     "url": "https://intelreap.com/intelligence/capability",
-    "lastmod": "2026-06-24T17:56:55+01:00",
+    "lastmod": "2026-07-02T21:37:48+01:00",
     "file": "intelligence/capability.html"
   },
   {
     "url": "https://intelreap.com/intelligence/device",
-    "lastmod": "2026-06-24T17:43:25+01:00",
+    "lastmod": "2026-07-02T21:32:54+01:00",
     "file": "intelligence/device.html"
   },
   {
@@ -51,7 +51,7 @@
   },
   {
     "url": "https://intelreap.com/intelligence/graphics",
-    "lastmod": "2026-06-24T18:08:25+01:00",
+    "lastmod": "2026-07-02T21:34:21+01:00",
     "file": "intelligence/graphics.html"
   },
   {
@@ -96,7 +96,7 @@
   },
   {
     "url": "https://intelreap.com/intelligence/security",
-    "lastmod": "2026-06-24T17:54:19+01:00",
+    "lastmod": "2026-07-02T21:35:49+01:00",
     "file": "intelligence/security.html"
   },
   {
@@ -143,6 +143,11 @@
     "url": "https://intelreap.com/learn/what-is-device-fingerprinting",
     "lastmod": "2026-06-29T22:40:45+01:00",
     "file": "learn/what-is-device-fingerprinting.html"
+  },
+  {
+    "url": "https://intelreap.com/learn/what-is-reverse-ip-lookup",
+    "lastmod": "2026-07-04T15:26:22+01:00",
+    "file": "learn/what-is-reverse-ip-lookup.html"
   },
   {
     "url": "https://intelreap.com/learn/what-is-vpn-passthrough",

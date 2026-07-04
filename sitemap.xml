@@ -44,13 +44,13 @@
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/capability</loc>
-    <lastmod>2026-06-24T17:56:55+01:00</lastmod>
+    <lastmod>2026-07-02T21:37:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/device</loc>
-    <lastmod>2026-06-24T17:43:25+01:00</lastmod>
+    <lastmod>2026-07-02T21:32:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/graphics</loc>
-    <lastmod>2026-06-24T18:08:25+01:00</lastmod>
+    <lastmod>2026-07-02T21:34:21+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/security</loc>
-    <lastmod>2026-06-24T17:54:19+01:00</lastmod>
+    <lastmod>2026-07-02T21:35:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -171,6 +171,12 @@
   <url>
     <loc>https://intelreap.com/learn/what-is-device-fingerprinting</loc>
     <lastmod>2026-06-29T22:40:45+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intelreap.com/learn/what-is-reverse-ip-lookup</loc>
+    <lastmod>2026-07-04T15:26:22+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
