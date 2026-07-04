@@ -1,34 +1,306 @@
-<!-- /intelligence/rendering-speed.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rendering Speed Intelligence | IntelReap</title>
-    <meta name="description" content="Module deploying: Core Web Vitals, JS manipulation speed, canvas performance benchmarks.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/rendering-speed">
-    <meta property="og:title" content="Rendering Speed Intelligence | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/rendering-speed">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>(function(){var s=localStorage.getItem("ndic_theme");if(s==="dark")document.documentElement.setAttribute("data-theme","dark")})();</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Browser & Rendering Speed Intelligence — How Fast Does Your Device Render? | IntelReap</title>
+  <meta name="description" content="Live Core Web Vitals — LCP, FCP, CLS, INP, TTFB — plus JS execution, DOM manipulation, canvas render, and memory benchmark scores, explained parameter by parameter.">
+  <meta name="keywords" content="Core Web Vitals, LCP, FCP, CLS, INP, TTFB, JS benchmark, rendering speed, browser benchmark, CSS animation FPS, event loop latency">
+  <meta name="robots" content="index, follow"><meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/intelligence/rendering-speed">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/rendering-speed">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/rendering-speed">
+  <meta property="og:type" content="article"><meta property="og:title" content="Browser & Rendering Speed Intelligence — IntelReap">
+  <meta property="og:description" content="Live Core Web Vitals and JS/DOM/canvas benchmarks — your rendering speed explained in plain English.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/rendering-speed"><meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png"><meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Browser & Rendering Speed Intelligence — IntelReap">
+  <meta name="twitter:description" content="Live Core Web Vitals and rendering benchmarks, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png"><meta name="twitter:site" content="@intelreap">
+  <meta name="geo.region" content="GB"><link rel="manifest" href="../manifest.json"><meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com"},{"@type":"TechArticle","headline":"Browser & Rendering Speed Intelligence","url":"https://intelreap.com/intelligence/rendering-speed","datePublished":"2026-06-22","dateModified":"2026-06-27","author":{"@id":"https://intelreap.com/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Intelligence Center","item":"https://intelreap.com/index.html"},{"@type":"ListItem","position":3,"name":"Browser & Rendering Speed Intelligence","item":"https://intelreap.com/intelligence/rendering-speed"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Core Web Vitals?","acceptedAnswer":{"@type":"Answer","text":"Core Web Vitals are Google's standardised measurements of real-world user experience: Largest Contentful Paint measures loading speed, Cumulative Layout Shift measures visual stability, and Interaction to Next Paint measures responsiveness. They're used as ranking signals in Google Search."}},{"@type":"Question","name":"What is LCP?","acceptedAnswer":{"@type":"Answer","text":"Largest Contentful Paint is the time until the largest visible element — usually a hero image or heading — finishes rendering. Google considers under 2.5 seconds good, 2.5-4 seconds needs improvement, and over 4 seconds poor."}},{"@type":"Question","name":"What is CLS?","acceptedAnswer":{"@type":"Answer","text":"Cumulative Layout Shift measures how much page content unexpectedly moves during loading — the kind of shift that causes you to tap the wrong button. A score under 0.1 is good; above 0.25 is poor."}},{"@type":"Question","name":"What does the JS benchmark score measure?","acceptedAnswer":{"@type":"Answer","text":"The JavaScript benchmark runs a fixed set of computation tasks and measures how long they take. The score is relative to expected performance for this device tier — it reflects your CPU's JavaScript engine speed, not your network connection."}}]}]}</script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Rendering Speed Intelligence</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for local execution metrics:<br><strong class="text-slate-200">Core Web Vitals, JS manipulation speed, canvas benchmarks</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Browser Rendering Speed on Homepage</a>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home"><span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span></a>
+      <button type="button" class="trigger-search" aria-label="Open search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+  <div id="seasonal-banner" aria-live="polite"></div>
+  <main>
+    <div class="ndic-deepdive-page">
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Browser &amp; Rendering Speed Intelligence</span>
+      </nav>
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 10</div>
+        <h1 class="ndic-deepdive-title">Browser &amp; Rendering Speed Intelligence</h1>
+        <p class="ndic-deepdive-subtitle">How Fast Does Your Device Render?</p>
+        <p class="ndic-deepdive-intro">Live Core Web Vitals plus JS, DOM, canvas, and memory benchmarks — measured the moment this page loads.</p>
+      </div>
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-10">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Browser &amp; Rendering Speed Intelligence</span>
+                <span class="ndic-canvas-subheading">How Fast Does Your Device Render?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c10-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <canvas id="canvas10-vitals-chart"></canvas>
+              <div class="ndic-benchmark-gauges">
+                <div class="ndic-benchmark-gauge-item">
+                  <canvas class="ndic-benchmark-gauge-canvas" id="c10-js-execution-gauge"></canvas>
+                  <span class="ndic-benchmark-gauge-label">JS Execution</span>
+                </div>
+                <div class="ndic-benchmark-gauge-item">
+                  <canvas class="ndic-benchmark-gauge-canvas" id="c10-dom-manipulation-gauge"></canvas>
+                  <span class="ndic-benchmark-gauge-label">DOM Manipulation</span>
+                </div>
+                <div class="ndic-benchmark-gauge-item">
+                  <canvas class="ndic-benchmark-gauge-canvas" id="c10-canvas-render-gauge"></canvas>
+                  <span class="ndic-benchmark-gauge-label">Canvas Render</span>
+                </div>
+                <div class="ndic-benchmark-gauge-item">
+                  <canvas class="ndic-benchmark-gauge-canvas" id="c10-memory-access-gauge"></canvas>
+                  <span class="ndic-benchmark-gauge-label">Memory Access</span>
+                </div>
+              </div>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">Largest Contentful Paint</span><span class="ndic-param-value" id="c10-lcp-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">LCP Rating</span><span class="ndic-param-value" id="c10-lcp-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">First Contentful Paint</span><span class="ndic-param-value" id="c10-fcp-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">FCP Rating</span><span class="ndic-param-value" id="c10-fcp-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Cumulative Layout Shift</span><span class="ndic-param-value" id="c10-cls-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">CLS Rating</span><span class="ndic-param-value" id="c10-cls-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Interaction to Next Paint</span><span class="ndic-param-value" id="c10-inp-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">INP Rating</span><span class="ndic-param-value" id="c10-inp-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Time To First Byte</span><span class="ndic-param-value" id="c10-ttfb-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">TTFB Rating</span><span class="ndic-param-value" id="c10-ttfb-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">First Input Delay</span><span class="ndic-param-value" id="c10-fid-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">FID Rating</span><span class="ndic-param-value" id="c10-fid-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">JS Execution Score</span><span class="ndic-param-value" id="c10-js-execution-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">JS Execution Time</span><span class="ndic-param-value" id="c10-js-execution-ms">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">DOM Manipulation Score</span><span class="ndic-param-value" id="c10-dom-manipulation-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">DOM Manipulation Time</span><span class="ndic-param-value" id="c10-dom-manipulation-ms">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Canvas Render Score</span><span class="ndic-param-value" id="c10-canvas-render-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Canvas Render Time</span><span class="ndic-param-value" id="c10-canvas-render-ms">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Memory Access Score</span><span class="ndic-param-value" id="c10-memory-access-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Memory Access Time</span><span class="ndic-param-value" id="c10-memory-access-ms">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">CSS Animation Score</span><span class="ndic-param-value" id="c10-css-animation-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">CSS Animation FPS</span><span class="ndic-param-value" id="c10-css-animation-fps">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Event Loop Score</span><span class="ndic-param-value" id="c10-event-loop-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Event Loop Average</span><span class="ndic-param-value" id="c10-event-loop-ms">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Overall Benchmark Score</span><span class="ndic-param-value" id="c10-benchmark-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Vs. Average Mobile</span><span class="ndic-param-value" id="c10-vs-average-mobile">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Vs. Average Desktop</span><span class="ndic-param-value" id="c10-vs-average-desktop">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Vs. Top Tier Devices</span><span class="ndic-param-value" id="c10-vs-top-tier">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Percentile Ranking</span><span class="ndic-param-value" id="c10-percentile-ranking">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas10-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas10-ai-summary">Benchmarking your rendering speed...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c10-deep-dive-link">Deep dive into your rendering speed analysis</a>
+            </div>
+          </div>
+
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each Web Vital and benchmark score actually measures.</p>
+        </div>
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Core Web Vitals</h3>
+          <div class="ndic-explain-item">
+            <h4>Largest Contentful Paint (LCP) &amp; Rating</h4>
+            <p>LCP measures how long until the largest visible element — typically a hero image or the main heading — finishes rendering. Under 2.5s is Good; 2.5–4s Needs Improvement; above 4s Poor. It's Google's primary measure of perceived loading speed and is used as a search ranking signal.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>First Contentful Paint (FCP) &amp; Rating</h4>
+            <p>FCP is when the browser first renders any content at all — text, an image, or a background. It's the moment the page stops feeling blank. Under 1.8s is Good. FCP can be significantly faster than LCP if small text renders before a large image finishes loading.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Cumulative Layout Shift (CLS) &amp; Rating</h4>
+            <p>CLS measures unexpected visual movement — elements shifting position after they've appeared, causing accidental taps and disorienting reads. Under 0.1 is Good; above 0.25 is Poor. Common causes include images without declared dimensions and content injected above existing content after the initial render.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Interaction to Next Paint (INP) &amp; Rating</h4>
+            <p>INP replaced First Input Delay as a Core Web Vital in March 2024. Where FID only measured the first interaction, INP measures the worst-case responsiveness across all interactions during a session. Under 200ms is Good. High INP usually indicates heavy JavaScript blocking the main thread.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>TTFB Rating &amp; First Input Delay (FID)</h4>
+            <p>TTFB and FID ratings contextualise the raw values from the Performance panel. FID is the legacy predecessor to INP — still useful for understanding first-interaction responsiveness on devices where INP hasn't yet been observed.</p>
+          </div>
+        </div>
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Device Benchmarks</h3>
+          <div class="ndic-explain-item">
+            <h4>JS Execution Score &amp; Time</h4>
+            <p>A fixed computational workload — sorting, arithmetic, string manipulation — timed in milliseconds. The score normalises this against expected performance for this device class. It reflects raw CPU and JS engine speed, entirely independent of network conditions.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>DOM Manipulation Score &amp; Time</h4>
+            <p>Times a fixed sequence of DOM operations — creating nodes, modifying attributes, measuring layout. Slow DOM manipulation is often what makes pages feel sluggish in interaction even when they load quickly.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Canvas Render Score &amp; Time</h4>
+            <p>Times a series of 2D canvas drawing operations. This benchmark reflects the combined speed of your CPU and GPU for 2D graphics — relevant for canvas-heavy applications, data visualisation, and image editing tools.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Memory Access Score &amp; Time</h4>
+            <p>Times large array allocation and traversal to measure memory bandwidth and cache efficiency. Low scores here often indicate constrained memory on low-end devices where even well-written code hits performance ceilings.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>CSS Animation Score &amp; FPS</h4>
+            <p>Measures frames per second during a CSS animation workload. 60 FPS is the target for smooth animation on most displays; 90+ FPS is ideal on high-refresh-rate screens. Values below 30 FPS produce visibly janky animation.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Event Loop Score &amp; Average, Overall Benchmark &amp; Percentile Rankings</h4>
+            <p>Event loop average measures how long tasks wait before executing — high values indicate a blocked main thread. The overall benchmark combines all scores into a single number. Percentile rankings contextualise that number against typical values for average mobile and desktop devices, and against top-tier devices, giving a relative position rather than just an absolute score.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">Why Core Web Vitals Are Now a Search Ranking Signal</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>Google made user experience measurable and consequential</h4>
+          <p>Before Core Web Vitals, page speed was measured by technical metrics that didn't always correlate with actual user experience. LCP, CLS, and INP were chosen specifically because field data showed they predict whether users bounce from pages. Google's 2021 Page Experience update made them ranking signals, which created a direct financial incentive for site owners to optimise for real user experience rather than synthetic test scores.</p>
+        </div>
+      </section>
+
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Rendering Speed — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What are Core Web Vitals?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Core Web Vitals are Google's standardised measurements of real-world user experience: Largest Contentful Paint measures loading speed, Cumulative Layout Shift measures visual stability, and Interaction to Next Paint measures responsiveness. They're used as ranking signals in Google Search.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What is LCP?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Largest Contentful Paint is the time until the largest visible element — usually a hero image or heading — finishes rendering. Google considers under 2.5 seconds good, 2.5–4 seconds needs improvement, and over 4 seconds poor.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What is CLS?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Cumulative Layout Shift measures how much page content unexpectedly moves during loading. A score under 0.1 is good; above 0.25 is poor. Common causes include images without declared dimensions and late-injected content.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What does the JS benchmark score measure?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The JavaScript benchmark runs a fixed set of computation tasks and measures how long they take. The score reflects your CPU's JavaScript engine speed, not your network connection.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link">W3C Core Web Vitals and PerformanceObserver specifications</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link">W3C HTML Canvas 2D Context specification</span></div>
+        </div>
+      </section>
+      <div id="dynamic-internal-links"></div>
+    </div>
+  </main>
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+  <script defer src="../assets/js/engines/core.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+  <script>
+    document.querySelectorAll(".ndic-faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".ndic-faq-item");
+        const isOpen = item.classList.contains("ndic-faq-item--open");
+        document.querySelectorAll(".ndic-faq-item--open").forEach(i => {
+          i.classList.remove("ndic-faq-item--open");
+          i.querySelector(".ndic-faq-question").setAttribute("aria-expanded","false");
+        });
+        if (!isOpen) { item.classList.add("ndic-faq-item--open"); btn.setAttribute("aria-expanded","true"); }
+      });
+    });
+  </script>
 </body>
 </html>
