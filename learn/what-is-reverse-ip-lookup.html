@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('ndic_theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>What Is Reverse IP Lookup? How It Works and What It Reveals — IntelReap</title>
+  <meta name="description" content="Reverse IP lookup finds every domain hosted on a given IP address. Learn how it works, why sites share IPs, what it's used for, and its limitations for security research and competitor analysis.">
+  <meta name="keywords" content="what is reverse ip lookup, reverse ip lookup tool, how does reverse ip lookup work, reverse ip lookup free, what does reverse ip lookup show, reverse dns lookup vs reverse ip lookup, shared hosting ip lookup, find domains on same ip, reverse ip lookup meaning">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/learn/what-is-reverse-ip-lookup">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/learn/what-is-reverse-ip-lookup">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/what-is-reverse-ip-lookup">
+
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="What Is Reverse IP Lookup? How It Works and What It Reveals — IntelReap">
+  <meta property="og:description"  content="Reverse IP lookup finds every domain hosted on a given IP address — useful for security research, shared hosting discovery, and competitor analysis. Here is how it works and what it can and cannot tell you.">
+  <meta property="og:url"          content="https://intelreap.com/learn/what-is-reverse-ip-lookup">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_US">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="What Is Reverse IP Lookup? — IntelReap">
+  <meta name="twitter:description" content="One IP address, hundreds of domains. Here is how reverse IP lookup finds them, what it's actually used for, and where it falls short.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site"        content="@intelreap">
+
+  <meta name="geo.region" content="GB">
+  <meta name="geo.position" content="51.5074;-0.1278">
+  <meta name="ICBM" content="51.5074, -0.1278">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="mask-icon" href="../assets/images/icons/safari-pinned-tab.svg" color="#0ea5e9">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <style>
+    #scroll-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent,#0ea5e9),#06b6d4);z-index:9999;transition:width 0.1s linear;pointer-events:none;}
+    .ir-breadcrumb{max-width:760px;margin:0 auto;padding:1rem 1.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:0.375rem;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.75rem;color:var(--color-text-tertiary,#475569);}
+    .ir-breadcrumb a{color:var(--color-accent,#0ea5e9);text-decoration:none;}.ir-breadcrumb a:hover{text-decoration:underline;}.ir-breadcrumb-sep{opacity:0.4;}.ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
+    .ir-article{max-width:760px;margin:0 auto;padding:0 1.5rem 4rem;}
+    .ir-article h2{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:2.75rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));display:flex;align-items:center;gap:0.6rem;line-height:1.35;scroll-margin-top:5rem;}
+    .ir-article h3{font-family:var(--font-display,'Syne',sans-serif);font-size:0.975rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:1.75rem 0 0.6rem;line-height:1.4;}
+    .ir-article p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.85;color:var(--color-text-secondary,#94a3b8);margin-bottom:1rem;}
+    .ir-article ul,.ir-article ol{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.8;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.25rem 1.25rem;}
+    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}.ir-article li::marker{color:var(--color-accent,#0ea5e9);}
+    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}.ir-article em{font-style:italic;}
+    .ir-article a{color:var(--color-accent,#0ea5e9);text-decoration:underline;text-underline-offset:2px;}.ir-article a:hover{opacity:0.8;}
+    .ir-article code{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.8125rem;color:var(--color-accent,#0ea5e9);background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.15);border-radius:4px;padding:0.1rem 0.4rem;white-space:nowrap;}
+    .section-num{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;color:var(--color-accent,#0ea5e9);font-weight:500;background:rgba(14,165,233,0.1);padding:0.15rem 0.4rem;border-radius:3px;flex-shrink:0;}
+    .ir-callout{background:rgba(14,165,233,0.05);border:1px solid rgba(14,165,233,0.15);border-left:3px solid var(--color-accent,#0ea5e9);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .ir-callout p{margin-bottom:0;color:var(--color-text-primary,#e2e8f0)!important;font-weight:500;}
+    .ir-browser-block{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.07));border-radius:8px;padding:1.5rem 1.5rem 1rem;margin:1.5rem 0;}
+    .ir-browser-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:1rem;display:block;}
+    .ir-browser-steps{list-style:none;margin:0;padding:0;}
+    .ir-browser-step{display:flex;gap:0.875rem;margin-bottom:0.875rem;align-items:flex-start;}
+    .ir-browser-step-num{flex-shrink:0;width:1.5rem;height:1.5rem;border-radius:50%;background:rgba(14,165,233,0.15);color:var(--color-accent,#0ea5e9);font-family:var(--font-mono,'JetBrains Mono',monospace);font-weight:700;font-size:0.7rem;display:flex;align-items:center;justify-content:center;margin-top:0.1rem;}
+    .ir-browser-step-text{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);}
+    .ir-table-wrap{width:100%;overflow-x:auto;margin:1.25rem 0 2rem;border-radius:6px;border:1px solid var(--color-border,rgba(255,255,255,0.07));-webkit-overflow-scrolling:touch;}
+    .ir-table{width:100%;min-width:500px;border-collapse:collapse;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;}
+    .ir-table caption{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.75rem;color:var(--color-text-tertiary,#475569);text-align:left;padding:0.5rem 1rem 0;caption-side:top;}
+    .ir-table th{background:rgba(255,255,255,0.04);color:var(--color-text-primary,#e2e8f0);font-family:var(--font-display,'Syne',sans-serif);font-weight:600;font-size:0.8rem;padding:0.75rem 1rem;text-align:left;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.07));white-space:nowrap;}
+    .ir-table td{padding:0.75rem 1rem;color:var(--color-text-secondary,#94a3b8);border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));vertical-align:middle;line-height:1.55;}
+    .ir-table tr:last-child td{border-bottom:none;}
+    .ir-check{color:#34d399;font-weight:600;}.ir-cross{color:#f87171;}.ir-neutral{color:var(--color-text-tertiary,#475569);}
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-cta-block{background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.18);border-radius:10px;padding:2rem 2rem 1.75rem;margin:2.5rem 0;text-align:center;}
+    .ir-cta-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.625rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.625rem;display:block;}
+    .ir-cta-block h3{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.5rem;line-height:1.3;}
+    .ir-cta-block>p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary,#94a3b8);margin:0 0 1.5rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .ir-btn-row{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
+    .ir-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#0ea5e9 !important;color:#ffffff !important;border:2px solid #0ea5e9 !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-primary:hover{background:#0284c7 !important;border-color:#0284c7 !important;transform:translateY(-1px);}
+    .ir-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#f0f9ff !important;color:#0c2340 !important;border:2px solid #bae6fd !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-secondary:hover{background:#ffffff !important;border-color:#7dd3fc !important;transform:translateY(-1px);}
+    .ir-logic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+    @media(max-width:560px){.ir-logic-grid{grid-template-columns:1fr;}}
+    .ir-logic-card{background:rgba(255,255,255,0.03);border:1px solid var(--color-border,rgba(255,255,255,0.06));border-radius:6px;padding:1.25rem 1.5rem;}
+    .ir-logic-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,#0ea5e9);margin-bottom:0.5rem;display:block;}
+    .ir-logic-card p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);margin:0;}
+    .ir-share-wrap{margin:2.5rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-share-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-tertiary,#475569);margin-bottom:0.875rem;display:block;}
+    .ir-share-pills{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .ir-share-pill{display:inline-flex;align-items:center;padding:0.375rem 0.875rem;border-radius:9999px;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;font-weight:500;background:rgba(255,255,255,0.04);border:1px solid var(--color-border,rgba(255,255,255,0.08));color:var(--color-text-secondary,#94a3b8);cursor:pointer;text-decoration:none;transition:border-color 0.15s,color 0.15s;white-space:nowrap;}
+    .ir-share-pill:hover{border-color:var(--color-accent,#0ea5e9);color:var(--color-accent,#0ea5e9);text-decoration:none;}
+    .ir-faq-outer{max-width:760px;margin:0 auto;padding:0 1.5rem 1rem;}
+    .ir-faq-heading{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.375rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,rgba(255,255,255,0.06));}
+    .ir-faq-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.5rem;line-height:1.65;}
+    .ir-contact-outer{max-width:760px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;}
+    .ir-contact-header{text-align:center;margin-bottom:1.75rem;}
+    .ir-contact-title{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin-bottom:0.375rem;}
+    .ir-contact-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;color:var(--color-text-tertiary,#475569);line-height:1.6;}
+    .ir-form-wrap{max-width:400px;margin:0 auto;}
+    .ir-form-card{background:rgba(13,18,37,0.8);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:2rem;}
+    .form-group{margin-bottom:1rem;}.form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
+    .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.65rem 0.9rem;font-size:0.875rem;color:var(--color-text-primary,#e2e8f0);font-family:var(--font-body,'Be Vietnam Pro',sans-serif);transition:border-color 0.2s;box-sizing:border-box;}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent,#0ea5e9);}
+    .form-group textarea{resize:vertical;min-height:100px;}.form-hidden{display:none;}
+    .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
+    .form-submit:hover{opacity:0.9;}
+    #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}.ir-btn-primary,.ir-btn-secondary{min-width:0;width:100%;}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","@id":"https://intelreap.com/learn/what-is-reverse-ip-lookup#article","headline":"What Is Reverse IP Lookup? How It Works and What It Reveals","description":"Reverse IP lookup finds every domain hosted on a given IP address. This guide explains how it works, why sites share IP addresses, what reverse IP lookup is used for in security research and competitor analysis, and its real limitations.","url":"https://intelreap.com/learn/what-is-reverse-ip-lookup","image":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/og-image.png","width":1200,"height":630},"datePublished":"2026-04-04","dateModified":"2026-06-09","author":{"@type":"Organization","@id":"https://intelreap.com/#organization"},"publisher":{"@id":"https://intelreap.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://intelreap.com/learn/what-is-reverse-ip-lookup"},"inLanguage":"en-US","keywords":"what is reverse ip lookup, how does reverse ip lookup work, reverse ip lookup tool, reverse dns vs reverse ip lookup, find domains on same ip","articleSection":"Network Guides","wordCount":2700},
+    {"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com","logo":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/intelreap-logo.svg"},"sameAs":["https://twitter.com/intelreap","https://github.com/accessmakr/intelreap-frontend"]},
+    {"@type":"WebSite","@id":"https://intelreap.com/#website","name":"IntelReap","url":"https://intelreap.com","publisher":{"@id":"https://intelreap.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://intelreap.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://intelreap.com/learn/"},{"@type":"ListItem","position":3,"name":"What Is Reverse IP Lookup?","item":"https://intelreap.com/learn/what-is-reverse-ip-lookup"}]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is reverse IP lookup?","acceptedAnswer":{"@type":"Answer","text":"Reverse IP lookup is a technique that identifies every domain name hosted on a specific IP address. Where a normal DNS lookup converts a domain name into an IP address, reverse IP lookup works the other direction — starting with an IP address and finding every website that resolves to it. This is possible because shared hosting environments commonly host hundreds or thousands of separate domains on a single server IP address."}},
+      {"@type":"Question","name":"How does reverse IP lookup work?", "acceptedAnswer":{"@type":"Answer","text":"Reverse IP lookup tools maintain large databases built by continuously crawling and cataloguing DNS records across the internet, associating each discovered domain with the IP address its DNS A record points to. When you query an IP address, the tool searches this database for every domain it has recorded pointing to that address and returns the list. This differs from reverse DNS (PTR record) lookup, which returns only the single hostname the server operator has configured for that IP, not the full list of hosted domains."}},
+      {"@type":"Question","name":"What is the difference between reverse DNS lookup and reverse IP lookup?","acceptedAnswer":{"@type":"Answer","text":"Reverse DNS lookup queries the PTR record associated with an IP address, which returns a single hostname configured by the server's network administrator — often something generic like a hosting provider's server identifier rather than any of the actual websites hosted there. Reverse IP lookup instead searches a crawled database of DNS A records to find every domain whose DNS points to that IP address, which can return dozens or thousands of results for a shared hosting server. They answer different questions: reverse DNS asks 'what hostname is configured for this IP,' reverse IP lookup asks 'what websites are hosted at this IP.'"}},
+      {"@type":"Question","name":"Why do multiple domains share the same IP address?","acceptedAnswer":{"@type":"Answer","text":"Shared hosting is the primary reason. Hosting providers place hundreds or thousands of low-traffic websites on a single physical or virtual server to reduce cost, and all of those sites share the server's one IP address, differentiated at the HTTP level by the Host header the browser sends (a mechanism called virtual hosting). Content delivery networks and reverse proxies like Cloudflare also cause this — many unrelated websites behind the same CDN provider can show the same IP address, since the CDN's edge servers are terminating the connection rather than the origin server."}},
+      {"@type":"Question","name":"What is reverse IP lookup used for?","acceptedAnswer":{"@type":"Answer","text":"Security researchers use it to map infrastructure during investigations, identifying other domains that might be controlled by the same operator as a known malicious site. SEO and competitive analysis professionals use it to discover a competitor's other web properties, especially when a business obscures ownership across multiple brands. Web developers use it to confirm shared hosting configurations and diagnose Host header routing issues. Journalists and researchers use it to investigate the ownership networks behind clusters of related websites."}},
+      {"@type":"Question","name":"Is reverse IP lookup accurate?","acceptedAnswer":{"@type":"Answer","text":"Accuracy is inherently limited by how the underlying database was built. Because most reverse IP tools rely on periodic crawling of DNS records rather than real-time queries, results can be outdated — showing domains that have since moved to a different IP or missing domains added since the last crawl. Coverage also varies significantly by provider, since no single crawler indexes every domain on the internet. Results should be treated as a reasonable snapshot rather than a definitive real-time list."}},
+      {"@type":"Question","name":"Does reverse IP lookup work behind a CDN like Cloudflare?","acceptedAnswer":{"@type":"Answer","text":"Reverse IP lookup on a Cloudflare-fronted IP address typically returns every other domain also using that specific Cloudflare edge IP — which can be thousands of completely unrelated websites, since Cloudflare's shared IP ranges serve enormous numbers of customers simultaneously. This makes reverse IP lookup far less useful for identifying a specific site's true origin server or related infrastructure when a CDN is in front of it, because the returned domains have no actual relationship to each other beyond using the same CDN provider."}},
+      {"@type":"Question","name":"Can reverse IP lookup find my own website's IP neighbours?","acceptedAnswer":{"@type":"Answer","text":"Yes — running a reverse IP lookup on your own site's IP address shows you which other domains share your hosting server, which is useful for understanding shared hosting risk. If a neighbouring site on the same shared IP is compromised, flagged for spam, or blacklisted, it can occasionally affect your own site's reputation or email deliverability due to IP-based reputation systems, even though the sites are otherwise unrelated. This is one of the practical reasons some businesses pay for a dedicated IP address."}},
+      {"@type":"Question","name":"What is a dedicated IP and how does it differ for reverse IP lookup purposes?","acceptedAnswer":{"@type":"Answer","text":"A dedicated IP address is assigned exclusively to one website or hosting account, unlike shared hosting where one IP serves many domains. A reverse IP lookup on a dedicated IP typically returns only that single domain (and possibly a few closely related subdomains), making it far more useful for verifying that a specific IP genuinely belongs to one particular organisation without the noise of unrelated shared-hosting neighbours."}},
+      {"@type":"Question","name":"Is reverse IP lookup legal?","acceptedAnswer":{"@type":"Answer","text":"Yes — reverse IP lookup queries publicly available DNS records that are, by design, published for the internet to resolve domain names. It does not access any private or restricted data, does not require authentication, and does not involve any form of unauthorised access. It is a standard, widely used technique in network administration, cybersecurity research, and digital marketing analysis."}},
+      {"@type":"Question","name":"How is reverse IP lookup different from a WHOIS lookup?","acceptedAnswer":{"@type":"Answer","text":"WHOIS lookup returns registration information about a specific domain name — who registered it, when, and through which registrar (subject to privacy redaction in most cases today). Reverse IP lookup returns a list of domain names associated with a specific IP address, saying nothing about who owns or registered any of them. The two are often used together: a reverse IP lookup finds related domains, then a WHOIS lookup on each is used to investigate registration details further."}},
+      {"@type":"Question","name":"Can reverse IP lookup identify who owns a website?","acceptedAnswer":{"@type":"Answer","text":"Not directly. Reverse IP lookup only reveals which domains share an IP address — it provides no ownership information on its own. To investigate ownership, results are typically combined with WHOIS records, business registration lookups, and other open-source intelligence techniques. On shared hosting, the domains returned by a reverse IP lookup are frequently owned by completely unrelated parties who simply use the same hosting provider, which is an important limitation to keep in mind before drawing conclusions."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="/learn/">Learn</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span class="ir-breadcrumb-current" aria-current="page">What Is Reverse IP Lookup?</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge">
+          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
+          <span id="seasonal-label">Network Guide</span>
+        </div>
+        <h1 class="ndic-hero-title">
+          What Is<br>
+          <span class="ndic-highlight">Reverse IP Lookup?</span>
+        </h1>
+        <p class="ndic-hero-tagline">
+          One IP address can quietly host thousands of unrelated websites. Reverse IP lookup is how you find them all — a technique used by security researchers mapping malicious infrastructure, marketers investigating competitors, and developers diagnosing shared hosting issues. Here is exactly how it works, what it can genuinely tell you, and where it falls apart.
+        </p>
+        <div class="ndic-hero-cta-group">
+          <a href="/intelligence/network-identity" class="ir-btn-primary cta-rotate">Reveal My Network Identity</a>
+          <a href="/intelligence/network-route" class="ir-btn-secondary">See My Network Route &#8594;</a>
+        </div>
+        <div id="freshness-badge" aria-live="polite">Loading&#8230;</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item"><span class="ndic-trust-value">4.9&#9733;</span><span class="ndic-trust-label">satisfaction</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">290+ data points</span><span class="ndic-trust-label">per scan</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">13 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">Zero data stored</span><span class="ndic-trust-label">privacy first</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer">
+      <div class="ndic-quick-answer-label">Quick Answer</div>
+      <h2 class="ndic-quick-answer-title">Reverse IP lookup finds every domain hosted on a given IP address — the reverse of a normal domain-to-IP lookup</h2>
+      <p class="ndic-quick-answer-body">
+        A standard DNS lookup takes a domain name and returns its IP address. Reverse IP lookup runs the process backwards: you supply an IP address, and the tool searches a crawled database of DNS records to return every domain currently pointing to that address. On shared hosting this can surface hundreds or thousands of unrelated websites sitting on a single server IP. It is used for security investigations, competitor research, and diagnosing hosting configurations — but it is only as accurate as the underlying database's last crawl, and it says nothing about who actually owns any of the domains it returns.
+      </p>
+    </section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+
+      <h2><span class="section-num">01</span> What Is Reverse IP Lookup?</h2>
+      <p>Every website you visit resolves through DNS — your browser asks "what IP address does this domain point to?" and gets an answer, then connects to that address. Reverse IP lookup asks the opposite question. Instead of starting with a domain and finding its IP, you start with an IP address and ask: "which domains point here?"</p>
+      <p>The reason this question has an interesting answer at all is that IP addresses are a finite, valuable resource, while domain names are cheap and effectively unlimited. Hosting providers routinely place hundreds or thousands of low-to-moderate-traffic websites on a single server, and all of those sites share that server's one IP address. A reverse IP lookup on that address surfaces the entire list — sometimes revealing connections between websites that would otherwise appear completely unrelated.</p>
+
+      <h2><span class="section-num">02</span> How Reverse IP Lookup Actually Works</h2>
+      <p>Reverse IP lookup tools do not query the internet live in the way a normal DNS lookup does — there is no central authority that maintains a list of "every domain pointing to this IP" that a tool can simply ask. Instead, these services build their own databases by continuously crawling enormous numbers of domains, resolving each one's DNS A record, and recording the domain-to-IP association they find. When you submit an IP address for a reverse lookup, the tool searches this pre-built database for every domain it has recorded as pointing to that address.</p>
+      <p>This crawled-database approach explains both the utility and the core limitation of reverse IP lookup. It is genuinely useful because it can surface connections a live query never could — no single DNS query would ever return "here are all the other domains on this server." But it is inherently a snapshot, not a live view. A domain that moved hosting providers last week may still show up against its old IP address until the crawler revisits and updates its record, and a domain added yesterday may not appear at all yet.</p>
+
+      <h2><span class="section-num">03</span> Reverse IP Lookup vs Reverse DNS Lookup — A Common Confusion</h2>
+      <p>These two terms sound similar and are frequently mixed up, but they answer genuinely different questions.</p>
+      <p><strong>Reverse DNS lookup</strong> queries a specific DNS record type called a PTR record. Every IP address can have exactly one PTR record configured, set by whoever controls that IP block — typically the hosting provider or the organisation that owns the server. This PTR record returns a single hostname, and it is frequently something generic and internal-looking, like <code>server47.hostingprovider.com</code>, rather than any of the actual customer websites hosted on that machine. Reverse DNS is a network administration convention, not a discovery tool — mail servers use it to verify sender legitimacy, for example.</p>
+      <p><strong>Reverse IP lookup</strong> is the crawled-database technique described above, and it can return many results — every domain the crawler has ever recorded pointing to that IP, potentially numbering in the thousands for a large shared hosting server. The two tools are answering different questions: reverse DNS asks what the server operator configured as this IP's official hostname; reverse IP lookup asks what websites the crawler has found are actually hosted there. For a full picture of what any specific IP address reveals about its network context, <a href="/intelligence/network-route">tracing the actual routing path</a> adds another layer entirely distinct from either of these DNS-based techniques.</p>
+
+      <h2><span class="section-num">04</span> Why Do Multiple Domains Share the Same IP Address?</h2>
+      <p>Two mechanisms explain almost all cases of IP sharing, and they have very different implications for what a reverse IP lookup result actually means.</p>
+      <h3>Shared hosting and virtual hosting</h3>
+      <p>Traditional web hosting places many customer websites on one physical or virtual server to keep costs low for low-traffic sites. All of those sites share the server's single IP address. The technical mechanism that makes this work is called virtual hosting — when a browser connects, it sends a Host header specifying which domain it wants, and the web server software uses that header to serve the correct site's files, even though the underlying IP connection is identical for every site on that server. A reverse IP lookup here genuinely reveals the server's actual co-tenants.</p>
+      <h3>CDNs and reverse proxies</h3>
+      <p>Content delivery networks like Cloudflare, Fastly, and Akamai sit in front of millions of customer websites, terminating the connection at their own edge servers rather than the origin server. A reverse IP lookup on a Cloudflare-fronted IP typically returns an enormous list of completely unrelated domains — every other Cloudflare customer whose traffic happens to route through that same edge IP. This case is important to recognise because, unlike shared hosting, these domains have no actual relationship to each other beyond using the same infrastructure provider.</p>
+
+      <!-- CTA 1 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Network Identity Intelligence</span>
+        <h3>See Your Own IP, ISP, ASN, and Hosting Context</h3>
+        <p>IntelReap's Network Identity panel reveals your public IP address, ISP or hosting provider name, ASN, and organisation — the same category of information a reverse IP lookup surfaces about any server, applied instantly to your own connection.</p>
+        <div class="ir-btn-row">
+          <a href="/intelligence/network-identity" class="ir-btn-primary cta-rotate">Reveal My Network Identity</a>
+        </div>
+      </div>
+
+      <h2><span class="section-num">05</span> What Is Reverse IP Lookup Actually Used For?</h2>
+      <p>The practical applications cluster around a few distinct professional use cases, each drawing on the same underlying technique for a different purpose.</p>
+      <p><strong>Security research and threat intelligence.</strong> When investigating a phishing site or malware distribution point, security researchers run a reverse IP lookup to check whether the malicious domain shares infrastructure with other suspicious sites — a common pattern for operators running multiple related scam or malware campaigns from the same server. Investigators frequently cross-reference this with <a href="/intelligence/vpn-proxy">whether the server itself is sitting behind a VPN, proxy, or data centre IP range</a>, since that context shapes how much weight to give any single infrastructure signal. This is one input among several in a broader infrastructure-mapping investigation, rarely conclusive on its own.</p>
+      <p><strong>Competitive and SEO analysis.</strong> Marketing teams use reverse IP lookup to discover a competitor's other web properties, particularly when a company operates multiple brands or affiliate sites without obvious public disclosure. Discovering that several seemingly independent review sites all share one IP address is a meaningful signal, though far from definitive proof of common ownership.</p>
+      <p><strong>Web development and infrastructure diagnostics.</strong> Developers use reverse IP lookup to confirm which sites are co-located on a shared server, useful when diagnosing Host header misconfiguration, SSL certificate issues on shared hosting, or unexpected traffic routing behaviour.</p>
+      <p><strong>Investigative journalism and open-source intelligence.</strong> Researchers building a picture of who operates a network of related websites — disinformation networks, coordinated review manipulation, or shell company web presences — use reverse IP lookup as one technique in a broader open-source investigation toolkit, typically combined with WHOIS records and other public data sources.</p>
+
+      <h2><span class="section-num">06</span> Reverse IP Lookup vs Related Techniques</h2>
+      <div class="ir-table-wrap" role="region" aria-label="Reverse IP lookup compared to related lookup techniques" tabindex="0">
+        <table class="ir-table">
+          <caption>Reverse IP lookup compared to reverse DNS, WHOIS, and forward DNS lookup across what each reveals and its primary use case</caption>
+          <thead>
+            <tr>
+              <th scope="col">Technique</th>
+              <th scope="col">Input</th>
+              <th scope="col">Output</th>
+              <th scope="col">Primary Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Forward DNS lookup</strong></td>
+              <td>Domain name</td>
+              <td>IP address(es)</td>
+              <td>Standard website connection</td>
+            </tr>
+            <tr>
+              <td><strong>Reverse DNS (PTR)</strong></td>
+              <td>IP address</td>
+              <td>Single configured hostname</td>
+              <td>Mail server verification</td>
+            </tr>
+            <tr>
+              <td><strong>Reverse IP lookup</strong></td>
+              <td>IP address</td>
+              <td>All domains crawled pointing to it</td>
+              <td>Infrastructure &amp; competitor research</td>
+            </tr>
+            <tr>
+              <td><strong>WHOIS lookup</strong></td>
+              <td>Domain name</td>
+              <td>Registration details (often redacted)</td>
+              <td>Domain ownership research</td>
+            </tr>
+            <tr>
+              <td><strong>ASN lookup</strong></td>
+              <td>IP address</td>
+              <td>Owning network/organisation</td>
+              <td>Network attribution</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>These techniques are complementary rather than substitutes. A thorough infrastructure investigation typically layers several of them: a reverse IP lookup to find co-hosted domains, a WHOIS lookup on each interesting result to check registration details, and an ASN lookup on the IP itself to identify the hosting provider or network operator. <a href="/guides/how-to-find-ip-address-of-any-device">Finding the specific IP address of a target device or server</a> is naturally the first step before any of these lookup techniques can be applied.</p>
+
+      <h2><span class="section-num">07</span> The Real Limitations of Reverse IP Lookup</h2>
+      <p>Understanding what reverse IP lookup cannot tell you is as important as understanding what it can. Treating its output as more authoritative than it actually is leads to incorrect conclusions.</p>
+      <p><strong>Database staleness.</strong> Every reverse IP lookup service depends on how recently and thoroughly its crawler visited the domains in its database. A domain that migrated hosting providers is not instantly reflected — results can lag by days, weeks, or longer depending on the provider's crawl frequency. No reverse IP lookup tool provides a real-time, complete view.</p>
+      <p><strong>Incomplete coverage.</strong> No crawler indexes every domain that exists. Newer domains, low-traffic sites, and domains that were never linked to from elsewhere are less likely to appear in any given reverse IP database. Different providers have meaningfully different coverage, which is why professional investigators often cross-reference results across multiple reverse IP lookup services.</p>
+      <p><strong>CDN noise.</strong> As covered above, a reverse IP lookup on any IP address behind a major CDN returns a list dominated by unrelated domains that merely share the same infrastructure provider, making the technique far less useful for identifying genuinely related sites in these cases.</p>
+      <p><strong>No ownership information.</strong> A reverse IP lookup tells you which domains share an IP — nothing more. It provides zero information about who owns, operates, or controls any of those domains. On shared hosting particularly, the domains returned are frequently owned by entirely unrelated third parties who simply use the same hosting company, and treating co-location as evidence of common ownership is a common analytical mistake.</p>
+
+      <h2><span class="section-num">08</span> Checking Your Own Hosting Neighbours</h2>
+      <p>Running a reverse IP lookup on your own website's IP address is a useful, low-effort diagnostic worth doing periodically if you are on shared hosting. It reveals exactly which other sites share your server, which matters because IP-based reputation systems occasionally penalise everyone on a shared IP when one neighbouring site is compromised, blacklisted for spam, or flagged by security services — even though your own site had no involvement. This shared-fate risk is one of the practical reasons businesses with reputation-sensitive operations, particularly email marketing, choose to pay for a dedicated IP address rather than remain on shared infrastructure.</p>
+      <p>Beyond hosting reputation, understanding your own network footprint more broadly connects to the same category of exposure that <a href="/learn/what-is-device-fingerprinting">browser fingerprinting techniques reveal at the device level</a> — both are forms of infrastructure and identity signals that exist whether or not you are actively thinking about them, and both are worth periodically auditing rather than assuming are invisible by default.</p>
+
+      <!-- CTA 2 -->
+      <div class="ir-cta-block">
+        <span class="ir-cta-eyebrow">Network Route Intelligence</span>
+        <h3>Trace Your Full Network Route and Routing Path</h3>
+        <p>IntelReap's Network Route panel shows your public IP, ISP, ASN, and the complete BGP routing path your connection takes — the network-level context that complements what reverse IP lookup reveals about server infrastructure.</p>
+        <div class="ir-btn-row">
+          <a href="/intelligence/network-route" class="ir-btn-secondary">See My Network Route &#8594;</a>
+        </div>
+      </div>
+
+      <!-- LOGIC + METHODOLOGY -->
+      <div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Logic</span>
+          <p>Reverse IP lookup is powerful precisely because no live DNS query can answer "what else is here" — but that same crawled-database foundation is exactly why its results are a snapshot, not a guarantee.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow">Methodology</span>
+          <p>This guide draws on IETF DNS specifications (RFC 1035, RFC 1912 for PTR conventions), published research on shared hosting architecture, CDN provider documentation on IP sharing at scale, and standard open-source intelligence methodology for infrastructure investigation.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc1035" target="_blank" rel="noopener noreferrer">RFC 1035 — Domain Names: Implementation and Specification</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc1912" target="_blank" rel="noopener noreferrer">RFC 1912 — Common DNS Operational and Configuration Errors (PTR record conventions)</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc7231" target="_blank" rel="noopener noreferrer">RFC 7231 — HTTP/1.1 Semantics: Host Header and Virtual Hosting</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link"><a href="https://developers.cloudflare.com/fundamentals/concepts/how-cloudflare-works/" target="_blank" rel="noopener noreferrer">Cloudflare Developer Docs — How Cloudflare's Shared IP Infrastructure Works</a></span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link"><a href="https://www.icann.org/resources/pages/rdds-labeling-policy-2017-02-01-en" target="_blank" rel="noopener noreferrer">ICANN — Registration Data Directory Services (WHOIS) Policy Overview</a></span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Twelve questions on reverse IP lookup — how it works, how it differs from related techniques, its use cases, and its real limitations.</p>
+        <div class="ndic-faq-list">
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>What is reverse IP lookup?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">Reverse IP lookup identifies every domain name hosted on a specific IP address. A normal DNS lookup converts a domain into an IP; reverse IP lookup works the other direction — starting with an IP address and finding every website that resolves to it. This works because shared hosting environments commonly host hundreds or thousands of separate domains on one server IP.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>How does reverse IP lookup work?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">Reverse IP lookup tools maintain databases built by continuously crawling and cataloguing DNS records, associating each discovered domain with the IP its A record points to. When you query an IP, the tool searches this database for every domain recorded pointing there. This differs from reverse DNS, which returns only a single configured hostname rather than the full list of hosted domains.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>What is the difference between reverse DNS lookup and reverse IP lookup?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">Reverse DNS queries the PTR record for an IP, returning a single hostname configured by the network administrator — often a generic server identifier. Reverse IP lookup searches a crawled database of DNS A records to find every domain pointing to that IP, which can return thousands of results on shared hosting. They answer different questions: reverse DNS asks what hostname is configured; reverse IP lookup asks what websites are actually hosted there.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>Why do multiple domains share the same IP address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Shared hosting is the primary reason — providers place many low-traffic websites on a single server IP, differentiated by the Host header via virtual hosting. CDNs and reverse proxies like Cloudflare cause the same effect at massive scale, since the CDN's edge servers terminate the connection rather than the origin, meaning many unrelated customer sites show the same IP address.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>What is reverse IP lookup used for?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">Security researchers use it to map infrastructure and identify related malicious domains. SEO and competitive analysis professionals use it to discover a competitor's other web properties. Developers use it to diagnose shared hosting and Host header routing issues. Journalists and researchers use it to investigate ownership networks behind clusters of related websites, typically combined with WHOIS and other open-source intelligence sources.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>Is reverse IP lookup accurate?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">Accuracy is limited by how the database was built. Most tools rely on periodic crawling rather than real-time queries, so results can be outdated — showing domains that have since moved, or missing domains added since the last crawl. Coverage also varies significantly between providers, since no single crawler indexes every domain. Treat results as a reasonable snapshot rather than a definitive real-time list.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>Does reverse IP lookup work behind a CDN like Cloudflare?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">A reverse IP lookup on a Cloudflare-fronted IP typically returns every other domain using that same edge IP — potentially thousands of completely unrelated websites, since Cloudflare's shared IP ranges serve enormous customer numbers simultaneously. This makes the technique far less useful for identifying a site's true origin server or genuinely related infrastructure once a CDN is involved.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>Can reverse IP lookup find my own website's IP neighbours?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Yes — running it on your own site's IP shows which other domains share your hosting server, useful for understanding shared hosting risk. If a neighbouring site is compromised, blacklisted, or flagged for spam, it can occasionally affect your own site's reputation or email deliverability through IP-based reputation systems, even though the sites are entirely unrelated. This is one reason some businesses pay for a dedicated IP.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>What is a dedicated IP and how does it differ for reverse IP lookup purposes?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">A dedicated IP is assigned exclusively to one website or hosting account, unlike shared hosting where one IP serves many domains. A reverse IP lookup on a dedicated IP typically returns only that single domain and closely related subdomains, making it far more useful for confirming a specific IP genuinely belongs to one organisation without the noise of unrelated shared-hosting neighbours.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10"><span>Is reverse IP lookup legal?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">Yes — reverse IP lookup queries publicly available DNS records that are, by design, published for the internet to resolve domain names. It does not access private data, does not require authentication, and involves no unauthorised access of any kind. It is a standard, widely used technique across network administration, cybersecurity research, and digital marketing analysis.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11"><span>How is reverse IP lookup different from a WHOIS lookup?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">WHOIS returns registration information about a domain name — who registered it, when, and through which registrar, subject to privacy redaction in most cases today. Reverse IP lookup returns a list of domains associated with an IP address, saying nothing about ownership. The two are commonly used together: reverse IP lookup finds related domains, then WHOIS on each investigates registration details.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12"><span>Can reverse IP lookup identify who owns a website?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">Not directly. Reverse IP lookup only reveals which domains share an IP — it provides no ownership information on its own. Investigating ownership requires combining results with WHOIS records, business registration lookups, and other open-source intelligence techniques. On shared hosting, domains returned are frequently owned by completely unrelated parties, which is an important limitation before drawing conclusions.</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">Question About Reverse IP Lookup?</h2>
+          <p class="ir-contact-sub">Ask about infrastructure investigation, hosting diagnostics, or anything else covered above. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name"></div>
+              <div class="form-group"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email"></div>
+              <div class="form-group"><label for="cf-message">Your question</label><textarea id="cf-message" name="message" placeholder="What would you like to know about reverse IP lookup or network infrastructure?" required></textarea></div>
+              <button type="submit" class="form-submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+  (function(){'use strict';
+    document.querySelectorAll('.ndic-faq-question').forEach(function(btn){btn.addEventListener('click',function(){const item=btn.closest('.ndic-faq-item'),wasOpen=item.classList.contains('ndic-faq-item--open');document.querySelectorAll('.ndic-faq-item--open').forEach(function(i){i.classList.remove('ndic-faq-item--open');i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');});if(!wasOpen){item.classList.add('ndic-faq-item--open');btn.setAttribute('aria-expanded','true');}});});
+    const bar=document.getElementById('scroll-progress-bar');if(bar){window.addEventListener('scroll',function(){const s=window.scrollY||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(s/h)*100:0).toFixed(2)+'%';},{passive:true});}
+    (()=>{const now=new Date(),dow=now.getDay(),mon=new Date(now.getFullYear(),now.getMonth(),now.getDate()+(dow===0?-6:1-dow)),iso=mon.toISOString().split('T')[0];document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>{if(s.textContent.includes('"dateModified"'))s.textContent=s.textContent.replace(/"dateModified"\s*:\s*"[^"]*"/g,`"dateModified":"${iso}"`);});})();
+    (()=>{const badge=document.getElementById('freshness-badge');if(!badge)return;const d=new Date(),mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],txt=`Last updated ${mo[d.getMonth()]}\u00a0${d.getDate()},\u00a0${d.getFullYear()}`;badge.textContent=txt;badge.setAttribute('aria-label',txt);})();
+    (()=>{const m=new Date().getMonth(),banners=['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'],labels=['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];const el=document.getElementById('seasonal-banner');if(el){el.textContent=banners[m];el.style.cssText='text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;';}const lbl=document.getElementById('seasonal-label');if(lbl)lbl.textContent=labels[m];})();
+    (()=>{const v=['Reveal My Network Identity','Check My Network Details','See My IP &amp; ISP Info','Inspect My Network Route','View My Connection Details','Scan My Network Now'];document.querySelectorAll('.cta-rotate').forEach(el=>{el.textContent=v[Math.floor(Math.random()*v.length)];});})();
+    (()=>{const rawUrl=window.location.href,encUrl=encodeURIComponent(rawUrl),encTitle=encodeURIComponent(document.title);const platforms=[{n:'WhatsApp',u:`https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}`},{n:'Facebook',u:`https://www.facebook.com/sharer/sharer.php?u=${encUrl}`},{n:'Twitter/X',u:`https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}`},{n:'LinkedIn',u:`https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`},{n:'Reddit',u:`https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`},{n:'Quora',u:`https://www.quora.com/search?q=${encTitle}`},{n:'Medium',u:`https://medium.com/new-story?url=${encUrl}`},{n:'Telegram',u:`https://t.me/share/url?url=${encUrl}&text=${encTitle}`},{n:'Pinterest',u:`https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}`},{n:'Discord',u:'https://discord.com/channels/@me'},{n:'Snapchat',u:`https://www.snapchat.com/share?url=${encUrl}`},{n:'Vimeo',u:'https://vimeo.com'},{n:'TikTok',u:'https://www.tiktok.com'},{n:'Instagram',u:'https://www.instagram.com'},{n:'Email',u:`mailto:?subject=${encTitle}&body=${encUrl}`},{n:'Copy Link',u:null}];
+    const container=document.getElementById('share-pills-container');if(!container)return;
+    platforms.forEach(p=>{let el;if(p.u===null){el=document.createElement('button');el.type='button';el.textContent='Copy Link';el.setAttribute('aria-label','Copy page URL to clipboard');el.addEventListener('click',()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(rawUrl).then(()=>{el.textContent='\u2713 Copied!';setTimeout(()=>{el.textContent='Copy Link';},2400);showToast('Link copied to clipboard');}).catch(()=>legacyCopy(rawUrl,el));}else legacyCopy(rawUrl,el);});}else{el=document.createElement('a');el.href=p.u;el.target='_blank';el.rel='noopener noreferrer';el.textContent=p.n;el.setAttribute('aria-label',`Share on ${p.n}`);}el.className='ir-share-pill';container.appendChild(el);});})();
+    function legacyCopy(text,btn){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');if(btn){btn.textContent='\u2713 Copied!';setTimeout(()=>{btn.textContent='Copy Link';},2400);}showToast('Link copied to clipboard');}catch(e){showToast('Copy failed \u2014 please copy the URL manually');}document.body.removeChild(ta);}
+    function showToast(msg){const tc=document.getElementById('toast-container');if(!tc)return;const t=document.createElement('div');t.textContent=msg;t.style.cssText='display:inline-block;background:var(--color-accent,#0ea5e9);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';tc.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>{t.style.opacity='1';}));setTimeout(()=>{t.style.opacity='0';setTimeout(()=>{if(t.parentNode)t.parentNode.removeChild(t);},350);},2700);}
+  }());
+  </script>
+  <script>
+    function handleContactForm(e){e.preventDefault();const myForm=e.target,formData=new FormData(myForm);fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(formData).toString()}).then(()=>{alert("Thank you! Your request has been transmitted.");myForm.reset();}).catch((error)=>{alert("Oops! There was a problem submitting your form.");console.error("Form submission error:",error);});}
+  </script>
+</body>
+</html>
