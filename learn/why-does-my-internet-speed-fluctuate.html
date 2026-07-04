@@ -269,6 +269,29 @@
       max-width: 520px; margin-left: auto; margin-right: auto;
     }
 
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-btn-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .ir-btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.8125rem 1.75rem;
+      background: #0ea5e9 !important; color: #ffffff !important;
+      border: 2px solid #0ea5e9 !important; border-radius: 6px;
+      font-family: var(--font-display, 'Syne', sans-serif); font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none !important;
+      cursor: pointer; transition: background 0.15s, transform 0.1s; white-space: nowrap; min-width: 180px;
+    }
+    .ir-btn-primary:hover { background: #0284c7 !important; border-color: #0284c7 !important; transform: translateY(-1px); }
+    .ir-btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.8125rem 1.75rem;
+      background: #f0f9ff !important; color: #0c2340 !important;
+      border: 2px solid #bae6fd !important; border-radius: 6px;
+      font-family: var(--font-display, 'Syne', sans-serif); font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none !important;
+      cursor: pointer; transition: background 0.15s, transform 0.1s; white-space: nowrap; min-width: 180px;
+    }
+    .ir-btn-secondary:hover { background: #ffffff !important; border-color: #7dd3fc !important; transform: translateY(-1px); }
+
     .ir-logic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
     @media (max-width: 560px) { .ir-logic-grid { grid-template-columns: 1fr; } }
     .ir-logic-card {
@@ -395,6 +418,7 @@
       .ir-faq-outer,
       .ir-contact-outer,
       .ir-article     { padding-left: 1rem; padding-right: 1rem; }
+      .ir-btn-primary, .ir-btn-secondary { min-width: 0; width: 100%; }
     }
 
   </style>
@@ -516,10 +540,10 @@
           Speed that dips, surges, and stalls without warning is one of the most frustrating networking problems — and one of the most diagnosable. This guide breaks down every cause of internet speed fluctuation, tells you which hardware is responsible, and shows you exactly what to test and fix first.
         </p>
         <div class="ndic-hero-cta-group">
-          <a href="/intelligence/live-network" class="ndic-btn-primary cta-rotate">
+          <a href="/intelligence/live-network" class="ir-btn-primary cta-rotate">
             Monitor My Live Connection
           </a>
-          <a href="/intelligence/performance" class="ndic-btn-secondary">
+          <a href="/intelligence/performance" class="ir-btn-secondary">
             Check My Performance Score →
           </a>
         </div>
@@ -531,12 +555,12 @@
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item">
-            <span class="ndic-trust-value">234 data points</span>
+            <span class="ndic-trust-value">290+ data points</span>
             <span class="ndic-trust-label">per scan</span>
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item">
-            <span class="ndic-trust-value">12 intelligence panels</span>
+            <span class="ndic-trust-value">13 intelligence panels</span>
             <span class="ndic-trust-label">per report</span>
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
@@ -568,7 +592,7 @@
         Some degree of fluctuation is completely normal. No broadband connection delivers a perfectly flat speed at all times because network routing, shared infrastructure, and radio signal conditions all change continuously. What matters is the <em>range</em> of the fluctuation and whether speeds ever drop far below what you need for the tasks you are trying to complete.
       </p>
       <p>
-        Fluctuation that causes buffering, dropped calls, or degraded stream quality is a solvable problem. The critical first step is distinguishing between a problem that sits inside your home network — and one that lives in your ISP's infrastructure where only they can fix it.
+        Fluctuation that causes buffering, dropped calls, or degraded stream quality is a solvable problem. The critical first step is distinguishing between a problem that sits inside your home network and one that lives in your ISP's infrastructure where only they can fix it — <a href="/intelligence/network-route">tracing your actual network route</a> is often the fastest way to see which side of that boundary the fault sits on.
       </p>
 
       <h2><span class="section-num">02</span> The Eight Most Common Causes of Speed Fluctuation</h2>
@@ -595,7 +619,7 @@
 
       <h3>ISP Throttling</h3>
       <p>
-        Some ISPs deliberately reduce connection speeds in specific circumstances: after a soft data threshold is reached in a billing period, for certain traffic types such as video streaming or peer-to-peer applications, or as a network management response during congestion events. Throttling is detectable: if your general speed tests fine but a specific platform or activity is consistently slow, or if speed improves when using a VPN that masks your traffic type, throttling is the likely cause.
+        Some ISPs deliberately reduce connection speeds in specific circumstances: after a soft data threshold is reached in a billing period, for certain traffic types such as video streaming or peer-to-peer applications, or as a network management response during congestion events. Throttling is detectable: if your general speed tests fine but a specific platform or activity is consistently slow, or if speed improves when using a VPN that masks your traffic type — worth knowing that <a href="/learn/does-a-vpn-change-your-mac-address">a VPN changes what your ISP can see about your traffic, not your device's underlying identifiers</a> — throttling is the likely cause.
       </p>
 
       <h3>Background Processes Consuming Bandwidth</h3>
@@ -610,7 +634,7 @@
 
       <h3>DNS Latency Making Speed Feel Inconsistent</h3>
       <p>
-        DNS (Domain Name System) resolvers translate website names into IP addresses before any content loads. If your ISP's default DNS resolver is slow or overloaded, page loads feel sluggish even when your actual download and upload speeds are fine. Switching to a fast public resolver such as Cloudflare (1.1.1.1) or Google (8.8.8.8) is free and takes two minutes — and is frequently the fix for connections that test fast but feel slow during normal browsing.
+        DNS (Domain Name System) resolvers translate website names into IP addresses before any content loads. If your ISP's default DNS resolver is slow or overloaded, page loads feel sluggish even when your actual download and upload speeds are fine. Switching to a fast public resolver such as Cloudflare (1.1.1.1) or Google (8.8.8.8) is free and takes two minutes — the same resolver choice also matters for <a href="/learn/how-to-protect-your-privacy-online">DNS privacy, since your default ISP resolver can log every domain you visit</a> — and is frequently the fix for connections that test fast but feel slow during normal browsing.
       </p>
 
       <h2><span class="section-num">03</span> Does Your Modem Affect Internet Speed?</h2>
@@ -621,7 +645,7 @@
         On cable broadband, the relevant specification is DOCSIS version and channel bonding. DOCSIS 3.0 modems with 8 bonded downstream channels support roughly 340 Mbps maximum. DOCSIS 3.1 modems support 10 Gbps downstream in theory and 1–2 Gbps in practice on current cable infrastructure — a completely different league. If your ISP offers a 500 Mbps or 1 Gbps plan and you are using an old DOCSIS 3.0 modem, the modem is physically preventing you from receiving those speeds.
       </p>
       <p>
-        Beyond version, modems degrade with age. Flash memory corruption, capacitor wear, and overheating cause random disconnects and speed drops that look like ISP problems from the outside. A modem older than 4–5 years on a high-speed plan is a prime candidate for replacement.
+        Beyond version, modems degrade with age. Flash memory corruption, capacitor wear, and overheating cause random disconnects and speed drops that look like ISP problems from the outside. A modem older than 4–5 years on a high-speed plan is a prime candidate for replacement — and if you are unsure how to even reach its admin panel, <a href="/guides/how-to-find-ip-address-of-any-device">finding the correct local IP address for your specific modem model</a> is the first step before checking any of its settings.
       </p>
       <div class="ir-callout">
         <p><strong>Quick check:</strong> Log in to your modem's admin panel (usually at 192.168.100.1) and look for the "Event Log" or "Status" page. Frequent T3 or T4 timeout errors indicate the modem is losing its signal lock with the cable plant — a hardware or line quality issue, not an ISP plan issue.</p>
@@ -643,7 +667,7 @@
 
       <h2><span class="section-num">05</span> Do Wi-Fi Boosters Actually Increase Internet Speed?</h2>
       <p>
-        The honest answer is: not always, and often not in the way most people expect. A Wi-Fi range extender extends the <em>coverage area</em> of your wireless network — it does not add bandwidth to your internet connection. Whether it improves your experienced speed depends entirely on what was limiting you in the first place.
+        Not always — and often not in the way most people expect. A Wi-Fi range extender extends the <em>coverage area</em> of your wireless network — it does not add bandwidth to your internet connection. Whether it improves your experienced speed depends entirely on what was limiting you in the first place.
       </p>
       <p>
         If your device previously had a weak signal to your main router, a booster placed closer to it improves signal quality and allows the device to connect at a higher modulation rate — which can dramatically improve throughput. In this scenario, yes, a booster can increase internet speed for that device in that location.
@@ -674,9 +698,11 @@
         <span class="ir-cta-eyebrow">Live Connection Intelligence</span>
         <h3>Measure Latency, Bandwidth, and Jitter in Real Time</h3>
         <p>IntelReap's Live Network Monitor captures your connection quality as it happens — latency spikes, bandwidth drops, jitter, and stability score — directly in your browser. No installation, no account. Run it while your connection fluctuates to catch the pattern live.</p>
-        <a href="/intelligence/live-network" class="ndic-btn-primary cta-rotate">
-          Monitor My Live Connection
-        </a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/live-network" class="ir-btn-primary cta-rotate">
+            Monitor My Live Connection
+          </a>
+        </div>
       </div>
 
       <h2><span class="section-num">07</span> How to Diagnose Speed Fluctuation Step by Step</h2>
@@ -793,17 +819,10 @@
 
       <h2><span class="section-num">09</span> When Should You Call Your ISP?</h2>
       <p>
-        After working through the diagnostic steps above, call your ISP when you can demonstrate that the problem is not inside your home network. The evidence you want before calling:
+        After working through the diagnostic steps above, call your ISP when you can demonstrate that the problem is not inside your home network. The evidence worth gathering first: wired ethernet speed tests showing results consistently below your plan's advertised download speed, accounting for the fact that most ISPs advertise "up to" figures rather than guarantees; a reading from IntelReap's Live Network Monitor showing high latency or packet loss on that same wired connection rather than over Wi-Fi; and modem event logs showing T3 or T4 timeout errors, or signal levels sitting outside the acceptable range.
       </p>
-      <ul>
-        <li>Speed tests via wired ethernet showing speeds consistently below your plan's advertised download speed (accounting for the fact that most ISPs advertise "up to" speeds)</li>
-        <li>IntelReap's Live Network Monitor showing high latency or packet loss on a wired connection — not Wi-Fi</li>
-        <li>Modem event logs showing T3/T4 timeout errors or signal levels outside acceptable range</li>
-        <li>The problem occurs at multiple times of day, ruling out simple peak-hour congestion as the sole cause</li>
-        <li>A second device connected directly to the modem via ethernet shows the same problem, ruling out your router</li>
-      </ul>
       <p>
-        Having this documentation when you call removes ambiguity and significantly increases the likelihood of an ISP technician being dispatched to check the line rather than a support agent asking you to restart your router three times.
+        Two further checks strengthen the case considerably. Confirm the problem occurs at multiple times of day rather than only during evening peak hours, which rules out simple congestion as the sole explanation, and connect a second device directly to the modem via ethernet to confirm the same problem persists — this rules out your router as the cause entirely. Having this documentation ready when you call removes ambiguity and meaningfully increases the odds of an ISP technician being dispatched to check the line, rather than a support agent asking you to restart your router three times before escalating.
       </p>
 
       <!-- CTA BLOCK 2 -->
@@ -811,9 +830,11 @@
         <span class="ir-cta-eyebrow">Page Performance Intelligence</span>
         <h3>Check Your Full Connection Performance Profile</h3>
         <p>IntelReap's Performance panel analyses your browser's connection timing — DNS resolution, TCP handshake, first byte, and full load — giving you a complete picture of where speed is being lost, layer by layer. Free, in-browser, no account needed.</p>
-        <a href="/intelligence/performance" class="ndic-btn-secondary">
-          Check My Performance Score →
-        </a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/performance" class="ir-btn-secondary">
+            Check My Performance Score →
+          </a>
+        </div>
       </div>
 
       <!-- LOGIC + METHODOLOGY -->
