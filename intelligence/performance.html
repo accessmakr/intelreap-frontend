@@ -1,34 +1,270 @@
-<!-- /intelligence/performance.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performance Intelligence Panel | IntelReap</title>
-    <meta name="description" content="Module deploying: Page load time, TTFB, DNS resolution speed, TLS handshake timing, JS heap size.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/performance">
-    <meta property="og:title" content="Performance Intelligence Panel | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/performance">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>(function(){var s=localStorage.getItem("ndic_theme");if(s==="dark")document.documentElement.setAttribute("data-theme","dark")})();</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Performance Intelligence Panel — How Fast Is Your Browser? | IntelReap</title>
+  <meta name="description" content="Live page load time, TTFB, DNS lookup, TCP connection, TLS handshake, DOM processing, memory usage, and resource stats — your browser performance explained parameter by parameter.">
+  <meta name="keywords" content="page load time, TTFB, DNS lookup, TCP connection, TLS handshake, DOM processing, JS heap, resource timing, browser performance, cache hit rate">
+  <meta name="robots" content="index, follow"><meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/intelligence/performance">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/performance">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/performance">
+  <meta property="og:type" content="article"><meta property="og:title" content="Performance Intelligence Panel — IntelReap">
+  <meta property="og:description" content="Live TTFB, DNS, TCP, TLS, DOM, and memory stats — your browser performance explained in plain English.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/performance"><meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png"><meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Performance Intelligence Panel — IntelReap">
+  <meta name="twitter:description" content="Live page performance stats, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png"><meta name="twitter:site" content="@intelreap">
+  <meta name="geo.region" content="GB"><link rel="manifest" href="../manifest.json"><meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com"},{"@type":"TechArticle","headline":"Performance Intelligence Panel","url":"https://intelreap.com/intelligence/performance","datePublished":"2026-06-22","dateModified":"2026-06-27","author":{"@id":"https://intelreap.com/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Intelligence Center","item":"https://intelreap.com/index.html"},{"@type":"ListItem","position":3,"name":"Performance Intelligence Panel","item":"https://intelreap.com/intelligence/performance"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is TTFB?","acceptedAnswer":{"@type":"Answer","text":"Time To First Byte is the time from when a browser sends a request to when it receives the first byte of the response. It measures server response time plus network latency. A high TTFB means the server is slow to respond, which delays everything else — even a fast connection can't overcome a slow server."}},{"@type":"Question","name":"What does DOM processing time measure?","acceptedAnswer":{"@type":"Answer","text":"DOM processing is the time the browser spends parsing the HTML and building the Document Object Model after the response has been received. Long DOM processing times usually indicate very large HTML documents or render-blocking scripts that delay the parser."}},{"@type":"Question","name":"What is cache hit rate?","acceptedAnswer":{"@type":"Answer","text":"Cache hit rate is the percentage of page resources served from your browser's local cache rather than fetched from the network. A high cache hit rate on repeat visits means the site is well-optimised for caching, reducing load time significantly on subsequent visits."}},{"@type":"Question","name":"Why does JS heap usage matter?","acceptedAnswer":{"@type":"Answer","text":"JavaScript heap usage shows how much memory your browser has allocated to JavaScript on this page. High heap usage, especially when it grows over time, can indicate a memory leak that will eventually slow or crash the tab."}}]}]}</script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Performance Intelligence Panel</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for network efficiency metrics:<br><strong class="text-slate-200">Load time, TTFB, DNS resolution speed, TLS timing, JS heap size</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Performance Intelligence Panel on Homepage</a>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home"><span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span></a>
+      <button type="button" class="trigger-search" aria-label="Open search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+  <div id="seasonal-banner" aria-live="polite"></div>
+  <main>
+    <div class="ndic-deepdive-page">
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Performance Intelligence Panel</span>
+      </nav>
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 9</div>
+        <h1 class="ndic-deepdive-title">Performance Intelligence Panel</h1>
+        <p class="ndic-deepdive-subtitle">How Fast Is Your Browser?</p>
+        <p class="ndic-deepdive-intro">Live page load waterfall — TTFB, DNS, TCP, TLS, DOM, memory, and resource stats — measured the moment this page loads.</p>
+      </div>
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-9">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Performance Intelligence Panel</span>
+                <span class="ndic-canvas-subheading">How Fast Is Your Browser?</span>
+              </div>
+              <span class="ndic-canvas-score" id="c9-score">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <canvas id="canvas9-waterfall-chart"></canvas>
+              <canvas id="canvas9-responsiveness-chart"></canvas>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">Page Load Time</span><span class="ndic-param-value" id="c9-page-load-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">DOM Content Loaded</span><span class="ndic-param-value" id="c9-dom-content-loaded">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">DOM Interactive</span><span class="ndic-param-value" id="c9-dom-interactive">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Time To First Byte</span><span class="ndic-param-value" id="c9-ttfb">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">DNS Lookup</span><span class="ndic-param-value" id="c9-dns-lookup">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">TCP Connection</span><span class="ndic-param-value" id="c9-tcp-connection">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">TLS Handshake</span><span class="ndic-param-value" id="c9-tls-handshake">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Request Time</span><span class="ndic-param-value" id="c9-request-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Response Time</span><span class="ndic-param-value" id="c9-response-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">DOM Processing</span><span class="ndic-param-value" id="c9-dom-processing">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Resource Fetch Time</span><span class="ndic-param-value" id="c9-resource-fetch-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Resource Count</span><span class="ndic-param-value" id="c9-resource-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Page Weight</span><span class="ndic-param-value" id="c9-page-weight">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Script Count</span><span class="ndic-param-value" id="c9-script-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Stylesheet Count</span><span class="ndic-param-value" id="c9-stylesheet-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Image Count</span><span class="ndic-param-value" id="c9-image-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Font Count</span><span class="ndic-param-value" id="c9-font-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Cache Hit Rate</span><span class="ndic-param-value" id="c9-cache-hit-rate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Used</span><span class="ndic-param-value" id="c9-heap-used">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Total</span><span class="ndic-param-value" id="c9-heap-total">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Limit</span><span class="ndic-param-value" id="c9-heap-limit">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Next Hop Protocol</span><span class="ndic-param-value" id="c9-protocol">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Runtime Score</span><span class="ndic-param-value" id="c9-runtime-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Percentile Rating</span><span class="ndic-param-value" id="c9-percentile-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Timing Source</span><span class="ndic-param-value" id="c9-timing-source">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas9-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas9-ai-summary">Analyzing your page performance...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c9-deep-dive-link">Deep dive into your performance analysis</a>
+            </div>
+          </div>
+
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">What each timing and resource measurement above actually captures.</p>
+        </div>
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Load Timing Waterfall</h3>
+          <div class="ndic-explain-item">
+            <h4>Page Load Time &amp; DOM Content Loaded</h4>
+            <p>Page load time is when the browser fires the window load event — every resource (images, fonts, scripts) has finished. DOM Content Loaded fires earlier, when the HTML is parsed and the DOM is ready but external resources may still be loading. The gap between the two reveals how many heavy external resources are delaying the page from being fully ready.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Time To First Byte (TTFB) &amp; DNS Lookup</h4>
+            <p>TTFB is the time from request to the first byte of response — it's the sum of DNS lookup, TCP connection, TLS handshake, and server processing. DNS lookup is just the portion spent resolving the domain name to an IP address. A high DNS time on first load often drops dramatically on repeat visits once the result is cached.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>TCP Connection &amp; TLS Handshake</h4>
+            <p>TCP connection is the time to establish the raw socket connection to the server. TLS handshake is the cryptographic negotiation that follows on HTTPS connections — this is where the certificate is verified and session keys are exchanged. HTTP/2 and HTTP/3 both reduce repeated TLS overhead through connection reuse and 0-RTT resumption.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Request Time, Response Time &amp; DOM Processing</h4>
+            <p>Request time is from sending the HTTP request to the first byte of response body — equivalent to TTFB minus the connection setup. Response time is the time to receive the complete response body after the first byte arrived. DOM processing is the time the browser spent parsing HTML and constructing the DOM tree from the complete response.</p>
+          </div>
+        </div>
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Resources &amp; Memory</h3>
+          <div class="ndic-explain-item">
+            <h4>Resource Fetch Time, Count, Page Weight &amp; Cache Hit Rate</h4>
+            <p>Resource fetch time covers all sub-resource loading after the main document. Count, weight, and the breakdown by type (scripts, stylesheets, images, fonts) describe the page's resource profile. Cache hit rate measures what percentage came from local cache versus the network — a high rate on repeat visits means the site is well-configured for caching.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>JS Heap Used, Total &amp; Limit</h4>
+            <p>JS heap used is how much memory JavaScript has currently allocated. Total is the total heap size the engine has reserved. Limit is the maximum the browser will allow before throwing an out-of-memory error. Heap used growing over time without declining suggests a memory leak. These values are only available in Chromium-based browsers — Firefox doesn't expose them.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Next Hop Protocol, Runtime Score &amp; Percentile Rating</h4>
+            <p>Next hop protocol shows whether your connection to this server used HTTP/1.1, HTTP/2, or HTTP/3 — newer protocols generally reduce latency for multi-resource pages through multiplexing. Runtime score and percentile rating are composite judgements of the overall performance profile, contextualised against typical values for this type of measurement.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">What These Numbers Tell You That Synthetic Speed Tests Don't</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>This is your real load, not a controlled test</h4>
+          <p>Synthetic speed tests measure download bandwidth under ideal conditions. The Performance panel measures how your actual browser loaded this actual page — including your cache state, DNS resolver speed, geographic distance to the server, and the overhead of running all the other intelligence engines simultaneously. It's a real-world measurement, not a synthetic benchmark.</p>
+        </div>
+      </section>
+
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Performance — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What is TTFB?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Time To First Byte is the time from when a browser sends a request to when it receives the first byte of the response. It measures server response time plus network latency. A high TTFB means the server is slow to respond, which delays everything else.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What does DOM processing time measure?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">DOM processing is the time the browser spends parsing the HTML and building the Document Object Model after the response has been received. Long DOM processing times usually indicate very large HTML documents or render-blocking scripts.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What is cache hit rate?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Cache hit rate is the percentage of page resources served from your browser's local cache rather than fetched from the network. A high rate on repeat visits means the site is well-optimised for caching, reducing load time significantly.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>Why does JS heap usage matter?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">JavaScript heap usage shows how much memory your browser has allocated to JavaScript on this page. High heap usage, especially when it grows over time, can indicate a memory leak that will eventually slow or crash the tab.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link">W3C Navigation Timing Level 2 specification</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link">W3C Resource Timing Level 2 specification</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">03</span><span class="ndic-citation-link">W3C Performance Observer specification</span></div>
+        </div>
+      </section>
+      <div id="dynamic-internal-links"></div>
+    </div>
+  </main>
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+  <script defer src="../assets/js/engines/core.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+  <script>
+    document.querySelectorAll(".ndic-faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".ndic-faq-item");
+        const isOpen = item.classList.contains("ndic-faq-item--open");
+        document.querySelectorAll(".ndic-faq-item--open").forEach(i => {
+          i.classList.remove("ndic-faq-item--open");
+          i.querySelector(".ndic-faq-question").setAttribute("aria-expanded","false");
+        });
+        if (!isOpen) { item.classList.add("ndic-faq-item--open"); btn.setAttribute("aria-expanded","true"); }
+      });
+    });
+  </script>
 </body>
 </html>
