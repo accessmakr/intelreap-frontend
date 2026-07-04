@@ -1,34 +1,280 @@
-<!-- /intelligence/scoreboard.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Intelligence Scoreboard | IntelReap</title>
-    <meta name="description" content="Module deploying: 9-dimension weighted score, global privacy ranking, categorical penalty adjustments.">
-    <link rel="canonical" href="https://intelreap.com/intelligence/scoreboard">
-    <meta property="og:title" content="Global Intelligence Scoreboard | IntelReap">
-    <meta property="og:url" content="https://intelreap.com/intelligence/scoreboard">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0a0f1a;color:#e2e8f0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.glass{background:rgba(15,23,42,0.6);backdrop-filter:blur(16px);border:1px solid rgba(16,185,129,0.15)}</style>
+  <script>(function(){var s=localStorage.getItem("ndic_theme");if(s==="dark")document.documentElement.setAttribute("data-theme","dark")})();</script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Global Intelligence Scoreboard — Your Overall Score | IntelReap</title>
+  <meta name="description" content="Your global intelligence score across nine weighted dimensions — network, identity, privacy, device, graphics, security, capability, performance, and speed — explained parameter by parameter.">
+  <meta name="keywords" content="global intelligence score, network score, security score, privacy score, device score, performance score, environment score, browser score">
+  <meta name="robots" content="index, follow"><meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/intelligence/scoreboard">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/scoreboard">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/scoreboard">
+  <meta property="og:type" content="article"><meta property="og:title" content="Global Intelligence Scoreboard — IntelReap">
+  <meta property="og:description" content="Your overall environment score across nine dimensions, explained in plain English.">
+  <meta property="og:url" content="https://intelreap.com/intelligence/scoreboard"><meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png"><meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Global Intelligence Scoreboard — IntelReap">
+  <meta name="twitter:description" content="Your overall intelligence score across nine dimensions, explained parameter by parameter.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png"><meta name="twitter:site" content="@intelreap">
+  <meta name="geo.region" content="GB"><link rel="manifest" href="../manifest.json"><meta name="theme-color" content="#10141b">
+  <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com"},{"@type":"TechArticle","headline":"Global Intelligence Scoreboard","url":"https://intelreap.com/intelligence/scoreboard","datePublished":"2026-06-22","dateModified":"2026-06-27","author":{"@id":"https://intelreap.com/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Intelligence Center","item":"https://intelreap.com/index.html"},{"@type":"ListItem","position":3,"name":"Global Intelligence Scoreboard","item":"https://intelreap.com/intelligence/scoreboard"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the global intelligence score calculated?","acceptedAnswer":{"@type":"Answer","text":"The global score is a weighted average of nine dimension scores: security carries the highest weight at 20%, reflecting its outsized real-world impact. Network, privacy, and performance each carry 12%. Device, graphics, capability, and speed each carry 10%. Identity carries 8%. Each dimension score comes directly from the corresponding intelligence panel."}},{"@type":"Question","name":"Why does security have the highest weight?","acceptedAnswer":{"@type":"Answer","text":"Security issues like WebRTC leaks, open permissions, and mixed content have direct, immediate consequences for user exposure. A misconfigured security posture can undermine every other positive aspect of an environment — a fast, capable device on a secure connection is still compromised if WebRTC is leaking the real IP through a VPN."}},{"@type":"Question","name":"What does the health badge mean?","acceptedAnswer":{"@type":"Answer","text":"The health badge summarises the global score as a label: Excellent (90-100), Good (75-89), Fair (55-74), Poor (35-54), or Critical (below 35). It's a quick human-readable verdict for the overall environment quality."}},{"@type":"Question","name":"Can I improve my score?","acceptedAnswer":{"@type":"Answer","text":"Yes, for security and privacy dimensions specifically. Disabling WebRTC when not needed, reviewing permissions, and ensuring HTTPS have the most direct impact on the security score. Network and performance scores reflect your ISP and hardware, which are harder to change. Device, graphics, and capability scores are fixed to your current hardware and browser."}}]}]}</script>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <div class="glass max-w-2xl w-full p-10 rounded-2xl shadow-2xl text-center">
-        <h2 class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-3">IntelReap Advanced System Launch</h2>
-        <h1 class="text-3xl md:text-4xl font-light mb-4">Global Intelligence Scoreboard</h1>
-        <p class="text-slate-400 mb-8 text-sm leading-relaxed">Initializing deployment sequence for central telemetry calculations:<br><strong class="text-slate-200">9-dimension weighted score, global privacy ranking, penalty adjustments</strong></p>
-        <div class="grid grid-cols-4 gap-4 mb-8 border-t border-b border-slate-800 py-6">
-            <div><span class="days text-3xl font-bold text-emerald-400">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Days</span></div>
-            <div><span class="hours text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Hours</span></div>
-            <div><span class="minutes text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Mins</span></div>
-            <div><span class="seconds text-3xl font-bold text-white">00</span><br><span class="text-[10px] text-slate-500 uppercase tracking-widest">Secs</span></div>
-        </div>
-        <a href="/" class="text-xs uppercase tracking-widest text-emerald-500 hover:text-emerald-400 transition-colors">← See Your Global Intelligence Scoreboard on Homepage</a>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home"><span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span></a>
+      <button type="button" class="trigger-search" aria-label="Open search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
+      <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
+        <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
-    <script>
-        const target = new Date("July 6, 2026 17:00:00 UTC").getTime();
-        setInterval(() => { const d = target - new Date().getTime(); if(d < 0) return; document.querySelector('.days').innerText = Math.floor(d/(864e5)).toString().padStart(2,'0'); document.querySelector('.hours').innerText = Math.floor((d%864e5)/36e5).toString().padStart(2,'0'); document.querySelector('.minutes').innerText = Math.floor((d%36e5)/6e4).toString().padStart(2,'0'); document.querySelector('.seconds').innerText = Math.floor((d%6e4)/1000).toString().padStart(2,'0'); }, 1000);
-    </script>
+  </header>
+  <div id="seasonal-banner" aria-live="polite"></div>
+  <main>
+    <div class="ndic-deepdive-page">
+      <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">IntelReap</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current">Global Intelligence Scoreboard</span>
+      </nav>
+      <div class="ndic-deepdive-hero">
+        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 11</div>
+        <h1 class="ndic-deepdive-title">Global Intelligence Scoreboard</h1>
+        <p class="ndic-deepdive-subtitle">Your Overall Score</p>
+        <p class="ndic-deepdive-intro">Nine weighted dimension scores combined into one global verdict — calculated live from your full scan.</p>
+      </div>
+          <div class="ndic-canvas ndic-canvas-loading" id="canvas-11">
+            <div class="ndic-canvas-header">
+              <div class="ndic-canvas-header-left">
+                <span class="ndic-canvas-heading">Global Intelligence Scoreboard</span>
+                <span class="ndic-canvas-subheading">Your Overall Score</span>
+              </div>
+              <span class="ndic-health-badge" id="c11-health-badge">—</span>
+            </div>
+            <div class="ndic-canvas-viz">
+              <div class="ndic-score-ring-container">
+                <canvas id="canvas11-global-chart"></canvas>
+                <span class="ndic-score-large" id="c11-global-score" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">0</span>
+              </div>
+              <svg id="canvas11-score-rings"></svg>
+              <div class="ndic-sub-score-gauges">
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-network-chart"></canvas><span class="ndic-sub-gauge-label">Network</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-identity-chart"></canvas><span class="ndic-sub-gauge-label">Identity</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-privacy-chart"></canvas><span class="ndic-sub-gauge-label">Privacy</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-device-chart"></canvas><span class="ndic-sub-gauge-label">Device</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-graphics-chart"></canvas><span class="ndic-sub-gauge-label">Graphics</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-security-chart"></canvas><span class="ndic-sub-gauge-label">Security</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-capability-chart"></canvas><span class="ndic-sub-gauge-label">Capability</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-performance-chart"></canvas><span class="ndic-sub-gauge-label">Performance</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-speed-chart"></canvas><span class="ndic-sub-gauge-label">Speed</span></div>
+              </div>
+            </div>
+            <div class="ndic-canvas-params">
+              <div class="ndic-param-row"><span class="ndic-param-label">Network Score</span><span class="ndic-param-value" id="c11-network-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Identity Score</span><span class="ndic-param-value" id="c11-identity-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Privacy Score</span><span class="ndic-param-value" id="c11-privacy-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Device Score</span><span class="ndic-param-value" id="c11-device-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Graphics Score</span><span class="ndic-param-value" id="c11-graphics-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Security Score</span><span class="ndic-param-value" id="c11-security-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Capability Score</span><span class="ndic-param-value" id="c11-capability-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Performance Score</span><span class="ndic-param-value" id="c11-performance-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Speed Score</span><span class="ndic-param-value" id="c11-speed-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Strongest Area</span><span class="ndic-param-value" id="c11-strongest-area">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Weakest Area</span><span class="ndic-param-value" id="c11-weakest-area">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Improvement Priority</span><span class="ndic-param-value" id="c11-improvement-priority">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Critical Flags</span><span class="ndic-param-value" id="c11-critical-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Warnings</span><span class="ndic-param-value" id="c11-warnings">—</span></div>
+            </div>
+            <div class="ndic-canvas-footer">
+              <div class="ndic-ai-summary-wrapper">
+                <div class="ndic-ai-summary-header">
+                  <span class="ndic-ai-summary-label">AI Analysis</span>
+                  <span class="ndic-ai-source-badge" id="canvas11-ai-source">—</span>
+                </div>
+                <p class="ndic-ai-summary-text" id="canvas11-ai-summary">Computing your global score...</p>
+              </div>
+              <a href="#" class="ndic-deep-dive-link" id="c11-deep-dive-link">Deep dive into your global score analysis</a>
+            </div>
+          </div>
+
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
+          <h2 class="ndic-explain-title">Understanding Every Signal</h2>
+          <p class="ndic-explain-lead">How each dimension score is derived and why it carries its specific weight.</p>
+        </div>
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Dimension Scores &amp; Weights</h3>
+          <div class="ndic-explain-item">
+            <h4>Security Score — 20% weight</h4>
+            <p>The heaviest-weighted dimension. Security issues directly affect real-world exposure regardless of how good every other dimension looks — a WebRTC leak through a VPN, open camera permission on a hostile page, or missing HTTPS each have immediate consequences. Derived from Canvas 7's full security analysis.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Network Score — 12% weight</h4>
+            <p>Reflects routing quality, network tier, and ASN health from Canvas 1. A residential Tier 2 connection on a reputable ISP scores well; a connection routing through a flagged datacenter ASN scores lower regardless of speed.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Privacy Score — 12% weight</h4>
+            <p>Derived from Canvas 3's VPN/proxy trust score combined with Canvas 7's privacy-specific signals. Reflects how much of the connection and device fingerprint is exposed versus masked.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Performance Score — 12% weight</h4>
+            <p>Derived from Canvas 9's page load and resource timing data. Reflects real loading experience on this device and connection, not a synthetic benchmark.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Device, Graphics, Capability &amp; Speed Scores — 10% each</h4>
+            <p>Device (Canvas 5), graphics (Canvas 6), capability (Canvas 8), and rendering speed (Canvas 10) each contribute equally. These four together characterise the hardware and browser platform — high scores indicate a capable, modern environment.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Identity Score — 8% weight</h4>
+            <p>The lowest-weighted dimension, derived from Canvas 2's network identity data. IP geolocation accuracy and ISP consistency are useful signals, but they contribute least to overall environment quality since they're the dimension users have the most natural variation in through normal ISP differences.</p>
+          </div>
+        </div>
+        <div class="ndic-explain-group">
+          <h3 class="ndic-explain-group-title">Summary Fields</h3>
+          <div class="ndic-explain-item">
+            <h4>Strongest Area, Weakest Area &amp; Improvement Priority</h4>
+            <p>Strongest and weakest areas identify which of the nine dimensions scored highest and lowest in this scan. Improvement priority is a plain-English recommendation derived from the weakest scoring dimension that is also one where user action can actually help — a low identity score due to ISP infrastructure doesn't generate an improvement priority, but a low security score due to open WebRTC does.</p>
+          </div>
+          <div class="ndic-explain-item">
+            <h4>Critical Flags &amp; Warnings</h4>
+            <p>Critical flags are high-severity findings that directly lower the global score significantly — things like a WebRTC IP leak, TOR exit node detection, or a critically low security score. Warnings are lower-severity signals that reduce the score less but still warrant attention.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-explain-section">
+        <div class="ndic-explain-section-header">
+          <div class="ndic-explain-eyebrow">Bigger Picture</div>
+          <h2 class="ndic-explain-title">What the Global Score Is and Isn't</h2>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>It's an environment quality score, not a personal rating</h4>
+          <p>The global score measures the quality of the device and connection environment — not the person using it. A 55/100 on a corporate network behind a VPN reflects the network configuration, not the user's technical sophistication. A 90/100 on a home broadband connection reflects a clean, well-configured browser on a healthy network, which can be completely unintentional.</p>
+        </div>
+        <div class="ndic-explain-item">
+          <h4>Security is the only dimension where deliberate action consistently moves the score</h4>
+          <p>Performance, device, and network scores are largely determined by hardware and ISP. Security score is the dimension where specific, actionable changes — disabling WebRTC, revoking unused permissions, ensuring HTTPS — translate directly and immediately into a measurably higher score on the next scan.</p>
+        </div>
+      </section>
+
+      <section class="ndic-faq-section">
+        <div class="ndic-faq-section-header">
+          <div class="ndic-faq-section-label">FAQ</div>
+          <h2 class="ndic-faq-section-title">Global Scoreboard — Frequently Asked Questions</h2>
+        </div>
+        <div class="ndic-faq-list">
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>How is the global intelligence score calculated?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The global score is a weighted average of nine dimension scores: security carries the highest weight at 20%. Network, privacy, and performance each carry 12%. Device, graphics, capability, and speed each carry 10%. Identity carries 8%. Each dimension score comes directly from its corresponding intelligence panel.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>Why does security have the highest weight?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Security issues have direct, immediate consequences for user exposure. A misconfigured security posture can undermine every other positive aspect of an environment — a fast, capable device on a secure connection is still compromised if WebRTC is leaking the real IP through a VPN.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>What does the health badge mean?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The health badge summarises the global score as a label: Excellent (90–100), Good (75–89), Fair (55–74), Poor (35–54), or Critical (below 35). It's a quick human-readable verdict for the overall environment quality.</div></div>
+          </div>
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false"><span>Can I improve my score?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Yes, for security and privacy dimensions specifically. Disabling WebRTC when not needed, reviewing permissions, and ensuring HTTPS have the most direct impact. Network and performance scores reflect your ISP and hardware. Device, graphics, and capability scores are fixed to your current hardware and browser.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ndic-citation-section">
+        <div class="ndic-citation-label">Methodology Sources</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link">IntelReap scoring methodology — weighted composite of nine intelligence dimensions</span></div>
+          <div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link">W3C Security, Privacy, and Performance API specifications</span></div>
+        </div>
+      </section>
+      <div id="dynamic-internal-links"></div>
+    </div>
+  </main>
+  <footer id="ndic-footer"></footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/state.js"></script>
+  <script defer src="../assets/js/utils/helpers.js"></script>
+  <script defer src="../assets/js/utils/logger.js"></script>
+  <script defer src="../assets/js/utils/download.js"></script>
+  <script defer src="../assets/js/engines/device.js"></script>
+  <script defer src="../assets/js/engines/graphics.js"></script>
+  <script defer src="../assets/js/engines/capability.js"></script>
+  <script defer src="../assets/js/engines/security.js"></script>
+  <script defer src="../assets/js/engines/performance.js"></script>
+  <script defer src="../assets/js/engines/speed.js"></script>
+  <script defer src="../assets/js/engines/network.js"></script>
+  <script defer src="../assets/js/engines/ip.js"></script>
+  <script defer src="../assets/js/engines/proxy.js"></script>
+  <script defer src="../assets/js/engines/scoring.js"></script>
+  <script defer src="../assets/js/engines/ai-summary.js"></script>
+  <script defer src="../assets/js/engines/monitoring.js"></script>
+  <script defer src="../assets/js/engines/fingerprint.js"></script>
+  <script defer src="../assets/js/visualizations/leaflet-map.js"></script>
+  <script defer src="../assets/js/visualizations/chartjs.js"></script>
+  <script defer src="../assets/js/visualizations/d3-diagrams.js"></script>
+  <script defer src="../assets/js/canvases/canvas-1.js"></script>
+  <script defer src="../assets/js/canvases/canvas-2.js"></script>
+  <script defer src="../assets/js/canvases/canvas-3.js"></script>
+  <script defer src="../assets/js/canvases/canvas-4.js"></script>
+  <script defer src="../assets/js/canvases/canvas-5.js"></script>
+  <script defer src="../assets/js/canvases/canvas-6.js"></script>
+  <script defer src="../assets/js/canvases/canvas-7.js"></script>
+  <script defer src="../assets/js/canvases/canvas-8.js"></script>
+  <script defer src="../assets/js/canvases/canvas-9.js"></script>
+  <script defer src="../assets/js/canvases/canvas-10.js"></script>
+  <script defer src="../assets/js/canvases/canvas-11.js"></script>
+  <script defer src="../assets/js/canvases/canvas-12.js"></script>
+  <script defer src="../assets/js/canvases/canvas-13.js"></script>
+  <script defer src="../assets/js/engines/core.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+  <script>
+    document.querySelectorAll(".ndic-faq-question").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".ndic-faq-item");
+        const isOpen = item.classList.contains("ndic-faq-item--open");
+        document.querySelectorAll(".ndic-faq-item--open").forEach(i => {
+          i.classList.remove("ndic-faq-item--open");
+          i.querySelector(".ndic-faq-question").setAttribute("aria-expanded","false");
+        });
+        if (!isOpen) { item.classList.add("ndic-faq-item--open"); btn.setAttribute("aria-expanded","true"); }
+      });
+    });
+  </script>
 </body>
 </html>
