@@ -293,6 +293,29 @@
       margin: 3rem 0; border-top: 1px solid var(--color-border, rgba(255,255,255,0.06)); padding-top: 2rem;
     }
 
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-btn-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .ir-btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.8125rem 1.75rem;
+      background: #0ea5e9 !important; color: #ffffff !important;
+      border: 2px solid #0ea5e9 !important; border-radius: 6px;
+      font-family: var(--font-display, 'Syne', sans-serif); font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none !important;
+      cursor: pointer; transition: background 0.15s, transform 0.1s; white-space: nowrap; min-width: 180px;
+    }
+    .ir-btn-primary:hover { background: #0284c7 !important; border-color: #0284c7 !important; transform: translateY(-1px); }
+    .ir-btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.8125rem 1.75rem;
+      background: #f0f9ff !important; color: #0c2340 !important;
+      border: 2px solid #bae6fd !important; border-radius: 6px;
+      font-family: var(--font-display, 'Syne', sans-serif); font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none !important;
+      cursor: pointer; transition: background 0.15s, transform 0.1s; white-space: nowrap; min-width: 180px;
+    }
+    .ir-btn-secondary:hover { background: #ffffff !important; border-color: #7dd3fc !important; transform: translateY(-1px); }
+
     @media (max-width: 640px) {
       .ir-article h2 { font-size: 1rem; margin-top: 2rem; }
       .ir-article h3 { font-size: 0.9375rem; }
@@ -301,6 +324,7 @@
       .ir-cta-block h3 { font-size: 1rem; }
       .ir-form-card { padding: 1.5rem 1.125rem; }
       .ir-faq-outer, .ir-contact-outer, .ir-article { padding-left: 1rem; padding-right: 1rem; }
+      .ir-btn-primary, .ir-btn-secondary { min-width: 0; width: 100%; }
     }
 
   </style>
@@ -421,10 +445,10 @@
           GPU usage too high, screen going black, wondering what Ti means, debating whether to undervolt, or trying to move your PC safely — this guide covers every common GPU question with direct, technically accurate answers so you spend less time searching and more time fixing.
         </p>
         <div class="ndic-hero-cta-group">
-          <a href="/intelligence/graphics" class="ndic-btn-primary cta-rotate">
+          <a href="/intelligence/graphics" class="ir-btn-primary cta-rotate">
             Inspect My GPU Intelligence
           </a>
-          <a href="/intelligence/device" class="ndic-btn-secondary">
+          <a href="/intelligence/device" class="ir-btn-secondary">
             See My Device Fingerprint →
           </a>
         </div>
@@ -436,12 +460,12 @@
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item">
-            <span class="ndic-trust-value">234 data points</span>
+            <span class="ndic-trust-value">290+ data points</span>
             <span class="ndic-trust-label">per scan</span>
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item">
-            <span class="ndic-trust-value">12 intelligence panels</span>
+            <span class="ndic-trust-value">13 intelligence panels</span>
             <span class="ndic-trust-label">per report</span>
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
@@ -473,12 +497,12 @@
         In a standard desktop or laptop, the GPU either sits as a discrete card in the PCIe x16 slot on your motherboard (a dedicated GPU), or it is built directly into the same die as your CPU (integrated graphics). Modern processors from Intel (Iris Xe) and AMD (Radeon integrated) include capable integrated graphics; these share system RAM rather than having dedicated VRAM.
       </p>
       <p>
-        IntelReap's Graphics Intelligence panel reads your GPU's renderer string, WebGL version, vendor, and hardware capabilities directly from your browser — without any driver access or software installation — showing exactly what GPU is active in your system at the moment of the scan.
+        IntelReap's Graphics Intelligence panel reads your GPU's renderer string, <a href="/guides/how-to-enable-webgl">WebGL version</a>, vendor, and hardware capabilities directly from your browser — without any driver access or software installation — showing exactly what GPU is active in your system at the moment of the scan.
       </p>
 
       <h2><span class="section-num">02</span> Why Is My GPU Usage So High?</h2>
       <p>
-        The answer depends entirely on <em>what you are doing</em> when the high usage occurs. Context is everything here.
+        It depends on <em>what you are doing</em> when the high usage occurs — context changes the diagnosis completely.
       </p>
 
       <h3>High GPU usage during gaming — this is normal</h3>
@@ -498,7 +522,7 @@
         <li><strong>Windows Game Mode and Game Bar:</strong> Even when not gaming, these background services consume small amounts of GPU processing. They can be disabled in Settings if they are causing issues.</li>
       </ul>
       <div class="ir-callout">
-        <p><strong>How to identify the culprit:</strong> Open Task Manager (Ctrl+Shift+Esc), click the Performance tab, select GPU, then right-click the GPU graph and choose "Open Resource Monitor." The GPU section of Resource Monitor shows per-process GPU usage with precise percentages — the responsible application will be immediately visible.</p>
+        <p><strong>How to identify the culprit:</strong> Open Task Manager (Ctrl+Shift+Esc), click the Performance tab, select GPU, then right-click the GPU graph and choose "Open Resource Monitor." The GPU section of Resource Monitor shows per-process GPU usage with precise percentages — the responsible application will be immediately visible. If nothing legitimate accounts for the load, treat it as a security incident rather than a performance quirk; <a href="/learn/how-to-protect-your-privacy-online">a broader privacy and security check</a> is worth running alongside the malware scan.</p>
       </div>
 
       <h2><span class="section-num">03</span> How to Reset Your GPU Without Rebooting</h2>
@@ -512,7 +536,7 @@
         This shortcut resolves the most common minor GPU driver failures: a frozen screen that the mouse can still move on, rendering artifacts (visual glitches on screen), a black screen with a still-running system (you can hear audio or the mouse still has a visible cursor), and screen flickering caused by a driver state error.
       </p>
       <p>
-        If the shortcut does not resolve the issue, the next step is a full driver reinstall using DDU (Display Driver Uninstaller) — a free utility that cleanly removes all GPU driver files before reinstalling fresh from the manufacturer's site. This fixes driver corruption issues that persist across normal uninstall/reinstall cycles.
+        If the shortcut does not resolve the issue, the next step is a full driver reinstall using DDU (Display Driver Uninstaller) — a free utility that cleanly removes all GPU driver files before reinstalling fresh from the manufacturer's site. This fixes driver corruption issues that persist across normal uninstall/reinstall cycles. If you are troubleshooting a GPU you inherited, bought used, or simply do not know much about yet, <a href="/learn/what-is-a-gpu">understanding what your GPU actually is and how it works</a> makes the rest of this diagnostic process considerably easier to follow.
       </p>
       <div class="ir-callout">
         <p><strong>DDU process in brief:</strong> Download DDU from guru3d.com. Boot into Windows Safe Mode. Run DDU, select your GPU type, and choose "Clean and restart." Then install the latest driver from NVIDIA, AMD, or Intel's website directly — not through Windows Update, which often installs outdated versions.</p>
@@ -654,9 +678,11 @@
         <span class="ir-cta-eyebrow">Graphics Intelligence</span>
         <h3>See Your GPU Renderer, WebGL Version, and Graphics Capabilities</h3>
         <p>IntelReap's Graphics Intelligence panel reads your GPU renderer name, WebGL version, vendor, and hardware feature support directly from your browser — without driver access or software installation. Instant, free, and privacy-respecting.</p>
-        <a href="/intelligence/graphics" class="ndic-btn-primary cta-rotate">
-          Inspect My GPU Intelligence
-        </a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/graphics" class="ir-btn-primary cta-rotate">
+            Inspect My GPU Intelligence
+          </a>
+        </div>
       </div>
 
       <h2><span class="section-num">08</span> Is Minecraft CPU or GPU Intensive?</h2>
@@ -667,7 +693,7 @@
         <strong>Vanilla Minecraft Java Edition — primarily CPU intensive.</strong> The default Minecraft renderer is relatively simple. What drives CPU usage is the game's simulation workload: chunk generation and loading, entity processing, redstone logic, and the game tick cycle. Minecraft Java Edition relies heavily on single-threaded CPU performance — a fast CPU with strong single-core IPC (instructions per clock) matters far more than raw core count. GPU demand for vanilla rendering at default settings is modest; even an integrated GPU handles it at playable frame rates.
       </p>
       <p>
-        <strong>Minecraft with shaders — becomes GPU intensive.</strong> Shader packs such as Iris (with Sodium), BSL, Complementary, or Seus Renewed add real-time lighting, dynamic shadows, reflections, ambient occlusion, and volumetric effects. These transform the renderer into something that demands a discrete GPU seriously. A scene with a full shader pack and a high render distance is genuinely GPU-limited on mid-range hardware.
+        <strong>Minecraft with shaders — becomes GPU intensive.</strong> Shader packs such as Iris (with Sodium), BSL, Complementary, or Seus Renewed add real-time lighting, dynamic shadows, reflections, ambient occlusion, and volumetric effects. These transform the renderer into something that demands a discrete GPU seriously. A scene with a full shader pack and a high render distance is genuinely GPU-limited on mid-range hardware — <a href="/intelligence/graphics">checking your GPU's actual rendering capabilities</a> before installing a demanding shader pack avoids a frustrating trial-and-error process of guessing whether poor performance is a settings problem or a hardware ceiling.
       </p>
       <p>
         <strong>Minecraft Bedrock Edition</strong> (Windows 10/11 version) uses a different, better-optimised rendering engine that distributes work more evenly across CPU cores and the GPU. It runs at significantly higher frame rates than Java Edition on equivalent hardware for pure rendering workloads, though it lacks the Java modding ecosystem.
@@ -675,6 +701,59 @@
       <p>
         <strong>RAM also matters significantly</strong> for Minecraft Java. The Java Virtual Machine manages memory allocation for chunk data and world state. Allocating 4–8 GB of RAM to the JVM in your launcher settings (depending on your installed total) prevents garbage collection pauses that manifest as periodic stuttering unrelated to GPU or CPU load.
       </p>
+
+      <h3>Minecraft configurations compared</h3>
+      <div class="ir-table-wrap" role="region" aria-label="Minecraft configuration comparison table" tabindex="0">
+        <table class="ir-table">
+          <caption>Vanilla, optimised, shader, modded, and Bedrock configurations mapped to their primary bottleneck and hardware demand</caption>
+          <thead>
+            <tr>
+              <th scope="col">Configuration</th>
+              <th scope="col">Primary Bottleneck</th>
+              <th scope="col">GPU Load</th>
+              <th scope="col">CPU Load</th>
+              <th scope="col">Typical Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Vanilla Java (default)</strong></td>
+              <td>CPU — single-thread</td>
+              <td class="ir-check">Low</td>
+              <td class="ir-cross">High</td>
+              <td class="ir-neutral">Playable on integrated graphics</td>
+            </tr>
+            <tr>
+              <td><strong>Java + OptiFine (no shaders)</strong></td>
+              <td>CPU — single-thread</td>
+              <td class="ir-check">Low–Moderate</td>
+              <td class="ir-cross">High</td>
+              <td class="ir-neutral">Modest FPS gain from render optimisation</td>
+            </tr>
+            <tr>
+              <td><strong>Java + Shader Pack (Iris/Sodium)</strong></td>
+              <td>GPU</td>
+              <td class="ir-cross">Very high</td>
+              <td class="ir-neutral">Moderate</td>
+              <td class="ir-cross">Discrete GPU required for smooth FPS</td>
+            </tr>
+            <tr>
+              <td><strong>Java + Heavy Mod Pack</strong></td>
+              <td>CPU + RAM</td>
+              <td class="ir-neutral">Moderate</td>
+              <td class="ir-cross">Very high</td>
+              <td class="ir-neutral">JVM RAM allocation becomes critical</td>
+            </tr>
+            <tr>
+              <td><strong>Bedrock Edition</strong></td>
+              <td>Balanced</td>
+              <td class="ir-neutral">Moderate</td>
+              <td class="ir-neutral">Moderate</td>
+              <td class="ir-check">Higher FPS than Java on identical hardware</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h2><span class="section-num">09</span> Should You Remove Your GPU When Moving Your PC?</h2>
       <p>
@@ -761,9 +840,11 @@
         <span class="ir-cta-eyebrow">Device Intelligence</span>
         <h3>See Your Full Device Fingerprint and Hardware Profile</h3>
         <p>IntelReap's Device Intelligence panel reveals your browser's hardware fingerprint including GPU renderer, platform, screen resolution, colour depth, hardware concurrency, and device memory — all the signals your hardware exposes to the web, visible to you first.</p>
-        <a href="/intelligence/device" class="ndic-btn-secondary">
-          See My Device Fingerprint →
-        </a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/device" class="ir-btn-secondary">
+            See My Device Fingerprint →
+          </a>
+        </div>
       </div>
 
       <!-- LOGIC + METHODOLOGY -->
