@@ -12,9 +12,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>How to Enable WebGL in Chrome, Firefox & Safari — Complete 2026 Guide — IntelReap</title>
-  <meta name="description" content="WebGL is disabled or broken in your browser? Step-by-step guide to enable WebGL in Chrome, Firefox, Safari, and Edge — plus how to fix 'a WebGL context could not be created'.">
-  <meta name="keywords" content="how to enable webgl in chrome, how to enable webgl in firefox, how to enable webgl on firefox, how to enable webgl firefox, how do i enable webgl in firefox, how do i enable webgl, a webgl context could not be created, enable webgl browser, webgl not working fix">
+  <title>WebGL Not Working? How to Enable It in Chrome, Firefox & Safari — IntelReap</title>
+  <meta name="description" content="WebGL not working in Chrome or Firefox? Step-by-step fixes for hardware acceleration, GPU blocklist issues, and 'a WebGL context could not be created' — plus how to enable WebGL in Chrome, Firefox, Safari, and Edge.">
+  <meta name="keywords" content="webgl not working chrome, firefox webgl not working, how to enable webgl in chrome, how to enable webgl in firefox, how to enable webgl on firefox, how to enable webgl firefox, how do i enable webgl in firefox, how do i enable webgl, a webgl context could not be created, enable webgl browser, webgl not working fix, firefox crash webgl, firefox disable hardware acceleration">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="IntelReap">
 
@@ -23,8 +23,8 @@
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/guides/how-to-enable-webgl">
 
   <meta property="og:type"         content="article">
-  <meta property="og:title"        content="How to Enable WebGL in Chrome, Firefox & Safari — IntelReap">
-  <meta property="og:description"  content="Step-by-step instructions to enable WebGL in every major browser — plus how to fix the 'WebGL context could not be created' error. Updated for 2026.">
+  <meta property="og:title"        content="WebGL Not Working? How to Enable It in Chrome, Firefox & Safari — IntelReap">
+  <meta property="og:description"  content="Fix WebGL not working in Chrome or Firefox — plus step-by-step instructions to enable WebGL in every major browser and resolve the 'WebGL context could not be created' error. Updated for 2026.">
   <meta property="og:url"          content="https://intelreap.com/guides/how-to-enable-webgl">
   <meta property="og:site_name"    content="IntelReap">
   <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
@@ -33,8 +33,8 @@
   <meta property="og:locale"       content="en_US">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="How to Enable WebGL in Chrome, Firefox & Safari — IntelReap">
-  <meta name="twitter:description" content="Enable WebGL in any browser in under two minutes. Chrome, Firefox, Safari, and Edge — with fixes for the WebGL context error.">
+  <meta name="twitter:title"       content="WebGL Not Working? How to Enable It — IntelReap">
+  <meta name="twitter:description" content="WebGL broken in Chrome or Firefox? Fix it in under two minutes. Chrome, Firefox, Safari, and Edge — with fixes for the WebGL context error and Firefox crashes.">
   <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
   <meta name="twitter:site"        content="@intelreap">
 
@@ -218,6 +218,29 @@
       margin: 0 0 1.375rem; max-width: 520px; margin-left: auto; margin-right: auto;
     }
 
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-btn-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .ir-btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.8125rem 1.75rem;
+      background: #0ea5e9 !important; color: #ffffff !important;
+      border: 2px solid #0ea5e9 !important; border-radius: 6px;
+      font-family: var(--font-display, 'Syne', sans-serif); font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none !important;
+      cursor: pointer; transition: background 0.15s, transform 0.1s; white-space: nowrap; min-width: 180px;
+    }
+    .ir-btn-primary:hover { background: #0284c7 !important; border-color: #0284c7 !important; transform: translateY(-1px); }
+    .ir-btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.8125rem 1.75rem;
+      background: #f0f9ff !important; color: #0c2340 !important;
+      border: 2px solid #bae6fd !important; border-radius: 6px;
+      font-family: var(--font-display, 'Syne', sans-serif); font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none !important;
+      cursor: pointer; transition: background 0.15s, transform 0.1s; white-space: nowrap; min-width: 180px;
+    }
+    .ir-btn-secondary:hover { background: #ffffff !important; border-color: #7dd3fc !important; transform: translateY(-1px); }
+
     .ir-logic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
     @media (max-width: 560px) { .ir-logic-grid { grid-template-columns: 1fr; } }
     .ir-logic-card {
@@ -312,6 +335,7 @@
       .ir-form-card { padding: 1.5rem 1.125rem; }
       .ir-browser-block { padding: 1.25rem 1rem 0.75rem; }
       .ir-faq-outer, .ir-contact-outer, .ir-article { padding-left: 1rem; padding-right: 1rem; }
+      .ir-btn-primary, .ir-btn-secondary { min-width: 0; width: 100%; }
     }
 
   </style>
@@ -323,8 +347,8 @@
       {
         "@type": "Article",
         "@id": "https://intelreap.com/guides/how-to-enable-webgl#article",
-        "headline": "How to Enable WebGL in Chrome, Firefox, Safari, and Edge",
-        "description": "Step-by-step instructions to enable WebGL in every major browser, fix the 'WebGL context could not be created' error, verify WebGL is working, and understand browser support differences.",
+        "headline": "WebGL Not Working? How to Enable It in Chrome, Firefox, Safari, and Edge",
+        "description": "WebGL not working in Chrome or Firefox? This guide covers the exact fixes for hardware acceleration, GPU blocklist issues, and 'a WebGL context could not be created', plus step-by-step instructions to enable WebGL in every major browser.",
         "url": "https://intelreap.com/guides/how-to-enable-webgl",
         "image": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/og-image.png", "width": 1200, "height": 630 },
         "datePublished": "2026-01-31",
@@ -333,9 +357,9 @@
         "publisher": { "@id": "https://intelreap.com/#organization" },
         "mainEntityOfPage": { "@type": "WebPage", "@id": "https://intelreap.com/guides/how-to-enable-webgl" },
         "inLanguage": "en-US",
-        "keywords": "how to enable webgl in chrome, how to enable webgl in firefox, enable webgl safari, webgl context could not be created, how do i enable webgl",
+        "keywords": "webgl not working chrome, firefox webgl not working, how to enable webgl in chrome, how to enable webgl in firefox, enable webgl safari, webgl context could not be created, how do i enable webgl",
         "articleSection": "Browser Guides",
-        "wordCount": 2700
+        "wordCount": 3050
       },
       {
         "@type": "Organization",
@@ -377,7 +401,8 @@
           { "@type": "Question", "name": "Can I enable WebGL on mobile browsers?", "acceptedAnswer": { "@type": "Answer", "text": "WebGL is enabled by default on modern mobile browsers. Chrome for Android supports WebGL 2.0 on devices running Android 5.0 and later with compatible GPU drivers. Safari on iOS has supported WebGL since iOS 8. Firefox for Android supports WebGL. On older or budget devices, WebGL may be limited to version 1.0 due to GPU driver constraints." } },
           { "@type": "Question", "name": "What is the difference between WebGL 1 and WebGL 2?", "acceptedAnswer": { "@type": "Answer", "text": "WebGL 1 is based on OpenGL ES 2.0 and is supported in all modern browsers including Safari. WebGL 2 is based on OpenGL ES 3.0 and adds features including 3D textures, multiple render targets, transform feedback, and improved GLSL shader capabilities. Chrome, Firefox, and Edge all support WebGL 2. Safari added WebGL 2 support in version 15. Use IntelReap's Graphics panel to see which version your current browser reports." } },
           { "@type": "Question", "name": "Why is WebGL blocked or disabled on some systems?", "acceptedAnswer": { "@type": "Answer", "text": "Browsers maintain GPU blocklists — databases of GPU and driver combinations with known bugs, crashes, or security issues. When your GPU or driver version appears on this list, the browser disables hardware-accelerated WebGL as a precaution. Updating GPU drivers is the most reliable fix, as newer drivers are usually removed from blocklists. The Chrome flag --ignore-gpu-blocklist forces WebGL on blocked GPUs for testing." } },
-          { "@type": "Question", "name": "Does IntelReap use WebGL?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — IntelReap's Graphics Intelligence panel uses WebGL to read your GPU renderer string, vendor, WebGL version, and supported extensions directly from the browser. This is how it identifies your specific GPU model and graphics capabilities without requiring any software installation or driver access. If WebGL is disabled in your browser, the Graphics panel will report a limited data set." } }
+          { "@type": "Question", "name": "Does IntelReap use WebGL?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — IntelReap's Graphics Intelligence panel uses WebGL to read your GPU renderer string, vendor, WebGL version, and supported extensions directly from the browser. This is how it identifies your specific GPU model and graphics capabilities without requiring any software installation or driver access. If WebGL is disabled in your browser, the Graphics panel will report a limited data set." } },
+          { "@type": "Question", "name": "Why is WebGL not working in Chrome or Firefox?", "acceptedAnswer": { "@type": "Answer", "text": "In Chrome, check chrome://gpu for a 'WebGL: Software only' message, which means hardware acceleration has been disabled or your GPU has been blocklisted — re-enable it in chrome://settings/system or override the blocklist in chrome://flags. In Firefox, visit about:support and check the WebGL Driver Renderer line; if it shows 'blocked' rather than your actual GPU name, set webgl.force-enabled to true in about:config. If Firefox is crashing rather than just failing to render WebGL content, disable hardware acceleration first to stabilise the browser, then update GPU drivers before re-enabling it." } }
         ]
       }
     ]
@@ -424,17 +449,17 @@
           <span id="seasonal-label">Browser Guide</span>
         </div>
         <h1 class="ndic-hero-title">
-          How to Enable <span class="ndic-highlight">WebGL</span><br>
-          in Any Browser
+          WebGL Not Working?<br>
+          How to <span class="ndic-highlight">Enable It</span> in Any Browser
         </h1>
         <p class="ndic-hero-tagline">
           WebGL is enabled by default in all modern browsers — but hardware acceleration settings, outdated drivers, or GPU blocklists can prevent it from working. This guide gives you the exact steps for Chrome, Firefox, Safari, and Edge, plus a complete fix for the "WebGL context could not be created" error.
         </p>
         <div class="ndic-hero-cta-group">
-          <a href="/intelligence/graphics" class="ndic-btn-primary cta-rotate">
+          <a href="/intelligence/graphics" class="ir-btn-primary cta-rotate">
             Verify My WebGL Status
           </a>
-          <a href="/intelligence/capability" class="ndic-btn-secondary">
+          <a href="/intelligence/capability" class="ir-btn-secondary">
             Check My Browser Capabilities →
           </a>
         </div>
@@ -446,12 +471,12 @@
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item">
-            <span class="ndic-trust-value">234 data points</span>
+            <span class="ndic-trust-value">290+ data points</span>
             <span class="ndic-trust-label">per scan</span>
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item">
-            <span class="ndic-trust-value">12 intelligence panels</span>
+            <span class="ndic-trust-value">13 intelligence panels</span>
             <span class="ndic-trust-label">per report</span>
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
@@ -480,7 +505,7 @@
         WebGL — Web Graphics Library — is a JavaScript API that gives browsers direct access to the device's GPU for rendering 2D and 3D graphics. It is based on OpenGL ES (Embedded Systems) and runs entirely within the browser sandbox without requiring any plugin, extension, or software installation.
       </p>
       <p>
-        WebGL powers a significant and growing range of web experiences: browser-based 3D games, interactive data visualisations and charts, 3D product configurators for e-commerce, online CAD and design tools, mapping platforms (Google Maps uses WebGL for 3D map rendering), and scientific visualisation applications. It is also the technology that allows browser intelligence tools to query your GPU's identity and capabilities directly — which is precisely how IntelReap's Graphics Intelligence panel reads your GPU renderer string and WebGL version.
+        WebGL powers a significant and growing range of web experiences: browser-based 3D games, interactive data visualisations and charts, 3D product configurators for e-commerce, online CAD and design tools, mapping platforms (Google Maps uses WebGL for 3D map rendering), and scientific visualisation applications. It is also the technology that allows browser intelligence tools to query your GPU's identity and capabilities directly — this is the same signal used in <a href="/learn/what-is-device-fingerprinting">browser device fingerprinting</a>, and it is precisely how IntelReap's Graphics Intelligence panel reads your GPU renderer string and WebGL version.
       </p>
       <p>
         When WebGL is not working, these experiences either fail silently, display an error, or fall back to a slow CPU-rendered canvas — which is typically unusable for anything complex. Fixing it is almost always a two-minute task.
@@ -502,7 +527,25 @@
         Each of these has a specific fix, covered by browser below.
       </p>
 
-      <h2><span class="section-num">03</span> How to Enable WebGL in Chrome</h2>
+      <h2><span class="section-num">03</span> WebGL Not Working? How to Fix It in Chrome and Firefox</h2>
+      <p>
+        If WebGL was working before and has now stopped — or a site is showing "Your browser does not support WebGL," "WebGL is disabled," or a blank canvas where a 3D scene should be — the cause is almost always one of a small number of things, and Chrome and Firefox each fail in slightly different, recognisable ways.
+      </p>
+
+      <h3>WebGL not working in Chrome</h3>
+      <p>
+        The most common trigger is a Chrome update that reset hardware acceleration, or a GPU driver update that pushed your card onto Chrome's internal blocklist. Check <code>chrome://gpu</code> in the address bar — if you see "WebGL: Software only, hardware acceleration unavailable" near the top of the page, Chrome has disabled GPU-based WebGL and fallen back to a slow software renderer. The fix is the same two steps covered in detail below: confirm hardware acceleration is on in <code>chrome://settings/system</code>, then override the blocklist via <code>chrome://flags</code> if the GPU is still flagged after that. If the underlying issue turns out to be the GPU itself rather than just a Chrome setting, <a href="/guides/gpu-troubleshooting-guide">our GPU troubleshooting guide</a> covers driver resets, motherboard damage checks, and undervolting in more depth.
+      </p>
+
+      <h3>WebGL not working in Firefox, or Firefox crashing on WebGL pages</h3>
+      <p>
+        Firefox handles a failed WebGL context differently from Chrome — instead of falling back silently, pages using WebGL heavily can cause the tab, or in older driver combinations the whole browser, to freeze or crash outright. This is why Firefox crashing and disabling hardware acceleration are common searches paired with WebGL problems: disabling hardware acceleration is the standard workaround while a proper driver fix is pending. To check Firefox's status, visit <code>about:support</code> and look at the Graphics section — "WebGL 1 Driver Renderer" should show your actual GPU name; if instead it shows "blocked" or lists a fallback software renderer, the driver is being rejected by Firefox's own blocklist, and the <code>webgl.force-enabled</code> flag covered below is the direct override.
+      </p>
+      <div class="ir-callout">
+        <p><strong>If Firefox is crashing specifically, not just failing to render:</strong> disable hardware acceleration entirely first (Settings → General → Performance → uncheck "Use recommended performance settings" → uncheck "Use hardware acceleration when available") to stabilise the browser, confirm the crash stops, then re-enable it after updating GPU drivers. Crashing on WebGL content, rather than a clean fallback, points to a driver-level fault rather than a simple setting.</p>
+      </div>
+
+      <h2><span class="section-num">04</span> How to Enable WebGL in Chrome</h2>
       <p>
         Chrome manages WebGL through its hardware acceleration setting. WebGL cannot function when hardware acceleration is off — that is the first thing to check.
       </p>
@@ -558,7 +601,7 @@
         <p><strong>Long-term fix:</strong> Update your GPU drivers from your manufacturer's site (NVIDIA, AMD, or Intel). Fresh drivers are almost always removed from Chrome's blocklist. Use Windows Update or your GPU vendor's driver utility — not a third-party driver updater.</p>
       </div>
 
-      <h2><span class="section-num">04</span> How to Enable WebGL in Firefox</h2>
+      <h2><span class="section-num">05</span> How to Enable WebGL in Firefox</h2>
       <p>
         Firefox uses a configuration flag to control WebGL independently of hardware acceleration. This flag can occasionally be toggled off by users, extensions, or corporate policy configurations — the fix is straightforward.
       </p>
@@ -612,7 +655,7 @@
         </ol>
       </div>
 
-      <h2><span class="section-num">05</span> How to Enable WebGL in Safari</h2>
+      <h2><span class="section-num">06</span> How to Enable WebGL in Safari</h2>
       <p>
         Safari on macOS manages WebGL through its hidden Develop menu. The process differs slightly between macOS Ventura and later versus earlier versions.
       </p>
@@ -646,7 +689,7 @@
         <p><strong>Safari on iOS:</strong> WebGL is enabled by default on iOS Safari since iOS 8 and cannot be disabled by the user. If WebGL is not working on iOS, the cause is almost always an outdated iOS version or a GPU driver issue resolved by updating iOS via Settings → General → Software Update.</p>
       </div>
 
-      <h2><span class="section-num">06</span> How to Enable WebGL in Microsoft Edge</h2>
+      <h2><span class="section-num">07</span> How to Enable WebGL in Microsoft Edge</h2>
       <p>
         Edge uses the Chromium engine and has identical WebGL settings to Chrome. The steps are exactly the same.
       </p>
@@ -678,12 +721,14 @@
         <span class="ir-cta-eyebrow">Graphics Intelligence</span>
         <h3>Verify WebGL Is Working — See Your GPU Renderer and Version</h3>
         <p>IntelReap's Graphics Intelligence panel reads your WebGL version (1.0 or 2.0), GPU renderer string, vendor, and supported extensions directly from your browser. Run it now to confirm WebGL is active and see exactly what your browser reports to web applications.</p>
-        <a href="/intelligence/graphics" class="ndic-btn-primary cta-rotate">
-          Verify My WebGL Status
-        </a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/graphics" class="ir-btn-primary cta-rotate">
+            Verify My WebGL Status
+          </a>
+        </div>
       </div>
 
-      <h2><span class="section-num">07</span> Fixing "A WebGL Context Could Not Be Created"</h2>
+      <h2><span class="section-num">08</span> Fixing "A WebGL Context Could Not Be Created"</h2>
       <p>
         This error appears when the browser tried to initialise a WebGL rendering context and the GPU driver refused the request or returned a failure. It is distinct from WebGL being disabled — it means the browser found WebGL enabled but the underlying hardware communication failed.
       </p>
@@ -701,7 +746,7 @@
           <strong>Override the GPU blocklist:</strong> Use <code>chrome://flags</code> → Override software rendering list (Chrome/Edge) or <code>webgl.force-enabled = true</code> in Firefox's <code>about:config</code>.
         </li>
         <li>
-          <strong>Check if you are using a remote desktop or virtual machine:</strong> RDP, VirtualBox, VMware, and similar environments do not pass through GPU hardware by default. WebGL context creation fails in these environments unless GPU passthrough (VMware SVGA 3D, VirtualBox 3D acceleration, or dedicated RDP clients with GPU support) is configured.
+          <strong>Check if you are using a remote desktop or virtual machine:</strong> RDP, VirtualBox, VMware, and similar environments do not pass through GPU hardware by default. WebGL context creation fails in these environments unless GPU passthrough (VMware SVGA 3D, VirtualBox 3D acceleration, or dedicated RDP clients with GPU support) is configured — if you are unfamiliar with what a GPU actually does at the hardware level, <a href="/learn/what-is-a-gpu">this explainer</a> covers the fundamentals before you go further into virtualisation-specific fixes.
         </li>
         <li>
           <strong>Try a different browser:</strong> If WebGL works in one browser but not another, the issue is browser-specific — driver update and blocklist override apply to the failing browser.
@@ -711,9 +756,9 @@
         </li>
       </ul>
 
-      <h2><span class="section-num">08</span> How to Verify WebGL Is Working</h2>
+      <h2><span class="section-num">09</span> How to Verify WebGL Is Working</h2>
       <p>
-        Three reliable methods to confirm WebGL is active and functional in your current browser:
+        Three reliable methods to confirm WebGL is active and functional in your current browser, alongside <a href="/intelligence/device">a full device intelligence scan</a> if you want the complete hardware picture rather than just a WebGL yes/no:
       </p>
       <ul>
         <li><strong>get.webgl.org:</strong> The official WebGL test page maintained by the Khronos Group. A spinning 3D cube confirms WebGL 1 is working. The page also reports your WebGL renderer string.</li>
@@ -721,7 +766,7 @@
         <li><strong>IntelReap Graphics Intelligence:</strong> Run a free scan at IntelReap — the Graphics panel reports your active WebGL version (1.0 or 2.0), GPU renderer string, vendor, and the full list of supported WebGL extensions. This gives the most comprehensive picture of your WebGL environment.</li>
       </ul>
 
-      <h2><span class="section-num">09</span> Browser WebGL Support: Comparison Table</h2>
+      <h2><span class="section-num">10</span> Browser WebGL Support: Comparison Table</h2>
       <div class="ir-table-wrap" role="region" aria-label="Browser WebGL support comparison" tabindex="0">
         <table class="ir-table">
           <caption>WebGL support status across major browsers as of 2026 — desktop and mobile</caption>
@@ -793,9 +838,11 @@
         <span class="ir-cta-eyebrow">Browser Capability Intelligence</span>
         <h3>See Everything Your Browser Exposes to Web Applications</h3>
         <p>IntelReap's Capability panel reveals your browser's full feature matrix — WebGL, WebRTC, Canvas, audio context, storage APIs, codec support, and 40+ more capabilities — showing exactly what web applications can detect about your environment.</p>
-        <a href="/intelligence/capability" class="ndic-btn-secondary">
-          Check My Browser Capabilities →
-        </a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/capability" class="ir-btn-secondary">
+            Check My Browser Capabilities →
+          </a>
+        </div>
       </div>
 
       <!-- LOGIC + METHODOLOGY -->
@@ -867,7 +914,7 @@
     <section aria-labelledby="faq-heading-main">
       <div class="ir-faq-outer">
         <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
-        <p class="ir-faq-sub">Twelve questions covering WebGL activation in every browser, the context error fix, mobile support, WebGL versions, and safety — answered directly.</p>
+        <p class="ir-faq-sub">Thirteen questions covering WebGL activation in every browser, the context error fix, Firefox crashes, mobile support, WebGL versions, and safety — answered directly.</p>
         <div class="ndic-faq-list">
 
           <div class="ndic-faq-item">
@@ -964,6 +1011,14 @@
               <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
             </button>
             <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">Yes — IntelReap's Graphics Intelligence panel uses WebGL to read your GPU renderer string, vendor, WebGL version, and supported extensions directly from the browser. This is how it identifies your specific GPU model and graphics capabilities without any software installation. If WebGL is disabled in your browser, the Graphics panel reports a limited data set and notes the WebGL status accordingly.</div></div>
+          </div>
+
+          <div class="ndic-faq-item">
+            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a13">
+              <span>Why is WebGL not working in Chrome or Firefox?</span>
+              <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span>
+            </button>
+            <div class="ndic-faq-answer" id="faq-a13"><div class="ndic-faq-answer-inner">In Chrome, check <code>chrome://gpu</code> for a "WebGL: Software only" message, which means hardware acceleration has been disabled or your GPU has been blocklisted — re-enable it in <code>chrome://settings/system</code> or override the blocklist in <code>chrome://flags</code>. In Firefox, visit <code>about:support</code> and check the WebGL Driver Renderer line; if it shows "blocked" rather than your actual GPU name, set <code>webgl.force-enabled</code> to true in <code>about:config</code>. If Firefox is crashing rather than just failing to render WebGL content, disable hardware acceleration first to stabilise the browser, then update GPU drivers before re-enabling it.</div></div>
           </div>
 
         </div>
