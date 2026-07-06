@@ -119,7 +119,15 @@
     .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
     .form-submit:hover{opacity:0.9;}
     #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
-    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}}
+
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-btn-row{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
+    .ir-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#0ea5e9 !important;color:#ffffff !important;border:2px solid #0ea5e9 !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-primary:hover{background:#0284c7 !important;border-color:#0284c7 !important;transform:translateY(-1px);}
+    .ir-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#f0f9ff !important;color:#0c2340 !important;border:2px solid #bae6fd !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-secondary:hover{background:#ffffff !important;border-color:#7dd3fc !important;transform:translateY(-1px);}
+
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}.ir-btn-primary,.ir-btn-secondary{min-width:0;width:100%;}}
   </style>
 
   <script type="application/ld+json">
@@ -192,16 +200,16 @@
           Printer, Roku, Minecraft server, router, or any device on your network — every method for finding an IP address explained clearly and in the right order. No networking degree required.
         </p>
         <div class="ndic-hero-cta-group">
-          <a href="/intelligence/network-identity" class="ndic-btn-primary cta-rotate">Reveal My Network Identity</a>
-          <a href="/intelligence/network-route" class="ndic-btn-secondary">See My Network Route →</a>
+          <a href="/intelligence/network-identity" class="ir-btn-primary cta-rotate">Reveal My Network Identity</a>
+          <a href="/intelligence/network-route" class="ir-btn-secondary">See My Network Route →</a>
         </div>
         <div id="freshness-badge" aria-live="polite">Loading…</div>
         <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
           <div class="ndic-trust-item"><span class="ndic-trust-value">4.9★</span><span class="ndic-trust-label">satisfaction</span></div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
-          <div class="ndic-trust-item"><span class="ndic-trust-value">234 data points</span><span class="ndic-trust-label">per scan</span></div>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">290+ data points</span><span class="ndic-trust-label">per scan</span></div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
-          <div class="ndic-trust-item"><span class="ndic-trust-value">12 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">13 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item"><span class="ndic-trust-value">Zero data stored</span><span class="ndic-trust-label">privacy first</span></div>
         </div>
@@ -221,7 +229,7 @@
       <h2><span class="section-num">01</span> Local vs Public IP — Which One Do You Need?</h2>
       <p>Before looking up an IP address, it is worth confirming which type you are after — because the methods are completely different.</p>
       <p><strong>Local IP addresses</strong> (also called private IPs) are assigned by your router and only exist within your home or office network. They typically follow the pattern 192.168.x.x, 10.x.x.x, or 172.16–31.x.x. Printer IPs, Roku IPs, and the IP addresses of other devices on your network are all local IPs. They are not visible from the internet.</p>
-      <p><strong>Public IP addresses</strong> are assigned by your ISP and are the address the internet sees when any device on your network makes an outgoing connection. Your router sits between your devices and the internet, translating between local and public IPs using a process called NAT (Network Address Translation). Your public IP is the same regardless of which device you check from — all devices on the same network share one public IP.</p>
+      <p><strong>Public IP addresses</strong> are assigned by your ISP and are the address the internet sees when any device on your network makes an outgoing connection. Your router sits between your devices and the internet, translating between local and public IPs using a process called NAT (Network Address Translation). Your public IP is the same regardless of which device you check from — all devices on the same network share one public IP, which is also why <a href="/learn/what-is-reverse-ip-lookup">a reverse IP lookup</a> on a shared hosting server can return dozens of unrelated domains all sitting behind that one address.</p>
       <div class="ir-callout"><p><strong>Rule of thumb:</strong> finding a printer, Roku, or gaming server IP = you want a local IP (use your router or device menu). Finding your own IP to share with someone = you want your public IP (use IntelReap's Network Identity panel).</p></div>
 
       <h2><span class="section-num">02</span> Where to Find the IP Address on a Printer</h2>
@@ -268,13 +276,8 @@
       </div>
 
       <h2><span class="section-num">03</span> How to Find HP Printer IP Address</h2>
-      <p>HP printers have some model-specific routes to the IP address that are faster than the general methods above. The most reliable for any HP model:</p>
-      <ul>
-        <li><strong>HP printers with a touchscreen:</strong> Tap the Wireless icon (signal bars icon) on the home screen. The IP address is shown directly on the wireless summary screen — no menu navigation required.</li>
-        <li><strong>HP printers without a screen (e.g., HP DeskJet, some OfficeJet models):</strong> Press and hold the Wireless button for 3 seconds to print a Wireless Test Report. The IP address is printed on that page under "IP Address" in the network section.</li>
-        <li><strong>HP Smart app:</strong> Open the HP Smart app on Windows, Mac, iOS, or Android → select your printer → the IP address is shown in the printer details panel under Network.</li>
-        <li><strong>HP Embedded Web Server:</strong> Once you have the IP address, type it directly into a browser address bar — HP printers host a built-in web management page that shows status, ink levels, and full network configuration.</li>
-      </ul>
+      <p>HP printers have some model-specific routes to the IP address that are faster than the general methods above. On HP printers with a touchscreen, tap the Wireless icon — the signal bars icon — on the home screen; the IP address is shown directly on the wireless summary screen with no menu navigation required. On models without a screen, such as the HP DeskJet or some OfficeJet units, press and hold the Wireless button for three seconds to print a Wireless Test Report — the IP address appears under "IP Address" in the network section of that printed page.</p>
+      <p>The HP Smart app offers a screen-independent route: open it on Windows, Mac, iOS, or Android, select your printer, and the IP address is shown in the printer details panel under Network. Once you have the IP address by any of these methods, typing it directly into a browser address bar opens the HP Embedded Web Server — a built-in management page showing status, ink levels, and the printer's full network configuration.</p>
 
       <h2><span class="section-num">04</span> What CMD Command Finds the IP Address of a Minecraft Server?</h2>
       <p>
@@ -318,7 +321,7 @@
       <h3>Method 1 — Router DHCP table (most complete)</h3>
       <p>Log into your router's admin panel as described above. The DHCP client list shows every device currently connected, with its hostname, IP address, and MAC address all in one view. This is the single most reliable method for any device.</p>
       <h3>Method 2 — Windows CMD: <code>arp -a</code></h3>
-      <p>Open Command Prompt and run <code>arp -a</code>. This displays the ARP (Address Resolution Protocol) table — all IP-to-MAC address mappings your Windows machine has resolved. It shows every device your PC has communicated with recently on the local network. The output is fast and requires no extra software.</p>
+      <p>Open Command Prompt and run <code>arp -a</code>. This displays the ARP (Address Resolution Protocol) table — all IP-to-MAC address mappings your Windows machine has resolved. It shows every device your PC has communicated with recently on the local network, including the MAC address each one reports — worth knowing that <a href="/learn/does-a-vpn-change-your-mac-address">a VPN has no effect on this local-network MAC visibility</a>, since MAC addresses never leave your home network in the first place. The output is fast and requires no extra software.</p>
       <h3>Method 3 — Network scanner apps</h3>
       <p><strong>Advanced IP Scanner</strong> (Windows, free) and the <strong>Fing</strong> app (iOS/Android, free) both scan your entire subnet and list every active device with its IP, MAC address, manufacturer name, and hostname. These tools are particularly useful for identifying devices whose names are not obvious in the router's DHCP list.</p>
 
@@ -327,17 +330,14 @@
         <span class="ir-cta-eyebrow">Network Identity Intelligence</span>
         <h3>See Your Full Network Identity — IP, ISP, ASN, and Routing Path</h3>
         <p>IntelReap's Network Identity panel instantly reveals your public IP address, ISP name, Autonomous System Number, geolocation, and organisation — directly in your browser, free, no account required.</p>
-        <a href="/intelligence/network-identity" class="ndic-btn-primary cta-rotate">Reveal My Network Identity</a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/network-identity" class="ir-btn-primary cta-rotate">Reveal My Network Identity</a>
+        </div>
       </div>
 
       <h2><span class="section-num">07</span> How to Find Your Own Public IP Address</h2>
-      <p>Your public IP is the address your ISP assigns to your router — it is what websites and servers see when you connect to them. There are three quick methods:</p>
-      <ul>
-        <li><strong>IntelReap Network Identity panel:</strong> Run a free scan — your public IP, ISP name, ASN, and geolocation are all displayed instantly, with no installation or login required.</li>
-        <li><strong>Windows/Mac/Linux terminal:</strong> Run <code>curl ifconfig.me</code> — the terminal prints your public IP address on a single line.</li>
-        <li><strong>Google search:</strong> Type "what is my IP" into Google — it shows your public IP at the top of the results page.</li>
-      </ul>
-      <div class="ir-callout"><p><strong>Note:</strong> If you are using a VPN, the IP shown by these methods is the VPN server's IP, not your real ISP-assigned IP. IntelReap's VPN &amp; Proxy panel will detect this and flag the connection type accordingly.</p></div>
+      <p>Your public IP is the address your ISP assigns to your router — it is what websites and servers see when you connect to them, and it is the same address that <a href="/learn/webrtc-leak-test-and-shield">a WebRTC leak can expose even when a VPN is supposed to be hiding it</a>. There are three quick methods to check it. IntelReap's Network Identity panel runs a free scan and displays your public IP, ISP name, ASN, and geolocation instantly, with no installation or login required. From a Windows, Mac, or Linux terminal, running <code>curl ifconfig.me</code> prints your public IP address on a single line. Or simply search "what is my IP" on Google, which shows your public IP at the top of the results page.</p>
+      <div class="ir-callout"><p><strong>Note:</strong> If you are using a VPN, the IP shown by these methods is the VPN server's IP, not your real ISP-assigned IP. <a href="/intelligence/vpn-proxy">IntelReap's VPN &amp; Proxy panel</a> will detect this and flag the connection type accordingly.</p></div>
 
       <h2><span class="section-num">08</span> IP Address Lookup Methods: Reference Table</h2>
       <div class="ir-table-wrap" role="region" aria-label="IP address finding methods by device type" tabindex="0">
@@ -421,7 +421,9 @@
         <span class="ir-cta-eyebrow">Network Route Intelligence</span>
         <h3>See the Full Routing Path of Your Network Connection</h3>
         <p>IntelReap's Network Route panel shows your public IP, ISP, ASN, BGP routing path, and network topology — the complete picture of how your connection reaches the internet, free and in-browser.</p>
-        <a href="/intelligence/network-route" class="ndic-btn-secondary">See My Network Route →</a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/network-route" class="ir-btn-secondary">See My Network Route →</a>
+        </div>
       </div>
 
       <!-- LOGIC + METHODOLOGY -->
