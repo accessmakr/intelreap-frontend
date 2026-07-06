@@ -109,7 +109,15 @@
     .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
     .form-submit:hover{opacity:0.9;}
     #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
-    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}}
+
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-btn-row{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
+    .ir-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#0ea5e9 !important;color:#ffffff !important;border:2px solid #0ea5e9 !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-primary:hover{background:#0284c7 !important;border-color:#0284c7 !important;transform:translateY(-1px);}
+    .ir-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#f0f9ff !important;color:#0c2340 !important;border:2px solid #bae6fd !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-secondary:hover{background:#ffffff !important;border-color:#7dd3fc !important;transform:translateY(-1px);}
+
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}.ir-btn-primary,.ir-btn-secondary{min-width:0;width:100%;}}
   </style>
 
   <script type="application/ld+json">
@@ -179,16 +187,16 @@
           No — and understanding exactly why not reveals how VPNs actually work. This guide answers that question at a technical level, then covers the practical VPN questions people ask most: ExitLag, incognito mode, Steam regional pricing, qBittorrent binding, and finding VPN settings on a Mac.
         </p>
         <div class="ndic-hero-cta-group">
-          <a href="/intelligence/vpn-proxy" class="ndic-btn-primary cta-rotate">Check My VPN Status</a>
-          <a href="/intelligence/network-identity" class="ndic-btn-secondary">See My Network Identity →</a>
+          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Check My VPN Status</a>
+          <a href="/intelligence/network-identity" class="ir-btn-secondary">See My Network Identity →</a>
         </div>
         <div id="freshness-badge" aria-live="polite">Loading…</div>
         <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
           <div class="ndic-trust-item"><span class="ndic-trust-value">4.9★</span><span class="ndic-trust-label">satisfaction</span></div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
-          <div class="ndic-trust-item"><span class="ndic-trust-value">234 data points</span><span class="ndic-trust-label">per scan</span></div>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">290+ data points</span><span class="ndic-trust-label">per scan</span></div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
-          <div class="ndic-trust-item"><span class="ndic-trust-value">12 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">13 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item"><span class="ndic-trust-value">Zero data stored</span><span class="ndic-trust-label">privacy first</span></div>
         </div>
@@ -230,7 +238,7 @@
       <h3>What a VPN does not change</h3>
       <ul>
         <li><strong>Your MAC address</strong> — as explained above, it operates at a lower layer.</li>
-        <li><strong>Your browser fingerprint</strong> — Canvas fingerprint, WebGL renderer, installed fonts, screen resolution, and browser configuration are all still visible to websites. IntelReap's Graphics, Device, and Capability panels show exactly what your browser exposes.</li>
+        <li><strong>Your browser fingerprint</strong> — Canvas fingerprint, WebGL renderer, installed fonts, screen resolution, and browser configuration are all still visible to websites, forming the basis of <a href="/learn/what-is-device-fingerprinting">device fingerprinting techniques</a> that identify you independently of your IP address. IntelReap's Graphics, Device, and Capability panels show exactly what your browser exposes.</li>
         <li><strong>Cookies and local storage</strong> — active browser sessions, tracking pixels, and stored identifiers persist across VPN connections unless you clear them.</li>
         <li><strong>Account-based tracking</strong> — if you are logged into Google, Facebook, or any account, those services track you by account identity, not IP address.</li>
         <li><strong>Device hardware identifiers</strong> — serial numbers, IMEI, and other hardware IDs are not transmitted over the network under normal circumstances, with or without a VPN.</li>
@@ -251,7 +259,7 @@
       <h2><span class="section-num">04</span> How to Use a VPN in Incognito Mode</h2>
       <p>Yes, you can use a VPN and incognito mode simultaneously — they are completely independent systems that address different privacy concerns without conflicting.</p>
       <p><strong>What incognito mode does:</strong> Prevents your browser from saving browsing history, cookies, cached files, and form data on your local device after the session ends. It does not affect what websites see, what your ISP sees, or what anyone monitoring your network sees.</p>
-      <p><strong>What a VPN does:</strong> Hides your real IP address from websites, encrypts your traffic from your ISP, and changes your apparent location. It does not prevent your browser from storing session data locally.</p>
+      <p><strong>What a VPN does:</strong> Hides your real IP address from websites, encrypts your traffic from your ISP, and changes your apparent location. It does not prevent your browser from storing session data locally, and it is a separate matter entirely from <a href="/guides/how-to-find-ip-address-of-any-device">finding the local IP address of a specific device on your own network</a>, which has nothing to do with what a VPN hides from the outside world.</p>
       <p>Together they cover complementary layers — the VPN handles network-level privacy, incognito handles device-level session isolation.</p>
 
       <div class="ir-browser-block">
@@ -277,7 +285,7 @@
       <p>This information is provided factually so you can make an informed decision with full knowledge of the relevant risks. The choice is entirely yours.</p>
 
       <h2><span class="section-num">06</span> How to Bind qBittorrent to a VPN (Network Interface Binding)</h2>
-      <p>Binding qBittorrent to a VPN network adapter means qBittorrent will only transmit through the VPN tunnel — if the VPN disconnects, qBittorrent stops completely rather than falling back to your real IP. This is the software-level equivalent of a kill switch and is the most reliable way to prevent IP leaks during torrenting.</p>
+      <p>Binding qBittorrent to a VPN network adapter means qBittorrent will only transmit through the VPN tunnel — if the VPN disconnects, qBittorrent stops completely rather than falling back to your real IP. This is the software-level equivalent of a kill switch and is the most reliable way to prevent IP leaks during torrenting, distinct from router-level settings like <a href="/learn/what-is-vpn-passthrough">VPN passthrough</a>, which control whether VPN traffic can traverse NAT at all rather than which network adapter an application uses.</p>
 
       <div class="ir-browser-block">
         <span class="ir-browser-label">qBittorrent — Network Interface Binding</span>
@@ -293,7 +301,7 @@
       <div class="ir-callout"><p><strong>If the VPN adapter does not appear in the dropdown:</strong> Ensure the VPN is fully connected before opening qBittorrent's Options panel. Some VPN protocols (particularly newer WireGuard implementations) may use a non-standard adapter name — check your VPN software's connection details for the exact adapter name to look for.</p></div>
 
       <h2><span class="section-num">07</span> How to Find VPN and Device Management on a Mac</h2>
-      <p>macOS stores VPN configurations and device management profiles in different locations depending on how they were installed.</p>
+      <p>macOS stores VPN configurations and device management profiles in different locations depending on how they were installed. Once you have confirmed your VPN is properly configured, <a href="/learn/webrtc-leak-test-and-shield">testing for a WebRTC leak</a> is the natural next step, since a correctly configured VPN connection can still expose your real IP through this specific browser-level gap.</p>
 
       <h3>Finding manually configured VPN connections</h3>
       <div class="ir-browser-block">
@@ -328,7 +336,9 @@
         <span class="ir-cta-eyebrow">VPN &amp; Proxy Detection</span>
         <h3>Check Whether Your VPN Is Detected Right Now</h3>
         <p>IntelReap's VPN &amp; Proxy panel analyses your connection and reports whether it appears as a VPN, proxy, Tor exit node, or data centre IP — exactly what websites see when you visit them. Run a free check, no account required.</p>
-        <a href="/intelligence/vpn-proxy" class="ndic-btn-primary cta-rotate">Check My VPN Status</a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Check My VPN Status</a>
+        </div>
       </div>
 
       <h2><span class="section-num">08</span> VPN vs Privacy Tool Comparison</h2>
@@ -403,7 +413,9 @@
         <span class="ir-cta-eyebrow">Network Identity Intelligence</span>
         <h3>See Exactly What Your Connection Reveals to the World</h3>
         <p>IntelReap's Network Identity panel shows your public IP, ISP, ASN, geolocation, and organisation — the complete picture of what websites and services see when you connect, with or without a VPN active.</p>
-        <a href="/intelligence/network-identity" class="ndic-btn-secondary">See My Network Identity →</a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/network-identity" class="ir-btn-secondary">See My Network Identity →</a>
+        </div>
       </div>
 
       <!-- LOGIC + METHODOLOGY -->
