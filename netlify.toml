@@ -18,6 +18,78 @@
   status = 301
   force = true
 
+# ─────────────────────────────────────────
+# OLD SITE IDENTITY — 410 GONE
+# This domain previously hosted a video
+# downloader tool. Those paths must return
+# 410 Gone, never a 301 redirect to the
+# homepage — a redirect implies the content
+# moved, which would incorrectly transfer
+# old intent/backlinks onto this unrelated
+# site. 410 tells Google the old resource
+# is permanently and deliberately removed.
+# ─────────────────────────────────────────
+
+[[redirects]]
+  from = "/download"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/download/*"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/video"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/video/*"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/yt"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/yt/*"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/convert"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/convert/*"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/get"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/get/*"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/fetch"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/fetch/*"
+  to = "/410.html"
+  status = 410
+
 # Clean URL support (optional)
 # Allows intelreap.com/intelligence/security
 # without the .html extension
@@ -38,7 +110,6 @@
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 # ─────────────────────────────────────────
 # CACHE HEADERS
