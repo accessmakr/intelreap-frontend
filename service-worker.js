@@ -8,7 +8,7 @@
 // Images            → Stale while revalidate
 // ─────────────────────────────────────────
 
-const SW_VERSION = 'intelreap-v1.1.0'
+const SW_VERSION = 'intelreap-v1.2.0'
 
 // Cache names per resource type
 const CACHES = {
@@ -164,8 +164,22 @@ self.addEventListener('install', (event) => {
       })
 
     ]).then(() => {
-      // Skip waiting — activate immediately
-      return self.skipWaiting()
+      // NOTE: deliberately NOT calling
+      // self.skipWaiting() here. Doing so
+      // forced every new service worker to
+      // activate immediately and claim all
+      // open tabs via clients.claim(), which
+      // fires the controllerchange event that
+      // sw-register.js listens for — and that
+      // handler reloads the page. The result
+      // was an automatic reload on every
+      // deploy, for every open tab, with no
+      // user action involved. The update
+      // banner UI already has an explicit
+      // "Update" button that posts a
+      // SKIP_WAITING message (handled below),
+      // which is the correct, user-initiated
+      // way to activate a new version.
     })
   )
 })
