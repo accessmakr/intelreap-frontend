@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://intelreap.com/410</loc>
+    <lastmod>2026-07-10T23:15:53+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://intelreap.com/about</loc>
     <lastmod>2026-06-17T04:21:16+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -20,19 +26,19 @@
   </url>
   <url>
     <loc>https://intelreap.com/guides/gpu-troubleshooting-guide</loc>
-    <lastmod>2026-06-25T22:46:57+01:00</lastmod>
+    <lastmod>2026-07-05T11:51:13+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://intelreap.com/guides/how-to-enable-webgl</loc>
-    <lastmod>2026-06-26T05:22:30+01:00</lastmod>
+    <lastmod>2026-07-05T22:56:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://intelreap.com/guides/how-to-find-ip-address-of-any-device</loc>
-    <lastmod>2026-06-29T00:50:42+01:00</lastmod>
+    <lastmod>2026-07-06T07:57:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,7 +80,7 @@
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/live-feed</loc>
-    <lastmod>2026-06-24T18:24:06+01:00</lastmod>
+    <lastmod>2026-07-04T17:23:16+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -98,19 +104,19 @@
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/performance</loc>
-    <lastmod>2026-06-24T17:59:56+01:00</lastmod>
+    <lastmod>2026-07-04T17:19:35+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/rendering-speed</loc>
-    <lastmod>2026-06-24T18:02:51+01:00</lastmod>
+    <lastmod>2026-07-04T17:20:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://intelreap.com/intelligence/scoreboard</loc>
-    <lastmod>2026-06-24T18:13:41+01:00</lastmod>
+    <lastmod>2026-07-04T17:22:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -128,19 +134,19 @@
   </url>
   <url>
     <loc>https://intelreap.com/learn/can-you-have-two-isps-in-one-house</loc>
-    <lastmod>2026-06-25T01:04:47+01:00</lastmod>
+    <lastmod>2026-07-04T15:29:37+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://intelreap.com/learn/does-a-vpn-change-your-mac-address</loc>
-    <lastmod>2026-06-29T09:36:07+01:00</lastmod>
+    <lastmod>2026-07-06T21:49:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://intelreap.com/learn/how-to-protect-your-privacy-online</loc>
-    <lastmod>2026-06-30T11:42:48+01:00</lastmod>
+    <lastmod>2026-07-08T11:46:12+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -152,7 +158,7 @@
   </url>
   <url>
     <loc>https://intelreap.com/learn/webrtc-leak-test-and-shield</loc>
-    <lastmod>2026-07-01T06:54:13+01:00</lastmod>
+    <lastmod>2026-07-10T17:33:23+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -170,7 +176,7 @@
   </url>
   <url>
     <loc>https://intelreap.com/learn/what-is-device-fingerprinting</loc>
-    <lastmod>2026-06-29T22:40:45+01:00</lastmod>
+    <lastmod>2026-07-08T04:43:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -188,7 +194,7 @@
   </url>
   <url>
     <loc>https://intelreap.com/learn/why-does-my-internet-speed-fluctuate</loc>
-    <lastmod>2026-06-25T11:06:33+01:00</lastmod>
+    <lastmod>2026-07-04T22:11:18+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
