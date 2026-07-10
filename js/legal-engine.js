@@ -85,6 +85,9 @@ const LegalEngine = (() => {
             <a href="${basePath}intelligence/live-network.html">
               Live Network
             </a>
+            <a href="${basePath}intelligence/fingerprinting.html">
+              Fingerprint &amp; Leak Detection
+            </a>
           </div>
 
           <div class="ndic-footer-col">
@@ -164,10 +167,24 @@ const LegalEngine = (() => {
   // ─────────────────────────────────────
 
   const initCookieNotice = (basePath) => {
-    const accepted = localStorage.getItem(
+    const choice = localStorage.getItem(
+      'ndic_cookies_choice'
+    )
+    if (choice) return
+
+    // Backward compatibility — anyone who already
+    // accepted under the previous storage key
+    // should not be re-prompted once this ships
+    const legacyAccepted = localStorage.getItem(
       'ndic_cookies_accepted'
     )
-    if (accepted) return
+    if (legacyAccepted) {
+      localStorage.setItem(
+        'ndic_cookies_choice',
+        'accepted'
+      )
+      return
+    }
 
     const notice = document.createElement('div')
     notice.className = 'ndic-cookie-notice'
@@ -224,12 +241,10 @@ const LegalEngine = (() => {
         'ndic-cookie-notice--hiding'
       )
       setTimeout(() => notice.remove(), 400)
-      if (accepted) {
-        localStorage.setItem(
-          'ndic_cookies_accepted',
-          'true'
-        )
-      }
+      localStorage.setItem(
+        'ndic_cookies_choice',
+        accepted ? 'accepted' : 'declined'
+      )
     }
 
     acceptBtn?.addEventListener(
