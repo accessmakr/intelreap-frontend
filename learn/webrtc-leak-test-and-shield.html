@@ -118,7 +118,15 @@
     .form-submit{width:100%;background:var(--color-accent,#0ea5e9);color:#fff;border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
     .form-submit:hover{opacity:0.9;}
     #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,rgba(255,255,255,0.06));padding-top:2rem;}
-    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}}
+
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-btn-row{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
+    .ir-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#0ea5e9 !important;color:#ffffff !important;border:2px solid #0ea5e9 !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-primary:hover{background:#0284c7 !important;border-color:#0284c7 !important;transform:translateY(-1px);}
+    .ir-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:#f0f9ff !important;color:#0c2340 !important;border:2px solid #bae6fd !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-secondary:hover{background:#ffffff !important;border-color:#7dd3fc !important;transform:translateY(-1px);}
+
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}.ir-btn-primary,.ir-btn-secondary{min-width:0;width:100%;}}
   </style>
 
   <script type="application/ld+json">
@@ -188,8 +196,8 @@
           Your VPN might not be doing what you think it is doing. WebRTC, the browser technology behind video calls and voice chat, can reveal your real ISP-assigned IP address through a side channel that some VPNs never close. Here is how to test for it and shut it down properly, without breaking the video calls you actually want to keep working.
         </p>
         <div class="ndic-hero-cta-group">
-          <a href="/intelligence/vpn-proxy" class="ndic-btn-primary cta-rotate">Test My VPN for Leaks</a>
-          <a href="/intelligence/security" class="ndic-btn-secondary">Check My Security Score →</a>
+          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Test My VPN for Leaks</a>
+          <a href="/intelligence/security" class="ir-btn-secondary">Check My Security Score →</a>
         </div>
         <div id="freshness-badge" aria-live="polite">Loading…</div>
         <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
@@ -273,7 +281,9 @@
         <span class="ir-cta-eyebrow">VPN &amp; Proxy Intelligence</span>
         <h3>Test Your VPN for WebRTC and DNS Leaks Right Now</h3>
         <p>IntelReap's VPN &amp; Proxy panel checks for WebRTC leaks, DNS leaks, and IP mismatches in a single scan — showing you exactly what your VPN is and is not protecting, free and in-browser.</p>
-        <a href="/intelligence/vpn-proxy" class="ndic-btn-primary cta-rotate">Test My VPN for Leaks</a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Test My VPN for Leaks</a>
+        </div>
       </div>
 
       <h2><span class="section-num">07</span> Disable vs Shield — Which Approach Is Right for You?</h2>
@@ -339,7 +349,9 @@
         <span class="ir-cta-eyebrow">Security Intelligence</span>
         <h3>See Your Complete Privacy and Security Picture</h3>
         <p>IntelReap's Security panel checks WebRTC leaks, DNS leaks, fingerprinting exposure, and overall connection security in one pass — giving you a single, honest score for how exposed you actually are.</p>
-        <a href="/intelligence/security" class="ndic-btn-secondary">Check My Security Score →</a>
+        <div class="ir-btn-row">
+          <a href="/intelligence/security" class="ir-btn-secondary">Check My Security Score →</a>
+        </div>
       </div>
 
       <!-- LOGIC + METHODOLOGY -->
