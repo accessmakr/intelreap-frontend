@@ -121,9 +121,9 @@ const INTELREAP_CONFIG = {
   trust: {
     rating: '4.9★',
     ratingLabel: 'satisfaction',
-    stat1: '234 data points',
+    stat1: '285 data points',
     stat1Label: 'per scan',
-    stat2: '12 intelligence panels',
+    stat2: '13 intelligence panels',
     stat2Label: 'per report',
     stat3: 'Zero data stored',
     stat3Label: 'privacy first'
