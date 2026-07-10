@@ -625,3 +625,32 @@ const showDownloadError = (type) => {
     btn.classList.remove('ndic-btn-error')
   }, 3000)
 }
+
+// ─────────────────────────────────────────
+// INIT — WIRE UP BUTTON CLICK LISTENERS
+// The three functions above (downloadJSON,
+// downloadPDF, copyToClipboard) previously
+// existed but were never attached to any
+// button — this is the missing piece that
+// makes all three buttons actually respond
+// to clicks on the live site.
+// ─────────────────────────────────────────
+
+const initDownloadButtons = () => {
+  const jsonBtn = el('btn-download-json')
+  const pdfBtn  = el('btn-download-pdf')
+  const copyBtn = el('btn-copy-clipboard')
+
+  jsonBtn?.addEventListener('click', downloadJSON)
+  pdfBtn?.addEventListener('click', downloadPDF)
+  copyBtn?.addEventListener('click', copyToClipboard)
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener(
+    'DOMContentLoaded',
+    initDownloadButtons
+  )
+} else {
+  initDownloadButtons()
+}
