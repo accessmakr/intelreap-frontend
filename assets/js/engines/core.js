@@ -387,6 +387,19 @@ const CoreEngine = (() => {
       // loading states before data arrives
       await MonitoringEngine.initialize()
 
+      // Initialize all Chart.js instances before
+      // any engine tries to update them. Without
+      // this, updateCanvasNCharts() calls later in
+      // the pipeline look up charts that were never
+      // created and silently no-op — the root cause
+      // of Canvas 4/9/10/11 rendering with empty
+      // chart areas despite correct underlying data.
+      if (typeof ChartJSViz !== 'undefined') {
+        ChartJSViz.initializeAll()
+      } else {
+        logError('ChartJSViz not loaded — charts will not render')
+      }
+
       // PHASE 1 — Browser intelligence
       // Fast, no network required
       await runPhase1()
