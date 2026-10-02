@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_SW = {
     tagline: 'Akili ya mtandao na kifaa kwa wakati halisi. Gundua mara moja miundombinu ya IP yako, ASN, hali ya VPN, usalama wa kivinjari na alama kamili ya kidole cha kifaa. Bila kuingia. Bila kuhifadhi data.',
     cta_primary: 'Endesha Uchunguzi wa Akili',
     cta_secondary: 'Ona Jinsi Inavyofanya Kazi',
-    trust_rating: '4.9★ ridhaa',
-    trust_data_points: 'Pointi 234 za data kwa uchunguzi',
-    trust_panels: 'Paneli 12 za akili',
-    trust_privacy: 'Hakuna data iliyohifadhiwa'
+    trust_data_points: 'Pointi 285 za data kwa uchunguzi',
+    trust_panels: 'Paneli 13 za akili'
   },
   quick_answer: {
     label: 'Jibu la Haraka',
     title: 'Kituo cha Akili ya Mtandao na Kifaa ni Nini?',
-    body: 'NDIC ni zana ya bila malipo inayotegemea kivinjari inayochanganua miundombinu ya mtandao wako, alama ya kidole cha kifaa, hali ya usalama na uwezo wa kivinjari kwa wakati halisi. Inakusanya pointi 234 za data katika paneli 12 za akili bila kuhifadhi data yoyote au kuhitaji kuingia.'
+    body: 'NDIC ni zana ya bila malipo inayotegemea kivinjari inayochanganua miundombinu ya mtandao wako, alama ya kidole cha kifaa, hali ya usalama na uwezo wa kivinjari kwa wakati halisi. Inakusanya pointi 285 za data katika paneli 12 za akili bila kuhifadhi data yoyote au kuhitaji kuingia.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_SW = {
   },
   logic: {
     label: 'Mantiki',
-    text: 'IntelReap inakusanya pointi 234 za data kutoka kwa API za kivinjari na mfumo wa nyuma usio na seva ili kujenga picha kamili ya wakati halisi ya mazingira ya mtandao na kifaa chako.'
+    text: 'IntelReap inakusanya pointi 285 za data kutoka kwa API za kivinjari na mfumo wa nyuma usio na seva ili kujenga picha kamili ya wakati halisi ya mazingira ya mtandao na kifaa chako.'
   },
   methodology: {
     label: 'Mbinu',

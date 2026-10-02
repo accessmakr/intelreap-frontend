@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_HA = {
     tagline: 'Bayanan hanyar sadarwa da na\'ura a lokaci na gaske. Bayyana tsarin IP ɗinka, ASN, yanayin VPN, tsaron mai bincike da yatsan hannu cikakken na\'ura nan take. Ba tare da shiga ba. Ba tare da adana bayanai ba.',
     cta_primary: 'Gudanar da Binciken Bayanan',
     cta_secondary: 'Duba Yadda Take Aiki',
-    trust_rating: '4.9★ gamsuwa',
-    trust_data_points: 'Wurare 234 na bayanai a kowace bincike',
-    trust_panels: 'Aluna 12 na bayanan',
-    trust_privacy: 'Ba a adana bayanai'
+    trust_data_points: 'Wurare 285 na bayanai a kowace bincike',
+    trust_panels: 'Aluna 13 na bayanan'
   },
   quick_answer: {
     label: 'Amsa Mai Sauri',
     title: 'Menene Cibiyar Bayanan Hanyar Sadarwa da Na\'ura?',
-    body: 'NDIC kayan aiki ne na kyauta wanda ke aiki a kan mai bincike wanda ke nazarci tsarin hanyar sadarwa ɗinka, yatsan hannu na na\'ura, matsayin tsaro da iyawar mai bincike a lokaci na gaske. Yana tattara wurare 234 na bayanai a kan aluna 12 na bayanan ba tare da adana duk wani bayanai ko buƙatar shiga ba.'
+    body: 'NDIC kayan aiki ne na kyauta wanda ke aiki a kan mai bincike wanda ke nazarci tsarin hanyar sadarwa ɗinka, yatsan hannu na na\'ura, matsayin tsaro da iyawar mai bincike a lokaci na gaske. Yana tattara wurare 285 na bayanai a kan aluna 12 na bayanan ba tare da adana duk wani bayanai ko buƙatar shiga ba.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_HA = {
   },
   logic: {
     label: 'Dabara',
-    text: 'IntelReap tana tattara wurare 234 na bayanai daga API na mai bincike da bayan tsarin marasa uwar garke don gina cikakkiyar hoto ta gaske ta yanayin hanyar sadarwa da na\'ura ɗinka.'
+    text: 'IntelReap tana tattara wurare 285 na bayanai daga API na mai bincike da bayan tsarin marasa uwar garke don gina cikakkiyar hoto ta gaske ta yanayin hanyar sadarwa da na\'ura ɗinka.'
   },
   methodology: {
     label: 'Hanyar Aiki',
@@ -516,7 +514,7 @@ window.NDIC_TRANSLATIONS_HA = {
     items: [
       {
         q: 'Menene IntelReap kuma menene yake yi?',
-        a: 'IntelReap kayan aiki ne na kyauta mai amfani da mai bincike wanda ke nazarci tsarin hanyar sadarwa ɗinka, yatsan hannu na na\'ura, matsayin tsaro da iyawar mai bincike a lokaci na gaske. Yana tattara wurare 234 na bayanai ba tare da adana bayanai ko buƙatar asusun ba.'
+        a: 'IntelReap kayan aiki ne na kyauta mai amfani da mai bincike wanda ke nazarci tsarin hanyar sadarwa ɗinka, yatsan hannu na na\'ura, matsayin tsaro da iyawar mai bincike a lokaci na gaske. Yana tattara wurare 285 na bayanai ba tare da adana bayanai ko buƙatar asusun ba.'
       },
       {
         q: 'Shin IntelReap tana adana bayanan nawa?',

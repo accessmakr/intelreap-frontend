@@ -78,7 +78,7 @@ const AD_SLOTS = {
         //   title: 'Your Ad Here',
         //   description: 'Reach a technical audience interested in networking and security.',
         //   cta: 'Book This Space',
-        //   url: 'mailto:hello@intelreap.com',
+        //   url: 'mailto:stmakarios@gmail.com',
         //   badge: 'Available'
         // }
       ]

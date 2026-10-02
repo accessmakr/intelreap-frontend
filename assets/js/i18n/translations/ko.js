@@ -22,10 +22,8 @@ window.NDIC_TRANSLATIONS_KO = {
     tagline: '실시간 네트워크 및 기기 인텔리전스. IP 인프라, ASN, VPN 상태, 브라우저 보안, 완전한 기기 핑거프린트를 즉시 확인하세요. 로그인 불필요. 데이터 저장 없음.',
     cta_primary: '인텔리전스 스캔 실행',
     cta_secondary: '작동 방식 보기',
-    trust_rating: '4.9★ 만족도',
     trust_data_points: '스캔당 234개 데이터 포인트',
-    trust_panels: '12개 인텔리전스 패널',
-    trust_privacy: '데이터 저장 제로'
+    trust_panels: '12개 인텔리전스 패널'
   },
   quick_answer: {
     label: '빠른 답변',

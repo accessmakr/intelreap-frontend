@@ -33,15 +33,13 @@ window.NDIC_TRANSLATIONS_ES = {
     tagline: 'Inteligencia de red y dispositivo en tiempo real. Revela tu infraestructura IP, ASN, estado VPN, seguridad del navegador y huella digital completa del dispositivo.',
     cta_primary: 'Ejecutar Análisis de Inteligencia',
     cta_secondary: 'Ver Cómo Funciona',
-    trust_rating: '4.9★ satisfacción',
-    trust_data_points: '234 puntos de datos por análisis',
-    trust_panels: '12 paneles de inteligencia',
-    trust_privacy: 'Cero datos almacenados'
+    trust_data_points: '285 puntos de datos por análisis',
+    trust_panels: '13 paneles de inteligencia'
   },
   quick_answer: {
     label: 'Respuesta Rápida',
     title: '¿Qué es el Centro de Inteligencia de Red y Dispositivo?',
-    body: 'El NDIC es una herramienta gratuita basada en navegador que analiza tu infraestructura de red, huella digital del dispositivo, postura de seguridad y capacidades del navegador en tiempo real. Recopila 234 puntos de datos en 12 paneles de inteligencia sin almacenar ningún dato ni requerir inicio de sesión.'
+    body: 'El NDIC es una herramienta gratuita basada en navegador que analiza tu infraestructura de red, huella digital del dispositivo, postura de seguridad y capacidades del navegador en tiempo real. Recopila 285 puntos de datos en 12 paneles de inteligencia sin almacenar ningún dato ni requerir inicio de sesión.'
   },
   tool_header: {
     title: 'NDIC',
@@ -470,7 +468,7 @@ window.NDIC_TRANSLATIONS_ES = {
   },
   logic: {
     label: 'Lógica',
-    text: 'IntelReap recopila 234 puntos de datos de APIs del navegador y un backend sin servidor para construir una imagen completa en tiempo real de tu entorno de red y dispositivo.'
+    text: 'IntelReap recopila 285 puntos de datos de APIs del navegador y un backend sin servidor para construir una imagen completa en tiempo real de tu entorno de red y dispositivo.'
   },
   methodology: {
     label: 'Metodología',
@@ -480,7 +478,7 @@ window.NDIC_TRANSLATIONS_ES = {
     label: 'Preguntas Frecuentes',
     title: 'Todo lo que Necesitas Saber',
     items: [
-      { q: '¿Qué es IntelReap y qué hace?', a: 'IntelReap es una herramienta gratuita basada en navegador que analiza tu infraestructura de red, huella digital del dispositivo, postura de seguridad y capacidades del navegador en tiempo real. Recopila 234 puntos de datos en 12 paneles de inteligencia sin almacenar ningún dato ni requerir una cuenta.' },
+      { q: '¿Qué es IntelReap y qué hace?', a: 'IntelReap es una herramienta gratuita basada en navegador que analiza tu infraestructura de red, huella digital del dispositivo, postura de seguridad y capacidades del navegador en tiempo real. Recopila 285 puntos de datos en 12 paneles de inteligencia sin almacenar ningún dato ni requerir una cuenta.' },
       { q: '¿IntelReap almacena alguno de mis datos?', a: 'No. IntelReap procesa toda la inteligencia localmente en tu navegador y a través de un backend sin servidor que no registra ni retiene ninguna información personal.' },
       { q: '¿Qué es un ASN y por qué importa?', a: 'Un Número de Sistema Autónomo (ASN) es un identificador único asignado a un operador de red. Determina cómo se enruta el tráfico a través de internet.' },
       { q: '¿Cómo funciona la detección de VPN?', a: 'IntelReap usa un enfoque de detección de tres capas: análisis del tipo de propiedad ASN, verificación de inconsistencias de zona horaria e idioma, y consulta opcional a APIs de reputación de IP.' },

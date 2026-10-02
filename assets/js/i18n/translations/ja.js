@@ -22,10 +22,8 @@ window.NDIC_TRANSLATIONS_JA = {
     tagline: 'リアルタイムのネットワークとデバイスインテリジェンス。IPインフラ、ASN、VPNステータス、ブラウザセキュリティ、完全なデバイスフィンガープリントを即座に明らかにします。ログイン不要。データ保存なし。',
     cta_primary: 'インテリジェンススキャンを実行',
     cta_secondary: '仕組みを見る',
-    trust_rating: '4.9★ 満足度',
     trust_data_points: 'スキャンあたり234データポイント',
-    trust_panels: '12インテリジェンスパネル',
-    trust_privacy: 'データ保存ゼロ'
+    trust_panels: '12インテリジェンスパネル'
   },
   quick_answer: {
     label: '簡単な答え',

@@ -3877,21 +3877,21 @@ select {
 
 .ndic-cookie-decline {
   padding-block: var(--space-2);
-  padding-inline: var(--space-3);
+  padding-inline: var(--space-4);
   background: none;
-  border: 1px solid var(--color-border-primary);
+  border: 1px solid var(--color-accent-primary);
   border-radius: var(--radius-md);
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  font-weight: 500;
-  color: var(--color-text-secondary);
+  font-weight: 600;
+  color: var(--color-accent-primary);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .ndic-cookie-decline:hover {
-  color: var(--color-text-secondary);
-  border-color: var(--color-border-secondary);
+  color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
 }
 
 

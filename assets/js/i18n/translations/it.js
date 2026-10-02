@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_IT = {
     tagline: 'Intelligence su rete e dispositivo in tempo reale. Scopri immediatamente la tua infrastruttura IP, ASN, stato VPN, sicurezza del browser e impronta digitale completa del dispositivo. Senza accesso. Senza archiviazione dei dati.',
     cta_primary: 'Esegui Scansione Intelligence',
     cta_secondary: 'Scopri Come Funziona',
-    trust_rating: '4.9★ soddisfazione',
-    trust_data_points: '234 punti dati per scansione',
-    trust_panels: '12 pannelli di intelligence',
-    trust_privacy: 'Zero dati archiviati'
+    trust_data_points: '285 punti dati per scansione',
+    trust_panels: '13 pannelli di intelligence'
   },
   quick_answer: {
     label: 'Risposta Rapida',
     title: 'Cos\'è il Centro di Intelligence sulla Rete e il Dispositivo?',
-    body: 'L\'NDIC è uno strumento gratuito basato su browser che analizza la tua infrastruttura di rete, l\'impronta digitale del dispositivo, la postura di sicurezza e le capacità del browser in tempo reale. Raccoglie 234 punti dati su 12 pannelli di intelligence senza archiviare alcun dato o richiedere l\'accesso.'
+    body: 'L\'NDIC è uno strumento gratuito basato su browser che analizza la tua infrastruttura di rete, l\'impronta digitale del dispositivo, la postura di sicurezza e le capacità del browser in tempo reale. Raccoglie 285 punti dati su 12 pannelli di intelligence senza archiviare alcun dato o richiedere l\'accesso.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_IT = {
   },
   logic: {
     label: 'Logica',
-    text: 'IntelReap raccoglie 234 punti dati dalle API del browser e da un backend serverless per costruire un quadro completo in tempo reale del tuo ambiente di rete e dispositivo.'
+    text: 'IntelReap raccoglie 285 punti dati dalle API del browser e da un backend serverless per costruire un quadro completo in tempo reale del tuo ambiente di rete e dispositivo.'
   },
   methodology: {
     label: 'Metodologia',
@@ -516,7 +514,7 @@ window.NDIC_TRANSLATIONS_IT = {
     items: [
       {
         q: 'Cos\'è IntelReap e cosa fa?',
-        a: 'IntelReap è uno strumento gratuito basato su browser che analizza la tua infrastruttura di rete, l\'impronta digitale del dispositivo, la postura di sicurezza e le capacità del browser in tempo reale. Raccoglie 234 punti dati su 12 pannelli senza archiviare dati o richiedere un account.'
+        a: 'IntelReap è uno strumento gratuito basato su browser che analizza la tua infrastruttura di rete, l\'impronta digitale del dispositivo, la postura di sicurezza e le capacità del browser in tempo reale. Raccoglie 285 punti dati su 12 pannelli senza archiviare dati o richiedere un account.'
       },
       {
         q: 'IntelReap archivia i miei dati?',

@@ -41,10 +41,8 @@ window.NDIC_TRANSLATIONS_EN = {
     tagline: 'Real-time network and device intelligence. Instantly reveal your IP infrastructure, ASN, VPN status, browser security and full device fingerprint. No login. No data stored.',
     cta_primary: 'Run Intelligence Scan',
     cta_secondary: 'See How It Works',
-    trust_rating: '4.9★ satisfaction',
-    trust_data_points: '234 data points per scan',
-    trust_panels: '12 intelligence panels',
-    trust_privacy: 'Zero data stored'
+    trust_data_points: '285 data points per scan',
+    trust_panels: '13 intelligence panels'
   },
 
   // ─────────────────────────────────────
@@ -53,7 +51,7 @@ window.NDIC_TRANSLATIONS_EN = {
   quick_answer: {
     label: 'Quick Answer',
     title: 'What Is The Network and Device Intelligence Center?',
-    body: 'The NDIC is a free browser-based tool that analyses your network infrastructure, device fingerprint, security posture and browser capabilities in real time. It collects 234 data points across 12 intelligence panels — covering everything from your ASN and BGP routing to your Core Web Vitals and GPU tier — without storing any data or requiring a login.'
+    body: 'The NDIC is a free browser-based tool that analyses your network infrastructure, device fingerprint, security posture and browser capabilities in real time. It collects 285 data points across 13 intelligence panels — covering everything from your ASN and BGP routing to your Core Web Vitals and GPU tier — without storing any data or requiring a login.'
   },
 
   // ─────────────────────────────────────
@@ -562,7 +560,7 @@ window.NDIC_TRANSLATIONS_EN = {
   // ─────────────────────────────────────
   logic: {
     label: 'Logic',
-    text: 'IntelReap collects 234 data points from browser APIs and a serverless backend to build a complete real-time picture of your network and device environment.'
+    text: 'IntelReap collects 285 data points from browser APIs and a serverless backend to build a complete real-time picture of your network and device environment.'
   },
 
   // ─────────────────────────────────────
@@ -631,7 +629,7 @@ window.NDIC_TRANSLATIONS_EN = {
     items: [
       {
         q: 'What is IntelReap and what does it do?',
-        a: 'IntelReap is a free browser-based intelligence tool that analyses your network infrastructure, device fingerprint, security posture and browser capabilities in real time. It collects 234 data points across 12 intelligence panels and presents them in a single dashboard — without storing any of your data or requiring an account.'
+        a: 'IntelReap is a free browser-based intelligence tool that analyses your network infrastructure, device fingerprint, security posture and browser capabilities in real time. It collects 285 data points across 13 intelligence panels and presents them in a single dashboard — without storing any of your data or requiring an account.'
       },
       {
         q: 'Does IntelReap store any of my data?',

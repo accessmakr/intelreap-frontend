@@ -2,15 +2,6 @@
 <html lang="en" dir="ltr">
 <head>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-187W4NTBS7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-187W4NTBS7');
-</script>
   
   <script>
     (function() {
@@ -48,8 +39,6 @@
   <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
   <meta name="twitter:site" content="@intelreap">
 
-  <meta name="geo.region" content="GB">
-  <meta name="ICBM" content="51.5074, -0.1278">
 
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#00b4d8">
@@ -218,13 +207,8 @@
             See Full Report
           </button>
         </div>
-        <div id="freshness-badge">Loading...</div>
+        <div id="freshness-badge">Last updated 2 October 2026</div>
         <div class="ndic-trust-strip" aria-label="IntelReap key statistics">
-          <div class="ndic-trust-item">
-            <span class="ndic-trust-value">4.9★</span>
-            <span class="ndic-trust-label">satisfaction</span>
-          </div>
-          <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item">
             <span class="ndic-trust-value">285 data points</span>
             <span class="ndic-trust-label">per scan</span>
@@ -236,8 +220,8 @@
           </div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
           <div class="ndic-trust-item">
-            <span class="ndic-trust-value">Zero data stored</span>
-            <span class="ndic-trust-label">privacy first</span>
+            <span class="ndic-trust-value">No account needed</span>
+            <span class="ndic-trust-label">free to use</span>
           </div>
         </div>
       </div>
@@ -1104,6 +1088,7 @@
   <!-- ═══════════ GLOBAL SITE SCRIPTS ═══════════ -->
   <script defer src="./js/registry.js"></script>
   <script defer src="./js/root-config.js"></script>
+  <script defer src="./js/analytics-consent.js"></script>
   <script defer src="./assets/js/i18n/i18n-engine.js"></script>
 
   <!-- ═══════════ VISUALIZATION LIBRARIES (CDN) ═══════════ -->
@@ -1131,6 +1116,7 @@
   <script defer src="./assets/js/engines/ip.js"></script>
   <script defer src="./assets/js/engines/proxy.js"></script>
   <script defer src="./assets/js/engines/scoring.js"></script>
+  <script defer src="./assets/js/utils/redact.js"></script>
   <script defer src="./assets/js/engines/ai-summary.js"></script>
   <script defer src="./assets/js/engines/monitoring.js"></script>
   <script defer src="./assets/js/engines/fingerprint.js"></script>

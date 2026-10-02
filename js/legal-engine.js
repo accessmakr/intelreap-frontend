@@ -38,8 +38,7 @@ const LegalEngine = (() => {
           </p>
           <p class="ndic-footer-description">
             Free browser-based intelligence tool.
-            No login. No data stored.
-            Everything runs in your browser.
+            No account required.
           </p>
         </div>
 
@@ -122,13 +121,6 @@ const LegalEngine = (() => {
             >
               Twitter / X
             </a>
-            <a
-              href="https://github.com/accessmakr/intelreap-frontend"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
           </div>
 
         </div>
@@ -142,8 +134,7 @@ const LegalEngine = (() => {
           </span>
           <span class="ndic-footer-sep">—</span>
           <span>
-            All intelligence data processed
-            locally in your browser.
+            Free to use. No account required.
           </span>
         </div>
         <div class="ndic-footer-legal-inline">
@@ -156,6 +147,12 @@ const LegalEngine = (() => {
           <a href="${basePath}terms-of-use.html">
             Terms
           </a>
+          <a
+            href="${basePath}cookies-policy.html#cookie-settings"
+            id="ndic-cookie-settings"
+          >
+            Cookie settings
+          </a>
         </div>
       </div>
     `
@@ -166,41 +163,41 @@ const LegalEngine = (() => {
   // Lightweight banner
   // ─────────────────────────────────────
 
-  const initCookieNotice = (basePath) => {
-    const choice = localStorage.getItem(
-      'ndic_cookies_choice'
-    )
-    if (choice) return
+  const CONSENT_KEY = 'ndic_analytics_consent'
 
-    // Backward compatibility — anyone who already
-    // accepted under the previous storage key
-    // should not be re-prompted once this ships
-    const legacyAccepted = localStorage.getItem(
-      'ndic_cookies_accepted'
-    )
-    if (legacyAccepted) {
-      localStorage.setItem(
-        'ndic_cookies_choice',
-        'accepted'
-      )
-      return
+  const readConsent = () => {
+    try {
+      return localStorage.getItem(CONSENT_KEY)
+    } catch (e) {
+      return null
     }
+  }
+
+  const writeConsent = (value) => {
+    try {
+      localStorage.setItem(CONSENT_KEY, value)
+    } catch (e) {
+      // storage unavailable: choice applies to this page only
+    }
+  }
+
+  const showCookieNotice = (basePath) => {
+    if (document.getElementById('ndic-cookie-notice')) return
 
     const notice = document.createElement('div')
     notice.className = 'ndic-cookie-notice'
     notice.id = 'ndic-cookie-notice'
-    notice.setAttribute('role', 'banner')
-    notice.setAttribute(
-      'aria-label',
-      'Cookie notice'
-    )
+    notice.setAttribute('role', 'region')
+    notice.setAttribute('aria-label', 'Cookie consent')
 
     notice.innerHTML = `
       <div class="ndic-cookie-inner">
         <p class="ndic-cookie-text">
-          IntelReap uses minimal local storage
-          to save your language preference.
-          No tracking. No third-party cookies.
+          IntelReap stores your language and theme
+          choices in your browser. With your permission
+          it also uses Google Analytics cookies to
+          measure how the site is used. Declining does
+          not limit the tool.
           <a
             href="${basePath}cookies-policy.html"
             class="ndic-cookie-link"
@@ -227,34 +224,27 @@ const LegalEngine = (() => {
 
     document.body.appendChild(notice)
 
-    const acceptBtn =
-      document.getElementById(
-        'ndic-cookie-accept'
-      )
-    const declineBtn =
-      document.getElementById(
-        'ndic-cookie-decline'
-      )
-
-    const dismiss = (accepted) => {
-      notice.classList.add(
-        'ndic-cookie-notice--hiding'
-      )
+    const decide = (granted) => {
+      writeConsent(granted ? 'granted' : 'denied')
+      if (window.IntelReapConsent) {
+        if (granted) window.IntelReapConsent.grant()
+        else window.IntelReapConsent.deny()
+      }
+      notice.classList.add('ndic-cookie-notice--hiding')
       setTimeout(() => notice.remove(), 400)
-      localStorage.setItem(
-        'ndic_cookies_choice',
-        accepted ? 'accepted' : 'declined'
-      )
     }
 
-    acceptBtn?.addEventListener(
-      'click',
-      () => dismiss(true)
-    )
-    declineBtn?.addEventListener(
-      'click',
-      () => dismiss(false)
-    )
+    document
+      .getElementById('ndic-cookie-accept')
+      ?.addEventListener('click', () => decide(true))
+    document
+      .getElementById('ndic-cookie-decline')
+      ?.addEventListener('click', () => decide(false))
+  }
+
+  const initCookieNotice = (basePath) => {
+    if (readConsent()) return
+    showCookieNotice(basePath)
   }
 
   // ─────────────────────────────────────
@@ -271,6 +261,14 @@ const LegalEngine = (() => {
 
     buildFooter(basePath)
     initCookieNotice(basePath)
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest &&
+        e.target.closest('#ndic-cookie-settings')
+      if (!link) return
+      e.preventDefault()
+      showCookieNotice(basePath)
+    })
   }
 
   if (document.readyState === 'loading') {

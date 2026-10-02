@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_VI = {
     tagline: 'Tình báo mạng và thiết bị theo thời gian thực. Khám phá cơ sở hạ tầng IP, ASN, trạng thái VPN, bảo mật trình duyệt và dấu vân tay thiết bị đầy đủ ngay lập tức. Không cần đăng nhập. Không lưu trữ dữ liệu.',
     cta_primary: 'Chạy Quét Tình Báo',
     cta_secondary: 'Xem Cách Hoạt Động',
-    trust_rating: '4.9★ hài lòng',
-    trust_data_points: '234 điểm dữ liệu mỗi lần quét',
-    trust_panels: '12 bảng tình báo',
-    trust_privacy: 'Không lưu trữ dữ liệu'
+    trust_data_points: '285 điểm dữ liệu mỗi lần quét',
+    trust_panels: '13 bảng tình báo'
   },
   quick_answer: {
     label: 'Câu Trả Lời Nhanh',
     title: 'Trung Tâm Tình Báo Mạng và Thiết Bị là gì?',
-    body: 'NDIC là công cụ miễn phí dựa trên trình duyệt phân tích cơ sở hạ tầng mạng, dấu vân tay thiết bị, tư thế bảo mật và khả năng trình duyệt theo thời gian thực. Nó thu thập 234 điểm dữ liệu trên 12 bảng tình báo mà không lưu trữ bất kỳ dữ liệu nào hoặc yêu cầu đăng nhập.'
+    body: 'NDIC là công cụ miễn phí dựa trên trình duyệt phân tích cơ sở hạ tầng mạng, dấu vân tay thiết bị, tư thế bảo mật và khả năng trình duyệt theo thời gian thực. Nó thu thập 285 điểm dữ liệu trên 12 bảng tình báo mà không lưu trữ bất kỳ dữ liệu nào hoặc yêu cầu đăng nhập.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_VI = {
   },
   logic: {
     label: 'Logic',
-    text: 'IntelReap thu thập 234 điểm dữ liệu từ API trình duyệt và backend không có máy chủ để xây dựng bức tranh hoàn chỉnh theo thời gian thực về môi trường mạng và thiết bị của bạn.'
+    text: 'IntelReap thu thập 285 điểm dữ liệu từ API trình duyệt và backend không có máy chủ để xây dựng bức tranh hoàn chỉnh theo thời gian thực về môi trường mạng và thiết bị của bạn.'
   },
   methodology: {
     label: 'Phương Pháp Luận',

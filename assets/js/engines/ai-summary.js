@@ -414,10 +414,13 @@ const AISummaryEngine = (() => {
     canvasId
   ) => {
     try {
+      if (typeof IntelReapRedact === 'undefined') {
+        throw new Error('Redaction unavailable')
+      }
       const payload = {
         type: type,
         canvas: canvasId || null,
-        data: getStateSnapshot()
+        data: IntelReapRedact.safe(getStateSnapshot())
       }
 
       const response = await fetchWithTimeout(

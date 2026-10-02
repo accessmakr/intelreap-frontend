@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_ID = {
     tagline: 'Intelijen jaringan dan perangkat secara real-time. Ungkap infrastruktur IP, ASN, status VPN, keamanan browser, dan sidik jari perangkat lengkap Anda seketika. Tanpa login. Tanpa penyimpanan data.',
     cta_primary: 'Jalankan Pemindaian Intelijen',
     cta_secondary: 'Lihat Cara Kerjanya',
-    trust_rating: '4.9★ kepuasan',
-    trust_data_points: '234 titik data per pemindaian',
-    trust_panels: '12 panel intelijen',
-    trust_privacy: 'Nol data tersimpan'
+    trust_data_points: '285 titik data per pemindaian',
+    trust_panels: '13 panel intelijen'
   },
   quick_answer: {
     label: 'Jawaban Cepat',
     title: 'Apa itu Pusat Intelijen Jaringan dan Perangkat?',
-    body: 'NDIC adalah alat berbasis browser gratis yang menganalisis infrastruktur jaringan, sidik jari perangkat, postur keamanan, dan kemampuan browser secara real-time. Alat ini mengumpulkan 234 titik data di 12 panel intelijen tanpa menyimpan data apapun atau memerlukan login.'
+    body: 'NDIC adalah alat berbasis browser gratis yang menganalisis infrastruktur jaringan, sidik jari perangkat, postur keamanan, dan kemampuan browser secara real-time. Alat ini mengumpulkan 285 titik data di 12 panel intelijen tanpa menyimpan data apapun atau memerlukan login.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_ID = {
   },
   logic: {
     label: 'Logika',
-    text: 'IntelReap mengumpulkan 234 titik data dari API browser dan backend tanpa server untuk membangun gambaran lengkap lingkungan jaringan dan perangkat Anda secara real-time.'
+    text: 'IntelReap mengumpulkan 285 titik data dari API browser dan backend tanpa server untuk membangun gambaran lengkap lingkungan jaringan dan perangkat Anda secara real-time.'
   },
   methodology: {
     label: 'Metodologi',

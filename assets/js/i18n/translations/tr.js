@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_TR = {
     tagline: 'Gerçek zamanlı ağ ve cihaz istihbaratı. IP altyapınızı, ASN, VPN durumunu, tarayıcı güvenliğini ve tam cihaz parmak izini anında ortaya çıkarın. Giriş yok. Veri depolanmaz.',
     cta_primary: 'İstihbarat Taraması Çalıştır',
     cta_secondary: 'Nasıl Çalıştığını Gör',
-    trust_rating: '4.9★ memnuniyet',
-    trust_data_points: 'Tarama başına 234 veri noktası',
-    trust_panels: '12 istihbarat paneli',
-    trust_privacy: 'Sıfır depolanan veri'
+    trust_data_points: 'Tarama başına 285 veri noktası',
+    trust_panels: '13 istihbarat paneli'
   },
   quick_answer: {
     label: 'Hızlı Cevap',
     title: 'Ağ ve Cihaz İstihbarat Merkezi Nedir?',
-    body: 'NDIC, ağ altyapınızı, cihaz parmak izini, güvenlik durumunu ve tarayıcı yeteneklerini gerçek zamanlı olarak analiz eden ücretsiz bir tarayıcı tabanlı araçtır. Herhangi bir veri depolamadan veya giriş gerektirmeden 12 istihbarat panelinde 234 veri noktası toplar.'
+    body: 'NDIC, ağ altyapınızı, cihaz parmak izini, güvenlik durumunu ve tarayıcı yeteneklerini gerçek zamanlı olarak analiz eden ücretsiz bir tarayıcı tabanlı araçtır. Herhangi bir veri depolamadan veya giriş gerektirmeden 12 istihbarat panelinde 285 veri noktası toplar.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_TR = {
   },
   logic: {
     label: 'Mantık',
-    text: 'IntelReap, ağ ve cihaz ortamınızın gerçek zamanlı tam bir resmini oluşturmak için tarayıcı API\'lerinden ve sunucusuz arka uçtan 234 veri noktası toplar.'
+    text: 'IntelReap, ağ ve cihaz ortamınızın gerçek zamanlı tam bir resmini oluşturmak için tarayıcı API\'lerinden ve sunucusuz arka uçtan 285 veri noktası toplar.'
   },
   methodology: {
     label: 'Metodoloji',
@@ -516,7 +514,7 @@ window.NDIC_TRANSLATIONS_TR = {
     items: [
       {
         q: 'IntelReap nedir ve ne yapar?',
-        a: 'IntelReap, ağ altyapınızı, cihaz parmak izini, güvenlik durumunu ve tarayıcı yeteneklerini gerçek zamanlı olarak analiz eden ücretsiz bir tarayıcı tabanlı araçtır. Veri depolamadan veya hesap gerektirmeden 12 panelde 234 veri noktası toplar.'
+        a: 'IntelReap, ağ altyapınızı, cihaz parmak izini, güvenlik durumunu ve tarayıcı yeteneklerini gerçek zamanlı olarak analiz eden ücretsiz bir tarayıcı tabanlı araçtır. Veri depolamadan veya hesap gerektirmeden 12 panelde 285 veri noktası toplar.'
       },
       {
         q: 'IntelReap verilerimi depoluyor mu?',

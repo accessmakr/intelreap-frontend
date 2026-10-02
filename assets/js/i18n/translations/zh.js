@@ -22,10 +22,8 @@ window.NDIC_TRANSLATIONS_ZH = {
     tagline: '实时网络和设备智能。即时揭示您的IP基础设施、ASN、VPN状态、浏览器安全性和完整设备指纹。无需登录。不存储数据。',
     cta_primary: '运行智能扫描',
     cta_secondary: '查看工作原理',
-    trust_rating: '4.9★ 满意度',
     trust_data_points: '每次扫描234个数据点',
-    trust_panels: '12个智能面板',
-    trust_privacy: '零数据存储'
+    trust_panels: '12个智能面板'
   },
   quick_answer: {
     label: '快速答案',

@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_PL = {
     tagline: 'Wywiad sieciowy i urządzenia w czasie rzeczywistym. Natychmiast ujawnij infrastrukturę IP, ASN, status VPN, bezpieczeństwo przeglądarki i pełny odcisk palca urządzenia. Bez logowania. Bez przechowywania danych.',
     cta_primary: 'Uruchom Skanowanie Wywiadu',
     cta_secondary: 'Zobacz Jak Działa',
-    trust_rating: '4.9★ satysfakcja',
-    trust_data_points: '234 punkty danych na skanowanie',
-    trust_panels: '12 paneli wywiadu',
-    trust_privacy: 'Zero przechowywanych danych'
+    trust_data_points: '285 punkty danych na skanowanie',
+    trust_panels: '13 paneli wywiadu'
   },
   quick_answer: {
     label: 'Szybka Odpowiedź',
     title: 'Czym jest Centrum Wywiadu Sieciowego i Urządzenia?',
-    body: 'NDIC to bezpłatne narzędzie oparte na przeglądarce, które analizuje infrastrukturę sieciową, odcisk palca urządzenia, postawę bezpieczeństwa i możliwości przeglądarki w czasie rzeczywistym. Zbiera 234 punkty danych w 12 panelach wywiadu bez przechowywania żadnych danych ani wymagania logowania.'
+    body: 'NDIC to bezpłatne narzędzie oparte na przeglądarce, które analizuje infrastrukturę sieciową, odcisk palca urządzenia, postawę bezpieczeństwa i możliwości przeglądarki w czasie rzeczywistym. Zbiera 285 punkty danych w 12 panelach wywiadu bez przechowywania żadnych danych ani wymagania logowania.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_PL = {
   },
   logic: {
     label: 'Logika',
-    text: 'IntelReap zbiera 234 punkty danych z API przeglądarki i bezserwerowego backendu, aby zbudować pełny obraz w czasie rzeczywistym środowiska sieciowego i urządzenia.'
+    text: 'IntelReap zbiera 285 punkty danych z API przeglądarki i bezserwerowego backendu, aby zbudować pełny obraz w czasie rzeczywistym środowiska sieciowego i urządzenia.'
   },
   methodology: {
     label: 'Metodologia',
@@ -516,7 +514,7 @@ window.NDIC_TRANSLATIONS_PL = {
     items: [
       {
         q: 'Czym jest IntelReap i co robi?',
-        a: 'IntelReap to bezpłatne narzędzie oparte na przeglądarce, które analizuje infrastrukturę sieciową, odcisk palca urządzenia, postawę bezpieczeństwa i możliwości przeglądarki w czasie rzeczywistym. Zbiera 234 punkty danych w 12 panelach bez przechowywania danych ani wymagania konta.'
+        a: 'IntelReap to bezpłatne narzędzie oparte na przeglądarce, które analizuje infrastrukturę sieciową, odcisk palca urządzenia, postawę bezpieczeństwa i możliwości przeglądarki w czasie rzeczywistym. Zbiera 285 punkty danych w 12 panelach bez przechowywania danych ani wymagania konta.'
       },
       {
         q: 'Czy IntelReap przechowuje moje dane?',

@@ -28,8 +28,7 @@ const SchemaSystem = (() => {
     },
     description: 'IntelReap provides free real-time network and device intelligence. No login required.',
     sameAs: [
-      'https://twitter.com/intelreap',
-      'https://github.com/accessmakr/intelreap-frontend'
+      'https://twitter.com/intelreap'
     ]
   })
 

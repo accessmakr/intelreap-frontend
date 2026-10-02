@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_NL = {
     tagline: 'Realtime netwerk- en apparaatinlichtingen. Ontdek onmiddellijk uw IP-infrastructuur, ASN, VPN-status, browserbeveiliging en volledige apparaatvingerafdruk. Zonder inloggen. Zonder gegevensopslag.',
     cta_primary: 'Inlichtingenscan uitvoeren',
     cta_secondary: 'Zie hoe het werkt',
-    trust_rating: '4.9★ tevredenheid',
-    trust_data_points: '234 gegevenspunten per scan',
-    trust_panels: '12 inlichtingenpanelen',
-    trust_privacy: 'Nul opgeslagen gegevens'
+    trust_data_points: '285 gegevenspunten per scan',
+    trust_panels: '13 inlichtingenpanelen'
   },
   quick_answer: {
     label: 'Snel Antwoord',
     title: 'Wat is het Netwerk en Apparaat Inlichtingencentrum?',
-    body: 'Het NDIC is een gratis browsergebaseerde tool die uw netwerkinfrastructuur, apparaatvingerafdruk, beveiligingshouding en browsermogelijkheden in realtime analyseert. Het verzamelt 234 gegevenspunten over 12 inlichtingenpanelen zonder gegevens op te slaan of inloggen te vereisen.'
+    body: 'Het NDIC is een gratis browsergebaseerde tool die uw netwerkinfrastructuur, apparaatvingerafdruk, beveiligingshouding en browsermogelijkheden in realtime analyseert. Het verzamelt 285 gegevenspunten over 12 inlichtingenpanelen zonder gegevens op te slaan of inloggen te vereisen.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_NL = {
   },
   logic: {
     label: 'Logica',
-    text: 'IntelReap verzamelt 234 gegevenspunten van browser-API\'s en een serverloze backend om een volledig realtime beeld te bouwen van uw netwerk- en apparaatomgeving.'
+    text: 'IntelReap verzamelt 285 gegevenspunten van browser-API\'s en een serverloze backend om een volledig realtime beeld te bouwen van uw netwerk- en apparaatomgeving.'
   },
   methodology: {
     label: 'Methodologie',
@@ -516,7 +514,7 @@ window.NDIC_TRANSLATIONS_NL = {
     items: [
       {
         q: 'Wat is IntelReap en wat doet het?',
-        a: 'IntelReap is een gratis browsergebaseerde tool die uw netwerkinfrastructuur, apparaatvingerafdruk, beveiligingshouding en browsermogelijkheden in realtime analyseert. Het verzamelt 234 gegevenspunten over 12 panelen zonder gegevens op te slaan of een account te vereisen.'
+        a: 'IntelReap is een gratis browsergebaseerde tool die uw netwerkinfrastructuur, apparaatvingerafdruk, beveiligingshouding en browsermogelijkheden in realtime analyseert. Het verzamelt 285 gegevenspunten over 12 panelen zonder gegevens op te slaan of een account te vereisen.'
       },
       {
         q: 'Slaat IntelReap mijn gegevens op?',

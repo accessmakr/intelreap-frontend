@@ -8,7 +8,7 @@
 // Images            → Stale while revalidate
 // ─────────────────────────────────────────
 
-const SW_VERSION = 'intelreap-v1.3.0'
+const SW_VERSION = 'intelreap-v1.4.0'
 
 // Cache names per resource type
 const CACHES = {
@@ -37,12 +37,14 @@ const PRECACHE_STATIC = [
 
   // Utilities
   '/assets/js/utils/helpers.js',
+  '/assets/js/utils/redact.js',
   '/assets/js/utils/logger.js',
   '/assets/js/utils/download.js',
 
   // Global site scripts
   '/js/registry.js',
   '/js/root-config.js',
+  '/js/analytics-consent.js',
   '/js/menu-system.js',
   '/js/search-system.js',
   '/js/schema.js',

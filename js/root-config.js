@@ -24,8 +24,7 @@ const INTELREAP_CONFIG = {
   // ─────────────────────────────────────
 
   social: {
-    twitter: 'https://twitter.com/intelreap',
-    github: 'https://github.com/accessmakr/intelreap-frontend'
+    twitter: 'https://twitter.com/intelreap'
   },
 
   // ─────────────────────────────────────
@@ -33,7 +32,7 @@ const INTELREAP_CONFIG = {
   // ─────────────────────────────────────
 
   contact: {
-    email: 'accessmakr@gmail.com',
+    email: 'stmakarios@gmail.com',
     formName: 'Request And Contact'
   },
 
@@ -49,15 +48,12 @@ const INTELREAP_CONFIG = {
     return new Date().toISOString().split('T')[0]
   },
 
-  // Schema dateModified
-  // Updates every Monday automatically
+  // Date of the last real content update.
+  // Change this only when site content changes.
+  siteLastModified: '2026-10-02',
+
   getSchemaDateModified() {
-    const now = new Date()
-    const day = now.getDay()
-    const diff = now.getDate() - day +
-      (day === 0 ? -6 : 1)
-    const monday = new Date(now.setDate(diff))
-    return monday.toISOString().split('T')[0]
+    return this.siteLastModified
   },
 
   // ─────────────────────────────────────
@@ -119,14 +115,12 @@ const INTELREAP_CONFIG = {
   // ─────────────────────────────────────
 
   trust: {
-    rating: '4.9★',
-    ratingLabel: 'satisfaction',
     stat1: '285 data points',
     stat1Label: 'per scan',
     stat2: '13 intelligence panels',
     stat2Label: 'per report',
-    stat3: 'Zero data stored',
-    stat3Label: 'privacy first'
+    stat3: 'No account needed',
+    stat3Label: 'free to use'
   },
 
   // ─────────────────────────────────────
@@ -134,16 +128,19 @@ const INTELREAP_CONFIG = {
   // ─────────────────────────────────────
 
   getFreshnessBadge() {
-    const now = new Date()
-    const today = now.toLocaleDateString(
-      'en-US',
+    const modified = new Date(
+      this.siteLastModified + 'T00:00:00Z'
+    )
+    const label = modified.toLocaleDateString(
+      'en-GB',
       {
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
+        timeZone: 'UTC'
       }
     )
-    return `Last updated ${today}`
+    return `Last updated ${label}`
   },
 
   // ─────────────────────────────────────

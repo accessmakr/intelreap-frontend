@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_DE = {
     tagline: 'Echtzeit-Netzwerk- und Geräteaufklärung. Enthüllen Sie sofort Ihre IP-Infrastruktur, ASN, VPN-Status, Browser-Sicherheit und vollständigen Geräte-Fingerabdruck. Keine Anmeldung. Keine Datenspeicherung.',
     cta_primary: 'Aufklärungsscan starten',
     cta_secondary: 'Funktionsweise ansehen',
-    trust_rating: '4.9★ Zufriedenheit',
-    trust_data_points: '234 Datenpunkte pro Scan',
-    trust_panels: '12 Aufklärungsbereiche',
-    trust_privacy: 'Null gespeicherte Daten'
+    trust_data_points: '285 Datenpunkte pro Scan',
+    trust_panels: '13 Aufklärungsbereiche'
   },
   quick_answer: {
     label: 'Schnellantwort',
     title: 'Was ist das Netzwerk- und Geräteaufklärungszentrum?',
-    body: 'Das NDIC ist ein kostenloses browserbasiertes Tool, das Ihre Netzwerkinfrastruktur, Geräte-Fingerabdruck, Sicherheitslage und Browser-Fähigkeiten in Echtzeit analysiert. Es sammelt 234 Datenpunkte über 12 Aufklärungsbereiche ohne Datenspeicherung oder Anmeldepflicht.'
+    body: 'Das NDIC ist ein kostenloses browserbasiertes Tool, das Ihre Netzwerkinfrastruktur, Geräte-Fingerabdruck, Sicherheitslage und Browser-Fähigkeiten in Echtzeit analysiert. Es sammelt 285 Datenpunkte über 12 Aufklärungsbereiche ohne Datenspeicherung oder Anmeldepflicht.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_DE = {
   },
   logic: {
     label: 'Logik',
-    text: 'IntelReap sammelt 234 Datenpunkte aus Browser-APIs und einem serverlosen Backend, um ein vollständiges Echtzeit-Bild Ihrer Netzwerk- und Geräteumgebung zu erstellen.'
+    text: 'IntelReap sammelt 285 Datenpunkte aus Browser-APIs und einem serverlosen Backend, um ein vollständiges Echtzeit-Bild Ihrer Netzwerk- und Geräteumgebung zu erstellen.'
   },
   methodology: {
     label: 'Methodik',
@@ -516,7 +514,7 @@ window.NDIC_TRANSLATIONS_DE = {
     items: [
       {
         q: 'Was ist IntelReap und was macht es?',
-        a: 'IntelReap ist ein kostenloses browserbasiertes Tool, das Ihre Netzwerkinfrastruktur, Geräte-Fingerabdruck, Sicherheitslage und Browser-Fähigkeiten in Echtzeit analysiert. Es sammelt 234 Datenpunkte über 12 Aufklärungsbereiche ohne Datenspeicherung oder Anmeldepflicht.'
+        a: 'IntelReap ist ein kostenloses browserbasiertes Tool, das Ihre Netzwerkinfrastruktur, Geräte-Fingerabdruck, Sicherheitslage und Browser-Fähigkeiten in Echtzeit analysiert. Es sammelt 285 Datenpunkte über 12 Aufklärungsbereiche ohne Datenspeicherung oder Anmeldepflicht.'
       },
       {
         q: 'Speichert IntelReap meine Daten?',

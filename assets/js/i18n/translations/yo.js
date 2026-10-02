@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_YO = {
     tagline: 'Imọye nẹtiwọọki ati ẹrọ ni akoko gidi. Ṣafihàn ìpilẹ̀ṣẹ IP rẹ, ASN, ipo VPN, aabo aṣàwákiri ati ika ọwọ ẹrọ pé dandan. Láìsí ìwọlé. Láìsí títọ́jú àwọn data.',
     cta_primary: 'Ṣe Ṣiṣayẹwo Imọye',
     cta_secondary: 'Wo Bí O Ṣe Ń Ṣiṣẹ',
-    trust_rating: '4.9★ ìtẹ́lọ́rùn',
-    trust_data_points: 'Àwọn ìpínlẹ̀ data 234 fún ṣiṣayẹwo kọọkan',
-    trust_panels: 'Àwọn panẹẹli imọye 12',
-    trust_privacy: 'Kò sí data tí a tọ́jú'
+    trust_data_points: 'Àwọn ìpínlẹ̀ data 285 fún ṣiṣayẹwo kọọkan',
+    trust_panels: 'Àwọn panẹẹli imọye 13'
   },
   quick_answer: {
     label: 'Ìdáhùn Kíákíá',
     title: 'Kíni Ile-iṣẹ Imọye Nẹtiwọọki ati Ẹrọ?',
-    body: 'NDIC jẹ irinṣẹ ọfẹ tí ó dá lori aṣàwákiri tí ó ṣe itupalẹ àwọn àpilẹ̀kọ nẹtiwọọki rẹ, ika ọwọ ẹrọ, ipo aabo ati agbara aṣàwákiri ni akoko gidi. Ó kojọ àwọn ìpínlẹ̀ data 234 lori àwọn panẹẹli imọye 12 láìsí títọ́jú àwọn data tàbí ìbéèrè ìwọlé.'
+    body: 'NDIC jẹ irinṣẹ ọfẹ tí ó dá lori aṣàwákiri tí ó ṣe itupalẹ àwọn àpilẹ̀kọ nẹtiwọọki rẹ, ika ọwọ ẹrọ, ipo aabo ati agbara aṣàwákiri ni akoko gidi. Ó kojọ àwọn ìpínlẹ̀ data 285 lori àwọn panẹẹli imọye 12 láìsí títọ́jú àwọn data tàbí ìbéèrè ìwọlé.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_YO = {
   },
   logic: {
     label: 'Ìrònú',
-    text: 'IntelReap kojọ àwọn ìpínlẹ̀ data 234 látọwọ́ àwọn API aṣàwákiri ati backend alásòdípò láti kọ àwòrán pérépéré ni akoko gidi ti àyíká nẹtiwọọki ati ẹrọ rẹ.'
+    text: 'IntelReap kojọ àwọn ìpínlẹ̀ data 285 látọwọ́ àwọn API aṣàwákiri ati backend alásòdípò láti kọ àwòrán pérépéré ni akoko gidi ti àyíká nẹtiwọọki ati ẹrọ rẹ.'
   },
   methodology: {
     label: 'Ọ̀nà Ìṣe',

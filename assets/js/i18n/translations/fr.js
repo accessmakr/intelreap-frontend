@@ -22,15 +22,13 @@ window.NDIC_TRANSLATIONS_FR = {
     tagline: 'Renseignement réseau et dispositif en temps réel. Révélez instantanément votre infrastructure IP, ASN, statut VPN, sécurité du navigateur et empreinte complète de l\'appareil. Sans connexion. Sans stockage de données.',
     cta_primary: 'Lancer l\'analyse de renseignement',
     cta_secondary: 'Voir comment ça fonctionne',
-    trust_rating: '4.9★ satisfaction',
-    trust_data_points: '234 points de données par analyse',
-    trust_panels: '12 panneaux de renseignement',
-    trust_privacy: 'Zéro donnée stockée'
+    trust_data_points: '285 points de données par analyse',
+    trust_panels: '13 panneaux de renseignement'
   },
   quick_answer: {
     label: 'Réponse rapide',
     title: 'Qu\'est-ce que le Centre de renseignement réseau et dispositif\u00a0?',
-    body: 'Le NDIC est un outil gratuit basé sur le navigateur qui analyse votre infrastructure réseau, l\'empreinte de votre appareil, votre posture de sécurité et les capacités de votre navigateur en temps réel. Il collecte 234 points de données sur 12 panneaux de renseignement sans stocker aucune donnée ni nécessiter de connexion.'
+    body: 'Le NDIC est un outil gratuit basé sur le navigateur qui analyse votre infrastructure réseau, l\'empreinte de votre appareil, votre posture de sécurité et les capacités de votre navigateur en temps réel. Il collecte 285 points de données sur 12 panneaux de renseignement sans stocker aucune donnée ni nécessiter de connexion.'
   },
   tool_header: {
     title: 'NDIC',
@@ -459,7 +457,7 @@ window.NDIC_TRANSLATIONS_FR = {
   },
   logic: {
     label: 'Logique',
-    text: 'IntelReap collecte 234 points de données depuis les API du navigateur et un backend sans serveur pour construire une image complète en temps réel de votre environnement réseau et dispositif.'
+    text: 'IntelReap collecte 285 points de données depuis les API du navigateur et un backend sans serveur pour construire une image complète en temps réel de votre environnement réseau et dispositif.'
   },
   methodology: {
     label: 'Méthodologie',
