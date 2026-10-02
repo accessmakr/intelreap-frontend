@@ -8,7 +8,7 @@
 // Images            → Stale while revalidate
 // ─────────────────────────────────────────
 
-const SW_VERSION = 'intelreap-v1.2.0'
+const SW_VERSION = 'intelreap-v1.3.0'
 
 // Cache names per resource type
 const CACHES = {
@@ -51,7 +51,7 @@ const PRECACHE_STATIC = [
   '/js/share-system.js',
   '/js/ticker-system.js',
   '/js/carousel-system.js',
-  '/js/data/ad-slots.js',
+  '/js/ad-slots.js',
   '/js/sw-register.js',
 
   // Icons
@@ -137,18 +137,17 @@ self.addEventListener('install', (event) => {
 
       // Cache static assets
       caches.open(CACHES.static).then(cache => {
-        return cache.addAll(
-          PRECACHE_STATIC.map(url => {
-            return new Request(url, {
-              cache: 'reload'
+        return Promise.allSettled(
+          PRECACHE_STATIC.map(url =>
+            cache.add(
+              new Request(url, { cache: 'reload' })
+            ).catch(err => {
+              console.warn(
+                '[SW] Precache skipped:', url, err
+              )
             })
-          })
-        ).catch(err => {
-          console.warn(
-            '[SW] Static precache partial failure:',
-            err
           )
-        })
+        )
       }),
 
       // Cache HTML pages

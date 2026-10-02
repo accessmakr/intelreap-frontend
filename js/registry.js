@@ -12,7 +12,7 @@ const INTELREAP_REGISTRY = {
     name: 'IntelReap',
     tagline: 'Real-time network and device intelligence.',
     baseUrl: 'https://intelreap.com',
-    logo: '/assets/images/intelreap-logo.svg',
+    logo: '/assets/images/icons/icon-512.png',
     twitter: 'https://twitter.com/intelreap',
     github: 'https://github.com/accessmakr/intelreap-frontend'
   },

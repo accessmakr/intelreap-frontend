@@ -22,7 +22,7 @@ const SchemaSystem = (() => {
     url: BASE,
     logo: {
       '@type': 'ImageObject',
-      url: `${BASE}/assets/images/intelreap-logo.svg`,
+      url: `${BASE}/assets/images/icons/icon-512.png`,
       width: 200,
       height: 40
     },

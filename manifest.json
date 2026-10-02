@@ -85,22 +85,6 @@
       "purpose": "any"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/assets/images/screenshots/desktop-intelligence.png",
-      "sizes": "1280x800",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "IntelReap Intelligence Center — Full Dashboard"
-    },
-    {
-      "src": "/assets/images/screenshots/mobile-intelligence.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "IntelReap on Mobile"
-    }
-  ],
   "shortcuts": [
     {
       "name": "Run Intelligence Scan",
