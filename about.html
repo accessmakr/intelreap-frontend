@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>About — IntelReap</title>
-  <meta name="description" content="IntelReap is a free browser-based Network and Device Intelligence Center. 285 data points across 13 intelligence panels. No account required. No data stored. Everything runs in your browser.">
+  <meta name="description" content="IntelReap is a free browser-based Network and Device Intelligence Center. 285 data points across 13 intelligence panels. No account required. No account required. The scan runs in your browser.">
   <meta name="keywords" content="about IntelReap, network intelligence, device intelligence, browser-based, privacy-first, free network scanner, IP intelligence">
   <meta name="robots" content="index, follow">
   <meta name="author" content="IntelReap">
@@ -78,7 +78,7 @@
         "@id": "https://intelreap.com/about.html#webpage",
         "url": "https://intelreap.com/about.html",
         "name": "About — IntelReap",
-        "description": "IntelReap is a free browser-based Network and Device Intelligence Center. 285 data points. 13 intelligence panels. No account required. No data stored.",
+        "description": "IntelReap is a free browser-based Network and Device Intelligence Center. 285 data points. 13 intelligence panels. No account required.",
         "isPartOf": { "@id": "https://intelreap.com/#website" },
         "publisher": { "@id": "https://intelreap.com/#organization" },
         "inLanguage": "en-US",
@@ -97,7 +97,7 @@
           {
             "@type": "Question",
             "name": "What is IntelReap?",
-            "acceptedAnswer": { "@type": "Answer", "text": "IntelReap is a free browser-based Network and Device Intelligence Center that reveals 285 data points about your network connection, device characteristics, browser capabilities, and security posture — all processed locally in your browser." }
+            "acceptedAnswer": { "@type": "Answer", "text": "IntelReap is a free browser-based Network and Device Intelligence Center that reveals 285 data points about your network connection, device characteristics, browser capabilities, and security posture — collected by your browser and shown only to you." }
           },
           {
             "@type": "Question",
@@ -107,7 +107,7 @@
           {
             "@type": "Question",
             "name": "Does IntelReap collect my data?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. All 285 intelligence data points are processed entirely within your browser and never transmitted to any server owned by IntelReap. Nothing leaves your device." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Very little. The scan runs in your browser, and IntelReap has no accounts. Your IP address reaches our hosting and backend like any website visit, and a few lookups use third-party services. GPS coordinates and fingerprint hashes stay in your browser. See the Privacy Policy for details." }
           },
           {
             "@type": "Question",
@@ -474,12 +474,12 @@
       <div class="about-hero">
         <div class="about-eyebrow">About IntelReap</div>
         <h1>Network and Device Intelligence.<br>In your browser.</h1>
-        <p>IntelReap is a free, real-time intelligence tool that reveals what your network connection, device, and browser are broadcasting to the internet — all processed locally, all visible only to you.</p>
+        <p>IntelReap is a free, real-time intelligence tool that reveals what your network connection, device, and browser are broadcasting to the internet — collected by your browser and visible only to you.</p>
       </div>
 
       <!-- CALLOUT -->
       <div class="about-callout">
-        <p>No account. No login. No data stored. IntelReap runs entirely in your browser and never transmits your intelligence data anywhere.</p>
+        <p>No account. No login. The scan runs in your browser and the results are shown only to you. A few lookups use our backend and third-party services; see the Privacy Policy.</p>
       </div>
 
       <!-- STATS -->
@@ -571,8 +571,8 @@
       <!-- HOW IT WORKS -->
       <div class="about-section">
         <div class="about-section-eyebrow">How it works</div>
-        <h2>Browser APIs. Local processing. Nothing leaves your device.</h2>
-        <p>IntelReap uses standard web browser APIs to collect intelligence data directly within your browser. No plugins, no downloads, and no backend processing of your scan data is required.</p>
+        <h2>Browser APIs. Local processing. Minimal outbound requests.</h2>
+        <p>IntelReap uses standard web browser APIs to collect intelligence data directly within your browser. No plugins or downloads are required.</p>
         <ul>
           <li>Network data is collected using the Browser Network Information API and WebRTC APIs</li>
           <li>Device data is gathered from navigator, screen, and hardware concurrency APIs</li>
@@ -581,18 +581,25 @@
           <li>Graphics capability is detected using WebGL context queries</li>
           <li>Browser capabilities are tested live — 56 features probed in real time</li>
         </ul>
-        <p>IP geolocation enrichment requires a single outbound query to look up your public IP address. This is the only data that leaves your browser during a scan — and it is the same information already visible to every server you connect to on the internet.</p>
+        <p>IP and network lookups are made through our backend and third-party providers, which receive your public IP address as any server you connect to does. Time zone, language, network details and an anonymised set of scan scores are also sent for proxy detection and AI summaries. GPS coordinates, fingerprint hashes and your local network address stay in your browser.</p>
+      </div>
+
+      <!-- OPERATOR -->
+      <div class="about-section">
+        <div class="about-section-eyebrow">Who runs IntelReap</div>
+        <h2>Operated by IntelReap Information Technologies</h2>
+        <p>IntelReap is operated by IntelReap Information Technologies. For questions, feedback or privacy requests, email <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent,#0ea5e9);">stmakarios@gmail.com</a> or use the <a href="./contact.html" style="color:var(--color-accent,#0ea5e9);">contact form</a>.</p>
       </div>
 
       <!-- PRIVACY ARCHITECTURE -->
       <div class="about-section">
         <div class="about-section-eyebrow">Privacy architecture</div>
-        <h2>Designed from the ground up to collect nothing</h2>
-        <p>IntelReap's privacy-first architecture is not a policy decision — it is a technical constraint built into how the tool is constructed.</p>
+        <h2>Designed to collect as little as possible</h2>
+        <p>IntelReap is built to minimise what it collects. These are the main design choices.</p>
         <div class="privacy-steps">
           <div class="privacy-step">
             <span class="privacy-step-num">01</span>
-            <span class="privacy-step-text"><strong>No database.</strong> IntelReap has no user database, no scan history database, and no analytics database. There is no infrastructure capable of storing your intelligence data.</span>
+            <span class="privacy-step-text"><strong>No scan history.</strong> IntelReap has no user accounts and does not keep a history of your scans.</span>
           </div>
           <div class="privacy-step">
             <span class="privacy-step-num">02</span>
@@ -600,15 +607,15 @@
           </div>
           <div class="privacy-step">
             <span class="privacy-step-num">03</span>
-            <span class="privacy-step-text"><strong>Static deployment.</strong> IntelReap is a static web application served from a CDN. The delivery server has no ability to receive or process your scan data.</span>
+            <span class="privacy-step-text"><strong>Static front end.</strong> The website is a static web application served from a CDN. A separate backend handles IP and network lookups and AI summaries.</span>
           </div>
           <div class="privacy-step">
             <span class="privacy-step-num">04</span>
-            <span class="privacy-step-text"><strong>No analytics scripts.</strong> IntelReap loads no third-party analytics. There are no page view trackers, no session recorders, and no behavioural analytics of any kind.</span>
+            <span class="privacy-step-text"><strong>Consent-based analytics.</strong> Google Analytics loads only after you click Accept. There are no session recorders.</span>
           </div>
           <div class="privacy-step">
             <span class="privacy-step-num">05</span>
-            <span class="privacy-step-text"><strong>Minimal local storage.</strong> The only data stored on your device is your language preference and cookie notice response — both in browser localStorage, both clearable at any time.</span>
+            <span class="privacy-step-text"><strong>Minimal local storage.</strong> The only data stored on your device is your language and theme preferences and your cookie choice, all in browser localStorage and clearable at any time.</span>
           </div>
         </div>
       </div>
@@ -639,7 +646,7 @@
               </span>
             </button>
             <div class="ndic-faq-answer">
-              <div class="ndic-faq-answer-inner">IntelReap is a free browser-based Network and Device Intelligence Center that reveals 285 data points about your network connection, device characteristics, browser capabilities, and security posture — all processed locally in your browser, never transmitted to any server owned by IntelReap.</div>
+              <div class="ndic-faq-answer-inner">IntelReap is a free browser-based Network and Device Intelligence Center that reveals 285 data points about your network connection, device characteristics, browser capabilities, and security posture — collected by your browser and shown only to you.</div>
             </div>
           </div>
 
@@ -667,7 +674,7 @@
               </span>
             </button>
             <div class="ndic-faq-answer">
-              <div class="ndic-faq-answer-inner">No. All 285 intelligence data points are processed entirely within your browser and are never transmitted to any server owned or operated by IntelReap. The only external query is for IP geolocation, which uses data already visible to every server on the internet.</div>
+              <div class="ndic-faq-answer-inner">Very little. IntelReap has no accounts and does not keep scan history. Your IP address reaches our hosting and backend like any website visit, and a few lookups use third-party services. GPS coordinates, fingerprint hashes and your local network address stay in your browser. Details are in the Privacy Policy.</div>
             </div>
           </div>
 
