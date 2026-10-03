@@ -3,18 +3,18 @@
 <head>
   <script>(function(){var s=localStorage.getItem("ndic_theme");if(s==="dark")document.documentElement.setAttribute("data-theme","dark")})();</script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Browser & Rendering Speed Intelligence — How Fast Does Your Device Render? | IntelReap</title>
+  <title>Browser and Rendering Speed Panel Explained — IntelReap</title>
   <meta name="description" content="Live Core Web Vitals — LCP, FCP, CLS, INP, TTFB — plus JS execution, DOM manipulation, canvas render, and memory benchmark scores, explained parameter by parameter.">
   <meta name="keywords" content="Core Web Vitals, LCP, FCP, CLS, INP, TTFB, JS benchmark, rendering speed, browser benchmark, CSS animation FPS, event loop latency">
   <meta name="robots" content="index, follow"><meta name="author" content="IntelReap">
   <link rel="canonical" href="https://intelreap.com/intelligence/rendering-speed">
   <link rel="alternate" hreflang="en" href="https://intelreap.com/intelligence/rendering-speed">
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/rendering-speed">
-  <meta property="og:type" content="article"><meta property="og:title" content="Browser & Rendering Speed Intelligence — IntelReap">
+  <meta property="og:type" content="article"><meta property="og:title" content="Browser and Rendering Speed Panel Explained — IntelReap">
   <meta property="og:description" content="Live Core Web Vitals and JS/DOM/canvas benchmarks — your rendering speed explained in plain English.">
   <meta property="og:url" content="https://intelreap.com/intelligence/rendering-speed"><meta property="og:site_name" content="IntelReap">
   <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png"><meta property="og:locale" content="en_US">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Browser & Rendering Speed Intelligence — IntelReap">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Browser and Rendering Speed Panel Explained — IntelReap">
   <meta name="twitter:description" content="Live Core Web Vitals and rendering benchmarks, explained parameter by parameter.">
   <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png"><meta name="twitter:site" content="@intelreap">
   <link rel="manifest" href="../manifest.json"><meta name="theme-color" content="#10141b">
@@ -30,7 +30,92 @@
   <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
   <link rel="stylesheet" href="../assets/css/ndic-animations.css">
   <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com"},{"@type":"TechArticle","headline":"Browser & Rendering Speed Intelligence","url":"https://intelreap.com/intelligence/rendering-speed","datePublished":"2026-06-22","dateModified":"2026-06-27","author":{"@id":"https://intelreap.com/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Intelligence Center","item":"https://intelreap.com/index.html"},{"@type":"ListItem","position":3,"name":"Browser & Rendering Speed Intelligence","item":"https://intelreap.com/intelligence/rendering-speed"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Core Web Vitals?","acceptedAnswer":{"@type":"Answer","text":"Core Web Vitals are Google's standardised measurements of real-world user experience: Largest Contentful Paint measures loading speed, Cumulative Layout Shift measures visual stability, and Interaction to Next Paint measures responsiveness. They're used as ranking signals in Google Search."}},{"@type":"Question","name":"What is LCP?","acceptedAnswer":{"@type":"Answer","text":"Largest Contentful Paint is the time until the largest visible element — usually a hero image or heading — finishes rendering. Google considers under 2.5 seconds good, 2.5-4 seconds needs improvement, and over 4 seconds poor."}},{"@type":"Question","name":"What is CLS?","acceptedAnswer":{"@type":"Answer","text":"Cumulative Layout Shift measures how much page content unexpectedly moves during loading — the kind of shift that causes you to tap the wrong button. A score under 0.1 is good; above 0.25 is poor."}},{"@type":"Question","name":"What does the JS benchmark score measure?","acceptedAnswer":{"@type":"Answer","text":"The JavaScript benchmark runs a fixed set of computation tasks and measures how long they take. The score is relative to expected performance for this device tier — it reflects your CPU's JavaScript engine speed, not your network connection."}}]}]}</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Browser & Rendering Speed Intelligence",
+      "url": "https://intelreap.com/intelligence/rendering-speed",
+      "datePublished": "2026-06-22",
+      "dateModified": "2026-06-27",
+      "author": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Intelligence Center",
+          "item": "https://intelreap.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Browser & Rendering Speed Intelligence",
+          "item": "https://intelreap.com/intelligence/rendering-speed"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are Core Web Vitals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Core Web Vitals are Google's standardised measurements of real-world user experience: Largest Contentful Paint measures loading speed, Cumulative Layout Shift measures visual stability, and Interaction to Next Paint measures responsiveness. They're used as ranking signals in Google Search."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is LCP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Largest Contentful Paint is the time until the largest visible element — usually a hero image or heading — finishes rendering. Google considers under 2.5 seconds good, 2.5-4 seconds needs improvement, and over 4 seconds poor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is CLS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cumulative Layout Shift measures how much page content unexpectedly moves during loading — the kind of shift that causes you to tap the wrong button. A score under 0.1 is good; above 0.25 is poor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the JS benchmark score measure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The JavaScript benchmark runs a fixed set of computation tasks and measures how long they take. The score is relative to expected performance for this device tier — it reflects your CPU's JavaScript engine speed, not your network connection."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -236,7 +321,74 @@
       <div id="dynamic-internal-links"></div>
     </div>
   </main>
-  <footer id="ndic-footer"></footer>
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
   <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
   <script defer src="../js/registry.js"></script>
   <script defer src="../js/root-config.js"></script>

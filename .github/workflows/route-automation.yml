@@ -33,7 +33,7 @@ jobs:
           fi
           
           # Strictly isolate files with status 'A' (Added) matching the .html pattern
-          NEW_HTML_FILES=$(echo "$DIFF_MAP" | grep -E '^A.*\.html$' || true)
+          NEW_HTML_FILES=$(echo "$DIFF_MAP" | grep -E '^[AMD][[:space:]].*\.html$' || true)
           
           if [ -z "$NEW_HTML_FILES" ]; then
             echo "Pipeline Condition Met: Content changes detected, but no newly created HTML files introduced."

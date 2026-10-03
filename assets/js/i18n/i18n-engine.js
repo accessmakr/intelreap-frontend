@@ -111,11 +111,12 @@ const I18nEngine = (() => {
       }
 
       // Determine base path
-      const depth = window.location.pathname
-        .split('/').filter(Boolean).length
-      const base = depth <= 1
-        ? './'
-        : '../'.repeat(depth - 1)
+      const path = window.location.pathname
+      const parts = path.split('/').filter(Boolean)
+      const depth = path.endsWith('/')
+        ? parts.length
+        : parts.length - 1
+      const base = depth <= 0 ? './' : '../'.repeat(depth)
 
       const script = document.createElement('script')
       script.src = `${base}assets/js/i18n/translations/${langCode}.js`
@@ -226,11 +227,12 @@ const I18nEngine = (() => {
       return
     }
 
-    const depth = window.location.pathname
-      .split('/').filter(Boolean).length
-    const base = depth <= 1
-      ? './'
-      : '../'.repeat(depth - 1)
+    const path = window.location.pathname
+    const parts = path.split('/').filter(Boolean)
+    const depth = path.endsWith('/')
+      ? parts.length
+      : parts.length - 1
+    const base = depth <= 0 ? './' : '../'.repeat(depth)
 
     const link = document.createElement('link')
     link.id = 'ndic-rtl-css'

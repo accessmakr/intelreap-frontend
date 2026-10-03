@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>GPU Troubleshooting Guide: High Usage, Resets, Undervolting & More — IntelReap</title>
+  <title>GPU Troubleshooting: Common Questions Answered — IntelReap</title>
   <meta name="description" content="Why is my GPU usage so high? How to reset a GPU, what Ti means, undervolting explained, hardware accelerated GPU scheduling, and whether to remove GPU when moving PC — complete 2026 guide.">
   <meta name="keywords" content="why is my gpu usage so high, how to reset gpu, how to check motherboard damage from gpu, what does ti stand for in gpu, what does undervolting a gpu do, should i have hardware accelerated gpu scheduling on, is minecraft cpu or gpu intensive, how do i know if a dual-gpu system, should i remove the gpu when moving my pc, gpu troubleshooting guide">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -26,7 +26,7 @@
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/guides/gpu-troubleshooting-guide">
 
   <meta property="og:type"         content="article">
-  <meta property="og:title"        content="GPU Troubleshooting Guide: High Usage, Resets, Undervolting & More — IntelReap">
+  <meta property="og:title"        content="GPU Troubleshooting: Common Questions Answered — IntelReap">
   <meta property="og:description"  content="GPU usage too high, screen freezes, wondering what Ti means or whether to undervolt? Complete GPU troubleshooting guide covering every common question — with fixes.">
   <meta property="og:url"          content="https://intelreap.com/guides/gpu-troubleshooting-guide">
   <meta property="og:site_name"    content="IntelReap">
@@ -36,7 +36,7 @@
   <meta property="og:locale"       content="en_US">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="GPU Troubleshooting Guide — IntelReap">
+  <meta name="twitter:title"       content="GPU Troubleshooting: Common Questions Answered — IntelReap">
   <meta name="twitter:description" content="High GPU usage, resets, undervolting, Ti suffix, HAGS, and moving your PC — every common GPU question answered in one guide.">
   <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
   <meta name="twitter:site"        content="@intelreap">
@@ -326,72 +326,199 @@
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "@id": "https://intelreap.com/guides/gpu-troubleshooting-guide#article",
-        "headline": "GPU Troubleshooting Guide: High Usage, Resets, Undervolting and More",
-        "description": "Complete GPU troubleshooting guide covering high GPU usage, how to reset a GPU, what Ti means, undervolting, hardware accelerated GPU scheduling, Minecraft GPU vs CPU, and safe GPU removal when moving a PC.",
-        "url": "https://intelreap.com/guides/gpu-troubleshooting-guide",
-        "image": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/og-image.png", "width": 1200, "height": 630 },
-        "datePublished": "2026-01-24",
-        "dateModified": "2026-06-09",
-        "author": { "@type": "Organization", "@id": "https://intelreap.com/#organization" },
-        "publisher": { "@id": "https://intelreap.com/#organization" },
-        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://intelreap.com/guides/gpu-troubleshooting-guide" },
-        "inLanguage": "en-US",
-        "keywords": "why is my gpu usage so high, how to reset gpu, what does ti stand for in gpu, what does undervolting a gpu do, hardware accelerated gpu scheduling, is minecraft cpu or gpu intensive",
-        "articleSection": "Hardware Guides",
-        "wordCount": 2900
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://intelreap.com/guides/gpu-troubleshooting-guide#article",
+      "headline": "GPU Troubleshooting Guide: High Usage, Resets, Undervolting and More",
+      "description": "Complete GPU troubleshooting guide covering high GPU usage, how to reset a GPU, what Ti means, undervolting, hardware accelerated GPU scheduling, Minecraft GPU vs CPU, and safe GPU removal when moving a PC.",
+      "url": "https://intelreap.com/guides/gpu-troubleshooting-guide",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/og-image.png",
+        "width": 1200,
+        "height": 630
       },
-      {
+      "datePublished": "2026-01-24",
+      "dateModified": "2026-06-09",
+      "author": {
         "@type": "Organization",
         "@id": "https://intelreap.com/#organization",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/icons/icon-512.png" },
-        "sameAs": ["https://twitter.com/intelreap"]
+        "legalName": "IntelReap Information Technologies",
+        "email": "stmakarios@gmail.com"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://intelreap.com/#website",
-        "name": "IntelReap", "url": "https://intelreap.com",
-        "publisher": { "@id": "https://intelreap.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": { "@type": "EntryPoint", "urlTemplate": "https://intelreap.com/?q={search_term_string}" },
-          "query-input": "required name=search_term_string"
-        }
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
-          { "@type": "ListItem", "position": 2, "name": "Guides",    "item": "https://intelreap.com/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "GPU Troubleshooting Guide", "item": "https://intelreap.com/guides/gpu-troubleshooting-guide" }
-        ]
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://intelreap.com/guides/gpu-troubleshooting-guide"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "Why is my GPU usage at 99–100%?", "acceptedAnswer": { "@type": "Answer", "text": "GPU usage at 99–100% during gaming or GPU-intensive tasks is completely normal and healthy — it means the GPU is being fully utilised as intended. High GPU usage on the desktop, in browsers, or while idle is the concerning scenario. That is caused by background crypto-mining malware, browser hardware acceleration rendering heavy web content, Windows visual effects, or a stuck process. Check Task Manager's GPU tab for the specific process consuming GPU resources." } },
-          { "@type": "Question", "name": "How do I reset my GPU without restarting my PC?", "acceptedAnswer": { "@type": "Answer", "text": "Press Win + Ctrl + Shift + B simultaneously on Windows. The screen will go black for one to two seconds and you may hear a single beep — this is normal. This keyboard shortcut resets the GPU display driver kernel without rebooting. It resolves screen freezes, black screens, and rendering artifacts caused by a crashed GPU driver. It does not affect open applications or unsaved work." } },
-          { "@type": "Question", "name": "What does Ti mean in GPU names like RTX 4070 Ti?", "acceptedAnswer": { "@type": "Answer", "text": "Ti stands for Titanium and designates a more powerful variant within the same GPU generation and tier. An RTX 4070 Ti has a higher-spec chip than the RTX 4070 — more CUDA cores, higher base and boost clocks, and more memory bandwidth — at a higher price. Ti models are not simply the same chip with a higher clock: they typically use a different, larger die with more processing units enabled." } },
-          { "@type": "Question", "name": "What does undervolting a GPU do?", "acceptedAnswer": { "@type": "Answer", "text": "Undervolting a GPU reduces the voltage supplied to the chip while keeping the clock speed the same or near the same. The result is lower power consumption, lower temperatures, and reduced fan noise — with equal or sometimes improved performance, since a cooler GPU sustains boost clocks more consistently. Undervolting does not damage the GPU. If the undervolt is too aggressive, the GPU becomes unstable and crashes during load — the fix is simply raising the voltage slightly." } },
-          { "@type": "Question", "name": "Should I enable hardware accelerated GPU scheduling?", "acceptedAnswer": { "@type": "Answer", "text": "Hardware Accelerated GPU Scheduling (HAGS) is worth enabling on Windows 11 with a modern GPU (NVIDIA RTX 30-series or later, AMD RX 6000-series or later) and up-to-date drivers. It reduces CPU latency in the rendering pipeline, which can lower input lag in games. On older hardware or with older drivers, HAGS can cause stuttering or instability — if that occurs, disable it via Settings > System > Display > Graphics > Change default graphics settings." } },
-          { "@type": "Question", "name": "How do I check if my GPU has damaged my motherboard?", "acceptedAnswer": { "@type": "Answer", "text": "Inspect the PCIe x16 slot on the motherboard for bent pins, burn marks, or discolouration. A GPU that caused a power surge or was seated incorrectly can leave physical damage visible under bright light. Also check for POST beep codes on startup — a pattern of beeps often indicates a PCIe or GPU fault. If the PC won't POST with the GPU seated but works with integrated graphics, the GPU itself, the PCIe slot, or the power delivery to it has been compromised." } },
-          { "@type": "Question", "name": "Is Minecraft CPU or GPU intensive?", "acceptedAnswer": { "@type": "Answer", "text": "Vanilla Minecraft (Java Edition) is primarily CPU intensive — specifically, it is heavily dependent on single-threaded CPU performance for world simulation, chunk loading, and game logic. The GPU requirement for default graphics is modest. Installing shader packs (Iris, OptiFine) or high-resolution texture packs transforms Minecraft into a GPU-intensive application, as real-time lighting, shadows, and reflections require significant GPU compute. Bedrock Edition is generally better optimised and distributes load more evenly." } },
-          { "@type": "Question", "name": "Should I remove my GPU when moving my PC?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — for any transport beyond a short careful carry within the same room. Modern GPUs, particularly large triple-fan models, are heavy. In transit, vibration and impact forces can lever the GPU's weight against the PCIe slot, bending the motherboard PCB or damaging the slot retention mechanism. Remove the GPU, pack it separately in an anti-static bag, and reinstall it at the destination. This takes ten minutes and avoids potentially expensive motherboard damage." } },
-          { "@type": "Question", "name": "How do I know if I have a dual-GPU system?", "acceptedAnswer": { "@type": "Answer", "text": "Open Device Manager on Windows (Win + X > Device Manager > Display Adapters). If you see two discrete GPU entries — such as two NVIDIA or AMD cards — you have a dual-GPU setup. Alternatively, open Task Manager > Performance tab: if you see GPU 0 and GPU 1 listed separately, both are active. On laptops, seeing one integrated GPU (Intel or AMD) and one discrete GPU (NVIDIA or AMD) is normal and does not constitute a dual-GPU gaming configuration — it is a hybrid graphics setup." } },
-          { "@type": "Question", "name": "What causes sudden GPU usage spikes?", "acceptedAnswer": { "@type": "Answer", "text": "Sudden GPU usage spikes outside of games are most commonly caused by browser hardware acceleration rendering JavaScript-heavy or video-heavy web pages, Windows Explorer thumbnail generation for folders containing large image or video files, background video encoding by screen recording software, or Windows Game Bar and Game Mode processing. In rare cases, malware using the GPU for cryptocurrency mining causes sustained unexplained GPU load. Task Manager's GPU tab identifies the specific process responsible." } },
-          { "@type": "Question", "name": "How do I check what GPU I have?", "acceptedAnswer": { "@type": "Answer", "text": "On Windows: press Win + R, type dxdiag, press Enter, and select the Display tab — your GPU name and VRAM are listed there. Alternatively, open Task Manager > Performance > GPU for the model name. On a Mac: go to Apple menu > About This Mac > More Info and look under Graphics. IntelReap's Graphics Intelligence panel also detects and displays your GPU renderer name, WebGL version, and graphics vendor directly from your browser without any software installation." } },
-          { "@type": "Question", "name": "When should I replace my GPU?", "acceptedAnswer": { "@type": "Answer", "text": "Replace your GPU when it can no longer run the games or applications you need at acceptable settings and frame rates, when driver support from the manufacturer has ended, when it exhibits hardware faults (persistent artifacts, crashes under load, VRAM errors), or when the cost of upgrading to the next tier offers a significant performance-per-pound improvement over your current card. GPU generations typically see meaningful performance uplift every two to three years — the right replacement timing depends on your specific use case and budget." } }
-        ]
+      "inLanguage": "en-US",
+      "keywords": "why is my gpu usage so high, how to reset gpu, what does ti stand for in gpu, what does undervolting a gpu do, hardware accelerated gpu scheduling, is minecraft cpu or gpu intensive",
+      "articleSection": "Hardware Guides",
+      "wordCount": 2900
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
+      },
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ],
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://intelreap.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://intelreap.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "GPU Troubleshooting Guide",
+          "item": "https://intelreap.com/guides/gpu-troubleshooting-guide"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is my GPU usage at 99–100%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPU usage at 99–100% during gaming or GPU-intensive tasks is completely normal and healthy — it means the GPU is being fully utilised as intended. High GPU usage on the desktop, in browsers, or while idle is the concerning scenario. That is caused by background crypto-mining malware, browser hardware acceleration rendering heavy web content, Windows visual effects, or a stuck process. Check Task Manager's GPU tab for the specific process consuming GPU resources."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I reset my GPU without restarting my PC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Press Win + Ctrl + Shift + B simultaneously on Windows. The screen will go black for one to two seconds and you may hear a single beep — this is normal. This keyboard shortcut resets the GPU display driver kernel without rebooting. It resolves screen freezes, black screens, and rendering artifacts caused by a crashed GPU driver. It does not affect open applications or unsaved work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Ti mean in GPU names like RTX 4070 Ti?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ti stands for Titanium and designates a more powerful variant within the same GPU generation and tier. An RTX 4070 Ti has a higher-spec chip than the RTX 4070 — more CUDA cores, higher base and boost clocks, and more memory bandwidth — at a higher price. Ti models are not simply the same chip with a higher clock: they typically use a different, larger die with more processing units enabled."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does undervolting a GPU do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Undervolting a GPU reduces the voltage supplied to the chip while keeping the clock speed the same or near the same. The result is lower power consumption, lower temperatures, and reduced fan noise — with equal or sometimes improved performance, since a cooler GPU sustains boost clocks more consistently. Undervolting does not damage the GPU. If the undervolt is too aggressive, the GPU becomes unstable and crashes during load — the fix is simply raising the voltage slightly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I enable hardware accelerated GPU scheduling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hardware Accelerated GPU Scheduling (HAGS) is worth enabling on Windows 11 with a modern GPU (NVIDIA RTX 30-series or later, AMD RX 6000-series or later) and up-to-date drivers. It reduces CPU latency in the rendering pipeline, which can lower input lag in games. On older hardware or with older drivers, HAGS can cause stuttering or instability — if that occurs, disable it via Settings > System > Display > Graphics > Change default graphics settings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check if my GPU has damaged my motherboard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inspect the PCIe x16 slot on the motherboard for bent pins, burn marks, or discolouration. A GPU that caused a power surge or was seated incorrectly can leave physical damage visible under bright light. Also check for POST beep codes on startup — a pattern of beeps often indicates a PCIe or GPU fault. If the PC won't POST with the GPU seated but works with integrated graphics, the GPU itself, the PCIe slot, or the power delivery to it has been compromised."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Minecraft CPU or GPU intensive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vanilla Minecraft (Java Edition) is primarily CPU intensive — specifically, it is heavily dependent on single-threaded CPU performance for world simulation, chunk loading, and game logic. The GPU requirement for default graphics is modest. Installing shader packs (Iris, OptiFine) or high-resolution texture packs transforms Minecraft into a GPU-intensive application, as real-time lighting, shadows, and reflections require significant GPU compute. Bedrock Edition is generally better optimised and distributes load more evenly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I remove my GPU when moving my PC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — for any transport beyond a short careful carry within the same room. Modern GPUs, particularly large triple-fan models, are heavy. In transit, vibration and impact forces can lever the GPU's weight against the PCIe slot, bending the motherboard PCB or damaging the slot retention mechanism. Remove the GPU, pack it separately in an anti-static bag, and reinstall it at the destination. This takes ten minutes and avoids potentially expensive motherboard damage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if I have a dual-GPU system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open Device Manager on Windows (Win + X > Device Manager > Display Adapters). If you see two discrete GPU entries — such as two NVIDIA or AMD cards — you have a dual-GPU setup. Alternatively, open Task Manager > Performance tab: if you see GPU 0 and GPU 1 listed separately, both are active. On laptops, seeing one integrated GPU (Intel or AMD) and one discrete GPU (NVIDIA or AMD) is normal and does not constitute a dual-GPU gaming configuration — it is a hybrid graphics setup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What causes sudden GPU usage spikes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sudden GPU usage spikes outside of games are most commonly caused by browser hardware acceleration rendering JavaScript-heavy or video-heavy web pages, Windows Explorer thumbnail generation for folders containing large image or video files, background video encoding by screen recording software, or Windows Game Bar and Game Mode processing. In rare cases, malware using the GPU for cryptocurrency mining causes sustained unexplained GPU load. Task Manager's GPU tab identifies the specific process responsible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check what GPU I have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On Windows: press Win + R, type dxdiag, press Enter, and select the Display tab — your GPU name and VRAM are listed there. Alternatively, open Task Manager > Performance > GPU for the model name. On a Mac: go to Apple menu > About This Mac > More Info and look under Graphics. IntelReap's Graphics Intelligence panel also detects and displays your GPU renderer name, WebGL version, and graphics vendor directly from your browser without any software installation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I replace my GPU?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Replace your GPU when it can no longer run the games or applications you need at acceptable settings and frame rates, when driver support from the manufacturer has ended, when it exhibits hardware faults (persistent artifacts, crashes under load, VRAM errors), or when the cost of upgrading to the next tier offers a significant performance-per-pound improvement over your current card. GPU generations typically see meaningful performance uplift every two to three years — the right replacement timing depends on your specific use case and budget."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 
 </head>
@@ -1043,7 +1170,74 @@
 
   </main>
 
-  <footer id="ndic-footer"></footer>
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
   <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
   <script defer src="../js/registry.js"></script>

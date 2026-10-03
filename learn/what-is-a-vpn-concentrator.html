@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>What Is a VPN Concentrator? How It Works, Use Cases & Comparison — IntelReap</title>
+  <title>What Is a VPN Concentrator? — IntelReap</title>
   <meta name="description" content="A VPN concentrator is a dedicated network device that handles hundreds or thousands of simultaneous VPN tunnels. Learn how it works, how it differs from a VPN router and gateway, and when to use one.">
   <meta name="keywords" content="what is a vpn concentrator, how does a vpn concentrator work, vpn concentrator vs vpn gateway, vpn concentrator vs router, vpn concentrator cisco, enterprise vpn concentrator, site to site vpn concentrator, what does a vpn concentrator do, remote access vpn concentrator">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -17,7 +17,7 @@
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/what-is-a-vpn-concentrator">
 
   <meta property="og:type"         content="article">
-  <meta property="og:title"        content="What Is a VPN Concentrator? How It Works, Use Cases & Comparison — IntelReap">
+  <meta property="og:title"        content="What Is a VPN Concentrator? — IntelReap">
   <meta property="og:description"  content="VPN concentrators handle hundreds to thousands of simultaneous VPN tunnels in enterprise environments. Learn how they work, how they differ from VPN routers and gateways, and when your organisation needs one.">
   <meta property="og:url"          content="https://intelreap.com/learn/what-is-a-vpn-concentrator">
   <meta property="og:site_name"    content="IntelReap">
@@ -120,26 +120,199 @@
   </style>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"Article","@id":"https://intelreap.com/learn/what-is-a-vpn-concentrator#article","headline":"What Is a VPN Concentrator? How It Works, Use Cases and Comparison","description":"A VPN concentrator is a purpose-built network device that handles hundreds to thousands of simultaneous VPN tunnels for enterprise remote access and site-to-site connectivity. This guide explains how it works, how it compares to a VPN router and VPN gateway, and when your organisation actually needs one.","url":"https://intelreap.com/learn/what-is-a-vpn-concentrator","image":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/og-image.png","width":1200,"height":630},"datePublished":"2026-03-14","dateModified":"2026-06-09","author":{"@type":"Organization","@id":"https://intelreap.com/#organization"},"publisher":{"@id":"https://intelreap.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://intelreap.com/learn/what-is-a-vpn-concentrator"},"inLanguage":"en-US","keywords":"what is a vpn concentrator, how does a vpn concentrator work, vpn concentrator vs vpn gateway, vpn concentrator vs router, enterprise vpn concentrator, remote access vpn concentrator, site to site vpn","articleSection":"Network Guides","wordCount":2800},
-    {"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com","logo":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/icons/icon-512.png"},"sameAs":["https://twitter.com/intelreap"]},
-    {"@type":"WebSite","@id":"https://intelreap.com/#website","name":"IntelReap","url":"https://intelreap.com","publisher":{"@id":"https://intelreap.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://intelreap.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
-    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://intelreap.com/learn/"},{"@type":"ListItem","position":3,"name":"What Is a VPN Concentrator?","item":"https://intelreap.com/learn/what-is-a-vpn-concentrator"}]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"What is a VPN concentrator?","acceptedAnswer":{"@type":"Answer","text":"A VPN concentrator is a specialised network device designed to manage a large number of simultaneous VPN connections — often hundreds or thousands — at a single termination point. Unlike a standard router or firewall that handles VPN as a secondary function, a concentrator is purpose-built for it: it handles encryption and decryption at scale, authenticates users or sites, manages tunnel lifecycle, and routes traffic between VPN clients and the internal network. Organisations deploy them when basic VPN capabilities on a router or firewall become a performance or scalability bottleneck."}},
-      {"@type":"Question","name":"How does a VPN concentrator work?","acceptedAnswer":{"@type":"Answer","text":"When a remote user or branch office initiates a VPN connection, they connect to the concentrator's public IP address. The concentrator authenticates the connection — typically through certificates, RADIUS, LDAP, or multi-factor authentication — then establishes an encrypted tunnel using a protocol such as IPsec, SSL/TLS, or IKEv2. The concentrator decrypts incoming traffic and routes it into the internal network, and encrypts outbound responses before sending them back through the tunnel. This process runs in parallel for every active connection the concentrator is managing simultaneously."}},
-      {"@type":"Question","name":"What is the difference between a VPN concentrator and a VPN router?","acceptedAnswer":{"@type":"Answer","text":"A VPN router is a general-purpose router with VPN capability added alongside its primary routing functions. It handles a small number of VPN connections — typically 5 to 50 for consumer and SMB models. A VPN concentrator is a dedicated device whose primary function is VPN termination at scale. It offloads the cryptographic processing to dedicated hardware acceleration, handles centralised policy management for all tunnels, and is designed for concurrent connection counts that would overwhelm a router. The right choice depends on the number of simultaneous tunnels you need to support."}},
-      {"@type":"Question","name":"What is the difference between a VPN concentrator and a VPN gateway?","acceptedAnswer":{"@type":"Answer","text":"The terms are often used interchangeably in vendor documentation, but technically a VPN gateway refers to any network device that acts as the entry or exit point for VPN traffic — it could be a router, firewall, or dedicated appliance. A VPN concentrator is a specific category of VPN gateway distinguished by its purpose-built design for high tunnel density and cryptographic scalability. All VPN concentrators are gateways, but not all VPN gateways are concentrators."}},
-      {"@type":"Question","name":"When does an organisation need a VPN concentrator?","acceptedAnswer":{"@type":"Answer","text":"An organisation typically needs a VPN concentrator when the number of simultaneous VPN sessions exceeds the capacity of an existing firewall or router's VPN capabilities, when VPN processing is consuming too much CPU on a general-purpose device and impacting other network functions, when the organisation needs centralised management and policy enforcement across hundreds of remote users or branch sites, or when high availability and failover for VPN access is a compliance or business continuity requirement."}},
-      {"@type":"Question","name":"What VPN protocols do concentrators support?","acceptedAnswer":{"@type":"Answer","text":"Enterprise VPN concentrators typically support IPsec (IKEv1 and IKEv2), SSL/TLS-based VPN (for clientless browser access and full-tunnel clients), L2TP over IPsec, and increasingly WireGuard on modern platforms. The protocol mix depends on the vendor and use case: IPsec is most common for site-to-site tunnels; SSL/TLS is preferred for remote access because it traverses firewalls on port 443 without requiring firewall rule changes."}},
-      {"@type":"Question","name":"What are examples of VPN concentrator hardware?","acceptedAnswer":{"@type":"Answer","text":"The Cisco VPN 3000 Series was the original dedicated concentrator product line, now deprecated and replaced by the Cisco ASA (Adaptive Security Appliance) and Cisco Firepower NGFW which include concentrator-class VPN capabilities. Palo Alto Networks GlobalProtect, Juniper Networks SRX Series, Check Point Security Gateway, and Fortinet FortiGate appliances all serve the VPN concentrator function. In cloud environments, AWS Site-to-Site VPN and Azure VPN Gateway are managed concentrators as infrastructure services."}},
-      {"@type":"Question","name":"Can a VPN concentrator be software-based?","acceptedAnswer":{"@type":"Answer","text":"Yes — virtual VPN concentrators run on standard server hardware or cloud instances. Examples include OpenVPN Access Server, HashiCorp Boundary, Pritunl, and the virtual appliance versions of enterprise platforms like Cisco ASAv and Palo Alto VM-Series. Software concentrators trade the dedicated hardware acceleration of physical appliances for flexibility and lower capital cost, making them practical for cloud-native environments and organisations without on-premises infrastructure."}},
-      {"@type":"Question","name":"What is split tunnelling in a VPN concentrator?","acceptedAnswer":{"@type":"Answer","text":"Split tunnelling is a configuration option on VPN concentrators that determines which traffic travels through the VPN tunnel and which goes directly to the internet via the user's local connection. With full tunnelling, all user traffic routes through the concentrator — providing complete visibility and policy enforcement but adding latency and bandwidth cost at the concentrator. With split tunnelling, only traffic destined for internal corporate resources goes through the tunnel; internet traffic exits locally. Many organisations use split tunnelling to reduce concentrator load while routing sensitive traffic through the VPN."}},
-      {"@type":"Question","name":"How many connections can a VPN concentrator handle?","acceptedAnswer":{"@type":"Answer","text":"Capacity ranges from hundreds to hundreds of thousands of simultaneous sessions depending on the platform. Entry-level enterprise appliances typically support 500 to 5,000 concurrent tunnels. Mid-range platforms handle 5,000 to 50,000. High-end data centre appliances from Cisco, Palo Alto, and Juniper can support 100,000 or more simultaneous VPN sessions with dedicated cryptographic ASICs. Cloud-based concentrator services scale elastically without fixed limits. The right sizing depends on your peak concurrent user count plus headroom for growth."}},
-      {"@type":"Question","name":"Is a VPN concentrator the same as a firewall?","acceptedAnswer":{"@type":"Answer","text":"Not the same, but they overlap significantly in modern enterprise platforms. A standalone VPN concentrator's only job is VPN termination. A next-generation firewall (NGFW) combines packet filtering, deep packet inspection, IDS/IPS, and VPN concentrator functionality in one appliance — which is why most organisations now buy NGFWs with integrated concentrator capabilities rather than separate dedicated concentrator hardware. Pure standalone concentrators are increasingly rare outside legacy environments."}},
-      {"@type":"Question","name":"How does a VPN concentrator affect network performance?","acceptedAnswer":{"@type":"Answer","text":"A well-sized concentrator adds minimal latency — typically 1 to 5 milliseconds for the cryptographic processing overhead. The more significant performance variable is the concentrator's placement in the network topology and the protocol configuration. Full tunnelling routes all user traffic through the concentrator, which can create a bottleneck if the device is undersized for peak load. Dedicated hardware acceleration (AES-NI, custom ASICs) keeps cryptographic overhead minimal even at high tunnel density. Underpowered or undersized concentrators cause packet loss, connection instability, and high CPU on the device."}}
-    ]}
-  ]}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://intelreap.com/learn/what-is-a-vpn-concentrator#article",
+      "headline": "What Is a VPN Concentrator? How It Works, Use Cases and Comparison",
+      "description": "A VPN concentrator is a purpose-built network device that handles hundreds to thousands of simultaneous VPN tunnels for enterprise remote access and site-to-site connectivity. This guide explains how it works, how it compares to a VPN router and VPN gateway, and when your organisation actually needs one.",
+      "url": "https://intelreap.com/learn/what-is-a-vpn-concentrator",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2026-03-14",
+      "dateModified": "2026-06-09",
+      "author": {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "legalName": "IntelReap Information Technologies",
+        "email": "stmakarios@gmail.com"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://intelreap.com/learn/what-is-a-vpn-concentrator"
+      },
+      "inLanguage": "en-US",
+      "keywords": "what is a vpn concentrator, how does a vpn concentrator work, vpn concentrator vs vpn gateway, vpn concentrator vs router, enterprise vpn concentrator, remote access vpn concentrator, site to site vpn",
+      "articleSection": "Network Guides",
+      "wordCount": 2800
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
+      },
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ],
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://intelreap.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learn",
+          "item": "https://intelreap.com/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Is a VPN Concentrator?",
+          "item": "https://intelreap.com/learn/what-is-a-vpn-concentrator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a VPN concentrator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A VPN concentrator is a specialised network device designed to manage a large number of simultaneous VPN connections — often hundreds or thousands — at a single termination point. Unlike a standard router or firewall that handles VPN as a secondary function, a concentrator is purpose-built for it: it handles encryption and decryption at scale, authenticates users or sites, manages tunnel lifecycle, and routes traffic between VPN clients and the internal network. Organisations deploy them when basic VPN capabilities on a router or firewall become a performance or scalability bottleneck."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does a VPN concentrator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a remote user or branch office initiates a VPN connection, they connect to the concentrator's public IP address. The concentrator authenticates the connection — typically through certificates, RADIUS, LDAP, or multi-factor authentication — then establishes an encrypted tunnel using a protocol such as IPsec, SSL/TLS, or IKEv2. The concentrator decrypts incoming traffic and routes it into the internal network, and encrypts outbound responses before sending them back through the tunnel. This process runs in parallel for every active connection the concentrator is managing simultaneously."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a VPN concentrator and a VPN router?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A VPN router is a general-purpose router with VPN capability added alongside its primary routing functions. It handles a small number of VPN connections — typically 5 to 50 for consumer and SMB models. A VPN concentrator is a dedicated device whose primary function is VPN termination at scale. It offloads the cryptographic processing to dedicated hardware acceleration, handles centralised policy management for all tunnels, and is designed for concurrent connection counts that would overwhelm a router. The right choice depends on the number of simultaneous tunnels you need to support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a VPN concentrator and a VPN gateway?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The terms are often used interchangeably in vendor documentation, but technically a VPN gateway refers to any network device that acts as the entry or exit point for VPN traffic — it could be a router, firewall, or dedicated appliance. A VPN concentrator is a specific category of VPN gateway distinguished by its purpose-built design for high tunnel density and cryptographic scalability. All VPN concentrators are gateways, but not all VPN gateways are concentrators."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When does an organisation need a VPN concentrator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An organisation typically needs a VPN concentrator when the number of simultaneous VPN sessions exceeds the capacity of an existing firewall or router's VPN capabilities, when VPN processing is consuming too much CPU on a general-purpose device and impacting other network functions, when the organisation needs centralised management and policy enforcement across hundreds of remote users or branch sites, or when high availability and failover for VPN access is a compliance or business continuity requirement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What VPN protocols do concentrators support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enterprise VPN concentrators typically support IPsec (IKEv1 and IKEv2), SSL/TLS-based VPN (for clientless browser access and full-tunnel clients), L2TP over IPsec, and increasingly WireGuard on modern platforms. The protocol mix depends on the vendor and use case: IPsec is most common for site-to-site tunnels; SSL/TLS is preferred for remote access because it traverses firewalls on port 443 without requiring firewall rule changes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are examples of VPN concentrator hardware?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Cisco VPN 3000 Series was the original dedicated concentrator product line, now deprecated and replaced by the Cisco ASA (Adaptive Security Appliance) and Cisco Firepower NGFW which include concentrator-class VPN capabilities. Palo Alto Networks GlobalProtect, Juniper Networks SRX Series, Check Point Security Gateway, and Fortinet FortiGate appliances all serve the VPN concentrator function. In cloud environments, AWS Site-to-Site VPN and Azure VPN Gateway are managed concentrators as infrastructure services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a VPN concentrator be software-based?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — virtual VPN concentrators run on standard server hardware or cloud instances. Examples include OpenVPN Access Server, HashiCorp Boundary, Pritunl, and the virtual appliance versions of enterprise platforms like Cisco ASAv and Palo Alto VM-Series. Software concentrators trade the dedicated hardware acceleration of physical appliances for flexibility and lower capital cost, making them practical for cloud-native environments and organisations without on-premises infrastructure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is split tunnelling in a VPN concentrator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Split tunnelling is a configuration option on VPN concentrators that determines which traffic travels through the VPN tunnel and which goes directly to the internet via the user's local connection. With full tunnelling, all user traffic routes through the concentrator — providing complete visibility and policy enforcement but adding latency and bandwidth cost at the concentrator. With split tunnelling, only traffic destined for internal corporate resources goes through the tunnel; internet traffic exits locally. Many organisations use split tunnelling to reduce concentrator load while routing sensitive traffic through the VPN."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many connections can a VPN concentrator handle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Capacity ranges from hundreds to hundreds of thousands of simultaneous sessions depending on the platform. Entry-level enterprise appliances typically support 500 to 5,000 concurrent tunnels. Mid-range platforms handle 5,000 to 50,000. High-end data centre appliances from Cisco, Palo Alto, and Juniper can support 100,000 or more simultaneous VPN sessions with dedicated cryptographic ASICs. Cloud-based concentrator services scale elastically without fixed limits. The right sizing depends on your peak concurrent user count plus headroom for growth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a VPN concentrator the same as a firewall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not the same, but they overlap significantly in modern enterprise platforms. A standalone VPN concentrator's only job is VPN termination. A next-generation firewall (NGFW) combines packet filtering, deep packet inspection, IDS/IPS, and VPN concentrator functionality in one appliance — which is why most organisations now buy NGFWs with integrated concentrator capabilities rather than separate dedicated concentrator hardware. Pure standalone concentrators are increasingly rare outside legacy environments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does a VPN concentrator affect network performance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A well-sized concentrator adds minimal latency — typically 1 to 5 milliseconds for the cryptographic processing overhead. The more significant performance variable is the concentrator's placement in the network topology and the protocol configuration. Full tunnelling routes all user traffic through the concentrator, which can create a bottleneck if the device is undersized for peak load. Dedicated hardware acceleration (AES-NI, custom ASICs) keeps cryptographic overhead minimal even at high tunnel density. Underpowered or undersized concentrators cause packet loss, connection instability, and high CPU on the device."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -477,7 +650,74 @@
     </section>
   </main>
 
-  <footer id="ndic-footer"></footer>
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
   <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
   <script defer src="../js/registry.js"></script>

@@ -150,12 +150,14 @@ const INTELREAP_CONFIG = {
   // ─────────────────────────────────────
 
   getBasePath() {
-    const depth = window.location.pathname
-      .split('/')
-      .filter(Boolean).length
+    const path = window.location.pathname
+    const parts = path.split('/').filter(Boolean)
+    const depth = path.endsWith('/')
+      ? parts.length
+      : parts.length - 1
 
-    if (depth <= 1) return './'
-    return '../'.repeat(depth - 1)
+    if (depth <= 0) return './'
+    return '../'.repeat(depth)
   },
 
   getJsPath() {

@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Live Network Monitor — How Fast Is Your Connection? | IntelReap</title>
+  <title>Live Network Monitor Explained — IntelReap</title>
   <meta name="description" content="Real-time latency, bandwidth, stability index, packet loss estimate, jitter, and connection quality — your live network performance explained parameter by parameter.">
   <meta name="keywords" content="live network monitor, latency test, bandwidth test, ping test, jitter, packet loss, stability index, connection quality, network information API">
   <meta name="robots" content="index, follow">
@@ -24,7 +24,7 @@
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/live-network">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Live Network Monitor — IntelReap">
+  <meta property="og:title" content="Live Network Monitor Explained — IntelReap">
   <meta property="og:description" content="Real-time latency, bandwidth, jitter, and connection quality, explained in plain English.">
   <meta property="og:url" content="https://intelreap.com/intelligence/live-network">
   <meta property="og:site_name" content="IntelReap">
@@ -32,7 +32,7 @@
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Live Network Monitor — IntelReap">
+  <meta name="twitter:title" content="Live Network Monitor Explained — IntelReap">
   <meta name="twitter:description" content="See your real-time connection performance, explained parameter by parameter.">
   <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
   <meta name="twitter:site" content="@intelreap">
@@ -61,72 +61,114 @@
   <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://intelreap.com/#organization",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/icons/icon-512.png" },
-        "sameAs": ["https://twitter.com/intelreap"]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://intelreap.com/#website",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "publisher": { "@id": "https://intelreap.com/#organization" }
-      },
-      {
-        "@type": "TechArticle",
-        "@id": "https://intelreap.com/intelligence/live-network#article",
-        "headline": "Live Network Monitor",
-        "description": "A deep dive into real-time latency, bandwidth estimation, stability index, jitter, packet loss, and connection quality scoring.",
-        "url": "https://intelreap.com/intelligence/live-network",
-        "datePublished": "2026-06-22",
-        "dateModified": "2026-06-27",
-        "author": { "@id": "https://intelreap.com/#organization" },
-        "publisher": { "@id": "https://intelreap.com/#organization" },
-        "isPartOf": { "@id": "https://intelreap.com/#website" },
-        "inLanguage": "en-US"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
-          { "@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html" },
-          { "@type": "ListItem", "position": 3, "name": "Live Network Monitor", "item": "https://intelreap.com/intelligence/live-network" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is latency and why does it matter?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Latency is the time in milliseconds it takes for a request to travel from your device to a server and back. Low latency means fast, responsive connections for real-time activities like gaming and video calls. High latency makes everything feel sluggish even when your bandwidth is high." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is jitter?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Jitter is the variation in latency between consecutive requests. A consistent latency of 60ms is much better for real-time use than latency that swings between 20ms and 200ms, even if the average is similar. High jitter causes choppy video calls, audio dropouts, and unpredictable gaming performance." }
-          },
-          {
-            "@type": "Question",
-            "name": "What does the stability index measure?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Stability index is a 0-100 score combining latency consistency, jitter level, and the absence of connection resets over the monitoring window. A high stability index means your connection quality has been consistent, not just fast at one moment." }
-          },
-          {
-            "@type": "Question",
-            "name": "Why does the Network Information API sometimes show no data?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The Network Information API is a browser feature that reports connection type and estimated bandwidth. It's well-supported in Chrome and Android browsers but not implemented in Safari or Firefox, which explains why those fields show as unavailable on those platforms." }
-          }
-        ]
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ],
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
       }
-    ]
-  }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://intelreap.com/intelligence/live-network#article",
+      "headline": "Live Network Monitor",
+      "description": "A deep dive into real-time latency, bandwidth estimation, stability index, jitter, packet loss, and connection quality scoring.",
+      "url": "https://intelreap.com/intelligence/live-network",
+      "datePublished": "2026-06-22",
+      "dateModified": "2026-06-27",
+      "author": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://intelreap.com/#website"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Intelligence Center",
+          "item": "https://intelreap.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Live Network Monitor",
+          "item": "https://intelreap.com/intelligence/live-network"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is latency and why does it matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Latency is the time in milliseconds it takes for a request to travel from your device to a server and back. Low latency means fast, responsive connections for real-time activities like gaming and video calls. High latency makes everything feel sluggish even when your bandwidth is high."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is jitter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jitter is the variation in latency between consecutive requests. A consistent latency of 60ms is much better for real-time use than latency that swings between 20ms and 200ms, even if the average is similar. High jitter causes choppy video calls, audio dropouts, and unpredictable gaming performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the stability index measure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stability index is a 0-100 score combining latency consistency, jitter level, and the absence of connection resets over the monitoring window. A high stability index means your connection quality has been consistent, not just fast at one moment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the Network Information API sometimes show no data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Network Information API is a browser feature that reports connection type and estimated bandwidth. It's well-supported in Chrome and Android browsers but not implemented in Safari or Firefox, which explains why those fields show as unavailable on those platforms."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -356,7 +398,74 @@
     </div>
   </main>
 
-  <footer id="ndic-footer"></footer>
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
   <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
   <script defer src="../js/registry.js"></script>

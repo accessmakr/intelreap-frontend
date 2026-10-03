@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>ASN & Network Route Intelligence — What Network Are You On? | IntelReap</title>
+  <title>ASN and Network Route Intelligence Explained — IntelReap</title>
   <meta name="description" content="Live ASN lookup, network tier classification, BGP route status, allocation registry, and peering data — see exactly what network infrastructure you're connecting through, explained parameter by parameter.">
   <meta name="keywords" content="ASN lookup, autonomous system number, BGP route, network tier, IP allocation registry, peering, network infrastructure, route origin">
   <meta name="robots" content="index, follow">
@@ -24,7 +24,7 @@
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/network-route">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="ASN & Network Route Intelligence — IntelReap">
+  <meta property="og:title" content="ASN and Network Route Intelligence Explained — IntelReap">
   <meta property="og:description" content="Live ASN lookup, network tier, BGP route status, and peering data, explained in plain English.">
   <meta property="og:url" content="https://intelreap.com/intelligence/network-route">
   <meta property="og:site_name" content="IntelReap">
@@ -32,7 +32,7 @@
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ASN & Network Route Intelligence — IntelReap">
+  <meta name="twitter:title" content="ASN and Network Route Intelligence Explained — IntelReap">
   <meta name="twitter:description" content="See exactly what network you're on, explained parameter by parameter.">
   <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
   <meta name="twitter:site" content="@intelreap">
@@ -62,72 +62,114 @@
   <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://intelreap.com/#organization",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/icons/icon-512.png" },
-        "sameAs": ["https://twitter.com/intelreap"]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://intelreap.com/#website",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "publisher": { "@id": "https://intelreap.com/#organization" }
-      },
-      {
-        "@type": "TechArticle",
-        "@id": "https://intelreap.com/intelligence/network-route#article",
-        "headline": "ASN & Network Route Intelligence",
-        "description": "A deep dive into Autonomous System Number lookup, network tier classification, BGP route status, and peering infrastructure.",
-        "url": "https://intelreap.com/intelligence/network-route",
-        "datePublished": "2026-06-22",
-        "dateModified": "2026-06-27",
-        "author": { "@id": "https://intelreap.com/#organization" },
-        "publisher": { "@id": "https://intelreap.com/#organization" },
-        "isPartOf": { "@id": "https://intelreap.com/#website" },
-        "inLanguage": "en-US"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
-          { "@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html" },
-          { "@type": "ListItem", "position": 3, "name": "ASN & Network Route Intelligence", "item": "https://intelreap.com/intelligence/network-route" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is an ASN?",
-            "acceptedAnswer": { "@type": "Answer", "text": "An Autonomous System Number is a unique identifier assigned to a network or group of networks that share a single routing policy on the internet. Every major ISP, hosting provider, and large organization operates under at least one ASN, and it's the basic unit BGP routing uses to direct traffic across the internet." }
-          },
-          {
-            "@type": "Question",
-            "name": "What does network tier mean?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Network tier classifies how close a network is to the internet's core backbone. Tier 1 networks can reach the entire internet without paying for transit. Tier 2 networks are regional providers that pay for some transit and sell to others. Tier 3 networks are local providers that only buy transit and serve end users directly." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is BGP route status?",
-            "acceptedAnswer": { "@type": "Answer", "text": "BGP, or Border Gateway Protocol, is how networks announce which IP ranges they're responsible for to the rest of the internet. An active, announced route means the network's ownership of that IP range is currently visible and accepted by other networks, which is the normal healthy state." }
-          },
-          {
-            "@type": "Question",
-            "name": "Why does my upstream provider matter?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Your upstream provider is the larger network your ISP connects through to reach the rest of the internet. It affects routing efficiency, latency to distant destinations, and resilience if your direct ISP has an outage, since traffic often has alternate paths through the upstream provider's wider network." }
-          }
-        ]
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ],
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
       }
-    ]
-  }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://intelreap.com/intelligence/network-route#article",
+      "headline": "ASN & Network Route Intelligence",
+      "description": "A deep dive into Autonomous System Number lookup, network tier classification, BGP route status, and peering infrastructure.",
+      "url": "https://intelreap.com/intelligence/network-route",
+      "datePublished": "2026-06-22",
+      "dateModified": "2026-06-27",
+      "author": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://intelreap.com/#website"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Intelligence Center",
+          "item": "https://intelreap.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ASN & Network Route Intelligence",
+          "item": "https://intelreap.com/intelligence/network-route"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an ASN?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An Autonomous System Number is a unique identifier assigned to a network or group of networks that share a single routing policy on the internet. Every major ISP, hosting provider, and large organization operates under at least one ASN, and it's the basic unit BGP routing uses to direct traffic across the internet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does network tier mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Network tier classifies how close a network is to the internet's core backbone. Tier 1 networks can reach the entire internet without paying for transit. Tier 2 networks are regional providers that pay for some transit and sell to others. Tier 3 networks are local providers that only buy transit and serve end users directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is BGP route status?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BGP, or Border Gateway Protocol, is how networks announce which IP ranges they're responsible for to the rest of the internet. An active, announced route means the network's ownership of that IP range is currently visible and accepted by other networks, which is the normal healthy state."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my upstream provider matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your upstream provider is the larger network your ISP connects through to reach the rest of the internet. It affects routing efficiency, latency to distant destinations, and resilience if your direct ISP has an outage, since traffic often has alternate paths through the upstream provider's wider network."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -376,7 +418,74 @@
     </div>
   </main>
 
-  <footer id="ndic-footer"></footer>
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
   <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
   <script defer src="../js/registry.js"></script>

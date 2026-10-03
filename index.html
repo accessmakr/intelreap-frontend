@@ -64,92 +64,119 @@
   <link rel="stylesheet" href="./assets/css/ndic-rtl.css">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://intelreap.com/#organization",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://intelreap.com/assets/images/icons/icon-512.png"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
+      },
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ],
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://intelreap.com/index.html?q={search_term_string}"
         },
-        "sameAs": ["https://twitter.com/intelreap"]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://intelreap.com/#website",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "publisher": { "@id": "https://intelreap.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://intelreap.com/index.html?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://intelreap.com/#tool",
-        "name": "Network and Device Intelligence Center (NDIC)",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any",
-        "url": "https://intelreap.com",
-        "description": "Instantly reveal your network infrastructure, device fingerprint, security posture, and browser capabilities in real time. Free. No login required.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "publisher": { "@id": "https://intelreap.com/#organization" },
-        "featureList": [
-          "IP address and ASN intelligence",
-          "VPN and proxy detection",
-          "WebRTC IP leak test",
-          "Browser capability matrix",
-          "Core Web Vitals measurement",
-          "Device fingerprint analysis",
-          "Security score assessment",
-          "Real-time network monitoring",
-          "GPU and graphics tier detection",
-          "Global environment score"
-        ],
-        "dateModified": "2025-06-09",
-        "inLanguage": "en-US"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is IntelReap free to use?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. IntelReap is completely free with no account, subscription, or payment required for any of the 285 data points across all 13 intelligence panels." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does IntelReap store my scan data?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No account is needed and results are shown only to you. The scan runs in your browser, with a few lookups to our backend and third-party services for IP, network and AI summary data. GPS coordinates and fingerprint hashes stay in your browser. See the Privacy Policy for details." }
-          },
-          {
-            "@type": "Question",
-            "name": "How accurate is the VPN and proxy detection?",
-            "acceptedAnswer": { "@type": "Answer", "text": "IntelReap cross-references multiple signal layers including ASN classification, routing patterns, and known infrastructure ranges to produce a trust score and route classification. No detection method is perfect, but the multi-signal approach is highly reliable." }
-          },
-          {
-            "@type": "Question",
-            "name": "Why does my IP address show a different city than I'm in?",
-            "acceptedAnswer": { "@type": "Answer", "text": "IP geolocation is based on the registered location of your ISP's infrastructure, not your physical GPS position. Mobile carriers and VPNs in particular often resolve to a regional hub rather than your exact city." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is a Global Intelligence Score?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Your Global Intelligence Score combines weighted results from network, security, device, performance and speed dimensions into a single 0-100 figure representing your overall environment health." }
-          }
-        ]
+        "query-input": "required name=search_term_string"
       }
-    ]
-  }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://intelreap.com/#tool",
+      "name": "Network and Device Intelligence Center (NDIC)",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "url": "https://intelreap.com",
+      "description": "Instantly reveal your network infrastructure, device fingerprint, security posture, and browser capabilities in real time. Free. No login required.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "featureList": [
+        "IP address and ASN intelligence",
+        "VPN and proxy detection",
+        "WebRTC IP leak test",
+        "Browser capability matrix",
+        "Core Web Vitals measurement",
+        "Device fingerprint analysis",
+        "Security score assessment",
+        "Real-time network monitoring",
+        "GPU and graphics tier detection",
+        "Global environment score"
+      ],
+      "dateModified": "2025-06-09",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is IntelReap free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. IntelReap is completely free with no account, subscription, or payment required for any of the 285 data points across all 13 intelligence panels."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does IntelReap store my scan data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No account is needed and results are shown only to you. The scan runs in your browser, with a few lookups to our backend and third-party services for IP, network and AI summary data. GPS coordinates and fingerprint hashes stay in your browser. See the Privacy Policy for details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the VPN and proxy detection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IntelReap cross-references multiple signal layers including ASN classification, routing patterns, and known infrastructure ranges to produce a trust score and route classification. No detection method is perfect, but the multi-signal approach is highly reliable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my IP address show a different city than I'm in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IP geolocation is based on the registered location of your ISP's infrastructure, not your physical GPS position. Mobile carriers and VPNs in particular often resolve to a regional hub rather than your exact city."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Global Intelligence Score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your Global Intelligence Score combines weighted results from network, security, device, performance and speed dimensions into a single 0-100 figure representing your overall environment health."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -318,7 +345,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas1-ai-summary">Analyzing your network route...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c1-deep-dive-link">Deep dive into your network infrastructure analysis</a>
+              <a href="/intelligence/network-route" class="ndic-deep-dive-link" id="c1-deep-dive-link">Deep dive into your network infrastructure analysis</a>
             </div>
           </div>
 
@@ -364,7 +391,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas2-ai-summary">Analyzing your network identity...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c2-deep-dive-link">Deep dive into your network identity analysis</a>
+              <a href="/intelligence/network-identity" class="ndic-deep-dive-link" id="c2-deep-dive-link">Deep dive into your network identity analysis</a>
             </div>
           </div>
 
@@ -417,7 +444,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas3-ai-summary">Analyzing your VPN and routing status...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c3-deep-dive-link">Deep dive into your VPN and routing analysis</a>
+              <a href="/intelligence/vpn-proxy" class="ndic-deep-dive-link" id="c3-deep-dive-link">Deep dive into your VPN and routing analysis</a>
             </div>
           </div>
 
@@ -508,7 +535,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas13-ai-summary">Analyzing your fingerprint and leak exposure...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c13-deep-dive-link">Deep dive into your fingerprint and leak exposure analysis</a>
+              <a href="/intelligence/fingerprinting" class="ndic-deep-dive-link" id="c13-deep-dive-link">Deep dive into your fingerprint and leak exposure analysis</a>
             </div>
           </div>
 
@@ -550,7 +577,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas4-ai-summary">Analyzing your live connection...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c4-deep-dive-link">Deep dive into your live network analysis</a>
+              <a href="/intelligence/live-network" class="ndic-deep-dive-link" id="c4-deep-dive-link">Deep dive into your live network analysis</a>
             </div>
           </div>
 
@@ -602,7 +629,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas5-ai-summary">Analyzing your device...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c5-deep-dive-link">Deep dive into your device analysis</a>
+              <a href="/intelligence/device" class="ndic-deep-dive-link" id="c5-deep-dive-link">Deep dive into your device analysis</a>
             </div>
           </div>
 
@@ -652,7 +679,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas6-ai-summary">Analyzing your graphics capabilities...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c6-deep-dive-link">Deep dive into your graphics engine analysis</a>
+              <a href="/intelligence/graphics" class="ndic-deep-dive-link" id="c6-deep-dive-link">Deep dive into your graphics engine analysis</a>
             </div>
           </div>
 
@@ -702,7 +729,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas7-ai-summary">Analyzing your security posture...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c7-deep-dive-link">Deep dive into your security and privacy analysis</a>
+              <a href="/intelligence/security" class="ndic-deep-dive-link" id="c7-deep-dive-link">Deep dive into your security and privacy analysis</a>
             </div>
           </div>
 
@@ -735,7 +762,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas8-ai-summary">Testing your browser capabilities...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c8-deep-dive-link">Deep dive into your browser capability analysis</a>
+              <a href="/intelligence/capability" class="ndic-deep-dive-link" id="c8-deep-dive-link">Deep dive into your browser capability analysis</a>
             </div>
           </div>
 
@@ -787,7 +814,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas9-ai-summary">Analyzing your page performance...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c9-deep-dive-link">Deep dive into your performance analysis</a>
+              <a href="/intelligence/performance" class="ndic-deep-dive-link" id="c9-deep-dive-link">Deep dive into your performance analysis</a>
             </div>
           </div>
 
@@ -860,7 +887,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas10-ai-summary">Benchmarking your rendering speed...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c10-deep-dive-link">Deep dive into your rendering speed analysis</a>
+              <a href="/intelligence/rendering-speed" class="ndic-deep-dive-link" id="c10-deep-dive-link">Deep dive into your rendering speed analysis</a>
             </div>
           </div>
 
@@ -915,7 +942,7 @@
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas11-ai-summary">Computing your global score...</p>
               </div>
-              <a href="#" class="ndic-deep-dive-link" id="c11-deep-dive-link">Deep dive into your global score analysis</a>
+              <a href="/intelligence/scoreboard" class="ndic-deep-dive-link" id="c11-deep-dive-link">Deep dive into your global score analysis</a>
             </div>
           </div>
 
@@ -946,7 +973,7 @@
               <div class="ndic-param-row"><span class="ndic-param-label">AI Last Updated</span><span class="ndic-param-value" id="c12-ai-last-updated">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
-              <a href="#" class="ndic-deep-dive-link" id="c12-deep-dive-link">Deep dive into your live intelligence feed</a>
+              <a href="/intelligence/live-feed" class="ndic-deep-dive-link" id="c12-deep-dive-link">Deep dive into your live intelligence feed</a>
             </div>
           </div>
 
@@ -1000,6 +1027,46 @@
     </div>
 
     <!-- ═══════════ FAQ ═══════════ -->
+    <section class="ndic-explore-section" aria-labelledby="explore-title">
+      <div class="ndic-faq-section-header">
+        <div class="ndic-faq-section-label">Explore</div>
+        <h2 class="ndic-faq-section-title" id="explore-title">Learn more about your connection and device</h2>
+      </div>
+      <p>Each IntelReap panel has a deep-dive page that explains every parameter it shows, from your ASN and route to your GPU renderer and fingerprint uniqueness. For background on the concepts behind your results, the learn library explains topics such as VPN passthrough, WebRTC leaks and device fingerprinting in plain language, and the guides walk through fixes step by step, including enabling WebGL and troubleshooting your GPU. Everything is free to read and no account is needed.</p>
+      <div class="hub-grid">
+        <a class="hub-card" href="/intelligence/">
+          <span class="hub-card-kicker">Intelligence</span>
+          <span class="hub-card-title">The 13 intelligence panels</span>
+          <span class="hub-card-desc">Deep-dive pages that explain every reading in your scan.</span>
+        </a>
+        <a class="hub-card" href="/learn/">
+          <span class="hub-card-kicker">Library</span>
+          <span class="hub-card-title">Learn</span>
+          <span class="hub-card-desc">Plain-language articles on VPNs, IP addresses, WebRTC and fingerprints.</span>
+        </a>
+        <a class="hub-card" href="/guides/">
+          <span class="hub-card-kicker">Guides</span>
+          <span class="hub-card-title">Step-by-step guides</span>
+          <span class="hub-card-desc">Fixes for GPU, WebGL and IP address questions.</span>
+        </a>
+        <a class="hub-card" href="/learn/what-is-device-fingerprinting">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">What Is Device Fingerprinting? How It Works and How to Block It</span>
+          <span class="hub-card-desc">Device fingerprinting identifies you without cookies by combining browser, hardware, and network signals. Learn how it works, who uses it, and how to reduce...</span>
+        </a>
+        <a class="hub-card" href="/learn/webrtc-leak-test-and-shield">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">WebRTC Leak Test &amp; Shield Your Real IP</span>
+          <span class="hub-card-desc">WebRTC can expose your real IP address even behind a VPN. Test for leaks instantly and learn how to disable or shield WebRTC in Chrome, Firefox, Safari...</span>
+        </a>
+        <a class="hub-card" href="/guides/how-to-enable-webgl">
+          <span class="hub-card-kicker">Guide</span>
+          <span class="hub-card-title">WebGL Not Working? How to Enable It in Any Browser</span>
+          <span class="hub-card-desc">WebGL not working in Chrome or Firefox? Step-by-step fixes for hardware acceleration, GPU blocklist issues, and 'a WebGL context could not be created'...</span>
+        </a>
+      </div>
+    </section>
+
     <section class="ndic-faq-section">
       <div class="ndic-faq-section-header">
         <div class="ndic-faq-section-label">FAQ</div>
@@ -1081,7 +1148,74 @@
 
   </main>
 
-  <footer id="ndic-footer"></footer>
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
 
   <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 

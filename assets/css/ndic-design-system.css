@@ -3646,7 +3646,7 @@ select {
 
 .ndic-footer-links {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: var(--space-8);
 }
 
@@ -4079,4 +4079,111 @@ select {
 .ndic-logo-mark {
   --logo-primary: var(--color-accent-primary);
   --logo-bg: var(--color-bg-secondary);
+}
+
+
+/* -----------------------------------------
+   HUB PAGES AND EXPLORE CARDS
+   ----------------------------------------- */
+.hub-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-5) var(--space-16);
+}
+.hub-breadcrumb {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.hub-breadcrumb a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+}
+.hub-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-3);
+}
+.hub-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-6);
+}
+.hub-intro p {
+  max-width: 760px;
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-md);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+.hub-intro a,
+.hub-more a {
+  color: var(--color-accent-primary);
+}
+.hub-section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-text-primary);
+  margin: var(--space-10) 0 var(--space-2);
+}
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-5);
+  margin: var(--space-6) 0;
+}
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.hub-card:hover {
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+.hub-card-kicker {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+}
+.hub-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.hub-card-desc {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+.hub-more {
+  margin-top: var(--space-8);
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+}
+.ndic-explore-section {
+  max-width: 1100px;
+  margin: var(--space-12) auto;
+  padding: 0 var(--space-5);
+}
+.ndic-explore-section p {
+  max-width: 760px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
 }

@@ -16,6 +16,8 @@ const LegalEngine = (() => {
       '#ndic-footer'
     )
     if (!footer) return
+    // Static footer already in the HTML: keep it
+    if (footer.querySelector('.ndic-footer-inner')) return
 
     const year =
       INTELREAP_CONFIG?.getCurrentYear() ||

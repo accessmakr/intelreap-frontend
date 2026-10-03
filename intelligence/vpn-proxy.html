@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>VPN, Proxy & Routing Intelligence — Are You Hidden Online? | IntelReap</title>
+  <title>VPN, Proxy and Routing Panel Explained — IntelReap</title>
   <meta name="description" content="Live VPN detection, proxy detection, TOR exit node check, datacenter routing, trust score, fraud score, and route classification — your routing exposure explained parameter by parameter.">
   <meta name="keywords" content="VPN detection, proxy detection, TOR detection, datacenter routing, trust score, fraud score, IP classification, WebRTC leak, timezone match">
   <meta name="robots" content="index, follow">
@@ -24,7 +24,7 @@
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/intelligence/vpn-proxy">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="VPN, Proxy & Routing Intelligence — IntelReap">
+  <meta property="og:title" content="VPN, Proxy and Routing Panel Explained — IntelReap">
   <meta property="og:description" content="Live VPN, proxy, and TOR detection with trust score and route classification, explained in plain English.">
   <meta property="og:url" content="https://intelreap.com/intelligence/vpn-proxy">
   <meta property="og:site_name" content="IntelReap">
@@ -32,7 +32,7 @@
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VPN, Proxy & Routing Intelligence — IntelReap">
+  <meta name="twitter:title" content="VPN, Proxy and Routing Panel Explained — IntelReap">
   <meta name="twitter:description" content="See whether your VPN is actually working, explained parameter by parameter.">
   <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
   <meta name="twitter:site" content="@intelreap">
@@ -62,72 +62,114 @@
   <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://intelreap.com/#organization",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "logo": { "@type": "ImageObject", "url": "https://intelreap.com/assets/images/icons/icon-512.png" },
-        "sameAs": ["https://twitter.com/intelreap"]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://intelreap.com/#website",
-        "name": "IntelReap",
-        "url": "https://intelreap.com",
-        "publisher": { "@id": "https://intelreap.com/#organization" }
-      },
-      {
-        "@type": "TechArticle",
-        "@id": "https://intelreap.com/intelligence/vpn-proxy#article",
-        "headline": "VPN, Proxy & Routing Intelligence",
-        "description": "A deep dive into VPN detection, proxy detection, TOR identification, trust scoring, and route classification using multi-signal heuristics.",
-        "url": "https://intelreap.com/intelligence/vpn-proxy",
-        "datePublished": "2026-06-22",
-        "dateModified": "2026-06-27",
-        "author": { "@id": "https://intelreap.com/#organization" },
-        "publisher": { "@id": "https://intelreap.com/#organization" },
-        "isPartOf": { "@id": "https://intelreap.com/#website" },
-        "inLanguage": "en-US"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "IntelReap", "item": "https://intelreap.com" },
-          { "@type": "ListItem", "position": 2, "name": "Intelligence Center", "item": "https://intelreap.com/index.html" },
-          { "@type": "ListItem", "position": 3, "name": "VPN, Proxy & Routing Intelligence", "item": "https://intelreap.com/intelligence/vpn-proxy" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does IntelReap detect a VPN?",
-            "acceptedAnswer": { "@type": "Answer", "text": "IntelReap uses multiple signals simultaneously rather than relying on any single check: ASN classification to identify datacenter or VPN provider IP ranges, timezone and language consistency checks, WebRTC IP comparison, and reverse DNS patterns. No method is perfect, but combining signals produces a reliable confidence score." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the trust score?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The trust score is a 0-100 composite rating of how consistent and legitimate your connection appears across all measured signals. A high score means signals align as expected for a normal residential or mobile connection. A low score means multiple signals suggest non-residential routing." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is a TOR exit node?",
-            "acceptedAnswer": { "@type": "Answer", "text": "TOR is a privacy network that routes your traffic through multiple relays. The exit node is the final relay whose IP address appears as the source of your connection to any destination website. Exit node IP ranges are publicly listed, which is how they're detected." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can a VPN be detected even if no DNS or WebRTC leak exists?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Even a correctly configured VPN with no leaks is often identifiable through ASN classification alone, since most VPN providers operate from datacenter IP ranges that are well-documented. The absence of leaks confirms the VPN is working as intended — it doesn't make the IP itself look residential." }
-          }
-        ]
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ],
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
       }
-    ]
-  }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://intelreap.com/intelligence/vpn-proxy#article",
+      "headline": "VPN, Proxy & Routing Intelligence",
+      "description": "A deep dive into VPN detection, proxy detection, TOR identification, trust scoring, and route classification using multi-signal heuristics.",
+      "url": "https://intelreap.com/intelligence/vpn-proxy",
+      "datePublished": "2026-06-22",
+      "dateModified": "2026-06-27",
+      "author": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://intelreap.com/#website"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Intelligence Center",
+          "item": "https://intelreap.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "VPN, Proxy & Routing Intelligence",
+          "item": "https://intelreap.com/intelligence/vpn-proxy"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does IntelReap detect a VPN?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IntelReap uses multiple signals simultaneously rather than relying on any single check: ASN classification to identify datacenter or VPN provider IP ranges, timezone and language consistency checks, WebRTC IP comparison, and reverse DNS patterns. No method is perfect, but combining signals produces a reliable confidence score."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the trust score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The trust score is a 0-100 composite rating of how consistent and legitimate your connection appears across all measured signals. A high score means signals align as expected for a normal residential or mobile connection. A low score means multiple signals suggest non-residential routing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a TOR exit node?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TOR is a privacy network that routes your traffic through multiple relays. The exit node is the final relay whose IP address appears as the source of your connection to any destination website. Exit node IP ranges are publicly listed, which is how they're detected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a VPN be detected even if no DNS or WebRTC leak exists?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Even a correctly configured VPN with no leaks is often identifiable through ASN classification alone, since most VPN providers operate from datacenter IP ranges that are well-documented. The absence of leaks confirms the VPN is working as intended — it doesn't make the IP itself look residential."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -381,7 +423,74 @@
     </div>
   </main>
 
-  <footer id="ndic-footer"></footer>
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
   <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
   <script defer src="../js/registry.js"></script>

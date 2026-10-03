@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>What Is VPN Passthrough? IPsec, PPTP, L2TP Explained — IntelReap</title>
+  <title>What Is VPN Passthrough? — IntelReap</title>
   <meta name="description" content="VPN passthrough lets VPN client traffic travel through a NAT router to an external VPN server. Learn what it is, when you need it, and how to enable it — plus why most modern VPNs don't require it at all.">
   <meta name="keywords" content="what is vpn passthrough, what is vpn passthrough on a router, how to enable vpn passthrough, ipsec passthrough, pptp passthrough, l2tp passthrough, do i need vpn passthrough, vpn passthrough vs vpn client, what does vpn passthrough do, vpn passthrough router setting">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -17,7 +17,7 @@
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/what-is-vpn-passthrough">
 
   <meta property="og:type"         content="article">
-  <meta property="og:title"        content="What Is VPN Passthrough? IPsec, PPTP, L2TP Explained — IntelReap">
+  <meta property="og:title"        content="What Is VPN Passthrough? — IntelReap">
   <meta property="og:description"  content="VPN passthrough allows VPN client connections to traverse a NAT router to reach an external VPN server. Explains what it is, the three protocol types, how to enable it, and why most modern VPNs no longer need it.">
   <meta property="og:url"          content="https://intelreap.com/learn/what-is-vpn-passthrough">
   <meta property="og:site_name"    content="IntelReap">
@@ -124,26 +124,199 @@
   </style>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"Article","@id":"https://intelreap.com/learn/what-is-vpn-passthrough#article","headline":"What Is VPN Passthrough? IPsec, PPTP, and L2TP Passthrough Explained","description":"VPN passthrough is a router feature that allows VPN client traffic to traverse NAT to reach an external VPN server. This guide explains what it does, the three protocol types, how to enable it, and why most modern VPNs no longer require it.","url":"https://intelreap.com/learn/what-is-vpn-passthrough","image":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/og-image.png","width":1200,"height":630},"datePublished":"2026-03-21","dateModified":"2026-06-09","author":{"@type":"Organization","@id":"https://intelreap.com/#organization"},"publisher":{"@id":"https://intelreap.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://intelreap.com/learn/what-is-vpn-passthrough"},"inLanguage":"en-US","keywords":"what is vpn passthrough, ipsec passthrough, pptp passthrough, l2tp passthrough, how to enable vpn passthrough, do i need vpn passthrough","articleSection":"Network Guides","wordCount":2750},
-    {"@type":"Organization","@id":"https://intelreap.com/#organization","name":"IntelReap","url":"https://intelreap.com","logo":{"@type":"ImageObject","url":"https://intelreap.com/assets/images/icons/icon-512.png"},"sameAs":["https://twitter.com/intelreap"]},
-    {"@type":"WebSite","@id":"https://intelreap.com/#website","name":"IntelReap","url":"https://intelreap.com","publisher":{"@id":"https://intelreap.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://intelreap.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
-    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IntelReap","item":"https://intelreap.com"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://intelreap.com/learn/"},{"@type":"ListItem","position":3,"name":"What Is VPN Passthrough?","item":"https://intelreap.com/learn/what-is-vpn-passthrough"}]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"What is VPN passthrough?","acceptedAnswer":{"@type":"Answer","text":"VPN passthrough is a feature on home routers and NAT firewalls that allows VPN client connections originating from devices on the local network to pass through to an external VPN server without being blocked or mangled by NAT. It does not create a VPN connection itself — it simply allows VPN traffic from client devices to traverse the router transparently. The three types correspond to the three older VPN protocols most affected by NAT: IPsec passthrough, PPTP passthrough, and L2TP passthrough."}},
-      {"@type":"Question","name":"What is VPN passthrough on a router?","acceptedAnswer":{"@type":"Answer","text":"VPN passthrough on a router is a setting in the router's admin panel — usually found under Advanced, Security, or VPN settings — that enables specific VPN protocols to traverse NAT without interference. When enabled, the router forwards GRE packets (for PPTP), ESP packets (for IPsec), and UDP 1701 traffic (for L2TP) from local devices through to external VPN servers. It is a receive-side setting: the router is not creating or terminating the VPN — it is letting client-initiated VPN traffic pass through it."}},
-      {"@type":"Question","name":"What is the difference between VPN passthrough and a VPN router?","acceptedAnswer":{"@type":"Answer","text":"VPN passthrough allows client devices behind the router to connect to an external VPN server through the router's NAT — the router itself is not involved in the VPN. A VPN router runs the VPN client directly on the router hardware, creating an encrypted tunnel for all traffic from all devices on the network without requiring individual device configuration. They are completely different concepts: passthrough is about allowing traffic through; a VPN router is about creating the tunnel itself."}},
-      {"@type":"Question","name":"Do I need VPN passthrough?","acceptedAnswer":{"@type":"Answer","text":"Probably not if you are using a modern consumer VPN service in 2026. Services using OpenVPN, WireGuard, or IKEv2 with NAT Traversal (NAT-T) work through standard NAT without needing passthrough settings. VPN passthrough is primarily relevant when connecting to corporate VPNs using older IPsec configurations without NAT-T support, or when using PPTP or L2TP-based connections. If your VPN client is failing to connect and you have eliminated other causes, checking passthrough settings is a reasonable troubleshooting step."}},
-      {"@type":"Question","name":"How do I enable VPN passthrough on my router?","acceptedAnswer":{"@type":"Answer","text":"Log into your router's admin panel — typically by typing 192.168.1.1 or 192.168.0.1 in a browser. Look for a section labelled VPN, Advanced, or Security. Find the VPN Passthrough settings and enable the toggles for IPsec Passthrough, PPTP Passthrough, and L2TP Passthrough as needed. Save the settings and test the VPN connection. The exact location varies by router manufacturer — consult your router's manual for the specific menu path."}},
-      {"@type":"Question","name":"What is IPsec passthrough?","acceptedAnswer":{"@type":"Answer","text":"IPsec passthrough enables IPsec VPN traffic — specifically ESP (Encapsulating Security Payload) packets on IP protocol 50 and IKE packets on UDP 500 — to traverse NAT from client devices to an external IPsec VPN server. Standard NAT has difficulty with IPsec because ESP packets do not contain port numbers, making it hard for the router to track the connection state. IPsec passthrough works around this by specifically handling ESP packet forwarding. Modern IPsec implementations use NAT-T (NAT Traversal), which encapsulates ESP inside UDP 4500 and eliminates the need for passthrough."}},
-      {"@type":"Question","name":"What is PPTP passthrough?","acceptedAnswer":{"@type":"Answer","text":"PPTP passthrough enables PPTP VPN traffic — specifically GRE (Generic Routing Encapsulation) packets on IP protocol 47 — to traverse NAT from a local device to a PPTP VPN server. PPTP relies on GRE for its data tunnel, and standard NAT typically blocks or mishandles GRE packets because they do not use TCP or UDP port numbers. PPTP itself is considered cryptographically weak and should not be used for privacy-sensitive applications. Most security professionals recommend migrating away from PPTP entirely."}},
-      {"@type":"Question","name":"What is L2TP passthrough?","acceptedAnswer":{"@type":"Answer","text":"L2TP passthrough enables L2TP/IPsec VPN traffic — using UDP port 1701 for L2TP and UDP 500/4500 for the IPsec component — to traverse NAT from a client device to an L2TP/IPsec VPN server. L2TP on its own provides no encryption; it is always combined with IPsec for security. Because L2TP uses UDP, NAT handling is generally less problematic than with PPTP or pure IPsec, but some router configurations still require the passthrough setting to be explicitly enabled for reliable operation."}},
-      {"@type":"Question","name":"Does VPN passthrough affect performance?","acceptedAnswer":{"@type":"Answer","text":"No meaningful performance impact. VPN passthrough is a routing configuration that tells the router how to handle specific packet types — it does not add processing overhead or throttle connections. The VPN encryption and decryption still happen on the client device and the VPN server, not on the router. The router's role in a passthrough scenario is simply to forward packets correctly rather than drop or mangle them."}},
-      {"@type":"Question","name":"Why do modern VPNs not need passthrough?","acceptedAnswer":{"@type":"Answer","text":"Modern VPN protocols solve the NAT traversal problem at the protocol level rather than requiring the router to have special handling. WireGuard uses UDP natively, which traverses NAT without any special treatment. OpenVPN typically runs on UDP or TCP and uses standard ports. IKEv2 includes NAT-T by default, which encapsulates IPsec inside UDP 4500. SSL/TLS VPNs operate on port 443 and pass through NAT identically to normal HTTPS traffic. The passthrough setting was a workaround for older protocol limitations that newer protocols have eliminated architecturally."}},
-      {"@type":"Question","name":"Can I have multiple VPN passthroughs active simultaneously?","acceptedAnswer":{"@type":"Answer","text":"Yes — most routers allow IPsec, PPTP, and L2TP passthrough to be enabled simultaneously with no conflict between them. However, older routers may have issues when multiple devices on the local network simultaneously try to use the same passthrough protocol to different VPN servers, because GRE and ESP packets do not carry port numbers that the router can use to distinguish between sessions. This limitation is another reason modern NAT-T-based protocols are preferred over legacy passthrough-dependent configurations."}},
-      {"@type":"Question","name":"Is VPN passthrough a security risk?","acceptedAnswer":{"@type":"Answer","text":"Enabling VPN passthrough is not inherently a security risk. It allows specific VPN traffic to pass through the router's NAT, but the VPN protocols themselves remain encrypted end-to-end — the router only facilitates the connection, it does not decrypt or inspect the traffic. The security considerations are those of the underlying VPN protocol: PPTP has well-documented cryptographic weaknesses and should be avoided; IPsec and L2TP/IPsec are substantially more secure when properly configured."}}
-    ]}
-  ]}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://intelreap.com/learn/what-is-vpn-passthrough#article",
+      "headline": "What Is VPN Passthrough? IPsec, PPTP, and L2TP Passthrough Explained",
+      "description": "VPN passthrough is a router feature that allows VPN client traffic to traverse NAT to reach an external VPN server. This guide explains what it does, the three protocol types, how to enable it, and why most modern VPNs no longer require it.",
+      "url": "https://intelreap.com/learn/what-is-vpn-passthrough",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2026-03-21",
+      "dateModified": "2026-06-09",
+      "author": {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "legalName": "IntelReap Information Technologies",
+        "email": "stmakarios@gmail.com"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://intelreap.com/learn/what-is-vpn-passthrough"
+      },
+      "inLanguage": "en-US",
+      "keywords": "what is vpn passthrough, ipsec passthrough, pptp passthrough, l2tp passthrough, how to enable vpn passthrough, do i need vpn passthrough",
+      "articleSection": "Network Guides",
+      "wordCount": 2750
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
+      },
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ],
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://intelreap.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learn",
+          "item": "https://intelreap.com/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Is VPN Passthrough?",
+          "item": "https://intelreap.com/learn/what-is-vpn-passthrough"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is VPN passthrough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VPN passthrough is a feature on home routers and NAT firewalls that allows VPN client connections originating from devices on the local network to pass through to an external VPN server without being blocked or mangled by NAT. It does not create a VPN connection itself — it simply allows VPN traffic from client devices to traverse the router transparently. The three types correspond to the three older VPN protocols most affected by NAT: IPsec passthrough, PPTP passthrough, and L2TP passthrough."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is VPN passthrough on a router?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VPN passthrough on a router is a setting in the router's admin panel — usually found under Advanced, Security, or VPN settings — that enables specific VPN protocols to traverse NAT without interference. When enabled, the router forwards GRE packets (for PPTP), ESP packets (for IPsec), and UDP 1701 traffic (for L2TP) from local devices through to external VPN servers. It is a receive-side setting: the router is not creating or terminating the VPN — it is letting client-initiated VPN traffic pass through it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between VPN passthrough and a VPN router?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VPN passthrough allows client devices behind the router to connect to an external VPN server through the router's NAT — the router itself is not involved in the VPN. A VPN router runs the VPN client directly on the router hardware, creating an encrypted tunnel for all traffic from all devices on the network without requiring individual device configuration. They are completely different concepts: passthrough is about allowing traffic through; a VPN router is about creating the tunnel itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need VPN passthrough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Probably not if you are using a modern consumer VPN service in 2026. Services using OpenVPN, WireGuard, or IKEv2 with NAT Traversal (NAT-T) work through standard NAT without needing passthrough settings. VPN passthrough is primarily relevant when connecting to corporate VPNs using older IPsec configurations without NAT-T support, or when using PPTP or L2TP-based connections. If your VPN client is failing to connect and you have eliminated other causes, checking passthrough settings is a reasonable troubleshooting step."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I enable VPN passthrough on my router?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Log into your router's admin panel — typically by typing 192.168.1.1 or 192.168.0.1 in a browser. Look for a section labelled VPN, Advanced, or Security. Find the VPN Passthrough settings and enable the toggles for IPsec Passthrough, PPTP Passthrough, and L2TP Passthrough as needed. Save the settings and test the VPN connection. The exact location varies by router manufacturer — consult your router's manual for the specific menu path."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is IPsec passthrough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IPsec passthrough enables IPsec VPN traffic — specifically ESP (Encapsulating Security Payload) packets on IP protocol 50 and IKE packets on UDP 500 — to traverse NAT from client devices to an external IPsec VPN server. Standard NAT has difficulty with IPsec because ESP packets do not contain port numbers, making it hard for the router to track the connection state. IPsec passthrough works around this by specifically handling ESP packet forwarding. Modern IPsec implementations use NAT-T (NAT Traversal), which encapsulates ESP inside UDP 4500 and eliminates the need for passthrough."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is PPTP passthrough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PPTP passthrough enables PPTP VPN traffic — specifically GRE (Generic Routing Encapsulation) packets on IP protocol 47 — to traverse NAT from a local device to a PPTP VPN server. PPTP relies on GRE for its data tunnel, and standard NAT typically blocks or mishandles GRE packets because they do not use TCP or UDP port numbers. PPTP itself is considered cryptographically weak and should not be used for privacy-sensitive applications. Most security professionals recommend migrating away from PPTP entirely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is L2TP passthrough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L2TP passthrough enables L2TP/IPsec VPN traffic — using UDP port 1701 for L2TP and UDP 500/4500 for the IPsec component — to traverse NAT from a client device to an L2TP/IPsec VPN server. L2TP on its own provides no encryption; it is always combined with IPsec for security. Because L2TP uses UDP, NAT handling is generally less problematic than with PPTP or pure IPsec, but some router configurations still require the passthrough setting to be explicitly enabled for reliable operation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VPN passthrough affect performance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No meaningful performance impact. VPN passthrough is a routing configuration that tells the router how to handle specific packet types — it does not add processing overhead or throttle connections. The VPN encryption and decryption still happen on the client device and the VPN server, not on the router. The router's role in a passthrough scenario is simply to forward packets correctly rather than drop or mangle them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do modern VPNs not need passthrough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Modern VPN protocols solve the NAT traversal problem at the protocol level rather than requiring the router to have special handling. WireGuard uses UDP natively, which traverses NAT without any special treatment. OpenVPN typically runs on UDP or TCP and uses standard ports. IKEv2 includes NAT-T by default, which encapsulates IPsec inside UDP 4500. SSL/TLS VPNs operate on port 443 and pass through NAT identically to normal HTTPS traffic. The passthrough setting was a workaround for older protocol limitations that newer protocols have eliminated architecturally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I have multiple VPN passthroughs active simultaneously?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — most routers allow IPsec, PPTP, and L2TP passthrough to be enabled simultaneously with no conflict between them. However, older routers may have issues when multiple devices on the local network simultaneously try to use the same passthrough protocol to different VPN servers, because GRE and ESP packets do not carry port numbers that the router can use to distinguish between sessions. This limitation is another reason modern NAT-T-based protocols are preferred over legacy passthrough-dependent configurations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is VPN passthrough a security risk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enabling VPN passthrough is not inherently a security risk. It allows specific VPN traffic to pass through the router's NAT, but the VPN protocols themselves remain encrypted end-to-end — the router only facilitates the connection, it does not decrypt or inspect the traffic. The security considerations are those of the underlying VPN protocol: PPTP has well-documented cryptographic weaknesses and should be avoided; IPsec and L2TP/IPsec are substantially more secure when properly configured."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -484,7 +657,74 @@
     </section>
   </main>
 
-  <footer id="ndic-footer"></footer>
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
   <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
   <script defer src="../js/registry.js"></script>

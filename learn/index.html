@@ -1,48 +1,434 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Routing | IntelReap</title>
-    
-    <!-- Primary Routing Protocol: Meta Refresh -->
-    <meta http-equiv="refresh" content="0; url=https://intelreap.com/">
-    
-    <!-- SEO Protection: Prevent indexing of the routing node -->
-    <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="https://intelreap.com/">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background: #0a0f1a;
-            color: #e2e8f0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-        .spinner {
-            border-top-color: #10b981; /* Emerald 500 */
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Secondary Routing Protocol: JavaScript Fallback -->
-    <script>
-        // Use replace() so the routing node isn't saved in the browser's back button history
-        window.location.replace("https://intelreap.com/");
-    </script>
+  <title>Learn: Networking, VPNs and Device Privacy — IntelReap</title>
+  <meta name="description" content="Plain-language articles on IP addresses, VPNs, WebRTC leaks, device fingerprinting and GPUs to help you read your own scan results.">
+  <meta name="keywords" content="learn networking, VPN explained, WebRTC leak, device fingerprinting, GPU, IP address">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/learn/">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/learn/">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Learn: Networking, VPNs and Device Privacy — IntelReap">
+  <meta property="og:description" content="Plain-language articles on IP addresses, VPNs, WebRTC leaks, device fingerprinting and GPUs to help you read your own scan results.">
+  <meta property="og:url" content="https://intelreap.com/learn/">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Learn: Networking, VPNs and Device Privacy — IntelReap">
+  <meta name="twitter:description" content="Plain-language articles on IP addresses, VPNs, WebRTC leaks, device fingerprinting and GPUs to help you read your own scan results.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "legalName": "IntelReap Information Technologies",
+      "url": "https://intelreap.com",
+      "email": "stmakarios@gmail.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
+      },
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://intelreap.com/learn/#page",
+      "url": "https://intelreap.com/learn/",
+      "name": "Learn how your connection and device work",
+      "description": "Plain-language articles on IP addresses, VPNs, WebRTC leaks, device fingerprinting and GPUs to help you read your own scan results.",
+      "dateModified": "2026-10-02",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "IntelReap",
+        "url": "https://intelreap.com"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Can You Have Two Internet Providers in One House?",
+          "url": "https://intelreap.com/learn/can-you-have-two-isps-in-one-house"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Does a VPN Change Your MAC Address?",
+          "url": "https://intelreap.com/learn/does-a-vpn-change-your-mac-address"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Protect Your Privacy Online",
+          "url": "https://intelreap.com/learn/how-to-protect-your-privacy-online"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "WebRTC Leak Test & Shield Your Real IP",
+          "url": "https://intelreap.com/learn/webrtc-leak-test-and-shield"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "What Is a GPU?",
+          "url": "https://intelreap.com/learn/what-is-a-gpu"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "What Is a VPN Concentrator?",
+          "url": "https://intelreap.com/learn/what-is-a-vpn-concentrator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "What Is Device Fingerprinting? How It Works and How to Block It",
+          "url": "https://intelreap.com/learn/what-is-device-fingerprinting"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "What Is Reverse IP Lookup?",
+          "url": "https://intelreap.com/learn/what-is-reverse-ip-lookup"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "What Is VPN Passthrough?",
+          "url": "https://intelreap.com/learn/what-is-vpn-passthrough"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Why Does My Internet Speed Fluctuate?",
+          "url": "https://intelreap.com/learn/why-does-my-internet-speed-fluctuate"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Library",
+          "item": "https://intelreap.com/learn/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <style>
+    .legal-page { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+    .legal-hero { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.07)); margin-bottom: 3rem; }
+    .legal-eyebrow { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent, #0ea5e9); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .legal-eyebrow::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--color-accent, #0ea5e9); }
+    .legal-hero h1 { font-family: var(--font-display, 'Syne', sans-serif); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: var(--color-text-primary, #e2e8f0); line-height: 1.15; margin-bottom: 1rem; }
+    .legal-hero p { font-size: 1rem; color: var(--color-text-secondary, #94a3b8); line-height: 1.7; max-width: 560px; }
+    .legal-meta { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .legal-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .legal-meta-label { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-tertiary, #475569); }
+    .legal-meta-value { font-size: 0.8rem; font-weight: 500; color: var(--color-text-secondary, #94a3b8); }
+    .legal-section { margin-bottom: 3rem; }
+    .legal-section h2 { font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.1rem; font-weight: 600; color: var(--color-text-primary, #e2e8f0); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06)); display: flex; align-items: center; gap: 0.6rem; }
+    .section-num { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.65rem; color: var(--color-accent, #0ea5e9); font-weight: 500; background: rgba(14,165,233,0.1); padding: 0.15rem 0.4rem; border-radius: 3px; }
+    .legal-section p { font-size: 0.9rem; color: var(--color-text-secondary, #94a3b8); line-height: 1.8; margin-bottom: 1rem; }
+    .legal-section ul { margin: 0.5rem 0 1rem 0; padding-left: 1.25rem; }
+    .legal-section ul li { font-size: 0.9rem; color: var(--color-text-secondary, #94a3b8); line-height: 1.8; margin-bottom: 0.4rem; padding-left: 0.25rem; }
+    .legal-section ul li::marker { color: var(--color-accent, #0ea5e9); }
+    .legal-callout { background: rgba(14,165,233,0.05); border: 1px solid rgba(14,165,233,0.15); border-left: 3px solid var(--color-accent, #0ea5e9); border-radius: 6px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .legal-callout p { margin-bottom: 0; color: var(--color-text-primary, #e2e8f0) !important; font-weight: 500; }
+    .storage-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+    .storage-table th { text-align: left; padding: 0.6rem 0.8rem; background: rgba(255,255,255,0.04); color: var(--color-text-secondary, #94a3b8); font-weight: 500; border: 1px solid rgba(255,255,255,0.07); font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .storage-table td { padding: 0.6rem 0.8rem; color: var(--color-text-secondary, #94a3b8); border: 1px solid rgba(255,255,255,0.05); line-height: 1.6; }
+    .storage-table td:first-child { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.8rem; color: var(--color-accent, #0ea5e9); }
+    .storage-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .legal-faq { margin-top: 3rem; border-top: 1px solid var(--color-border, rgba(255,255,255,0.06)); padding-top: 2.5rem; }
+    .legal-faq h2 { font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.3rem; font-weight: 600; color: var(--color-text-primary, #e2e8f0); margin-bottom: 1.5rem; }
+    .faq-item { border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06)); }
+    .faq-question { width: 100%; text-align: left; padding: 1rem 0; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-question span { font-size: 0.9rem; font-weight: 500; color: var(--color-text-primary, #e2e8f0); line-height: 1.5; text-align: left; }
+    .faq-chevron { width: 16px; height: 16px; flex-shrink: 0; stroke: var(--color-text-tertiary, #475569); transition: transform 0.25s ease; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer { display: none; padding: 0 0 1rem; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-answer p { font-size: 0.875rem; color: var(--color-text-secondary, #94a3b8); line-height: 1.8; margin: 0; }
+    .legal-contact { max-width: 400px; margin: 3rem auto 0; background: rgba(13,18,37,0.8); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 2rem; }
+    .legal-contact h2 { font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.1rem; font-weight: 600; color: var(--color-text-primary, #e2e8f0); margin-bottom: 0.5rem; }
+    .legal-contact > p { font-size: 0.8rem; color: var(--color-text-tertiary, #475569); margin-bottom: 1.5rem; line-height: 1.6; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--color-text-secondary, #94a3b8); margin-bottom: 0.35rem; letter-spacing: 0.03em; }
+    .form-group input, .form-group textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 0.65rem 0.9rem; font-size: 0.875rem; color: var(--color-text-primary, #e2e8f0); font-family: var(--font-body, 'Be Vietnam Pro', sans-serif); transition: border-color 0.2s; box-sizing: border-box; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-accent, #0ea5e9); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-hidden { display: none; }
+    .form-submit { width: 100%; background: var(--color-accent, #0ea5e9); color: #fff; border: none; border-radius: 6px; padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; font-family: var(--font-display, 'Syne', sans-serif); letter-spacing: 0.03em; transition: opacity 0.2s; margin-top: 0.5rem; }
+    .form-submit:hover { opacity: 0.9; }
+    #dynamic-internal-links { margin: 3rem 0; border-top: 1px solid var(--color-border, rgba(255,255,255,0.06)); padding-top: 2rem; }
+    #scroll-progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #0ea5e9, #06b6d4); z-index: 9999; transition: width 0.1s linear; }
+  </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
-    <!-- Visual Fallback (Only visible if routing is artificially delayed by client) -->
-    <div class="text-center max-w-md w-full">
-        <div class="inline-block w-8 h-8 border-2 border-slate-700 rounded-full spinner mb-6"></div>
-        <h1 class="text-xl font-light tracking-wide text-slate-200 mb-2">Routing to IntelReap Core</h1>
-        <p class="text-xs text-slate-500 uppercase tracking-widest">
-            If you are not redirected automatically, <a href="https://intelreap.com/" class="text-emerald-500 hover:text-emerald-400 transition-colors">click here</a>.
-        </p>
+
+<body>
+
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
     </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="hub-page">
+
+      <nav class="hub-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>/</span><span>Library</span>
+      </nav>
+      <header class="hub-hero">
+        <div class="hub-eyebrow">Library</div>
+        <h1>Learn how your connection and device work</h1>
+      </header>
+      <div class="hub-intro">
+        <p>Every IntelReap scan produces numbers and labels that are easy to read but harder to interpret: an ASN, a WebRTC candidate, a fingerprint uniqueness score, a GPU renderer string. The articles below explain what each of those means, why it matters for privacy, performance and security, and what you can do about it.</p>
+        <p>Each article is written for people who are not network engineers. It starts from a question you might ask after seeing your results, such as whether a VPN really changes your MAC address, why your internet speed fluctuates or what a VPN concentrator does, and answers it with concrete examples and steps you can try on your own devices.</p>
+        <p>The library covers three areas. Privacy and tracking: device fingerprinting, WebRTC leaks and everyday protection steps. Network concepts: reverse IP lookup, VPN passthrough, VPN concentrators, running two internet providers in one home and why speeds change. Hardware: what a GPU does and how it shows up in what websites can learn about your device.</p>
+        <p>Looking for step-by-step fixes instead of explanations? Visit the <a href="/guides/">guides</a>. To run a scan, go to the <a href="/">IntelReap homepage</a>.</p>
+      </div>
+      <h2 class="hub-section-title">All articles</h2>
+      <div class="hub-grid">
+        <a class="hub-card" href="/learn/can-you-have-two-isps-in-one-house">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">Can You Have Two Internet Providers in One House?</span>
+          <span class="hub-card-desc">Yes — you can legally have two internet providers in one house. Learn how dual-WAN works, which routers support it, load balancing vs failover, costs, and...</span>
+        </a>
+        <a class="hub-card" href="/learn/does-a-vpn-change-your-mac-address">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">Does a VPN Change Your MAC Address?</span>
+          <span class="hub-card-desc">No — a VPN does not change your MAC address. Learn what a VPN actually changes, whether ExitLag is a VPN, how to use VPN in incognito, bind qBittorrent to a...</span>
+        </a>
+        <a class="hub-card" href="/learn/how-to-protect-your-privacy-online">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">How to Protect Your Privacy Online</span>
+          <span class="hub-card-desc">Practical steps to protect your privacy online in 2026 — VPNs, browser fingerprinting, password security, DNS privacy, mobile tracking, and the tools that...</span>
+        </a>
+        <a class="hub-card" href="/learn/webrtc-leak-test-and-shield">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">WebRTC Leak Test &amp; Shield Your Real IP</span>
+          <span class="hub-card-desc">WebRTC can expose your real IP address even behind a VPN. Test for leaks instantly and learn how to disable or shield WebRTC in Chrome, Firefox, Safari...</span>
+        </a>
+        <a class="hub-card" href="/learn/what-is-a-gpu">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">What Is a GPU?</span>
+          <span class="hub-card-desc">A GPU is a processor built for massively parallel computation. Learn what GPU stands for, how it works, how it differs from a CPU, integrated vs dedicated...</span>
+        </a>
+        <a class="hub-card" href="/learn/what-is-a-vpn-concentrator">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">What Is a VPN Concentrator?</span>
+          <span class="hub-card-desc">A VPN concentrator is a dedicated network device that handles hundreds or thousands of simultaneous VPN tunnels. Learn how it works, how it differs from a...</span>
+        </a>
+        <a class="hub-card" href="/learn/what-is-device-fingerprinting">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">What Is Device Fingerprinting? How It Works and How to Block It</span>
+          <span class="hub-card-desc">Device fingerprinting identifies you without cookies by combining browser, hardware, and network signals. Learn how it works, who uses it, and how to reduce...</span>
+        </a>
+        <a class="hub-card" href="/learn/what-is-reverse-ip-lookup">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">What Is Reverse IP Lookup?</span>
+          <span class="hub-card-desc">Reverse IP lookup finds every domain hosted on a given IP address. Learn how it works, why sites share IPs, what it's used for, and its limitations for...</span>
+        </a>
+        <a class="hub-card" href="/learn/what-is-vpn-passthrough">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">What Is VPN Passthrough?</span>
+          <span class="hub-card-desc">VPN passthrough lets VPN client traffic travel through a NAT router to an external VPN server. Learn what it is, when you need it, and how to enable it...</span>
+        </a>
+        <a class="hub-card" href="/learn/why-does-my-internet-speed-fluctuate">
+          <span class="hub-card-kicker">Article</span>
+          <span class="hub-card-title">Why Does My Internet Speed Fluctuate?</span>
+          <span class="hub-card-desc">Internet speed fluctuates due to congestion, modem age, router limits, Wi-Fi interference, or ISP throttling. Diagnose the exact cause and fix it with this...</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Legal</h4>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/terms-of-use.html">Terms of Use</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy.html">Privacy</a>
+          <a href="/cookies-policy.html">Cookies</a>
+          <a href="/terms-of-use.html">Terms</a>
+          <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../js/analytics-consent.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+    function handleContactForm(e) {
+      e.preventDefault();
+      const myForm = e.target;
+      const formData = new FormData(myForm);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        alert("Thank you! Your request has been transmitted.");
+        myForm.reset();
+      })
+      .catch((error) => {
+        alert("Oops! There was a problem submitting your form.");
+        console.error("Form submission error:", error);
+      });
+    }
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
