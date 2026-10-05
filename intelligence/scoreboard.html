@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <script>
+    (function(){try{var d=document.documentElement,s=localStorage.getItem('ndic_theme');
+    if(s!=='light'&&s!=='dark'){s=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+    d.setAttribute('data-theme',s)}catch(e){}})();
+  </script>
   <script>(function(){var s=localStorage.getItem("ndic_theme");if(s==="dark")document.documentElement.setAttribute("data-theme","dark")})();</script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Global Intelligence Scoreboard Explained — IntelReap</title>

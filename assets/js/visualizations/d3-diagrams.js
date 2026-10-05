@@ -8,6 +8,55 @@
 
 const D3DiagramsViz = (() => {
 
+  // ---------------------------------------
+  // THEME COLOURS
+  // Swaps dark-theme chart colours for
+  // readable light-theme equivalents.
+  // ---------------------------------------
+
+  const isLightTheme = () =>
+    document.documentElement.getAttribute('data-theme') !== 'dark'
+
+  const LIGHT_HEX = {
+    '#68d391': '#0a6b34',
+    '#63b3ed': '#075f99',
+    '#ecc94b': '#7f4d00',
+    '#f56565': '#b3261e',
+    '#ed8936': '#a93a08',
+    '#fc8181': '#b3261e',
+    '#9f7aea': '#5b21b6',
+    '#76e4f7': '#006b87',
+    '#2d3748': '#e3e8ef'
+  }
+  const LIGHT_RGB = {
+    '99,179,237': '7,95,153',
+    '72,187,120': '10,107,52',
+    '236,201,75': '127,77,0',
+    '245,101,101': '179,38,30'
+  }
+
+  const tc = (color) => {
+    if (!isLightTheme()) return color
+    const k = String(color).toLowerCase().replace(/\s+/g, '')
+    if (LIGHT_HEX[k]) return LIGHT_HEX[k]
+    const m = k.match(/^rgba?\((\d+),(\d+),(\d+)(?:,([\d.]+))?\)$/)
+    if (!m) return color
+    const rgb = m[1] + ',' + m[2] + ',' + m[3]
+    const a = m[4] === undefined ? 1 : parseFloat(m[4])
+    if (rgb === '255,255,255') {
+      const na = a <= 0.15 ? a * 2 : Math.min(0.92, a * 1.4 + 0.2)
+      return 'rgba(15,23,42,' + na.toFixed(2) + ')'
+    }
+    if (LIGHT_RGB[rgb]) return 'rgba(' + LIGHT_RGB[rgb] + ',' + a + ')'
+    return color
+  }
+
+  const cssVar = (name, fallback) => {
+    const v = getComputedStyle(document.documentElement)
+      .getPropertyValue(name).trim()
+    return v || fallback
+  }
+
   // ───────────────────────────────────────
   // INTERNAL STATE
   // ───────────────────────────────────────
@@ -212,7 +261,7 @@ const D3DiagramsViz = (() => {
       .attr('orient', 'auto')
       .append('path')
       .attr('d', 'M0,-5L10,0L0,5')
-      .attr('fill', 'rgba(99,179,237,0.6)')
+      .attr('fill', tc('rgba(99,179,237,0.6)'))
 
     // Define pulse gradient
     const defs = svg.select('defs')
@@ -223,12 +272,12 @@ const D3DiagramsViz = (() => {
 
     pulseGradient.append('stop')
       .attr('offset', '0%')
-      .attr('stop-color', '#63b3ed')
+      .attr('stop-color', tc('#63b3ed'))
       .attr('stop-opacity', 0.8)
 
     pulseGradient.append('stop')
       .attr('offset', '100%')
-      .attr('stop-color', '#63b3ed')
+      .attr('stop-color', tc('#63b3ed'))
       .attr('stop-opacity', 0)
 
     // Link group
@@ -246,7 +295,7 @@ const D3DiagramsViz = (() => {
     // Link lines
     linkElements.append('line')
       .attr('class', 'ndic-routing-link')
-      .attr('stroke', 'rgba(99,179,237,0.3)')
+      .attr('stroke', tc('rgba(99,179,237,0.3)'))
       .attr('stroke-width', 2)
       .attr('stroke-dasharray', '6,3')
       .attr('marker-end', 'url(#ndic-arrow)')
@@ -254,7 +303,7 @@ const D3DiagramsViz = (() => {
     // Link labels
     linkElements.append('text')
       .attr('class', 'ndic-routing-link-label')
-      .attr('fill', 'rgba(255,255,255,0.3)')
+      .attr('fill', tc('rgba(255,255,255,0.3)'))
       .attr('font-size', '9px')
       .attr('text-anchor', 'middle')
       .attr('dy', -6)
@@ -273,32 +322,32 @@ const D3DiagramsViz = (() => {
     const nodeStyles = {
       device: {
         radius: 22,
-        fillColor: '#2d3748',
-        strokeColor: '#63b3ed',
+        fillColor: tc('#2d3748'),
+        strokeColor: tc('#63b3ed'),
         strokeWidth: 2
       },
       isp: {
         radius: 18,
-        fillColor: '#2d3748',
-        strokeColor: '#68d391',
+        fillColor: tc('#2d3748'),
+        strokeColor: tc('#68d391'),
         strokeWidth: 1.5
       },
       asn: {
         radius: 20,
-        fillColor: '#2d3748',
-        strokeColor: '#9f7aea',
+        fillColor: tc('#2d3748'),
+        strokeColor: tc('#9f7aea'),
         strokeWidth: 2
       },
       upstream: {
         radius: 16,
-        fillColor: '#2d3748',
-        strokeColor: '#ecc94b',
+        fillColor: tc('#2d3748'),
+        strokeColor: tc('#ecc94b'),
         strokeWidth: 1.5
       },
       internet: {
         radius: 22,
-        fillColor: '#2d3748',
-        strokeColor: '#63b3ed',
+        fillColor: tc('#2d3748'),
+        strokeColor: tc('#63b3ed'),
         strokeWidth: 2
       }
     }
@@ -373,7 +422,7 @@ const D3DiagramsViz = (() => {
       .attr('dy', d =>
         nodeStyles[d.type].radius + 14
       )
-      .attr('fill', 'rgba(255,255,255,0.7)')
+      .attr('fill', tc('rgba(255,255,255,0.7)'))
       .attr('font-size', '10px')
       .attr('font-weight', '600')
       .text(d => truncateString(d.label, 16))
@@ -384,7 +433,7 @@ const D3DiagramsViz = (() => {
       .attr('dy', d =>
         nodeStyles[d.type].radius + 26
       )
-      .attr('fill', 'rgba(255,255,255,0.35)')
+      .attr('fill', tc('rgba(255,255,255,0.35)'))
       .attr('font-size', '9px')
       .text(d => truncateString(d.sublabel, 14))
 
@@ -694,11 +743,11 @@ const D3DiagramsViz = (() => {
     ]
 
     const categoryColors = {
-      'AI & Compute':  '#9f7aea',
-      'Communication': '#63b3ed',
-      'Storage':       '#68d391',
-      'Rendering':     '#ed8936',
-      'System':        '#76e4f7'
+      'AI & Compute':  tc('#9f7aea'),
+      'Communication': tc('#63b3ed'),
+      'Storage':       tc('#68d391'),
+      'Rendering':     tc('#ed8936'),
+      'System':        tc('#76e4f7')
     }
 
     const containerWidth =
@@ -768,11 +817,11 @@ const D3DiagramsViz = (() => {
           .attr('rx', 6)
           .attr('fill', cap.value
             ? `${color}22`
-            : 'rgba(255,255,255,0.03)'
+            : tc('rgba(255,255,255,0.03)')
           )
           .attr('stroke', cap.value
             ? color
-            : 'rgba(255,255,255,0.08)'
+            : tc('rgba(255,255,255,0.08)')
           )
           .attr('stroke-width', cap.value
             ? 1.5
@@ -786,7 +835,7 @@ const D3DiagramsViz = (() => {
           .attr('r', 4)
           .attr('fill', cap.value
             ? color
-            : 'rgba(255,255,255,0.15)'
+            : tc('rgba(255,255,255,0.15)')
           )
 
         // Capability label
@@ -794,8 +843,8 @@ const D3DiagramsViz = (() => {
           .attr('x', 8)
           .attr('y', tileSize * 0.35)
           .attr('fill', cap.value
-            ? 'rgba(255,255,255,0.85)'
-            : 'rgba(255,255,255,0.25)'
+            ? tc('rgba(255,255,255,0.85)')
+            : tc('rgba(255,255,255,0.25)')
           )
           .attr('font-size', '9px')
           .attr('font-weight', cap.value
@@ -809,7 +858,7 @@ const D3DiagramsViz = (() => {
           .attr('y', tileSize * 0.52)
           .attr('fill', cap.value
             ? color
-            : 'rgba(255,255,255,0.2)'
+            : tc('rgba(255,255,255,0.2)')
           )
           .attr('font-size', '8px')
           .text(cap.value
@@ -889,47 +938,47 @@ const D3DiagramsViz = (() => {
       {
         key: 'speedScore',
         label: 'Speed',
-        color: '#63b3ed'
+        color: tc('#63b3ed')
       },
       {
         key: 'performanceScore',
         label: 'Performance',
-        color: '#68d391'
+        color: tc('#68d391')
       },
       {
         key: 'capabilityScore',
         label: 'Capability',
-        color: '#76e4f7'
+        color: tc('#76e4f7')
       },
       {
         key: 'securityScore',
         label: 'Security',
-        color: '#f56565'
+        color: tc('#f56565')
       },
       {
         key: 'graphicsScore',
         label: 'Graphics',
-        color: '#ed8936'
+        color: tc('#ed8936')
       },
       {
         key: 'deviceScore',
         label: 'Device',
-        color: '#ecc94b'
+        color: tc('#ecc94b')
       },
       {
         key: 'privacyScore',
         label: 'Privacy',
-        color: '#9f7aea'
+        color: tc('#9f7aea')
       },
       {
         key: 'identityScore',
         label: 'Identity',
-        color: '#fc8181'
+        color: tc('#fc8181')
       },
       {
         key: 'networkScore',
         label: 'Network',
-        color: '#b794f4'
+        color: tc('#b794f4')
       }
     ]
 
@@ -963,7 +1012,7 @@ const D3DiagramsViz = (() => {
           startAngle: -Math.PI / 2,
           endAngle: Math.PI * 2 - Math.PI / 2
         }))
-        .attr('fill', 'rgba(255,255,255,0.04)')
+        .attr('fill', tc('rgba(255,255,255,0.04)'))
         .attr('transform',
           `translate(${cx}, ${cy})`
         )
@@ -1000,7 +1049,7 @@ const D3DiagramsViz = (() => {
       .attr('x', cx)
       .attr('y', cy - 8)
       .attr('text-anchor', 'middle')
-      .attr('fill', '#ffffff')
+      .attr('fill', tc('#ffffff'))
       .attr('font-size', '28px')
       .attr('font-weight', '800')
       .attr('font-family', 'Inter, sans-serif')
@@ -1010,7 +1059,7 @@ const D3DiagramsViz = (() => {
       .attr('x', cx)
       .attr('y', cy + 14)
       .attr('text-anchor', 'middle')
-      .attr('fill', 'rgba(255,255,255,0.45)')
+      .attr('fill', tc('rgba(255,255,255,0.45)'))
       .attr('font-size', '11px')
       .attr('font-family', 'Inter, sans-serif')
       .text(
@@ -1045,7 +1094,7 @@ const D3DiagramsViz = (() => {
 
       legendGroup.append('text')
         .attr('text-anchor', 'middle')
-        .attr('fill', 'rgba(255,255,255,0.5)')
+        .attr('fill', tc('rgba(255,255,255,0.5)'))
         .attr('font-size', isNarrow ? '9px' : '7px')
         .attr('y', 0)
         .text(

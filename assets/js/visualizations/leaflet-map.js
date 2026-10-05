@@ -16,6 +16,17 @@ const LeafletMapViz = (() => {
   let initialized = false
   let currentLat = null
   let currentLng = null
+  let currentCity = null
+  let currentIsp = null
+
+  const tileUrl = (url) => {
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+      return url
+    }
+    return url
+      .replace('dark_all', 'light_all')
+      .replace('alidade_smooth_dark', 'alidade_smooth')
+  }
 
   // ───────────────────────────────────────
   // DARK TILE LAYER OPTIONS
@@ -126,6 +137,8 @@ const LeafletMapViz = (() => {
 
     currentLat = lat
     currentLng = lng
+    currentCity = typeof city === 'undefined' ? currentCity : city
+    currentIsp = typeof isp === 'undefined' ? currentIsp : isp
 
     try {
       // Destroy existing map if any
@@ -153,7 +166,7 @@ const LeafletMapViz = (() => {
       for (const provider of TILE_PROVIDERS) {
         try {
           const tileLayer = L.tileLayer(
-            provider.url,
+            tileUrl(provider.url),
             {
               attribution: provider.attribution,
               subdomains: provider.subdomains,
@@ -248,6 +261,8 @@ const LeafletMapViz = (() => {
 
     currentLat = lat
     currentLng = lng
+    currentCity = typeof city === 'undefined' ? currentCity : city
+    currentIsp = typeof isp === 'undefined' ? currentIsp : isp
 
     try {
       // Smooth pan to new location
@@ -409,7 +424,7 @@ const LeafletMapViz = (() => {
       let tileLayerAdded = false
       for (const provider of TILE_PROVIDERS) {
         try {
-          L.tileLayer(provider.url, {
+          L.tileLayer(tileUrl(provider.url), {
             attribution: provider.attribution,
             subdomains: provider.subdomains,
             maxZoom: provider.maxZoom
@@ -490,6 +505,12 @@ const LeafletMapViz = (() => {
       )
     }
   }
+
+  window.addEventListener('ndic-theme-changed', () => {
+    if (map && currentLat && currentLng) {
+      initialize(currentLat, currentLng, currentCity, currentIsp)
+    }
+  })
 
   return {
     initialize,

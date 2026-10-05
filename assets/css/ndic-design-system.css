@@ -68,44 +68,6 @@
 
 :root {
 
-  /* ── BACKGROUNDS ── */
-  --color-bg-base:         #10141b;
-  --color-bg-primary:      #161b24;
-  --color-bg-secondary:    #1b212c;
-  --color-bg-tertiary:     #212834;
-  --color-bg-elevated:     #28313f;
-  --color-bg-hover:        rgba(255,255,255,0.04);
-  --color-bg-active:       rgba(0,180,216,0.07);
-
-  /* ── TEXT ── */
-  --color-text-primary:    #dde3ea;
-  --color-text-secondary:  #a8b6c9;
-  --color-text-muted:      #7e90a8;
-  --color-text-inverse:    #10141b;
-
-  /* ── BORDERS ── */
-  --color-border-primary:  rgba(255,255,255,0.06);
-  --color-border-secondary:rgba(255,255,255,0.10);
-  --color-border-accent:   rgba(0,180,216,0.3);
-
-  /* ── ACCENT PALETTE ── */
-  --color-accent-primary:   #00b4d8;
-  --color-accent-secondary: #7c3aed;
-  --color-accent-tertiary:  #f97316;
-
-  /* ── SCORE SCALE ── */
-  --color-score-excellent:  #00e676;
-  --color-score-good:       #40c4ff;
-  --color-score-fair:       #ffca28;
-  --color-score-poor:       #ff7043;
-  --color-score-critical:   #f44336;
-
-  /* ── SEMANTIC ── */
-  --color-success:   #00e676;
-  --color-warning:   #ffca28;
-  --color-danger:    #ff5252;
-  --color-critical:  #ff1744;
-  --color-info:      #40c4ff;
 
   /* ── FONTS ── */
   --font-display:  'Syne', sans-serif;
@@ -147,12 +109,6 @@
   --radius-xl:  12px;
   --radius-pill: 100px;
 
-  /* ── SHADOWS ── */
-  --shadow-sm:   0 1px 3px rgba(0,0,0,0.5);
-  --shadow-md:   0 4px 12px rgba(0,0,0,0.6);
-  --shadow-lg:   0 8px 32px rgba(0,0,0,0.7);
-  --shadow-glow: 0 0 20px rgba(0,180,216,0.15);
-
   /* ── TRANSITIONS ── */
   --transition-fast:   150ms ease;
   --transition-base:   250ms ease;
@@ -180,32 +136,136 @@
 
 
 /* ─────────────────────────────────────────
-   LIGHT THEME — opt-in via toggle button
-   Activated by [data-theme="light"] on <html>
-   Dark is the default everywhere else.
+   THEME TOKENS
+   Light is the default. Dark follows the system
+   setting when no choice is saved, and the toggle
+   sets data-theme="light" or "dark" explicitly.
    ───────────────────────────────────────── */
-[data-theme="light"] {
+:root {
+  color-scheme: light;
+  /* Short names used by page-level styles */
+  --color-accent:          var(--color-accent-primary);
+  --color-border:          var(--color-border-primary);
+  --color-text-tertiary:   var(--color-text-muted);
   --color-bg-base:         #fafbfc;
   --color-bg-primary:      #f3f5f7;
   --color-bg-secondary:    #eaedf1;
   --color-bg-tertiary:     #e0e4e9;
   --color-bg-elevated:     #ffffff;
   --color-bg-hover:        rgba(0,0,0,0.035);
-  --color-bg-active:       rgba(0,137,171,0.07);
-
+  --color-bg-active:       rgba(0,107,135,0.07);
   --color-text-primary:    #1a202c;
   --color-text-secondary:  #4f5b6b;
-  --color-text-muted:      #5e6d80;
+  --color-text-muted:      #536174;
   --color-text-inverse:    #fafbfc;
-
-  --color-border-primary:  rgba(0,0,0,0.08);
-  --color-border-secondary:rgba(0,0,0,0.13);
-  --color-border-accent:   rgba(0,137,171,0.32);
-
-  --color-accent-primary:   #0089ab;
+  --color-border-primary:  rgba(0,0,0,0.10);
+  --color-border-secondary:rgba(0,0,0,0.16);
+  --color-border-accent:   rgba(0,107,135,0.38);
+  --color-accent-primary:   #006b87;
   --color-accent-secondary: #6d28d9;
-  --color-accent-tertiary:  #c2410c;
+  --color-accent-tertiary:  #a93a08;
+  --color-score-excellent:  #0a6b34;
+  --color-score-good:       #075f99;
+  --color-score-fair:       #7f4d00;
+  --color-score-poor:       #b23a07;
+  --color-score-critical:   #a91d1d;
+  --color-success:   #0a6b34;
+  --color-warning:   #7f4d00;
+  --color-danger:    #b3261e;
+  --color-critical:  #9b1239;
+  --color-info:      #075f99;
+  --shadow-sm:   0 1px 3px rgba(15,23,42,0.10);
+  --shadow-md:   0 4px 12px rgba(15,23,42,0.12);
+  --shadow-lg:   0 8px 32px rgba(15,23,42,0.16);
+  --shadow-glow: 0 0 20px rgba(0,107,135,0.12);
+  --color-header-bg:   rgba(250,251,252,0.92);
+  --color-overlay-bg:  rgba(250,251,252,0.92);
+  --color-skeleton:    rgba(0,0,0,0.06);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --color-bg-base:         #10141b;
+    --color-bg-primary:      #161b24;
+    --color-bg-secondary:    #1b212c;
+    --color-bg-tertiary:     #212834;
+    --color-bg-elevated:     #28313f;
+    --color-bg-hover:        rgba(255,255,255,0.04);
+    --color-bg-active:       rgba(0,180,216,0.07);
+    --color-text-primary:    #dde3ea;
+    --color-text-secondary:  #a8b6c9;
+    --color-text-muted:      #7e90a8;
+    --color-text-inverse:    #10141b;
+    --color-border-primary:  rgba(255,255,255,0.06);
+    --color-border-secondary:rgba(255,255,255,0.10);
+    --color-border-accent:   rgba(0,180,216,0.3);
+    --color-accent-primary:   #00b4d8;
+    --color-accent-secondary: #7c3aed;
+    --color-accent-tertiary:  #f97316;
+    --color-score-excellent:  #00e676;
+    --color-score-good:       #40c4ff;
+    --color-score-fair:       #ffca28;
+    --color-score-poor:       #ff7043;
+    --color-score-critical:   #f44336;
+    --color-success:   #00e676;
+    --color-warning:   #ffca28;
+    --color-danger:    #ff5252;
+    --color-critical:  #ff1744;
+    --color-info:      #40c4ff;
+    --shadow-sm:   0 1px 3px rgba(0,0,0,0.5);
+    --shadow-md:   0 4px 12px rgba(0,0,0,0.6);
+    --shadow-lg:   0 8px 32px rgba(0,0,0,0.7);
+    --shadow-glow: 0 0 20px rgba(0,180,216,0.15);
+    --color-header-bg:   var(--color-header-bg);
+    --color-overlay-bg:  var(--color-overlay-bg);
+    --color-skeleton:    rgba(255,255,255,0.06);
+  }
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg-base:         #10141b;
+  --color-bg-primary:      #161b24;
+  --color-bg-secondary:    #1b212c;
+  --color-bg-tertiary:     #212834;
+  --color-bg-elevated:     #28313f;
+  --color-bg-hover:        rgba(255,255,255,0.04);
+  --color-bg-active:       rgba(0,180,216,0.07);
+  --color-text-primary:    #dde3ea;
+  --color-text-secondary:  #a8b6c9;
+  --color-text-muted:      #7e90a8;
+  --color-text-inverse:    #10141b;
+  --color-border-primary:  rgba(255,255,255,0.06);
+  --color-border-secondary:rgba(255,255,255,0.10);
+  --color-border-accent:   rgba(0,180,216,0.3);
+  --color-accent-primary:   #00b4d8;
+  --color-accent-secondary: #7c3aed;
+  --color-accent-tertiary:  #f97316;
+  --color-score-excellent:  #00e676;
+  --color-score-good:       #40c4ff;
+  --color-score-fair:       #ffca28;
+  --color-score-poor:       #ff7043;
+  --color-score-critical:   #f44336;
+  --color-success:   #00e676;
+  --color-warning:   #ffca28;
+  --color-danger:    #ff5252;
+  --color-critical:  #ff1744;
+  --color-info:      #40c4ff;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md:   0 4px 12px rgba(0,0,0,0.6);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.7);
+  --shadow-glow: 0 0 20px rgba(0,180,216,0.15);
+  --color-header-bg:   var(--color-header-bg);
+  --color-overlay-bg:  var(--color-overlay-bg);
+  --color-skeleton:    rgba(255,255,255,0.06);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+
 
 
 /* ─────────────────────────────────────────
@@ -513,7 +573,7 @@ select {
   inset-block-start: 0;
   z-index: var(--z-header);
   height: var(--header-height);
-  background: rgba(5,6,10,0.92);
+  background: var(--color-header-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-block-end: 1px solid var(--color-border-primary);
@@ -673,11 +733,15 @@ select {
   flex-shrink: 0;
 }
 
-.theme-toggle-btn .icon-moon { display: block; }
-.theme-toggle-btn .icon-sun { display: none; }
+.theme-toggle-btn .icon-sun { display: block; }
+.theme-toggle-btn .icon-moon { display: none; }
 
-[data-theme="light"] .theme-toggle-btn .icon-moon { display: none; }
-[data-theme="light"] .theme-toggle-btn .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle-btn .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle-btn .icon-moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle-btn .icon-sun { display: none; }
+  :root:not([data-theme]) .theme-toggle-btn .icon-moon { display: block; }
+}
 
 /* Nav dock */
 #master-nav-dock {
@@ -751,7 +815,7 @@ select {
   position: fixed;
   inset: 0;
   z-index: var(--z-drawer);
-  background: rgba(5,6,10,0.85);
+  background: var(--color-overlay-bg);
   backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <script>
+    (function(){try{var d=document.documentElement,s=localStorage.getItem('ndic_theme');
+    if(s!=='light'&&s!=='dark'){s=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+    d.setAttribute('data-theme',s)}catch(e){}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -188,7 +193,7 @@
 
     .legal-hero {
       padding: 4rem 0 2.5rem;
-      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.07));
+      border-bottom: 1px solid var(--color-border, var(--color-border-primary));
       margin-bottom: 3rem;
     }
 
@@ -198,7 +203,7 @@
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--color-accent, #0ea5e9);
+      color: var(--color-accent, var(--color-accent-primary));
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
@@ -210,7 +215,7 @@
       display: inline-block;
       width: 20px;
       height: 1px;
-      background: var(--color-accent, #0ea5e9);
+      background: var(--color-accent, var(--color-accent-primary));
     }
 
     .legal-hero h1 {
@@ -268,7 +273,7 @@
       color: var(--color-text-primary, #e2e8f0);
       margin-bottom: 1rem;
       padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      border-bottom: 1px solid var(--color-border, var(--color-border-primary));
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -277,9 +282,9 @@
     .legal-section h2 .section-num {
       font-family: var(--font-mono, 'JetBrains Mono', monospace);
       font-size: 0.65rem;
-      color: var(--color-accent, #0ea5e9);
+      color: var(--color-accent, var(--color-accent-primary));
       font-weight: 500;
-      background: rgba(14, 165, 233, 0.1);
+      background: color-mix(in srgb, var(--color-accent-primary) 10%, transparent);
       padding: 0.15rem 0.4rem;
       border-radius: 3px;
     }
@@ -305,14 +310,14 @@
     }
 
     .legal-section ul li::marker {
-      color: var(--color-accent, #0ea5e9);
+      color: var(--color-accent, var(--color-accent-primary));
     }
 
     /* ── CALLOUT BLOCK ── */
     .legal-callout {
-      background: rgba(14, 165, 233, 0.05);
-      border: 1px solid rgba(14, 165, 233, 0.15);
-      border-left: 3px solid var(--color-accent, #0ea5e9);
+      background: color-mix(in srgb, var(--color-accent-primary) 5%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);
+      border-left: 3px solid var(--color-accent, var(--color-accent-primary));
       border-radius: 6px;
       padding: 1.25rem 1.5rem;
       margin: 1.5rem 0;
@@ -327,7 +332,7 @@
     /* ── FAQ ACCORDION ── */
     .legal-faq {
       margin-top: 3rem;
-      border-top: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      border-top: 1px solid var(--color-border, var(--color-border-primary));
       padding-top: 2.5rem;
     }
 
@@ -340,7 +345,7 @@
     }
 
     .faq-item {
-      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      border-bottom: 1px solid var(--color-border, var(--color-border-primary));
     }
 
     .faq-question {
@@ -396,8 +401,8 @@
     .legal-contact {
       max-width: 400px;
       margin: 3rem auto 0;
-      background: rgba(13, 18, 37, 0.8);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border-primary);
       border-radius: 12px;
       padding: 2rem;
     }
@@ -433,8 +438,8 @@
     .form-group input,
     .form-group textarea {
       width: 100%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--color-bg-hover);
+      border: 1px solid var(--color-border-primary);
       border-radius: 6px;
       padding: 0.65rem 0.9rem;
       font-size: 0.875rem;
@@ -447,7 +452,7 @@
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--color-accent, #0ea5e9);
+      border-color: var(--color-accent, var(--color-accent-primary));
     }
 
     .form-group textarea {
@@ -461,8 +466,8 @@
 
     .form-submit {
       width: 100%;
-      background: var(--color-accent, #0ea5e9);
-      color: #fff;
+      background: var(--color-accent, var(--color-accent-primary));
+      color: var(--color-text-inverse);
       border: none;
       border-radius: 6px;
       padding: 0.75rem 1.5rem;
@@ -482,7 +487,7 @@
     /* ── INTERNAL LINKS ── */
     #dynamic-internal-links {
       margin: 3rem 0;
-      border-top: 1px solid var(--color-border, rgba(255,255,255,0.06));
+      border-top: 1px solid var(--color-border, var(--color-border-primary));
       padding-top: 2rem;
     }
 
@@ -493,7 +498,7 @@
       left: 0;
       height: 3px;
       width: 0%;
-      background: linear-gradient(90deg, #0ea5e9, #06b6d4);
+      background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-primary));
       z-index: 9999;
       transition: width 0.1s linear;
     }
@@ -553,7 +558,7 @@
 
       <div class="legal-section">
         <h2><span class="section-num">01</span> Who We Are</h2>
-        <p>IntelReap (intelreap.com) is operated by IntelReap Information Technologies ("IntelReap", "we"). We decide how the limited personal data described in this policy is used. Contact: <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent,#0ea5e9);">stmakarios@gmail.com</a>, or use the <a href="./contact.html" style="color:var(--color-accent,#0ea5e9);">contact form</a>.</p>
+        <p>IntelReap (intelreap.com) is operated by IntelReap Information Technologies ("IntelReap", "we"). We decide how the limited personal data described in this policy is used. Contact: <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent-primary);">stmakarios@gmail.com</a>, or use the <a href="./contact.html" style="color:var(--color-accent-primary);">contact form</a>.</p>
       </div>
 
       <div class="legal-section">
@@ -598,12 +603,12 @@
 
       <div class="legal-section">
         <h2><span class="section-num">05</span> Cookies and Analytics</h2>
-        <p>IntelReap stores your language, theme and cookie choice in your browser. If you click Accept, we also use Google Analytics (with Google Consent Mode) to measure which pages are viewed, approximate location, device type and how visitors reach the site. No analytics cookie is set and no request is sent to Google Analytics before you accept. You can change your choice at any time with the Cookie settings link in the footer. Details are in our <a href="./cookies-policy.html" style="color:var(--color-accent,#0ea5e9);">Cookies Policy</a>.</p>
+        <p>IntelReap stores your language, theme and cookie choice in your browser. If you click Accept, we also use Google Analytics (with Google Consent Mode) to measure which pages are viewed, approximate location, device type and how visitors reach the site. No analytics cookie is set and no request is sent to Google Analytics before you accept. You can change your choice at any time with the Cookie settings link in the footer. Details are in our <a href="./cookies-policy.html" style="color:var(--color-accent-primary);">Cookies Policy</a>.</p>
       </div>
 
       <div class="legal-section">
         <h2><span class="section-num">06</span> Advertising</h2>
-        <p>IntelReap may display advertising served by Google AdSense and may include sponsored or affiliate links, which are labelled as such. Google and its partners use cookies to serve and personalise ads based on your visits to this and other websites. Where the law requires consent, ads cookies are used only after you give it. You can manage personalised advertising at <a href="https://adssettings.google.com" style="color:var(--color-accent,#0ea5e9);" rel="noopener">Google Ads Settings</a> or opt out through <a href="https://www.aboutads.info" style="color:var(--color-accent,#0ea5e9);" rel="noopener">aboutads.info</a>. More information: <a href="https://policies.google.com/technologies/partner-sites" style="color:var(--color-accent,#0ea5e9);" rel="noopener">How Google uses information from sites that use its services</a>.</p>
+        <p>IntelReap may display advertising served by Google AdSense and may include sponsored or affiliate links, which are labelled as such. Google and its partners use cookies to serve and personalise ads based on your visits to this and other websites. Where the law requires consent, ads cookies are used only after you give it. You can manage personalised advertising at <a href="https://adssettings.google.com" style="color:var(--color-accent-primary);" rel="noopener">Google Ads Settings</a> or opt out through <a href="https://www.aboutads.info" style="color:var(--color-accent-primary);" rel="noopener">aboutads.info</a>. More information: <a href="https://policies.google.com/technologies/partner-sites" style="color:var(--color-accent-primary);" rel="noopener">How Google uses information from sites that use its services</a>.</p>
       </div>
 
       <div class="legal-section">
@@ -622,7 +627,7 @@
           <li>Withdraw consent at any time, without affecting earlier processing</li>
           <li>Complain to your data protection authority</li>
         </ul>
-        <p>To exercise a right, email <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent,#0ea5e9);">stmakarios@gmail.com</a> or use the contact form and choose Privacy Request.</p>
+        <p>To exercise a right, email <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent-primary);">stmakarios@gmail.com</a> or use the contact form and choose Privacy Request.</p>
       </div>
 
       <div class="legal-section">
@@ -642,12 +647,12 @@
 
       <div class="legal-section">
         <h2><span class="section-num">12</span> Children</h2>
-        <p>IntelReap is not directed at children under 13, or under 16 where local law sets a higher age, and we do not knowingly collect their personal data. If you believe a child has contacted us, email <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent,#0ea5e9);">stmakarios@gmail.com</a> and we will delete the information.</p>
+        <p>IntelReap is not directed at children under 13, or under 16 where local law sets a higher age, and we do not knowingly collect their personal data. If you believe a child has contacted us, email <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent-primary);">stmakarios@gmail.com</a> and we will delete the information.</p>
       </div>
 
       <div class="legal-section">
         <h2><span class="section-num">13</span> Security</h2>
-        <p>The site is served over HTTPS. No online service can be guaranteed completely secure, so please report any concern to <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent,#0ea5e9);">stmakarios@gmail.com</a>.</p>
+        <p>The site is served over HTTPS. No online service can be guaranteed completely secure, so please report any concern to <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent-primary);">stmakarios@gmail.com</a>.</p>
       </div>
 
       <div class="legal-section">

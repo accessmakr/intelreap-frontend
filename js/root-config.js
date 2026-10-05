@@ -209,7 +209,8 @@ const injectSeasonalBanner = () => {
     '--season-color',
     season.color
   )
-  banner.style.color = season.color
+  banner.style.color =
+    `color-mix(in srgb, ${season.color} 60%, var(--color-text-primary))`
 }
 
 // ─────────────────────────────────────────
@@ -289,14 +290,35 @@ const initScrollProgressBar = () => {
 }
 
 // ─────────────────────────────────────────
-// THEME TOGGLE
-// Light is the default theme. Dark is an
-// opt-in choice persisted to localStorage.
-// The <head> inline script already applies
-// the saved theme before paint to avoid a
-// flash — this just wires up the button and
-// keeps it in sync with the current state.
+// THEME
+// Light is the default. With no saved choice the
+// site follows the visitor's system setting, and
+// falls back to light when the system gives none.
+// The toggle saves an explicit "light" or "dark"
+// choice. The inline <head> script applies the
+// theme before first paint to avoid a flash.
 // ─────────────────────────────────────────
+
+const THEME_KEY = 'ndic_theme'
+const THEME_COLORS = { light: '#fafbfc', dark: '#10141b' }
+const THEME_SYSTEM_QUERY = window.matchMedia
+  ? window.matchMedia('(prefers-color-scheme: dark)')
+  : null
+
+const getSavedTheme = () => {
+  try {
+    const value = localStorage.getItem(THEME_KEY)
+    return value === 'light' || value === 'dark' ? value : null
+  } catch (e) {
+    return null
+  }
+}
+
+const getSystemTheme = () => {
+  return THEME_SYSTEM_QUERY && THEME_SYSTEM_QUERY.matches
+    ? 'dark'
+    : 'light'
+}
 
 const getCurrentTheme = () => {
   return document.documentElement
@@ -305,50 +327,104 @@ const getCurrentTheme = () => {
     : 'light'
 }
 
-const setTheme = (theme) => {
-  if (theme === 'dark') {
-    document.documentElement.setAttribute(
-      'data-theme',
-      'dark'
-    )
-  } else {
-    document.documentElement.removeAttribute(
-      'data-theme'
-    )
+const syncThemeButtons = (theme) => {
+  const next = theme === 'dark' ? 'light' : 'dark'
+  document.querySelectorAll('.theme-toggle-btn')
+    .forEach(btn => {
+      btn.setAttribute('aria-label', `Switch to ${next} theme`)
+      btn.setAttribute('title', `Switch to ${next} theme`)
+      btn.setAttribute(
+        'aria-pressed',
+        theme === 'dark' ? 'true' : 'false'
+      )
+    })
+}
+
+const applyTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme)
+
+  let meta = document.querySelector('meta[name="theme-color"]')
+  if (!meta) {
+    meta = document.createElement('meta')
+    meta.setAttribute('name', 'theme-color')
+    document.head.appendChild(meta)
   }
-  localStorage.setItem('ndic_theme', theme)
+  meta.setAttribute('content', THEME_COLORS[theme])
+
+  syncThemeButtons(theme)
+  window.dispatchEvent(
+    new CustomEvent('ndic-theme-changed', { detail: { theme } })
+  )
+  // Charts and diagrams draw with fixed colours: redraw them
+  for (let i = 1; i <= 13; i++) {
+    try {
+      const c = window['Canvas' + i]
+      if (c && typeof c.render === 'function') c.render()
+    } catch (e) { /* canvas not ready */ }
+  }
+}
+
+const setTheme = (theme) => {
+  try {
+    localStorage.setItem(THEME_KEY, theme)
+  } catch (e) {
+    // storage unavailable: choice applies to this page only
+  }
+  applyTheme(theme)
 }
 
 const toggleTheme = () => {
-  const next = getCurrentTheme() === 'dark'
-    ? 'light'
-    : 'dark'
-  setTheme(next)
+  setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark')
+}
+
+const ensureThemeButton = () => {
+  if (document.getElementById('theme-toggle-btn')) return
+  const inner = document.querySelector('.ndic-site-header-inner')
+  if (!inner) return
+
+  const btn = document.createElement('button')
+  btn.type = 'button'
+  btn.className = 'theme-toggle-btn'
+  btn.id = 'theme-toggle-btn'
+  btn.innerHTML =
+    '<svg class="icon-sun" width="16" height="16" fill="none" ' +
+    'stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="4"/>' +
+    '<path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 ' +
+    '1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 ' +
+    '6.34l1.41-1.41"/></svg>' +
+    '<svg class="icon-moon" width="16" height="16" fill="none" ' +
+    'stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<path stroke-linecap="round" stroke-linejoin="round" ' +
+    'd="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>'
+  inner.insertBefore(btn, inner.querySelector('#master-nav-dock'))
 }
 
 const initThemeToggle = () => {
-  const btn = document.getElementById(
-    'theme-toggle-btn'
-  )
-  if (!btn) return
+  // Make sure the attribute exists even if the head script was missing
+  if (!document.documentElement.hasAttribute('data-theme')) {
+    applyTheme(getSavedTheme() || getSystemTheme())
+  } else {
+    syncThemeButtons(getCurrentTheme())
+  }
 
-  btn.addEventListener('click', toggleTheme)
+  ensureThemeButton()
+  syncThemeButtons(getCurrentTheme())
 
-  btn.setAttribute(
-    'aria-label',
-    getCurrentTheme() === 'dark'
-      ? 'Switch to light theme'
-      : 'Switch to dark theme'
-  )
+  document.querySelectorAll('.theme-toggle-btn')
+    .forEach(btn => btn.addEventListener('click', toggleTheme))
 
-  btn.addEventListener('click', () => {
-    btn.setAttribute(
-      'aria-label',
-      getCurrentTheme() === 'dark'
-        ? 'Switch to light theme'
-        : 'Switch to dark theme'
-    )
-  })
+  // Follow the system setting until the visitor picks a theme
+  if (THEME_SYSTEM_QUERY) {
+    const onSystemChange = (e) => {
+      if (!getSavedTheme()) applyTheme(e.matches ? 'dark' : 'light')
+    }
+    if (THEME_SYSTEM_QUERY.addEventListener) {
+      THEME_SYSTEM_QUERY.addEventListener('change', onSystemChange)
+    } else if (THEME_SYSTEM_QUERY.addListener) {
+      THEME_SYSTEM_QUERY.addListener(onSystemChange)
+    }
+  }
 }
 
 // ─────────────────────────────────────────

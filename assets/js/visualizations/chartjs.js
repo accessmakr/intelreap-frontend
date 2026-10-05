@@ -22,6 +22,55 @@ const ChartJSViz = (() => {
 
   const charts = {}
 
+  // ---------------------------------------
+  // THEME COLOURS
+  // Swaps dark-theme chart colours for
+  // readable light-theme equivalents.
+  // ---------------------------------------
+
+  const isLightTheme = () =>
+    document.documentElement.getAttribute('data-theme') !== 'dark'
+
+  const LIGHT_HEX = {
+    '#68d391': '#0a6b34',
+    '#63b3ed': '#075f99',
+    '#ecc94b': '#7f4d00',
+    '#f56565': '#b3261e',
+    '#ed8936': '#a93a08',
+    '#fc8181': '#b3261e',
+    '#9f7aea': '#5b21b6',
+    '#76e4f7': '#006b87',
+    '#2d3748': '#e3e8ef'
+  }
+  const LIGHT_RGB = {
+    '99,179,237': '7,95,153',
+    '72,187,120': '10,107,52',
+    '236,201,75': '127,77,0',
+    '245,101,101': '179,38,30'
+  }
+
+  const tc = (color) => {
+    if (!isLightTheme()) return color
+    const k = String(color).toLowerCase().replace(/\s+/g, '')
+    if (LIGHT_HEX[k]) return LIGHT_HEX[k]
+    const m = k.match(/^rgba?\((\d+),(\d+),(\d+)(?:,([\d.]+))?\)$/)
+    if (!m) return color
+    const rgb = m[1] + ',' + m[2] + ',' + m[3]
+    const a = m[4] === undefined ? 1 : parseFloat(m[4])
+    if (rgb === '255,255,255') {
+      const na = a <= 0.15 ? a * 2 : Math.min(0.92, a * 1.4 + 0.2)
+      return 'rgba(15,23,42,' + na.toFixed(2) + ')'
+    }
+    if (LIGHT_RGB[rgb]) return 'rgba(' + LIGHT_RGB[rgb] + ',' + a + ')'
+    return color
+  }
+
+  const cssVar = (name, fallback) => {
+    const v = getComputedStyle(document.documentElement)
+      .getPropertyValue(name).trim()
+    return v || fallback
+  }
+
   // ───────────────────────────────────────
   // CHART.JS GLOBAL DEFAULTS
   // Applied to all charts system-wide
@@ -31,21 +80,21 @@ const ChartJSViz = (() => {
     if (typeof Chart === 'undefined') return
 
     Chart.defaults.color =
-      'var(--color-text-secondary)'
+      cssVar('--color-text-secondary', '#a8b6c9')
     Chart.defaults.borderColor =
-      'rgba(255,255,255,0.05)'
+      tc('rgba(255,255,255,0.05)')
     Chart.defaults.font.family =
       'Inter, sans-serif'
     Chart.defaults.font.size = 11
     Chart.defaults.plugins.legend.display = false
     Chart.defaults.plugins.tooltip.backgroundColor =
-      'var(--color-bg-secondary)'
+      cssVar('--color-bg-elevated', '#28313f')
     Chart.defaults.plugins.tooltip.titleColor =
-      'var(--color-text-primary)'
+      cssVar('--color-text-primary', '#dde3ea')
     Chart.defaults.plugins.tooltip.bodyColor =
-      'var(--color-text-secondary)'
+      cssVar('--color-text-secondary', '#a8b6c9')
     Chart.defaults.plugins.tooltip.borderColor =
-      'var(--color-border-primary)'
+      cssVar('--color-border-secondary', 'rgba(255,255,255,0.1)')
     Chart.defaults.plugins.tooltip.borderWidth = 1
     Chart.defaults.plugins.tooltip.padding = 10
     Chart.defaults.plugins.tooltip.cornerRadius = 6
@@ -110,11 +159,11 @@ const ChartJSViz = (() => {
     )
     gradient.addColorStop(
       0,
-      'rgba(99, 179, 237, 0.3)'
+      tc('rgba(99, 179, 237, 0.3)')
     )
     gradient.addColorStop(
       1,
-      'rgba(99, 179, 237, 0.0)'
+      tc('rgba(99, 179, 237, 0.0)')
     )
 
     charts['canvas3-latency'] = new Chart(ctx, {
@@ -124,12 +173,12 @@ const ChartJSViz = (() => {
         datasets: [{
           label: 'Latency (ms)',
           data: data,
-          borderColor: '#63b3ed',
+          borderColor: tc('#63b3ed'),
           backgroundColor: gradient,
           borderWidth: 2,
           pointRadius: 0,
           pointHoverRadius: 4,
-          pointHoverBackgroundColor: '#63b3ed',
+          pointHoverBackgroundColor: tc('#63b3ed'),
           tension: 0.4,
           fill: true
         }]
@@ -145,13 +194,13 @@ const ChartJSViz = (() => {
           y: {
             min: 0,
             grid: {
-              color: 'rgba(255,255,255,0.05)',
+              color: tc('rgba(255,255,255,0.05)'),
               drawBorder: false
             },
             ticks: {
               callback: (value) => `${value}ms`,
               maxTicksLimit: 5,
-              color: 'rgba(255,255,255,0.4)'
+              color: tc('rgba(255,255,255,0.4)')
             }
           }
         },
@@ -171,14 +220,14 @@ const ChartJSViz = (() => {
                 yMin: 50,
                 yMax: 50,
                 borderColor:
-                  'rgba(72, 187, 120, 0.3)',
+                  tc('rgba(72, 187, 120, 0.3)'),
                 borderWidth: 1,
                 borderDash: [4, 4],
                 label: {
                   content: '50ms',
                   enabled: true,
                   position: 'end',
-                  color: 'rgba(72,187,120,0.6)',
+                  color: tc('rgba(72,187,120,0.6)'),
                   font: { size: 9 }
                 }
               },
@@ -187,7 +236,7 @@ const ChartJSViz = (() => {
                 yMin: 100,
                 yMax: 100,
                 borderColor:
-                  'rgba(236, 201, 75, 0.3)',
+                  tc('rgba(236, 201, 75, 0.3)'),
                 borderWidth: 1,
                 borderDash: [4, 4]
               },
@@ -196,7 +245,7 @@ const ChartJSViz = (() => {
                 yMin: 200,
                 yMax: 200,
                 borderColor:
-                  'rgba(245, 101, 101, 0.3)',
+                  tc('rgba(245, 101, 101, 0.3)'),
                 borderWidth: 1,
                 borderDash: [4, 4]
               }
@@ -246,8 +295,8 @@ const ChartJSViz = (() => {
         datasets: [{
           data: [0, 100],
           backgroundColor: [
-            '#63b3ed',
-            'rgba(255,255,255,0.05)'
+            tc('#63b3ed'),
+            tc('rgba(255,255,255,0.05)')
           ],
           borderWidth: 0,
           circumference: 180,
@@ -278,10 +327,10 @@ const ChartJSViz = (() => {
     const remaining = maxBandwidth - value
 
     // Color based on bandwidth
-    let color = '#f56565' // red — poor
-    if (value >= 50) color = '#63b3ed'     // blue
-    else if (value >= 25) color = '#68d391' // green
-    else if (value >= 10) color = '#ecc94b' // amber
+    let color = tc('#f56565') // red — poor
+    if (value >= 50) color = tc('#63b3ed')     // blue
+    else if (value >= 25) color = tc('#68d391') // green
+    else if (value >= 10) color = tc('#ecc94b') // amber
 
     chart.data.datasets[0].data = [
       value, remaining
@@ -311,11 +360,11 @@ const ChartJSViz = (() => {
     )
     gradient.addColorStop(
       0,
-      'rgba(72, 187, 120, 0.4)'
+      tc('rgba(72, 187, 120, 0.4)')
     )
     gradient.addColorStop(
       1,
-      'rgba(72, 187, 120, 0.0)'
+      tc('rgba(72, 187, 120, 0.0)')
     )
 
     charts['canvas3-stability'] = new Chart(ctx, {
@@ -324,7 +373,7 @@ const ChartJSViz = (() => {
         labels: Array(maxPoints).fill(''),
         datasets: [{
           data: Array(maxPoints).fill(100),
-          borderColor: '#68d391',
+          borderColor: tc('#68d391'),
           backgroundColor: gradient,
           borderWidth: 1.5,
           pointRadius: 0,
@@ -364,9 +413,9 @@ const ChartJSViz = (() => {
     if (current.length > 30) current.shift()
 
     // Color based on stability
-    let color = '#f56565'
-    if (stabilityIndex >= 80) color = '#68d391'
-    else if (stabilityIndex >= 60) color = '#ecc94b'
+    let color = tc('#f56565')
+    if (stabilityIndex >= 80) color = tc('#68d391')
+    else if (stabilityIndex >= 60) color = tc('#ecc94b')
 
     chart.data.datasets[0].borderColor = color
     chart.update('none')
@@ -402,13 +451,13 @@ const ChartJSViz = (() => {
         datasets: [{
           data: [0, 0, 0, 0, 0, 0, 0],
           backgroundColor: [
-            '#63b3ed',
-            '#76e4f7',
-            '#9f7aea',
-            '#68d391',
-            '#ecc94b',
-            '#ed8936',
-            '#fc8181'
+            tc('#63b3ed'),
+            tc('#76e4f7'),
+            tc('#9f7aea'),
+            tc('#68d391'),
+            tc('#ecc94b'),
+            tc('#ed8936'),
+            tc('#fc8181')
           ],
           borderRadius: 4,
           borderSkipped: false
@@ -421,18 +470,18 @@ const ChartJSViz = (() => {
         scales: {
           x: {
             grid: {
-              color: 'rgba(255,255,255,0.05)'
+              color: tc('rgba(255,255,255,0.05)')
             },
             ticks: {
               callback: (v) => `${v}ms`,
-              color: 'rgba(255,255,255,0.4)',
+              color: tc('rgba(255,255,255,0.4)'),
               maxTicksLimit: 6
             }
           },
           y: {
             grid: { display: false },
             ticks: {
-              color: 'rgba(255,255,255,0.6)',
+              color: tc('rgba(255,255,255,0.6)'),
               font: { size: 10 }
             }
           }
@@ -466,9 +515,9 @@ const ChartJSViz = (() => {
 
     // Color each bar by duration
     const colors = values.map(v => {
-      if (v <= 50) return '#68d391'   // green
-      if (v <= 200) return '#ecc94b'  // amber
-      return '#f56565'                // red
+      if (v <= 50) return tc('#68d391')   // green
+      if (v <= 200) return tc('#ecc94b')  // amber
+      return tc('#f56565')                // red
     })
 
     chart.data.datasets[0].data = values
@@ -500,8 +549,8 @@ const ChartJSViz = (() => {
           datasets: [{
             data: [0, 100],
             backgroundColor: [
-              '#68d391',
-              'rgba(255,255,255,0.05)'
+              tc('#68d391'),
+              tc('rgba(255,255,255,0.05)')
             ],
             borderWidth: 0,
             circumference: 180,
@@ -527,10 +576,10 @@ const ChartJSViz = (() => {
 
     const value = Math.min(score || 0, 100)
 
-    let color = '#f56565'
-    if (value >= 80) color = '#68d391'
-    else if (value >= 60) color = '#ecc94b'
-    else if (value >= 40) color = '#ed8936'
+    let color = tc('#f56565')
+    if (value >= 80) color = tc('#68d391')
+    else if (value >= 60) color = tc('#ecc94b')
+    else if (value >= 40) color = tc('#ed8936')
 
     chart.data.datasets[0].data =
       [value, 100 - value]
@@ -565,8 +614,8 @@ const ChartJSViz = (() => {
             label: 'Measured',
             data: [0, 0, 0, 0, 0, 0],
             backgroundColor: [
-              '#68d391', '#68d391', '#68d391',
-              '#68d391', '#68d391', '#68d391'
+              tc('#68d391'), tc('#68d391'), tc('#68d391'),
+              tc('#68d391'), tc('#68d391'), tc('#68d391')
             ],
             borderRadius: 4,
             borderSkipped: false
@@ -575,7 +624,7 @@ const ChartJSViz = (() => {
             label: 'Good Threshold',
             data: [2500, 1800, 0.1, 200, 800, 100],
             backgroundColor:
-              'rgba(255,255,255,0.08)',
+              tc('rgba(255,255,255,0.08)'),
             borderRadius: 4,
             borderSkipped: false
           }
@@ -588,7 +637,7 @@ const ChartJSViz = (() => {
           x: {
             grid: { display: false },
             ticks: {
-              color: 'rgba(255,255,255,0.6)',
+              color: tc('rgba(255,255,255,0.6)'),
               font: { size: 11, weight: '600' }
             }
           },
@@ -644,12 +693,12 @@ const ChartJSViz = (() => {
     ]
 
     const colors = ratings.map(rating => {
-      if (rating === 'Good') return '#68d391'
+      if (rating === 'Good') return tc('#68d391')
       if (rating === 'Needs Improvement') {
-        return '#ecc94b'
+        return tc('#ecc94b')
       }
-      if (rating === 'Poor') return '#f56565'
-      return 'rgba(255,255,255,0.2)'
+      if (rating === 'Poor') return tc('#f56565')
+      return tc('rgba(255,255,255,0.2)')
     })
 
     chart.data.datasets[0].data = values
@@ -693,8 +742,8 @@ const ChartJSViz = (() => {
             datasets: [{
               data: [0, 100],
               backgroundColor: [
-                '#63b3ed',
-                'rgba(255,255,255,0.05)'
+                tc('#63b3ed'),
+                tc('rgba(255,255,255,0.05)')
               ],
               borderWidth: 0,
               circumference: 180,
@@ -725,11 +774,11 @@ const ChartJSViz = (() => {
 
     const value = Math.min(score || 0, 100)
 
-    let color = '#f56565'
-    if (value >= 80) color = '#68d391'
-    else if (value >= 60) color = '#ecc94b'
-    else if (value >= 40) color = '#ed8936'
-    else if (value > 0) color = '#fc8181'
+    let color = tc('#f56565')
+    if (value >= 80) color = tc('#68d391')
+    else if (value >= 60) color = tc('#ecc94b')
+    else if (value >= 40) color = tc('#ed8936')
+    else if (value > 0) color = tc('#fc8181')
 
     chart.data.datasets[0].data =
       [value, 100 - value]
@@ -815,7 +864,7 @@ const ChartJSViz = (() => {
         c.font = `${
           Math.round(height / 10)
         }px Inter, sans-serif`
-        c.fillStyle = 'rgba(255,255,255,0.5)'
+        c.fillStyle = tc('rgba(255,255,255,0.5)')
         c.fillText(health, centerX, centerY + 28)
 
         c.save()
@@ -828,8 +877,8 @@ const ChartJSViz = (() => {
         datasets: [{
           data: [0, 100],
           backgroundColor: [
-            '#68d391',
-            'rgba(255,255,255,0.05)'
+            tc('#68d391'),
+            tc('rgba(255,255,255,0.05)')
           ],
           borderWidth: 0
         }]
@@ -863,11 +912,11 @@ const ChartJSViz = (() => {
 
     const value = Math.min(score || 0, 100)
 
-    let color = '#f56565'
-    if (value >= 90) color = '#68d391'
-    else if (value >= 70) color = '#63b3ed'
-    else if (value >= 50) color = '#ecc94b'
-    else if (value >= 30) color = '#ed8936'
+    let color = tc('#f56565')
+    if (value >= 90) color = tc('#68d391')
+    else if (value >= 70) color = tc('#63b3ed')
+    else if (value >= 50) color = tc('#ecc94b')
+    else if (value >= 30) color = tc('#ed8936')
 
     chart.data.datasets[0].data =
       [value, 100 - value]
@@ -930,8 +979,8 @@ const ChartJSViz = (() => {
             datasets: [{
               data: [0, 100],
               backgroundColor: [
-                '#63b3ed',
-                'rgba(255,255,255,0.05)'
+                tc('#63b3ed'),
+                tc('rgba(255,255,255,0.05)')
               ],
               borderWidth: 0
             }]
@@ -1095,6 +1144,8 @@ const ChartJSViz = (() => {
       destroyChart(id)
     })
   }
+
+  window.addEventListener('ndic-theme-changed', applyGlobalDefaults)
 
   return {
     initializeAll,

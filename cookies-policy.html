@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <script>
+    (function(){try{var d=document.documentElement,s=localStorage.getItem('ndic_theme');
+    if(s!=='light'&&s!=='dark'){s=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+    d.setAttribute('data-theme',s)}catch(e){}})();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -144,9 +149,9 @@
 
   <style>
     .legal-page { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
-    .legal-hero { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.07)); margin-bottom: 3rem; }
-    .legal-eyebrow { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent, #0ea5e9); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-    .legal-eyebrow::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--color-accent, #0ea5e9); }
+    .legal-hero { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--color-border, var(--color-border-primary)); margin-bottom: 3rem; }
+    .legal-eyebrow { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent, var(--color-accent-primary)); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .legal-eyebrow::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--color-accent, var(--color-accent-primary)); }
     .legal-hero h1 { font-family: var(--font-display, 'Syne', sans-serif); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: var(--color-text-primary, #e2e8f0); line-height: 1.15; margin-bottom: 1rem; }
     .legal-hero p { font-size: 1rem; color: var(--color-text-secondary, #94a3b8); line-height: 1.7; max-width: 560px; }
     .legal-meta { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
@@ -154,22 +159,22 @@
     .legal-meta-label { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-tertiary, #475569); }
     .legal-meta-value { font-size: 0.8rem; font-weight: 500; color: var(--color-text-secondary, #94a3b8); }
     .legal-section { margin-bottom: 3rem; }
-    .legal-section h2 { font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.1rem; font-weight: 600; color: var(--color-text-primary, #e2e8f0); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06)); display: flex; align-items: center; gap: 0.6rem; }
-    .section-num { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.65rem; color: var(--color-accent, #0ea5e9); font-weight: 500; background: rgba(14,165,233,0.1); padding: 0.15rem 0.4rem; border-radius: 3px; }
+    .legal-section h2 { font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.1rem; font-weight: 600; color: var(--color-text-primary, #e2e8f0); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--color-border, var(--color-border-primary)); display: flex; align-items: center; gap: 0.6rem; }
+    .section-num { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.65rem; color: var(--color-accent, var(--color-accent-primary)); font-weight: 500; background: color-mix(in srgb, var(--color-accent-primary) 10%, transparent); padding: 0.15rem 0.4rem; border-radius: 3px; }
     .legal-section p { font-size: 0.9rem; color: var(--color-text-secondary, #94a3b8); line-height: 1.8; margin-bottom: 1rem; }
     .legal-section ul { margin: 0.5rem 0 1rem 0; padding-left: 1.25rem; }
     .legal-section ul li { font-size: 0.9rem; color: var(--color-text-secondary, #94a3b8); line-height: 1.8; margin-bottom: 0.4rem; padding-left: 0.25rem; }
-    .legal-section ul li::marker { color: var(--color-accent, #0ea5e9); }
-    .legal-callout { background: rgba(14,165,233,0.05); border: 1px solid rgba(14,165,233,0.15); border-left: 3px solid var(--color-accent, #0ea5e9); border-radius: 6px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .legal-section ul li::marker { color: var(--color-accent, var(--color-accent-primary)); }
+    .legal-callout { background: color-mix(in srgb, var(--color-accent-primary) 5%, transparent); border: 1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent); border-left: 3px solid var(--color-accent, var(--color-accent-primary)); border-radius: 6px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
     .legal-callout p { margin-bottom: 0; color: var(--color-text-primary, #e2e8f0) !important; font-weight: 500; }
     .storage-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
-    .storage-table th { text-align: left; padding: 0.6rem 0.8rem; background: rgba(255,255,255,0.04); color: var(--color-text-secondary, #94a3b8); font-weight: 500; border: 1px solid rgba(255,255,255,0.07); font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
-    .storage-table td { padding: 0.6rem 0.8rem; color: var(--color-text-secondary, #94a3b8); border: 1px solid rgba(255,255,255,0.05); line-height: 1.6; }
-    .storage-table td:first-child { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.8rem; color: var(--color-accent, #0ea5e9); }
-    .storage-table tr:hover td { background: rgba(255,255,255,0.02); }
-    .legal-faq { margin-top: 3rem; border-top: 1px solid var(--color-border, rgba(255,255,255,0.06)); padding-top: 2.5rem; }
+    .storage-table th { text-align: left; padding: 0.6rem 0.8rem; background: var(--color-bg-hover); color: var(--color-text-secondary, #94a3b8); font-weight: 500; border: 1px solid var(--color-border-primary); font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .storage-table td { padding: 0.6rem 0.8rem; color: var(--color-text-secondary, #94a3b8); border: 1px solid var(--color-border-primary); line-height: 1.6; }
+    .storage-table td:first-child { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.8rem; color: var(--color-accent, var(--color-accent-primary)); }
+    .storage-table tr:hover td { background: var(--color-bg-hover); }
+    .legal-faq { margin-top: 3rem; border-top: 1px solid var(--color-border, var(--color-border-primary)); padding-top: 2.5rem; }
     .legal-faq h2 { font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.3rem; font-weight: 600; color: var(--color-text-primary, #e2e8f0); margin-bottom: 1.5rem; }
-    .faq-item { border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06)); }
+    .faq-item { border-bottom: 1px solid var(--color-border, var(--color-border-primary)); }
     .faq-question { width: 100%; text-align: left; padding: 1rem 0; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .faq-question span { font-size: 0.9rem; font-weight: 500; color: var(--color-text-primary, #e2e8f0); line-height: 1.5; text-align: left; }
     .faq-chevron { width: 16px; height: 16px; flex-shrink: 0; stroke: var(--color-text-tertiary, #475569); transition: transform 0.25s ease; }
@@ -177,19 +182,19 @@
     .faq-answer { display: none; padding: 0 0 1rem; }
     .faq-item.open .faq-answer { display: block; }
     .faq-answer p { font-size: 0.875rem; color: var(--color-text-secondary, #94a3b8); line-height: 1.8; margin: 0; }
-    .legal-contact { max-width: 400px; margin: 3rem auto 0; background: rgba(13,18,37,0.8); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 2rem; }
+    .legal-contact { max-width: 400px; margin: 3rem auto 0; background: var(--color-bg-secondary); border: 1px solid var(--color-border-primary); border-radius: 12px; padding: 2rem; }
     .legal-contact h2 { font-family: var(--font-display, 'Syne', sans-serif); font-size: 1.1rem; font-weight: 600; color: var(--color-text-primary, #e2e8f0); margin-bottom: 0.5rem; }
     .legal-contact > p { font-size: 0.8rem; color: var(--color-text-tertiary, #475569); margin-bottom: 1.5rem; line-height: 1.6; }
     .form-group { margin-bottom: 1rem; }
     .form-group label { display: block; font-size: 0.75rem; font-weight: 500; color: var(--color-text-secondary, #94a3b8); margin-bottom: 0.35rem; letter-spacing: 0.03em; }
-    .form-group input, .form-group textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 0.65rem 0.9rem; font-size: 0.875rem; color: var(--color-text-primary, #e2e8f0); font-family: var(--font-body, 'Be Vietnam Pro', sans-serif); transition: border-color 0.2s; box-sizing: border-box; }
-    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-accent, #0ea5e9); }
+    .form-group input, .form-group textarea { width: 100%; background: var(--color-bg-hover); border: 1px solid var(--color-border-primary); border-radius: 6px; padding: 0.65rem 0.9rem; font-size: 0.875rem; color: var(--color-text-primary, #e2e8f0); font-family: var(--font-body, 'Be Vietnam Pro', sans-serif); transition: border-color 0.2s; box-sizing: border-box; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-accent, var(--color-accent-primary)); }
     .form-group textarea { resize: vertical; min-height: 100px; }
     .form-hidden { display: none; }
-    .form-submit { width: 100%; background: var(--color-accent, #0ea5e9); color: #fff; border: none; border-radius: 6px; padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; font-family: var(--font-display, 'Syne', sans-serif); letter-spacing: 0.03em; transition: opacity 0.2s; margin-top: 0.5rem; }
+    .form-submit { width: 100%; background: var(--color-accent, var(--color-accent-primary)); color: var(--color-text-inverse); border: none; border-radius: 6px; padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 600; cursor: pointer; font-family: var(--font-display, 'Syne', sans-serif); letter-spacing: 0.03em; transition: opacity 0.2s; margin-top: 0.5rem; }
     .form-submit:hover { opacity: 0.9; }
-    #dynamic-internal-links { margin: 3rem 0; border-top: 1px solid var(--color-border, rgba(255,255,255,0.06)); padding-top: 2rem; }
-    #scroll-progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #0ea5e9, #06b6d4); z-index: 9999; transition: width 0.1s linear; }
+    #dynamic-internal-links { margin: 3rem 0; border-top: 1px solid var(--color-border, var(--color-border-primary)); padding-top: 2rem; }
+    #scroll-progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-primary)); z-index: 9999; transition: width 0.1s linear; }
   </style>
 </head>
 
@@ -231,7 +236,7 @@
           </div>
           <div class="legal-meta-item">
             <span class="legal-meta-label">Analytics cookies</span>
-            <span class="legal-meta-value" style="color:#f59e0b;">Only with consent</span>
+            <span class="legal-meta-value" style="color:var(--color-warning);">Only with consent</span>
           </div>
         </div>
       </div>
@@ -306,7 +311,7 @@
 
       <div class="legal-section">
         <h2><span class="section-num">04</span> Third-Party Cookies</h2>
-        <p>Google Analytics and Google AdSense are operated by Google. Google describes how it uses information from sites that use its services at <a href="https://policies.google.com/technologies/partner-sites" style="color:var(--color-accent,#0ea5e9);" rel="noopener">policies.google.com/technologies/partner-sites</a>. Personalised advertising can be managed at <a href="https://adssettings.google.com" style="color:var(--color-accent,#0ea5e9);" rel="noopener">adssettings.google.com</a>.</p>
+        <p>Google Analytics and Google AdSense are operated by Google. Google describes how it uses information from sites that use its services at <a href="https://policies.google.com/technologies/partner-sites" style="color:var(--color-accent-primary);" rel="noopener">policies.google.com/technologies/partner-sites</a>. Personalised advertising can be managed at <a href="https://adssettings.google.com" style="color:var(--color-accent-primary);" rel="noopener">adssettings.google.com</a>.</p>
       </div>
 
       <div class="legal-section" id="cookie-settings">
@@ -316,7 +321,7 @@
 
       <div class="legal-section">
         <h2><span class="section-num">06</span> Changes to This Policy</h2>
-        <p>We update this policy when our use of cookies changes. The date at the top of the page shows the latest revision. Questions: <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent,#0ea5e9);">stmakarios@gmail.com</a>.</p>
+        <p>We update this policy when our use of cookies changes. The date at the top of the page shows the latest revision. Questions: <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent-primary);">stmakarios@gmail.com</a>.</p>
       </div>
 
       <div class="legal-faq">

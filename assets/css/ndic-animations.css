@@ -326,7 +326,7 @@
     box-shadow: 0 0 0 4px rgba(0,180,216,0.08);
   }
   100% {
-    border-color: rgba(255,255,255,0.06);
+    border-color: var(--color-skeleton);
     box-shadow: none;
   }
 }
@@ -585,7 +585,7 @@
   background: linear-gradient(
     90deg,
     var(--color-bg-elevated) 25%,
-    rgba(255,255,255,0.06) 50%,
+    var(--color-skeleton) 50%,
     var(--color-bg-elevated) 75%
   );
   background-size: 200% 100%;
