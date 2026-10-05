@@ -42,6 +42,7 @@ const SearchSystem = (() => {
               id="ndic-search-input"
               class="ndic-search-input"
               placeholder="Search intelligence panels..."
+              data-i18n-placeholder="nav.search_placeholder"
               autocomplete="off"
               spellcheck="false"
             />

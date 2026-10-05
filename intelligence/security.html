@@ -104,7 +104,7 @@
       <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
         <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
       </a>
-      <button type="button" class="trigger-search" aria-label="Open search">
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search">
         <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
@@ -126,21 +126,21 @@
       <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">IntelReap</a>
         <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../index.html">Intelligence Center</a>
+        <a href="../index.html" data-i18n="nav.intelligence_center">Intelligence Center</a>
         <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="ndic-breadcrumb-current">Security & Privacy Panel</span>
+        <span class="ndic-breadcrumb-current" data-i18n="canvas7.heading_technical">Security & Privacy Panel</span>
       </nav>
       <div class="ndic-deepdive-hero">
         <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 7</div>
-        <h1 class="ndic-deepdive-title">Security & Privacy Panel</h1>
-        <p class="ndic-deepdive-subtitle">How Safe Are You Right Now?</p>
+        <h1 class="ndic-deepdive-title" data-i18n="canvas7.heading_technical">Security & Privacy Panel</h1>
+        <p class="ndic-deepdive-subtitle" data-i18n="canvas7.heading_plain">How Safe Are You Right Now?</p>
         <p class="ndic-deepdive-intro">HTTPS status, WebRTC leaks, permissions, storage access, and your live security score — scanned the moment this page loads.</p>
       </div>
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-7">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Security &amp; Privacy Panel</span>
-                <span class="ndic-canvas-subheading">How Safe Are You Right Now?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas7.heading_technical">Security &amp; Privacy Panel</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas7.heading_plain">How Safe Are You Right Now?</span>
               </div>
               <span class="ndic-canvas-score" id="c7-score">—</span>
             </div>
@@ -148,30 +148,30 @@
               <span class="ndic-health-badge" id="c7-risk-level">—</span>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">HTTPS Status</span><span class="ndic-param-value" id="c7-https-status">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Secure Context</span><span class="ndic-param-value" id="c7-secure-context">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Mixed Content</span><span class="ndic-param-value" id="c7-mixed-content">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC Exposure</span><span class="ndic-param-value" id="c7-webrtc-exposure">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.https_status">HTTPS Status</span><span class="ndic-param-value" id="c7-https-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.secure_context">Secure Context</span><span class="ndic-param-value" id="c7-secure-context">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.mixed_content">Mixed Content</span><span class="ndic-param-value" id="c7-mixed-content">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.webrtc_exposure">WebRTC Exposure</span><span class="ndic-param-value" id="c7-webrtc-exposure">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Local IP Leak</span><span class="ndic-param-value" id="c7-local-ip">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC IP Match</span><span class="ndic-param-value" id="c7-webrtc-ip-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Cookie Access</span><span class="ndic-param-value" id="c7-cookie-access">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.webrtc_ip_match">WebRTC IP Match</span><span class="ndic-param-value" id="c7-webrtc-ip-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.cookie_access">Cookie Access</span><span class="ndic-param-value" id="c7-cookie-access">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">localStorage Access</span><span class="ndic-param-value" id="c7-localstorage-access">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">sessionStorage Access</span><span class="ndic-param-value" id="c7-sessionstorage-access">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">IndexedDB Access</span><span class="ndic-param-value" id="c7-indexeddb-access">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Camera Permission</span><span class="ndic-param-value" id="c7-camera-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Microphone Permission</span><span class="ndic-param-value" id="c7-microphone-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Location Permission</span><span class="ndic-param-value" id="c7-location-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Notification Permission</span><span class="ndic-param-value" id="c7-notification-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Clipboard Read</span><span class="ndic-param-value" id="c7-clipboard-read">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Clipboard Write</span><span class="ndic-param-value" id="c7-clipboard-write">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Do Not Track</span><span class="ndic-param-value" id="c7-do-not-track">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Third-Party Cookies</span><span class="ndic-param-value" id="c7-third-party-cookies">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Referrer Policy</span><span class="ndic-param-value" id="c7-referrer-policy">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Content Security Policy</span><span class="ndic-param-value" id="c7-csp-presence">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Fingerprint Surfaces</span><span class="ndic-param-value" id="c7-fingerprint-surfaces">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Security Flags</span><span class="ndic-param-value" id="c7-security-flags">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Security Warnings</span><span class="ndic-param-value" id="c7-security-warnings">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Security Score</span><span class="ndic-param-value" id="c7-security-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.indexeddb_access">IndexedDB Access</span><span class="ndic-param-value" id="c7-indexeddb-access">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.camera_permission">Camera Permission</span><span class="ndic-param-value" id="c7-camera-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.microphone_permission">Microphone Permission</span><span class="ndic-param-value" id="c7-microphone-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.location_permission">Location Permission</span><span class="ndic-param-value" id="c7-location-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.notification_permission">Notification Permission</span><span class="ndic-param-value" id="c7-notification-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.clipboard_read">Clipboard Read</span><span class="ndic-param-value" id="c7-clipboard-read">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.clipboard_write">Clipboard Write</span><span class="ndic-param-value" id="c7-clipboard-write">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.do_not_track">Do Not Track</span><span class="ndic-param-value" id="c7-do-not-track">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.third_party_cookies">Third-Party Cookies</span><span class="ndic-param-value" id="c7-third-party-cookies">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.referrer_policy">Referrer Policy</span><span class="ndic-param-value" id="c7-referrer-policy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.csp_presence">Content Security Policy</span><span class="ndic-param-value" id="c7-csp-presence">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.fingerprint_surfaces">Fingerprint Surfaces</span><span class="ndic-param-value" id="c7-fingerprint-surfaces">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.security_flags">Security Flags</span><span class="ndic-param-value" id="c7-security-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.security_warnings">Security Warnings</span><span class="ndic-param-value" id="c7-security-warnings">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.security_score">Security Score</span><span class="ndic-param-value" id="c7-security-score">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
@@ -200,13 +200,13 @@
             <p>HTTPS confirms your connection to this site is encrypted in transit. Secure context is a stricter browser-level check — it confirms the browser will allow sensitive APIs (camera, microphone, geolocation, WebCrypto) to run. A page can technically be served over HTTPS but still fail the secure context check in edge cases involving mixed content or unusual origins.</p>
           </div>
           <div class="ndic-explain-item">
-            <h4>Mixed Content</h4>
+            <h4 data-i18n="canvas7.params.mixed_content">Mixed Content</h4>
             <p>Mixed content means an HTTPS page is loading resources (scripts, images, iframes) over HTTP. Even one HTTP resource weakens the security of an otherwise encrypted page, since that resource can be intercepted and modified in transit. Modern browsers block active mixed content (scripts and iframes) by default but may allow passive content (images) with a warning.</p>
           </div>
         </div>
 
         <div class="ndic-explain-group">
-          <h3 class="ndic-explain-group-title">WebRTC Exposure</h3>
+          <h3 class="ndic-explain-group-title" data-i18n="canvas7.params.webrtc_exposure">WebRTC Exposure</h3>
           <div class="ndic-explain-item">
             <h4>WebRTC Exposure, Local IP Leak &amp; WebRTC IP Match</h4>
             <p>WebRTC is a browser API for peer-to-peer communication. It can reveal your real local network IP address (typically 192.168.x.x or 10.x.x.x) even when accessed over a VPN, because it communicates directly rather than through the VPN tunnel. Local IP leak confirms whether your private network address is visible. WebRTC IP match checks whether the public IP WebRTC reports matches what the rest of your connection shows — a mismatch is a VPN leak.</p>
@@ -317,12 +317,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -331,10 +331,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -342,7 +342,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -351,17 +351,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -369,12 +369,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>

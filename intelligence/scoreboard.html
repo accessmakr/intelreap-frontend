@@ -127,7 +127,7 @@
   <header class="ndic-site-header">
     <div class="ndic-site-header-inner">
       <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home"><span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span></a>
-      <button type="button" class="trigger-search" aria-label="Open search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
       <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
         <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -140,20 +140,20 @@
     <div class="ndic-deepdive-page">
       <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">IntelReap</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../index.html">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="ndic-breadcrumb-current">Global Intelligence Scoreboard</span>
+        <a href="../index.html" data-i18n="nav.intelligence_center">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current" data-i18n="canvas11.heading_technical">Global Intelligence Scoreboard</span>
       </nav>
       <div class="ndic-deepdive-hero">
         <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 11</div>
-        <h1 class="ndic-deepdive-title">Global Intelligence Scoreboard</h1>
-        <p class="ndic-deepdive-subtitle">Your Overall Score</p>
+        <h1 class="ndic-deepdive-title" data-i18n="canvas11.heading_technical">Global Intelligence Scoreboard</h1>
+        <p class="ndic-deepdive-subtitle" data-i18n="canvas11.heading_plain">Your Overall Score</p>
         <p class="ndic-deepdive-intro">Nine weighted dimension scores combined into one global verdict — calculated live from your full scan.</p>
       </div>
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-11">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Global Intelligence Scoreboard</span>
-                <span class="ndic-canvas-subheading">Your Overall Score</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas11.heading_technical">Global Intelligence Scoreboard</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas11.heading_plain">Your Overall Score</span>
               </div>
               <span class="ndic-health-badge" id="c11-health-badge">—</span>
             </div>
@@ -166,7 +166,7 @@
               <div class="ndic-sub-score-gauges">
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-network-chart"></canvas><span class="ndic-sub-gauge-label">Network</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-identity-chart"></canvas><span class="ndic-sub-gauge-label">Identity</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-privacy-chart"></canvas><span class="ndic-sub-gauge-label">Privacy</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-privacy-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="footer.privacy">Privacy</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-device-chart"></canvas><span class="ndic-sub-gauge-label">Device</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-graphics-chart"></canvas><span class="ndic-sub-gauge-label">Graphics</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-security-chart"></canvas><span class="ndic-sub-gauge-label">Security</span></div>
@@ -176,20 +176,20 @@
               </div>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Network Score</span><span class="ndic-param-value" id="c11-network-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Identity Score</span><span class="ndic-param-value" id="c11-identity-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Privacy Score</span><span class="ndic-param-value" id="c11-privacy-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Device Score</span><span class="ndic-param-value" id="c11-device-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Graphics Score</span><span class="ndic-param-value" id="c11-graphics-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Security Score</span><span class="ndic-param-value" id="c11-security-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Capability Score</span><span class="ndic-param-value" id="c11-capability-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Performance Score</span><span class="ndic-param-value" id="c11-performance-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Speed Score</span><span class="ndic-param-value" id="c11-speed-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Strongest Area</span><span class="ndic-param-value" id="c11-strongest-area">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Weakest Area</span><span class="ndic-param-value" id="c11-weakest-area">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.network_score">Network Score</span><span class="ndic-param-value" id="c11-network-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.identity_score">Identity Score</span><span class="ndic-param-value" id="c11-identity-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.privacy_score">Privacy Score</span><span class="ndic-param-value" id="c11-privacy-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.device_score">Device Score</span><span class="ndic-param-value" id="c11-device-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.graphics_score">Graphics Score</span><span class="ndic-param-value" id="c11-graphics-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.security_score">Security Score</span><span class="ndic-param-value" id="c11-security-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.capability_score">Capability Score</span><span class="ndic-param-value" id="c11-capability-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.performance_score">Performance Score</span><span class="ndic-param-value" id="c11-performance-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.speed_score">Speed Score</span><span class="ndic-param-value" id="c11-speed-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.strongest_area">Strongest Area</span><span class="ndic-param-value" id="c11-strongest-area">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.weakest_area">Weakest Area</span><span class="ndic-param-value" id="c11-weakest-area">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Improvement Priority</span><span class="ndic-param-value" id="c11-improvement-priority">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Critical Flags</span><span class="ndic-param-value" id="c11-critical-flags">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Warnings</span><span class="ndic-param-value" id="c11-warnings">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.critical_flags">Critical Flags</span><span class="ndic-param-value" id="c11-critical-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.warnings">Warnings</span><span class="ndic-param-value" id="c11-warnings">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
@@ -306,12 +306,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -320,10 +320,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -331,7 +331,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -340,17 +340,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -358,12 +358,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>

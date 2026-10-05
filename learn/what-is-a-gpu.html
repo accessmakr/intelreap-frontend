@@ -326,7 +326,7 @@
       <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
         <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
       </a>
-      <button type="button" class="trigger-search" aria-label="Open search">
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search">
         <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
@@ -343,7 +343,7 @@
     <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
       <a href="/">IntelReap</a>
       <span class="ir-breadcrumb-sep" aria-hidden="true">&#8250;</span>
-      <a href="/learn/">Learn</a>
+      <a href="/learn/" data-i18n="footer.col_learn">Learn</a>
       <span class="ir-breadcrumb-sep" aria-hidden="true">&#8250;</span>
       <span class="ir-breadcrumb-current" aria-current="page">What Is a GPU?</span>
     </nav>
@@ -498,11 +498,11 @@
       <!-- LOGIC + METHODOLOGY -->
       <div class="ir-logic-grid">
         <div class="ir-logic-card">
-          <span class="ir-logic-eyebrow">Logic</span>
+          <span class="ir-logic-eyebrow" data-i18n="logic.label">Logic</span>
           <p>The GPU exists because parallel problems need parallel hardware. Understanding the architecture explains not just what a GPU is, but why it became the engine behind AI, video, and scientific computing alongside its original graphics role.</p>
         </div>
         <div class="ir-logic-card">
-          <span class="ir-logic-eyebrow">Methodology</span>
+          <span class="ir-logic-eyebrow" data-i18n="methodology.label">Methodology</span>
           <p>This guide draws on NVIDIA and AMD GPU architecture whitepapers, IEEE published GPU architecture research, Khronos WebGL and OpenCL specifications, and live GPU renderer data collected across device and browser combinations through IntelReap's graphics scanning system.</p>
         </div>
       </div>
@@ -626,10 +626,10 @@
             <input type="hidden" name="form-name" value="Request And Contact">
             <div class="ir-form-card">
               <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-              <div class="form-group"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name"></div>
-              <div class="form-group"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="Enter your email address" required autocomplete="email"></div>
+              <div class="form-group"><label for="cf-name" data-i18n="contact.name_label">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" data-i18n-placeholder="contact.name_placeholder"></div>
+              <div class="form-group"><label for="cf-email" data-i18n="contact.email_label">Email</label><input type="email" id="cf-email" name="email" placeholder="Enter your email address" required autocomplete="email" data-i18n-placeholder="contact.email_placeholder"></div>
               <div class="form-group"><label for="cf-message">Your question</label><textarea id="cf-message" name="message" placeholder="What would you like to know about GPUs?" required></textarea></div>
-              <button type="submit" class="form-submit">Send Message</button>
+              <button type="submit" class="form-submit" data-i18n="contact.submit">Send Message</button>
             </div>
           </form>
         </div>
@@ -643,12 +643,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -657,10 +657,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -668,7 +668,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -677,17 +677,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -695,12 +695,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>

@@ -178,7 +178,7 @@
       <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
         <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
       </a>
-      <button type="button" class="trigger-search" aria-label="Open search">
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search">
         <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
@@ -206,15 +206,15 @@
       <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">IntelReap</a>
         <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../index.html">Intelligence Center</a>
+        <a href="../index.html" data-i18n="nav.intelligence_center">Intelligence Center</a>
         <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="ndic-breadcrumb-current">ASN &amp; Network Route Intelligence</span>
+        <span class="ndic-breadcrumb-current" data-i18n="canvas1.heading_technical">ASN &amp; Network Route Intelligence</span>
       </nav>
 
       <div class="ndic-deepdive-hero">
         <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 1</div>
-        <h1 class="ndic-deepdive-title">ASN &amp; Network Route Intelligence</h1>
-        <p class="ndic-deepdive-subtitle">What Network Are You On?</p>
+        <h1 class="ndic-deepdive-title" data-i18n="canvas1.heading_technical">ASN &amp; Network Route Intelligence</h1>
+        <p class="ndic-deepdive-subtitle" data-i18n="canvas1.heading_plain">What Network Are You On?</p>
         <p class="ndic-deepdive-intro">
           Live ASN, route, and peering data for your exact connection, scanned the moment this page loads.
         </p>
@@ -223,8 +223,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-1">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">ASN &amp; Network Route Intelligence</span>
-                <span class="ndic-canvas-subheading">What Network Are You On?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas1.heading_technical">ASN &amp; Network Route Intelligence</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas1.heading_plain">What Network Are You On?</span>
               </div>
               <span class="ndic-canvas-score" id="c1-score">—</span>
             </div>
@@ -232,28 +232,28 @@
               <svg id="canvas1-routing-diagram" class="ndic-routing-svg"></svg>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">ASN Number</span><span class="ndic-param-value" id="c1-asn-number">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">ASN Owner</span><span class="ndic-param-value" id="c1-asn-owner">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">ASN Type</span><span class="ndic-param-value" id="c1-asn-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Network Tier</span><span class="ndic-param-value" id="c1-network-tier">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">IP Range</span><span class="ndic-param-value" id="c1-ip-range">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Allocation Registry</span><span class="ndic-param-value" id="c1-allocation-registry">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Route Origin</span><span class="ndic-param-value" id="c1-route-origin">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Estimated Peering Count</span><span class="ndic-param-value" id="c1-peering-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Upstream Provider</span><span class="ndic-param-value" id="c1-upstream-provider">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Announcement Status</span><span class="ndic-param-value" id="c1-announcement-status">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">BGP Route Status</span><span class="ndic-param-value" id="c1-bgp-route-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_number">ASN Number</span><span class="ndic-param-value" id="c1-asn-number">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_owner">ASN Owner</span><span class="ndic-param-value" id="c1-asn-owner">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_type">ASN Type</span><span class="ndic-param-value" id="c1-asn-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.network_tier">Network Tier</span><span class="ndic-param-value" id="c1-network-tier">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.ip_range">IP Range</span><span class="ndic-param-value" id="c1-ip-range">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.allocation_registry">Allocation Registry</span><span class="ndic-param-value" id="c1-allocation-registry">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.route_origin">Route Origin</span><span class="ndic-param-value" id="c1-route-origin">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.peering_count">Estimated Peering Count</span><span class="ndic-param-value" id="c1-peering-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.upstream_provider">Upstream Provider</span><span class="ndic-param-value" id="c1-upstream-provider">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.announcement_status">Announcement Status</span><span class="ndic-param-value" id="c1-announcement-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.bgp_route_status">BGP Route Status</span><span class="ndic-param-value" id="c1-bgp-route-status">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Network Health</span><span class="ndic-param-value" id="c1-network-health">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Classification Source</span><span class="ndic-param-value" id="c1-classification-source">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Classification Confidence</span><span class="ndic-param-value" id="c1-classification-confidence">—</span></div>
-              <div class="ndic-param-row ndic-hidden" id="c1-known-provider-row"><span class="ndic-param-label">Known Provider</span><span class="ndic-param-value" id="c1-known-provider">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.classification_source">Classification Source</span><span class="ndic-param-value" id="c1-classification-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.classification_confidence">Classification Confidence</span><span class="ndic-param-value" id="c1-classification-confidence">—</span></div>
+              <div class="ndic-param-row ndic-hidden" id="c1-known-provider-row"><span class="ndic-param-label" data-i18n="canvas1.params.known_provider">Known Provider</span><span class="ndic-param-value" id="c1-known-provider">—</span></div>
               <div class="ndic-hidden" id="c1-peeringdb-section">
-                <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB Traffic</span><span class="ndic-param-value" id="c1-peeringdb-traffic">—</span></div>
+                <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.peeringdb_traffic">PeeringDB Traffic</span><span class="ndic-param-value" id="c1-peeringdb-traffic">—</span></div>
                 <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB IPv4 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes4">—</span></div>
                 <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB IPv6 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes6">—</span></div>
               </div>
               <div class="ndic-param-row"><span class="ndic-param-label">Hosting Network</span><span class="ndic-param-value" id="c1-is-hosting">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Mobile Network</span><span class="ndic-param-value" id="c1-is-mobile">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.is_mobile">Mobile Network</span><span class="ndic-param-value" id="c1-is-mobile">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Proxy Network</span><span class="ndic-param-value" id="c1-is-proxy">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
@@ -285,12 +285,12 @@
           </div>
 
           <div class="ndic-explain-item">
-            <h4>ASN Type</h4>
+            <h4 data-i18n="canvas1.params.asn_type">ASN Type</h4>
             <p>Classifies what kind of organization operates this ASN — residential ISP, mobile carrier, hosting provider, or proxy/VPN service. This is one of the strongest individual signals for telling apart a normal home connection from a VPN or datacenter route.</p>
           </div>
 
           <div class="ndic-explain-item">
-            <h4>Network Tier</h4>
+            <h4 data-i18n="canvas1.params.network_tier">Network Tier</h4>
             <p>Tier 1 networks reach the entire internet without paying for transit. Tier 2 networks are regional providers that both buy and sell transit. Tier 3 networks are local providers that only buy transit and connect directly to end users — most home and mobile connections fall into Tier 2 or 3.</p>
           </div>
 
@@ -305,7 +305,7 @@
           </div>
 
           <div class="ndic-explain-item">
-            <h4>Estimated Peering Count</h4>
+            <h4 data-i18n="canvas1.params.peering_count">Estimated Peering Count</h4>
             <p>An approximate count of how many other networks this ASN exchanges traffic with directly. Higher peering counts generally mean shorter, more efficient routes to popular destinations, since traffic doesn't need to pass through as many intermediate networks.</p>
           </div>
 
@@ -421,12 +421,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -435,10 +435,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -446,7 +446,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -455,17 +455,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -473,12 +473,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>

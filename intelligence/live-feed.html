@@ -127,7 +127,7 @@
   <header class="ndic-site-header">
     <div class="ndic-site-header-inner">
       <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home"><span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span></a>
-      <button type="button" class="trigger-search" aria-label="Open search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
       <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
         <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -140,20 +140,20 @@
     <div class="ndic-deepdive-page">
       <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">IntelReap</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../index.html">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="ndic-breadcrumb-current">Live Intelligence Feed</span>
+        <a href="../index.html" data-i18n="nav.intelligence_center">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current" data-i18n="canvas12.heading_technical">Live Intelligence Feed</span>
       </nav>
       <div class="ndic-deepdive-hero">
         <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 12</div>
-        <h1 class="ndic-deepdive-title">Live Intelligence Feed</h1>
-        <p class="ndic-deepdive-subtitle">What Just Happened?</p>
+        <h1 class="ndic-deepdive-title" data-i18n="canvas12.heading_technical">Live Intelligence Feed</h1>
+        <p class="ndic-deepdive-subtitle" data-i18n="canvas12.heading_plain">What Just Happened?</p>
         <p class="ndic-deepdive-intro">The complete real-time event log of your scan — every engine action, network change, API call, and security flag as it happens.</p>
       </div>
           <div class="ndic-canvas ndic-canvas-loaded" id="canvas-12">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Live Intelligence Feed</span>
-                <span class="ndic-canvas-subheading">What Just Happened?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas12.heading_technical">Live Intelligence Feed</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas12.heading_plain">What Just Happened?</span>
               </div>
               <span class="ndic-canvas-score" id="c12-online-status">—</span>
             </div>
@@ -163,15 +163,15 @@
               </div>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Backend Health</span><span class="ndic-param-value" id="c12-backend-health">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Total Events</span><span class="ndic-param-value" id="c12-total-events">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Critical Events</span><span class="ndic-param-value" id="c12-critical-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.backend_health">Backend Health</span><span class="ndic-param-value" id="c12-backend-health">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.total_events">Total Events</span><span class="ndic-param-value" id="c12-total-events">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.critical_count">Critical Events</span><span class="ndic-param-value" id="c12-critical-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Warning Events</span><span class="ndic-param-value" id="c12-warning-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">API Calls Made</span><span class="ndic-param-value" id="c12-api-calls">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.api_calls">API Calls Made</span><span class="ndic-param-value" id="c12-api-calls">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Error Count</span><span class="ndic-param-value" id="c12-error-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Last Network Change</span><span class="ndic-param-value" id="c12-last-network-change">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.last_network_change">Last Network Change</span><span class="ndic-param-value" id="c12-last-network-change">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Scan Start Time</span><span class="ndic-param-value" id="c12-scan-start-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">AI Summary Source</span><span class="ndic-param-value" id="c12-ai-summary-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.ai_summary_source">AI Summary Source</span><span class="ndic-param-value" id="c12-ai-summary-source">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">AI Last Updated</span><span class="ndic-param-value" id="c12-ai-last-updated">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
@@ -189,7 +189,7 @@
         <div class="ndic-explain-group">
           <h3 class="ndic-explain-group-title">Session Metadata</h3>
           <div class="ndic-explain-item">
-            <h4>Backend Health</h4>
+            <h4 data-i18n="canvas12.params.backend_health">Backend Health</h4>
             <p>Reflects whether IntelReap's backend responded correctly during this scan. Healthy means all backend calls succeeded. Unhealthy means at least one failed — which typically results in missing geolocation enrichment, incomplete VPN detection data, or no AI summary for the affected canvas. When Backend Health is Unhealthy, the live feed's error count will show where the failures occurred.</p>
           </div>
           <div class="ndic-explain-item">
@@ -274,12 +274,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -288,10 +288,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -299,7 +299,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -308,17 +308,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -326,12 +326,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>

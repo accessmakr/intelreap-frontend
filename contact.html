@@ -356,7 +356,7 @@
       <a href="./index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
         <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
       </a>
-      <button type="button" class="trigger-search" aria-label="Open search">
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search">
         <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
@@ -374,7 +374,7 @@
       <!-- HERO -->
       <div class="contact-hero">
         <div class="contact-eyebrow">Contact</div>
-        <h1>Get in Touch</h1>
+        <h1 data-i18n="contact.label">Get in Touch</h1>
         <p>Privacy requests, technical support, legal questions, or general feedback — all messages are read by a human and receive a personal response.</p>
         <p>Operated by IntelReap Information Technologies &middot; <a href="mailto:stmakarios@gmail.com" style="color:var(--color-accent-primary);">stmakarios@gmail.com</a></p>
         <div class="contact-response-badge">Responds within 2 business days</div>
@@ -461,7 +461,7 @@
 
             <!-- NAME -->
             <div class="ndic-form-field">
-              <label class="ndic-form-label" for="contact-name">Name</label>
+              <label class="ndic-form-label" for="contact-name" data-i18n="contact.name_label">Name</label>
               <input
                 type="text"
                 class="ndic-form-input"
@@ -471,7 +471,7 @@
                 required
                 autocomplete="name"
                 maxlength="120"
-              >
+               data-i18n-placeholder="contact.name_placeholder">
             </div>
 
             <!-- EMAIL -->
@@ -486,12 +486,12 @@
                 required
                 autocomplete="email"
                 maxlength="254"
-              >
+               data-i18n-placeholder="contact.email_placeholder">
             </div>
 
             <!-- MESSAGE -->
             <div class="ndic-form-field">
-              <label class="ndic-form-label" for="contact-message">Message</label>
+              <label class="ndic-form-label" for="contact-message" data-i18n="contact.message_label">Message</label>
               <textarea
                 class="ndic-form-textarea"
                 id="contact-message"
@@ -500,7 +500,7 @@
                 required
                 maxlength="2000"
                 rows="5"
-              ></textarea>
+               data-i18n-placeholder="contact.message_placeholder"></textarea>
             </div>
 
             <!-- SUBMIT -->
@@ -614,12 +614,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -628,10 +628,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -639,7 +639,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -648,17 +648,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -666,12 +666,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>
@@ -684,6 +686,7 @@
   <script defer src="./js/registry.js"></script>
   <script defer src="./js/root-config.js"></script>
   <script defer src="./js/analytics-consent.js"></script>
+  <script defer src="./assets/js/i18n/i18n-engine.js"></script>
   <script defer src="./js/menu-system.js"></script>
   <script defer src="./js/search-system.js"></script>
   <script defer src="./js/schema.js"></script>

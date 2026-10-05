@@ -185,7 +185,7 @@
       <a href="./index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
         <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
       </a>
-      <button type="button" class="trigger-search" aria-label="Open search">
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search">
         <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
@@ -214,20 +214,20 @@
       <div class="ndic-hero-inner">
         <div class="ndic-hero-badge">
           <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
-          <span>Live Network and Device Scan</span>
+          <span data-i18n="hero.badge_live">Live Network and Device Scan</span>
         </div>
-        <h1 class="ndic-hero-title">
+        <h1 class="ndic-hero-title" data-i18n-html="hero.title_html">
           See what the internet<br>
           already sees about <span class="ndic-highlight">you</span>.
         </h1>
-        <p class="ndic-hero-tagline">
+        <p class="ndic-hero-tagline" data-i18n="hero.tagline">
           IntelReap reveals your network infrastructure, device fingerprint, security posture and browser capabilities in real time — 285 data points across 13 intelligence panels. Free. No login.
         </p>
         <div class="ndic-hero-cta-group">
           <button type="button" class="ndic-btn-primary cta-rotate" onclick="document.getElementById('ndic-tool-anchor').scrollIntoView({behavior:'smooth'})">
             Run Intelligence Scan
           </button>
-          <button type="button" class="ndic-btn-secondary" onclick="document.getElementById('full-system-summary-section').scrollIntoView({behavior:'smooth'})">
+          <button type="button" class="ndic-btn-secondary" onclick="document.getElementById('full-system-summary-section').scrollIntoView({behavior:'smooth'})" data-i18n="hero.see_report">
             See Full Report
           </button>
         </div>
@@ -271,7 +271,7 @@
         <div class="ndic-tool-header">
           <div class="ndic-tool-header-logo">
             <span class="ndic-tool-header-wordmark">NDIC<span> Live</span></span>
-            <span class="ndic-tool-header-subtitle">Network and Device Intelligence Center</span>
+            <span class="ndic-tool-header-subtitle" data-i18n="tool_header.subtitle">Network and Device Intelligence Center</span>
           </div>
           <div class="ndic-scan-status">
             <span id="scan-status-dot" data-status="scanning"></span>
@@ -301,8 +301,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-1">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">ASN &amp; Network Route Intelligence</span>
-                <span class="ndic-canvas-subheading">What Network Are You On?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas1.heading_technical">ASN &amp; Network Route Intelligence</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas1.heading_plain">What Network Are You On?</span>
               </div>
               <span class="ndic-canvas-score" id="c1-score">—</span>
             </div>
@@ -310,28 +310,28 @@
               <svg id="canvas1-routing-diagram" class="ndic-routing-svg"></svg>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">ASN Number</span><span class="ndic-param-value" id="c1-asn-number">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">ASN Owner</span><span class="ndic-param-value" id="c1-asn-owner">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">ASN Type</span><span class="ndic-param-value" id="c1-asn-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Network Tier</span><span class="ndic-param-value" id="c1-network-tier">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">IP Range</span><span class="ndic-param-value" id="c1-ip-range">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Allocation Registry</span><span class="ndic-param-value" id="c1-allocation-registry">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Route Origin</span><span class="ndic-param-value" id="c1-route-origin">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Estimated Peering Count</span><span class="ndic-param-value" id="c1-peering-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Upstream Provider</span><span class="ndic-param-value" id="c1-upstream-provider">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Announcement Status</span><span class="ndic-param-value" id="c1-announcement-status">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">BGP Route Status</span><span class="ndic-param-value" id="c1-bgp-route-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_number">ASN Number</span><span class="ndic-param-value" id="c1-asn-number">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_owner">ASN Owner</span><span class="ndic-param-value" id="c1-asn-owner">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_type">ASN Type</span><span class="ndic-param-value" id="c1-asn-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.network_tier">Network Tier</span><span class="ndic-param-value" id="c1-network-tier">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.ip_range">IP Range</span><span class="ndic-param-value" id="c1-ip-range">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.allocation_registry">Allocation Registry</span><span class="ndic-param-value" id="c1-allocation-registry">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.route_origin">Route Origin</span><span class="ndic-param-value" id="c1-route-origin">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.peering_count">Estimated Peering Count</span><span class="ndic-param-value" id="c1-peering-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.upstream_provider">Upstream Provider</span><span class="ndic-param-value" id="c1-upstream-provider">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.announcement_status">Announcement Status</span><span class="ndic-param-value" id="c1-announcement-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.bgp_route_status">BGP Route Status</span><span class="ndic-param-value" id="c1-bgp-route-status">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Network Health</span><span class="ndic-param-value" id="c1-network-health">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Classification Source</span><span class="ndic-param-value" id="c1-classification-source">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Classification Confidence</span><span class="ndic-param-value" id="c1-classification-confidence">—</span></div>
-              <div class="ndic-param-row ndic-hidden" id="c1-known-provider-row"><span class="ndic-param-label">Known Provider</span><span class="ndic-param-value" id="c1-known-provider">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.classification_source">Classification Source</span><span class="ndic-param-value" id="c1-classification-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.classification_confidence">Classification Confidence</span><span class="ndic-param-value" id="c1-classification-confidence">—</span></div>
+              <div class="ndic-param-row ndic-hidden" id="c1-known-provider-row"><span class="ndic-param-label" data-i18n="canvas1.params.known_provider">Known Provider</span><span class="ndic-param-value" id="c1-known-provider">—</span></div>
               <div class="ndic-hidden" id="c1-peeringdb-section">
-                <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB Traffic</span><span class="ndic-param-value" id="c1-peeringdb-traffic">—</span></div>
+                <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.peeringdb_traffic">PeeringDB Traffic</span><span class="ndic-param-value" id="c1-peeringdb-traffic">—</span></div>
                 <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB IPv4 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes4">—</span></div>
                 <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB IPv6 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes6">—</span></div>
               </div>
               <div class="ndic-param-row"><span class="ndic-param-label">Hosting Network</span><span class="ndic-param-value" id="c1-is-hosting">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Mobile Network</span><span class="ndic-param-value" id="c1-is-mobile">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.is_mobile">Mobile Network</span><span class="ndic-param-value" id="c1-is-mobile">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Proxy Network</span><span class="ndic-param-value" id="c1-is-proxy">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
@@ -350,8 +350,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-2">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Network Identity Panel</span>
-                <span class="ndic-canvas-subheading">Who Are You On The Internet?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas2.heading_technical">Network Identity Panel</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas2.heading_plain">Who Are You On The Internet?</span>
               </div>
               <span class="ndic-canvas-score" id="c2-score">—</span>
             </div>
@@ -359,26 +359,26 @@
               <div id="canvas2-map" class="ndic-map-wrapper"></div>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Public IP Address</span><span class="ndic-param-value" id="c2-public-ip">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">IP Version</span><span class="ndic-param-value" id="c2-ip-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.public_ip">Public IP Address</span><span class="ndic-param-value" id="c2-public-ip">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.ip_version">IP Version</span><span class="ndic-param-value" id="c2-ip-version">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">ISP</span><span class="ndic-param-value" id="c2-isp">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Organization</span><span class="ndic-param-value" id="c2-organization">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Country</span><span class="ndic-param-value" id="c2-country">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Country Code</span><span class="ndic-param-value" id="c2-country-code">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Region</span><span class="ndic-param-value" id="c2-region">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">City</span><span class="ndic-param-value" id="c2-city">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Postal Code</span><span class="ndic-param-value" id="c2-postal">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Coordinates</span><span class="ndic-param-value" id="c2-coordinates">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Latitude</span><span class="ndic-param-value" id="c2-latitude">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Longitude</span><span class="ndic-param-value" id="c2-longitude">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Timezone</span><span class="ndic-param-value" id="c2-timezone">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">UTC Offset</span><span class="ndic-param-value" id="c2-utc-offset">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Connection Type</span><span class="ndic-param-value" id="c2-connection-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Mobile Connection</span><span class="ndic-param-value" id="c2-mobile-flag">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.country">Country</span><span class="ndic-param-value" id="c2-country">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.country_code">Country Code</span><span class="ndic-param-value" id="c2-country-code">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.region">Region</span><span class="ndic-param-value" id="c2-region">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.city">City</span><span class="ndic-param-value" id="c2-city">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.postal">Postal Code</span><span class="ndic-param-value" id="c2-postal">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.coordinates">Coordinates</span><span class="ndic-param-value" id="c2-coordinates">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.latitude">Latitude</span><span class="ndic-param-value" id="c2-latitude">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.longitude">Longitude</span><span class="ndic-param-value" id="c2-longitude">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.timezone">Timezone</span><span class="ndic-param-value" id="c2-timezone">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.utc_offset">UTC Offset</span><span class="ndic-param-value" id="c2-utc-offset">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.connection_type">Connection Type</span><span class="ndic-param-value" id="c2-connection-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.mobile_flag">Mobile Connection</span><span class="ndic-param-value" id="c2-mobile-flag">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Proxy Flag</span><span class="ndic-param-value" id="c2-proxy-flag">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Hosting Flag</span><span class="ndic-param-value" id="c2-hosting-flag">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Continent</span><span class="ndic-param-value" id="c2-continent">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Data Source</span><span class="ndic-param-value" id="c2-data-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.continent">Continent</span><span class="ndic-param-value" id="c2-continent">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.data_source">Data Source</span><span class="ndic-param-value" id="c2-data-source">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
@@ -396,42 +396,42 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-3">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">VPN, Proxy &amp; Routing Intelligence</span>
-                <span class="ndic-canvas-subheading">Are You Hidden Online?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas3.heading_technical">VPN, Proxy &amp; Routing Intelligence</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas3.heading_plain">Are You Hidden Online?</span>
               </div>
               <div class="ndic-canvas-score-group">
-                <span class="ndic-canvas-score-label">Privacy Score</span>
+                <span class="ndic-canvas-score-label" data-i18n="canvas11.params.privacy_score">Privacy Score</span>
                 <span class="ndic-canvas-score" id="c3-score">—</span>
               </div>
             </div>
             <div class="ndic-canvas-viz">
               <div class="ndic-trust-score-display">
                 <span class="ndic-score-large" id="c3-trust-score">—</span>
-                <span class="ndic-canvas-subheading" style="font-size:var(--text-xs);">Trust Score</span>
+                <span class="ndic-canvas-subheading" style="font-size:var(--text-xs);" data-i18n="canvas3.params.trust_score">Trust Score</span>
               </div>
               <div class="ndic-risk-bar-track">
                 <div id="c3-risk-heat-bar"></div>
               </div>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">VPN Detected</span><span class="ndic-param-value" id="c3-vpn-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Proxy Detected</span><span class="ndic-param-value" id="c3-proxy-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.vpn_detected">VPN Detected</span><span class="ndic-param-value" id="c3-vpn-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.proxy_detected">Proxy Detected</span><span class="ndic-param-value" id="c3-proxy-detected">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">TOR Exit Node Detected</span><span class="ndic-param-value" id="c3-tor-detected">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Datacenter Routing Detected</span><span class="ndic-param-value" id="c3-datacenter-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">IP Classification</span><span class="ndic-param-value" id="c3-ip-classification">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">ASN Ownership Type</span><span class="ndic-param-value" id="c3-asn-ownership-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Timezone Match</span><span class="ndic-param-value" id="c3-timezone-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Language Match</span><span class="ndic-param-value" id="c3-language-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC Match</span><span class="ndic-param-value" id="c3-webrtc-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Reverse DNS Match</span><span class="ndic-param-value" id="c3-reverse-dns-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Fraud Score</span><span class="ndic-param-value" id="c3-fraud-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Abuse Score</span><span class="ndic-param-value" id="c3-abuse-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Bot Detected</span><span class="ndic-param-value" id="c3-bot-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Route Classification</span><span class="ndic-param-value" id="c3-route-classification">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Detection Flags</span><span class="ndic-param-value" id="c3-detection-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.ip_classification">IP Classification</span><span class="ndic-param-value" id="c3-ip-classification">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.asn_ownership_type">ASN Ownership Type</span><span class="ndic-param-value" id="c3-asn-ownership-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.timezone_match">Timezone Match</span><span class="ndic-param-value" id="c3-timezone-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.language_match">Language Match</span><span class="ndic-param-value" id="c3-language-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.webrtc_match">WebRTC Match</span><span class="ndic-param-value" id="c3-webrtc-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.reverse_dns_match">Reverse DNS Match</span><span class="ndic-param-value" id="c3-reverse-dns-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.fraud_score">Fraud Score</span><span class="ndic-param-value" id="c3-fraud-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.abuse_score">Abuse Score</span><span class="ndic-param-value" id="c3-abuse-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.bot_detected">Bot Detected</span><span class="ndic-param-value" id="c3-bot-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.route_classification">Route Classification</span><span class="ndic-param-value" id="c3-route-classification">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.detection_flags">Detection Flags</span><span class="ndic-param-value" id="c3-detection-flags">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Primary Detection Source</span><span class="ndic-param-value" id="c3-primary-source">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Detection Confidence</span><span class="ndic-param-value" id="c3-confidence">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Paid API Consulted</span><span class="ndic-param-value" id="c3-paid-api-consulted">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.paid_api_consulted">Paid API Consulted</span><span class="ndic-param-value" id="c3-paid-api-consulted">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
@@ -484,7 +484,7 @@
               <div class="ndic-param-row"><span class="ndic-param-label">Automation Signals</span><span class="ndic-param-value" id="c13-bot-signals">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Bot Detection Confidence</span><span class="ndic-param-value" id="c13-bot-confidence">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Private Browsing Detected</span><span class="ndic-param-value" id="c13-incognito-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Storage Quota</span><span class="ndic-param-value" id="c13-incognito-quota">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas8.params.storage_quota">Storage Quota</span><span class="ndic-param-value" id="c13-incognito-quota">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Incognito Detection Method</span><span class="ndic-param-value" id="c13-incognito-method">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Ad Blocker Detected</span><span class="ndic-param-value" id="c13-adblock-detected">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Ad Blocker Detection Method</span><span class="ndic-param-value" id="c13-adblock-method">—</span></div>
@@ -540,8 +540,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-4">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Live Network Monitor</span>
-                <span class="ndic-canvas-subheading">How Fast Is Your Connection?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas4.heading_technical">Live Network Monitor</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas4.heading_plain">How Fast Is Your Connection?</span>
               </div>
               <span class="ndic-canvas-score" id="c4-score">—</span>
             </div>
@@ -551,19 +551,19 @@
               <canvas id="canvas3-stability-chart"></canvas>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Current Latency</span><span class="ndic-param-value" id="c4-current-rtt">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Average Latency</span><span class="ndic-param-value" id="c4-average-rtt">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Peak Latency</span><span class="ndic-param-value" id="c4-peak-rtt">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Lowest Latency</span><span class="ndic-param-value" id="c4-lowest-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.current_rtt">Current Latency</span><span class="ndic-param-value" id="c4-current-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.average_rtt">Average Latency</span><span class="ndic-param-value" id="c4-average-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.peak_rtt">Peak Latency</span><span class="ndic-param-value" id="c4-peak-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.lowest_rtt">Lowest Latency</span><span class="ndic-param-value" id="c4-lowest-rtt">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Bandwidth</span><span class="ndic-param-value" id="c4-bandwidth">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Effective Connection Type</span><span class="ndic-param-value" id="c4-effective-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Data Saver Mode</span><span class="ndic-param-value" id="c4-save-data">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Stability Index</span><span class="ndic-param-value" id="c4-stability-index">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Packet Loss Estimate</span><span class="ndic-param-value" id="c4-packet-loss">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Connection Quality</span><span class="ndic-param-value" id="c4-quality-rating">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Jitter Estimate</span><span class="ndic-param-value" id="c4-jitter-estimate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.effective_type">Effective Connection Type</span><span class="ndic-param-value" id="c4-effective-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.save_data">Data Saver Mode</span><span class="ndic-param-value" id="c4-save-data">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.stability_index">Stability Index</span><span class="ndic-param-value" id="c4-stability-index">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.packet_loss">Packet Loss Estimate</span><span class="ndic-param-value" id="c4-packet-loss">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.quality_rating">Connection Quality</span><span class="ndic-param-value" id="c4-quality-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.jitter_estimate">Jitter Estimate</span><span class="ndic-param-value" id="c4-jitter-estimate">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Session Uptime</span><span class="ndic-param-value" id="c4-uptime">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Connection Changes</span><span class="ndic-param-value" id="c4-connection-changes">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.connection_changes">Connection Changes</span><span class="ndic-param-value" id="c4-connection-changes">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Network API Status</span><span class="ndic-param-value" id="c4-api-available">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
@@ -582,8 +582,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-5">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Device Intelligence Panel</span>
-                <span class="ndic-canvas-subheading">What Device Are You Using?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas5.heading_technical">Device Intelligence Panel</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas5.heading_plain">What Device Are You Using?</span>
               </div>
               <span class="ndic-canvas-score" id="c5-score">—</span>
             </div>
@@ -591,29 +591,29 @@
               <span class="ndic-health-badge" id="c5-capability-tier" data-tier="">—</span>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Operating System</span><span class="ndic-param-value" id="c5-os">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">OS Version</span><span class="ndic-param-value" id="c5-os-version">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Browser</span><span class="ndic-param-value" id="c5-browser">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Browser Version</span><span class="ndic-param-value" id="c5-browser-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.os">Operating System</span><span class="ndic-param-value" id="c5-os">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.os_version">OS Version</span><span class="ndic-param-value" id="c5-os-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.browser">Browser</span><span class="ndic-param-value" id="c5-browser">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.browser_version">Browser Version</span><span class="ndic-param-value" id="c5-browser-version">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Browser Engine</span><span class="ndic-param-value" id="c5-browser-engine">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Device Type</span><span class="ndic-param-value" id="c5-device-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Device Brand</span><span class="ndic-param-value" id="c5-device-brand">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">CPU Cores</span><span class="ndic-param-value" id="c5-cpu-cores">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">RAM Estimate</span><span class="ndic-param-value" id="c5-ram-estimate">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Screen Width</span><span class="ndic-param-value" id="c5-screen-width">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Screen Height</span><span class="ndic-param-value" id="c5-screen-height">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Viewport Width</span><span class="ndic-param-value" id="c5-viewport-width">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Viewport Height</span><span class="ndic-param-value" id="c5-viewport-height">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Pixel Ratio</span><span class="ndic-param-value" id="c5-pixel-ratio">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.device_type">Device Type</span><span class="ndic-param-value" id="c5-device-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.device_brand">Device Brand</span><span class="ndic-param-value" id="c5-device-brand">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.cpu_cores">CPU Cores</span><span class="ndic-param-value" id="c5-cpu-cores">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.ram_estimate">RAM Estimate</span><span class="ndic-param-value" id="c5-ram-estimate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.screen_width">Screen Width</span><span class="ndic-param-value" id="c5-screen-width">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.screen_height">Screen Height</span><span class="ndic-param-value" id="c5-screen-height">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.viewport_width">Viewport Width</span><span class="ndic-param-value" id="c5-viewport-width">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.viewport_height">Viewport Height</span><span class="ndic-param-value" id="c5-viewport-height">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.pixel_ratio">Pixel Ratio</span><span class="ndic-param-value" id="c5-pixel-ratio">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Color Depth</span><span class="ndic-param-value" id="c5-color-depth">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Color Gamut</span><span class="ndic-param-value" id="c5-color-gamut">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">HDR Support</span><span class="ndic-param-value" id="c5-hdr-support">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Touch Support</span><span class="ndic-param-value" id="c5-touch-support">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Max Touch Points</span><span class="ndic-param-value" id="c5-max-touch-points">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Orientation Support</span><span class="ndic-param-value" id="c5-orientation-support">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Current Orientation</span><span class="ndic-param-value" id="c5-orientation">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.hdr_support">HDR Support</span><span class="ndic-param-value" id="c5-hdr-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.touch_support">Touch Support</span><span class="ndic-param-value" id="c5-touch-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.max_touch_points">Max Touch Points</span><span class="ndic-param-value" id="c5-max-touch-points">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.orientation_support">Orientation Support</span><span class="ndic-param-value" id="c5-orientation-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.orientation">Current Orientation</span><span class="ndic-param-value" id="c5-orientation">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Pointer Support</span><span class="ndic-param-value" id="c5-pointer-support">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Vibration Support</span><span class="ndic-param-value" id="c5-vibration-support">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas5.params.vibration_support">Vibration Support</span><span class="ndic-param-value" id="c5-vibration-support">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Architecture</span><span class="ndic-param-value" id="c5-architecture">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Bitness</span><span class="ndic-param-value" id="c5-bitness">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Detection Source</span><span class="ndic-param-value" id="c5-detection-source">—</span></div>
@@ -634,8 +634,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-6">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Graphics Engine Panel</span>
-                <span class="ndic-canvas-subheading">How Powerful Is Your Device?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas6.heading_technical">Graphics Engine Panel</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas6.heading_plain">How Powerful Is Your Device?</span>
               </div>
               <span class="ndic-canvas-score" id="c6-score">—</span>
             </div>
@@ -643,30 +643,30 @@
               <span class="ndic-health-badge" id="c6-graphics-tier">—</span>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">GPU Vendor</span><span class="ndic-param-value" id="c6-gpu-vendor">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">GPU Renderer</span><span class="ndic-param-value" id="c6-gpu-renderer">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebGL Version</span><span class="ndic-param-value" id="c6-webgl-version">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebGL Support Level</span><span class="ndic-param-value" id="c6-webgl-support-level">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Hardware Acceleration</span><span class="ndic-param-value" id="c6-hardware-acceleration">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Max Texture Size</span><span class="ndic-param-value" id="c6-max-texture-size">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.gpu_vendor">GPU Vendor</span><span class="ndic-param-value" id="c6-gpu-vendor">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.gpu_renderer">GPU Renderer</span><span class="ndic-param-value" id="c6-gpu-renderer">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.webgl_version">WebGL Version</span><span class="ndic-param-value" id="c6-webgl-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.webgl_support_level">WebGL Support Level</span><span class="ndic-param-value" id="c6-webgl-support-level">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.hardware_acceleration">Hardware Acceleration</span><span class="ndic-param-value" id="c6-hardware-acceleration">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.max_texture_size">Max Texture Size</span><span class="ndic-param-value" id="c6-max-texture-size">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Max Viewport Size</span><span class="ndic-param-value" id="c6-max-viewport-size">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Shader Precision</span><span class="ndic-param-value" id="c6-shader-precision">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.shader_precision">Shader Precision</span><span class="ndic-param-value" id="c6-shader-precision">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">WebGL Extensions Count</span><span class="ndic-param-value" id="c6-extensions-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">GLSL Version</span><span class="ndic-param-value" id="c6-glsl-version">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Antialiasing</span><span class="ndic-param-value" id="c6-antialiasing">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.glsl_version">GLSL Version</span><span class="ndic-param-value" id="c6-glsl-version">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.antialiasing">Antialiasing</span><span class="ndic-param-value" id="c6-antialiasing">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Depth Buffer Bits</span><span class="ndic-param-value" id="c6-depth-buffer-bits">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Stencil Buffer Bits</span><span class="ndic-param-value" id="c6-stencil-buffer-bits">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Max Anisotropy</span><span class="ndic-param-value" id="c6-max-anisotropy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.max_anisotropy">Max Anisotropy</span><span class="ndic-param-value" id="c6-max-anisotropy">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">WebGPU Supported</span><span class="ndic-param-value" id="c6-webgpu-supported">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebGPU Vendor</span><span class="ndic-param-value" id="c6-webgpu-vendor">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebGPU Architecture</span><span class="ndic-param-value" id="c6-webgpu-architecture">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Anisotropic Filtering</span><span class="ndic-param-value" id="c6-has-anisotropy">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Float Textures</span><span class="ndic-param-value" id="c6-has-float-textures">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Depth Textures</span><span class="ndic-param-value" id="c6-has-depth-textures">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.webgpu_vendor">WebGPU Vendor</span><span class="ndic-param-value" id="c6-webgpu-vendor">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.webgpu_architecture">WebGPU Architecture</span><span class="ndic-param-value" id="c6-webgpu-architecture">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.has_anisotropy">Anisotropic Filtering</span><span class="ndic-param-value" id="c6-has-anisotropy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.has_float_textures">Float Textures</span><span class="ndic-param-value" id="c6-has-float-textures">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.has_depth_textures">Depth Textures</span><span class="ndic-param-value" id="c6-has-depth-textures">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Multiple Draw Buffers</span><span class="ndic-param-value" id="c6-has-draw-buffers">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Instanced Rendering</span><span class="ndic-param-value" id="c6-has-instancing">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Compressed Textures</span><span class="ndic-param-value" id="c6-has-compressed-textures">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Rendering Score</span><span class="ndic-param-value" id="c6-rendering-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.has_compressed_textures">Compressed Textures</span><span class="ndic-param-value" id="c6-has-compressed-textures">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas6.params.rendering_score">Rendering Score</span><span class="ndic-param-value" id="c6-rendering-score">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
@@ -684,8 +684,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-7">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Security &amp; Privacy Panel</span>
-                <span class="ndic-canvas-subheading">How Safe Are You Right Now?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas7.heading_technical">Security &amp; Privacy Panel</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas7.heading_plain">How Safe Are You Right Now?</span>
               </div>
               <span class="ndic-canvas-score" id="c7-score">—</span>
             </div>
@@ -693,30 +693,30 @@
               <span class="ndic-health-badge" id="c7-risk-level">—</span>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">HTTPS Status</span><span class="ndic-param-value" id="c7-https-status">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Secure Context</span><span class="ndic-param-value" id="c7-secure-context">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Mixed Content</span><span class="ndic-param-value" id="c7-mixed-content">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC Exposure</span><span class="ndic-param-value" id="c7-webrtc-exposure">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.https_status">HTTPS Status</span><span class="ndic-param-value" id="c7-https-status">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.secure_context">Secure Context</span><span class="ndic-param-value" id="c7-secure-context">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.mixed_content">Mixed Content</span><span class="ndic-param-value" id="c7-mixed-content">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.webrtc_exposure">WebRTC Exposure</span><span class="ndic-param-value" id="c7-webrtc-exposure">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Local IP Leak</span><span class="ndic-param-value" id="c7-local-ip">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">WebRTC IP Match</span><span class="ndic-param-value" id="c7-webrtc-ip-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Cookie Access</span><span class="ndic-param-value" id="c7-cookie-access">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.webrtc_ip_match">WebRTC IP Match</span><span class="ndic-param-value" id="c7-webrtc-ip-match">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.cookie_access">Cookie Access</span><span class="ndic-param-value" id="c7-cookie-access">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">localStorage Access</span><span class="ndic-param-value" id="c7-localstorage-access">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">sessionStorage Access</span><span class="ndic-param-value" id="c7-sessionstorage-access">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">IndexedDB Access</span><span class="ndic-param-value" id="c7-indexeddb-access">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Camera Permission</span><span class="ndic-param-value" id="c7-camera-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Microphone Permission</span><span class="ndic-param-value" id="c7-microphone-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Location Permission</span><span class="ndic-param-value" id="c7-location-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Notification Permission</span><span class="ndic-param-value" id="c7-notification-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Clipboard Read</span><span class="ndic-param-value" id="c7-clipboard-read">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Clipboard Write</span><span class="ndic-param-value" id="c7-clipboard-write">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Do Not Track</span><span class="ndic-param-value" id="c7-do-not-track">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Third-Party Cookies</span><span class="ndic-param-value" id="c7-third-party-cookies">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Referrer Policy</span><span class="ndic-param-value" id="c7-referrer-policy">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Content Security Policy</span><span class="ndic-param-value" id="c7-csp-presence">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Fingerprint Surfaces</span><span class="ndic-param-value" id="c7-fingerprint-surfaces">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Security Flags</span><span class="ndic-param-value" id="c7-security-flags">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Security Warnings</span><span class="ndic-param-value" id="c7-security-warnings">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Security Score</span><span class="ndic-param-value" id="c7-security-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.indexeddb_access">IndexedDB Access</span><span class="ndic-param-value" id="c7-indexeddb-access">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.camera_permission">Camera Permission</span><span class="ndic-param-value" id="c7-camera-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.microphone_permission">Microphone Permission</span><span class="ndic-param-value" id="c7-microphone-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.location_permission">Location Permission</span><span class="ndic-param-value" id="c7-location-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.notification_permission">Notification Permission</span><span class="ndic-param-value" id="c7-notification-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.clipboard_read">Clipboard Read</span><span class="ndic-param-value" id="c7-clipboard-read">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.clipboard_write">Clipboard Write</span><span class="ndic-param-value" id="c7-clipboard-write">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.do_not_track">Do Not Track</span><span class="ndic-param-value" id="c7-do-not-track">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.third_party_cookies">Third-Party Cookies</span><span class="ndic-param-value" id="c7-third-party-cookies">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.referrer_policy">Referrer Policy</span><span class="ndic-param-value" id="c7-referrer-policy">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.csp_presence">Content Security Policy</span><span class="ndic-param-value" id="c7-csp-presence">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.fingerprint_surfaces">Fingerprint Surfaces</span><span class="ndic-param-value" id="c7-fingerprint-surfaces">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.security_flags">Security Flags</span><span class="ndic-param-value" id="c7-security-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.security_warnings">Security Warnings</span><span class="ndic-param-value" id="c7-security-warnings">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas7.params.security_score">Security Score</span><span class="ndic-param-value" id="c7-security-score">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
@@ -734,8 +734,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-8">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Capability Matrix</span>
-                <span class="ndic-canvas-subheading">What Can Your Browser Do?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas8.heading_technical">Capability Matrix</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas8.heading_plain">What Can Your Browser Do?</span>
               </div>
               <span class="ndic-canvas-score" id="c8-score">—</span>
             </div>
@@ -743,13 +743,13 @@
               <div id="canvas8-capability-grid"></div>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Capability Score</span><span class="ndic-param-value" id="c8-capability-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas8.params.capability_score">Capability Score</span><span class="ndic-param-value" id="c8-capability-score">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Capabilities Detected</span><span class="ndic-param-value" id="c8-capability-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Storage Quota</span><span class="ndic-param-value" id="c8-storage-quota">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas8.params.storage_quota">Storage Quota</span><span class="ndic-param-value" id="c8-storage-quota">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Storage Usage</span><span class="ndic-param-value" id="c8-storage-usage">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Battery Charging</span><span class="ndic-param-value" id="c8-battery-charging">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Battery Level</span><span class="ndic-param-value" id="c8-battery-level">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Notification Permission</span><span class="ndic-param-value" id="c8-notification-permission">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas8.params.battery_charging">Battery Charging</span><span class="ndic-param-value" id="c8-battery-charging">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas8.params.battery_level">Battery Level</span><span class="ndic-param-value" id="c8-battery-level">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas8.params.notification_permission">Notification Permission</span><span class="ndic-param-value" id="c8-notification-permission">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
@@ -767,8 +767,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-9">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Performance Intelligence Panel</span>
-                <span class="ndic-canvas-subheading">How Fast Is Your Browser?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas9.heading_technical">Performance Intelligence Panel</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas9.heading_plain">How Fast Is Your Browser?</span>
               </div>
               <span class="ndic-canvas-score" id="c9-score">—</span>
             </div>
@@ -777,29 +777,29 @@
               <canvas id="canvas9-responsiveness-chart"></canvas>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Page Load Time</span><span class="ndic-param-value" id="c9-page-load-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">DOM Content Loaded</span><span class="ndic-param-value" id="c9-dom-content-loaded">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">DOM Interactive</span><span class="ndic-param-value" id="c9-dom-interactive">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.page_load_time">Page Load Time</span><span class="ndic-param-value" id="c9-page-load-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.dom_content_loaded">DOM Content Loaded</span><span class="ndic-param-value" id="c9-dom-content-loaded">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.dom_interactive">DOM Interactive</span><span class="ndic-param-value" id="c9-dom-interactive">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Time To First Byte</span><span class="ndic-param-value" id="c9-ttfb">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">DNS Lookup</span><span class="ndic-param-value" id="c9-dns-lookup">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">TCP Connection</span><span class="ndic-param-value" id="c9-tcp-connection">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">TLS Handshake</span><span class="ndic-param-value" id="c9-tls-handshake">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Request Time</span><span class="ndic-param-value" id="c9-request-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Response Time</span><span class="ndic-param-value" id="c9-response-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">DOM Processing</span><span class="ndic-param-value" id="c9-dom-processing">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Resource Fetch Time</span><span class="ndic-param-value" id="c9-resource-fetch-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.dns_lookup">DNS Lookup</span><span class="ndic-param-value" id="c9-dns-lookup">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.tcp_connection">TCP Connection</span><span class="ndic-param-value" id="c9-tcp-connection">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.tls_handshake">TLS Handshake</span><span class="ndic-param-value" id="c9-tls-handshake">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.request_time">Request Time</span><span class="ndic-param-value" id="c9-request-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.response_time">Response Time</span><span class="ndic-param-value" id="c9-response-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.dom_processing">DOM Processing</span><span class="ndic-param-value" id="c9-dom-processing">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.resource_fetch_time">Resource Fetch Time</span><span class="ndic-param-value" id="c9-resource-fetch-time">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Resource Count</span><span class="ndic-param-value" id="c9-resource-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Page Weight</span><span class="ndic-param-value" id="c9-page-weight">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.page_weight">Page Weight</span><span class="ndic-param-value" id="c9-page-weight">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Script Count</span><span class="ndic-param-value" id="c9-script-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Stylesheet Count</span><span class="ndic-param-value" id="c9-stylesheet-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Image Count</span><span class="ndic-param-value" id="c9-image-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Font Count</span><span class="ndic-param-value" id="c9-font-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Cache Hit Rate</span><span class="ndic-param-value" id="c9-cache-hit-rate">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Used</span><span class="ndic-param-value" id="c9-heap-used">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Total</span><span class="ndic-param-value" id="c9-heap-total">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Limit</span><span class="ndic-param-value" id="c9-heap-limit">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.cache_hit_rate">Cache Hit Rate</span><span class="ndic-param-value" id="c9-cache-hit-rate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.heap_used">JS Heap Used</span><span class="ndic-param-value" id="c9-heap-used">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.heap_total">JS Heap Total</span><span class="ndic-param-value" id="c9-heap-total">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.heap_limit">JS Heap Limit</span><span class="ndic-param-value" id="c9-heap-limit">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Next Hop Protocol</span><span class="ndic-param-value" id="c9-protocol">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Runtime Score</span><span class="ndic-param-value" id="c9-runtime-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.runtime_score">Runtime Score</span><span class="ndic-param-value" id="c9-runtime-score">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Percentile Rating</span><span class="ndic-param-value" id="c9-percentile-rating">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Timing Source</span><span class="ndic-param-value" id="c9-timing-source">—</span></div>
             </div>
@@ -819,8 +819,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-10">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Browser &amp; Rendering Speed Intelligence</span>
-                <span class="ndic-canvas-subheading">How Fast Does Your Device Render?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas10.heading_technical">Browser &amp; Rendering Speed Intelligence</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas10.heading_plain">How Fast Does Your Device Render?</span>
               </div>
               <span class="ndic-canvas-score" id="c10-score">—</span>
             </div>
@@ -829,11 +829,11 @@
               <div class="ndic-benchmark-gauges">
                 <div class="ndic-benchmark-gauge-item">
                   <canvas class="ndic-benchmark-gauge-canvas" id="c10-js-execution-gauge"></canvas>
-                  <span class="ndic-benchmark-gauge-label">JS Execution</span>
+                  <span class="ndic-benchmark-gauge-label" data-i18n="canvas10.benchmarks.js_execution">JS Execution</span>
                 </div>
                 <div class="ndic-benchmark-gauge-item">
                   <canvas class="ndic-benchmark-gauge-canvas" id="c10-dom-manipulation-gauge"></canvas>
-                  <span class="ndic-benchmark-gauge-label">DOM Manipulation</span>
+                  <span class="ndic-benchmark-gauge-label" data-i18n="canvas10.benchmarks.dom_manipulation">DOM Manipulation</span>
                 </div>
                 <div class="ndic-benchmark-gauge-item">
                   <canvas class="ndic-benchmark-gauge-canvas" id="c10-canvas-render-gauge"></canvas>
@@ -841,22 +841,22 @@
                 </div>
                 <div class="ndic-benchmark-gauge-item">
                   <canvas class="ndic-benchmark-gauge-canvas" id="c10-memory-access-gauge"></canvas>
-                  <span class="ndic-benchmark-gauge-label">Memory Access</span>
+                  <span class="ndic-benchmark-gauge-label" data-i18n="canvas10.benchmarks.memory_access">Memory Access</span>
                 </div>
               </div>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Largest Contentful Paint</span><span class="ndic-param-value" id="c10-lcp-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas10.vitals.lcp">Largest Contentful Paint</span><span class="ndic-param-value" id="c10-lcp-value">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">LCP Rating</span><span class="ndic-param-value" id="c10-lcp-rating">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">First Contentful Paint</span><span class="ndic-param-value" id="c10-fcp-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas10.vitals.fcp">First Contentful Paint</span><span class="ndic-param-value" id="c10-fcp-value">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">FCP Rating</span><span class="ndic-param-value" id="c10-fcp-rating">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Cumulative Layout Shift</span><span class="ndic-param-value" id="c10-cls-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas10.vitals.cls">Cumulative Layout Shift</span><span class="ndic-param-value" id="c10-cls-value">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">CLS Rating</span><span class="ndic-param-value" id="c10-cls-rating">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Interaction to Next Paint</span><span class="ndic-param-value" id="c10-inp-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas10.vitals.inp">Interaction to Next Paint</span><span class="ndic-param-value" id="c10-inp-value">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">INP Rating</span><span class="ndic-param-value" id="c10-inp-rating">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Time To First Byte</span><span class="ndic-param-value" id="c10-ttfb-value">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">TTFB Rating</span><span class="ndic-param-value" id="c10-ttfb-rating">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">First Input Delay</span><span class="ndic-param-value" id="c10-fid-value">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas10.vitals.fid">First Input Delay</span><span class="ndic-param-value" id="c10-fid-value">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">FID Rating</span><span class="ndic-param-value" id="c10-fid-rating">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">JS Execution Score</span><span class="ndic-param-value" id="c10-js-execution-score">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">JS Execution Time</span><span class="ndic-param-value" id="c10-js-execution-ms">—</span></div>
@@ -870,7 +870,7 @@
               <div class="ndic-param-row"><span class="ndic-param-label">CSS Animation FPS</span><span class="ndic-param-value" id="c10-css-animation-fps">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Event Loop Score</span><span class="ndic-param-value" id="c10-event-loop-score">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Event Loop Average</span><span class="ndic-param-value" id="c10-event-loop-ms">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Overall Benchmark Score</span><span class="ndic-param-value" id="c10-benchmark-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas10.params.benchmark_score">Overall Benchmark Score</span><span class="ndic-param-value" id="c10-benchmark-score">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Vs. Average Mobile</span><span class="ndic-param-value" id="c10-vs-average-mobile">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Vs. Average Desktop</span><span class="ndic-param-value" id="c10-vs-average-desktop">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Vs. Top Tier Devices</span><span class="ndic-param-value" id="c10-vs-top-tier">—</span></div>
@@ -892,8 +892,8 @@
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-11">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Global Intelligence Scoreboard</span>
-                <span class="ndic-canvas-subheading">Your Overall Score</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas11.heading_technical">Global Intelligence Scoreboard</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas11.heading_plain">Your Overall Score</span>
               </div>
               <span class="ndic-health-badge" id="c11-health-badge">—</span>
             </div>
@@ -906,7 +906,7 @@
               <div class="ndic-sub-score-gauges">
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-network-chart"></canvas><span class="ndic-sub-gauge-label">Network</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-identity-chart"></canvas><span class="ndic-sub-gauge-label">Identity</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-privacy-chart"></canvas><span class="ndic-sub-gauge-label">Privacy</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-privacy-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="footer.privacy">Privacy</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-device-chart"></canvas><span class="ndic-sub-gauge-label">Device</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-graphics-chart"></canvas><span class="ndic-sub-gauge-label">Graphics</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-security-chart"></canvas><span class="ndic-sub-gauge-label">Security</span></div>
@@ -916,20 +916,20 @@
               </div>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Network Score</span><span class="ndic-param-value" id="c11-network-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Identity Score</span><span class="ndic-param-value" id="c11-identity-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Privacy Score</span><span class="ndic-param-value" id="c11-privacy-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Device Score</span><span class="ndic-param-value" id="c11-device-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Graphics Score</span><span class="ndic-param-value" id="c11-graphics-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Security Score</span><span class="ndic-param-value" id="c11-security-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Capability Score</span><span class="ndic-param-value" id="c11-capability-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Performance Score</span><span class="ndic-param-value" id="c11-performance-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Speed Score</span><span class="ndic-param-value" id="c11-speed-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Strongest Area</span><span class="ndic-param-value" id="c11-strongest-area">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Weakest Area</span><span class="ndic-param-value" id="c11-weakest-area">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.network_score">Network Score</span><span class="ndic-param-value" id="c11-network-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.identity_score">Identity Score</span><span class="ndic-param-value" id="c11-identity-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.privacy_score">Privacy Score</span><span class="ndic-param-value" id="c11-privacy-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.device_score">Device Score</span><span class="ndic-param-value" id="c11-device-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.graphics_score">Graphics Score</span><span class="ndic-param-value" id="c11-graphics-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.security_score">Security Score</span><span class="ndic-param-value" id="c11-security-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.capability_score">Capability Score</span><span class="ndic-param-value" id="c11-capability-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.performance_score">Performance Score</span><span class="ndic-param-value" id="c11-performance-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.speed_score">Speed Score</span><span class="ndic-param-value" id="c11-speed-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.strongest_area">Strongest Area</span><span class="ndic-param-value" id="c11-strongest-area">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.weakest_area">Weakest Area</span><span class="ndic-param-value" id="c11-weakest-area">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Improvement Priority</span><span class="ndic-param-value" id="c11-improvement-priority">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Critical Flags</span><span class="ndic-param-value" id="c11-critical-flags">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Warnings</span><span class="ndic-param-value" id="c11-warnings">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.critical_flags">Critical Flags</span><span class="ndic-param-value" id="c11-critical-flags">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.warnings">Warnings</span><span class="ndic-param-value" id="c11-warnings">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
@@ -947,8 +947,8 @@
           <div class="ndic-canvas ndic-canvas-loaded" id="canvas-12">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Live Intelligence Feed</span>
-                <span class="ndic-canvas-subheading">What Just Happened?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas12.heading_technical">Live Intelligence Feed</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas12.heading_plain">What Just Happened?</span>
               </div>
               <span class="ndic-canvas-score" id="c12-online-status">—</span>
             </div>
@@ -958,15 +958,15 @@
               </div>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Backend Health</span><span class="ndic-param-value" id="c12-backend-health">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Total Events</span><span class="ndic-param-value" id="c12-total-events">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Critical Events</span><span class="ndic-param-value" id="c12-critical-count">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.backend_health">Backend Health</span><span class="ndic-param-value" id="c12-backend-health">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.total_events">Total Events</span><span class="ndic-param-value" id="c12-total-events">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.critical_count">Critical Events</span><span class="ndic-param-value" id="c12-critical-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Warning Events</span><span class="ndic-param-value" id="c12-warning-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">API Calls Made</span><span class="ndic-param-value" id="c12-api-calls">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.api_calls">API Calls Made</span><span class="ndic-param-value" id="c12-api-calls">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Error Count</span><span class="ndic-param-value" id="c12-error-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Last Network Change</span><span class="ndic-param-value" id="c12-last-network-change">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.last_network_change">Last Network Change</span><span class="ndic-param-value" id="c12-last-network-change">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Scan Start Time</span><span class="ndic-param-value" id="c12-scan-start-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">AI Summary Source</span><span class="ndic-param-value" id="c12-ai-summary-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.ai_summary_source">AI Summary Source</span><span class="ndic-param-value" id="c12-ai-summary-source">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">AI Last Updated</span><span class="ndic-param-value" id="c12-ai-last-updated">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
@@ -1032,13 +1032,13 @@
       <p>Each IntelReap panel has a deep-dive page that explains every parameter it shows, from your ASN and route to your GPU renderer and fingerprint uniqueness. For background on the concepts behind your results, the learn library explains topics such as VPN passthrough, WebRTC leaks and device fingerprinting in plain language, and the guides walk through fixes step by step, including enabling WebGL and troubleshooting your GPU. Everything is free to read and no account is needed.</p>
       <div class="hub-grid">
         <a class="hub-card" href="/intelligence/">
-          <span class="hub-card-kicker">Intelligence</span>
+          <span class="hub-card-kicker" data-i18n="footer.col_intelligence">Intelligence</span>
           <span class="hub-card-title">The 13 intelligence panels</span>
           <span class="hub-card-desc">Deep-dive pages that explain every reading in your scan.</span>
         </a>
         <a class="hub-card" href="/learn/">
           <span class="hub-card-kicker">Library</span>
-          <span class="hub-card-title">Learn</span>
+          <span class="hub-card-title" data-i18n="footer.col_learn">Learn</span>
           <span class="hub-card-desc">Plain-language articles on VPNs, IP addresses, WebRTC and fingerprints.</span>
         </a>
         <a class="hub-card" href="/guides/">
@@ -1151,12 +1151,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -1165,10 +1165,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -1176,7 +1176,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -1185,17 +1185,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -1203,12 +1203,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>

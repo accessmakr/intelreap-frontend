@@ -518,6 +518,11 @@ const I18nEngine = (() => {
       renderToDOM()
 
       isInitialized = true
+      window.dispatchEvent(
+        new CustomEvent('ndic-i18n-ready', {
+          detail: { language: currentLang }
+        })
+      )
 
       console.log(
         `[i18n] Initialized: ${currentLang}`

@@ -195,36 +195,34 @@ const LegalEngine = (() => {
     notice.innerHTML = `
       <div class="ndic-cookie-inner">
         <p class="ndic-cookie-text">
-          IntelReap stores your language and theme
-          choices in your browser. With your permission
-          it also uses Google Analytics cookies to
-          measure how the site is used. Declining does
-          not limit the tool.
+          <span data-i18n="cookie.text">IntelReap saves your language and theme choices in your browser.
+          With your permission it also uses Google Analytics cookies to measure how the site
+          is used. Declining does not limit the tool.</span>
           <a
             href="${basePath}cookies-policy.html"
             class="ndic-cookie-link"
-          >
-            Cookies Policy
-          </a>
+            data-i18n="cookie.policy_link"
+          >Cookies Policy</a>
         </p>
         <div class="ndic-cookie-actions">
           <button
             class="ndic-cookie-accept"
             id="ndic-cookie-accept"
-          >
-            Accept
-          </button>
+            data-i18n="cookie.accept"
+          >Accept</button>
           <button
             class="ndic-cookie-decline"
             id="ndic-cookie-decline"
-          >
-            Decline
-          </button>
+            data-i18n="cookie.decline"
+          >Decline</button>
         </div>
       </div>
     `
 
     document.body.appendChild(notice)
+    if (typeof I18nEngine !== 'undefined' && I18nEngine.renderToDOM) {
+      I18nEngine.renderToDOM()
+    }
 
     const decide = (granted) => {
       writeConsent(granted ? 'granted' : 'denied')

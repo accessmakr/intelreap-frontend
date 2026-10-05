@@ -26,6 +26,7 @@ const MenuSystem = (() => {
       const link = document.createElement('a')
       link.href = basePath + page.url.replace(/^\//, '')
       link.textContent = page.navLabel || page.shortTitle
+      if (page.navKey) link.setAttribute('data-i18n', page.navKey)
       link.className = isActive
         ? 'ndic-nav-link ndic-nav-link--active'
         : 'ndic-nav-link'
@@ -48,6 +49,7 @@ const MenuSystem = (() => {
     const toggle = document.createElement('button')
     toggle.className = 'ndic-mobile-toggle'
     toggle.setAttribute('aria-label', 'Toggle menu')
+    toggle.setAttribute('data-i18n-aria', 'nav.toggle_menu')
     toggle.setAttribute('aria-expanded', 'false')
     toggle.innerHTML = `
       <span class="ndic-hamburger">
@@ -102,6 +104,7 @@ const MenuSystem = (() => {
         page.url.replace(/^\//, '')
       link.textContent =
         page.navLabel || page.shortTitle
+      if (page.navKey) link.setAttribute('data-i18n', page.navKey)
       link.className = isActive
         ? 'ndic-mobile-nav-link ndic-mobile-nav-link--active'
         : 'ndic-mobile-nav-link'
@@ -115,6 +118,7 @@ const MenuSystem = (() => {
     const closeBtn = document.createElement('button')
     closeBtn.className = 'ndic-drawer-close'
     closeBtn.setAttribute('aria-label', 'Close menu')
+    closeBtn.setAttribute('data-i18n-aria', 'nav.close_menu')
     closeBtn.textContent = '✕'
     inner.appendChild(closeBtn)
 
@@ -176,6 +180,7 @@ const MenuSystem = (() => {
       'aria-label',
       'Switch language'
     )
+    trigger.setAttribute('data-i18n-aria', 'nav.switch_language')
     trigger.textContent =
       (langLabels[currentLang] || 'EN').toUpperCase()
 
@@ -343,6 +348,11 @@ const MenuSystem = (() => {
 
     // Append drawer to body
     document.body.appendChild(drawer)
+
+    // Translate the freshly built menu if a language is active
+    if (typeof I18nEngine !== 'undefined' && I18nEngine.renderToDOM) {
+      I18nEngine.renderToDOM()
+    }
 
     // Toggle events
     let drawerOpen = false

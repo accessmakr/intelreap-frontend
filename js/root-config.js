@@ -104,6 +104,11 @@ const INTELREAP_CONFIG = {
   ],
 
   getRandomCTA() {
+    const lang = document.documentElement.lang || 'en'
+    if (!lang.startsWith('en') && typeof I18nEngine !== 'undefined') {
+      const label = I18nEngine.t('hero.cta_primary')
+      if (label && label !== 'hero.cta_primary') return label
+    }
     const variants = this.ctaVariants
     return variants[
       Math.floor(Math.random() * variants.length)
@@ -243,6 +248,15 @@ const injectCTARotation = () => {
 // ─────────────────────────────────────────
 // FRESHNESS BADGE INJECTION
 // ─────────────────────────────────────────
+
+const refreshCTALabels = () => {
+  document.querySelectorAll('.cta-rotate').forEach(btn => {
+    btn.textContent = INTELREAP_CONFIG.getRandomCTA()
+  })
+}
+
+window.addEventListener('ndic-i18n-ready', refreshCTALabels)
+window.addEventListener('ndic-language-changed', refreshCTALabels)
 
 const injectFreshnessBadge = () => {
   const badge = document.getElementById(

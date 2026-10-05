@@ -177,7 +177,7 @@
       <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
         <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
       </a>
-      <button type="button" class="trigger-search" aria-label="Open search">
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search">
         <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
@@ -205,23 +205,23 @@
       <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">IntelReap</a>
         <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../index.html">Intelligence Center</a>
+        <a href="../index.html" data-i18n="nav.intelligence_center">Intelligence Center</a>
         <span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="ndic-breadcrumb-current">Live Network Monitor</span>
+        <span class="ndic-breadcrumb-current" data-i18n="canvas4.heading_technical">Live Network Monitor</span>
       </nav>
 
       <div class="ndic-deepdive-hero">
         <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 4</div>
-        <h1 class="ndic-deepdive-title">Live Network Monitor</h1>
-        <p class="ndic-deepdive-subtitle">How Fast Is Your Connection?</p>
+        <h1 class="ndic-deepdive-title" data-i18n="canvas4.heading_technical">Live Network Monitor</h1>
+        <p class="ndic-deepdive-subtitle" data-i18n="canvas4.heading_plain">How Fast Is Your Connection?</p>
         <p class="ndic-deepdive-intro">Real-time latency, bandwidth, jitter, and stability — updated continuously from the moment this page loads.</p>
       </div>
 
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-4">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Live Network Monitor</span>
-                <span class="ndic-canvas-subheading">How Fast Is Your Connection?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas4.heading_technical">Live Network Monitor</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas4.heading_plain">How Fast Is Your Connection?</span>
               </div>
               <span class="ndic-canvas-score" id="c4-score">—</span>
             </div>
@@ -231,19 +231,19 @@
               <canvas id="canvas3-stability-chart"></canvas>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Current Latency</span><span class="ndic-param-value" id="c4-current-rtt">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Average Latency</span><span class="ndic-param-value" id="c4-average-rtt">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Peak Latency</span><span class="ndic-param-value" id="c4-peak-rtt">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Lowest Latency</span><span class="ndic-param-value" id="c4-lowest-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.current_rtt">Current Latency</span><span class="ndic-param-value" id="c4-current-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.average_rtt">Average Latency</span><span class="ndic-param-value" id="c4-average-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.peak_rtt">Peak Latency</span><span class="ndic-param-value" id="c4-peak-rtt">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.lowest_rtt">Lowest Latency</span><span class="ndic-param-value" id="c4-lowest-rtt">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Bandwidth</span><span class="ndic-param-value" id="c4-bandwidth">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Effective Connection Type</span><span class="ndic-param-value" id="c4-effective-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Data Saver Mode</span><span class="ndic-param-value" id="c4-save-data">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Stability Index</span><span class="ndic-param-value" id="c4-stability-index">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Packet Loss Estimate</span><span class="ndic-param-value" id="c4-packet-loss">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Connection Quality</span><span class="ndic-param-value" id="c4-quality-rating">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Jitter Estimate</span><span class="ndic-param-value" id="c4-jitter-estimate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.effective_type">Effective Connection Type</span><span class="ndic-param-value" id="c4-effective-type">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.save_data">Data Saver Mode</span><span class="ndic-param-value" id="c4-save-data">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.stability_index">Stability Index</span><span class="ndic-param-value" id="c4-stability-index">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.packet_loss">Packet Loss Estimate</span><span class="ndic-param-value" id="c4-packet-loss">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.quality_rating">Connection Quality</span><span class="ndic-param-value" id="c4-quality-rating">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.jitter_estimate">Jitter Estimate</span><span class="ndic-param-value" id="c4-jitter-estimate">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Session Uptime</span><span class="ndic-param-value" id="c4-uptime">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Connection Changes</span><span class="ndic-param-value" id="c4-connection-changes">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas4.params.connection_changes">Connection Changes</span><span class="ndic-param-value" id="c4-connection-changes">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Network API Status</span><span class="ndic-param-value" id="c4-api-available">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
@@ -275,7 +275,7 @@
           </div>
 
           <div class="ndic-explain-item">
-            <h4>Jitter Estimate</h4>
+            <h4 data-i18n="canvas4.params.jitter_estimate">Jitter Estimate</h4>
             <p>Jitter is the variation in latency between consecutive requests. A steady 80ms connection is dramatically better for voice and video than one oscillating between 20ms and 200ms. The jitter estimate compares consecutive measurements against the session average — high jitter here explains choppy calls or audio dropouts even when average latency looks acceptable.</p>
           </div>
         </div>
@@ -289,7 +289,7 @@
           </div>
 
           <div class="ndic-explain-item">
-            <h4>Data Saver Mode</h4>
+            <h4 data-i18n="canvas4.params.save_data">Data Saver Mode</h4>
             <p>Indicates whether the user has enabled data saver in their browser or operating system. When active, the browser may signal to servers that lower-bandwidth responses are preferred. Reported as-is from the Network Information API — only meaningful on platforms that expose it.</p>
           </div>
         </div>
@@ -303,7 +303,7 @@
           </div>
 
           <div class="ndic-explain-item">
-            <h4>Connection Quality</h4>
+            <h4 data-i18n="canvas4.params.quality_rating">Connection Quality</h4>
             <p>A plain-English label — Excellent, Good, Fair, Poor — derived from combining latency, jitter, and stability into one human-readable verdict. Useful as a quick summary when the raw numbers are being interpreted by someone unfamiliar with what specific latency values mean in practice.</p>
           </div>
 
@@ -401,12 +401,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -415,10 +415,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -426,7 +426,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -435,17 +435,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -453,12 +453,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>

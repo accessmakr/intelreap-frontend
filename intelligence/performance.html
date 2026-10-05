@@ -127,7 +127,7 @@
   <header class="ndic-site-header">
     <div class="ndic-site-header-inner">
       <a href="../index.html" class="ndic-site-logo-link" aria-label="IntelReap home"><span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span></a>
-      <button type="button" class="trigger-search" aria-label="Open search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><span>Search</span><span class="trigger-search-kbd">⌘K</span></button>
       <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Switch to dark theme">
         <svg class="icon-sun" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -140,20 +140,20 @@
     <div class="ndic-deepdive-page">
       <nav class="ndic-breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">IntelReap</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="../index.html">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="ndic-breadcrumb-current">Performance Intelligence Panel</span>
+        <a href="../index.html" data-i18n="nav.intelligence_center">Intelligence Center</a><span class="ndic-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="ndic-breadcrumb-current" data-i18n="canvas9.heading_technical">Performance Intelligence Panel</span>
       </nav>
       <div class="ndic-deepdive-hero">
         <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 9</div>
-        <h1 class="ndic-deepdive-title">Performance Intelligence Panel</h1>
-        <p class="ndic-deepdive-subtitle">How Fast Is Your Browser?</p>
+        <h1 class="ndic-deepdive-title" data-i18n="canvas9.heading_technical">Performance Intelligence Panel</h1>
+        <p class="ndic-deepdive-subtitle" data-i18n="canvas9.heading_plain">How Fast Is Your Browser?</p>
         <p class="ndic-deepdive-intro">Live page load waterfall — TTFB, DNS, TCP, TLS, DOM, memory, and resource stats — measured the moment this page loads.</p>
       </div>
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-9">
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading">Performance Intelligence Panel</span>
-                <span class="ndic-canvas-subheading">How Fast Is Your Browser?</span>
+                <span class="ndic-canvas-heading" data-i18n="canvas9.heading_technical">Performance Intelligence Panel</span>
+                <span class="ndic-canvas-subheading" data-i18n="canvas9.heading_plain">How Fast Is Your Browser?</span>
               </div>
               <span class="ndic-canvas-score" id="c9-score">—</span>
             </div>
@@ -162,29 +162,29 @@
               <canvas id="canvas9-responsiveness-chart"></canvas>
             </div>
             <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label">Page Load Time</span><span class="ndic-param-value" id="c9-page-load-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">DOM Content Loaded</span><span class="ndic-param-value" id="c9-dom-content-loaded">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">DOM Interactive</span><span class="ndic-param-value" id="c9-dom-interactive">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.page_load_time">Page Load Time</span><span class="ndic-param-value" id="c9-page-load-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.dom_content_loaded">DOM Content Loaded</span><span class="ndic-param-value" id="c9-dom-content-loaded">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.dom_interactive">DOM Interactive</span><span class="ndic-param-value" id="c9-dom-interactive">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Time To First Byte</span><span class="ndic-param-value" id="c9-ttfb">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">DNS Lookup</span><span class="ndic-param-value" id="c9-dns-lookup">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">TCP Connection</span><span class="ndic-param-value" id="c9-tcp-connection">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">TLS Handshake</span><span class="ndic-param-value" id="c9-tls-handshake">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Request Time</span><span class="ndic-param-value" id="c9-request-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Response Time</span><span class="ndic-param-value" id="c9-response-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">DOM Processing</span><span class="ndic-param-value" id="c9-dom-processing">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Resource Fetch Time</span><span class="ndic-param-value" id="c9-resource-fetch-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.dns_lookup">DNS Lookup</span><span class="ndic-param-value" id="c9-dns-lookup">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.tcp_connection">TCP Connection</span><span class="ndic-param-value" id="c9-tcp-connection">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.tls_handshake">TLS Handshake</span><span class="ndic-param-value" id="c9-tls-handshake">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.request_time">Request Time</span><span class="ndic-param-value" id="c9-request-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.response_time">Response Time</span><span class="ndic-param-value" id="c9-response-time">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.dom_processing">DOM Processing</span><span class="ndic-param-value" id="c9-dom-processing">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.resource_fetch_time">Resource Fetch Time</span><span class="ndic-param-value" id="c9-resource-fetch-time">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Resource Count</span><span class="ndic-param-value" id="c9-resource-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Page Weight</span><span class="ndic-param-value" id="c9-page-weight">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.page_weight">Page Weight</span><span class="ndic-param-value" id="c9-page-weight">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Script Count</span><span class="ndic-param-value" id="c9-script-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Stylesheet Count</span><span class="ndic-param-value" id="c9-stylesheet-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Image Count</span><span class="ndic-param-value" id="c9-image-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Font Count</span><span class="ndic-param-value" id="c9-font-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Cache Hit Rate</span><span class="ndic-param-value" id="c9-cache-hit-rate">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Used</span><span class="ndic-param-value" id="c9-heap-used">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Total</span><span class="ndic-param-value" id="c9-heap-total">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">JS Heap Limit</span><span class="ndic-param-value" id="c9-heap-limit">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.cache_hit_rate">Cache Hit Rate</span><span class="ndic-param-value" id="c9-cache-hit-rate">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.heap_used">JS Heap Used</span><span class="ndic-param-value" id="c9-heap-used">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.heap_total">JS Heap Total</span><span class="ndic-param-value" id="c9-heap-total">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.heap_limit">JS Heap Limit</span><span class="ndic-param-value" id="c9-heap-limit">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Next Hop Protocol</span><span class="ndic-param-value" id="c9-protocol">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Runtime Score</span><span class="ndic-param-value" id="c9-runtime-score">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas9.params.runtime_score">Runtime Score</span><span class="ndic-param-value" id="c9-runtime-score">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Percentile Rating</span><span class="ndic-param-value" id="c9-percentile-rating">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Timing Source</span><span class="ndic-param-value" id="c9-timing-source">—</span></div>
             </div>
@@ -296,12 +296,12 @@
           <a href="/" class="ndic-footer-logo-link">
             <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
           </a>
-          <p class="ndic-footer-tagline">Real-time network and device intelligence.</p>
-          <p class="ndic-footer-description">Free browser-based intelligence tool. No account required.</p>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
         </div>
         <div class="ndic-footer-links">
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Intelligence</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
           <a href="/intelligence/">All panels</a>
           <a href="/intelligence/network-route">Network Route</a>
           <a href="/intelligence/network-identity">Network Identity</a>
@@ -310,10 +310,10 @@
           <a href="/intelligence/security">Security Analysis</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Deep Dives</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
           <a href="/intelligence/device">Device Intelligence</a>
           <a href="/intelligence/graphics">Graphics Engine</a>
-          <a href="/intelligence/capability">Capability Matrix</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
           <a href="/intelligence/performance">Performance</a>
           <a href="/intelligence/rendering-speed">Rendering Speed</a>
           <a href="/intelligence/scoreboard">Global Scoreboard</a>
@@ -321,7 +321,7 @@
           <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Learn</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
           <a href="/learn/">All articles</a>
           <a href="/guides/">All guides</a>
           <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
@@ -330,17 +330,17 @@
           <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Legal</h4>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
           <a href="/privacy-policy.html">Privacy Policy</a>
-          <a href="/cookies-policy.html">Cookies Policy</a>
+          <a href="/cookies-policy.html" data-i18n="cookie.policy_link">Cookies Policy</a>
           <a href="/terms-of-use.html">Terms of Use</a>
-          <a href="/about.html">About</a>
+          <a href="/about.html" data-i18n="nav.about">About</a>
           <a href="/contact.html">Contact</a>
         </div>
         <div class="ndic-footer-col">
-          <h4 class="ndic-footer-col-title">Connect</h4>
-          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href="mailto:stmakarios@gmail.com">Email us</a>
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
         </div>
         </div>
       </div>
@@ -348,12 +348,14 @@
         <div class="ndic-footer-copyright">
           <span class="copyright-year">© 2026 IntelReap</span>
           <span class="ndic-footer-sep">—</span>
-          <span>Free to use. No account required. Operated by IntelReap Information Technologies.</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="/privacy-policy.html">Privacy</a>
-          <a href="/cookies-policy.html">Cookies</a>
-          <a href="/terms-of-use.html">Terms</a>
+          <a href="/privacy-policy.html" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy.html" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use.html" data-i18n="footer.terms">Terms</a>
           <a href="/cookies-policy.html#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
         </div>
       </div>
