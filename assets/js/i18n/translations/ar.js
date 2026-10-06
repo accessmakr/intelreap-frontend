@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_AR = {
     "toggle_menu": "تبديل القائمة",
     "close_menu": "إغلاق القائمة",
     "switch_language": "تغيير اللغة",
-    "install_app": "تثبيت التطبيق"
+    "install_app": "تثبيت التطبيق",
+    "guides": "الأدلة"
   },
   "hero": {
     "badge": "أداة استخبارات مجانية",

@@ -137,12 +137,14 @@ const MenuSystem = (() => {
   ) => {
     if (open) {
       drawer.classList.add('ndic-drawer--open')
+      drawer.classList.add('ndic-mobile-drawer--open')
       drawer.setAttribute('aria-hidden', 'false')
       toggle.setAttribute('aria-expanded', 'true')
       toggle.classList.add('ndic-toggle--active')
       document.body.style.overflow = 'hidden'
     } else {
       drawer.classList.remove('ndic-drawer--open')
+      drawer.classList.remove('ndic-mobile-drawer--open')
       drawer.setAttribute('aria-hidden', 'true')
       toggle.setAttribute('aria-expanded', 'false')
       toggle.classList.remove('ndic-toggle--active')

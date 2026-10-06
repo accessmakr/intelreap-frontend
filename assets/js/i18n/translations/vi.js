@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_VI = {
     "toggle_menu": "Chuyển đổi menu",
     "close_menu": "Đóng menu",
     "switch_language": "Đổi ngôn ngữ",
-    "install_app": "Cài Đặt Ứng Dụng"
+    "install_app": "Cài Đặt Ứng Dụng",
+    "guides": "Hướng dẫn"
   },
   "hero": {
     "badge": "Công Cụ Tình Báo Miễn Phí",

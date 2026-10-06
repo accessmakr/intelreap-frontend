@@ -217,8 +217,8 @@
     --shadow-md:   0 4px 12px rgba(0,0,0,0.6);
     --shadow-lg:   0 8px 32px rgba(0,0,0,0.7);
     --shadow-glow: 0 0 20px rgba(0,180,216,0.15);
-    --color-header-bg:   var(--color-header-bg);
-    --color-overlay-bg:  var(--color-overlay-bg);
+    --color-header-bg:   rgba(5,6,10,0.92);
+    --color-overlay-bg:  rgba(5,6,10,0.85);
     --color-skeleton:    rgba(255,255,255,0.06);
   }
 }
@@ -256,8 +256,8 @@
   --shadow-md:   0 4px 12px rgba(0,0,0,0.6);
   --shadow-lg:   0 8px 32px rgba(0,0,0,0.7);
   --shadow-glow: 0 0 20px rgba(0,180,216,0.15);
-  --color-header-bg:   var(--color-header-bg);
-  --color-overlay-bg:  var(--color-overlay-bg);
+  --color-header-bg:   rgba(5,6,10,0.92);
+  --color-overlay-bg:  rgba(5,6,10,0.85);
   --color-skeleton:    rgba(255,255,255,0.06);
 }
 

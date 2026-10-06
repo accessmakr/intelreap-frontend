@@ -8,7 +8,7 @@
 // Images            → Stale while revalidate
 // ─────────────────────────────────────────
 
-const SW_VERSION = 'intelreap-v1.5.0'
+const SW_VERSION = 'intelreap-v1.6.0'
 
 // Cache names per resource type
 const CACHES = {

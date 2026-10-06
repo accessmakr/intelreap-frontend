@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_FA = {
     "toggle_menu": "تغییر وضعیت منو",
     "close_menu": "بستن منو",
     "switch_language": "تغییر زبان",
-    "install_app": "نصب برنامه"
+    "install_app": "نصب برنامه",
+    "guides": "راهنماها"
   },
   "hero": {
     "badge": "ابزار اطلاعاتی رایگان",

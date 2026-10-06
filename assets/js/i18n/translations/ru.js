@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_RU = {
     "toggle_menu": "Переключить меню",
     "close_menu": "Закрыть меню",
     "switch_language": "Сменить язык",
-    "install_app": "Установить приложение"
+    "install_app": "Установить приложение",
+    "guides": "Руководства"
   },
   "hero": {
     "badge": "Бесплатный инструмент разведки",

@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_UR = {
     "toggle_menu": "مینو ٹوگل کریں",
     "close_menu": "مینو بند کریں",
     "switch_language": "زبان تبدیل کریں",
-    "install_app": "ایپ انسٹال کریں"
+    "install_app": "ایپ انسٹال کریں",
+    "guides": "رہنما"
   },
   "hero": {
     "badge": "مفت انٹیلیجنس ٹول",

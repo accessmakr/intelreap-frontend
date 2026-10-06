@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_FR = {
     "toggle_menu": "Basculer le menu",
     "close_menu": "Fermer le menu",
     "switch_language": "Changer de langue",
-    "install_app": "Installer l'application"
+    "install_app": "Installer l'application",
+    "guides": "Guides"
   },
   "hero": {
     "badge": "Outil de renseignement gratuit",

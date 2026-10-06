@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_KO = {
     "toggle_menu": "메뉴 전환",
     "close_menu": "메뉴 닫기",
     "switch_language": "언어 변경",
-    "install_app": "앱 설치"
+    "install_app": "앱 설치",
+    "guides": "가이드"
   },
   "hero": {
     "badge": "무료 인텔리전스 도구",

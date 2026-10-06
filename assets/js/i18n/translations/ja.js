@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_JA = {
     "toggle_menu": "メニュー切替",
     "close_menu": "メニューを閉じる",
     "switch_language": "言語を切替",
-    "install_app": "アプリをインストール"
+    "install_app": "アプリをインストール",
+    "guides": "ガイド"
   },
   "hero": {
     "badge": "無料インテリジェンスツール",

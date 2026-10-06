@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_BN = {
     "toggle_menu": "মেনু টগল করুন",
     "close_menu": "মেনু বন্ধ করুন",
     "switch_language": "ভাষা পরিবর্তন করুন",
-    "install_app": "অ্যাপ ইনস্টল করুন"
+    "install_app": "অ্যাপ ইনস্টল করুন",
+    "guides": "গাইড"
   },
   "hero": {
     "badge": "বিনামূল্যে ইন্টেলিজেন্স টুল",

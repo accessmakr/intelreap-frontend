@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_SW = {
     "toggle_menu": "Badilisha menyu",
     "close_menu": "Funga menyu",
     "switch_language": "Badilisha lugha",
-    "install_app": "Sakinisha Programu"
+    "install_app": "Sakinisha Programu",
+    "guides": "Miongozo"
   },
   "hero": {
     "badge": "Zana ya Akili Bila Malipo",

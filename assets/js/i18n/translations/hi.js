@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_HI = {
     "toggle_menu": "मेनू टॉगल करें",
     "close_menu": "मेनू बंद करें",
     "switch_language": "भाषा बदलें",
-    "install_app": "ऐप इंस्टॉल करें"
+    "install_app": "ऐप इंस्टॉल करें",
+    "guides": "गाइड"
   },
   "hero": {
     "badge": "मुफ्त इंटेलिजेंस टूल",

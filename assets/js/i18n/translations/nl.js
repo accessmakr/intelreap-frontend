@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_NL = {
     "toggle_menu": "Menu wisselen",
     "close_menu": "Menu sluiten",
     "switch_language": "Taal wisselen",
-    "install_app": "App installeren"
+    "install_app": "App installeren",
+    "guides": "Gidsen"
   },
   "hero": {
     "badge": "Gratis Inlichtingentool",

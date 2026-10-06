@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_ZH = {
     "toggle_menu": "切换菜单",
     "close_menu": "关闭菜单",
     "switch_language": "切换语言",
-    "install_app": "安装应用"
+    "install_app": "安装应用",
+    "guides": "指南"
   },
   "hero": {
     "badge": "免费智能工具",

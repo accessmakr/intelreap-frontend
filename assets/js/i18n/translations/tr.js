@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_TR = {
     "toggle_menu": "Menüyü aç/kapat",
     "close_menu": "Menüyü kapat",
     "switch_language": "Dil değiştir",
-    "install_app": "Uygulamayı Yükle"
+    "install_app": "Uygulamayı Yükle",
+    "guides": "Rehberler"
   },
   "hero": {
     "badge": "Ücretsiz İstihbarat Aracı",

@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_DE = {
     "toggle_menu": "Menü umschalten",
     "close_menu": "Menü schließen",
     "switch_language": "Sprache wechseln",
-    "install_app": "App installieren"
+    "install_app": "App installieren",
+    "guides": "Anleitungen"
   },
   "hero": {
     "badge": "Kostenloser Aufklärungsdienst",

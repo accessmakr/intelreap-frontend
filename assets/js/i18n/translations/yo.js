@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_YO = {
     "toggle_menu": "Yi mẹnu padà",
     "close_menu": "Pa mẹnu",
     "switch_language": "Yipada ede",
-    "install_app": "Fi Ohun elo sori"
+    "install_app": "Fi Ohun elo sori",
+    "guides": "Àwọn ìtọ́sọ́nà"
   },
   "hero": {
     "badge": "Irinṣẹ Imọye Ọfẹ",

@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_ID = {
     "toggle_menu": "Buka/tutup menu",
     "close_menu": "Tutup menu",
     "switch_language": "Ganti bahasa",
-    "install_app": "Pasang Aplikasi"
+    "install_app": "Pasang Aplikasi",
+    "guides": "Panduan"
   },
   "hero": {
     "badge": "Alat Intelijen Gratis",

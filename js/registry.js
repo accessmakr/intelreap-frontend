@@ -366,6 +366,45 @@ const INTELREAP_REGISTRY = {
     // ── LEGAL AND UTILITY PAGES ─────────
 
     {
+      id: 'learn',
+      title: 'Learn: Networking, VPNs and Device Privacy',
+      shortTitle: 'Learn',
+      description: 'Plain-language articles on IP addresses, VPNs, WebRTC leaks, device fingerprinting and GPUs.',
+      url: '/learn/',
+      canonical: 'https://intelreap.com/learn/',
+      category: 'learn',
+      priority: 0.8,
+      keywords: ['VPN explained', 'WebRTC leak', 'device fingerprinting', 'two ISPs'],
+      nav: true,
+      navLabel: 'Learn',
+      navKey: 'footer.col_learn',
+      navOrder: 2,
+      inFooter: true,
+      inSitemap: true,
+      schema: 'article'
+    },
+
+    {
+      id: 'guides',
+      title: 'Guides: GPU Fixes, WebGL and IP Addresses',
+      shortTitle: 'Guides',
+      description: 'Step-by-step guides for GPU troubleshooting, enabling WebGL ' +
+        'and finding the IP address of any device.',
+      url: '/guides/',
+      canonical: 'https://intelreap.com/guides/',
+      category: 'guide',
+      priority: 0.8,
+      keywords: ['enable WebGL', 'GPU troubleshooting', 'find IP address'],
+      nav: true,
+      navLabel: 'Guides',
+      navKey: 'nav.guides',
+      navOrder: 3,
+      inFooter: true,
+      inSitemap: true,
+      schema: 'article'
+    },
+
+    {
       id: 'about',
       title: 'About IntelReap',
       shortTitle: 'About',
@@ -378,7 +417,7 @@ const INTELREAP_REGISTRY = {
       nav: true,
       navLabel: 'About',
       navKey: 'nav.about',
-      navOrder: 2,
+      navOrder: 4,
       inFooter: true,
       inSitemap: true,
       schema: 'article'

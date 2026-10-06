@@ -14,7 +14,8 @@ window.NDIC_TRANSLATIONS_HA = {
     "toggle_menu": "Canza menu",
     "close_menu": "Rufe menu",
     "switch_language": "Canza harshe",
-    "install_app": "Shigar da Shirin"
+    "install_app": "Shigar da Shirin",
+    "guides": "Jagorori"
   },
   "hero": {
     "badge": "Kayan Aiki na Bayanan Kyauta",
