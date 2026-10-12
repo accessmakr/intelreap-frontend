@@ -8,7 +8,7 @@
 // Images            → Stale while revalidate
 // ─────────────────────────────────────────
 
-const SW_VERSION = 'intelreap-v1.6.0'
+const SW_VERSION = 'intelreap-v1.7.0'
 
 // Cache names per resource type
 const CACHES = {
@@ -70,24 +70,24 @@ const PRECACHE_STATIC = [
 // ─────────────────────────────────────────
 
 const PRECACHE_PAGES = [
-  '/index.html',
-  '/intelligence/network-route.html',
-  '/intelligence/network-identity.html',
-  '/intelligence/vpn-proxy.html',
-  '/intelligence/live-network.html',
-  '/intelligence/device.html',
-  '/intelligence/graphics.html',
-  '/intelligence/security.html',
-  '/intelligence/capability.html',
-  '/intelligence/performance.html',
-  '/intelligence/rendering-speed.html',
-  '/intelligence/scoreboard.html',
-  '/intelligence/live-feed.html',
-  '/about.html',
-  '/contact.html',
-  '/privacy-policy.html',
-  '/cookies-policy.html',
-  '/terms-of-use.html'
+  '/',
+  '/intelligence/network-route',
+  '/intelligence/network-identity',
+  '/intelligence/vpn-proxy',
+  '/intelligence/live-network',
+  '/intelligence/device',
+  '/intelligence/graphics',
+  '/intelligence/security',
+  '/intelligence/capability',
+  '/intelligence/performance',
+  '/intelligence/rendering-speed',
+  '/intelligence/scoreboard',
+  '/intelligence/live-feed',
+  '/about',
+  '/contact',
+  '/privacy-policy',
+  '/cookies-policy',
+  '/terms-of-use'
 ]
 
 // ─────────────────────────────────────────
@@ -288,18 +288,15 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  // CSS and JS — stale while revalidate
-  // Returns cached version immediately for
-  // speed, but always refreshes the cache in
-  // the background — so even if SW_VERSION
-  // isn't bumped, staleness self-heals after
-  // one reload instead of persisting forever
+  // CSS and JS -- network first, so a new deploy
+  // is picked up on the next page load. The cached
+  // copy is only used when the network fails.
   if (
     pathname.endsWith('.css') ||
     pathname.endsWith('.js')
   ) {
     event.respondWith(
-      staleWhileRevalidate(request, CACHES.static)
+      networkFirst(request, CACHES.static)
     )
     return
   }
@@ -473,7 +470,7 @@ const staleWhileRevalidate = async (
   const cached = await cache.match(request)
 
   // Fetch in background regardless
-  const networkFetch = fetch(request).then(
+  const networkFetch = fetch(request, { cache: 'no-cache' }).then(
     response => {
       if (response.ok) {
         cache.put(request, response.clone())

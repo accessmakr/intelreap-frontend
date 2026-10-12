@@ -95,19 +95,19 @@ const LegalEngine = (() => {
             <h4 class="ndic-footer-col-title">
               Legal
             </h4>
-            <a href="${basePath}privacy-policy.html">
+            <a href="${basePath}/privacy-policy">
               Privacy Policy
             </a>
-            <a href="${basePath}cookies-policy.html">
+            <a href="${basePath}/cookies-policy">
               Cookies Policy
             </a>
-            <a href="${basePath}terms-of-use.html">
+            <a href="${basePath}/terms-of-use">
               Terms of Use
             </a>
-            <a href="${basePath}about.html">
+            <a href="${basePath}/about">
               About
             </a>
-            <a href="${basePath}contact.html">
+            <a href="${basePath}/contact">
               Contact
             </a>
           </div>
@@ -140,17 +140,17 @@ const LegalEngine = (() => {
           </span>
         </div>
         <div class="ndic-footer-legal-inline">
-          <a href="${basePath}privacy-policy.html">
+          <a href="${basePath}/privacy-policy">
             Privacy
           </a>
-          <a href="${basePath}cookies-policy.html">
+          <a href="${basePath}/cookies-policy">
             Cookies
           </a>
-          <a href="${basePath}terms-of-use.html">
+          <a href="${basePath}/terms-of-use">
             Terms
           </a>
           <a
-            href="${basePath}cookies-policy.html#cookie-settings"
+            href="${basePath}/cookies-policy#cookie-settings"
             id="ndic-cookie-settings"
           >
             Cookie settings
@@ -199,7 +199,7 @@ const LegalEngine = (() => {
           With your permission it also uses Google Analytics cookies to measure how the site
           is used. Declining does not limit the tool.</span>
           <a
-            href="${basePath}cookies-policy.html"
+            href="${basePath}/cookies-policy"
             class="ndic-cookie-link"
             data-i18n="cookie.policy_link"
           >Cookies Policy</a>

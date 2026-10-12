@@ -48,14 +48,6 @@ const SchemaSystem = (() => {
     description: 'Real-time network and device intelligence.',
     publisher: {
       '@id': `${BASE}/#organization`
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${BASE}/index.html?q={search_term_string}`
-      },
-      'query-input': 'required name=search_term_string'
     }
   })
 

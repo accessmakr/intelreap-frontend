@@ -90,6 +90,21 @@
   to = "/410.html"
   status = 410
 
+[[redirects]]
+  from = "/tools"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/tools/*"
+  to = "/410.html"
+  status = 410
+
+[[redirects]]
+  from = "/guides/how-to-find-downloads-on-iphone"
+  to = "/410.html"
+  status = 410
+
 # Clean URL support (optional)
 # Allows intelreap.com/intelligence/security
 # without the .html extension
@@ -111,6 +126,219 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# BEGIN CLEAN URL REDIRECTS (generated)
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cookies-policy.html"
+  to = "/cookies-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/gpu-troubleshooting-guide.html"
+  to = "/guides/gpu-troubleshooting-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/how-to-enable-webgl.html"
+  to = "/guides/how-to-enable-webgl"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/how-to-find-ip-address-of-any-device.html"
+  to = "/guides/how-to-find-ip-address-of-any-device"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/index.html"
+  to = "/guides/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/capability.html"
+  to = "/intelligence/capability"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/device.html"
+  to = "/intelligence/device"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/fingerprinting.html"
+  to = "/intelligence/fingerprinting"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/graphics.html"
+  to = "/intelligence/graphics"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/index.html"
+  to = "/intelligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/live-feed.html"
+  to = "/intelligence/live-feed"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/live-network.html"
+  to = "/intelligence/live-network"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/network-identity.html"
+  to = "/intelligence/network-identity"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/network-route.html"
+  to = "/intelligence/network-route"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/performance.html"
+  to = "/intelligence/performance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/rendering-speed.html"
+  to = "/intelligence/rendering-speed"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/scoreboard.html"
+  to = "/intelligence/scoreboard"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/security.html"
+  to = "/intelligence/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intelligence/vpn-proxy.html"
+  to = "/intelligence/vpn-proxy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/can-you-have-two-isps-in-one-house.html"
+  to = "/learn/can-you-have-two-isps-in-one-house"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/does-a-vpn-change-your-mac-address.html"
+  to = "/learn/does-a-vpn-change-your-mac-address"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/how-to-protect-your-privacy-online.html"
+  to = "/learn/how-to-protect-your-privacy-online"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/index.html"
+  to = "/learn/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/webrtc-leak-test-and-shield.html"
+  to = "/learn/webrtc-leak-test-and-shield"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/what-is-a-gpu.html"
+  to = "/learn/what-is-a-gpu"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/what-is-a-vpn-concentrator.html"
+  to = "/learn/what-is-a-vpn-concentrator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/what-is-device-fingerprinting.html"
+  to = "/learn/what-is-device-fingerprinting"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/what-is-reverse-ip-lookup.html"
+  to = "/learn/what-is-reverse-ip-lookup"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/what-is-vpn-passthrough.html"
+  to = "/learn/what-is-vpn-passthrough"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/why-does-my-internet-speed-fluctuate.html"
+  to = "/learn/why-does-my-internet-speed-fluctuate"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policy.html"
+  to = "/privacy-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-of-use.html"
+  to = "/terms-of-use"
+  status = 301
+  force = true
+
+# END CLEAN URL REDIRECTS
+
 # ─────────────────────────────────────────
 # CACHE HEADERS
 # Static assets cached aggressively
@@ -118,14 +346,24 @@
 # ─────────────────────────────────────────
 
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
 
 [[headers]]
   for = "/*.html"
