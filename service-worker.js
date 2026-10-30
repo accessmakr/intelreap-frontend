@@ -8,7 +8,7 @@
 // Images            → Stale while revalidate
 // ─────────────────────────────────────────
 
-const SW_VERSION = 'intelreap-v1.7.0'
+const SW_VERSION = 'intelreap-v1.8.0'
 
 // Cache names per resource type
 const CACHES = {
@@ -113,11 +113,12 @@ const CDN_ORIGINS = [
 // Always network for live intelligence
 // ─────────────────────────────────────────
 
-const API_ORIGIN = 'https://intelreap-backend.vercel.app'
+const API_ORIGIN = 'https://intelreap-backend.accessmakr.workers.dev'
 
 const NEVER_CACHE_PATTERNS = [
   /\/api\//,
   /intelreap-backend\.vercel\.app/,
+  /intelreap-backend\.accessmakr\.workers\.dev/,
   /api\.ipify\.org/,
   /ip-api\.com/,
   /ipwho\.is/,

@@ -1,8 +1,8 @@
 const NDIC_CONFIG = {
 
   // Backend URL
-  // Confirmed working and tested
-  BACKEND_URL: 'https://intelreap-backend.vercel.app',
+  // Cloudflare Worker (replaced the Vercel backend)
+  BACKEND_URL: 'https://intelreap-backend.accessmakr.workers.dev',
 
   // API endpoints
   ENDPOINTS: {

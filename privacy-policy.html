@@ -565,7 +565,7 @@
         <h2><span class="section-num">02</span> What Happens When You Run a Scan</h2>
         <p>When you open the tool, your browser reads information about your own connection and device using standard browser APIs. The results appear on your screen. To complete the scan, these requests are made:</p>
         <ul>
-          <li>Our backend (hosted on Vercel) receives a request for IP identity and network details. Like any server, it receives your public IP address as part of the connection and uses it to look up your approximate location, ISP and network (ASN) information.</li>
+          <li>Our backend (hosted on Cloudflare Workers) receives a request for IP identity and network details. Like any server, it receives your public IP address as part of the connection and uses it to look up your approximate location, ISP and network (ASN) information.</li>
           <li>A proxy and VPN check sends your time zone, browser language, ASN, network organisation name and country code to our backend.</li>
           <li>An AI summary request sends scan scores and categories (such as country, ISP, security and performance results) to our backend, which passes them to an AI language-model provider. Before the request leaves your browser, your IP address, city, region, coordinates, local network address, device fingerprint hashes, font and extension lists and request headers are removed.</li>
         </ul>
@@ -589,7 +589,7 @@
         <p>IntelReap relies on the following services. Each may receive technical information such as your IP address and browser details when your browser or our backend contacts it:</p>
         <ul>
           <li>Netlify: hosts the website and processes contact form submissions</li>
-          <li>Vercel: hosts our backend API</li>
+          <li>Cloudflare: hosts our backend API and provides the approximate location and network details of your connection</li>
           <li>IP and network data providers and AI language-model providers: contacted by our backend to return results and summaries</li>
           <li>Cloudflare (a trace endpoint) and ipify: queried by your browser to detect your public IP address</li>
           <li>Google STUN server: used by WebRTC to detect your network addresses; Google may see your IP address</li>
@@ -642,7 +642,7 @@
 
       <div class="legal-section">
         <h2><span class="section-num">11</span> Retention</h2>
-        <p>IntelReap has no user accounts, and our backend does not store scan results. Our hosting providers (Netlify and Vercel) keep standard request and runtime logs, and the IP data and AI providers we use handle requests under their own retention policies. Analytics data, if you accept, is retained under the retention settings of our Google Analytics property. Contact form messages are kept as described in section 07.</p>
+        <p>IntelReap has no user accounts, and our backend does not store scan results. Our hosting providers (Netlify and Cloudflare) keep standard request and runtime logs, and the IP data and AI providers we use handle requests under their own retention policies. Analytics data, if you accept, is retained under the retention settings of our Google Analytics property. Contact form messages are kept as described in section 07.</p>
       </div>
 
       <div class="legal-section">
