@@ -338,41 +338,47 @@ const Canvas13 = (() => {
           : '—'
     }
 
-    // ─── DUAL-PIN MAP — GPS VS IP LOCATION ──
-    // Only attempt this once GPS permission
-    // has actually been granted and a real
-    // coordinate pair came back — otherwise
-    // there is nothing meaningful to compare
-    if (
+    // ─── MAP — IP LOCATION, PLUS GPS WHEN GRANTED ──
+    // Always shows the IP-based location. When the browser
+    // has given a GPS reading, it adds the GPS pin and the
+    // distance line so the two can be compared.
+    const identity = STATE.identity
+    const gpsOk =
       fp.geoPermission === 'granted' &&
       fp.geoLatitude !== null &&
       fp.geoLatitude !== undefined
+    const dualMap = el('canvas13-dual-map')
+    if (
+      dualMap &&
+      identity.latitude !== null &&
+      identity.latitude !== undefined &&
+      typeof LeafletMapViz.initDualPinMap === 'function'
     ) {
-      const identity = STATE.identity
-      if (
-        typeof LeafletMapViz.initDualPinMap ===
-        'function'
-      ) {
+      const key = [
+        gpsOk ? fp.geoLatitude : '',
+        gpsOk ? fp.geoLongitude : '',
+        identity.latitude,
+        identity.longitude
+      ].join(',')
+      if (dualMap.dataset.key !== key) {
+        dualMap.dataset.key = key
         LeafletMapViz.initDualPinMap(
-          fp.geoLatitude,
-          fp.geoLongitude,
+          gpsOk ? fp.geoLatitude : null,
+          gpsOk ? fp.geoLongitude : null,
           identity.latitude,
           identity.longitude
         )
       }
-    }
-
-    // No GPS permission: say so instead of an empty box
-    const dualMap = el('canvas13-dual-map')
-    if (dualMap && !dualMap.dataset.ready &&
-        !(fp.geoPermission === 'granted' &&
-          fp.geoLatitude !== null &&
-          fp.geoLatitude !== undefined)) {
-      dualMap.classList.add('ndic-map-note-box')
-      dualMap.textContent =
-        'GPS comparison is off. Allow location access in your ' +
-        'browser to compare your GPS position with the location ' +
-        'your IP address suggests.'
+      let caption = document.getElementById('c13-map-caption')
+      if (!caption) {
+        caption = document.createElement('p')
+        caption.id = 'c13-map-caption'
+        caption.className = 'ndic-map-caption'
+        dualMap.parentNode.insertBefore(caption, dualMap.nextSibling)
+      }
+      caption.textContent = gpsOk
+        ? 'Blue pin: your GPS position. The dashed line shows how far it is from the location your IP address suggests.'
+        : 'Showing the approximate location your IP address suggests. Allow location access in your browser to compare it with your GPS position.'
     }
 
     // ─── DEEP DIVE LINK ─────────────────────

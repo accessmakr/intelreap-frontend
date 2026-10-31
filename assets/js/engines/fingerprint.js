@@ -504,15 +504,11 @@ const FingerprintEngine = (() => {
 
   // ───────────────────────────────────────
   // 10. GEOLOCATION GPS
-  // Deliberately passive — this never
-  // triggers a fresh permission prompt of
-  // its own. It only reads real coordinates
-  // if geolocation permission was already
-  // granted elsewhere. If not yet decided,
-  // it just reports the permission state,
-  // matching how the rest of this tool
-  // observes permissions without requesting
-  // new ones.
+  // Asks the browser for the position. If permission
+  // is undecided the browser shows its own prompt (a
+  // website cannot grant itself access). If it is
+  // denied, nothing is requested and the map falls
+  // back to the IP-based location.
   // ───────────────────────────────────────
 
   const collectGeolocation = () => {
@@ -532,8 +528,8 @@ const FingerprintEngine = (() => {
       navigator.permissions
         .query({ name: 'geolocation' })
         .then(status => {
-          if (status.state !== 'granted') {
-            resolve({ geoPermission: status.state })
+          if (status.state === 'denied') {
+            resolve({ geoPermission: 'denied' })
             return
           }
 
@@ -568,13 +564,14 @@ const FingerprintEngine = (() => {
                 geoIpMatch
               })
             },
-            () => {
+            (err) => {
               resolve({
-                geoPermission: 'granted',
+                geoPermission:
+                  err && err.code === 1 ? 'denied' : status.state,
                 geoLatitude: null
               })
             },
-            { timeout: 8000, maximumAge: 60000 }
+            { timeout: 15000, maximumAge: 60000 }
           )
         })
         .catch(() => {

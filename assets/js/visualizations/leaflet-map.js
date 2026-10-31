@@ -378,11 +378,11 @@ const LeafletMapViz = (() => {
       return
     }
 
-    if (!gpsLat || !gpsLng) {
-      // Nothing meaningful to show without a
-      // real GPS reading
-      return
-    }
+    const hasGps = !!(gpsLat && gpsLng)
+    const hasIp =
+      ipLat !== null && ipLat !== undefined &&
+      ipLng !== null && ipLng !== undefined
+    if (!hasGps && !hasIp) return
 
     try {
       if (dualMap) {
@@ -391,13 +391,11 @@ const LeafletMapViz = (() => {
         dualMapInitialized = false
       }
 
-      const hasIpPoint =
-        ipLat !== null && ipLat !== undefined &&
-        ipLng !== null && ipLng !== undefined
+      const hasIpPoint = hasIp
 
-      const points = hasIpPoint
-        ? [[gpsLat, gpsLng], [ipLat, ipLng]]
-        : [[gpsLat, gpsLng]]
+      const points = []
+      if (hasGps) points.push([gpsLat, gpsLng])
+      if (hasIpPoint) points.push([ipLat, ipLng])
 
       dualMap = L.map('canvas13-dual-map', {
         zoomControl: true,
@@ -426,7 +424,8 @@ const LeafletMapViz = (() => {
         logError('All map tile providers failed')
       }
 
-      // GPS pin
+      // GPS pin (only when a GPS reading exists)
+      if (hasGps) {
       const gpsIcon = createGpsIcon()
       const gpsMarker = gpsIcon
         ? L.marker([gpsLat, gpsLng], { icon: gpsIcon })
@@ -442,6 +441,7 @@ const LeafletMapViz = (() => {
           '</div>',
           { className: 'ndic-leaflet-popup', maxWidth: 200 }
         )
+      }
 
       // IP pin, if we have one to compare against
       if (hasIpPoint) {
@@ -461,18 +461,22 @@ const LeafletMapViz = (() => {
             { className: 'ndic-leaflet-popup', maxWidth: 200 }
           )
 
-        // Connecting line between the two points
-        L.polyline(points, {
-          color: 'var(--color-warning)',
-          weight: 2,
-          dashArray: '6, 6',
-          opacity: 0.7
-        }).addTo(dualMap)
+        if (hasGps) {
+          // Connecting line between the two points
+          L.polyline(points, {
+            color: '#b45309',
+            weight: 2,
+            dashArray: '6, 6',
+            opacity: 0.8
+          }).addTo(dualMap)
 
-        dualMap.fitBounds(points, {
-          padding: [30, 30],
-          maxZoom: 12
-        })
+          dualMap.fitBounds(points, {
+            padding: [30, 30],
+            maxZoom: 12
+          })
+        } else {
+          dualMap.setView([ipLat, ipLng], 10)
+        }
       } else {
         dualMap.setView([gpsLat, gpsLng], 11)
       }

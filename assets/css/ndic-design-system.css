@@ -4274,3 +4274,10 @@ select {
   line-height: 1.6;
   color: var(--color-text-secondary);
 }
+
+.ndic-map-caption {
+  margin: var(--space-2) var(--space-4) var(--space-3);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
