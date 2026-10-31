@@ -1,0 +1,7 @@
+from svgkit import *
+FIGS=[vchain([("Need the printer's IP",''),[('Printer screen','fastest'),('Windows','Printer properties'),('Mac / Linux','lpstat -v'),('Router list','no printer access')]],acc={0},foot=['Any one of the four is enough'],label='Four ways to find the printer IP'),
+vchain([('Router','192.168.1.1'),[('Printer','192.168.1.50'),('Laptop','192.168.1.42'),('Phone','192.168.1.23')]],acc={0},foot=['Printing is a local conversation on the same network'],label='Devices share private addresses behind one router'),
+vchain([('Printers & scanners','Settings > Bluetooth & devices'),('Printer properties',''),('Ports tab',''),('Port shows the IP','e.g. IP_192.168.1.50')],acc={3},label='Windows path to the Ports tab'),
+vmock('Network Configuration Page',[('Status','Connected'),('Network name','HomeWiFi'),('IP address','192.168.1.50'),('Subnet mask','255.255.255.0'),('Gateway','192.168.1.1')],hl=2,foot=['Most printers print this from the Network or Wi-Fi menu'],label='Example configuration page'),
+vlanes([('DHCP default',[('.50','Monday'),('.63','Restart'),('.41','Next week')],False),('With reservation',[('.50','Monday'),('.50','Restart'),('.50','Next week')],True)],foot=['A reservation keeps the same address'],label='Address with and without reservation'),
+vchain([('Printer offline',''),('Ping its IP','from your computer'),('Replies?',''),[('Yes: fix port or driver','address is reachable'),('No: check network','same Wi-Fi, address')]],acc={2},label='Offline printer decision flow')]

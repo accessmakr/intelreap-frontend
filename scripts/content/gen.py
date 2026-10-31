@@ -96,6 +96,9 @@ def build(S):
     if f'/learn/{S["slug"]}.html' not in t:
         mm=re.search(r'\[\[redirects\]\]\n  from = "/learn/what-is-an-ip-address\.html"\n.*?force = true\n',t,re.S)
         t=t[:mm.end()]+f'\n[[redirects]]\n  from = "/learn/{S["slug"]}.html"\n  to = "/learn/{S["slug"]}"\n  status = 301\n  force = true\n'+t[mm.end():]; open(p,'w',encoding='utf-8').write(t)
+    try:
+        import mobilize; mobilize.apply(S['slug'])
+    except Exception as ex: print('mobilize skipped:',ex)
     print('built',OUT,len(h),'bytes | words',wc,'| faq',len(S['faq']),'| figs',h.count('<figure class="ir-fig">'))
 if __name__=='__main__':
     for n in sys.argv[1:]: build(importlib.import_module(n).S)
