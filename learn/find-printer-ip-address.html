@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function(){try{var d=document.documentElement,s=localStorage.getItem('ndic_theme');
+    if(s!=='light'&&s!=='dark'){s=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+    d.setAttribute('data-theme',s)}catch(e){}})();
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('ndic_theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>How to Find a Printer's IP Address on Any Device — IntelReap</title>
+  <meta name="description" content="Find your printer's IP address in under a minute: printer menu, Windows, Mac, Linux or your router. Includes a device step picker and diagrams.">
+  <meta name="keywords" content="how to find printer ip address, find printer ip address, how to check printer ip address, how do i find my printer's ip address, printer ip address windows 11, printer ip address mac">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="IntelReap">
+  <link rel="canonical" href="https://intelreap.com/learn/find-printer-ip-address">
+  <link rel="alternate" hreflang="en"        href="https://intelreap.com/learn/find-printer-ip-address">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/find-printer-ip-address">
+  <meta property="og:type"         content="article">
+  <meta property="og:title"        content="How to Find a Printer's IP Address on Any Device — IntelReap">
+  <meta property="og:description"  content="Find your printer's IP address in under a minute: printer menu, Windows, Mac, Linux or your router. Includes a device step picker and diagrams.">
+  <meta property="og:url"          content="https://intelreap.com/learn/find-printer-ip-address">
+  <meta property="og:site_name"    content="IntelReap">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og/find-printer-ip-address.png">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Card titled How to Find a Printer's IP Address from IntelReap">
+  <meta property="og:locale"       content="en_US">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="How to Find a Printer's IP Address on Any Device — IntelReap">
+  <meta name="twitter:description" content="Find your printer's IP address in under a minute: printer menu, Windows, Mac, Linux or your router. Includes a device step picker and diagrams.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og/find-printer-ip-address.png">
+  <meta name="twitter:site"        content="@intelreap">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="../assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="../assets/images/icons/mstile-150.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="../assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
+  <style>
+    #scroll-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent,var(--color-accent-primary)),var(--color-accent-primary));z-index:9999;transition:width 0.1s linear;pointer-events:none;}
+    .ir-breadcrumb{max-width:760px;margin:0 auto;padding:1rem 1.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:0.375rem;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.75rem;color:var(--color-text-tertiary,#475569);}
+    .ir-breadcrumb a{color:var(--color-accent,var(--color-accent-primary));text-decoration:none;}
+    .ir-breadcrumb a:hover{text-decoration:underline;}
+    .ir-breadcrumb-sep{opacity:0.4;}
+    .ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
+    .ir-article{max-width:760px;margin:0 auto;padding:0 1.5rem 4rem;}
+    .ir-article h2{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:2.75rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,var(--color-border-primary));display:flex;align-items:center;gap:0.6rem;line-height:1.35;scroll-margin-top:5rem;}
+    .ir-article h3{font-family:var(--font-display,'Syne',sans-serif);font-size:0.975rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:1.75rem 0 0.6rem;line-height:1.4;}
+    .ir-article p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.85;color:var(--color-text-secondary,#94a3b8);margin-bottom:1rem;}
+    .ir-article ul,.ir-article ol{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.8;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.25rem 1.25rem;}
+    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}
+    .ir-article li::marker{color:var(--color-accent,var(--color-accent-primary));}
+    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}
+    .ir-article em{font-style:italic;}
+    .ir-article a{color:var(--color-accent,var(--color-accent-primary));text-decoration:underline;text-underline-offset:2px;}
+    .ir-article a:hover{opacity:0.8;}
+    .ir-article code{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.8125rem;color:var(--color-accent,var(--color-accent-primary));background:color-mix(in srgb, var(--color-accent-primary) 8%, transparent);border:1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);border-radius:4px;padding:0.1rem 0.4rem;white-space:nowrap;}
+    .section-num{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;color:var(--color-accent,var(--color-accent-primary));font-weight:500;background:color-mix(in srgb, var(--color-accent-primary) 10%, transparent);padding:0.15rem 0.4rem;border-radius:3px;flex-shrink:0;}
+    .ir-callout{background:color-mix(in srgb, var(--color-accent-primary) 5%, transparent);border:1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);border-left:3px solid var(--color-accent,var(--color-accent-primary));border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .ir-callout p{margin-bottom:0;color:var(--color-text-primary,#e2e8f0)!important;font-weight:500;}
+    .ir-browser-block{background:var(--color-bg-hover);border:1px solid var(--color-border,var(--color-border-primary));border-radius:8px;padding:1.5rem 1.5rem 1rem;margin:1.5rem 0;}
+    .ir-browser-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,var(--color-accent-primary));margin-bottom:1rem;display:block;}
+    .ir-browser-steps{list-style:none;margin:0;padding:0;}
+    .ir-browser-step{display:flex;gap:0.875rem;margin-bottom:0.875rem;align-items:flex-start;}
+    .ir-browser-step-num{flex-shrink:0;width:1.5rem;height:1.5rem;border-radius:50%;background:color-mix(in srgb, var(--color-accent-primary) 15%, transparent);color:var(--color-accent,var(--color-accent-primary));font-family:var(--font-mono,'JetBrains Mono',monospace);font-weight:700;font-size:0.7rem;display:flex;align-items:center;justify-content:center;margin-top:0.1rem;}
+    .ir-browser-step-text{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);}
+    .ir-table-wrap{width:100%;overflow-x:auto;margin:1.25rem 0 2rem;border-radius:6px;border:1px solid var(--color-border,var(--color-border-primary));-webkit-overflow-scrolling:touch;}
+    .ir-table{width:100%;min-width:500px;border-collapse:collapse;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;}
+    .ir-table caption{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.75rem;color:var(--color-text-tertiary,#475569);text-align:left;padding:0.5rem 1rem 0;caption-side:top;}
+    .ir-table th{background:var(--color-bg-hover);color:var(--color-text-primary,#e2e8f0);font-family:var(--font-display,'Syne',sans-serif);font-weight:600;font-size:0.8rem;padding:0.75rem 1rem;text-align:left;border-bottom:1px solid var(--color-border,var(--color-border-primary));white-space:nowrap;}
+    .ir-table td{padding:0.75rem 1rem;color:var(--color-text-secondary,#94a3b8);border-bottom:1px solid var(--color-border,var(--color-border-primary));vertical-align:middle;line-height:1.55;}
+    .ir-table tr:last-child td{border-bottom:none;}
+    .ir-check{color:var(--color-success);font-weight:600;}
+    .ir-cross{color:var(--color-danger);}
+    .ir-neutral{color:var(--color-text-tertiary,#475569);}
+    .ir-cta-block{background:color-mix(in srgb, var(--color-accent-primary) 5%, transparent);border:1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);border-radius:8px;padding:1.875rem 1.75rem;margin:2.5rem 0;text-align:center;}
+    .ir-cta-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,var(--color-accent-primary));margin-bottom:0.625rem;display:block;}
+    .ir-cta-block h3{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.5rem;line-height:1.3;}
+    .ir-cta-block>p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.7;color:var(--color-text-secondary,#94a3b8);margin:0 0 1.375rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .ir-logic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+    @media(max-width:560px){.ir-logic-grid{grid-template-columns:1fr;}}
+    .ir-logic-card{background:var(--color-bg-hover);border:1px solid var(--color-border,var(--color-border-primary));border-radius:6px;padding:1.25rem 1.5rem;}
+    .ir-logic-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,var(--color-accent-primary));margin-bottom:0.5rem;display:block;}
+    .ir-logic-card p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;line-height:1.75;color:var(--color-text-secondary,#94a3b8);margin:0;}
+    .ir-share-wrap{margin:2.5rem 0;padding:1.5rem;background:var(--color-bg-hover);border-radius:8px;border:1px solid var(--color-border,var(--color-border-primary));}
+    .ir-share-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-tertiary,#475569);margin-bottom:0.875rem;display:block;}
+    .ir-share-pills{display:flex;flex-wrap:wrap;gap:0.5rem;}
+    .ir-share-pill{display:inline-flex;align-items:center;padding:0.375rem 0.875rem;border-radius:9999px;font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;font-weight:500;background:var(--color-bg-hover);border:1px solid var(--color-border,var(--color-border-primary));color:var(--color-text-secondary,#94a3b8);cursor:pointer;text-decoration:none;transition:border-color 0.15s,color 0.15s;white-space:nowrap;}
+    .ir-share-pill:hover{border-color:var(--color-accent,var(--color-accent-primary));color:var(--color-accent,var(--color-accent-primary));text-decoration:none;}
+    .ir-faq-outer{max-width:760px;margin:0 auto;padding:0 1.5rem 1rem;}
+    .ir-faq-heading{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.375rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,var(--color-border-primary));}
+    .ir-faq-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.875rem;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.5rem;line-height:1.65;}
+    .ir-contact-outer{max-width:760px;margin:2.5rem auto 0;padding:0 1.5rem 4rem;}
+    .ir-contact-header{text-align:center;margin-bottom:1.75rem;}
+    .ir-contact-title{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin-bottom:0.375rem;}
+    .ir-contact-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;color:var(--color-text-tertiary,#475569);line-height:1.6;}
+    .ir-form-wrap{max-width:400px;margin:0 auto;}
+    .ir-form-card{background:var(--color-bg-secondary);border:1px solid var(--color-border-primary);border-radius:12px;padding:2rem;}
+    .form-group{margin-bottom:1rem;}
+    .form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
+    .form-group input,.form-group textarea{width:100%;background:var(--color-bg-hover);border:1px solid var(--color-border-primary);border-radius:6px;padding:0.65rem 0.9rem;font-size:0.875rem;color:var(--color-text-primary,#e2e8f0);font-family:var(--font-body,'Be Vietnam Pro',sans-serif);transition:border-color 0.2s;box-sizing:border-box;}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent,var(--color-accent-primary));}
+    .form-group textarea{resize:vertical;min-height:100px;}
+    .form-hidden{display:none;}
+    .form-submit{width:100%;background:var(--color-accent,var(--color-accent-primary));color: var(--color-text-inverse);border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
+    .form-submit:hover{opacity:0.9;}
+    #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,var(--color-border-primary));padding-top:2rem;}
+
+    /* ── ENTERPRISE CTA BUTTONS — !important overrides design system cascade ── */
+    .ir-btn-row{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;}
+    .ir-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background:var(--color-accent-primary) !important;color: var(--color-text-inverse) !important;border:2px solid var(--color-accent-primary) !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-primary:hover{background:color-mix(in srgb, var(--color-accent-primary) 82%, var(--color-text-primary)) !important;border-color:color-mix(in srgb, var(--color-accent-primary) 82%, var(--color-text-primary)) !important;transform:translateY(-1px);}
+    .ir-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.8125rem 1.75rem;background: var(--color-bg-elevated) !important;color: var(--color-text-primary) !important;border:2px solid var(--color-border-secondary) !important;border-radius:6px;font-family:var(--font-display,'Syne',sans-serif);font-size:0.8125rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none !important;cursor:pointer;transition:background 0.15s,transform 0.1s;white-space:nowrap;min-width:180px;}
+    .ir-btn-secondary:hover{background: var(--color-bg-secondary) !important;border-color:var(--color-accent-primary) !important;transform:translateY(-1px);}
+
+    @media(max-width:640px){.ir-article h2{font-size:1rem;margin-top:2rem;}.ir-article h3{font-size:0.9375rem;}.ir-article p,.ir-article li{font-size:0.875rem;}.ir-cta-block{padding:1.5rem 1.25rem;}.ir-form-card{padding:1.5rem 1.125rem;}.ir-browser-block{padding:1.25rem 1rem 0.75rem;}.ir-faq-outer,.ir-contact-outer,.ir-article{padding-left:1rem;padding-right:1rem;}.ir-btn-primary,.ir-btn-secondary{min-width:0;width:100%;}}
+  </style>
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://intelreap.com/learn/find-printer-ip-address#webpage",
+      "url": "https://intelreap.com/learn/find-printer-ip-address",
+      "name": "How to Find a Printer's IP Address on Any Device — IntelReap",
+      "description": "Find your printer's IP address in under a minute: printer menu, Windows, Mac, Linux or your router. Includes a device step picker and diagrams.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://intelreap.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/og/find-printer-ip-address.png"
+      },
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "breadcrumb": {
+        "@id": "https://intelreap.com/learn/find-printer-ip-address#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://intelreap.com/learn/find-printer-ip-address#article"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://intelreap.com/learn/find-printer-ip-address#article",
+      "headline": "How to Find a Printer's IP Address on Windows, Mac, Linux, Phone or Router",
+      "description": "Find your printer's IP address in under a minute: printer menu, Windows, Mac, Linux or your router. Includes a device step picker and diagrams.",
+      "url": "https://intelreap.com/learn/find-printer-ip-address",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/og/find-printer-ip-address.png",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "author": {
+        "@type": "Organization",
+        "@id": "https://intelreap.com/#organization",
+        "legalName": "IntelReap Information Technologies",
+        "email": "stmakarios@gmail.com"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://intelreap.com/learn/find-printer-ip-address"
+      },
+      "inLanguage": "en-US",
+      "keywords": "how to find printer ip address, find printer ip address, how to check printer ip address, how do i find my printer's ip address, printer ip address windows 11, printer ip address mac",
+      "articleSection": "Networking How-To",
+      "wordCount": 1029,
+      "isAccessibleForFree": true,
+      "about": {
+        "@type": "Thing",
+        "name": "Printer IP address"
+      },
+      "citation": [
+        {
+          "@type": "CreativeWork",
+          "name": "RFC 8011: Internet Printing Protocol/1.1 (IPP)",
+          "url": "https://www.rfc-editor.org/rfc/rfc8011"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Microsoft Learn: Get-PrinterPort",
+          "url": "https://learn.microsoft.com/en-us/powershell/module/printmanagement/get-printerport"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Microsoft Learn: Get-Printer",
+          "url": "https://learn.microsoft.com/en-us/powershell/module/printmanagement/get-printer"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "RFC 2131: Dynamic Host Configuration Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc2131"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "RFC 1918: Address Allocation for Private Internets",
+          "url": "https://www.rfc-editor.org/rfc/rfc1918"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "CUPS: Common UNIX Printing System",
+          "url": "https://www.cups.org/"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
+      },
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ],
+      "legalName": "IntelReap Information Technologies",
+      "email": "stmakarios@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learn",
+          "item": "https://intelreap.com/learn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Find a Printer's IP Address",
+          "item": "https://intelreap.com/learn/find-printer-ip-address"
+        }
+      ],
+      "@id": "https://intelreap.com/learn/find-printer-ip-address#breadcrumb"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why would I need my printer's IP address?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You need it to add a printer manually, open its settings page in a browser, fix a printer that shows as offline, or set up printing from a device that cannot find it automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the printer's IP address the same as my home's public IP address?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The printer has a private address that only works inside your network. Your home's public address is shared by all your devices. The Network Identity panel shows the public one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My printer shows an address starting 169.254. What does that mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It means the printer could not get an address from the router and gave itself a link-local one. Check the Wi-Fi or cable connection, restart the printer and router, and confirm DHCP is on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I find the printer's IP address from my phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not directly. Use the printer maker's app, the printer's own screen or the router's device list. Phones show their own address, not other devices'."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a printer's IP address change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can. Unless you set a reservation or a static address, the router may assign a new one after a restart or when the lease expires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if two devices have the same IP address?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both lose connectivity at times. Give the printer a reservation outside the range the router hands out, or set it to a free address and keep it unique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to expose a printer to the internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Printers have limited security, so keep them on the private network and do not forward ports to them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are port 9100 and IPP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Port 9100 is commonly used for raw printing and IPP is the standard Internet Printing Protocol, defined in RFC 8011. Both are normally used only on the local network."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I replaced my router and printing stopped. Why?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The new router may use a different address range, so the saved printer address no longer matches. Find the new address and re-add the printer."
+          }
+        }
+      ],
+      "@id": "https://intelreap.com/learn/find-printer-ip-address#faq",
+      "url": "https://intelreap.com/learn/find-printer-ip-address",
+      "isPartOf": {
+        "@id": "https://intelreap.com/learn/find-printer-ip-address#article"
+      }
+    }
+  ]
+}</script>
+<style>
+.ir-toc{border:1px solid color-mix(in srgb,currentColor 18%,transparent);border-radius:10px;padding:1rem 1.25rem;margin:0 0 2rem}.ir-toc-label{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:.5rem}.ir-toc ol{margin:0;padding-left:1.25rem;columns:2;column-gap:2rem}.ir-toc li{margin:.2rem 0}@media(max-width:600px){.ir-toc ol{columns:1}}
+.ir-fig{margin:1.75rem 0}.ir-fig svg{width:100%;height:auto;display:block;color:var(--color-text-primary,#e2e8f0)}.ir-fig figcaption{font-size:.85rem;opacity:.75;margin-top:.5rem;text-align:center}
+.ir-tool{border:1px solid color-mix(in srgb,var(--color-accent-primary,#0ea5e9) 35%,transparent);border-radius:10px;padding:1.25rem;margin:1rem 0 1.5rem}.ir-tool-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}.ir-tool-eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7}.ir-tool dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem 1.5rem;margin:1rem 0 0}.ir-tool-row dt{font-size:.75rem;opacity:.65}.ir-tool-row dd{margin:0;font-weight:600;word-break:break-word}.ir-tool-note,.ir-tool-empty{font-size:.85rem;opacity:.75;margin:.75rem 0 0}
+.ir-pick{font:inherit;padding:.6rem .8rem;border-radius:8px;border:1px solid color-mix(in srgb,currentColor 30%,transparent);background:transparent;color:inherit;max-width:100%}.ir-steps{margin:1rem 0 0;padding-left:1.25rem}.ir-steps li{margin:.5rem 0}.ir-steps code,.ir-code{font-family:var(--font-mono,monospace);font-size:.85em;background:color-mix(in srgb,currentColor 9%,transparent);padding:.1em .4em;border-radius:4px;word-break:break-all}
+@media(max-width:600px){.ir-table{min-width:0;font-size:.8rem}.ir-table th,.ir-table td{padding:.5rem .55rem}}
+</style>
+</head>
+<body>
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="/" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="ndic-ticker-container"></div>
+
+    <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
+      <a href="/">IntelReap</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="/learn/">Learn</a>
+      <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="ir-breadcrumb-current" aria-current="page">Find a Printer's IP Address</span>
+    </nav>
+
+    <section class="ndic-hero">
+      <div class="ndic-hero-inner">
+        <div class="ndic-hero-badge"><span class="ndic-hero-badge-dot" aria-hidden="true"></span><span>Printers &amp; Devices</span></div>
+        <h1 class="ndic-hero-title">How to Find a <span class="ndic-highlight">Printer's IP Address</span></h1>
+        <p class="ndic-hero-tagline">Four reliable ways, from the printer's own screen to your router, with steps matched to your device.</p>
+        <div class="ndic-hero-cta-group"><a href="#ways" class="ir-btn-primary">Pick My Device</a><a href="/intelligence/network-identity" class="ir-btn-secondary">Open Network Identity →</a></div>
+        <div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 31 October 2026</div>
+        <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
+          <div class="ndic-trust-item"><span class="ndic-trust-value">285 data points</span><span class="ndic-trust-label">per scan</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">13 intelligence panels</span><span class="ndic-trust-label">per report</span></div>
+          <span class="ndic-trust-sep" aria-hidden="true">|</span>
+          <div class="ndic-trust-item"><span class="ndic-trust-value">No account needed</span><span class="ndic-trust-label">free to use</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ndic-quick-answer"><div class="ndic-quick-answer-label">Quick Answer</div><h2 class="ndic-quick-answer-title">Four reliable ways to find a printer's IP address</h2><p class="ndic-quick-answer-body">The fastest way is the printer's own screen: print a network configuration page or open its Wi-Fi or Network menu. On Windows, open the printer's Properties and check the Ports tab. On Mac or Linux, run lpstat -v in a terminal. Your router's connected-devices list also shows it.</p></section>
+
+    <article class="ir-article" itemscope itemtype="https://schema.org/Article">
+<nav class="ir-toc" aria-label="Table of contents"><div class="ir-toc-label">On this page</div><ol><li><a href="#ways">The Four Ways to Find It</a></li><li><a href="#where">Where a Printer Sits on Your Network</a></li><li><a href="#windows">Windows 10 and 11</a></li><li><a href="#mac-linux">Mac and Linux</a></li><li><a href="#report">From the Printer Itself</a></li><li><a href="#stable">Keeping the Address From Changing</a></li><li><a href="#sources">Sources</a></li><li><a href="#faq-heading-main">FAQ</a></li></ol></nav>
+<h2 id="ways"><span class="section-num">01</span> The Four Ways to Find It</h2>
+<div class="ir-tool" id="ir-tool"><div class="ir-tool-head"><span class="ir-tool-eyebrow">Step picker</span><select class="ir-pick" id="ir-pick" aria-label="Choose your device"><option value="0">Printer screen (any model)</option><option value="1">Windows 10 / 11</option><option value="2">Mac</option><option value="3">Linux</option><option value="4">iPhone, iPad or Android</option><option value="5">Router (works for any printer)</option></select></div><ol class="ir-steps" id="ir-steps" aria-live="polite"></ol><p class="ir-tool-note">Menu names vary by printer maker and model. The pattern is the same: look for Network, Wi-Fi or Status, then an item called IP address.</p></div>
+<div class="ir-cta-block"><span class="ir-cta-eyebrow">Network Identity panel</span><h3>See what the internet sees</h3><p>A printer's address is private and only works inside your home. The <a href="/intelligence/network-identity">Network Identity panel</a> shows your public address, which is a different thing. Compare them in <a href="/learn/what-is-an-ip-address">What Is an IP Address?</a>.</p><div class="ir-btn-row"><a href="/intelligence/network-identity" class="ir-btn-primary">Open Network Identity</a></div></div>
+<p>You only need one method. The printer screen needs no computer, Windows and Mac or Linux read it from the print queue, and the router list works even when the printer has no display. Pick by what you can reach right now.</p><figure class="ir-fig"><svg viewBox="0 0 640 190" role="img" aria-label="Four ways to find a printer IP address" xmlns="http://www.w3.org/2000/svg"><title>Four ways to find a printer IP address</title><defs><marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="215" y="10" width="210" height="40" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="320.0" y="35.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Need the printer's IP</text><line x1="320" y1="50" x2="80" y2="86" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah1)"/><rect x="10" y="86" width="140" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="80.0" y="111.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Printer screen</text><text x="80.0" y="128.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">fastest</text><line x1="320" y1="50" x2="235" y2="86" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah1)"/><rect x="165" y="86" width="140" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="235.0" y="111.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Windows</text><text x="235.0" y="128.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">Printer properties</text><line x1="320" y1="50" x2="390" y2="86" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah1)"/><rect x="320" y="86" width="140" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="390.0" y="111.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Mac / Linux</text><text x="390.0" y="128.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">lpstat -v</text><line x1="320" y1="50" x2="545" y2="86" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah1)"/><rect x="475" y="86" width="140" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="545.0" y="111.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Router list</text><text x="545.0" y="128.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">no printer access</text><text x="320" y="176" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Any one of the four is enough. Start with the printer screen if you can reach it.</text></svg><figcaption>Four routes to the same answer. Use whichever you can reach first.</figcaption></figure><div class="ir-table-wrap" role="region" aria-label="Methods compared" tabindex="0"><table class="ir-table"><caption>Methods compared</caption><thead><tr><th scope="col">Method</th><th scope="col">Needs</th><th scope="col">Works with no display</th><th scope="col">Effort</th></tr></thead><tbody><tr><td><strong>Printer screen</strong></td><td>Access to the printer</td><td>No</td><td>Lowest</td></tr><tr><td><strong>Windows Properties</strong></td><td>A Windows PC with the printer added</td><td>Yes</td><td>Low</td></tr><tr><td><strong>Mac or Linux terminal</strong></td><td>A Mac or Linux computer with the printer added</td><td>Yes</td><td>Low</td></tr><tr><td><strong>Router device list</strong></td><td>Router login</td><td>Yes</td><td>Medium</td></tr></tbody></table></div>
+<h2 id="where"><span class="section-num">02</span> Where a Printer Sits on Your Network</h2>
+<p>A network printer gets a private address from your router, just like a laptop does, usually through DHCP. Because it is private, the address only works on your own network. If you are unsure what that means, read <a href="/learn/what-is-an-ip-address">what an IP address is</a> first.</p><figure class="ir-fig"><svg viewBox="0 0 640 210" role="img" aria-label="A printer and other devices share private addresses behind one router" xmlns="http://www.w3.org/2000/svg"><title>A printer and other devices share private addresses behind one router</title><defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="235" y="10" width="170" height="52" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="320.0" y="33.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Router</text><text x="320.0" y="50.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">192.168.1.1</text><line x1="320" y1="62" x2="100" y2="112" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah2)"/><rect x="30" y="112" width="140" height="52" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="100.0" y="135.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Printer</text><text x="100.0" y="152.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">192.168.1.50</text><line x1="320" y1="62" x2="310" y2="112" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah2)"/><rect x="240" y="112" width="140" height="52" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="310.0" y="135.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Laptop</text><text x="310.0" y="152.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">192.168.1.42</text><line x1="320" y1="62" x2="520" y2="112" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah2)"/><rect x="450" y="112" width="140" height="52" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="520.0" y="135.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Phone</text><text x="520.0" y="152.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">192.168.1.23</text><text x="320" y="196" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Printing is a local conversation: your device talks to the printer address on the same network.</text></svg><figcaption>The printer, laptop and phone all have private addresses behind one router.</figcaption></figure>
+<h2 id="windows"><span class="section-num">03</span> Windows 10 and 11</h2>
+<p>Windows stores the printer address in the port the printer uses. The Ports tab is the quickest place to read it, and the PowerShell commands in the picker give the same answer in a single line each.</p><figure class="ir-fig"><svg viewBox="0 0 640 160" role="img" aria-label="Windows path from Printers and scanners to the Ports tab" xmlns="http://www.w3.org/2000/svg"><title>Windows path from Printers and scanners to the Ports tab</title><defs><marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="8" y="30" width="138" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="77.0" y="63.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Printers & scanners</text><line x1="146" y1="58" x2="166" y2="58" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah3)"/><rect x="166" y="30" width="138" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="235.0" y="63.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Printer properties</text><line x1="304" y1="58" x2="324" y2="58" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah3)"/><rect x="324" y="30" width="138" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="393.0" y="63.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Ports tab</text><line x1="462" y1="58" x2="482" y2="58" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah3)"/><rect x="482" y="30" width="138" height="56" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="551.0" y="63.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">Port shows the IP</text><text x="320" y="124" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Settings > Bluetooth & devices > Printers & scanners > your printer</text><text x="320" y="144" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.65">The port name often looks like IP_192.168.1.50 or 192.168.1.50</text></svg><figcaption>The Windows route ends at the Ports tab, where the printer address is shown.</figcaption></figure>
+<h2 id="mac-linux"><span class="section-num">04</span> Mac and Linux</h2>
+<p>Both use CUPS. The command <code class="ir-code">lpstat -v</code> lists every printer with its device address. If the address is a name such as <code class="ir-code">printer.local</code>, the printer is found by name, and pinging that name reveals the numeric address.</p>
+<h2 id="report"><span class="section-num">05</span> From the Printer Itself</h2>
+<p>Nearly every network printer can print a configuration page. It lists the address, subnet mask and gateway in one place, which is useful when you also need to fix a connection problem.</p><figure class="ir-fig"><svg viewBox="0 0 640 236" role="img" aria-label="Example network configuration page with the IP address highlighted" xmlns="http://www.w3.org/2000/svg"><title>Example network configuration page with the IP address highlighted</title><rect x="170" y="8" width="300" height="196" rx="8" fill="currentColor" fill-opacity="0.05" stroke="currentColor" stroke-opacity="0.4"/><text x="320" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor" fill-opacity="0.8">Network Configuration Page</text><text x="196" y="64" text-anchor="start" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Status</text><text x="446" y="64" text-anchor="end" font-size="12" font-weight="400" fill="currentColor" fill-opacity="1">Connected</text><text x="196" y="92" text-anchor="start" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Network name</text><text x="446" y="92" text-anchor="end" font-size="12" font-weight="400" fill="currentColor" fill-opacity="1">HomeWiFi</text><rect x="182" y="103" width="276" height="26" rx="5" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.2"/><text x="196" y="120" text-anchor="start" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">IP address</text><text x="446" y="120" text-anchor="end" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">192.168.1.50</text><text x="196" y="148" text-anchor="start" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Subnet mask</text><text x="446" y="148" text-anchor="end" font-size="12" font-weight="400" fill="currentColor" fill-opacity="1">255.255.255.0</text><text x="196" y="176" text-anchor="start" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Gateway</text><text x="446" y="176" text-anchor="end" font-size="12" font-weight="400" fill="currentColor" fill-opacity="1">192.168.1.1</text><text x="320" y="224" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Most printers can print this page from the Network or Wi-Fi menu.</text></svg><figcaption>What a network configuration page typically contains. Layout varies by maker.</figcaption></figure>
+<h2 id="stable"><span class="section-num">06</span> Keeping the Address From Changing</h2>
+<p>By default the router may hand the printer a different address after a restart, which breaks printing set up by address. Two fixes exist: a DHCP reservation on the router, or a static address set on the printer. The reservation is easier to undo and keeps all settings in one place. Method details are in <a href="/guides/how-to-find-ip-address-of-any-device">our guide to finding the IP address of any device</a>.</p><figure class="ir-fig"><svg viewBox="0 0 640 200" role="img" aria-label="Printer address changing with plain DHCP versus staying fixed with a reservation" xmlns="http://www.w3.org/2000/svg"><title>Printer address changing with plain DHCP versus staying fixed with a reservation</title><defs><marker id="ah5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><text x="80" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor" fill-opacity="1">DHCP default</text><text x="80" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor" fill-opacity="1">With reservation</text><rect x="150" y="30" width="120" height="44" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="210.0" y="49.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">.50</text><text x="210.0" y="66.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">Monday</text><line x1="270" y1="52" x2="310" y2="52" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah5)"/><rect x="310" y="30" width="120" height="44" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="370.0" y="49.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">.63</text><text x="370.0" y="66.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">After restart</text><line x1="430" y1="52" x2="470" y2="52" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah5)"/><rect x="470" y="30" width="120" height="44" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="530.0" y="49.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">.41</text><text x="530.0" y="66.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">Next week</text><rect x="150" y="110" width="120" height="44" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="210.0" y="129.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">.50</text><text x="210.0" y="146.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">Monday</text><line x1="270" y1="132" x2="310" y2="132" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah5)"/><rect x="310" y="110" width="120" height="44" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="370.0" y="129.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">.50</text><text x="370.0" y="146.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">After restart</text><line x1="430" y1="132" x2="470" y2="132" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah5)"/><rect x="470" y="110" width="120" height="44" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="530.0" y="129.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">.50</text><text x="530.0" y="146.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">Next week</text><text x="320" y="186" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">A DHCP reservation tells the router to always give this printer the same address.</text></svg><figcaption>A reservation keeps the same address across restarts.</figcaption></figure><div class="ir-table-wrap" role="region" aria-label="Reservation versus static" tabindex="0"><table class="ir-table"><caption>Reservation versus static</caption><thead><tr><th scope="col">Feature</th><th scope="col">DHCP reservation</th><th scope="col">Static on the printer</th></tr></thead><tbody><tr><td><strong>Set on</strong></td><td>Router</td><td>Printer</td></tr><tr><td><strong>Risk of address clash</strong></td><td>Low</td><td>Higher if misconfigured</td></tr><tr><td><strong>Survives a router change</strong></td><td>No, redo it</td><td>Yes, if the range still matches</td></tr><tr><td><strong>Best for</strong></td><td>Most homes</td><td>Offices and fixed setups</td></tr></tbody></table></div>
+<div class="ir-logic-grid"><div class="ir-logic-card"><span class="ir-logic-eyebrow">Logic</span><p>Start with the method needing the least access, then move to ones that need a computer or the router. Finish with how to stop the address from changing so the lookup does not have to be repeated.</p></div><div class="ir-logic-card"><span class="ir-logic-eyebrow">Methodology</span><p>Commands are standard operating system tools: Windows PowerShell printer cmdlets and CUPS <code class="ir-code">lpstat</code>. Printer menu names differ between makers and models, so the page describes what to look for instead of one exact path. Steps were not tested on every printer model.</p></div></div>
+<!-- CITATIONS -->
+      <section class="ndic-citation-section" id="sources" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list"><div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc8011" target="_blank" rel="noopener noreferrer">RFC 8011: Internet Printing Protocol/1.1 (IPP)</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link"><a href="https://learn.microsoft.com/en-us/powershell/module/printmanagement/get-printerport" target="_blank" rel="noopener noreferrer">Microsoft Learn: Get-PrinterPort</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">03</span><span class="ndic-citation-link"><a href="https://learn.microsoft.com/en-us/powershell/module/printmanagement/get-printer" target="_blank" rel="noopener noreferrer">Microsoft Learn: Get-Printer</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">04</span><span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc2131" target="_blank" rel="noopener noreferrer">RFC 2131: Dynamic Host Configuration Protocol</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">05</span><span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc1918" target="_blank" rel="noopener noreferrer">RFC 1918: Address Allocation for Private Internets</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">06</span><span class="ndic-citation-link"><a href="https://www.cups.org/" target="_blank" rel="noopener noreferrer">CUPS: Common UNIX Printing System</a></span></div></div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+    </article>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading-main">
+      <div class="ir-faq-outer">
+        <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
+        <p class="ir-faq-sub">Nine questions about finding, keeping and fixing a printer address.</p>
+        <div class="ndic-faq-list"><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>Why would I need my printer's IP address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">You need it to add a printer manually, open its settings page in a browser, fix a printer that shows as offline, or set up printing from a device that cannot find it automatically.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>Is the printer's IP address the same as my home's public IP address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">No. The printer has a private address that only works inside your network. Your home's public address is shared by all your devices. The <a href="/intelligence/network-identity">Network Identity panel</a> shows the public one.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>My printer shows an address starting 169.254. What does that mean?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">It means the printer could not get an address from the router and gave itself a link-local one. Check the Wi-Fi or cable connection, restart the printer and router, and confirm DHCP is on.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>Can I find the printer's IP address from my phone?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Not directly. Use the printer maker's app, the printer's own screen or the router's device list. Phones show their own address, not other devices'.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>Does a printer's IP address change?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">It can. Unless you set a reservation or a static address, the router may assign a new one after a restart or when the lease expires.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>What if two devices have the same IP address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">Both lose connectivity at times. Give the printer a reservation outside the range the router hands out, or set it to a free address and keep it unique.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>Is it safe to expose a printer to the internet?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">No. Printers have limited security, so keep them on the private network and do not forward ports to them.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>What are port 9100 and IPP?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Port 9100 is commonly used for raw printing and IPP is the standard Internet Printing Protocol, defined in RFC 8011. Both are normally used only on the local network.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>I replaced my router and printing stopped. Why?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">The new router may use a different address range, so the saved printer address no longer matches. Find the new address and re-add the printer.</div></div></div></div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section aria-labelledby="contact-heading">
+      <div class="ir-contact-outer">
+        <div class="ir-contact-header">
+          <h2 class="ir-contact-title" id="contact-heading">Can't Find the IP Address You Need?</h2>
+          <p class="ir-contact-sub">Describe your device and situation — we will point you to the right method. We respond within two business days.</p>
+        </div>
+        <div class="ir-form-wrap">
+          <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
+            <input type="hidden" name="form-name" value="Request And Contact">
+            <div class="ir-form-card">
+              <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <div class="form-group"><label for="cf-name" data-i18n="contact.name_label">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" data-i18n-placeholder="contact.name_placeholder"></div>
+              <div class="form-group"><label for="cf-email" data-i18n="contact.email_label">Email</label><input type="email" id="cf-email" name="email" placeholder="Enter your email address" required autocomplete="email" data-i18n-placeholder="contact.email_placeholder"></div>
+              <div class="form-group"><label for="cf-message">Describe your device and situation</label><textarea id="cf-message" name="message" placeholder="What device are you trying to find the IP of? What have you already tried?" required></textarea></div>
+              <button type="submit" class="form-submit" data-i18n="contact.submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/cookies-policy" data-i18n="cookie.policy_link">Cookies Policy</a>
+          <a href="/terms-of-use">Terms of Use</a>
+          <a href="/about" data-i18n="nav.about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="mailto:stmakarios@gmail.com" data-i18n="footer.email_us">Email us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.operated_by">Operated by IntelReap Information Technologies.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use" data-i18n="footer.terms">Terms</a>
+          <a href="/cookies-policy#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script defer src="../js/registry.js"></script>
+  <script defer src="../js/root-config.js"></script>
+  <script defer src="../js/analytics-consent.js"></script>
+  <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../js/menu-system.js"></script>
+  <script defer src="../js/search-system.js"></script>
+  <script defer src="../js/schema.js"></script>
+  <script defer src="../js/internal-links.js"></script>
+  <script defer src="../js/legal-engine.js"></script>
+  <script defer src="../js/share-system.js"></script>
+  <script defer src="../js/ticker-system.js"></script>
+  <script defer src="../js/ad-slots.js"></script>
+  <script defer src="../js/carousel-system.js"></script>
+  <script defer src="../js/sw-register.js"></script>
+
+  <script>
+  (function(){'use strict';
+    document.querySelectorAll('.ndic-faq-question').forEach(function(btn){btn.addEventListener('click',function(){const item=btn.closest('.ndic-faq-item'),wasOpen=item.classList.contains('ndic-faq-item--open');document.querySelectorAll('.ndic-faq-item--open').forEach(function(i){i.classList.remove('ndic-faq-item--open');i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');});if(!wasOpen){item.classList.add('ndic-faq-item--open');btn.setAttribute('aria-expanded','true');}});});
+    const bar=document.getElementById('scroll-progress-bar');if(bar){window.addEventListener('scroll',function(){const s=window.scrollY||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(s/h)*100:0).toFixed(2)+'%';},{passive:true});}
+    document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear().toString();});
+    (()=>{const now=new Date(),dow=now.getDay();const mon=new Date(now.getFullYear(),now.getMonth(),now.getDate()+(dow===0?-6:1-dow));const iso=mon.toISOString().split('T')[0];document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>{if(s.textContent.includes('"dateModified"'))s.textContent=s.textContent.replace(/"dateModified"\s*:\s*"[^"]*"/g,`"dateModified":"${iso}"`);});})();
+    (()=>{const m=new Date().getMonth();const banners=['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'];const labels=['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];const el=document.getElementById('seasonal-banner');if(el){el.textContent=banners[m];el.style.cssText='text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;';}const lbl=document.getElementById('seasonal-label');if(lbl)lbl.textContent=labels[m];})();
+    (()=>{const v=['Reveal My Network Identity','See My Public IP Now','Check My Network Details','Inspect My IP Address','View My Network Identity','Scan My Network Now'];document.querySelectorAll('.cta-rotate').forEach(el=>{el.textContent=v[Math.floor(Math.random()*v.length)];});})();
+    (()=>{const rawUrl=window.location.href,encUrl=encodeURIComponent(rawUrl),encTitle=encodeURIComponent(document.title);const platforms=[{n:'WhatsApp',u:`https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}`},{n:'Facebook',u:`https://www.facebook.com/sharer/sharer.php?u=${encUrl}`},{n:'Twitter/X',u:`https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}`},{n:'LinkedIn',u:`https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`},{n:'Reddit',u:`https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`},{n:'Quora',u:`https://www.quora.com/search?q=${encTitle}`},{n:'Medium',u:`https://medium.com/new-story?url=${encUrl}`},{n:'Telegram',u:`https://t.me/share/url?url=${encUrl}&text=${encTitle}`},{n:'Pinterest',u:`https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}`},{n:'Discord',u:'https://discord.com/channels/@me'},{n:'Snapchat',u:`https://www.snapchat.com/share?url=${encUrl}`},{n:'Vimeo',u:'https://vimeo.com'},{n:'TikTok',u:'https://www.tiktok.com'},{n:'Instagram',u:'https://www.instagram.com'},{n:'Email',u:`mailto:?subject=${encTitle}&body=I%20thought%20you%20might%20find%20this%20useful%3A%20${encUrl}`},{n:'Copy Link',u:null}];
+    const container=document.getElementById('share-pills-container');if(!container)return;
+    platforms.forEach(p=>{let el;if(p.u===null){el=document.createElement('button');el.type='button';el.textContent='Copy Link';el.setAttribute('aria-label','Copy page URL to clipboard');el.addEventListener('click',()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(rawUrl).then(()=>{el.textContent='\u2713 Copied!';setTimeout(()=>{el.textContent='Copy Link';},2400);showToast('Link copied to clipboard');}).catch(()=>legacyCopy(rawUrl,el));}else legacyCopy(rawUrl,el);});}else{el=document.createElement('a');el.href=p.u;el.target='_blank';el.rel='noopener noreferrer';el.textContent=p.n;el.setAttribute('aria-label',`Share on ${p.n}`);}el.className='ir-share-pill';container.appendChild(el);});})();
+    function legacyCopy(text,btn){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');if(btn){btn.textContent='\u2713 Copied!';setTimeout(()=>{btn.textContent='Copy Link';},2400);}showToast('Link copied to clipboard');}catch(e){showToast('Copy failed — please copy the URL manually');}document.body.removeChild(ta);}
+    function showToast(msg){const tc=document.getElementById('toast-container');if(!tc)return;const t=document.createElement('div');t.textContent=msg;t.style.cssText='display:inline-block;background:var(--color-accent-primary);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';tc.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>{t.style.opacity='1';}));setTimeout(()=>{t.style.opacity='0';setTimeout(()=>{if(t.parentNode)t.parentNode.removeChild(t);},350);},2700);}
+  }());
+  </script>
+
+  <script>
+    function handleContactForm(e){e.preventDefault();const myForm=e.target;const formData=new FormData(myForm);fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(formData).toString()}).then(()=>{alert("Thank you! Your request has been transmitted.");myForm.reset();}).catch((error)=>{alert("Oops! There was a problem submitting your form.");console.error("Form submission error:",error);});}
+  </script>
+<script>(function(){var D=[["On the printer, open <strong>Settings</strong> or <strong>Setup</strong>, then <strong>Network</strong> or <strong>Wi-Fi</strong>.", "Choose <strong>Network status</strong>, <strong>Wireless summary</strong> or <strong>Print network configuration</strong>.", "Read the line labelled <strong>IP address</strong>. A value starting 169.254 means the printer did not get an address from the router."], ["Open <strong>Settings > Bluetooth &amp; devices > Printers &amp; scanners</strong> and select the printer.", "Choose <strong>Printer properties</strong> and open the <strong>Ports</strong> tab. The checked port shows the address.", "Or run in PowerShell: <code>Get-Printer | Select Name,PortName</code> then <code>Get-PrinterPort | Select Name,PrinterHostAddress</code>."], ["Open <strong>Terminal</strong> and run <code>lpstat -v</code>.", "Find your printer in the output. The address appears in the device URI, for example <code>ipp://192.168.1.50/ipp/print</code>.", "If it shows a name ending in .local instead, run <code>ping -c 1 name.local</code> to see its address."], ["Run <code>lpstat -v</code> in a terminal.", "Read the address inside the device URI (for example <code>ipp://192.168.1.50/ipp/print</code>).", "Alternatively open <code>http://localhost:631/printers</code> if the CUPS web interface is enabled."], ["A phone cannot show a printer's address directly. Open the maker's app (for example HP Smart, Epson iPrint or Canon PRINT) and look under printer or network details.", "If the app does not show it, use the printer screen or the router method instead."], ["Open your router's admin page (see the <a href=\"/learn/find-router-ip-address\">router IP guide</a>) and sign in.", "Open <strong>Connected devices</strong>, <strong>DHCP clients</strong> or <strong>Device list</strong>.", "Find the printer by its name or manufacturer. The address is on the same row."]],s=document.getElementById("ir-pick"),o=document.getElementById("ir-steps");if(!s||!o)return;function r(){o.innerHTML=D[s.value].map(function(x){return"<li>"+x+"</li>"}).join("")}s.addEventListener("change",r);r()})();</script>
+</body>
+</html>

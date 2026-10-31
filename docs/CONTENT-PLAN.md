@@ -22,6 +22,11 @@ Source data: `docs/keyword-map-v2.md` (Semrush exports supplied by the owner; on
 - T3 browser measurement (latency, speed, DoH timing)
 - T4 needs a new data source or Worker route (DoH approved by the owner; arbitrary-IP lookup and reverse IP need backend work coordinated with the backend agent)
 
+## Tooling
+
+- Generator: `python3 scripts/content/gen.py <spec>` builds a page from `scripts/content/specs/<spec>.py` (head, OG image, JSON-LD, hero, TOC, tool, diagrams, FAQ, learn-index card, redirect). Base template: `scripts/content/base.html`.
+- Verifier: `python3 scripts/content/verify.py <slug>...` (structure, JSON-LD, anchors, links, tool options, emulated Pixel 7 light and dark).
+
 ## A. Mapped pages (35 entries: 32 new, 3 retargets of existing pages)
 
 | ID | Page | URL (proposed) | Type | Wave | Keywords | Total vol (visible) | Primary keyword | Primary panel | Inline tool | Tier | Status |
@@ -38,8 +43,8 @@ Source data: `docs/keyword-map-v2.md` (Semrush exports supplied by the owner; on
 | P9 | How to Hide or Mask Your IP Address | `/learn/how-to-hide-ip-address` | new | 3 | 2 | 0 |  | [vpn-proxy](/intelligence/vpn-proxy) | "Is my IP hidden" check | T1 | planned |
 | P10 | Can an IP Address Be Hacked? | `/learn/can-ip-address-be-hacked` | new | 3 | 2 | 0 |  | [security](/intelligence/security) | Exposure check (IP + WebRTC) | T1 | planned |
 | P12 | What an Email or IP Reveals About a Sender (defensive) | `/learn/find-ip-address-from-email` | new | 3 | 22 | 9,890 | how to find someones ip address | [security](/intelligence/security) | Email-header analyzer (client-side) | T2 | planned |
-| P13 | How to Find a Printer's IP Address | `/learn/find-printer-ip-address` | new | 1 | 9 | 0 |  | [network-identity](/intelligence/network-identity) | OS/brand step picker (no live detection possible) | T2 | planned |
-| P14 | How to Find Your Router's IP Address | `/learn/find-router-ip-address` | new | 1 | 7 | 0 |  | [network-route](/intelligence/network-route) | OS step picker + default-gateway table | T2 | planned |
+| P13 | How to Find a Printer's IP Address | `/learn/find-printer-ip-address` | new | 1 | 9 | 0 |  | [network-identity](/intelligence/network-identity) | OS/brand step picker (no live detection possible) | T2 | LIVE after deploy - merged to main 2026-10-31 |
+| P14 | How to Find Your Router's IP Address | `/learn/find-router-ip-address` | new | 1 | 7 | 0 |  | [network-route](/intelligence/network-route) | OS step picker + default-gateway table | T2 | LIVE after deploy - merged to main 2026-10-31 |
 | P15 | How to Find a Roku's IP Address | `/learn/find-roku-ip-address` | new | 3 | 2 | 0 |  | [device](/intelligence/device) | Step picker | T2 | planned |
 | P16 | Can't Get a Teredo IP Address (Xbox/Windows) | `/learn/cant-get-teredo-ip-address` | new | 3 | 4 | 0 |  | [live-network](/intelligence/live-network) | Interactive checklist | T2 | planned |
 | P17 | Can't Obtain IP Address Within Time Limit | `/learn/cant-obtain-ip-address-within-time-limit` | new | 3 | 1 | 0 |  | [live-network](/intelligence/live-network) | Interactive checklist | T2 | planned |
@@ -108,3 +113,4 @@ Known data caveats: the same phrase shows different KD in different rows (for ex
 
 - 2026-10-30: keyword map v2 (327 visible new rows, 277 unique + 48 ISP-list; 338 assigned, 80 excluded). Reference page P1 built on branch `content/what-is-an-ip-address` (5 diagrams, 2 tables, 10 FAQs, live check). Render-tested on an emulated Pixel 7, light and dark. Fixed during testing: head splice bug, stale JSON-LD keywords and wordCount, per-page OG image added, fixed freshness date (guard added in js/root-config.js), table and diagram spacing on mobile.
 - 2026-10-31: merged P1 to main (after merging the latest main into the branch, no conflicts); added the .html to clean-URL redirect in netlify.toml.
+- 2026-10-31: Wave 1 started. Built generator and verifier. P13 (printer IP) and P14 (router IP) built and merged: 5 diagrams, device step picker (T2), 9 FAQs each; verified on emulated Pixel 7, light and dark, no overflow. Remaining in Wave 1: D1 slow DNS, S1 good speed, S2 300 Mbps, HUB retitle.

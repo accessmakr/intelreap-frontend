@@ -304,6 +304,18 @@
   force = true
 
 [[redirects]]
+  from = "/learn/find-router-ip-address.html"
+  to = "/learn/find-router-ip-address"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/find-printer-ip-address.html"
+  to = "/learn/find-printer-ip-address"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/learn/what-is-a-vpn-concentrator.html"
   to = "/learn/what-is-a-vpn-concentrator"
   status = 301
