@@ -262,7 +262,7 @@ const injectFreshnessBadge = () => {
   const badge = document.getElementById(
     'freshness-badge'
   )
-  if (!badge) return
+  if (!badge || badge.dataset.fixed) return
 
   badge.textContent =
     INTELREAP_CONFIG.getFreshnessBadge()
