@@ -728,9 +728,9 @@ const ChartJSViz = (() => {
     BENCHMARK_GAUGE_IDS.forEach(gaugeId => {
       destroyChart(`canvas10-${gaugeId}`)
 
-      const canvas = el(
-        `canvas10-${gaugeId}-chart`
-      )
+      const canvas =
+        el(`c10-${gaugeId}-gauge`) ||
+        el(`canvas10-${gaugeId}-chart`)
       if (!canvas) return
 
       const ctx = canvas.getContext('2d')

@@ -26,7 +26,8 @@ const D3DiagramsViz = (() => {
     '#fc8181': '#b3261e',
     '#9f7aea': '#5b21b6',
     '#76e4f7': '#006b87',
-    '#2d3748': '#e3e8ef'
+    '#2d3748': '#e3e8ef',
+    '#ffffff': '#0f172a'
   }
   const LIGHT_RGB = {
     '99,179,237': '7,95,153',

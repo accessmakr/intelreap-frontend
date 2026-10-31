@@ -4251,3 +4251,26 @@ select {
   line-height: 1.8;
   color: var(--color-text-secondary);
 }
+
+
+/* -----------------------------------------
+   MAP TILES IN DARK THEME
+   OpenStreetMap tiles are light; invert them
+   for the dark theme.
+   ----------------------------------------- */
+[data-theme="dark"] .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+
+.ndic-map-note-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto !important;
+  min-height: 80px;
+  padding: var(--space-4);
+  text-align: center;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
