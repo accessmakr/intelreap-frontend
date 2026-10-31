@@ -362,6 +362,19 @@ const Canvas13 = (() => {
       }
     }
 
+    // No GPS permission: say so instead of an empty box
+    const dualMap = el('canvas13-dual-map')
+    if (dualMap && !dualMap.dataset.ready &&
+        !(fp.geoPermission === 'granted' &&
+          fp.geoLatitude !== null &&
+          fp.geoLatitude !== undefined)) {
+      dualMap.classList.add('ndic-map-note-box')
+      dualMap.textContent =
+        'GPS comparison is off. Allow location access in your ' +
+        'browser to compare your GPS position with the location ' +
+        'your IP address suggests.'
+    }
+
     // ─── DEEP DIVE LINK ─────────────────────
 
     const deepDiveLink = el('c13-deep-dive-link')

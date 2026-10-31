@@ -105,76 +105,8 @@
   to = "/410.html"
   status = 410
 
-# Clean URL support (optional)
-# Allows intelreap.com/intelligence/security
-# without the .html extension
-[[redirects]]
-  from = "/intelligence/:page"
-  to = "/intelligence/:page.html"
-  status = 200
-
-# ─────────────────────────────────────────
-# SECURITY HEADERS
-# Applied to all pages
-# ─────────────────────────────────────────
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# BEGIN CLEAN URL REDIRECTS (generated)
-[[redirects]]
-  from = "/about.html"
-  to = "/about"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact.html"
-  to = "/contact"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/cookies-policy.html"
-  to = "/cookies-policy"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/guides/gpu-troubleshooting-guide.html"
-  to = "/guides/gpu-troubleshooting-guide"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/guides/how-to-enable-webgl.html"
-  to = "/guides/how-to-enable-webgl"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/guides/how-to-find-ip-address-of-any-device.html"
-  to = "/guides/how-to-find-ip-address-of-any-device"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/guides/index.html"
-  to = "/guides/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/index.html"
-  to = "/"
-  status = 301
-  force = true
-
+# Redirects from .html addresses must come BEFORE the
+# clean-URL rewrite below, or the rewrite matches first.
 [[redirects]]
   from = "/intelligence/capability.html"
   to = "/intelligence/capability"
@@ -256,6 +188,76 @@
 [[redirects]]
   from = "/intelligence/vpn-proxy.html"
   to = "/intelligence/vpn-proxy"
+  status = 301
+  force = true
+
+# Clean URL support (optional)
+# Allows intelreap.com/intelligence/security
+# without the .html extension
+[[redirects]]
+  from = "/intelligence/:page"
+  to = "/intelligence/:page.html"
+  status = 200
+
+# ─────────────────────────────────────────
+# SECURITY HEADERS
+# Applied to all pages
+# ─────────────────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# BEGIN CLEAN URL REDIRECTS (generated)
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cookies-policy.html"
+  to = "/cookies-policy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/gpu-troubleshooting-guide.html"
+  to = "/guides/gpu-troubleshooting-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/how-to-enable-webgl.html"
+  to = "/guides/how-to-enable-webgl"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/how-to-find-ip-address-of-any-device.html"
+  to = "/guides/how-to-find-ip-address-of-any-device"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/index.html"
+  to = "/guides/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
   status = 301
   force = true
 
