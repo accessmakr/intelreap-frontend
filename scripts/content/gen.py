@@ -17,7 +17,7 @@ CSS='''<style>
 .ir-fig{margin:1.75rem 0}.ir-fig svg{width:100%;height:auto;display:block;color:var(--color-text-primary,#e2e8f0)}.ir-fig figcaption{font-size:.85rem;opacity:.75;margin-top:.5rem;text-align:center}
 .ir-tool{border:1px solid color-mix(in srgb,var(--color-accent-primary,#0ea5e9) 35%,transparent);border-radius:10px;padding:1.25rem;margin:1rem 0 1.5rem}.ir-tool-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}.ir-tool-eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7}.ir-tool dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem 1.5rem;margin:1rem 0 0}.ir-tool-row dt{font-size:.75rem;opacity:.65}.ir-tool-row dd{margin:0;font-weight:600;word-break:break-word}.ir-tool-note,.ir-tool-empty{font-size:.85rem;opacity:.75;margin:.75rem 0 0}
 .ir-pick{font:inherit;padding:.6rem .8rem;border-radius:8px;border:1px solid color-mix(in srgb,currentColor 30%,transparent);background:transparent;color:inherit;max-width:100%}.ir-steps{margin:1rem 0 0;padding-left:1.25rem}.ir-steps li{margin:.5rem 0}.ir-steps code,.ir-code{font-family:var(--font-mono,monospace);font-size:.85em;background:color-mix(in srgb,currentColor 9%,transparent);padding:.1em .4em;border-radius:4px;word-break:break-all}
-@media(max-width:600px){.ir-table{min-width:0;font-size:.8rem}.ir-table th,.ir-table td{padding:.5rem .55rem}}
+@media(max-width:600px){.ir-table code,.ir-table .ir-code{white-space:normal;word-break:break-word;overflow-wrap:anywhere}.ir-table{min-width:0;font-size:.8rem}.ir-table th,.ir-table td{padding:.5rem .55rem}}
 </style>
 </head>'''
 def picker(S):
@@ -28,7 +28,7 @@ def picker(S):
 def build(S):
     URL='https://intelreap.com/learn/'+S['slug']; OUT=f"learn/{S['slug']}.html"; OG=f"https://intelreap.com/assets/images/og/{S['slug']}.png"; DT=S['date']
     h=open(os.path.join(D,'base.html'),encoding='utf-8').read().replace(OLD,URL)
-    tool,js=picker(S)
+    tool,js=(S['tool_html'],S['tool_js']) if 'tool_html' in S else picker(S)
     # OG card
     from playwright.sync_api import sync_playwright
     card=f'''<html><body style="margin:0;width:1200px;height:630px;background:#0b1220;color:#e6edf6;font-family:Helvetica,Arial,sans-serif;position:relative;overflow:hidden"><div style="position:absolute;left:0;top:0;width:14px;height:630px;background:#0ea5e9"></div><div style="position:absolute;left:80px;top:70px;font-size:30px;letter-spacing:6px;color:#7dd3fc">INTELREAP  /  LEARN</div><div style="position:absolute;left:80px;top:160px;width:1040px;font-size:78px;font-weight:800;line-height:1.1">{S['og_title']}</div><div style="position:absolute;left:80px;top:400px;font-size:34px;color:#94a3b8;width:1000px">{S['og_sub']}</div><div style="position:absolute;left:80px;top:500px;display:flex;gap:18px;align-items:center"><div style="padding:16px 26px;border:2px solid #38bdf8;border-radius:12px;font-size:34px;font-weight:700">{S['og_chip']}</div><div style="font-size:30px;color:#64748b">intelreap.com</div></div></body></html>'''

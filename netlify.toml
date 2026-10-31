@@ -304,6 +304,12 @@
   force = true
 
 [[redirects]]
+  from = "/learn/how-to-fix-slow-dns-lookup.html"
+  to = "/learn/how-to-fix-slow-dns-lookup"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/learn/find-router-ip-address.html"
   to = "/learn/find-router-ip-address"
   status = 301
