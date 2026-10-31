@@ -27,7 +27,7 @@ Source data: `docs/keyword-map-v2.md` (Semrush exports supplied by the owner; on
 | ID | Page | URL (proposed) | Type | Wave | Keywords | Total vol (visible) | Primary keyword | Primary panel | Inline tool | Tier | Status |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | HUB | How to Find an IP Address (retitle existing guide) | `/guides/how-to-find-ip-address-of-any-device` | retarget | 1 | 33 | 1,827,480 | how to find ip address | [network-identity](/intelligence/network-identity) | Live IP check | T1 | planned |
-| P1 | What Is an IP Address and How Does It Work? | `/learn/what-is-an-ip-address` | new | 1 | 4 | 0 |  | [network-identity](/intelligence/network-identity) | Live IP check (built) | T1 | BUILT - on branch content/what-is-an-ip-address, awaiting merge to main |
+| P1 | What Is an IP Address and How Does It Work? | `/learn/what-is-an-ip-address` | new | 1 | 4 | 0 |  | [network-identity](/intelligence/network-identity) | Live IP check (built) | T1 | LIVE after deploy - merged to main 2026-10-31 |
 | P2 | What Is My IP Address? | `/learn/what-is-my-ip-address` | new | 2 | 8 | 1,180 | what is my ip address nord | [network-identity](/intelligence/network-identity) | Full live check incl. IPv6 | T1 | planned |
 | P3 | How to Find Your IP on iPhone and Android | `/learn/find-ip-address-on-iphone-android` | new | 2 | 8 | 260 | how to find an ip address on an iphone | [device](/intelligence/device) | OS-aware steps + live IP | T1 | planned |
 | P4 | How to Find Your IP on Windows, Mac and Linux | `/learn/find-ip-address-on-windows-mac-linux` | new | 2 | 8 | 1,410 | how to lookup an ip address on a computer | [device](/intelligence/device) | OS-aware commands + live IP | T1 | planned |
@@ -107,3 +107,4 @@ Known data caveats: the same phrase shows different KD in different rows (for ex
 ## D. Change log
 
 - 2026-10-30: keyword map v2 (327 visible new rows, 277 unique + 48 ISP-list; 338 assigned, 80 excluded). Reference page P1 built on branch `content/what-is-an-ip-address` (5 diagrams, 2 tables, 10 FAQs, live check). Render-tested on an emulated Pixel 7, light and dark. Fixed during testing: head splice bug, stale JSON-LD keywords and wordCount, per-page OG image added, fixed freshness date (guard added in js/root-config.js), table and diagram spacing on mobile.
+- 2026-10-31: merged P1 to main (after merging the latest main into the branch, no conflicts); added the .html to clean-URL redirect in netlify.toml.

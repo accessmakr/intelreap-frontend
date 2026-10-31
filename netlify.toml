@@ -298,6 +298,12 @@
   force = true
 
 [[redirects]]
+  from = "/learn/what-is-an-ip-address.html"
+  to = "/learn/what-is-an-ip-address"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/learn/what-is-a-vpn-concentrator.html"
   to = "/learn/what-is-a-vpn-concentrator"
   status = 301
