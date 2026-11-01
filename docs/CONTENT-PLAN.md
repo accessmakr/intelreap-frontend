@@ -4,7 +4,7 @@ Maintained alongside the work. Update the Status column and the Change log whene
 
 Source data: `docs/keyword-map-v2.md` (Semrush exports supplied by the owner; only the first 10 rows of each export block were available).
 
-See also: `docs/QUALITY-QUEUE.md` for the one-at-a-time retrofit and new-article queue, quality standard, decisions awaiting the owner, and cannibalisation map.
+See also: `docs/MIXED-INTENT-AUDIT.md`, `docs/SEMRUSH-SEEDS.md` and `docs/QUALITY-QUEUE.md` for the one-at-a-time retrofit and new-article queue, quality standard, decisions awaiting the owner, and cannibalisation map.
 
 ## Working method (owner directive, 2026-10-31): one article at a time
 
@@ -16,7 +16,9 @@ No new page, depth pass or retrofit starts until the current article has been re
 2. Exactly one primary panel pointer (CTA block) and one inline tool (tier below). If no honest tool exists, use an interactive checklist.
 3. 4 to 5 inline SVG diagrams (theme-aware, with title and aria-label), section-spaced, plus at least one comparison table. Every diagram ships two versions: wide for desktop and a tall stacked version for phones (360 wide, 15 px text, `scripts/content/mobile/<slug>.py`); the verifier fails a page that lacks either.
 4. Logic and Methodology blocks, primary-source citations (RFCs, vendor docs, standards), at least 8 FAQs with FAQPage schema.
-5. 8 to 12 contextual internal links, hub to spoke and spoke to spoke, only to pages that exist.
+5. About 5 contextual links in the body (owner standard), each in a different paragraph, to pages that exist, with sibling pages linked as they are built. Applies to new pages and to existing pages in retrofit.
+5b. Length follows intent: no word-count gate (owner directive 2026-11-01). Depth comes from answering every reader question, with examples and troubleshooting, not padding.
+5c. The 13 intelligence panels are tool-pointer pages: articles point to them, they link out to articles, and they must not become article pages.
 6. Head: unique title (about 60 chars), description (about 155), canonical, hreflang, OG and Twitter with a per-page 1200x630 image and alt text, article:* meta, JSON-LD (WebPage, Article with real wordCount and citations, BreadcrumbList, FAQPage).
 7. Real dates only: `data-fixed="true"` on the freshness badge pins the page's actual date (site-wide default is a single constant).
 8. Verified before merge: tag balance, JSON-LD parse, anchors, internal link targets, widget JS syntax, emulated phone render (light and dark) with no horizontal overflow.
@@ -131,3 +133,4 @@ Known data caveats: the same phrase shows different KD in different rows (for ex
 - 2026-10-31 owner feedback on phone diagrams: the script-converted phone versions were disjointed and mass produced. Confirmed: several implied wrong things (single arrow from one of five causes, single arrow from one of two settings, lost yes/no branches, unlabeled timeline, request shown as passed along the DNS chain instead of the resolver asking each level). Process changed to one article at a time (see Working method). Slow DNS article (D1) redone first: five diagrams redrawn for what each must teach, wide and tall separately (sequence of a lookup, same page at two DNS speeds, causes placed by where they occur, device vs router setting, measure-then-fix decision flow); removed an unverifiable Chrome internal-page claim. Diagrams on P1, P13 and P14 were produced by the old method and are pending one-at-a-time redesign: several are lists dressed as diagrams (router methods, default addresses) and should become tables or be redrawn.
 - Pending, in order, each only after owner review of the previous: D1 review; P14 router redo; P13 printer redo; P1 redo; then S1, S2, hub retitle.
 - 2026-11-01: QUALITY-QUEUE.md drafted from an audit of all 26 existing pages. Findings: existing articles are 1,556 to 2,914 words with 12 FAQs, 1 table, no diagrams, no TOC; three carry unrelated sections; panels have 3 sections, 4 to 5 FAQs, no tables, diagrams or in-text links; Semrush data exists only for IP, speed, DNS and WebRTC topics. Six decisions (D-1 to D-6) await the owner. No page work starts until the owner approves the queue and first spec.
+- 2026-11-01 owner directives: no word-count gates; the 13 panels stay tool-pointer pages that articles point to (no article drift); existing pages before new articles; mixed-intent sections to be sorted out after a Search Console query check; Semrush seeds listed. Queue and sequence updated accordingly.

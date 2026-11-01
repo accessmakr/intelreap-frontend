@@ -2,88 +2,97 @@
 
 Status: DRAFT for owner approval. Companion to `docs/CONTENT-PLAN.md` (ledger) and `docs/keyword-map-v2.md` (keyword data). Written 2026-11-01 from a fresh audit of all 26 existing pages and the Semrush exports supplied.
 
-## 1. Decisions needed from the owner before the queue is final
+## 1. Decisions (updated 2026-11-01 after the owner's answers)
 
-- **D-1 Cannibalisation, "what is my IP address".** The Network Identity panel already is the live tool for this 27K-search term. Recommendation: retrofit that panel as the answer page and do not build a separate P2 article.
-- **D-2 Merge instead of duplicate.** Fold planned S4 (slow internet) into the speed-fluctuation article (A4) and planned W2 (enable/disable WebRTC) into the WebRTC leak article (A3). Fewer, stronger pages.
-- **D-3 Mixed-intent existing pages.** The MAC/VPN article (ExitLag, Steam, qBittorrent sections), the GPU troubleshooting guide (nine unrelated questions) and the two-ISPs article (definitions) carry unrelated sections. Choices: trim to the core intent, or split sections into their own pages. I cannot judge the value without Semrush exports for those topics (D-6).
-- **D-4 Backend for lookup tools.** Arbitrary-IP lookup and any "domains on this IP" feature need Worker routes and a data source (RDAP plus a geolocation source, and for reverse IP a third-party passive-DNS source). The `claude/lookup-routes` plan is still waiting on this.
-- **D-5 Product-UI panels.** Scoreboard and Live Feed have little informational value for a search reader. Enrich with methodology, or set noindex to protect site quality.
-- **D-6 Keyword data gaps.** No Semrush data was supplied for GPU, WebGL, VPN, privacy, fingerprinting, ISP, Core Web Vitals or device topics. Please export those seeds so the pages can be mapped to real queries; until then their intent is inferred from titles only.
+- **D-1 Panels stay tool-pointer pages (resolved).** The 13 panels remain tools that articles point to. Concept explanation lives in articles; panels link out to them. Consequently the "What is my IP address" page (P2) stays a planned article, built last, that explains the answer, offers a live check and points to the Network Identity panel. The earlier suggestion to turn the panel into that article is withdrawn.
+- **D-2 Merge versus duplicate (resolved without redirects).** The planned S4 (slow internet) and W2 (enable/disable WebRTC) do not exist as URLs, so nothing indexed is affected. Their content goes into the existing indexed articles A4 and A3 only where it fits that article's intent; anything that does not fit is later built as its own narrow page. No existing indexed URL is changed, moved or redirected. The four new pages already in the sitemap keep their URLs.
+- **D-3 Mixed-intent pages (analysed, awaiting Search Console check).** See `docs/MIXED-INTENT-AUDIT.md`: section-by-section dispositions for the MAC/VPN article, the GPU guide and the two-ISPs article, and the safe procedure (export each page's queries from Search Console first, then cut or move).
+- **D-4 Backend routes (plan below, awaiting go-ahead).**
+- **D-5 Scoreboard and Live Feed (retracted).** Nothing is wrong with them; they stay tool-pointer pages. My noindex suggestion had no evidence behind it. The only open question is whether Search Console reports them as indexed, which the owner can check in Pages (Indexing).
+- **D-6 Semrush seeds (listed).** See `docs/SEMRUSH-SEEDS.md`. Items 1 to 11 of the sequence need no new data.
+
+### Backend plan for the lookup tools (D-4)
+- **What exists:** the Worker (`cloudflare-worker` branch of the backend repo) has six routes. Location data comes from Cloudflare for the caller only, so it cannot look up an arbitrary IP. The backend agent is active (latest commit 2026-10-31).
+- **Can I test routes here?** Yes: Wrangler 4.156 installs and runs in the sandbox, so new routes can be tested locally before anything is deployed.
+- **Route 1, `/api/ip-lookup?ip=`:** accepts only public IPs (private, reserved and malformed input rejected, no user-supplied URLs), returns owner, network range, registered country and abuse contact from RDAP, cached for 24 hours, rate limited, same CORS allowlist. Phase 1 answers honestly as registration data, not user location.
+- **City-level location:** needs a provider. Options (quotas and terms to be verified when the spec is written): a free-tier geolocation API called from the Worker with caching, or a downloadable database held outside the Worker. Needs the owner's choice.
+- **Reverse IP "domains on this IP":** no free, reliable source exists. Phase 1 ships reverse DNS (PTR) lookups client-side through public DNS-over-HTTPS, with honest limits; domains-on-IP only if a paid or rate-limited source is approved.
+- **DNS lookups:** no backend needed; the browser calls public DoH directly, as the slow-DNS tool already does.
+- **Process:** new branch `claude/lookup-routes` cut from the latest `cloudflare-worker`, additive files plus one route-table line, local tests, then re-fetch and rebase immediately before merging so the other agent's commits are not overwritten. Merging triggers the Worker redeploy, so it happens only after tests pass. This is queue item 54, so it is not urgent.
 
 ## 2. The quality standard (every item below is checked before it counts as done)
 
 1. **Intent fit.** Before drafting, list the queries mapped to the page, group them into the questions a reader arrives with and the worries behind them, and confirm the page answers each. Every H2 must serve the primary intent, or be cut or split out.
 2. **Answer first.** A 40-60 word direct answer, then a live tool or the next step.
-3. **Accuracy audit.** Every command, menu path, number, threshold and product claim is checked against a primary source or removed. Unverifiable claims are labelled or cut. Rules of thumb are called that.
+3. **Accuracy audit (no unverified claims).** Every command, menu path, number, threshold and product claim is checked against a primary source or removed. Unverifiable claims are labelled or cut. Rules of thumb are called that.
 4. **Diagrams only where they teach.** Each diagram has a one-sentence purpose. If a table or list teaches it better, use that. Wide and phone versions are drawn separately.
 5. **Tool and panel.** One primary panel pointer and one inline tool, honest about what a browser can and cannot measure.
 6. **Structure.** TOC, answer-first, methodology and logic blocks, primary-source citations, 8+ FAQs that are real questions (no filler), comparison table where a comparison exists.
 7. **Links.** About 5 contextual links in the body, each in a different paragraph, only to pages that exist.
-8. **Length.** 1,300-1,800 body words for head-term pages, 900-1,300 for narrow how-to pages (judgement; depth from examples and troubleshooting, not padding).
+8. **Length follows intent, not a target.** There is no word-count gate. A page is the right length when every reader question is answered and nothing is padded.
 9. **SEO head.** Unique title (about 60 chars) and description (about 155), canonical, per-page OG image and alt text, article meta, JSON-LD with real word count and citations, real dates.
 10. **Verification.** Verifier passes; desktop and phone renders inspected; phone review by the owner before the next item starts.
 
-## 3. Recommended sequence (54 items; reorder freely)
+## 3. Sequence (owner-approved logic: finish live pages, then existing pages, then new articles)
 
-Logic: finish what is live and flagged, then existing pages carrying the most mapped search demand, then the rest of the existing pages (the larger AdSense-quality risk), then new articles in value order. The owner reviews each on a phone before the next starts.
+Existing pages first (items 1 to 30), then new articles in value order (31 to 54). One at a time; the owner reviews each on a phone before the next starts. Items 1 to 11 need no new keyword data.
 
-| # | Item | What |
-|---|---|---|
-| 1 | R0 | Slow DNS: owner approval |
-| 2 | R1 | Router IP redo |
-| 3 | R2 | Printer IP redo |
-| 4 | R3 | What is an IP address redo |
-| 5 | A1 | Hub guide retitle and restructure |
-| 6 | /intelligence/network-identity | Network Identity panel (absorbs "What is my IP") |
-| 7 | A2 | Reverse IP article |
-| 8 | A3 | WebRTC leak article |
-| 9 | /intelligence/security | Security panel |
-| 10 | A4 | Speed fluctuation article |
-| 11 | S1 | NEW Good internet speed |
-| 12 | S2 | NEW 300 Mbps |
-| 13 | /intelligence/live-network | Live Network panel |
-| 14 | S3 | NEW Latency test |
-| 15 | D2 | NEW My DNS server |
-| 16 | D6 | NEW Reverse DNS |
-| 17 | P5 | NEW Does IP change |
-| 18 | P8 | NEW Static IP one device |
-| 19 | A10 | WebGL guide |
-| 20 | /intelligence/graphics | Graphics panel |
-| 21 | A8 | What is a GPU |
-| 22 | A9 | GPU troubleshooting (after D-3) |
-| 23 | A6 | VPN and MAC article |
-| 24 | /intelligence/vpn-proxy | VPN and Proxy panel |
-| 25 | S6 | NEW VPN slows internet |
-| 26 | P6 | NEW Change IP |
-| 27 | P9 | NEW Hide IP |
-| 28 | A7 | Privacy article |
-| 29 | A11 | Fingerprinting article |
-| 30 | /intelligence/fingerprinting | Fingerprinting panel |
-| 31 | A5 | Two ISPs article |
-| 32 | A12 | VPN concentrator |
-| 33 | A13 | VPN passthrough |
-| 34 | /intelligence/network-route | Network Route panel |
-| 35 | /intelligence/performance | Performance panel |
-| 36 | /intelligence/device | Device panel |
-| 37 | /intelligence/capability | Capability panel |
-| 38 | /intelligence/rendering-speed | Rendering Speed panel |
-| 39 | /intelligence/scoreboard | Scoreboard (after D-5) |
-| 40 | /intelligence/live-feed | Live Feed (after D-5) |
-| 41 | W1 | NEW What is WebRTC |
-| 42 | P3 | NEW IP on phones |
-| 43 | P4 | NEW IP on computers |
-| 44 | P7 | NEW Change IP on phones (maybe merge into P6) |
-| 45 | P10 | NEW IP hacked |
-| 46 | P18 | NEW Website IP |
-| 47 | D3 | NEW DNS lookup |
-| 48 | D4 | NEW nslookup/dig |
-| 49 | D5 | NEW A and MX records |
-| 50 | P12 | NEW Email headers |
-| 51 | P15 | NEW Roku IP |
-| 52 | P16 | NEW Teredo |
-| 53 | P17 | NEW Time limit error |
-| 54 | P19 | NEW IP lookup (after backend, D-4) |
+| # | Item |
+|---|---|
+| 1 | R0 Slow DNS: owner approval |
+| 2 | R1 Router IP redo |
+| 3 | R2 Printer IP redo |
+| 4 | R3 What is an IP address redo |
+| 5 | A1 Hub guide retitle and restructure |
+| 6 | Network Identity panel (light, tool-pointer) |
+| 7 | A2 Reverse IP article |
+| 8 | A3 WebRTC leak article (absorbs enable/disable steps) |
+| 9 | Security panel |
+| 10 | A4 Speed fluctuation article (absorbs slow-internet steps) |
+| 11 | Live Network panel |
+| 12 | A10 WebGL guide (needs seeds) |
+| 13 | Graphics panel |
+| 14 | A8 What is a GPU (needs seeds) |
+| 15 | A9 GPU troubleshooting restructure (needs seeds and Search Console queries) |
+| 16 | A6 VPN and MAC article trim (needs Search Console queries) |
+| 17 | VPN and Proxy panel |
+| 18 | A7 Privacy article (needs seeds) |
+| 19 | A11 Fingerprinting article (needs seeds) |
+| 20 | Fingerprinting panel |
+| 21 | A5 Two ISPs article (cut one section) |
+| 22 | A12 VPN concentrator |
+| 23 | A13 VPN passthrough |
+| 24 | Network Route panel |
+| 25 | Performance panel |
+| 26 | Device panel |
+| 27 | Capability panel |
+| 28 | Rendering Speed panel |
+| 29 | Scoreboard |
+| 30 | Live Feed |
+| 31 | NEW S1 Good internet speed |
+| 32 | NEW S2 300 Mbps |
+| 33 | NEW D2 My DNS server |
+| 34 | NEW D6 Reverse DNS |
+| 35 | NEW P5 Does IP change |
+| 36 | NEW P8 Static IP one device |
+| 37 | NEW S3 Latency test |
+| 38 | NEW P2 What is my IP address |
+| 39 | NEW P6 Change IP (P7 folded in if data agrees) |
+| 40 | NEW P9 Hide IP |
+| 41 | NEW S6 VPN slows internet |
+| 42 | NEW W1 What is WebRTC |
+| 43 | NEW P3 IP on phones |
+| 44 | NEW P4 IP on computers |
+| 45 | NEW P10 IP hacked |
+| 46 | NEW P18 Website IP |
+| 47 | NEW D3 DNS lookup |
+| 48 | NEW D4 nslookup and dig |
+| 49 | NEW D5 A and MX records |
+| 50 | NEW P12 Email headers |
+| 51 | NEW P15 Roku IP |
+| 52 | NEW P16 Teredo |
+| 53 | NEW P17 Time limit error |
+| 54 | NEW P19 IP lookup (after backend, D-4) |
 
 ## 4. Retrofit queue: existing pages (26) plus the four rebuilt today
 
@@ -118,11 +127,11 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 
 ### R3 What is an IP address (live, built)
 - **URL:** `/learn/what-is-an-ip-address`
-- **Current state:** Built: 1,032 body words (below the 1,300-1,800 head-term target), 5 diagrams (script-converted phone versions), 4 tables, 12 FAQs.
+- **Current state:** Built: 1,032 body words, 5 diagrams (script-converted phone versions), 4 tables, 12 FAQs.
 - **Mapped keywords:** 4 keywords
 - **Reader intent:** Reader wants a plain definition, then to understand public vs private, IPv4 vs IPv6, and what their address reveals.
-- **Defects found:** Under length target; ranges and anatomy figures are list-like; IPv6 notation barely explained; no "see yours now" path beyond one tool; misconceptions section missing.
-- **Retrofit work:** Extend to 1,300-1,800 words with IPv6 notation rules (compression), misconceptions ("an IP identifies a person"), worked subnet example, how to see your own, privacy section. Redraw figures for what each teaches; ranges become a table only.
+- **Defects found:** Ranges and anatomy figures are list-like; IPv6 notation barely explained; no "see yours now" path beyond one tool; misconceptions section missing.
+- **Retrofit work:** Add IPv6 notation rules (compression), misconceptions ("an IP identifies a person"), worked subnet example, how to see your own, privacy section. Redraw figures for what each teaches; ranges become a table only.
 - **Diagrams (purpose of each):** Teaches: an address names a network and a device (network/host split with a real mask); Teaches: one public address shared by many private devices (NAT) with the address translation shown; Teaches: how a request travels and gets answered (source/destination swap); Teaches: how a device gets its address (DHCP) in one picture
 
 ### A1 HUB: How to Find an IP Address (retitle)
@@ -242,64 +251,29 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 - **Retrofit work:** Add NAT-breaks-tunnel diagram and a troubleshooting flow; verify.
 - **Diagrams (purpose of each):** Teaches: why NAT can break IPsec/PPTP and what passthrough changes
 
-### Panel pages (13)
+### Panel pages (13): tool-pointer pages, kept that way
 
-Current state for all 13: 3 sections ("Understanding Every Signal", a "why it matters" section, FAQ), 4-5 FAQs, no TOC, no tables, no diagrams, no in-text links, 800-2,150 words. These are tool pages, so the retrofit keeps the live canvases and adds: a TOC, a per-signal table (what it is, where the data comes from, how reliable), purpose-designed diagrams, 8+ real FAQs, about 5 in-text links, and an accuracy and methodology block.
+Owner directive: the panels are tools that articles point to. They must not drift into article pages. Allowed changes only: a short, plain "what this tool shows" answer at the top; a table of the signals the tool returns (what it is, where the data comes from, how reliable); a "how to read your result" note; links out to the articles that explain the concepts (those articles in turn point to the panel); FAQs about the tool and its data (4 to 8, real questions); methodology and data-freshness notes. Not allowed: tutorials, definitions-from-scratch, step-by-step fixes, or anything that belongs in an article. Existing panel text is reviewed for drift and trimmed if it has any.
 
+Current state for all 13: 3 sections, 4 to 5 FAQs, no tables, no diagrams, no in-text links, 800 to 2,150 words. Diagrams on panels only where they explain how the tool measures (for example, how the data was collected), never the concept.
 
-#### Network Identity (`/intelligence/network-identity`)
-- **Keyword role:** Absorbs the planned "What is my IP address" page (decision D-1). Head term 27K searches.
-- **Work:** Tool-first quick answer; per-signal table (IP, version, ISP, org, location, connection type, proxy/hosting flags) with where each comes from and how reliable; answer "why is it different from my router"; diagrams of the signal sources.
+| Panel | Role | Articles that point here | Allowed upgrade |
+|---|---|---|---|
+| `/intelligence/network-identity` | Live public IP, ISP, location, connection type | What is an IP address, IP hub, change/hide IP, what is my IP | Signal table, reliability note (location is an estimate), links out |
+| `/intelligence/network-route` | ASN, owner, route | Reverse IP, IP lookup, website IP, DNS | Signal table, data-freshness note (ASN classes refreshed weekly by the backend) |
+| `/intelligence/vpn-proxy` | VPN/proxy detection | Hide IP, VPN slow-down, MAC/VPN | Table of mismatch signals, honest "never certain" note |
+| `/intelligence/security` | WebRTC exposure and checks | WebRTC leak, what is WebRTC, privacy | Check table, what pass/fail means |
+| `/intelligence/live-network` | Latency, jitter, loss | Latency test, slow DNS, speed fluctuation | Signal table, measurement notes |
+| `/intelligence/performance` | Browser speed measurement | Speed articles | Method and limits note |
+| `/intelligence/rendering-speed` | Page rendering metrics | (none yet) | Metric table (verify Google thresholds at the time) |
+| `/intelligence/graphics` | GPU and WebGL data | What is a GPU, WebGL guide | Field table |
+| `/intelligence/capability` | Browser capability matrix | WebGL guide | Capability table, verified |
+| `/intelligence/device` | OS, browser, screen | Find IP by OS pages | Field table |
+| `/intelligence/fingerprinting` | Fingerprint signals and leaks | Fingerprinting article, privacy | Signal table |
+| `/intelligence/scoreboard` | Aggregate score | (none) | Explain how the score is computed |
+| `/intelligence/live-feed` | Scan log | (none) | Explain what is and is not stored |
 
-#### Network Route (`/intelligence/network-route`)
-- **Keyword role:** Pointer for IP lookup, website IP, DNS pages. No keyword data supplied.
-- **Work:** Per-signal table (ASN, owner, type, tier, range, registry, peering, upstream, BGP status); diagram of autonomous systems between you and a site; data freshness statement (backend refreshes ASN classes weekly).
-
-#### VPN and Proxy (`/intelligence/vpn-proxy`)
-- **Keyword role:** Pointer for hide/mask IP, VPN slow-down, change IP.
-- **Work:** Explain detection logic and why it is never certain; table of mismatch signals (timezone, language, WebRTC, reverse DNS); diagram of how a mismatch is found.
-
-#### Security and Privacy (`/intelligence/security`)
-- **Keyword role:** Likely owner of "webrtc leak test" intent with the leak article (decision D-2). WebRTC keywords 1.9K, 1.3K, 1.0K.
-- **Work:** Table of checks with what a pass/fail means; explain the score and its limits; link leak and privacy articles.
-
-#### Live Network (`/intelligence/live-network`)
-- **Keyword role:** Pointer for latency, slow DNS, speed. "What is a latency test" 18.1K.
-- **Work:** Table of signals (round trip, jitter, loss, bandwidth, connection type); good/bad ranges by activity, labelled as guidance with sources; diagrams: latency vs jitter vs loss explained properly.
-
-#### Performance (`/intelligence/performance`)
-- **Keyword role:** Pointer for speed test. Head terms are KD 100 (unwinnable); long tail only.
-- **Work:** Explain how the browser test measures and its limits; table of signals; honest accuracy statement.
-
-#### Rendering Speed (`/intelligence/rendering-speed`)
-- **Keyword role:** No keyword data supplied.
-- **Work:** Table of Core Web Vitals with Google thresholds (LCP 2.5 s, INP 200 ms, CLS 0.1; verify current values at build); diagram of where each metric sits in a page load.
-
-#### Graphics Engine (`/intelligence/graphics`)
-- **Keyword role:** Pairs with WebGL and GPU articles.
-- **Work:** Table of reported GPU/WebGL fields and why they are identifying; link WebGL guide and GPU article.
-
-#### Capability Matrix (`/intelligence/capability`)
-- **Keyword role:** No keyword data supplied.
-- **Work:** Table of capabilities with support meaning; verify feature statements.
-
-#### Device Intelligence (`/intelligence/device`)
-- **Keyword role:** Pointer for find-IP-by-OS pages.
-- **Work:** Table of device signals; explain OS detection and its limits.
-
-#### Fingerprinting and Leaks (`/intelligence/fingerprinting`)
-- **Keyword role:** Pairs with the fingerprinting article.
-- **Work:** Table of leak vectors; what you can and cannot change.
-
-#### Global Scoreboard (`/intelligence/scoreboard`)
-- **Keyword role:** Product UI page; thin informational value.
-- **Work:** Explain exactly how the score is computed, or consider noindex (decision D-5).
-
-#### Live Feed (`/intelligence/live-feed`)
-- **Keyword role:** Product UI page; thin informational value.
-- **Work:** Explain what the log shows and what is and is not stored; or consider noindex (decision D-5).
-
-## 5. New article queue: from the harvested keywords (28 outstanding in the plan: 24 to build, 3 recommended merges, 1 deferred)
+## 5. New article queue: from the harvested keywords (28 outstanding in the plan: 25 to build (P2 restored), 2 folded into existing articles, 1 deferred)
 
 Built already: What is an IP address, Printer IP, Router IP, Slow DNS. Keyword counts and full keyword lists per page are in `docs/keyword-map-v2.md`. Tool tiers: T1 existing Worker endpoint, T2 client-side, T3 browser measurement, T4 needs a new data source or route.
 
@@ -490,15 +464,15 @@ Built already: What is an IP address, Printer IP, Router IP, Slow DNS. Keyword c
 - **Tool:** A/MX lookup via DoH (T4)
 - **Diagrams (purpose of each):** Teaches: how mail finds a domain via MX
 
-### P2 What Is My IP Address? (recommended merge)
-- **URL:** `(recommended: merge into Network Identity panel)`
+### P2 What Is My IP Address?
+- **URL:** `/learn/what-is-my-ip-address` (article; points to the Network Identity panel, which stays a tool page)
 - **Keywords:** 8 keywords; primary: what is my ip address nord (590, KD 64, CPC 0)
 - **Questions to answer:** Immediate answer plus meaning.
 - **Tool:** Panel tool
 - **Diagrams (purpose of each):** none planned; use tables
-- **Notes:** Decision D-1: do not build a competing page.
+- **Notes:** Explains and offers a live check; links to the panel for the full tool. Built after the existing pages.
 
-### S4 How to Fix Slow Internet (recommended merge)
+### S4 How to Fix Slow Internet (content goes into A4 where it fits)
 - **URL:** `(recommended: merge into A4)`
 - **Keywords:** 4 keywords; primary: how can i increase the speed of internet (1,000, KD -, CPC 1.90)
 - **Questions to answer:** Diagnosis.
@@ -506,7 +480,7 @@ Built already: What is an IP address, Printer IP, Router IP, Slow DNS. Keyword c
 - **Diagrams (purpose of each):** none planned; use tables
 - **Notes:** Decision D-2.
 
-### W2 How to Enable or Disable WebRTC (recommended merge)
+### W2 How to Enable or Disable WebRTC (content goes into A3 where it fits)
 - **URL:** `(recommended: merge into A3)`
 - **Keywords:** 15 keywords; primary: how to disable webrtc on chrome (320, KD 41, CPC 0)
 - **Questions to answer:** Per-browser steps.
