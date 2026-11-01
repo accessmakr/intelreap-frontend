@@ -40,7 +40,8 @@ const ChartJSViz = (() => {
     '#fc8181': '#b3261e',
     '#9f7aea': '#5b21b6',
     '#76e4f7': '#006b87',
-    '#2d3748': '#e3e8ef'
+    '#2d3748': '#e3e8ef',
+    '#ffffff': '#0f172a'
   }
   const LIGHT_RGB = {
     '99,179,237': '7,95,153',
@@ -851,7 +852,7 @@ const ChartJSViz = (() => {
         c.font = `bold ${
           Math.round(height / 4)
         }px Inter, sans-serif`
-        c.fillStyle = '#ffffff'
+        c.fillStyle = tc('#ffffff')
         c.textAlign = 'center'
         c.textBaseline = 'middle'
 
@@ -960,7 +961,7 @@ const ChartJSViz = (() => {
           c.font = `bold ${
             Math.round(height / 4.5)
           }px Inter, sans-serif`
-          c.fillStyle = '#ffffff'
+          c.fillStyle = tc('#ffffff')
           c.textAlign = 'center'
           c.textBaseline = 'middle'
           c.fillText(
@@ -1005,7 +1006,10 @@ const ChartJSViz = (() => {
     if (!chart) return
 
     const value = Math.min(score || 0, 100)
-    const color = getScoreColor(value)
+    // Canvas cannot use var(--x); read the real colour
+    let color = getScoreColor(value)
+    const varMatch = /^var\((--[a-z0-9-]+)\)$/i.exec(color)
+    if (varMatch) color = cssVar(varMatch[1], '#63b3ed')
 
     chart.data.datasets[0].data =
       [value, 100 - value]
