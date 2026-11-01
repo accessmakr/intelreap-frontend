@@ -1,6 +1,2 @@
-from svgkit import *
-FIGS=[vchain([('Your device','asks'),('Resolver','ISP or public'),('Root server','who runs .com?'),('TLD server','.com'),('Authoritative','owns the name')],acc={1},foot=['Cache hit: answered at the resolver','Cache miss: the resolver walks the whole chain'],label='DNS lookup chain'),
-vbars([('DNS',0,60,True),('TCP',60,40,False),('TLS',100,60,False),('Request',160,30,False),('Response',190,100,False)],foot=['One page load, simplified (not to scale)','DNS comes first and delays every step after it'],label='Page load timeline'),
-vchain([[('Distant resolver',''),('Dead secondary DNS',''),('Router DNS forwarder',''),('VPN or security app',''),('Broken IPv6 fallback','')],('Slow lookup','')],acc={1},label='Five causes of slow lookups'),
-vchain([[('Device setting','one device only'),('Router setting','every device')],('Your resolver','where lookups go'),('Public resolver','1.1.1.1, 8.8.8.8 or 9.9.9.9')],acc={2},foot=['A router change covers every device'],label='Where to change DNS'),
-vchain([('Pages feel slow',''),('Measure lookup','tool or dig'),('Penalty high?',''),[('Change resolver','if yes'),('Check Wi-Fi, ISP','if no')]],acc={2},foot=['Measure first, then fix'],label='Measure then fix')]
+from dns_figs import TALL
+FIGS=TALL
