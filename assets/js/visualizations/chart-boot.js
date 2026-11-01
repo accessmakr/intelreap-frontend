@@ -19,6 +19,7 @@
     'c10-dom-manipulation-gauge': [70, 50],
     'c10-canvas-render-gauge': [70, 50],
     'c10-memory-access-gauge': [70, 50],
+    'canvas11-global-chart': [200, 200],
     'canvas11-network-chart': [80, 80],
     'canvas11-identity-chart': [80, 80],
     'canvas11-privacy-chart': [80, 80],
@@ -60,10 +61,16 @@
     started = true
     try {
       frameAll()
-      // The D3 score rings already show the overall score;
-      // the doughnut would sit on top of them.
+      // Give the overall-score doughnut its own space above the rings
       var ring = document.querySelector('.ndic-score-ring-container')
-      if (ring) ring.style.display = 'none'
+      if (ring) {
+        ring.style.width = '200px'
+        ring.style.height = '200px'
+        ring.style.margin = '0 auto 16px'
+        // The chart draws the number itself; hide the duplicate
+        var dup = document.getElementById('c11-global-score')
+        if (dup) dup.style.display = 'none'
+      }
       ChartJSViz.initializeAll()
       // Fill the charts with whatever data already arrived
       var calls = ['updateCanvas3Charts', 'updateCanvas9Charts',
@@ -76,6 +83,26 @@
     }
     return true
   }
+
+  // Charts and diagrams pick their colours when they are drawn,
+  // so draw them again when the theme is switched.
+  var redrawForTheme = function () {
+    setTimeout(function () {
+      try { ChartJSViz.initializeAll() } catch (e) {}
+      ;['updateCanvas3Charts', 'updateCanvas9Charts',
+        'updateCanvas10Charts', 'updateCanvas11Charts'
+      ].forEach(function (name) {
+        try { ChartJSViz[name]() } catch (e) {}
+      })
+      if (typeof D3DiagramsViz !== 'undefined') {
+        ;['updateRoutingDiagram', 'updateCapabilityGrid', 'updateScoreRings'
+        ].forEach(function (name) {
+          try { D3DiagramsViz[name]() } catch (e) {}
+        })
+      }
+    }, 60)
+  }
+  window.addEventListener('ndic-theme-changed', redrawForTheme)
 
   var begin = function () {
     if (start()) return
