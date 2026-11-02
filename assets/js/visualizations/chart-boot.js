@@ -104,7 +104,29 @@
   }
   window.addEventListener('ndic-theme-changed', redrawForTheme)
 
+  // The route diagram is drawn once, when the network data
+  // arrives. If that moment is missed (slow data, page opened
+  // directly) the area stays empty, so check for a while and
+  // draw it as soon as the data is there.
+  var ensureRoute = function () {
+    var tries = 0
+    var timer = setInterval(function () {
+      tries += 1
+      var svg = document.getElementById('canvas1-routing-diagram')
+      if (!svg || tries > 45) { clearInterval(timer); return }
+      try {
+        if (svg.querySelectorAll('circle').length < 3 &&
+            typeof D3DiagramsViz !== 'undefined' &&
+            typeof STATE !== 'undefined' &&
+            STATE.network && STATE.network.asn) {
+          D3DiagramsViz.initRoutingDiagram()
+        }
+      } catch (e) { /* try again next round */ }
+    }, 2000)
+  }
+
   var begin = function () {
+    ensureRoute()
     if (start()) return
     // Libraries are loaded with defer; wait for them
     var tries = 0
