@@ -304,8 +304,8 @@ const D3DiagramsViz = (() => {
     // Link labels
     linkElements.append('text')
       .attr('class', 'ndic-routing-link-label')
-      .attr('fill', tc('rgba(255,255,255,0.3)'))
-      .attr('font-size', '9px')
+      .attr('fill', tc('rgba(255,255,255,0.8)'))
+      .attr('font-size', '10px')
       .attr('text-anchor', 'middle')
       .attr('dy', -6)
       .text(d => {
@@ -423,9 +423,9 @@ const D3DiagramsViz = (() => {
       .attr('dy', d =>
         nodeStyles[d.type].radius + 14
       )
-      .attr('fill', tc('rgba(255,255,255,0.7)'))
-      .attr('font-size', '10px')
-      .attr('font-weight', '600')
+      .attr('fill', tc('rgba(255,255,255,0.95)'))
+      .attr('font-size', '11px')
+      .attr('font-weight', '700')
       .text(d => truncateString(d.label, 16))
 
     // Node sublabels
@@ -434,8 +434,8 @@ const D3DiagramsViz = (() => {
       .attr('dy', d =>
         nodeStyles[d.type].radius + 26
       )
-      .attr('fill', tc('rgba(255,255,255,0.35)'))
-      .attr('font-size', '9px')
+      .attr('fill', tc('rgba(255,255,255,0.7)'))
+      .attr('font-size', '10px')
       .text(d => truncateString(d.sublabel, 14))
 
     // Initialize force simulation
@@ -1095,8 +1095,8 @@ const D3DiagramsViz = (() => {
 
       legendGroup.append('text')
         .attr('text-anchor', 'middle')
-        .attr('fill', tc('rgba(255,255,255,0.5)'))
-        .attr('font-size', isNarrow ? '9px' : '7px')
+        .attr('fill', tc('rgba(255,255,255,0.8)'))
+        .attr('font-size', isNarrow ? '10px' : '8px')
         .attr('y', 0)
         .text(
           isNarrow

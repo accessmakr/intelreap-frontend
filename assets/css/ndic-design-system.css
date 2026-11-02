@@ -4281,3 +4281,12 @@ select {
   line-height: 1.6;
   color: var(--color-text-secondary);
 }
+
+.ndic-viz-caption {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border-primary);
+}
