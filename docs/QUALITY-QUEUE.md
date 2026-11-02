@@ -524,3 +524,22 @@ spec (intent map, diagrams with purposes, tool, source list) shown to the owner,
 - **A9 GPU guide:** do not split; restructure as one symptom-to-fix guide.
 - **A3 WebRTC:** tool-first for "webrtc leak test" and "webrtc leak shield".
 - **Housekeeping:** truncated URL variants and no custom 404 page; low priority.
+
+## 9. Technical baseline: Semrush Site Audit (2026-11-02, 44 pages crawled)
+
+Overall: Site Health 94%, AI Search Health 81%, no AI bots blocked, 0 internal 4xx/5xx, 0 missing titles or descriptions, 0 duplicate content, HTTPS 100%, robots.txt and sitemap.xml healthy, 91% self-canonical, JSON-LD on 100% of pages, internal linking 94%. All AdSense-expected pages exist and return 200 (About, Contact, Privacy, Cookies, Terms). Nothing in the audit blocks the queue.
+
+| Finding | Count | Verdict | Action |
+|---|---|---|---|
+| Invalid structured data items | 2 (homepage) | Real, fix | Need the two item names from Semrush (Issues, open the item) or run Google Rich Results Test on the homepage. Homepage has Organization, WebSite, SoftwareApplication and FAQPage nodes. |
+| Broken external links | 9 | Real, fix inside each retrofit | Need Semrush's list of the 9 URLs. Candidates are reference links on the privacy, GPU and GPU-guide pages; they cannot be tested from the sandbox. |
+| External links returning 403 | 2 | Probably bot blocking (for example twitter.com) | Check by hand; leave if the page loads in a browser. |
+| Duplicate H1 and title | 1 | Two-ISPs page: its title has no brand suffix and equals the H1 | Rewrite the title in its retrofit (also a CTR fix). |
+| Low text-to-HTML ratio | 1 | Probably the Contact page (9.8%) | Ignore. |
+| Unminified JS and CSS | 1,221 | Real but low impact (about 28 asset references per page) | Separate optional technical task: add a minify step. Not for the content queue. |
+| Pages with one internal link | 3 | Includes the no-slash homepage URL | Cross-linking pass. |
+| Content not optimized / low semantic HTML | 2 each | Unknown pages | Need Semrush's page names. |
+| llms.txt not found | 1 | Optional, not a Google ranking factor | Low priority. |
+| Internal Link Rank (ILR) | - | New pages score lowest: slow DNS 5, two-ISPs 5, printer 16, router 16, IP address 32 | Strong reason to link new pages from the hub, indexes and related articles; add to each retrofit and bring the cross-linking pass forward. |
+
+Housekeeping noticed in the crawl: titles are inconsistent (some end with "- IntelReap", panel titles use a pipe, WebGL guide and VPN passthrough and Two-ISPs have no brand). Standardise in each retrofit. Core Web Vitals need the paid plan; use PageSpeed Insights (free) on the homepage, one article and one panel.
