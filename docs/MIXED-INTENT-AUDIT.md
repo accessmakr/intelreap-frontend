@@ -2,6 +2,12 @@
 
 Read from the live files on 2026-11-01. "Serves page intent" means the section answers a question someone searching the page's main query would have. Nothing is cut, split or redirected until the Search Console check below is done.
 
+## Evidence from Search Console (added 2026-11-01, see `docs/GSC-FINDINGS.md`)
+- **MAC/VPN:** the page's queries are all about MAC addresses (344 impressions). The off-topic sections (ExitLag, incognito, Steam, qBittorrent, Mac settings) have almost no search demand (7 impressions in total). Decision: cut or move them.
+- **GPU guide:** only 3 impressions from GPU queries in the top 500 and 299 impressions for the page. No demand shown for any section, so do not split into many pages. Restructure as one symptom-to-fix guide.
+- **Two ISPs:** about 120 query variants, none about what an ISP is. Cut section 08. Use the words people use: wifi providers, broadband providers, more than one provider.
+- Limits: the export is the top 500 queries with no page mapping, so absence is evidence of low demand, not proof.
+
 ## Safe procedure before touching any of these three indexed URLs
 1. In Search Console open Performance, then Pages, filter to the one URL, open the Queries tab, set the range to 3 months, and export (or screenshot) the queries with clicks and impressions.
 2. A section that is the only reason the page earns impressions for a query is kept or moved to its own page first; a section with no matching queries can be cut.

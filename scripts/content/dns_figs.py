@@ -52,7 +52,7 @@ def time_tall():
     s+=mt(180,y+6,['Same page, same connection. Both blocks use the','same scale. Numbers are illustrative.'],12.5)
     return mk(f'360 {y+46}',s,'Two page-load timelines on one scale: a 20 ms DNS lookup versus a 400 ms lookup',True)
 # ---------- 3. causes, placed where they occur
-C=[('Your device',[['VPN or security app','redirects lookups elsewhere'],['Broken IPv6 path: waits for','an answer that never arrives']]),('Your router',[['DNS forwarder adds delay','or gets stuck']]),('The resolver',[['Distant or overloaded','resolver'],['Dead secondary server: waits','for a timeout, then tries the next']])]
+C=[('Your device',[['VPN or security app','redirects lookups elsewhere'],['Browser Secure DNS','can bypass your device setting']]),('Your router',[['DNS forwarder adds delay','or gets stuck']]),('The resolver',[['Distant or overloaded','resolver'],['Unresponsive DNS server:','lookups wait for a timeout']])]
 def causes_wide():
     s=DEFS; xs=[10,222,434]
     for (h,cards),x in zip(C,xs):
@@ -60,7 +60,7 @@ def causes_wide():
         y=70; s+=f'<line x1="{x+98}" y1="48" x2="{x+98}" y2="{y}" stroke="currentColor" stroke-opacity="0.35"/>'
         for c in cards: s+=rb(x,y,196,52,c,sz=11.5); y+=62
     s+=ln(206,28,222,28)+ln(418,28,434,28)+tx(320,206,'A lookup travels left to right. The delay can sit at any stop, so fix the one that is slow.',12)
-    return mk('640 220',s,'Five causes of slow DNS placed on the path from device to router to resolver')
+    return mk('640 220',s,'Causes of slow DNS placed on the path from device to router to resolver')
 def causes_tall():
     s=DEFS; y=8
     for gi,(h,cards) in enumerate(C):
@@ -90,19 +90,22 @@ def where_tall():
     s+=where(22,74,70,112,20,276,'Set on the router','every device that uses it changes',[('Laptop','router'),('Phone','router'),('TV','router')],12.5,True)
     s+=mt(180,444,['Chosen resolver means the one you pick, such as','1.1.1.1, 8.8.8.8 or 9.9.9.9.'],12.5)
     return mk('360 480',s,'Changing DNS on one device versus on the router',True)
-# ---------- 5. measure then fix
+# ---------- 5. time yours, compare, switch only if clearly better
 def flow_wide():
-    s=DEFS+rb(10,8,130,44,['Pages feel slow'])+ln(140,30,170,30)+rb(170,8,130,44,['Run the DNS check'])+ln(300,30,330,30)+rb(330,6,150,48,['Penalty over','about 100 ms?'],acc=True)
-    s+=ln(480,30,510,30)+tx(495,22,'yes',11)+rb(510,8,124,44,['Switch resolver,','then retest'])
-    s+=ln(405,54,405,112)+tx(416,86,'no',11,'start')+rb(330,112,150,48,['Round trip over','about 150 ms?'],acc=True)
-    s+=ln(480,136,504,136)+tx(492,128,'yes',11)+rb(504,104,134,64,['Distance dominates:','compare your ISP','resolver using dig'])
-    s+=ln(405,160,405,206)+tx(416,188,'no',11,'start')+rb(330,206,150,44,['Check Wi-Fi, your','ISP and your VPN'])+tx(160,236,'Thresholds are this page\'s rule of thumb.',11,'middle',0.7)
-    return mk('640 262',s,'Decision flow: run the DNS check, then branch on penalty and round trip')
+    s=DEFS+rb(40,8,260,40,['Pages feel slow'])+ln(170,48,170,70)
+    s+=rb(40,70,260,52,['Time your current resolver','(dig or PowerShell, twice)'])+ln(170,122,170,146)
+    s+=rb(40,146,260,60,['First lookup about 100 ms','slower than the second?'],acc=True)+ln(300,176,360,176)+tx(330,168,'no',11)+rb(360,146,270,60,['Resolver is fine. Check Wi-Fi, your','ISP, your VPN and the browser','Secure DNS setting'])
+    s+=ln(170,206,170,236)+tx(184,226,'yes',11,'start')+rb(40,236,260,52,['Run the browser check','on public resolvers'])+ln(170,288,170,312)
+    s+=rb(40,312,260,60,['Is one clearly faster','than your resolver?'],acc=True)+ln(300,342,360,342)+tx(330,334,'yes',11)+rb(360,320,270,44,['Switch to it, then retest'])
+    s+=ln(170,372,170,396)+tx(184,388,'no',11,'start')+rb(40,396,260,52,['Keep your resolver; check','router, ISP and VPN'])+tx(480,430,'Thresholds are this page\'s rule of thumb.',11,'middle',0.7)
+    return mk('640 460',s,'Decision flow: time your own resolver, compare with public ones, switch only if one is clearly faster')
 def flow_tall():
-    s=DEFS+rb(14,8,196,40,['Pages feel slow'])+ln(112,48,112,70)+rb(14,70,196,40,['Run the DNS check'])+ln(112,110,112,132)
-    s+=rb(14,132,196,52,['Penalty over','about 100 ms?'],acc=True,sz=13)+ln(210,158,236,158)+tx(223,150,'yes',11)+rb(236,134,110,48,['Switch resolver,','then retest'],sz=12)
-    s+=ln(112,184,112,226)+tx(124,210,'no',11,'start')+rb(14,226,196,52,['Round trip over','about 150 ms?'],acc=True,sz=13)+ln(210,252,236,252)+tx(223,244,'yes',11)+rb(236,214,110,76,['Distance','dominates:','compare ISP','resolver (dig)'],sz=12)
-    s+=ln(112,278,112,320)+tx(124,304,'no',11,'start')+rb(14,320,196,44,['Check Wi-Fi, your','ISP and your VPN'],sz=12.5)+mt(180,392,['Thresholds are this page\'s rule of thumb.'],11.5,'middle',0.7)
-    return mk('360 404',s,'Decision flow: run the DNS check, then branch on penalty and round trip',True)
+    s=DEFS+rb(12,8,196,40,['Pages feel slow'])+ln(110,48,110,68)
+    s+=rb(12,68,196,52,['Time your current resolver','(dig or PowerShell, twice)'],sz=12)+ln(110,120,110,142)
+    s+=rb(12,142,196,60,['First lookup about 100 ms','slower than the second?'],acc=True,sz=12)+ln(208,172,236,172)+tx(222,164,'no',11)+rb(236,138,114,92,['Resolver is','fine. Check','Wi-Fi, ISP, VPN','and browser','Secure DNS'],sz=11.5)
+    s+=ln(110,202,110,230)+tx(122,222,'yes',11,'start')+rb(12,230,196,52,['Run the browser check','on public resolvers'],sz=12)+ln(110,282,110,306)
+    s+=rb(12,306,196,60,['Is one clearly faster','than your resolver?'],acc=True,sz=12)+ln(208,336,236,336)+tx(222,328,'yes',11)+rb(236,312,114,48,['Switch to it,','then retest'],sz=11.5)
+    s+=ln(110,366,110,392)+tx(122,386,'no',11,'start')+rb(12,392,196,52,['Keep your resolver;','check router, ISP, VPN'],sz=12)+mt(180,466,['Thresholds are this page\'s rule of thumb.'],11.5,'middle',0.7)
+    return mk('360 480',s,'Decision flow: time your own resolver, compare with public ones, switch only if one is clearly faster',True)
 WIDE=[seq_wide(),time_wide(),causes_wide(),where_wide(),flow_wide()]
 TALL=[seq_tall(),time_tall(),causes_tall(),where_tall(),flow_tall()]

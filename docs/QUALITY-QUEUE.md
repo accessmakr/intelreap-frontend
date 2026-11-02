@@ -6,7 +6,7 @@ Status: DRAFT for owner approval. Companion to `docs/CONTENT-PLAN.md` (ledger) a
 
 - **D-1 Panels stay tool-pointer pages (resolved).** The 13 panels remain tools that articles point to. Concept explanation lives in articles; panels link out to them. Consequently the "What is my IP address" page (P2) stays a planned article, built last, that explains the answer, offers a live check and points to the Network Identity panel. The earlier suggestion to turn the panel into that article is withdrawn.
 - **D-2 Merge versus duplicate (resolved without redirects).** The planned S4 (slow internet) and W2 (enable/disable WebRTC) do not exist as URLs, so nothing indexed is affected. Their content goes into the existing indexed articles A4 and A3 only where it fits that article's intent; anything that does not fit is later built as its own narrow page. No existing indexed URL is changed, moved or redirected. The four new pages already in the sitemap keep their URLs.
-- **D-3 Mixed-intent pages (analysed, awaiting Search Console check).** See `docs/MIXED-INTENT-AUDIT.md`: section-by-section dispositions for the MAC/VPN article, the GPU guide and the two-ISPs article, and the safe procedure (export each page's queries from Search Console first, then cut or move).
+- **D-3 Mixed-intent pages (analysed; Search Console data received and applied, see `docs/GSC-FINDINGS.md`).** See `docs/MIXED-INTENT-AUDIT.md`: section-by-section dispositions for the MAC/VPN article, the GPU guide and the two-ISPs article, and the safe procedure (export each page's queries from Search Console first, then cut or move).
 - **D-4 Backend routes (plan below, awaiting go-ahead).**
 - **D-5 Scoreboard and Live Feed (retracted).** Nothing is wrong with them; they stay tool-pointer pages. My noindex suggestion had no evidence behind it. The only open question is whether Search Console reports them as indexed, which the owner can check in Pages (Indexing).
 - **D-6 Semrush seeds (listed).** See `docs/SEMRUSH-SEEDS.md`. Items 1 to 11 of the sequence need no new data.
@@ -512,3 +512,15 @@ Built already: What is an IP address, Printer IP, Router IP, Slow DNS. Keyword c
 ## 7. Method per item
 
 spec (intent map, diagrams with purposes, tool, source list) shown to the owner, then build, verifier, desktop and phone renders inspected, merge, ledger updated, owner phone review, next item. Nothing is built before its spec is approved.
+
+## 8. Search Console evidence applied (2026-11-01)
+
+- **All retrofits:** rewrite the title and description for the queries actually seen and track CTR; several pages sit at positions 5 to 9 with CTR under 0.5%.
+- **A10 WebGL guide:** answer the pasted error messages first, including WebGPU "no usable graphics adapter" (blocklisted driver, GPU process crash, chrome://gpu) and Firefox about:config settings, with a fix flow. This page is the best performer (29 clicks).
+- **A2 Reverse IP:** 722 impressions for "reverse ip lookup" at position 12; tool-first, with the tighter title.
+- **A13 VPN passthrough:** cover PPTP, IPsec and L2TP explicitly (queries exist for each).
+- **A5 Two ISPs:** cut section 08; use "wifi providers", "broadband providers", "more than one provider".
+- **A6 MAC/VPN:** cut or move ExitLag, incognito, Steam, qBittorrent, Mac settings.
+- **A9 GPU guide:** do not split; restructure as one symptom-to-fix guide.
+- **A3 WebRTC:** tool-first for "webrtc leak test" and "webrtc leak shield".
+- **Housekeeping:** truncated URL variants and no custom 404 page; low priority.
