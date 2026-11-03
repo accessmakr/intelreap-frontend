@@ -4290,3 +4290,153 @@ select {
   color: var(--color-text-secondary);
   border-bottom: 1px solid var(--color-border-primary);
 }
+
+/* -----------------------------------------
+   PANEL VISUALS (canvases 3, 5, 6, 7)
+   ----------------------------------------- */
+.ndic-canvas-viz[data-pv] > :not(.ndic-pv) {
+  display: none !important;
+}
+.ndic-pv {
+  width: 100%;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.ndic-pv-gauge svg {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  overflow: visible;
+}
+.ndic-pv-gauge-track,
+.ndic-pv-gauge-fill {
+  fill: none;
+  stroke-width: 16;
+  stroke-linecap: round;
+}
+.ndic-pv-gauge-track { stroke: var(--color-border-primary); }
+.ndic-pv-gauge-num {
+  font-family: var(--font-mono);
+  font-size: 40px;
+  font-weight: 700;
+}
+.ndic-pv-gauge-cap,
+.ndic-pv-gauge-end {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  fill: var(--color-text-secondary);
+}
+.ndic-pv-meter {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+.ndic-pv-seg {
+  position: relative;
+  padding: var(--space-3) var(--space-1) var(--space-4);
+  text-align: center;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  background: transparent;
+}
+.ndic-pv-seg-name {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.ndic-pv-seg.is-active {
+  border: 2px solid var(--seg);
+  background: color-mix(in srgb, var(--seg) 16%, transparent);
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+.ndic-pv-seg-mark {
+  position: absolute;
+  left: 0; right: 0; bottom: 3px;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--seg);
+}
+.ndic-pv-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.ndic-pv-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  min-width: 0;
+}
+.ndic-pv-tile-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+.ndic-pv-tile-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  overflow-wrap: anywhere;
+}
+.ndic-pv-tile-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+.ndic-pv-chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+.ndic-pv-chip {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "icon label" "icon text";
+  column-gap: var(--space-2);
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--chip) 55%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--chip) 10%, transparent);
+  min-width: 0;
+}
+.ndic-pv-chip-icon {
+  grid-area: icon;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: #fff;
+  background: var(--chip);
+}
+.ndic-pv-chip-label {
+  grid-area: label;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.ndic-pv-chip-text {
+  grid-area: text;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.ndic-pv-note {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
