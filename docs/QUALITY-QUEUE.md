@@ -31,7 +31,8 @@ Status: DRAFT for owner approval. Companion to `docs/CONTENT-PLAN.md` (ledger) a
 7. **Links.** About 5 contextual links in the body, each in a different paragraph, only to pages that exist.
 8. **Length follows intent, not a target.** There is no word-count gate. A page is the right length when every reader question is answered and nothing is padded.
 9. **SEO head.** Unique title (about 60 chars) and description (about 155), canonical, per-page OG image and alt text, article meta, JSON-LD with real word count and citations, real dates.
-10. **Verification.** Verifier passes; desktop and phone renders inspected; phone review by the owner before the next item starts.
+10. **Verification.** Verifier passes; desktop and phone renders inspected; I review the finished page myself against this standard, line by line. The owner's phone review is asynchronous and never blocks the next item.
+11. **Citations are checked.** Each cited URL is opened and confirmed to support the claim it is attached to.
 
 ## 3. Sequence (owner-approved logic: finish live pages, then existing pages, then new articles)
 
@@ -543,3 +544,18 @@ Overall: Site Health 94%, AI Search Health 81%, no AI bots blocked, 0 internal 4
 | Internal Link Rank (ILR) | - | New pages score lowest: slow DNS 5, two-ISPs 5, printer 16, router 16, IP address 32 | Strong reason to link new pages from the hub, indexes and related articles; add to each retrofit and bring the cross-linking pass forward. |
 
 Housekeeping noticed in the crawl: titles are inconsistent (some end with "- IntelReap", panel titles use a pipe, WebGL guide and VPN passthrough and Two-ISPs have no brand). Standardise in each retrofit. Core Web Vitals need the paid plan; use PageSpeed Insights (free) on the homepage, one article and one panel.
+
+### Technical fixes applied 2026-11-02 from the Semrush detail lists
+
+| Item | What was done |
+|---|---|
+| 9 broken external links | Verified replacements: Microsoft DirectX blog for hardware-accelerated GPU scheduling; NVIDIA GPU Gems 2 chapter 34 (the old link pointed at a nonexistent chapter 30 slug and was labelled as GPU architecture, which it is not); Chromium gpu_blocklist.cc source. Removed rather than guessed: Minecraft performance, EFF privacy, Apple M4, CableLabs DOCSIS (could not verify a replacement). Apple's two 429 links were not rate limits: the guide IDs do not exist (Apple redirects to the Mac guide home), so they were removed too. |
+| Duplicate H1 and title | Two-ISPs title changed to "Two Internet Providers in One House: Is It Possible?" |
+| Invalid structured data (homepage SoftwareApplication) | Google's software-app rich result needs a real aggregateRating or review; none exist and none will be invented. The node was removed. Organization, WebSite and FAQPage remain. Restore it when genuine reviews exist. |
+| llms.txt | Added, generated from each live page's own title and description (43 lines). Optional, not a Google ranking factor. |
+| 403 links (HP support, qBittorrent manual) | Left: likely bot blocking; the qBittorrent section is slated for removal anyway. |
+| Content not optimised (VPN concentrator, device fingerprinting) | Semrush shows 1 error each but not its text; examine in each page's retrofit. |
+| Low semantic HTML (homepage) | Homepage nav is injected by JavaScript and Semrush crawled with JavaScript off; skipped. |
+| Low text-to-HTML (Contact) | Ignored. |
+
+**New standard rule (found while fixing links):** several citation labels described content the target does not contain, and some IDs did not exist. Every citation on every page is opened and checked against the claim it supports during that page's retrofit; any that cannot be verified is removed, not kept.
