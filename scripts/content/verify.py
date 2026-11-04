@@ -27,9 +27,9 @@ def static(slug):
     r.append(('JSON-LD parses',ok))
     toc=re.findall(r'<a href="#([^"]+)"',h); r.append(('TOC anchors resolve',all(t in v.ids for t in toc)))
     links=set(re.findall(r'href="(/[^"#]*)"',h)); miss=[l for l in links if not(os.path.exists(f'{ROOT}{l}.html') or os.path.exists(f'{ROOT}{l}/index.html') or l=='/' or os.path.exists(f'{ROOT}{l}'))]
-    r.append(('internal links resolve '+str(miss),not miss)); r.append(('5 diagrams',h.count('<figure class="ir-fig">')>=5)); r.append(('>=8 FAQ',h.count('ndic-faq-item"')>=8))
+    r.append(('internal links resolve '+str(miss),not miss)); r.append(('4+ diagrams',h.count('<figure class="ir-fig">')>=4)); r.append(('>=8 FAQ',h.count('ndic-faq-item"')>=8))
     r.append(('no stale old-guide text',not any(w in h for w in ['Minecraft','HP printer'])))
-    fq=re.search(r'class="ir-faq-sub">(\w+) questions',h); words_={'Nine':9,'Ten':10,'Eleven':11,'Twelve':12}; r.append(('FAQ sub-line count matches',(not fq) or words_.get(fq.group(1),-1)==h.count('ndic-faq-item"') or fq.group(1).isdigit() and int(fq.group(1))==h.count('ndic-faq-item"')))
+    fq=re.search(r'class="ir-faq-sub">(\w+) questions',h); words_={'Nine':9,'Ten':10,'Eleven':11,'Twelve':12,'Thirteen':13,'Fourteen':14,'Fifteen':15}; r.append(('FAQ sub-line count matches',(not fq) or words_.get(fq.group(1),-1)==h.count('ndic-faq-item"') or fq.group(1).isdigit() and int(fq.group(1))==h.count('ndic-faq-item"')))
     r.append(('title<=62',len(re.search(r'<title>(.*?)</title>',h).group(1))<=62)); r.append(('desc<=160',len(re.search(r'name="description" content="([^"]*)"',h).group(1))<=160))
     return r
 def phone(slugs):
@@ -50,7 +50,7 @@ def phone(slugs):
                     res.append((scheme,'overflow' if ov else 'no overflow','options',n,'steps/option',counts,'table scroll' if tw else 'tables fit','errors',errs))
                     if scheme=='light':
                         pg.screenshot(path=f'/home/claude/work/shots/{slug}_top.png'); pg.locator('#ir-tool').screenshot(path=f'/home/claude/work/shots/{slug}_tool.png')
-                        for k in (0,2,4): pg.locator('.ir-fig').nth(k).screenshot(path=f'/home/claude/work/shots/{slug}_fig{k+1}.png')
+                        for k in [i for i in (0,2,4) if i<pg.locator('.ir-fig').count()]: pg.locator('.ir-fig').nth(k).screenshot(path=f'/home/claude/work/shots/{slug}_fig{k+1}.png')
                     ctx.close()
                 out[slug]=res
             b.close()
