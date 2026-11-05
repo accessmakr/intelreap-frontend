@@ -18,7 +18,7 @@ t+='To decide, time your current resolver with dig or PowerShell (see below) and
 o.innerHTML=h+'</div><p class="ir-tool-note">'+t+'</p>';
 n.textContent='Penalty = new-name time minus your fastest round trip. Under 100 ms is normal, 100 to 300 ms is noticeable, over 300 ms is slow (the rule of thumb on this page).';b.textContent='Run again';b.disabled=false}
 b.addEventListener('click',run)})();</script>'''
-S=dict(slug='how-to-fix-slow-dns-lookup',date='2026-11-01',date_label='1 November 2026',plan='D1',tool_html=tool_html,tool_js=tool_js,
+S=dict(slug='how-to-fix-slow-dns-lookup',date='2026-10-31',date_label='',plan='D1',tool_html=tool_html,tool_js=tool_js,
 title='How to Fix Slow DNS Lookup (Test It, Then Fix It)',headline='How to Fix Slow DNS Lookup: Time Your Resolver, Compare Public Ones, Then Change DNS or Flush the Cache',
 desc='Slow DNS lookup delays every page. Time your resolver, compare public ones live, then change DNS, flush the cache and check your VPN and router.',
 kw=['how to fix slow dns lookup','slow dns lookup','dns lookup slow','how to check dns speed','change dns server','flush dns cache'],about='DNS lookup performance',section='Networking Troubleshooting',crumb='Fix Slow DNS Lookup',

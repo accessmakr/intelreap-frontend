@@ -1,0 +1,1 @@
+legacy: build_page.py built the first IP-address page (not spec-driven); build_v2.py and kw_v1.py classify Semrush exports into the keyword maps; newset.txt and isp.txt are the Semrush rows pasted for map v2.

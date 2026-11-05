@@ -30,6 +30,11 @@ def static(slug):
     r.append(('internal links resolve '+str(miss),not miss)); r.append(('4+ diagrams',h.count('<figure class="ir-fig">')>=4)); r.append(('>=8 FAQ',h.count('ndic-faq-item"')>=8))
     r.append(('no stale old-guide text',not any(w in h for w in ['Minecraft','HP printer'])))
     fq=re.search(r'class="ir-faq-sub">(\w+) questions',h); words_={'Nine':9,'Ten':10,'Eleven':11,'Twelve':12,'Thirteen':13,'Fourteen':14,'Fifteen':15}; r.append(('FAQ sub-line count matches',(not fq) or words_.get(fq.group(1),-1)==h.count('ndic-faq-item"') or fq.group(1).isdigit() and int(fq.group(1))==h.count('ndic-faq-item"')))
+    lg=h.find('<div class="ir-logic-grid">'); fq=h.find('<section aria-labelledby="faq-heading-main">'); r.append(('FAQ sits before Logic/Sources',fq>0 and (lg<0 or fq<lg)))
+    bd=re.search(r'id="freshness-badge"[^>]*>Last updated ([^<]*)<',h); ld=re.search(r'"dateModified":\s*"([^"]+)"',h); om=re.search(r'article:modified_time" content="([^"T]+)',h)
+    import datetime as _d; MON=['January','February','March','April','May','June','July','August','September','October','November','December']
+    def _lab(s): y,m_,d_=map(int,s.split('-')); return f"{d_} {MON[m_-1]} {y}"
+    r.append(('date consistent (badge, JSON-LD, meta)',bool(bd and ld and om and bd.group(1).strip()==_lab(ld.group(1)) and om.group(1)==ld.group(1))))
     r.append(('title<=62',len(re.search(r'<title>(.*?)</title>',h).group(1))<=62)); r.append(('desc<=160',len(re.search(r'name="description" content="([^"]*)"',h).group(1))<=160))
     return r
 def phone(slugs):

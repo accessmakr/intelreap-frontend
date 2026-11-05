@@ -32,7 +32,8 @@ Status: DRAFT for owner approval. Companion to `docs/CONTENT-PLAN.md` (ledger) a
 8. **Length follows intent, not a target.** There is no word-count gate. A page is the right length when every reader question is answered and nothing is padded.
 9. **SEO head.** Unique title (about 60 chars) and description (about 155), canonical, per-page OG image and alt text, article meta, JSON-LD with real word count and citations, real dates.
 10. **Verification.** Verifier passes; desktop and phone renders inspected; I review the finished page myself against this standard, line by line. The owner's phone review is asynchronous and never blocks the next item.
-11. **Citations are checked.** Each cited URL is opened and confirmed to support the claim it is attached to.
+11. **FAQ and date.** FAQ sits right after the main content; the page carries one real last-updated date everywhere (use layout.py).
+12. **Citations are checked.** Each cited URL is opened and confirmed to support the claim it is attached to.
 
 ## 3. Sequence (owner-approved logic: finish live pages, then existing pages, then new articles)
 

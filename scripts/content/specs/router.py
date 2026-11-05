@@ -1,7 +1,7 @@
 from svgkit import *
 from router_figs import WIDE
 F1,F2,F3,F4=WIDE
-S=dict(slug='find-router-ip-address',date='2026-11-02',date_label='2 November 2026',plan='P14',
+S=dict(slug='find-router-ip-address',date='2026-10-31',date_label='',plan='P14',
 title="How to Find Your Router's IP Address on Any Device",headline="How to Find Your Router's IP Address on Windows, Mac, Linux, iPhone and Android",
 desc="Find your router's IP address (the default gateway) on Windows, Mac, Linux, iPhone or Android, and what to do when the router page will not open.",
 kw=["how to find router ip address","find router ip address","how do i find my router's ip address","default gateway","router ip address windows 11","192.168.1.1"],

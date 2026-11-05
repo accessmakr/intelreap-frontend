@@ -35,7 +35,7 @@ F5=svg('640 200',f5,'Printer address changing with plain DHCP versus staying fix
 f6=DEFS+box(6,50,128,48,'Printer offline')+box(166,50,128,48,'Ping its IP','from your computer')+box(326,50,110,48,'Replies?',accent=True)+box(486,8,148,44,'Fix port or driver','address is reachable')+box(486,84,148,44,'Check network','same Wi-Fi, address')+ln(134,74,166,74)+ln(294,74,326,74)+ln(436,64,486,32)+ln(436,84,486,106)
 f6+=tx(320,160,'A reply means the network is fine and the fault is in the printer port or driver.',12)
 F6=svg('640 174',f6,'Decision flow for an offline printer using a ping test')
-S=dict(slug='find-printer-ip-address',date='2026-10-31',date_label='31 October 2026',plan='P13',
+S=dict(slug='find-printer-ip-address',date='2026-10-31',date_label='',plan='P13',
 title="How to Find a Printer's IP Address on Any Device",headline="How to Find a Printer's IP Address on Windows, Mac, Linux, Phone or Router",
 desc="Find your printer's IP address in under a minute: printer menu, Windows, Mac, Linux or your router. Includes a device step picker and diagrams.",
 kw=["how to find printer ip address","find printer ip address","how to check printer ip address","how do i find my printer's ip address","printer ip address windows 11","printer ip address mac"],

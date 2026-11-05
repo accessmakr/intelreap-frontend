@@ -38,7 +38,9 @@
   <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
   <meta property="og:image:width"  content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:locale"       content="en_US">
+  <meta property="article:published_time" content="2026-01-24T00:00:00Z">
+<meta property="article:modified_time" content="2026-11-04T00:00:00Z">
+<meta property="og:locale"       content="en_US">
 
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="GPU Troubleshooting: Common Questions Answered — IntelReap">
@@ -330,8 +332,7 @@
 
   </style>
 
-  <script type="application/ld+json">
-{
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -347,7 +348,7 @@
         "height": 630
       },
       "datePublished": "2026-01-24",
-      "dateModified": "2026-06-09",
+      "dateModified": "2026-11-04",
       "author": {
         "@type": "Organization",
         "@id": "https://intelreap.com/#organization",
@@ -515,8 +516,7 @@
       ]
     }
   ]
-}
-  </script>
+}</script>
 
 </head>
 <body>
@@ -572,7 +572,7 @@
             See My Device Fingerprint →
           </a>
         </div>
-        <div id="freshness-badge" aria-live="polite">Last updated 2 October 2026</div>
+        <div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 4 November 2026</div>
         <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
           <div class="ndic-trust-item">
             <span class="ndic-trust-value">285 data points</span>
@@ -963,65 +963,7 @@
       </div>
 
       <!-- LOGIC + METHODOLOGY -->
-      <div class="ir-logic-grid">
-        <div class="ir-logic-card">
-          <span class="ir-logic-eyebrow" data-i18n="logic.label">Logic</span>
-          <p>Most GPU problems that appear hardware-related are software-level driver faults — eliminate the driver as the cause before concluding any hardware has failed.</p>
-        </div>
-        <div class="ir-logic-card">
-          <span class="ir-logic-eyebrow" data-i18n="methodology.label">Methodology</span>
-          <p>This guide draws on NVIDIA and AMD GPU architecture documentation, Microsoft WDDM and HAGS technical whitepapers, published DDU procedures, and hands-on hardware diagnostic practices reviewed across multiple GPU generations and form factors.</p>
-        </div>
-      </div>
-
-      <!-- CITATIONS -->
-      <section class="ndic-citation-section" aria-labelledby="citation-heading">
-        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
-        <div class="ndic-citation-list">
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">01</span>
-            <span class="ndic-citation-link">
-              <a href="https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter34.html" target="_blank" rel="noopener noreferrer">NVIDIA GPU Gems 2 — Chapter 34, GPU Flow-Control Idioms (Harris and Buck)</a>
-            </span>
-          </div>
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">02</span>
-            <span class="ndic-citation-link">
-              <a href="https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/" target="_blank" rel="noopener noreferrer">Microsoft DirectX Developer Blog — Hardware Accelerated GPU Scheduling (Pronovost, 2020)</a>
-            </span>
-          </div>
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">03</span>
-            <span class="ndic-citation-link">
-              <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide" target="_blank" rel="noopener noreferrer">Microsoft Learn — Windows Display Driver Model (WDDM) Design Guide</a>
-            </span>
-          </div>
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">04</span>
-            <span class="ndic-citation-link">
-              <a href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank" rel="noopener noreferrer">Guru3D — Display Driver Uninstaller (DDU) Official Download and Documentation</a>
-            </span>
-          </div>
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">05</span>
-            <span class="ndic-citation-link">
-              <a href="https://www.pcisig.com/specifications/pcie" target="_blank" rel="noopener noreferrer">PCI-SIG — PCIe Specification and Slot Electrical/Mechanical Standards</a>
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <div id="dynamic-internal-links"></div>
-      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
-
-      <div class="ir-share-wrap">
-        <span class="ir-share-label">Share This Guide</span>
-        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
-      </div>
-
-    </article>
-
-    <!-- FAQ -->
+      <!-- FAQ -->
     <section aria-labelledby="faq-heading-main">
       <div class="ir-faq-outer">
         <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
@@ -1127,6 +1069,65 @@
         </div>
       </div>
     </section>
+<div class="ir-logic-grid">
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow" data-i18n="logic.label">Logic</span>
+          <p>Most GPU problems that appear hardware-related are software-level driver faults — eliminate the driver as the cause before concluding any hardware has failed.</p>
+        </div>
+        <div class="ir-logic-card">
+          <span class="ir-logic-eyebrow" data-i18n="methodology.label">Methodology</span>
+          <p>This guide draws on NVIDIA and AMD GPU architecture documentation, Microsoft WDDM and HAGS technical whitepapers, published DDU procedures, and hands-on hardware diagnostic practices reviewed across multiple GPU generations and form factors.</p>
+        </div>
+      </div>
+
+      <!-- CITATIONS -->
+      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+        <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
+        <div class="ndic-citation-list">
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">01</span>
+            <span class="ndic-citation-link">
+              <a href="https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter34.html" target="_blank" rel="noopener noreferrer">NVIDIA GPU Gems 2 — Chapter 34, GPU Flow-Control Idioms (Harris and Buck)</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">02</span>
+            <span class="ndic-citation-link">
+              <a href="https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/" target="_blank" rel="noopener noreferrer">Microsoft DirectX Developer Blog — Hardware Accelerated GPU Scheduling (Pronovost, 2020)</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">03</span>
+            <span class="ndic-citation-link">
+              <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide" target="_blank" rel="noopener noreferrer">Microsoft Learn — Windows Display Driver Model (WDDM) Design Guide</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">04</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank" rel="noopener noreferrer">Guru3D — Display Driver Uninstaller (DDU) Official Download and Documentation</a>
+            </span>
+          </div>
+          <div class="ndic-citation-item">
+            <span class="ndic-citation-num">05</span>
+            <span class="ndic-citation-link">
+              <a href="https://www.pcisig.com/specifications/pcie" target="_blank" rel="noopener noreferrer">PCI-SIG — PCIe Specification and Slot Electrical/Mechanical Standards</a>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div id="dynamic-internal-links"></div>
+      <div class="ndic-ad-carousel" data-zone="footer-above"></div>
+
+      <div class="ir-share-wrap">
+        <span class="ir-share-label">Share This Guide</span>
+        <div class="ir-share-pills" id="share-pills-container" aria-label="Share this page"></div>
+      </div>
+
+    </article>
+
+    
 
     <!-- CONTACT FORM -->
     <section aria-labelledby="contact-heading">
