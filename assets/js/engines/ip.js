@@ -51,7 +51,8 @@ const IPEngine = (() => {
         proxy: data.proxy,
         hosting: data.hosting,
         continent: data.continent,
-        source: data.source
+        source: data.source,
+        accuracyRadiusKm: data.accuracyRadiusKm || null
       })
 
       logBackendResponse(
@@ -75,6 +76,61 @@ const IPEngine = (() => {
         'IP identity fetch failed: ' +
         error.message
       )
+      return null
+    }
+  }
+
+  // ───────────────────────────────────────
+  // OTHER ADDRESS (IPv4 <-> IPv6)
+  // A phone often has both. The backend only
+  // sees the one it was reached on, so the
+  // browser finds the other family and the
+  // backend looks that address up.
+  // Best effort: silent on any failure.
+  // ───────────────────────────────────────
+
+  const fetchAltAddress = async (primary) => {
+    try {
+      if (!primary || !primary.ip) return null
+      const isV6 = primary.ip.includes(':')
+      const finder = isV6
+        ? 'https://api.ipify.org?format=json'
+        : 'https://api6.ipify.org?format=json'
+      const found = await fetchWithTimeout(
+        finder, { cache: 'no-store' }, 4000
+      )
+      if (!found.ok) return null
+      const other = ((await found.json()) || {}).ip
+      if (
+        typeof other !== 'string' ||
+        other === primary.ip ||
+        other.includes(':') === isV6 ||
+        !/^[0-9a-fA-F:.]+$/.test(other)
+      ) {
+        return null
+      }
+      const res = await fetchWithTimeout(
+        NDIC_CONFIG.BACKEND_URL +
+          NDIC_CONFIG.ENDPOINTS.ipIdentity +
+          '?ip=' + encodeURIComponent(other),
+        { cache: 'no-store' }
+      )
+      if (!res.ok) return null
+      const body = await res.json()
+      const d = body && body.success && body.data
+      if (!d || d.ip !== other) return null
+      const alt = {
+        ip: d.ip,
+        ipVersion: d.ipVersion,
+        city: d.city,
+        region: d.region,
+        country: d.country,
+        countryCode: d.countryCode,
+        accuracyRadiusKm: d.accuracyRadiusKm || null
+      }
+      updateIdentity({ alt })
+      return alt
+    } catch (e) {
       return null
     }
   }
@@ -222,6 +278,14 @@ const IPEngine = (() => {
     // Mark engine complete
     markEngineComplete('ip')
 
+    // The other address, if the device has both
+    // (never blocks or fails the scan)
+    fetchAltAddress(identityData).then(() => {
+      if (typeof triggerRenders === 'function') {
+        triggerRenders()
+      }
+    })
+
     // Initialize map if coordinates available
     if (
       identityData?.latitude &&
@@ -289,6 +353,7 @@ const IPEngine = (() => {
     collect,
     refresh,
     fetchIPIdentity,
+    fetchAltAddress,
     fetchIPDeep,
     initializeMap
   }

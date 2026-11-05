@@ -591,7 +591,8 @@
           <li>Netlify: hosts the website and processes contact form submissions</li>
           <li>Cloudflare: hosts our backend API and provides the approximate location and network details of your connection</li>
           <li>IP and network data providers and AI language-model providers: contacted by our backend to return results and summaries</li>
-          <li>Cloudflare (a trace endpoint) and ipify: queried by your browser to detect your public IP address</li>
+          <li>Cloudflare (a trace endpoint) and ipify: queried by your browser to detect your public IP addresses (IPv4 and IPv6). If your device has both, our backend is asked about the second one as well to show where it appears to be</li>
+          <li>MaxMind (GeoLite data): the approximate location and network owner shown for an address come from MaxMind's GeoLite databases, which run inside our own backend, so MaxMind does not receive your address. This product includes GeoLite Data created by MaxMind, available from <a href="https://www.maxmind.com" rel="noopener">https://www.maxmind.com</a></li>
           <li>Google STUN server: used by WebRTC to detect your network addresses; Google may see your IP address</li>
           <li>OpenStreetMap: serves map tiles when the location map is shown</li>
           <li>Google Fonts, unpkg and jsDelivr: serve fonts and JavaScript libraries</li>
