@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_EN = {
       "error_count": "Errors",
       "last_network_change": "Last Network Change",
       "scan_start_time": "Scan Started",
-      "ai_summary_source": "AI Summary Source",
+      "ai_summary_source": "Summary Source",
       "ai_last_updated": "Summary Updated"
     },
     "values": {
