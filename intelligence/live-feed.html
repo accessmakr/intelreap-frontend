@@ -9,7 +9,7 @@
   <script>(function(){var s=localStorage.getItem("ndic_theme");if(s==="dark")document.documentElement.setAttribute("data-theme","dark")})();</script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Live Intelligence Feed — What Just Happened? | IntelReap</title>
-  <meta name="description" content="Real-time event log of every engine action, network change, API call, security flag, and AI summary — your live scan feed explained parameter by parameter.">
+  <meta name="description" content="Real-time event log of every engine action, network change, API call, security flag, and summary — your live scan feed explained parameter by parameter.">
   <meta name="keywords" content="live intelligence feed, real-time scan log, network events, security flags, API calls, scan monitoring, backend health">
   <meta name="robots" content="index, follow"><meta name="author" content="IntelReap">
   <link rel="canonical" href="https://intelreap.com/intelligence/live-feed">
@@ -88,7 +88,7 @@
           "name": "What does the live feed show?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The live feed is a real-time event log of every action IntelReap takes during a scan — engine starts and completions, backend API calls, security flags raised, network changes detected, and AI summary generation. It's the complete operational transcript of your scan session."
+            "text": "The live feed is a real-time event log of every action IntelReap takes during a scan — engine starts and completions, backend API calls, security flags raised, network changes detected, and summary generation. It's the complete operational transcript of your scan session."
           }
         },
         {
@@ -112,7 +112,7 @@
           "name": "Why does API call count matter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "IntelReap makes exactly two or three backend API calls per full scan — one for IP identity, one for proxy intelligence, and optionally one for AI summary generation. Seeing more than three calls logged may indicate a retry due to a failed first attempt; seeing zero calls on a specific endpoint means that data wasn't available for this scan."
+            "text": "IntelReap makes only a handful of backend API calls per full scan — for IP identity, network details and proxy intelligence, plus one lookup for your second address if your device has both IPv4 and IPv6. Summaries are written in your browser and need no call. Seeing the same call logged twice may indicate a retry after a failed first attempt; seeing zero calls on a specific endpoint means that data wasn't available for this scan."
           }
         }
       ]
@@ -169,8 +169,8 @@
               <div class="ndic-param-row"><span class="ndic-param-label">Error Count</span><span class="ndic-param-value" id="c12-error-count">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.last_network_change">Last Network Change</span><span class="ndic-param-value" id="c12-last-network-change">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Scan Start Time</span><span class="ndic-param-value" id="c12-scan-start-time">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.ai_summary_source">AI Summary Source</span><span class="ndic-param-value" id="c12-ai-summary-source">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">AI Last Updated</span><span class="ndic-param-value" id="c12-ai-last-updated">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas12.params.ai_summary_source">Summary Source</span><span class="ndic-param-value" id="c12-ai-summary-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label">Summary Last Updated</span><span class="ndic-param-value" id="c12-ai-last-updated">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <a href="#" class="ndic-deep-dive-link" id="c12-deep-dive-link">Deep dive into your live intelligence feed</a>
@@ -188,7 +188,7 @@
           <h3 class="ndic-explain-group-title">Session Metadata</h3>
           <div class="ndic-explain-item">
             <h4 data-i18n="canvas12.params.backend_health">Backend Health</h4>
-            <p>Reflects whether IntelReap's backend responded correctly during this scan. Healthy means all backend calls succeeded. Unhealthy means at least one failed — which typically results in missing geolocation enrichment, incomplete VPN detection data, or no AI summary for the affected canvas. When Backend Health is Unhealthy, the live feed's error count will show where the failures occurred.</p>
+            <p>Reflects whether IntelReap's backend responded correctly during this scan. Healthy means all backend calls succeeded. Unhealthy means at least one failed — which typically results in missing geolocation enrichment, or incomplete VPN detection data. When Backend Health is Unhealthy, the live feed's error count will show where the failures occurred.</p>
           </div>
           <div class="ndic-explain-item">
             <h4>Total Events, Critical Events &amp; Warning Events</h4>
@@ -196,7 +196,7 @@
           </div>
           <div class="ndic-explain-item">
             <h4>API Calls Made &amp; Error Count</h4>
-            <p>IntelReap makes two or three backend calls per full scan: IP identity, proxy intelligence, and optionally AI summary. More than three calls indicate a retry after a failed first attempt. Error count shows how many of those calls failed — a non-zero count here directly explains any missing data in the other panels.</p>
+            <p>IntelReap makes a handful of backend calls per full scan: IP identity, network details, proxy intelligence and, if your device has two addresses, one more lookup. Summaries need no call. A repeated call indicates a retry after a failed first attempt. Error count shows how many of those calls failed — a non-zero count here directly explains any missing data in the other panels.</p>
           </div>
           <div class="ndic-explain-item">
             <h4>Last Network Change &amp; Scan Start Time</h4>
@@ -204,7 +204,7 @@
           </div>
           <div class="ndic-explain-item">
             <h4>AI Summary Source &amp; AI Last Updated</h4>
-            <p>AI Summary Source shows which layer generated the AI Analysis text visible under each canvas — Groq (fast cloud LLM), Gemini (fallback LLM), or Script (the instant built-in generator that runs even when both LLM services are unavailable). AI Last Updated is the timestamp of the most recent AI generation, so you can tell whether the summaries are fresh to this session or carried over from an earlier one.</p>
+            <p>Summary Source shows how the Analysis text under each canvas was written. It reads On-device: the text is composed in your browser from your own scan results, so no scan data is sent to an AI service. Summary Last Updated is the timestamp of the most recent summary, so you can tell whether the text is fresh to this session or carried over from an earlier one.</p>
           </div>
         </div>
         <div class="ndic-explain-group">
@@ -239,7 +239,7 @@
         <div class="ndic-faq-list">
           <div class="ndic-faq-item">
             <button class="ndic-faq-question" aria-expanded="false"><span>What does the live feed show?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The live feed is a real-time event log of every action IntelReap takes during a scan — engine starts and completions, backend API calls, security flags raised, network changes detected, and AI summary generation. It's the complete operational transcript of your scan session.</div></div>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The live feed is a real-time event log of every action IntelReap takes during a scan — engine starts and completions, backend API calls, security flags raised, network changes detected, and summary generation. It's the complete operational transcript of your scan session.</div></div>
           </div>
           <div class="ndic-faq-item">
             <button class="ndic-faq-question" aria-expanded="false"><span>What are critical events?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span></button>
