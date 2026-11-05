@@ -43,7 +43,9 @@ const STATE = {
     proxy: null,
     hosting: null,
     continent: null,
-    source: null
+    source: null,
+    accuracyRadiusKm: null,
+    alt: null
   },
 
   vpn: {

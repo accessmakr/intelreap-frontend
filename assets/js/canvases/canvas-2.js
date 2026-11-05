@@ -97,6 +97,34 @@ const Canvas2 = (() => {
     // Data source
     setText('c2-data-source', i.source || '—')
 
+    // Other address (the visitor's IPv4 or IPv6 counterpart)
+    const showRow = (id, on) => {
+      const r = el(id)
+      if (r) r.classList.toggle('ndic-hidden', !on)
+    }
+    const alt = i.alt
+    const kmText = (km) => km
+      ? 'approximate, within about ' + km + ' km'
+      : 'approximate'
+    if (alt && alt.ip) {
+      showRow('c2-alt-row', true)
+      showRow('c2-alt-loc-row', true)
+      setText('c2-alt-ip', alt.ip + ' (' + alt.ipVersion + ')')
+      const place = [alt.city, alt.region, alt.country]
+        .filter(Boolean).join(', ')
+      setText('c2-alt-location',
+        (place || '—') + ' · ' + kmText(alt.accuracyRadiusKm))
+    } else {
+      showRow('c2-alt-row', false)
+      showRow('c2-alt-loc-row', false)
+    }
+    if (i.accuracyRadiusKm) {
+      showRow('c2-accuracy-row', true)
+      setText('c2-accuracy', kmText(i.accuracyRadiusKm))
+    } else {
+      showRow('c2-accuracy-row', false)
+    }
+
     // Canvas score
     setText('c2-score',
       s.identityScore
