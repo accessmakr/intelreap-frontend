@@ -33,7 +33,12 @@
     blocks.forEach(function (block, i) {
       if (block.nextElementSibling &&
           block.nextElementSibling.classList.contains('ndic-viz-caption')) return
-      var n = blocks.length === 1 && single ? single : i + 1
+      // Use the id of the canvas that holds this visual (homepage order is
+      // not 1..13), falling back to the deep-dive page's canvas number.
+      var host = block.closest ? block.closest('.ndic-canvas') : null
+      var idm = host ? /^canvas-(\d+)$/.exec(host.id || '') : null
+      var n = idm ? parseInt(idm[1], 10)
+        : (blocks.length === 1 && single ? single : i + 1)
       var text = CAPTIONS[n]
       if (!text) return
       var p = document.createElement('p')

@@ -604,6 +604,18 @@ select {
   flex-shrink: 0;
 }
 
+/* The IR brand mark sits beside the wordmark in the header of every page.
+   Drawn here (not in each page's HTML) so every page and every future
+   article template gets it without edits. */
+.ndic-site-logo-link::before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: url("/assets/images/icons/icon-96.png") center / contain no-repeat;
+}
+
 .ndic-site-wordmark {
   font-family: var(--font-display);
   font-size: var(--text-lg);
@@ -703,6 +715,18 @@ select {
 @media (min-width: 1024px) {
   .trigger-search-kbd {
     display: inline-block;
+  }
+}
+
+/* Narrow phones: the logo and wordmark need the room, so the search
+   button shows only its magnifier (it keeps its aria-label). */
+@media (max-width: 520px) {
+  .trigger-search > span:not(.trigger-search-kbd) {
+    display: none;
+  }
+  .trigger-search,
+  .theme-toggle-btn {
+    flex-shrink: 0;
   }
 }
 
@@ -858,6 +882,18 @@ select {
   font-weight: 800;
   letter-spacing: 0.04em;
   color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ndic-drawer-site-name::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: url("/assets/images/icons/icon-96.png") center / contain no-repeat;
 }
 
 .ndic-drawer-site-name span {
