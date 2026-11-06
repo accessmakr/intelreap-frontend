@@ -93,19 +93,19 @@ def where_tall():
 # ---------- 5. time yours, compare, switch only if clearly better
 def flow_wide():
     s=DEFS+rb(40,8,260,40,['Pages feel slow'])+ln(170,48,170,70)
-    s+=rb(40,70,260,52,['Time your current resolver','(dig or PowerShell, twice)'])+ln(170,122,170,146)
-    s+=rb(40,146,260,60,['First lookup about 100 ms','slower than the second?'],acc=True)+ln(300,176,360,176)+tx(330,168,'no',11)+rb(360,146,270,60,['Resolver is fine. Check Wi-Fi, your','ISP, your VPN and the browser','Secure DNS setting'])
-    s+=ln(170,206,170,236)+tx(184,226,'yes',11,'start')+rb(40,236,260,52,['Run the browser check','on public resolvers'])+ln(170,288,170,312)
-    s+=rb(40,312,260,60,['Is one clearly faster','than your resolver?'],acc=True)+ln(300,342,360,342)+tx(330,334,'yes',11)+rb(360,320,270,44,['Switch to it, then retest'])
-    s+=ln(170,372,170,396)+tx(184,388,'no',11,'start')+rb(40,396,260,52,['Keep your resolver; check','router, ISP and VPN'])+tx(480,430,'Thresholds are this page\'s rule of thumb.',11,'middle',0.7)
-    return mk('640 460',s,'Decision flow: time your own resolver, compare with public ones, switch only if one is clearly faster')
+    s+=rb(40,70,260,66,['Time your current resolver','(dig or PowerShell, twice,','flush your cache first)'])+ln(170,136,170,160)
+    s+=rb(40,160,260,60,['First lookup about 100 ms','slower than the second?'],acc=True)+ln(300,190,360,190)+tx(330,182,'no',11)+rb(360,160,270,60,['Resolver is fine. Check Wi-Fi, your','ISP, your VPN and the browser','Secure DNS setting'])
+    s+=ln(170,220,170,250)+tx(184,240,'yes',11,'start')+rb(40,250,260,52,['Run the browser check','on public resolvers'])+ln(170,302,170,326)
+    s+=rb(40,326,260,60,['Is one clearly faster','than your resolver?'],acc=True)+ln(300,356,360,356)+tx(330,348,'yes',11)+rb(360,334,270,44,['Switch to it, then retest'])
+    s+=ln(170,386,170,410)+tx(184,402,'no',11,'start')+rb(40,410,260,52,['Keep your resolver; check','router, ISP and VPN'])+tx(480,444,'Thresholds are this page\'s rule of thumb.',11,'middle',0.7)
+    return mk('640 474',s,'Decision flow: time your own resolver, compare with public ones, switch only if one is clearly faster')
 def flow_tall():
     s=DEFS+rb(12,8,196,40,['Pages feel slow'])+ln(110,48,110,68)
-    s+=rb(12,68,196,52,['Time your current resolver','(dig or PowerShell, twice)'],sz=12)+ln(110,120,110,142)
-    s+=rb(12,142,196,60,['First lookup about 100 ms','slower than the second?'],acc=True,sz=12)+ln(208,172,236,172)+tx(222,164,'no',11)+rb(236,138,114,92,['Resolver is','fine. Check','Wi-Fi, ISP, VPN','and browser','Secure DNS'],sz=11.5)
-    s+=ln(110,202,110,230)+tx(122,222,'yes',11,'start')+rb(12,230,196,52,['Run the browser check','on public resolvers'],sz=12)+ln(110,282,110,306)
-    s+=rb(12,306,196,60,['Is one clearly faster','than your resolver?'],acc=True,sz=12)+ln(208,336,236,336)+tx(222,328,'yes',11)+rb(236,312,114,48,['Switch to it,','then retest'],sz=11.5)
-    s+=ln(110,366,110,392)+tx(122,386,'no',11,'start')+rb(12,392,196,52,['Keep your resolver;','check router, ISP, VPN'],sz=12)+mt(180,466,['Thresholds are this page\'s rule of thumb.'],11.5,'middle',0.7)
-    return mk('360 480',s,'Decision flow: time your own resolver, compare with public ones, switch only if one is clearly faster',True)
+    s+=rb(12,68,196,66,['Time your current resolver','(dig or PowerShell, twice,','flush your cache first)'],sz=12)+ln(110,134,110,156)
+    s+=rb(12,156,196,60,['First lookup about 100 ms','slower than the second?'],acc=True,sz=12)+ln(208,186,236,186)+tx(222,178,'no',11)+rb(236,152,114,92,['Resolver is','fine. Check','Wi-Fi, ISP, VPN','and browser','Secure DNS'],sz=11.5)
+    s+=ln(110,216,110,244)+tx(122,236,'yes',11,'start')+rb(12,244,196,52,['Run the browser check','on public resolvers'],sz=12)+ln(110,296,110,320)
+    s+=rb(12,320,196,60,['Is one clearly faster','than your resolver?'],acc=True,sz=12)+ln(208,350,236,350)+tx(222,342,'yes',11)+rb(236,326,114,48,['Switch to it,','then retest'],sz=11.5)
+    s+=ln(110,380,110,406)+tx(122,400,'no',11,'start')+rb(12,406,196,52,['Keep your resolver;','check router, ISP, VPN'],sz=12)+mt(180,480,['Thresholds are this page\'s rule of thumb.'],11.5,'middle',0.7)
+    return mk('360 494',s,'Decision flow: time your own resolver, compare with public ones, switch only if one is clearly faster',True)
 WIDE=[seq_wide(),time_wide(),causes_wide(),where_wide(),flow_wide()]
 TALL=[seq_tall(),time_tall(),causes_tall(),where_tall(),flow_tall()]
