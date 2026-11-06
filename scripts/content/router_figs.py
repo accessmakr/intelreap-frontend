@@ -8,16 +8,14 @@ def gate_wide():
     s=DEFS+f'<rect x="6" y="22" width="392" height="204" rx="12" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-dasharray="6 5"/>'+mt(202,44,['Inside your home: private addresses'],12.5,'middle',0.85,700)
     s+=rb(22,64,110,44,['Phone','192.168.1.23'])+rb(22,130,110,44,['Laptop','192.168.1.42'])+ln(132,86,226,112)+ln(132,152,226,128)
     s+=rb(226,70,172,100,['Router: LAN side','192.168.1.1','= default gateway'],acc=True)+rb(398,70,124,100,['Router: WAN side','203.0.113.7','public'])+ln(522,120,556,120)+rb(556,92,78,56,['The','internet'])
-    s+=mt(320,246,['Anything outside your home network is sent to the default gateway first.'],12.5)
-    return mk('640 262',s,'The router sits on the boundary between the private home network and the internet; its LAN side is the default gateway')
+    return mk('640 236',s,'The router sits on the boundary between the private home network and the internet; its LAN side is the default gateway')
 def gate_tall():
     s=DEFS+'<rect x="10" y="8" width="340" height="176" rx="12" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-dasharray="6 5"/>'+mt(180,30,['Inside your home: private addresses'],13,'middle',0.85,700)
     s+=rb(26,46,140,46,['Phone','192.168.1.23'],sz=13)+rb(194,46,140,46,['Laptop','192.168.1.42'],sz=13)+ln(96,92,150,114)+ln(264,92,210,114)
     s+=rb(60,114,240,60,['Router: LAN side','192.168.1.1 = default gateway'],acc=True,sz=13)
     s+='<line x1="10" y1="198" x2="350" y2="198" stroke="currentColor" stroke-opacity="0.5" stroke-dasharray="6 5"/>'+mt(180,215,['boundary: home network | internet'],11.5,'middle',0.7)
     s+=rb(60,226,240,52,['Router: WAN side','203.0.113.7 (public)'],sz=13)+ln(180,278,180,302)+rb(100,302,160,44,['The internet'],sz=13)
-    s+=mt(180,372,['Outside traffic goes to the gateway first.'],12.5)
-    return mk('360 388',s,'The router sits on the boundary between the private home network and the internet; its LAN side is the default gateway',True)
+    return mk('360 360',s,'The router sits on the boundary between the private home network and the internet; its LAN side is the default gateway',True)
 # ---- 2 reading ipconfig
 LINES=[('Ethernet adapter Ethernet:',0,0.5),('   Media disconnected',0,0.5),('Wireless LAN adapter Wi-Fi:',0,1),('   Link-local IPv6 Address . : fe80::1c2b%13',0,0.8),('   IPv4 Address. . . . . . . : 192.168.1.42',0,0.8),('   Subnet Mask . . . . . . . : 255.255.255.0',0,0.8),('   Default Gateway . . . . . : fe80::1%13',0,0.8),('                               192.168.1.1',1,1)]
 def ipc_wide():
@@ -57,13 +55,12 @@ def nat_wide():
     s=DEFS+rb(6,70,84,56,['The','internet'])+ln(90,98,130,98)
     s+=rb(130,40,176,116,['ISP router','WAN 203.0.113.7','(public)','LAN 192.168.0.1'],acc=True,sz=12)+mt(218,32,['NAT 1'],12,'middle',1,700)+ln(306,98,340,98)
     s+=rb(340,40,176,116,['Your router','WAN 192.168.0.23','(private)','LAN 192.168.1.1'],acc=True,sz=12)+mt(428,32,['NAT 2'],12,'middle',1,700)+ln(516,98,550,98)+rb(550,70,84,56,['Devices','192.168.1.x'])
-    s+=mt(320,184,['Two routers each translate addresses. Your router\'s WAN address is private:','that is the sign of double NAT.'],12.5)
-    return mk('640 220',s,'Double NAT: an ISP router with a public WAN address, then your router whose WAN address is private')
+    return mk('640 170',s,'Double NAT: an ISP router with a public WAN address, then your router whose WAN address is private')
 def nat_tall():
     s=DEFS+rb(100,8,160,40,['The internet'],sz=13)+ln(180,48,180,68)
     s+=mt(300,84,['NAT 1'],12,'middle',1,700)+rb(40,68,280,86,['ISP router','WAN 203.0.113.7 (public)','LAN 192.168.0.1'],acc=True,sz=13)+ln(180,154,180,176)
     s+=mt(300,192,['NAT 2'],12,'middle',1,700)+rb(40,176,280,86,['Your router','WAN 192.168.0.23 (private)','LAN 192.168.1.1'],acc=True,sz=13)+ln(180,262,180,284)
-    s+=rb(100,284,160,44,['Devices 192.168.1.x'],sz=13)+mt(180,352,['The second router\'s WAN address is private:','the sign of double NAT.'],12.5)
-    return mk('360 384',s,'Double NAT: an ISP router with a public WAN address, then your router whose WAN address is private',True)
+    s+=rb(100,284,160,44,['Devices 192.168.1.x'],sz=13)
+    return mk('360 340',s,'Double NAT: an ISP router with a public WAN address, then your router whose WAN address is private',True)
 WIDE=[gate_wide(),ipc_wide(),open_wide(),nat_wide()]
 TALL=[gate_tall(),ipc_tall(),open_tall(),nat_tall()]

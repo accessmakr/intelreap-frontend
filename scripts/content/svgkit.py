@@ -16,7 +16,7 @@ def tx(x,y,t,sz=12,anchor='middle',op=0.8,wt=400):
     return f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-size="{sz}" font-weight="{wt}" fill="currentColor" fill-opacity="{op}">{t}</text>'
 DEFS='<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs>'
 
-def fig(s,cap): return f'<figure class="ir-fig">{s}<figcaption>{cap}</figcaption></figure>'
+def fig(s,cap): return f'<figure class="ir-fig">{s}'+(f'<figcaption>{cap}</figcaption>' if cap else '')+'</figure>'
 
 def table(cap,head,rows):
     th=''.join(f'<th scope="col">{c}</th>' for c in head); tb=''.join('<tr>'+''.join(f'<td>{"<strong>"+c+"</strong>" if i==0 else c}</td>' for i,c in enumerate(r))+'</tr>' for r in rows)

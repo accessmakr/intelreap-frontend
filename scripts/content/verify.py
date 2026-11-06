@@ -35,6 +35,15 @@ def static(slug):
     import datetime as _d; MON=['January','February','March','April','May','June','July','August','September','October','November','December']
     def _lab(s): y,m_,d_=map(int,s.split('-')); return f"{d_} {MON[m_-1]} {y}"
     r.append(('date consistent (badge, JSON-LD, meta)',bool(bd and ld and om and bd.group(1).strip()==_lab(ld.group(1)) and om.group(1)==ld.group(1))))
+    import html as _h
+    def _tk(x): return set(re.findall(r"[a-z0-9.:']{3,}",' '.join(_h.unescape(t) for t in re.findall(r'<text[^>]*>(.*?)</text>',x,re.S)).lower()))
+    bad=[]
+    for i,fg in enumerate(re.findall(r'<figure class="ir-fig">.*?</figure>',h,re.S),1):
+        sv=re.findall(r'<svg([^>]*)>(.*?)</svg>',fg,re.S); dw=[b for a,b in sv if 'd-m' not in a]; mb=[b for a,b in sv if 'd-m' in a]
+        if dw and mb:
+            a_,b_=_tk(dw[0]),_tk(mb[0])
+            if len(a_&b_)/max(1,min(len(a_),len(b_)))<0.5: bad.append(i)
+    r.append(('phone and desktop drawings of each figure carry the same labels (mismatched: '+str(bad)+')',not bad))
     r.append(('title<=62',len(re.search(r'<title>(.*?)</title>',h).group(1))<=62)); r.append(('desc<=160',len(re.search(r'name="description" content="([^"]*)"',h).group(1))<=160))
     return r
 def phone(slugs):

@@ -39,7 +39,7 @@ def time_wide():
         for i,(n,w) in enumerate(SEG): s+=f'<rect x="{x:.1f}" y="{y}" width="{w*k:.1f}" height="34" rx="4" fill="currentColor" fill-opacity="{0.10 if i%2==0 else 0.18}" stroke="currentColor" stroke-opacity="0.4"/>'; x+=w*k
         tot=dns+170; s+=mt(x+8 if row==0 else x,y+(22 if row==0 else 52),[f'{tot} ms total'],12,'start' if row==0 else 'end',1,700)
     s+=f'<rect x="{x0}" y="204" width="9" height="9" fill="{A}" fill-opacity="0.5"/>'+tx(x0+14,212,'DNS',11,'start')+'<rect x="180" y="204" width="9" height="9" fill="currentColor" fill-opacity="0.18"/>'+tx(194,212,'then TCP 30, TLS 40, request 20, response 80 ms (same in both)',11,'start')
-    s+=tx(320,236,'Numbers are illustrative. Everything after the lookup waits for it.',12)
+    s+=tx(320,236,'Numbers are illustrative.',12)
     return mk('640 250',s,'Two page-load timelines: a 20 ms DNS lookup finishes at 190 ms, a 400 ms lookup at 570 ms')
 def time_tall():
     k=230/570; s=''; y=6
@@ -49,7 +49,7 @@ def time_tall():
             acc=n=='DNS'; s+=mt(22,y+17,[f'{n} {w} ms'],12.5,'start',1 if acc else 0.85,700 if acc else 400)+f'<rect x="{112+start*k:.1f}" y="{y}" width="{max(w*k,3):.1f}" height="24" rx="4" fill="{A if acc else "currentColor"}" fill-opacity="{0.4 if acc else 0.12}" stroke="currentColor" stroke-opacity="0.4"/>'
             start+=w; y+=32
         y+=12
-    s+=mt(180,y+6,['Same page, same connection. Both blocks use the','same scale. Numbers are illustrative.'],12.5)
+    s+=mt(180,y+6,['Both blocks use the same scale.','Numbers are illustrative.'],12.5)
     return mk(f'360 {y+46}',s,'Two page-load timelines on one scale: a 20 ms DNS lookup versus a 400 ms lookup',True)
 # ---------- 3. causes, placed where they occur
 C=[('Your device',[['VPN or security app','redirects lookups elsewhere'],['Browser Secure DNS','can bypass your device setting']]),('Your router',[['DNS forwarder adds delay','or gets stuck']]),('The resolver',[['Distant or overloaded','resolver'],['Unresponsive DNS server:','lookups wait for a timeout']])]
