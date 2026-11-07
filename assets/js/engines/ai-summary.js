@@ -188,7 +188,7 @@ const AISummaryEngine = (() => {
           return 'Browser capability detection in progress.'
         }
         return say(
-          `Your browser supports ${c.capabilityCount || 0} of ${c.totalChecked || 56} tested features, a score of ${c.capabilityScore}/100.`,
+          `Your browser supports ${c.capabilityCount || 0} of ${c.totalChecked || 28} tested features, a score of ${c.capabilityScore}/100.`,
           `WebGPU is ${c.webgpu ? 'available' : 'not available'} and WebAssembly is ${c.wasm ? 'available' : 'not available'}.`
         )
       },

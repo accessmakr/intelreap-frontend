@@ -9,16 +9,16 @@
 ;(function () {
   // id: [width, height]  (width: number of px or '100%')
   var FRAMES = {
-    'canvas3-latency-chart': ['100%', 120],
-    'canvas3-bandwidth-chart': [120, 80],
-    'canvas3-stability-chart': ['100%', 120],
-    'canvas9-waterfall-chart': ['100%', 220],
-    'canvas9-responsiveness-chart': [120, 80],
-    'canvas10-vitals-chart': ['100%', 180],
-    'c10-js-execution-gauge': [70, 50],
-    'c10-dom-manipulation-gauge': [70, 50],
-    'c10-canvas-render-gauge': [70, 50],
-    'c10-memory-access-gauge': [70, 50],
+    'canvas3-latency-chart': ['100%', 150],
+    'canvas3-bandwidth-chart': [190, 112],
+    'canvas3-stability-chart': ['100%', 150],
+    'canvas9-waterfall-chart': ['100%', 250],
+    'canvas9-responsiveness-chart': [190, 112],
+    'canvas10-vitals-chart': ['100%', 230],
+    'c10-js-execution-gauge': [92, 62],
+    'c10-dom-manipulation-gauge': [92, 62],
+    'c10-canvas-render-gauge': [92, 62],
+    'c10-memory-access-gauge': [92, 62],
     'canvas11-global-chart': [200, 200],
     'canvas11-network-chart': [80, 80],
     'canvas11-identity-chart': [80, 80],
@@ -47,6 +47,7 @@
       frame.style.width =
         typeof size[0] === 'number' ? size[0] + 'px' : size[0]
       frame.style.height = size[1] + 'px'
+      if (typeof size[0] === 'number') frame.style.margin = '0 auto'
       canvas.parentNode.insertBefore(frame, canvas)
       frame.appendChild(canvas)
       canvas.style.width = '100%'
