@@ -118,9 +118,9 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 - **Retrofit work:** Replace the two list-diagrams with tables. Redraw: (a) LAN/WAN boundary with gateway, (b) modem vs router vs ISP boundary with which address sits on which side, (c) double NAT with both subnets and the public side. Re-audit every command and menu path. Re-check the "cannot open" table against real causes.
 - **Diagrams (purpose of each):** Teaches: the gateway is the door between your private network and everything else (LAN/WAN boundary); Teaches: which box owns which address (modem/ONT, ISP router, your router); Teaches: how double NAT looks and how to recognise it by the router WAN address
 
-### R2 Printer IP (live, built today)
+### R2 Printer IP (live; REDONE 2026-11-07, queue item 3)
 - **URL:** `/learn/find-printer-ip-address`
-- **Current state:** Built: 1,071 body words, 6 diagrams (script-converted phone versions), 3 tables, 11 FAQs.
+- **Current state:** Redone 2026-11-07: 2,400 words, 5 diagrams each drawn separately wide and phone (`printer_figs.py`), 4 tables, 13 FAQs, 19 sources, 15 mapped queries. The notes below describe the page BEFORE the redo.
 - **Mapped keywords:** 9 keywords
 - **Reader intent:** Reader needs the printer address to add it, fix "offline", or print from a device that cannot find it.
 - **Defects found:** "Four ways" figure duplicates the methods table (list as diagram); LAN picture is decorative; steps not tested on real printers.
