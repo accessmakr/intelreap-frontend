@@ -77,8 +77,93 @@ const ChartJSViz = (() => {
   // Applied to all charts system-wide
   // ───────────────────────────────────────
 
+  // Draws a number (and a small unit line) inside a doughnut or
+  // half-circle dial: options.plugins.ndicGaugeText = { text, sub }
+  const gaugeTextPlugin = {
+    id: 'ndicGaugeText',
+    afterDraw: (chart, args, opts) => {
+      if (!opts || !opts.text) return
+      const meta = chart.getDatasetMeta(0)
+      const arc = meta && meta.data && meta.data[0]
+      if (!arc) return
+      const p = arc.getProps(
+        ['x', 'y', 'innerRadius', 'outerRadius'], true
+      )
+      const ctx = chart.ctx
+      const size = Math.max(
+        11, Math.min(26, p.innerRadius * 0.62)
+      )
+      const subSize = Math.max(8, size * 0.46)
+      ctx.save()
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'alphabetic'
+      let y = p.y - 3
+      if (opts.sub) {
+        ctx.fillStyle =
+          cssVar('--color-text-secondary', '#a8b6c9')
+        ctx.font = `500 ${subSize}px Inter, sans-serif`
+        ctx.fillText(opts.sub, p.x, y)
+        y -= subSize + 3
+      }
+      ctx.fillStyle =
+        cssVar('--color-text-primary', '#dde3ea')
+      ctx.font = `700 ${size}px Inter, sans-serif`
+      ctx.fillText(String(opts.text), p.x, y)
+      ctx.restore()
+    }
+  }
+
+  // Draws a label above each bar of the first dataset:
+  // options.plugins.ndicBarValues = { labels: [...] }
+  const barValuesPlugin = {
+    id: 'ndicBarValues',
+    afterDatasetsDraw: (chart, args, opts) => {
+      if (!opts || !opts.labels) return
+      const meta = chart.getDatasetMeta(0)
+      const ctx = chart.ctx
+      ctx.save()
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'bottom'
+      ctx.font = '700 10px Inter, sans-serif'
+      ctx.fillStyle = cssVar('--color-text-primary', '#dde3ea')
+      meta.data.forEach((bar, i) => {
+        const label = opts.labels[i]
+        if (label) ctx.fillText(label, bar.x - 0, bar.y - 4)
+      })
+      ctx.restore()
+    }
+  }
+
+  // Shows a short grey note in the middle of a chart while it has too
+  // little data to draw anything meaningful: options.plugins.ndicEmptyNote
+  const emptyNotePlugin = {
+    id: 'ndicEmptyNote',
+    afterDraw: (chart, args, opts) => {
+      if (!opts || !opts.text) return
+      const a = chart.chartArea
+      if (!a) return
+      const ctx = chart.ctx
+      ctx.save()
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.font = '600 12px Inter, sans-serif'
+      ctx.fillStyle = cssVar('--color-text-secondary', '#a8b6c9')
+      ctx.fillText(
+        opts.text, (a.left + a.right) / 2, (a.top + a.bottom) / 2
+      )
+      ctx.restore()
+    }
+  }
+
+  let pluginsRegistered = false
+
   const applyGlobalDefaults = () => {
     if (typeof Chart === 'undefined') return
+
+    if (!pluginsRegistered) {
+      Chart.register(gaugeTextPlugin, barValuesPlugin, emptyNotePlugin)
+      pluginsRegistered = true
+    }
 
     Chart.defaults.color =
       cssVar('--color-text-secondary', '#a8b6c9')
@@ -273,6 +358,13 @@ const ChartJSViz = (() => {
     data = data.slice(-maxPoints)
 
     chart.data.datasets[0].data = data
+    const samples = rttHistory.filter(v => v !== null && v !== undefined).length
+    chart.data.datasets[0].pointRadius = samples < 8 ? 3 : 0
+    chart.options.plugins.ndicEmptyNote = {
+      text: samples < 4
+        ? 'Collecting latency samples (' + samples + ')…'
+        : ''
+    }
     chart.update('none') // No animation for live data
   }
 
@@ -308,6 +400,7 @@ const ChartJSViz = (() => {
         responsive: true,
         maintainAspectRatio: false,
         cutout: '75%',
+        animation: false,
         plugins: {
           legend: { display: false },
           tooltip: { enabled: false }
@@ -338,6 +431,12 @@ const ChartJSViz = (() => {
     ]
     chart.data.datasets[0].backgroundColor[0] =
       color
+    chart.options.plugins.ndicGaugeText = {
+      text: bandwidth
+        ? (bandwidth >= 100 ? '100+' : Number(bandwidth).toFixed(1))
+        : '—',
+      sub: 'Mbps download'
+    }
     chart.update()
   }
 
@@ -410,7 +509,16 @@ const ChartJSViz = (() => {
     if (!chart) return
 
     const current = chart.data.datasets[0].data
-    current.push(stabilityIndex || 0)
+
+    // No reading yet: do not plot a false zero
+    if (stabilityIndex === null || stabilityIndex === undefined) {
+      chart.options.plugins.ndicEmptyNote = {
+        text: 'Collecting stability samples (0)…'
+      }
+      chart.update('none')
+      return
+    }
+    current.push(stabilityIndex)
     if (current.length > 30) current.shift()
 
     // Color based on stability
@@ -419,6 +527,11 @@ const ChartJSViz = (() => {
     else if (stabilityIndex >= 60) color = tc('#ecc94b')
 
     chart.data.datasets[0].borderColor = color
+    chart.options.plugins.ndicEmptyNote = {
+      text: current.length < 6
+        ? 'Collecting stability samples (' + current.length + ')…'
+        : ''
+    }
     chart.update('none')
   }
 
@@ -474,7 +587,10 @@ const ChartJSViz = (() => {
               color: tc('rgba(255,255,255,0.05)')
             },
             ticks: {
-              callback: (v) => `${v}ms`,
+              callback: (v) => (v >= 1000 ? `${v / 1000}s` : `${v}ms`),
+              maxRotation: 0,
+              autoSkip: true,
+              maxTicksLimit: 5,
               color: tc('rgba(255,255,255,0.4)'),
               maxTicksLimit: 6
             }
@@ -562,6 +678,7 @@ const ChartJSViz = (() => {
           responsive: true,
           maintainAspectRatio: false,
           cutout: '72%',
+          animation: false,
           plugins: {
             legend: { display: false },
             tooltip: { enabled: false }
@@ -586,6 +703,10 @@ const ChartJSViz = (() => {
       [value, 100 - value]
     chart.data.datasets[0].backgroundColor[0] =
       color
+    chart.options.plugins.ndicGaugeText = {
+      text: Math.round(value),
+      sub: 'responsiveness / 100'
+    }
     chart.update()
   }
 
@@ -593,6 +714,21 @@ const ChartJSViz = (() => {
   // CANVAS 10 — CORE VITALS BAR CHART
   // Six Core Web Vitals comparison
   // ───────────────────────────────────────
+
+  // Each metric has its own unit (ms, or none for CLS), so the bars
+  // show the result as a share of that metric's "good" limit. The grey
+  // bar is the limit (always full height); a coloured bar shorter than
+  // the grey one means "good". The real value is written above it.
+  const VITAL_NAMES = ['LCP', 'FCP', 'CLS', 'INP', 'TTFB', 'FID']
+  const VITAL_LIMITS = [2500, 1800, 0.1, 200, 800, 100]
+
+  const formatVital = (index, v) => {
+    if (v === null || v === undefined) return '—'
+    if (index === 2) return Number(v).toFixed(2)
+    return v >= 1000
+      ? (v / 1000).toFixed(1) + ' s'
+      : Math.round(v) + ' ms'
+  }
 
   const initVitalsBarChart = () => {
     if (typeof Chart === 'undefined') return
@@ -606,13 +742,10 @@ const ChartJSViz = (() => {
     charts['canvas10-vitals'] = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: [
-          'LCP', 'FCP', 'CLS',
-          'INP', 'TTFB', 'FID'
-        ],
+        labels: VITAL_NAMES,
         datasets: [
           {
-            label: 'Measured',
+            label: 'Your result',
             data: [0, 0, 0, 0, 0, 0],
             backgroundColor: [
               tc('#68d391'), tc('#68d391'), tc('#68d391'),
@@ -622,10 +755,10 @@ const ChartJSViz = (() => {
             borderSkipped: false
           },
           {
-            label: 'Good Threshold',
-            data: [2500, 1800, 0.1, 200, 800, 100],
+            label: 'Good limit',
+            data: [1, 1, 1, 1, 1, 1],
             backgroundColor:
-              tc('rgba(255,255,255,0.08)'),
+              tc('rgba(255,255,255,0.12)'),
             borderRadius: 4,
             borderSkipped: false
           }
@@ -634,35 +767,41 @@ const ChartJSViz = (() => {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: { padding: { top: 6 } },
         scales: {
           x: {
             grid: { display: false },
             ticks: {
-              color: tc('rgba(255,255,255,0.6)'),
+              color: cssVar('--color-text-secondary', '#a8b6c9'),
               font: { size: 11, weight: '600' }
             }
           },
           y: {
-            display: false
+            display: false,
+            min: 0,
+            max: 3
           }
         },
         plugins: {
           legend: { display: false },
+          title: {
+            display: true,
+            text: 'Your result against the "good" limit (grey): lower than grey is good',
+            align: 'start',
+            color: cssVar('--color-text-secondary', '#a8b6c9'),
+            font: { size: 11, weight: '600' },
+            padding: { bottom: 10 }
+          },
+          ndicBarValues: { labels: [] },
           tooltip: {
             callbacks: {
-              label: (ctx) => {
-                const labels = [
-                  'LCP', 'FCP', 'CLS',
-                  'INP', 'TTFB', 'FID'
-                ]
-                const idx = ctx.dataIndex
-                const isCLS = idx === 2
-                if (ctx.datasetIndex === 0) {
-                  return isCLS
-                    ? ` ${ctx.raw}`
-                    : ` ${ctx.raw}ms`
+              label: (c) => {
+                const i = c.dataIndex
+                if (c.datasetIndex === 1) {
+                  return ' Good limit: ' + formatVital(i, VITAL_LIMITS[i])
                 }
-                return null
+                const raw = c.chart.$rawVitals
+                return ' Your result: ' + formatVital(i, raw ? raw[i] : null)
               }
             }
           }
@@ -675,14 +814,11 @@ const ChartJSViz = (() => {
     const chart = charts['canvas10-vitals']
     if (!chart || !speed) return
 
-    const values = [
-      speed.lcp || 0,
-      speed.fcp || 0,
-      speed.cls || 0,
-      speed.inp || 0,
-      speed.ttfb || 0,
-      speed.fid || 0
+    const raw = [
+      speed.lcp, speed.fcp, speed.cls,
+      speed.inp, speed.ttfb, speed.fid
     ]
+    chart.$rawVitals = raw
 
     const ratings = [
       speed.lcpRating,
@@ -702,9 +838,18 @@ const ChartJSViz = (() => {
       return tc('rgba(255,255,255,0.2)')
     })
 
-    chart.data.datasets[0].data = values
+    const ratios = raw.map((v, i) =>
+      v === null || v === undefined
+        ? 0
+        : Math.min(2.5, Math.max(0.03, v / VITAL_LIMITS[i]))
+    )
+
+    chart.data.datasets[0].data = ratios
     chart.data.datasets[0].backgroundColor =
       colors
+    chart.options.plugins.ndicBarValues = {
+      labels: raw.map((v, i) => formatVital(i, v))
+    }
     chart.update()
   }
 
@@ -785,6 +930,11 @@ const ChartJSViz = (() => {
       [value, 100 - value]
     chart.data.datasets[0].backgroundColor[0] =
       color
+    chart.options.plugins.ndicGaugeText = {
+      text: score === null || score === undefined
+        ? '—' : Math.round(value),
+      sub: '/ 100'
+    }
     chart.update()
   }
 
@@ -1055,6 +1205,20 @@ const ChartJSViz = (() => {
   // Called once on page load
   // ───────────────────────────────────────
 
+  const setChartTitle = (id, text) => {
+    const chart = charts[id]
+    if (!chart) return
+    chart.options.plugins.title = {
+      display: true,
+      text,
+      align: 'start',
+      color: cssVar('--color-text-secondary', '#a8b6c9'),
+      font: { size: 11, weight: '600' },
+      padding: { bottom: 8 }
+    }
+    chart.update('none')
+  }
+
   const initializeAll = () => {
     if (typeof Chart === 'undefined') {
       logError(
@@ -1081,6 +1245,14 @@ const ChartJSViz = (() => {
     // Canvas 11 charts
     initGlobalScoreDoughnut()
     initSubScoreGauges()
+
+    // Plain titles so each chart says what it shows
+    setChartTitle('canvas3-latency',
+      'Latency over time (ms): lower is better')
+    setChartTitle('canvas3-stability',
+      'Stability over time: higher and steadier is better')
+    setChartTitle('canvas9-waterfall',
+      'Where the page load time went (ms): shorter is better')
 
     logSystem(
       'INFO',

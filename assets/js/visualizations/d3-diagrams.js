@@ -839,8 +839,8 @@ const D3DiagramsViz = (() => {
             : tc('rgba(255,255,255,0.15)')
           )
 
-        // Capability label
-        tileGroup.append('text')
+        // Capability label (shrunk to fit so no name is cut off)
+        const labelText = tileGroup.append('text')
           .attr('x', 8)
           .attr('y', tileSize * 0.35)
           .attr('fill', cap.value
@@ -852,6 +852,16 @@ const D3DiagramsViz = (() => {
             ? '600' : '400'
           )
           .text(cap.label)
+        try {
+          const room = tileSize - 22
+          const used = labelText.node().getComputedTextLength()
+          if (used > room && used > 0) {
+            labelText.attr(
+              'font-size',
+              Math.max(6, 9 * room / used).toFixed(2) + 'px'
+            )
+          }
+        } catch (e) { /* not measurable yet: keep the default size */ }
 
         // Supported / Not supported text
         tileGroup.append('text')
