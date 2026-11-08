@@ -725,8 +725,49 @@ select {
     display: none;
   }
   .trigger-search,
-  .theme-toggle-btn {
+  .theme-toggle-btn,
+  .ndic-mobile-toggle {
     flex-shrink: 0;
+  }
+
+  /* Fit logo, wordmark and all four controls on one row. The wordmark
+     (Syne, wide capitals) scales with the screen width. */
+  .ndic-site-header-inner {
+    padding-inline: 12px;
+  }
+  .ndic-site-logo-link {
+    gap: 8px;
+    min-width: 0;
+  }
+  .ndic-site-logo-link::before {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+  }
+  .ndic-site-wordmark {
+    font-size: clamp(0.78rem, 3.9vw, 1.125rem);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .trigger-search {
+    width: 36px;
+    padding-inline: 0;
+    justify-content: center;
+  }
+  #master-nav-dock {
+    gap: 4px;
+  }
+  .ndic-lang-trigger {
+    min-width: 38px;
+    padding-inline: 6px;
+  }
+}
+
+/* Very narrow screens (320-340 px): the theme button gives way; the
+   theme still follows the phone's own light/dark setting. */
+@media (max-width: 340px) {
+  .theme-toggle-btn {
+    display: none !important;
   }
 }
 

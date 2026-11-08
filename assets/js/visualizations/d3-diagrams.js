@@ -213,6 +213,23 @@ const D3DiagramsViz = (() => {
         ]
 
     // Links between nodes
+    // Role names on top, the specific organisation below (and the full
+    // text in a hover/long-press title), so two nodes never read the
+    // same cut-off organisation name.
+    nodes.forEach(n => {
+      n.fullText = `${n.label} (${n.sublabel})`
+      if (n.id === 'isp') {
+        n.sublabel = n.label
+        n.label = 'Your ISP'
+      } else if (n.id === 'asn') {
+        n.sublabel = (String(n.sublabel).match(/^AS\d+/) || [n.sublabel])[0]
+        n.label = 'Network (ASN)'
+      } else if (n.id === 'upstream') {
+        n.sublabel = (String(n.sublabel).match(/Tier \d/) || [n.sublabel])[0]
+        n.label = 'Upstream'
+      }
+    })
+
     const links = [
       {
         source: 'device',
@@ -308,6 +325,12 @@ const D3DiagramsViz = (() => {
       .attr('font-size', '10px')
       .attr('text-anchor', 'middle')
       .attr('dy', -6)
+      // a background-coloured outline keeps the word readable where a
+      // line label crosses another label
+      .attr('paint-order', 'stroke')
+      .attr('stroke', cssVar('--color-bg-secondary', '#10141c'))
+      .attr('stroke-width', 3)
+      .attr('stroke-linejoin', 'round')
       .text(d => {
         if (d.latency) {
           return `${d.label} • ${d.latency}ms`
@@ -417,6 +440,9 @@ const D3DiagramsViz = (() => {
       )
       .text(d => nodeIcons[d.type])
 
+    nodeElements.append('title')
+      .text(d => d.fullText || d.label)
+
     // Node labels below
     nodeElements.append('text')
       .attr('text-anchor', 'middle')
@@ -436,7 +462,7 @@ const D3DiagramsViz = (() => {
       )
       .attr('fill', tc('rgba(255,255,255,0.7)'))
       .attr('font-size', '10px')
-      .text(d => truncateString(d.sublabel, 14))
+      .text(d => truncateString(d.sublabel, 16))
 
     // Initialize force simulation
     routingSimulation = d3
@@ -845,7 +871,7 @@ const D3DiagramsViz = (() => {
           .attr('y', tileSize * 0.35)
           .attr('fill', cap.value
             ? tc('rgba(255,255,255,0.85)')
-            : tc('rgba(255,255,255,0.25)')
+            : tc('rgba(255,255,255,0.5)')
           )
           .attr('font-size', '9px')
           .attr('font-weight', cap.value
@@ -869,7 +895,7 @@ const D3DiagramsViz = (() => {
           .attr('y', tileSize * 0.52)
           .attr('fill', cap.value
             ? color
-            : tc('rgba(255,255,255,0.2)')
+            : tc('rgba(255,255,255,0.45)')
           )
           .attr('font-size', '8px')
           .text(cap.value
