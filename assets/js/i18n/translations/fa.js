@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_FA = {
       "error_count": "خطاها",
       "last_network_change": "آخرین تغییر شبکه",
       "scan_start_time": "شروع اسکن",
-      "ai_summary_source": "منبع خلاصه AI",
+      "ai_summary_source": "منبع خلاصه",
       "ai_last_updated": "به‌روزرسانی خلاصه"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_FA = {
   },
   "full_summary": {
     "title": "گزارش کامل اطلاعات سیستم",
-    "label": "خلاصه تشخیصی AI",
+    "label": "خلاصه تشخیصی",
     "source_label": "تولیدشده توسط",
     "generated_at": "تولید شد",
     "score_label": "امتیاز جهانی"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_FA = {
     "copy_failed": "کپی ناموفق بود — به صورت دستی تلاش کنید"
   },
   "ai_summary": {
-    "label": "خلاصه اطلاعاتی AI",
+    "label": "خلاصه اطلاعاتی",
     "source_script": "اسکریپت",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

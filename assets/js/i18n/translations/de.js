@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_DE = {
       "error_count": "Fehler",
       "last_network_change": "Letzte Netzwerkänderung",
       "scan_start_time": "Scan gestartet",
-      "ai_summary_source": "KI-Zusammenfassungsquelle",
+      "ai_summary_source": "Zusammenfassungsquelle",
       "ai_last_updated": "Zusammenfassung aktualisiert"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_DE = {
   },
   "full_summary": {
     "title": "Vollständiger Systemaufklärungsbericht",
-    "label": "KI-Diagnosezusammenfassung",
+    "label": "Diagnosezusammenfassung",
     "source_label": "Erstellt von",
     "generated_at": "Erstellt",
     "score_label": "Globale Punktzahl"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_DE = {
     "copy_failed": "Kopieren fehlgeschlagen — manuell versuchen"
   },
   "ai_summary": {
-    "label": "KI-Aufklärungszusammenfassung",
+    "label": "Aufklärungszusammenfassung",
     "source_script": "Skript",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

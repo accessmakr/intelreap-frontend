@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_KO = {
       "error_count": "오류 수",
       "last_network_change": "마지막 네트워크 변경",
       "scan_start_time": "스캔 시작 시간",
-      "ai_summary_source": "AI 요약 소스",
+      "ai_summary_source": "요약 소스",
       "ai_last_updated": "요약 업데이트 시간"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_KO = {
   },
   "full_summary": {
     "title": "전체 시스템 인텔리전스 보고서",
-    "label": "AI 진단 요약",
+    "label": "진단 요약",
     "source_label": "생성",
     "generated_at": "생성 시간",
     "score_label": "글로벌 점수"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "copy_failed": "복사 실패 — 수동으로 시도하세요"
   },
   "ai_summary": {
-    "label": "AI 인텔리전스 요약",
+    "label": "인텔리전스 요약",
     "source_script": "스크립트",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

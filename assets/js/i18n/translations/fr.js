@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_FR = {
       "error_count": "Erreurs",
       "last_network_change": "Dernier changement réseau",
       "scan_start_time": "Analyse démarrée",
-      "ai_summary_source": "Source du résumé IA",
+      "ai_summary_source": "Source du résumé",
       "ai_last_updated": "Résumé mis à jour"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_FR = {
   },
   "full_summary": {
     "title": "Rapport complet de renseignement système",
-    "label": "Résumé de diagnostic IA",
+    "label": "Résumé de diagnostic",
     "source_label": "Généré par",
     "generated_at": "Généré",
     "score_label": "Score global"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_FR = {
     "copy_failed": "Échec de la copie — essayez manuellement"
   },
   "ai_summary": {
-    "label": "Résumé de renseignement IA",
+    "label": "Résumé de renseignement",
     "source_script": "Script",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

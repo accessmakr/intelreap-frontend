@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_ID = {
       "error_count": "Kesalahan",
       "last_network_change": "Perubahan Jaringan Terakhir",
       "scan_start_time": "Pemindaian Dimulai",
-      "ai_summary_source": "Sumber Ringkasan AI",
+      "ai_summary_source": "Sumber Ringkasan",
       "ai_last_updated": "Ringkasan Diperbarui"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_ID = {
   },
   "full_summary": {
     "title": "Laporan Intelijen Sistem Lengkap",
-    "label": "Ringkasan Diagnostik AI",
+    "label": "Ringkasan Diagnostik",
     "source_label": "Dibuat oleh",
     "generated_at": "Dibuat",
     "score_label": "Skor Global"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "copy_failed": "Salin gagal — coba secara manual"
   },
   "ai_summary": {
-    "label": "Ringkasan Intelijen AI",
+    "label": "Ringkasan Intelijen",
     "source_script": "Skrip",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_BN = {
       "error_count": "ত্রুটি",
       "last_network_change": "শেষ নেটওয়ার্ক পরিবর্তন",
       "scan_start_time": "স্ক্যান শুরু",
-      "ai_summary_source": "AI সারসংক্ষেপ উৎস",
+      "ai_summary_source": "সারসংক্ষেপ উৎস",
       "ai_last_updated": "সারসংক্ষেপ আপডেট"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_BN = {
   },
   "full_summary": {
     "title": "সম্পূর্ণ সিস্টেম ইন্টেলিজেন্স রিপোর্ট",
-    "label": "AI ডায়াগনস্টিক সারসংক্ষেপ",
+    "label": "ডায়াগনস্টিক সারসংক্ষেপ",
     "source_label": "তৈরি করেছে",
     "generated_at": "তৈরি",
     "score_label": "গ্লোবাল স্কোর"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_BN = {
     "copy_failed": "কপি ব্যর্থ — ম্যানুয়ালি চেষ্টা করুন"
   },
   "ai_summary": {
-    "label": "AI ইন্টেলিজেন্স সারসংক্ষেপ",
+    "label": "ইন্টেলিজেন্স সারসংক্ষেপ",
     "source_script": "স্ক্রিপ্ট",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

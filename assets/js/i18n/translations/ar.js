@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_AR = {
       "error_count": "الأخطاء",
       "last_network_change": "آخر تغيير للشبكة",
       "scan_start_time": "بدء الفحص",
-      "ai_summary_source": "مصدر ملخص AI",
+      "ai_summary_source": "مصدر ملخص",
       "ai_last_updated": "تحديث الملخص"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_AR = {
   },
   "full_summary": {
     "title": "تقرير استخبارات النظام الكامل",
-    "label": "ملخص تشخيص AI",
+    "label": "ملخص تشخيص",
     "source_label": "تم إنشاؤه بواسطة",
     "generated_at": "تم الإنشاء",
     "score_label": "الدرجة العالمية"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_AR = {
     "copy_failed": "فشل النسخ — حاول يدوياً"
   },
   "ai_summary": {
-    "label": "ملخص استخبارات AI",
+    "label": "ملخص استخبارات",
     "source_script": "سكريبت",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

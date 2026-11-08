@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_JA = {
       "error_count": "エラー数",
       "last_network_change": "最後のネットワーク変更",
       "scan_start_time": "スキャン開始時刻",
-      "ai_summary_source": "AIサマリーソース",
+      "ai_summary_source": "サマリーソース",
       "ai_last_updated": "サマリー更新時刻"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_JA = {
   },
   "full_summary": {
     "title": "完全なシステムインテリジェンスレポート",
-    "label": "AI診断サマリー",
+    "label": "診断サマリー",
     "source_label": "生成元",
     "generated_at": "生成時刻",
     "score_label": "グローバルスコア"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "copy_failed": "コピー失敗 — 手動でお試しください"
   },
   "ai_summary": {
-    "label": "AIインテリジェンスサマリー",
+    "label": "インテリジェンスサマリー",
     "source_script": "スクリプト",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

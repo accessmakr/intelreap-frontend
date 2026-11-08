@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_UR = {
       "error_count": "غلطیاں",
       "last_network_change": "آخری نیٹ ورک تبدیلی",
       "scan_start_time": "اسکین شروع",
-      "ai_summary_source": "AI خلاصہ ذریعہ",
+      "ai_summary_source": "خلاصہ ذریعہ",
       "ai_last_updated": "خلاصہ اپڈیٹ"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_UR = {
   },
   "full_summary": {
     "title": "مکمل سسٹم انٹیلیجنس رپورٹ",
-    "label": "AI تشخیصی خلاصہ",
+    "label": "تشخیصی خلاصہ",
     "source_label": "تخلیق کردہ",
     "generated_at": "تخلیق",
     "score_label": "عالمی اسکور"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_UR = {
     "copy_failed": "کاپی ناکام — دستی کوشش کریں"
   },
   "ai_summary": {
-    "label": "AI انٹیلیجنس خلاصہ",
+    "label": "انٹیلیجنس خلاصہ",
     "source_script": "اسکرپٹ",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

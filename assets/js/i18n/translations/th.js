@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_TH = {
       "error_count": "ข้อผิดพลาด",
       "last_network_change": "การเปลี่ยนแปลงเครือข่ายล่าสุด",
       "scan_start_time": "เริ่มการสแกน",
-      "ai_summary_source": "แหล่งที่มาสรุป AI",
+      "ai_summary_source": "แหล่งที่มาสรุป",
       "ai_last_updated": "อัปเดตสรุปแล้ว"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_TH = {
   },
   "full_summary": {
     "title": "รายงานข่าวกรองระบบฉบับสมบูรณ์",
-    "label": "สรุปการวินิจฉัย AI",
+    "label": "สรุปการวินิจฉัย",
     "source_label": "สร้างโดย",
     "generated_at": "สร้างเมื่อ",
     "score_label": "คะแนนระดับโลก"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_TH = {
     "copy_failed": "การคัดลอกล้มเหลว — ลองด้วยตนเอง"
   },
   "ai_summary": {
-    "label": "สรุปข่าวกรอง AI",
+    "label": "สรุปข่าวกรอง",
     "source_script": "สคริปต์",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

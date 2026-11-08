@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_YO = {
       "error_count": "Àwọn Àṣìṣe",
       "last_network_change": "Ìyípadà Nẹtiwọọki Tó Kẹ́hìn",
       "scan_start_time": "Ṣiṣayẹwo Bẹ̀rẹ̀",
-      "ai_summary_source": "Orísun Àkópọ̀ AI",
+      "ai_summary_source": "Orísun Àkópọ̀",
       "ai_last_updated": "A Ti Ṣe Àtúnṣe Àkópọ̀"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_YO = {
   },
   "full_summary": {
     "title": "Ìjábọ Imọye Ètò Pérépéré",
-    "label": "Àkópọ̀ Ìwádìí AI",
+    "label": "Àkópọ̀ Ìwádìí",
     "source_label": "Tí A Ṣẹ́dá Látọwọ́",
     "generated_at": "A Ṣẹ́dá",
     "score_label": "Àmì Àgbáyé"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_YO = {
     "copy_failed": "Dídaakọ kò ṣiṣẹ — gbìyànjú fúnrarẹ"
   },
   "ai_summary": {
-    "label": "Àkópọ̀ Imọye AI",
+    "label": "Àkópọ̀ Imọye",
     "source_script": "Hujà",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

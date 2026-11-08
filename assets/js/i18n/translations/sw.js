@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_SW = {
       "error_count": "Makosa",
       "last_network_change": "Mabadiliko ya Mwisho ya Mtandao",
       "scan_start_time": "Uchunguzi Ulianza",
-      "ai_summary_source": "Chanzo cha Muhtasari wa AI",
+      "ai_summary_source": "Chanzo cha Muhtasari",
       "ai_last_updated": "Muhtasari Umesasishwa"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_SW = {
   },
   "full_summary": {
     "title": "Ripoti Kamili ya Akili ya Mfumo",
-    "label": "Muhtasari wa Uchunguzi wa AI",
+    "label": "Muhtasari wa Uchunguzi",
     "source_label": "Ilitengenezwa na",
     "generated_at": "Ilitengenezwa",
     "score_label": "Alama ya Kimataifa"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_SW = {
     "copy_failed": "Kunakili kumeshindwa — jaribu mwenyewe"
   },
   "ai_summary": {
-    "label": "Muhtasari wa Akili ya AI",
+    "label": "Muhtasari wa Akili",
     "source_script": "Hati",
     "source_groq": "Groq",
     "source_gemini": "Gemini",
