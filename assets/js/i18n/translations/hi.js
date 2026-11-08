@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_HI = {
       "error_count": "त्रुटियां",
       "last_network_change": "अंतिम नेटवर्क परिवर्तन",
       "scan_start_time": "स्कैन शुरू",
-      "ai_summary_source": "AI सारांश स्रोत",
+      "ai_summary_source": "सारांश स्रोत",
       "ai_last_updated": "सारांश अपडेट"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_HI = {
   },
   "full_summary": {
     "title": "पूर्ण सिस्टम इंटेलिजेंस रिपोर्ट",
-    "label": "AI डायग्नोस्टिक सारांश",
+    "label": "डायग्नोस्टिक सारांश",
     "source_label": "द्वारा उत्पन्न",
     "generated_at": "उत्पन्न",
     "score_label": "वैश्विक स्कोर"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_HI = {
     "copy_failed": "कॉपी विफल — मैन्युअली कोशिश करें"
   },
   "ai_summary": {
-    "label": "AI इंटेलिजेंस सारांश",
+    "label": "इंटेलिजेंस सारांश",
     "source_script": "स्क्रिप्ट",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_IT = {
       "error_count": "Errori",
       "last_network_change": "Ultima Modifica Rete",
       "scan_start_time": "Scansione Avviata",
-      "ai_summary_source": "Fonte Riepilogo IA",
+      "ai_summary_source": "Fonte Riepilogo",
       "ai_last_updated": "Riepilogo Aggiornato"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_IT = {
   },
   "full_summary": {
     "title": "Report Completo di Intelligence del Sistema",
-    "label": "Riepilogo Diagnostico IA",
+    "label": "Riepilogo Diagnostico",
     "source_label": "Generato da",
     "generated_at": "Generato",
     "score_label": "Punteggio Globale"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_IT = {
     "copy_failed": "Copia fallita — prova manualmente"
   },
   "ai_summary": {
-    "label": "Riepilogo Intelligence IA",
+    "label": "Riepilogo Intelligence",
     "source_script": "Script",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_ZH = {
       "error_count": "错误",
       "last_network_change": "最后网络变化",
       "scan_start_time": "扫描开始时间",
-      "ai_summary_source": "AI摘要来源",
+      "ai_summary_source": "摘要来源",
       "ai_last_updated": "摘要更新时间"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_ZH = {
   },
   "full_summary": {
     "title": "完整系统智能报告",
-    "label": "AI诊断摘要",
+    "label": "诊断摘要",
     "source_label": "由...生成",
     "generated_at": "生成时间",
     "score_label": "全球评分"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "copy_failed": "复制失败 — 请手动复制"
   },
   "ai_summary": {
-    "label": "AI智能摘要",
+    "label": "智能摘要",
     "source_script": "脚本",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_TR = {
       "error_count": "Hatalar",
       "last_network_change": "Son Ağ Değişikliği",
       "scan_start_time": "Tarama Başlangıcı",
-      "ai_summary_source": "AI Özet Kaynağı",
+      "ai_summary_source": "Özet Kaynağı",
       "ai_last_updated": "Özet Güncellendi"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_TR = {
   },
   "full_summary": {
     "title": "Tam Sistem İstihbarat Raporu",
-    "label": "AI Teşhis Özeti",
+    "label": "Teşhis Özeti",
     "source_label": "Oluşturan",
     "generated_at": "Oluşturuldu",
     "score_label": "Global Puan"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_TR = {
     "copy_failed": "Kopyalama başarısız — manuel deneyin"
   },
   "ai_summary": {
-    "label": "AI İstihbarat Özeti",
+    "label": "İstihbarat Özeti",
     "source_script": "Komut Dosyası",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

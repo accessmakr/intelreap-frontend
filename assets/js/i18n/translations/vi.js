@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_VI = {
       "error_count": "Lỗi",
       "last_network_change": "Thay Đổi Mạng Cuối Cùng",
       "scan_start_time": "Bắt Đầu Quét",
-      "ai_summary_source": "Nguồn Tóm Tắt AI",
+      "ai_summary_source": "Nguồn Tóm Tắt",
       "ai_last_updated": "Cập Nhật Tóm Tắt"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_VI = {
   },
   "full_summary": {
     "title": "Báo Cáo Tình Báo Hệ Thống Đầy Đủ",
-    "label": "Tóm Tắt Chẩn Đoán AI",
+    "label": "Tóm Tắt Chẩn Đoán",
     "source_label": "Được Tạo Bởi",
     "generated_at": "Được Tạo",
     "score_label": "Điểm Toàn Cầu"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_VI = {
     "copy_failed": "Sao Chép Thất Bại — Thử Thủ Công"
   },
   "ai_summary": {
-    "label": "Tóm Tắt Tình Báo AI",
+    "label": "Tóm Tắt Tình Báo",
     "source_script": "Script",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

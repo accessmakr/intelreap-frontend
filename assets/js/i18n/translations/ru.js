@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_RU = {
       "error_count": "Ошибок",
       "last_network_change": "Последнее изменение сети",
       "scan_start_time": "Начало сканирования",
-      "ai_summary_source": "Источник сводки ИИ",
+      "ai_summary_source": "Источник сводки",
       "ai_last_updated": "Сводка обновлена"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_RU = {
   },
   "full_summary": {
     "title": "Полный отчёт о разведке системы",
-    "label": "Диагностическая сводка ИИ",
+    "label": "Диагностическая сводка",
     "source_label": "Создано",
     "generated_at": "Создано",
     "score_label": "Глобальная оценка"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_RU = {
     "copy_failed": "Ошибка копирования — попробуйте вручную"
   },
   "ai_summary": {
-    "label": "Сводка разведки ИИ",
+    "label": "Сводка разведки",
     "source_script": "Скрипт",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

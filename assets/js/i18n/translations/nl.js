@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_NL = {
       "error_count": "Fouten",
       "last_network_change": "Laatste netwerkwijziging",
       "scan_start_time": "Scan gestart",
-      "ai_summary_source": "Bron AI-samenvatting",
+      "ai_summary_source": "Bron samenvatting",
       "ai_last_updated": "Samenvatting bijgewerkt"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_NL = {
   },
   "full_summary": {
     "title": "Volledig Systeem Inlichtingenrapport",
-    "label": "AI Diagnostisch Overzicht",
+    "label": "Diagnostisch Overzicht",
     "source_label": "Gegenereerd door",
     "generated_at": "Gegenereerd",
     "score_label": "Globale score"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_NL = {
     "copy_failed": "Kopiëren mislukt — probeer handmatig"
   },
   "ai_summary": {
-    "label": "AI Inlichtingensamenvatting",
+    "label": "Inlichtingensamenvatting",
     "source_script": "Script",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

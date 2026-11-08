@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_PL = {
       "error_count": "Błędy",
       "last_network_change": "Ostatnia Zmiana Sieci",
       "scan_start_time": "Skanowanie Rozpoczęte",
-      "ai_summary_source": "Źródło Podsumowania AI",
+      "ai_summary_source": "Źródło Podsumowania",
       "ai_last_updated": "Zaktualizowano Podsumowanie"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_PL = {
   },
   "full_summary": {
     "title": "Pełny Raport Wywiadu Systemowego",
-    "label": "Podsumowanie Diagnostyczne AI",
+    "label": "Podsumowanie Diagnostyczne",
     "source_label": "Wygenerowano przez",
     "generated_at": "Wygenerowano",
     "score_label": "Wynik Globalny"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_PL = {
     "copy_failed": "Kopiowanie nieudane — spróbuj ręcznie"
   },
   "ai_summary": {
-    "label": "Podsumowanie Wywiadu AI",
+    "label": "Podsumowanie Wywiadu",
     "source_script": "Skrypt",
     "source_groq": "Groq",
     "source_gemini": "Gemini",

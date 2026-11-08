@@ -389,7 +389,7 @@ window.NDIC_TRANSLATIONS_HA = {
       "error_count": "Kurakurai",
       "last_network_change": "Canjin Hanyar Sadarwa na Ƙarshe",
       "scan_start_time": "Bincike Ya Fara",
-      "ai_summary_source": "Tushen Taƙaitawar AI",
+      "ai_summary_source": "Tushen Taƙaitawar",
       "ai_last_updated": "An Sabunta Taƙaitawar"
     },
     "values": {
@@ -403,7 +403,7 @@ window.NDIC_TRANSLATIONS_HA = {
   },
   "full_summary": {
     "title": "Cikakken Rahoton Bayanan Tsarin",
-    "label": "Taƙaitawar Binciken AI",
+    "label": "Taƙaitawar Binciken",
     "source_label": "Wanda Ya Samar",
     "generated_at": "An Samar",
     "score_label": "Maki na Duniya"
@@ -424,7 +424,7 @@ window.NDIC_TRANSLATIONS_HA = {
     "copy_failed": "Kwafawa ya kasa — gwada da hannu"
   },
   "ai_summary": {
-    "label": "Taƙaitawar Bayanan AI",
+    "label": "Taƙaitawar Bayanan",
     "source_script": "Hujja",
     "source_groq": "Groq",
     "source_gemini": "Gemini",
