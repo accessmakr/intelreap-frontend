@@ -501,6 +501,8 @@ const ChartJSViz = (() => {
     })
   }
 
+  let stabilitySeries = []
+
   const updateStabilityGraph = (
     stabilityIndex,
     rttHistory
@@ -518,6 +520,13 @@ const ChartJSViz = (() => {
       chart.update('none')
       return
     }
+    // The readings are also kept outside the chart, so switching the
+    // theme (which draws the charts again) does not lose the history
+    if (current.length === 0 && stabilitySeries.length) {
+      stabilitySeries.forEach(v => current.push(v))
+    }
+    stabilitySeries.push(stabilityIndex)
+    if (stabilitySeries.length > 30) stabilitySeries.shift()
     current.push(stabilityIndex)
     if (current.length > 30) current.shift()
 
