@@ -3771,8 +3771,29 @@ select {
 
 .ndic-footer-logo-link {
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   margin-block-end: var(--space-4);
+}
+
+/* The IR brand mark beside the footer wordmark, as in the header */
+.ndic-footer-logo-link::before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: url("/assets/images/icons/icon-96.png") center / contain no-repeat;
+}
+
+/* Long values (an IPv6 address, a place name) wrap instead of being cut off */
+#c2-alt-ip,
+#c2-alt-location,
+#c2-accuracy {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
 .ndic-footer-wordmark {

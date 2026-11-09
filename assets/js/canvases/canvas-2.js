@@ -110,8 +110,11 @@ const Canvas2 = (() => {
       showRow('c2-alt-row', true)
       showRow('c2-alt-loc-row', true)
       setText('c2-alt-ip', alt.ip + ' (' + alt.ipVersion + ')')
-      const place = [alt.city, alt.region, alt.country]
-        .filter(Boolean).join(', ')
+      const place = [
+        alt.city,
+        alt.region && alt.region !== alt.city ? alt.region : null,
+        alt.country
+      ].filter(Boolean).join(', ')
       setText('c2-alt-location',
         (place || '—') + ' · ' + kmText(alt.accuracyRadiusKm))
     } else {
