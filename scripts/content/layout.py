@@ -33,7 +33,16 @@ def stamp(h,d,visible=True):
                 add=(f'<meta property="article:published_time" content="{pub}T00:00:00Z">\n' if pub and 'article:published_time' not in h else '')+meta
                 h=h.replace('<meta property="og:locale"','%s\n<meta property="og:locale"'%add,1) if '<meta property="og:locale"' in h else h
     return h
+def record(path,d):
+    """Keep docs/data/page-dates.json (the source of truth for dates) in step with a rebuilt page: modified = the real date of this rebuild."""
+    root=os.path.abspath(os.path.join(os.path.dirname(__file__),'..','..')); rel=os.path.relpath(os.path.abspath(path),root).replace(os.sep,'/')
+    p=os.path.join(root,'docs','data','page-dates.json')
+    if not os.path.exists(p): return
+    doc=json.load(open(p,encoding='utf-8')); e=doc['pages'].get(rel)
+    if e is not None and e['modified']!=d.isoformat():
+        e['modified']=d.isoformat(); json.dump(doc,open(p,'w',encoding='utf-8'),indent=1)
 def apply(path,d=None,visible=True):
     d=d or today(); h=open(path,encoding='utf-8').read(); n=stamp(move_faq(h),d,visible)
     if n!=h: open(path,'w',encoding='utf-8').write(n)
+    record(path,d)
     return n!=h

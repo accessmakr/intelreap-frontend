@@ -33,6 +33,7 @@
 
 ## Gotchas
 - Use the real clock for dates (`layout.today()`); never type dates by hand.
+- Dates have one source: `docs/data/page-dates.json` (published, modified, kind). After a content edit set the page's `modified` to today (generated pages: `gen.py` does it through `layout.apply`; hand-extended pages: edit the file), run `python3 scripts/content/apply_dates.py`, then `python3 scripts/content/verify_dates.py`, which must print 0 problems before every push. Only 'Last updated' is shown on screen; published dates live only in metadata. Never add a script that writes a date; a cosmetic or site-wide commit does not change a page's date.
 - Cookie banner covers element screenshots: inject CSS to hide it. Block the service worker in Playwright. Register abort routes before mock routes.
 - Verifier must pass; also open diagrams visually; owner wants clinical, specific work, short replies, no mass production.
 - Sitemap bot commits land on `main` after each push: always fetch and merge `main` before pushing.

@@ -36,14 +36,37 @@ function scanForHtmlFiles(currentDir, fileList = []) {
   return fileList;
 }
 
+const MONTHS = {
+  January: '01', February: '02', March: '03', April: '04',
+  May: '05', June: '06', July: '07', August: '08',
+  September: '09', October: '10', November: '11', December: '12'
+};
+
+// lastmod is the page's own "last updated" date, the same date the
+// page shows and declares in its JSON-LD (see docs/data/page-dates.json).
+// It is never taken from git commit times, because site-wide commits
+// (headers, logos, scripts) would then move every page's date.
+function readPageDate(filePath) {
+  const html = fs.readFileSync(filePath, 'utf8');
+  let m = html.match(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})/);
+  if (m) return m[1];
+  m = html.match(/id="freshness-badge"[^>]*>\s*Last updated\s+(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
+  if (m && MONTHS[m[2]]) return `${m[3]}-${MONTHS[m[2]]}-${m[1].padStart(2, '0')}`;
+  m = html.match(/Last Updated<\/span>\s*<span[^>]*>\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
+  if (m && MONTHS[m[2]]) return `${m[3]}-${MONTHS[m[2]]}-${m[1].padStart(2, '0')}`;
+  return null;
+}
+
 function getLastModifiedDate(filePath) {
+  const own = readPageDate(filePath);
+  if (own) return own;
   try {
     const date = execSync(
-      `git log -1 --format="%cI" -- "${filePath}"`
+      `git log -1 --format="%cs" -- "${filePath}"`
     ).toString().trim();
-    return date || new Date().toISOString();
+    return date || new Date().toISOString().slice(0, 10);
   } catch (e) {
-    return new Date().toISOString();
+    return new Date().toISOString().slice(0, 10);
   }
 }
 

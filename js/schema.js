@@ -2,7 +2,9 @@
 // INTELREAP SCHEMA INJECTION
 // Dynamic JSON-LD structured data
 // Per-page schema selection
-// dateModified updates every Monday
+// Dates are never invented here: they are read
+// from the page's own JSON-LD, so published and
+// modified dates stay as written in the page.
 // ─────────────────────────────────────────
 
 const SchemaSystem = (() => {
@@ -52,10 +54,49 @@ const SchemaSystem = (() => {
   })
 
   // ─────────────────────────────────────
+  // PAGE DATES
+  // Read datePublished and dateModified from the
+  // page's own static JSON-LD (never from a site
+  // wide constant). A date the page does not carry
+  // is left out rather than made up.
+  // ─────────────────────────────────────
+
+  const getPageDates = () => {
+    const out = {}
+    document
+      .querySelectorAll('script[type="application/ld+json"]')
+      .forEach(el => {
+        if (el.id && el.id.indexOf('schema-') === 0) return
+        let data
+        try { data = JSON.parse(el.textContent) } catch (e) { return }
+        const nodes = Array.isArray(data)
+          ? data
+          : (data && data['@graph']) || [data]
+        nodes.forEach(n => {
+          if (!n) return
+          if (n.datePublished && !out.datePublished) {
+            out.datePublished = n.datePublished
+          }
+          if (n.dateModified && !out.dateModified) {
+            out.dateModified = n.dateModified
+          }
+        })
+      })
+    return out
+  }
+
+  const withDates = dates => {
+    const o = {}
+    if (dates.datePublished) o.datePublished = dates.datePublished
+    if (dates.dateModified) o.dateModified = dates.dateModified
+    return o
+  }
+
+  // ─────────────────────────────────────
   // WEBPAGE SCHEMA
   // ─────────────────────────────────────
 
-  const getWebPageSchema = (page, dateModified) => ({
+  const getWebPageSchema = (page, dates) => ({
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     '@id': `${page.canonical}#webpage`,
@@ -68,7 +109,7 @@ const SchemaSystem = (() => {
     publisher: {
       '@id': `${BASE}/#organization`
     },
-    dateModified: dateModified,
+    ...withDates(dates),
     inLanguage: 'en-US'
   })
 
@@ -77,7 +118,7 @@ const SchemaSystem = (() => {
   // For the main intelligence page
   // ─────────────────────────────────────
 
-  const getToolSchema = (page, dateModified) => ({
+  const getToolSchema = (page, dates) => ({
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     '@id': `${page.canonical}#tool`,
@@ -106,7 +147,7 @@ const SchemaSystem = (() => {
       'GPU and graphics tier detection',
       'Global environment score'
     ],
-    dateModified: dateModified,
+    ...withDates(dates),
     inLanguage: 'en-US'
   })
 
@@ -116,7 +157,7 @@ const SchemaSystem = (() => {
   // ─────────────────────────────────────
 
   const getArticleSchema = (
-    page, dateModified
+    page, dates
   ) => ({
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
@@ -124,8 +165,7 @@ const SchemaSystem = (() => {
     headline: page.title,
     description: page.description,
     url: page.canonical,
-    dateModified: dateModified,
-    datePublished: '2026-01-01',
+    ...withDates(dates),
     author: {
       '@id': `${BASE}/#organization`
     },
@@ -258,8 +298,7 @@ const SchemaSystem = (() => {
       .getCurrentPage()
     if (!page) return
 
-    const dateModified =
-      INTELREAP_CONFIG.getSchemaDateModified()
+    const dates = getPageDates()
 
     // Always inject
     injectSchema(
@@ -271,7 +310,7 @@ const SchemaSystem = (() => {
       'schema-website'
     )
     injectSchema(
-      getWebPageSchema(page, dateModified),
+      getWebPageSchema(page, dates),
       'schema-webpage'
     )
     injectSchema(
@@ -282,7 +321,7 @@ const SchemaSystem = (() => {
     // Page type specific
     if (page.id === 'intelligence') {
       injectSchema(
-        getToolSchema(page, dateModified),
+        getToolSchema(page, dates),
         'schema-tool'
       )
     }
@@ -290,7 +329,7 @@ const SchemaSystem = (() => {
     if (page.schema === 'article' ||
         page.category === 'deep-dive') {
       injectSchema(
-        getArticleSchema(page, dateModified),
+        getArticleSchema(page, dates),
         'schema-article'
       )
     }

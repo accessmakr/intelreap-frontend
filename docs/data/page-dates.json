@@ -1,0 +1,199 @@
+{
+ "_readme": "Source of truth for every page's dates. published = first real publication date (first git commit of the page, confirmed by the owner 2026-11-07; the four pages first committed 30 and 31 October keep those dates). modified = last real content edit: the last commit that changed the page's own text or source links, ignoring date-only commits, reordering and site-wide widgets. Only the modified date is ever shown on a page ('Last updated'). Apply with scripts/content/apply_dates.py; check with scripts/content/verify_dates.py. No script may write or rewrite a date at run time.",
+ "pages": {
+  "about.html": {
+   "kind": "page",
+   "modified": "2026-11-08",
+   "published": "2026-06-17"
+  },
+  "contact.html": {
+   "kind": "page",
+   "modified": "2026-11-08",
+   "published": "2026-06-17"
+  },
+  "cookies-policy.html": {
+   "kind": "legal",
+   "modified": "2026-10-03",
+   "published": "2026-04-02"
+  },
+  "guides/gpu-troubleshooting-guide.html": {
+   "kind": "article",
+   "modified": "2026-11-03",
+   "published": "2026-06-25"
+  },
+  "guides/how-to-enable-webgl.html": {
+   "kind": "article",
+   "modified": "2026-11-03",
+   "published": "2026-06-26"
+  },
+  "guides/how-to-find-ip-address-of-any-device.html": {
+   "kind": "article",
+   "modified": "2026-10-02",
+   "published": "2026-06-29"
+  },
+  "guides/index.html": {
+   "kind": "hub",
+   "modified": "2026-10-03",
+   "published": "2026-10-03"
+  },
+  "index.html": {
+   "kind": "home",
+   "modified": "2026-11-05"
+  },
+  "intelligence/capability.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/device.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/fingerprinting.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-25"
+  },
+  "intelligence/graphics.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/index.html": {
+   "kind": "hub",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/live-feed.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/live-network.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/network-identity.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/network-route.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/performance.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/rendering-speed.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/scoreboard.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/security.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "intelligence/vpn-proxy.html": {
+   "kind": "panel",
+   "modified": "2026-11-05",
+   "published": "2026-06-24"
+  },
+  "learn/can-you-have-two-isps-in-one-house.html": {
+   "kind": "article",
+   "modified": "2026-10-02",
+   "published": "2026-06-24"
+  },
+  "learn/does-a-vpn-change-your-mac-address.html": {
+   "kind": "article",
+   "modified": "2026-11-03",
+   "published": "2026-06-29"
+  },
+  "learn/find-printer-ip-address.html": {
+   "kind": "article",
+   "modified": "2026-11-07",
+   "published": "2026-10-31"
+  },
+  "learn/find-router-ip-address.html": {
+   "kind": "article",
+   "modified": "2026-11-06",
+   "published": "2026-10-31"
+  },
+  "learn/how-to-fix-slow-dns-lookup.html": {
+   "kind": "article",
+   "modified": "2026-11-06",
+   "published": "2026-10-31"
+  },
+  "learn/how-to-protect-your-privacy-online.html": {
+   "kind": "article",
+   "modified": "2026-11-03",
+   "published": "2026-06-30"
+  },
+  "learn/index.html": {
+   "kind": "hub",
+   "modified": "2026-11-07",
+   "published": "2026-06-25"
+  },
+  "learn/webrtc-leak-test-and-shield.html": {
+   "kind": "article",
+   "modified": "2026-10-02",
+   "published": "2026-07-01"
+  },
+  "learn/what-is-a-gpu.html": {
+   "kind": "article",
+   "modified": "2026-11-03",
+   "published": "2026-07-02"
+  },
+  "learn/what-is-a-vpn-concentrator.html": {
+   "kind": "article",
+   "modified": "2026-10-02",
+   "published": "2026-07-01"
+  },
+  "learn/what-is-an-ip-address.html": {
+   "kind": "article",
+   "modified": "2026-10-31",
+   "published": "2026-10-30"
+  },
+  "learn/what-is-device-fingerprinting.html": {
+   "kind": "article",
+   "modified": "2026-10-02",
+   "published": "2026-06-29"
+  },
+  "learn/what-is-reverse-ip-lookup.html": {
+   "kind": "article",
+   "modified": "2026-10-02",
+   "published": "2026-07-04"
+  },
+  "learn/what-is-vpn-passthrough.html": {
+   "kind": "article",
+   "modified": "2026-10-02",
+   "published": "2026-07-02"
+  },
+  "learn/why-does-my-internet-speed-fluctuate.html": {
+   "kind": "article",
+   "modified": "2026-11-03",
+   "published": "2026-06-25"
+  },
+  "privacy-policy.html": {
+   "kind": "legal",
+   "modified": "2026-11-08",
+   "published": "2026-04-02"
+  },
+  "terms-of-use.html": {
+   "kind": "legal",
+   "modified": "2026-11-08",
+   "published": "2026-04-02"
+  }
+ }
+}

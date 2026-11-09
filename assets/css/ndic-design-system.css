@@ -1420,6 +1420,15 @@ select {
   background: var(--color-success);
 }
 
+/* "Last updated" inside a panel hero or a hub header */
+.ndic-deepdive-hero #freshness-badge,
+.hub-hero #freshness-badge {
+  margin-top: var(--space-3);
+}
+.hub-hero #freshness-badge {
+  margin-bottom: var(--space-4);
+}
+
 
 /* ─────────────────────────────────────────
    14. TRUST BADGE STRIP

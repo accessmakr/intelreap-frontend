@@ -48,14 +48,6 @@ const INTELREAP_CONFIG = {
     return new Date().toISOString().split('T')[0]
   },
 
-  // Date of the last real content update.
-  // Change this only when site content changes.
-  siteLastModified: '2026-10-02',
-
-  getSchemaDateModified() {
-    return this.siteLastModified
-  },
-
   // ─────────────────────────────────────
   // SEASONAL BANNER
   // ─────────────────────────────────────
@@ -126,26 +118,6 @@ const INTELREAP_CONFIG = {
     stat2Label: 'per report',
     stat3: 'No account needed',
     stat3Label: 'free to use'
-  },
-
-  // ─────────────────────────────────────
-  // FRESHNESS BADGE
-  // ─────────────────────────────────────
-
-  getFreshnessBadge() {
-    const modified = new Date(
-      this.siteLastModified + 'T00:00:00Z'
-    )
-    const label = modified.toLocaleDateString(
-      'en-GB',
-      {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        timeZone: 'UTC'
-      }
-    )
-    return `Last updated ${label}`
   },
 
   // ─────────────────────────────────────
@@ -246,7 +218,9 @@ const injectCTARotation = () => {
 }
 
 // ─────────────────────────────────────────
-// FRESHNESS BADGE INJECTION
+// CTA LABEL REFRESH
+// (The "Last updated" date is written into each
+// page's HTML, per page. No script sets it.)
 // ─────────────────────────────────────────
 
 const refreshCTALabels = () => {
@@ -257,16 +231,6 @@ const refreshCTALabels = () => {
 
 window.addEventListener('ndic-i18n-ready', refreshCTALabels)
 window.addEventListener('ndic-language-changed', refreshCTALabels)
-
-const injectFreshnessBadge = () => {
-  const badge = document.getElementById(
-    'freshness-badge'
-  )
-  if (!badge || badge.dataset.fixed) return
-
-  badge.textContent =
-    INTELREAP_CONFIG.getFreshnessBadge()
-}
 
 // ─────────────────────────────────────────
 // SCROLL PROGRESS BAR
@@ -449,7 +413,6 @@ const runRootConfig = () => {
   injectDynamicYears()
   injectSeasonalBanner()
   injectCTARotation()
-  injectFreshnessBadge()
   initScrollProgressBar()
   initThemeToggle()
 }
