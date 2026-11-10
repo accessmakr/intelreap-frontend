@@ -19,12 +19,12 @@
 | `find-router-ip-address` | Done to standard |
 | `how-to-fix-slow-dns-lookup` | Done to standard |
 | `find-printer-ip-address` | Redone 2026-11-07 to standard (queue item 3); phone and desktop figures drawn separately |
-| `what-is-an-ip-address` | Built, old-method diagrams, no spec file (hand-extended); redo is item 4 |
+| `what-is-an-ip-address` | Redone 2026-11-10 to standard (queue item 4); now built from `specs/ip_address.py`, so edit the spec, not the HTML |
 | 13 older articles and guides | Content untouched since July/Oct except citations (7 pages) and title (two-ISPs); retrofit items 5-23 |
 | 13 panels | Untouched (owner added charts on Nov 2); light retrofit items 24-30 |
 
 ## Next
-1. Queue item 4: What is an IP address redo (hand-extended page, no spec file, old-method diagrams), then 5 (hub guide), 6 onward per `docs/QUALITY-QUEUE.md` section 3.
+1. Queue item 5: the hub guide `how-to-find-ip-address-of-any-device`, then 6 onward per `docs/QUALITY-QUEUE.md` section 3.
 2. Execute D-3 cuts inside each affected page's retrofit; use `docs/GSC-FINDINGS.md` for title/description CTR rewrites.
 3. Still to examine: the two "content not optimized" pages (VPN concentrator, device fingerprinting); inconsistent title suffixes; no custom 404 page.
 4. Backend `claude/lookup-routes` (queue item 54): owner choices pending (city-level provider, paid domains-on-IP data).

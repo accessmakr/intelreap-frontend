@@ -127,9 +127,9 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 - **Retrofit work:** Remove or redraw duplicate figure as a real decision aid ("what can you reach right now?"). Redraw LAN figure to show the router mediating and why a changed address breaks printing. Keep ping flow and reservation figures after re-check. Add Linux/CUPS steps check, AirPrint note (phones print without an IP). Audit each Windows/Mac step.
 - **Diagrams (purpose of each):** Teaches: choose the method by what you can reach (printer screen, a computer, the router); Teaches: why printing breaks when the printer address changes (saved address vs new lease); Teaches: ping result decides network fault vs driver/port fault
 
-### R3 What is an IP address (live, built)
+### R3 What is an IP address (live; REDONE 2026-11-10, queue item 4)
 - **URL:** `/learn/what-is-an-ip-address`
-- **Current state:** Built: 1,032 body words, 5 diagrams (script-converted phone versions), 4 tables, 12 FAQs.
+- **Current state:** Redone 2026-11-10 from a spec file for the first time (`specs/ip_address.py`, `ip_figs.py`): 2,987 words, 5 diagrams each drawn separately wide and phone, 9 tables, 14 FAQs, 15 sources, 11 sections, live check carried over unchanged. The notes below describe the page BEFORE the redo.
 - **Mapped keywords:** 4 keywords
 - **Reader intent:** Reader wants a plain definition, then to understand public vs private, IPv4 vs IPv6, and what their address reveals.
 - **Defects found:** Ranges and anatomy figures are list-like; IPv6 notation barely explained; no "see yours now" path beyond one tool; misconceptions section missing.
