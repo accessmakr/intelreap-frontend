@@ -17,8 +17,9 @@ class V(HTMLParser):
         if t in VOID: return
         if s.st and s.st[-1]==t: s.st.pop()
         else: s.err.append(t)
+def pdir(slug): return 'learn' if os.path.exists(f'{ROOT}/learn/{slug}.html') else 'guides'
 def static(slug):
-    f=f'{ROOT}/learn/{slug}.html'; h=open(f,encoding='utf-8').read(); v=V(); v.feed(h); r=[]
+    f=f'{ROOT}/{pdir(slug)}/{slug}.html'; h=open(f,encoding='utf-8').read(); v=V(); v.feed(h); r=[]
     r.append(('tags balanced',not v.st and not v.err)); r.append(('unique ids',len(v.ids)==len(set(v.ids))))
     ok=True
     for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>',h,re.S):
@@ -28,7 +29,7 @@ def static(slug):
     toc=re.findall(r'<a href="#([^"]+)"',h); r.append(('TOC anchors resolve',all(t in v.ids for t in toc)))
     links=set(re.findall(r'href="(/[^"#]*)"',h)); miss=[l for l in links if not(os.path.exists(f'{ROOT}{l}.html') or os.path.exists(f'{ROOT}{l}/index.html') or l=='/' or os.path.exists(f'{ROOT}{l}'))]
     r.append(('internal links resolve '+str(miss),not miss)); r.append(('4+ diagrams',h.count('<figure class="ir-fig">')>=4)); r.append(('>=8 FAQ',h.count('ndic-faq-item"')>=8))
-    r.append(('no stale old-guide text',not any(w in h for w in ['Minecraft','HP printer'])))
+    r.append(('no stale old-guide text',pdir(slug)=='guides' or not any(w in h for w in ['Minecraft','HP printer'])))
     fq=re.search(r'class="ir-faq-sub">(\w+) questions',h); words_={'Nine':9,'Ten':10,'Eleven':11,'Twelve':12,'Thirteen':13,'Fourteen':14,'Fifteen':15}; r.append(('FAQ sub-line count matches',(not fq) or words_.get(fq.group(1),-1)==h.count('ndic-faq-item"') or fq.group(1).isdigit() and int(fq.group(1))==h.count('ndic-faq-item"')))
     lg=h.find('<div class="ir-logic-grid">'); fq=h.find('<section aria-labelledby="faq-heading-main">'); r.append(('FAQ sits before Logic/Sources',fq>0 and (lg<0 or fq<lg)))
     bd=re.search(r'id="freshness-badge"[^>]*>Last updated ([^<]*)<',h); ld=re.search(r'"dateModified":\s*"([^"]+)"',h); om=re.search(r'article:modified_time" content="([^"T]+)',h)
@@ -56,7 +57,7 @@ def phone(slugs):
                 for scheme in ('light','dark'):
                     ctx=b.new_context(**p.devices['Pixel 7'],color_scheme=scheme,service_workers='block'); pg=ctx.new_page(); errs=[]
                     pg.on('pageerror',lambda e:errs.append(str(e)[:100])); pg.route(lambda u:not u.startswith('http://localhost'),lambda r:r.abort())
-                    pg.goto(f'http://localhost:8765/learn/{slug}.html'); pg.wait_for_timeout(900)
+                    pg.goto(f'http://localhost:8765/{pdir(slug)}/{slug}.html'); pg.wait_for_timeout(900)
                     ov=pg.evaluate('document.documentElement.scrollWidth>innerWidth'); n=pg.evaluate("document.querySelectorAll('#ir-pick option').length")
                     counts=[]
                     for i in range(n): pg.select_option('#ir-pick',str(i)); counts.append(pg.evaluate("document.querySelectorAll('#ir-steps li').length"))

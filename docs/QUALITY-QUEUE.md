@@ -136,9 +136,9 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 - **Retrofit work:** Add IPv6 notation rules (compression), misconceptions ("an IP identifies a person"), worked subnet example, how to see your own, privacy section. Redraw figures for what each teaches; ranges become a table only.
 - **Diagrams (purpose of each):** Teaches: an address names a network and a device (network/host split with a real mask); Teaches: one public address shared by many private devices (NAT) with the address translation shown; Teaches: how a request travels and gets answered (source/destination swap); Teaches: how a device gets its address (DHCP) in one picture
 
-### A1 HUB: How to Find an IP Address (retitle)
+### A1 HUB: How to Find an IP Address (REDONE 2026-11-11, queue item 5)
 - **URL:** `/guides/how-to-find-ip-address-of-any-device`
-- **Current state:** 1843 words, 8 sections, 1 table(s), 0 diagrams, 12 FAQs, 4 in-text links, no TOC
+- **Current state:** Redone 2026-11-11 from `specs/find_ip_hub.py` (spec key `dir='guides'`) and `hub_figs.py`: 2,395 words, 5 diagrams each drawn separately wide and phone, 8 sections, 6 tables, 14 FAQs, 14 sources, the live check at the top. The notes below describe the page BEFORE the redo.
 - **Mapped keywords:** 33 keywords; primary: how to find ip address (1,800,000, KD 27, CPC 1.12)
 - **Reader intent:** Mostly "find MY IP address" (1.8M head term) plus find a device's, a website's or someone's.
 - **Defects found:** Opens with local vs public instead of the answer; mixes printer, HP printer, Roku, CMD, lookup methods in one page; overlaps spokes P13/P14/P15; no live tool at top.

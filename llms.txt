@@ -34,7 +34,7 @@
 - [Why Does My Internet Speed Fluctuate?](https://intelreap.com/learn/why-does-my-internet-speed-fluctuate): Internet speed fluctuates due to congestion, modem age, router limits, Wi-Fi interference, or ISP throttling. Diagnose the exact cause and fix it with this complete 2026 guide.
 - [GPU Troubleshooting: Common Questions Answered](https://intelreap.com/guides/gpu-troubleshooting-guide): Why is my GPU usage so high? How to reset a GPU, what Ti means, undervolting explained, hardware accelerated GPU scheduling, and whether to remove GPU when moving PC — complete 2026 guide.
 - [How to Enable WebGL in Chrome, Firefox and Safari](https://intelreap.com/guides/how-to-enable-webgl): WebGL not working in Chrome or Firefox? Step-by-step fixes for hardware acceleration, GPU blocklist issues, and 'a WebGL context could not be created' — plus how to enable WebGL in Chrome, Firefox, Safari, and Edge.
-- [How to Find the IP Address of Any Device](https://intelreap.com/guides/how-to-find-ip-address-of-any-device): Where to find the IP address on a printer, Roku without a remote, a Minecraft server via CMD, or any device on your network — every method explained step by step.
+- [How to Find an IP Address on Any Device or Site](https://intelreap.com/guides/how-to-find-ip-address-of-any-device): Find your public IP with a live check, your device's IP on Windows, Mac, Linux, iPhone and Android, your router, another device on your network, or the IP address of a website or game server.
 
 ## Site
 - [About](https://intelreap.com/about)

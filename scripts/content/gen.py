@@ -27,12 +27,12 @@ def picker(S):
     js='<script>(function(){var D='+json.dumps([s for _,s in P])+',s=document.getElementById("ir-pick"),o=document.getElementById("ir-steps");if(!s||!o)return;function r(){o.innerHTML=D[s.value].map(function(x){return"<li>"+x+"</li>"}).join("")}s.addEventListener("change",r);r()})();</script>'
     return html,js
 def build(S):
-    URL='https://intelreap.com/learn/'+S['slug']; OUT=f"learn/{S['slug']}.html"; OG=f"https://intelreap.com/assets/images/og/{S['slug']}.png"; DT=S['date']
+    DIR=S.get('dir','learn'); URL=f'https://intelreap.com/{DIR}/'+S['slug']; OUT=f"{DIR}/{S['slug']}.html"; OG=f"https://intelreap.com/assets/images/og/{S['slug']}.png"; DT=S['date']
     h=open(os.path.join(D,'base.html'),encoding='utf-8').read().replace(OLD,URL)
     tool,js=(S['tool_html'],S['tool_js']) if 'tool_html' in S else picker(S)
     # OG card
     from playwright.sync_api import sync_playwright
-    card=f'''<html><body style="margin:0;width:1200px;height:630px;background:#0b1220;color:#e6edf6;font-family:Helvetica,Arial,sans-serif;position:relative;overflow:hidden"><div style="position:absolute;left:0;top:0;width:14px;height:630px;background:#0ea5e9"></div><div style="position:absolute;left:80px;top:70px;font-size:30px;letter-spacing:6px;color:#7dd3fc">INTELREAP  /  LEARN</div><div style="position:absolute;left:80px;top:160px;width:1040px;font-size:78px;font-weight:800;line-height:1.1">{S['og_title']}</div><div style="position:absolute;left:80px;top:400px;font-size:34px;color:#94a3b8;width:1000px">{S['og_sub']}</div><div style="position:absolute;left:80px;top:500px;display:flex;gap:18px;align-items:center"><div style="padding:16px 26px;border:2px solid #38bdf8;border-radius:12px;font-size:34px;font-weight:700">{S['og_chip']}</div><div style="font-size:30px;color:#64748b">intelreap.com</div></div></body></html>'''
+    card=f'''<html><body style="margin:0;width:1200px;height:630px;background:#0b1220;color:#e6edf6;font-family:Helvetica,Arial,sans-serif;position:relative;overflow:hidden"><div style="position:absolute;left:0;top:0;width:14px;height:630px;background:#0ea5e9"></div><div style="position:absolute;left:80px;top:70px;font-size:30px;letter-spacing:6px;color:#7dd3fc">INTELREAP  /  {DIR.upper()}</div><div style="position:absolute;left:80px;top:160px;width:1040px;font-size:78px;font-weight:800;line-height:1.1">{S['og_title']}</div><div style="position:absolute;left:80px;top:400px;font-size:34px;color:#94a3b8;width:1000px">{S['og_sub']}</div><div style="position:absolute;left:80px;top:500px;display:flex;gap:18px;align-items:center"><div style="padding:16px 26px;border:2px solid #38bdf8;border-radius:12px;font-size:34px;font-weight:700">{S['og_chip']}</div><div style="font-size:30px;color:#64748b">intelreap.com</div></div></body></html>'''
     os.makedirs(os.path.join(ROOT,'assets/images/og'),exist_ok=True)
     with sync_playwright() as p:
         b=p.chromium.launch(); pg=b.new_page(viewport={'width':1200,'height':630}); pg.set_content(card); pg.screenshot(path=os.path.join(ROOT,f"assets/images/og/{S['slug']}.png")); b.close()
@@ -65,10 +65,10 @@ def build(S):
         if t=='Article': n.update(headline=S['headline'],description=S['desc'],datePublished=DT,dateModified=DT,wordCount=wc,articleSection=S['section'],isAccessibleForFree=True,keywords=', '.join(S['kw']),image={'@type':'ImageObject','url':OG,'width':1200,'height':630},about={'@type':'Thing','name':S['about']},citation=[{'@type':'CreativeWork','name':t_,'url':u} for t_,u in S['cites']])
         if t=='FAQPage': n.update({'@id':URL+'#faq','url':URL,'isPartOf':{'@id':URL+'#article'},'mainEntity':[{'@type':'Question','name':re.sub('<[^>]+>','',q),'acceptedAnswer':{'@type':'Answer','text':re.sub('<[^>]+>','',a)}} for q,a in S['faq']]})
         if t=='BreadcrumbList':
-            n['@id']=URL+'#breadcrumb'; e=n['itemListElement']; e[1].update(name='Learn',item='https://intelreap.com/learn/'); e[-1].update(name=S['crumb'],item=URL)
+            n['@id']=URL+'#breadcrumb'; e=n['itemListElement']; (e[1].update(name='Learn',item='https://intelreap.com/learn/') if DIR=='learn' else None); e[-1].update(name=S['crumb'],item=URL)
     ld['@graph'].insert(0,{'@type':'WebPage','@id':URL+'#webpage','url':URL,'name':T+' — IntelReap','description':S['desc'],'inLanguage':'en-US','isPartOf':{'@id':'https://intelreap.com/#website'},'primaryImageOfPage':{'@type':'ImageObject','url':OG},'datePublished':DT,'dateModified':DT,'breadcrumb':{'@id':URL+'#breadcrumb'},'mainEntity':{'@id':URL+'#article'}})
     h=h[:m.start(1)]+json.dumps(ld,indent=2,ensure_ascii=False)+h[m.end(1):]
-    h=h.replace('<a href="/guides/">Guides</a>','<a href="/learn/">Learn</a>',1); h=re.sub(r'(<span class="ir-breadcrumb-current" aria-current="page">)[^<]*',r'\g<1>'+S['crumb'],h,1)
+    h=(h.replace('<a href="/guides/">Guides</a>','<a href="/learn/">Learn</a>',1) if DIR=='learn' else h); h=re.sub(r'(<span class="ir-breadcrumb-current" aria-current="page">)[^<]*',r'\g<1>'+S['crumb'],h,1)
     a=h.find('<div class="ndic-hero-badge">'); b=h.find('<div id="freshness-badge"'); assert 0<a<b
     h=h[:a]+f'<div class="ndic-hero-badge"><span class="ndic-hero-badge-dot" aria-hidden="true"></span><span>{S["kicker"]}</span></div>\n        <h1 class="ndic-hero-title">{S["h1"]}</h1>\n        <p class="ndic-hero-tagline">{S["tagline"]}</p>\n        <div class="ndic-hero-cta-group"><a href="#{secs[0][0]}" class="ir-btn-primary">{S["cta"]}</a><a href="{pn["href"]}" class="ir-btn-secondary">{pn["btn"]} →</a></div>\n        '+h[b:]
     h=h.replace('<div id="freshness-badge" aria-live="polite">Last updated 2 October 2026','<div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated '+S['date_label'],1)
@@ -85,7 +85,7 @@ def build(S):
     open(os.path.join(ROOT,OUT),'w',encoding='utf-8').write(h)
     # learn index
     p=os.path.join(ROOT,'learn/index.html'); li=open(p,encoding='utf-8').read()
-    if f'/learn/{S["slug"]}"' not in li:
+    if DIR=='learn' and f'/learn/{S["slug"]}"' not in li:
         card=f'        <a class="hub-card" href="/learn/{S["slug"]}">\n          <span class="hub-card-kicker">Article</span>\n          <span class="hub-card-title">{S["crumb"]}</span>\n          <span class="hub-card-desc">{S["card_desc"]}</span>\n        </a>\n'
         k=li.rfind('class="hub-card"'); k=li.find('</a>\n',k)+5; li=li[:k]+card+li[k:]
         last=[m for m in re.finditer(r'"url": "https://intelreap.com/learn/[^"]+"\n(\s*)\}',li)][-1]; n=len(re.findall(r'"position":',li[:last.end()]))
@@ -93,12 +93,12 @@ def build(S):
         open(p,'w',encoding='utf-8').write(li)
     # netlify redirect
     p=os.path.join(ROOT,'netlify.toml'); t=open(p,encoding='utf-8').read()
-    if f'/learn/{S["slug"]}.html' not in t:
+    if DIR=='learn' and f'/learn/{S["slug"]}.html' not in t:
         mm=re.search(r'\[\[redirects\]\]\n  from = "/learn/what-is-an-ip-address\.html"\n.*?force = true\n',t,re.S)
         t=t[:mm.end()]+f'\n[[redirects]]\n  from = "/learn/{S["slug"]}.html"\n  to = "/learn/{S["slug"]}"\n  status = 301\n  force = true\n'+t[mm.end():]; open(p,'w',encoding='utf-8').write(t)
     import layout; layout.apply(os.path.join(ROOT,OUT))
     try:
-        import mobilize; mobilize.apply(S['slug'])
+        import mobilize; mobilize.apply(S['slug'],DIR)
     except Exception as ex: print('mobilize skipped:',ex)
     print('built',OUT,len(h),'bytes | words',wc,'| faq',len(S['faq']),'| figs',h.count('<figure class="ir-fig">'))
 if __name__=='__main__':

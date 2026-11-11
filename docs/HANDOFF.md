@@ -24,7 +24,7 @@
 | 13 panels | Untouched (owner added charts on Nov 2); light retrofit items 24-30 |
 
 ## Next
-1. Queue item 5: the hub guide `how-to-find-ip-address-of-any-device`, then 6 onward per `docs/QUALITY-QUEUE.md` section 3.
+1. Queue item 6: the Network Identity panel (light retrofit, tool-pointer), then 7 (A2 Reverse IP article), 8 (A3 WebRTC leak article) and onward per `docs/QUALITY-QUEUE.md` section 3.
 2. Execute D-3 cuts inside each affected page's retrofit; use `docs/GSC-FINDINGS.md` for title/description CTR rewrites.
 3. Still to examine: the two "content not optimized" pages (VPN concentrator, device fingerprinting); inconsistent title suffixes; no custom 404 page.
 4. Backend `claude/lookup-routes` (queue item 54): owner choices pending (city-level provider, paid domains-on-IP data).
