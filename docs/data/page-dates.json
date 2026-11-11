@@ -3,17 +3,17 @@
  "pages": {
   "about.html": {
    "kind": "page",
-   "modified": "2026-11-08",
+   "modified": "2026-11-11",
    "published": "2026-06-17"
   },
   "contact.html": {
    "kind": "page",
-   "modified": "2026-11-08",
+   "modified": "2026-11-11",
    "published": "2026-06-17"
   },
   "cookies-policy.html": {
    "kind": "legal",
-   "modified": "2026-10-03",
+   "modified": "2026-11-11",
    "published": "2026-04-02"
   },
   "guides/gpu-troubleshooting-guide.html": {
@@ -185,14 +185,19 @@
    "modified": "2026-11-03",
    "published": "2026-06-25"
   },
+  "methodology.html": {
+   "kind": "page",
+   "modified": "2026-11-11",
+   "published": "2026-11-11"
+  },
   "privacy-policy.html": {
    "kind": "legal",
-   "modified": "2026-11-08",
+   "modified": "2026-11-11",
    "published": "2026-04-02"
   },
   "terms-of-use.html": {
    "kind": "legal",
-   "modified": "2026-11-08",
+   "modified": "2026-11-11",
    "published": "2026-04-02"
   }
  }

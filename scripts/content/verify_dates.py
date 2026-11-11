@@ -36,6 +36,9 @@ for f,e in DATES.items():
     n=len(re.findall(r'(?i)last updated\s*:?\s*(\d{1,2}\s+\w+\s+\d{4}|\w+\s+\d{1,2},?\s+\d{4})',v)); chk(f,n<=1,f'{n} "last updated" dates on screen')
     url='/'+f.replace('.html',''); url='/' if f=='index.html' else (url.replace('/index','/') if f.endswith('/index.html') else url)
     key='' if f=='index.html' else url; chk(f,sm.get(key)==mod,f'sitemap lastmod {sm.get(key)} != {mod}'); chk(f,pj.get(f)==mod,f'pages.json lastmod {pj.get(f)} != {mod}')
+# every indexed page must have an entry in the dates file (a new page without one would silently escape every check above)
+for f in pj:
+    chk(f,f in DATES,'listed in pages.json but missing from docs/data/page-dates.json')
 # nothing may write dates at run time
 for p in sorted(glob.glob(os.path.join(ROOT,'**/*.html'),recursive=True)):
     rel=os.path.relpath(p,ROOT)
