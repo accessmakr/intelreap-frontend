@@ -28,8 +28,11 @@ const SchemaSystem = (() => {
       width: 200,
       height: 40
     },
-    legalName: 'IntelReap Information Technologies',
-    email: 'stmakarios@gmail.com',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      url: `${BASE}/contact`
+    },
     description: 'IntelReap provides free real-time network and device intelligence. No login required.',
     sameAs: [
       'https://twitter.com/intelreap'

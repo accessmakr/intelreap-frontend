@@ -28,6 +28,12 @@
   force = true
 
 [[redirects]]
+  from = "/methodology.html"
+  to = "/methodology"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/intelligence.html"
   to = "/"
   status = 301

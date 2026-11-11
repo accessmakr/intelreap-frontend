@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_ZH = {
     "cookie_settings": "Cookie 设置",
     "free_line": "免费使用，无需账户。",
     "email_us": "给我们发邮件",
-    "operated_by": "运营方：IntelReap Information Technologies。"
   },
   "cookie": {
     "text": "IntelReap 会在您的浏览器中保存您选择的语言和主题。经您允许，还会使用 Google Analytics Cookie 来衡量网站的使用情况。拒绝不会影响工具的使用。",

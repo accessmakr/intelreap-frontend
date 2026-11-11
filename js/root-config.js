@@ -32,7 +32,6 @@ const INTELREAP_CONFIG = {
   // ─────────────────────────────────────
 
   contact: {
-    email: 'stmakarios@gmail.com',
     formName: 'Request And Contact'
   },
 

@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_HA = {
     "cookie_settings": "Saitunan kukis",
     "free_line": "Amfani kyauta. Ba a buƙatar asusu.",
     "email_us": "Aiko mana imel",
-    "operated_by": "IntelReap Information Technologies ke gudanarwa."
   },
   "cookie": {
     "text": "IntelReap yana adana zaɓin harshenka da jigon shafi a cikin burauzarka. Idan ka ba da izini, yana kuma amfani da kukis na Google Analytics don auna yadda ake amfani da shafin. Ƙin amincewa ba ya hana kayan aikin aiki.",

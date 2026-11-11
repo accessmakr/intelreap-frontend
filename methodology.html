@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <script>
+    (function(){try{var d=document.documentElement,s=localStorage.getItem('ndic_theme');
+    if(s!=='light'&&s!=='dark'){s=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+    d.setAttribute('data-theme',s)}catch(e){}})();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>How IntelReap Works: Methods, Accuracy and Corrections — IntelReap</title>
+  <meta name="description" content="How IntelReap measures your network and device, where each data point comes from, how accurate it is and how to report a mistake.">
+  <meta name="keywords" content="about IntelReap, network intelligence, device intelligence, browser-based, privacy-first, free network scanner, IP intelligence">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IntelReap">
+
+  <link rel="canonical" href="https://intelreap.com/methodology">
+  <link rel="alternate" hreflang="en" href="https://intelreap.com/methodology">
+  <link rel="alternate" hreflang="x-default" href="https://intelreap.com/methodology">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="How IntelReap Works: Methods, Accuracy and Corrections — IntelReap">
+  <meta property="og:description" content="How IntelReap measures your network and device, where each data point comes from, how accurate it is and how to report a mistake.">
+  <meta property="og:url" content="https://intelreap.com/methodology">
+  <meta property="og:site_name" content="IntelReap">
+  <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How IntelReap Works: Methods, Accuracy and Corrections — IntelReap">
+  <meta name="twitter:description" content="How IntelReap measures your network and device, where each data point comes from, how accurate it is and how to report a mistake.">
+  <meta name="twitter:image" content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:site" content="@intelreap">
+
+
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IntelReap">
+  <link rel="apple-touch-icon" href="./assets/images/icons/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#0ea5e9">
+  <meta name="msapplication-TileImage" content="./assets/images/icons/mstile-150.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/icons/favicon-16.png">
+  <link rel="shortcut icon" href="./assets/images/icons/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/ndic-design-system.css">
+  <link rel="stylesheet" href="./assets/css/ndic-animations.css">
+  <link rel="stylesheet" href="./assets/css/ndic-rtl.css">
+
+  <style>
+    /* ── PAGE WRAPPER ── */
+    .about-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ── HERO ── */
+    .about-hero {
+      padding: 4rem 0 2.5rem;
+      border-bottom: 1px solid var(--color-border-primary, var(--color-border-primary));
+      margin-bottom: 2.5rem;
+    }
+
+    .about-eyebrow {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent-primary, var(--color-accent-primary));
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .about-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--color-accent-primary, var(--color-accent-primary));
+    }
+
+    .about-hero h1 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--color-text-primary, #e2e8f0);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-hero p {
+      font-size: 1rem;
+      color: var(--color-text-secondary, #94a3b8);
+      line-height: 1.75;
+      max-width: 620px;
+    }
+
+    /* ── CALLOUT ── */
+    .about-callout {
+      background: color-mix(in srgb, var(--color-accent-primary) 5%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);
+      border-left: 3px solid var(--color-accent-primary, var(--color-accent-primary));
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .about-callout p {
+      margin: 0;
+      font-size: 0.925rem;
+      color: var(--color-text-primary, #e2e8f0);
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    /* ── STATS STRIP ── */
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .about-stat-card {
+      background: var(--color-bg-secondary, #080b10);
+      border: 1px solid var(--color-border-primary, var(--color-border-primary));
+      border-radius: 8px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .about-stat-value {
+      display: block;
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-accent-primary, var(--color-accent-primary));
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-stat-label {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted, #475569);
+      line-height: 1.4;
+    }
+
+    /* ── CONTENT SECTIONS ── */
+    .about-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .about-section-eyebrow {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-accent-primary, var(--color-accent-primary));
+      margin-bottom: 0.5rem;
+    }
+
+    .about-section h2 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text-primary, #e2e8f0);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border-primary, var(--color-border-primary));
+    }
+
+    .about-section p {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary, #94a3b8);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-section ul {
+      margin: 0.5rem 0 1rem;
+      padding-left: 1.25rem;
+    }
+
+    .about-section ul li {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary, #94a3b8);
+      line-height: 1.8;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-section ul li::marker {
+      color: var(--color-accent-primary, var(--color-accent-primary));
+    }
+
+    /* ── 12 PANELS GRID ── */
+    .panels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.625rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .panels-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 380px) {
+      .panels-grid { grid-template-columns: 1fr; }
+    }
+
+    .panel-card {
+      display: block;
+      background: var(--color-bg-secondary, #080b10);
+      border: 1px solid var(--color-border-primary, var(--color-border-primary));
+      border-radius: 8px;
+      padding: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .panel-card:hover {
+      border-color: color-mix(in srgb, var(--color-accent-primary) 30%, transparent);
+      background: color-mix(in srgb, var(--color-accent-primary) 5%, transparent);
+    }
+
+    .panel-card-title {
+      display: block;
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-text-primary, #e2e8f0);
+      margin-bottom: 0.3rem;
+      transition: color 0.2s;
+    }
+
+    .panel-card:hover .panel-card-title {
+      color: var(--color-accent-primary, var(--color-accent-primary));
+    }
+
+    .panel-card-desc {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--color-text-muted, #475569);
+      line-height: 1.5;
+    }
+
+    /* ── PRIVACY STEPS ── */
+    .privacy-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      margin-top: 1.25rem;
+    }
+
+    .privacy-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--color-bg-secondary, #080b10);
+      border: 1px solid var(--color-border-primary, var(--color-border-primary));
+      border-radius: 8px;
+    }
+
+    .privacy-step-num {
+      flex-shrink: 0;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: var(--color-accent-primary, var(--color-accent-primary));
+      background: color-mix(in srgb, var(--color-accent-primary) 10%, transparent);
+      padding: 0.2rem 0.45rem;
+      border-radius: 3px;
+      margin-top: 0.1rem;
+    }
+
+    .privacy-step-text {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary, #94a3b8);
+      line-height: 1.65;
+    }
+
+    .privacy-step-text strong {
+      color: var(--color-text-primary, #e2e8f0);
+      font-weight: 600;
+    }
+
+    /* ── BOTTOM CTA CARD ── */
+    .about-cta {
+      background: color-mix(in srgb, var(--color-accent-primary) 5%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);
+      border-radius: 12px;
+      padding: 2.25rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .about-cta h2 {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text-primary, #e2e8f0);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-cta p {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary, #94a3b8);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .about-cta-buttons {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .about-cta-primary {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      background: var(--color-accent-primary, var(--color-accent-primary));
+      color: var(--color-bg-base, #05060a);
+      text-decoration: none;
+      border-radius: 6px;
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .about-cta-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .about-cta-secondary {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      background: transparent;
+      color: var(--color-text-secondary, #94a3b8);
+      text-decoration: none;
+      border-radius: 6px;
+      border: 1px solid var(--color-border-primary, rgba(255,255,255,0.1));
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .about-cta-secondary:hover {
+      border-color: color-mix(in srgb, var(--color-accent-primary) 40%, transparent);
+      color: var(--color-text-primary, #e2e8f0);
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://intelreap.com/#organization",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/icons/icon-512.png"
+      },
+      "sameAs": [
+        "https://twitter.com/intelreap"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://intelreap.com/#website",
+      "name": "IntelReap",
+      "url": "https://intelreap.com",
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://intelreap.com/methodology#webpage",
+      "url": "https://intelreap.com/methodology",
+      "name": "How IntelReap Works: Methods, Accuracy and Corrections — IntelReap",
+      "description": "How IntelReap measures your network and device, where each data point comes from, how accurate it is and how to report a mistake.",
+      "isPartOf": {
+        "@id": "https://intelreap.com/#website"
+      },
+      "publisher": {
+        "@id": "https://intelreap.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "IntelReap",
+          "item": "https://intelreap.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How IntelReap works",
+          "item": "https://intelreap.com/methodology"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+
+  <!-- SCROLL PROGRESS — styled by design system -->
+  <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="ndic-site-header">
+    <div class="ndic-site-header-inner">
+      <a href="./index.html" class="ndic-site-logo-link" aria-label="IntelReap home">
+        <span class="ndic-site-wordmark">INTEL<span class="ndic-accent">REAP</span></span>
+      </a>
+      <button type="button" class="trigger-search" aria-label="Open search" data-i18n-aria="nav.open_search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </button>
+      <div id="master-nav-dock"></div>
+    </div>
+  </header>
+
+  <!-- SEASONAL BANNER — styled by design system -->
+  <div id="seasonal-banner" aria-live="polite"></div>
+
+  <main>
+    <div class="about-page">
+
+      <!-- HERO -->
+      <div class="about-hero">
+        <div class="about-eyebrow">Methodology</div>
+        <h1>How IntelReap works,<br>and how far to trust it.</h1>
+        <p>What each panel measures, where the data comes from, which results are exact and which are estimates, and how to report a mistake.</p>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section-eyebrow">The 13 panels</div>
+        <h2>What each panel measures and where the data comes from</h2>
+        <div class="privacy-steps">
+          <div class="privacy-step"><span class="privacy-step-num">01</span><span class="privacy-step-text"><strong>Network Route.</strong> Who owns the network you reach the internet through, its size tier and the registry that allocated its addresses. <em>Source: MaxMind GeoLite ASN data, plus public network-type lists (ipverse as-metadata, public domain).</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">02</span><span class="privacy-step-text"><strong>Network Identity.</strong> Your public IP address (IPv4 and IPv6 when your device has both), provider and an approximate location. <em>Source: MaxMind GeoLite City data; Cloudflare request details only where that data has no record; OpenStreetMap map tiles.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">03</span><span class="privacy-step-text"><strong>VPN and Proxy.</strong> Signals that suggest a VPN, proxy or Tor: the network type, time zone and language against the IP location, and the WebRTC address. <em>Source: Rule-based checks written for IntelReap. This is an estimate, not a verdict.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">04</span><span class="privacy-step-text"><strong>Live Network.</strong> Round-trip time to our server, connection type and stability over time. <em>Source: Timing requests made by your browser and the browser Network Information API.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">05</span><span class="privacy-step-text"><strong>Device.</strong> Operating system, browser, processor cores, memory and screen. <em>Source: Standard browser APIs read on your device.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">06</span><span class="privacy-step-text"><strong>Graphics.</strong> Graphics chip and WebGL support. <em>Source: The WebGL API in your browser.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">07</span><span class="privacy-step-text"><strong>Security.</strong> Whether the page is secure and which exposure settings your browser has. <em>Source: Browser security APIs and checks on this page.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">08</span><span class="privacy-step-text"><strong>Capability.</strong> Which of 28 modern browser features are available. <em>Source: Feature detection in your browser.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">09</span><span class="privacy-step-text"><strong>Performance.</strong> Where the time went while this page loaded. <em>Source: The browser Navigation Timing API.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">10</span><span class="privacy-step-text"><strong>Rendering Speed.</strong> Core Web Vitals and a short benchmark of script, page and graphics work. <em>Source: The browser PerformanceObserver API and a small test run on your device.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">11</span><span class="privacy-step-text"><strong>Global Scoreboard.</strong> One combined score with nine sub-scores. <em>Source: IntelReap's own formula. It is not an industry standard score.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">12</span><span class="privacy-step-text"><strong>Live Feed.</strong> A log of events during your scan. <em>Source: Generated by the scan itself.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">13</span><span class="privacy-step-text"><strong>Fingerprint and Leaks.</strong> How unique your browser looks and whether a local address is exposed. <em>Source: Browser properties and the WebRTC API. The uniqueness score is a heuristic.</em></span></div>
+          </div>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section-eyebrow">Accuracy</div>
+        <h2>What is exact, and what is an estimate</h2>
+        <p><strong>Read directly from your browser, so exact:</strong> your device and browser details, graphics support, available features, page timing and the security status of this page.</p>
+        <p><strong>Estimates, so treat with care:</strong></p>
+        <ul>
+          <li><strong>IP location.</strong> Databases place an address in a city or region, often a nearby one. Mobile networks and IPv6 addresses are the least precise, and the same phone can appear in different cities on IPv4 and IPv6. The panel shows an accuracy radius for this reason.</li>
+          <li><strong>VPN and proxy detection.</strong> It combines several weak signals. A clean result does not prove that no VPN is in use, and a flag can be a false alarm.</li>
+          <li><strong>Fingerprint uniqueness and the scores.</strong> These are IntelReap's own calculations meant for comparison between panels, not a certified rating.</li>
+          <li><strong>Live network figures.</strong> They depend on your connection at that moment and on the distance to our server.</li>
+        </ul>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section-eyebrow">Freshness</div>
+        <h2>How the reference data is kept current</h2>
+        <p>The location and network-owner databases are refreshed twice a month, on the 1st and the 15th. Network type lists are rebuilt weekly. The written summaries under each panel are produced in your browser from your own results; no scan data is sent to an AI service.</p>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section-eyebrow">Independence</div>
+        <h2>Funding and editorial independence</h2>
+        <p>IntelReap is an independent project. What the panels report is calculated by the tool; advertising or other placements, where they appear, never change a measurement or a score.</p>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section-eyebrow">Corrections</div>
+        <h2>Found a mistake?</h2>
+        <p>If a result looks wrong, or an explanation is out of date, tell us through the <a href="/contact" style="color:var(--color-accent-primary);">contact form</a> and include the page and what you saw. We check it, correct it and update the page's "last updated" date. Privacy requests go through the same form.</p>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section-eyebrow">Sources and credits</div>
+        <h2>Data sources and open-source tools</h2>
+        <ul>
+          <li>This product includes GeoLite Data created by MaxMind, available from <a href="https://www.maxmind.com" rel="noopener" style="color:var(--color-accent-primary);">https://www.maxmind.com</a>.</li>
+          <li>Map data: <a href="https://www.openstreetmap.org/copyright" rel="noopener" style="color:var(--color-accent-primary);">OpenStreetMap contributors</a>.</li>
+          <li>Network type lists: ipverse <a href="https://github.com/ipverse/as-metadata" rel="noopener" style="color:var(--color-accent-primary);">as-metadata</a> (public domain).</li>
+          <li>Address detection: ipify. Hosting and request details: Cloudflare.</li>
+          <li>Charts and maps: Chart.js, D3 and Leaflet (open source).</li>
+        </ul>
+        <p>See also the <a href="/privacy-policy" style="color:var(--color-accent-primary);">Privacy Policy</a> and the <a href="/about" style="color:var(--color-accent-primary);">About page</a>.</p>
+      </div>
+
+      <div id="dynamic-internal-links"></div>
+
+      <!-- CTA -->
+      <div class="about-cta">
+        <h2>Ready to run your intelligence scan?</h2>
+        <p>285 data points. 13 panels. Free forever. No account required.</p>
+        <div class="about-cta-buttons">
+          <a href="./index.html" class="about-cta-primary">Launch Intelligence Center</a>
+          <a href="/contact" class="about-cta-secondary" data-i18n="contact.label">Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER — populated by legal-engine.js -->
+  <footer id="ndic-footer">
+      <div class="ndic-footer-inner">
+        <div class="ndic-footer-brand">
+          <a href="/" class="ndic-footer-logo-link">
+            <span class="ndic-footer-wordmark">INTEL<span>REAP</span></span>
+          </a>
+          <p class="ndic-footer-tagline" data-i18n="footer.tagline">Real-time network and device intelligence.</p>
+          <p class="ndic-footer-description" data-i18n="footer.description">Free browser-based intelligence tool. No account required.</p>
+        </div>
+        <div class="ndic-footer-links">
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_intelligence">Intelligence</h4>
+          <a href="/intelligence/">All panels</a>
+          <a href="/intelligence/network-route">Network Route</a>
+          <a href="/intelligence/network-identity">Network Identity</a>
+          <a href="/intelligence/vpn-proxy">VPN and Proxy</a>
+          <a href="/intelligence/live-network">Live Network</a>
+          <a href="/intelligence/security">Security Analysis</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_deep_dives">Deep Dives</h4>
+          <a href="/intelligence/device">Device Intelligence</a>
+          <a href="/intelligence/graphics">Graphics Engine</a>
+          <a href="/intelligence/capability" data-i18n="canvas8.heading_technical">Capability Matrix</a>
+          <a href="/intelligence/performance">Performance</a>
+          <a href="/intelligence/rendering-speed">Rendering Speed</a>
+          <a href="/intelligence/scoreboard">Global Scoreboard</a>
+          <a href="/intelligence/live-feed">Live Feed</a>
+          <a href="/intelligence/fingerprinting">Fingerprint &amp; Leaks</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_learn">Learn</h4>
+          <a href="/learn/">All articles</a>
+          <a href="/guides/">All guides</a>
+          <a href="/learn/what-is-a-gpu">What Is a GPU?</a>
+          <a href="/learn/what-is-device-fingerprinting">Device Fingerprinting</a>
+          <a href="/learn/webrtc-leak-test-and-shield">WebRTC Leak Test</a>
+          <a href="/learn/how-to-protect-your-privacy-online">Protect Your Privacy</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_legal">Legal</h4>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/cookies-policy" data-i18n="cookie.policy_link">Cookies Policy</a>
+          <a href="/terms-of-use">Terms of Use</a>
+          <a href="/about" data-i18n="nav.about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="ndic-footer-col">
+          <h4 class="ndic-footer-col-title" data-i18n="footer.col_connect">Connect</h4>
+          <a href="https://twitter.com/intelreap" target="_blank" rel="noopener noreferrer" data-i18n="footer.twitter">Twitter / X</a>
+          <a href="/contact" data-i18n="footer.email_us">Contact us</a>
+        </div>
+        </div>
+      </div>
+      <div class="ndic-footer-bottom">
+        <div class="ndic-footer-copyright">
+          <span class="copyright-year">© 2026 IntelReap</span>
+          <span class="ndic-footer-sep">—</span>
+          <span data-i18n="footer.free_line">Free to use. No account required.</span>
+        </div>
+        <div class="ndic-footer-legal-inline">
+          <a href="/privacy-policy" data-i18n="footer.privacy">Privacy</a>
+          <a href="/cookies-policy" data-i18n="footer.cookies">Cookies</a>
+          <a href="/terms-of-use" data-i18n="footer.terms">Terms</a>
+          <a href="/cookies-policy#cookie-settings" id="ndic-cookie-settings">Cookie settings</a>
+        </div>
+      </div>
+    </footer>
+
+  <!-- TOAST — styled by design system -->
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- SCRIPTS — exact load order -->
+  <script defer src="./js/registry.js"></script>
+  <script defer src="./js/root-config.js"></script>
+  <script defer src="./js/analytics-consent.js"></script>
+  <script defer src="./assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="./js/menu-system.js"></script>
+  <script defer src="./js/search-system.js"></script>
+  <script defer src="./js/schema.js"></script>
+  <script defer src="./js/internal-links.js"></script>
+  <script defer src="./js/legal-engine.js"></script>
+  <script defer src="./js/sw-register.js"></script>
+
+  <script>
+    // ── FAQ ACCORDION — uses design system class toggle ──
+    document.querySelectorAll('.ndic-faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ndic-faq-item');
+        const isOpen = item.classList.contains('ndic-faq-item--open');
+
+        // Close all open items
+        document.querySelectorAll('.ndic-faq-item--open').forEach(i => {
+          i.classList.remove('ndic-faq-item--open');
+          i.querySelector('.ndic-faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked item if it was closed
+        if (!isOpen) {
+          item.classList.add('ndic-faq-item--open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

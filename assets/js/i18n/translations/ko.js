@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_KO = {
     "cookie_settings": "쿠키 설정",
     "free_line": "무료로 사용할 수 있습니다. 계정이 필요 없습니다.",
     "email_us": "이메일 보내기",
-    "operated_by": "운영: IntelReap Information Technologies"
   },
   "cookie": {
     "text": "IntelReap은 언어와 테마 선택을 브라우저에 저장합니다. 사용자의 허락이 있으면 사이트 이용 현황을 측정하기 위해 Google Analytics 쿠키도 사용합니다. 거부해도 도구 사용에는 제한이 없습니다.",

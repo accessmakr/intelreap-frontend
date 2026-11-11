@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_PL = {
     "cookie_settings": "Ustawienia plików cookie",
     "free_line": "Bezpłatne w użyciu. Konto nie jest wymagane.",
     "email_us": "Napisz do nas",
-    "operated_by": "Prowadzone przez IntelReap Information Technologies."
   },
   "cookie": {
     "text": "IntelReap zapisuje w przeglądarce Twój wybór języka i motywu. Za Twoją zgodą korzysta też z plików cookie Google Analytics, aby mierzyć sposób korzystania z witryny. Odmowa nie ogranicza działania narzędzia.",

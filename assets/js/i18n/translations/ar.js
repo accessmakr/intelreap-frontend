@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_AR = {
     "cookie_settings": "إعدادات ملفات تعريف الارتباط",
     "free_line": "مجاني الاستخدام. لا حاجة لإنشاء حساب.",
     "email_us": "راسلنا عبر البريد",
-    "operated_by": "تشغّلها IntelReap Information Technologies."
   },
   "cookie": {
     "text": "يحفظ IntelReap اختياراتك للغة والمظهر في متصفحك. وبإذنك، يستخدم أيضًا ملفات تعريف الارتباط الخاصة بـ Google Analytics لقياس كيفية استخدام الموقع. رفضك لا يحدّ من عمل الأداة.",

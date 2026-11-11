@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_SW = {
     "cookie_settings": "Mipangilio ya vidakuzi",
     "free_line": "Matumizi ni bure. Hakuna akaunti inayohitajika.",
     "email_us": "Tutumie barua pepe",
-    "operated_by": "Inaendeshwa na IntelReap Information Technologies."
   },
   "cookie": {
     "text": "IntelReap huhifadhi chaguo zako za lugha na mandhari kwenye kivinjari chako. Kwa ruhusa yako, pia hutumia vidakuzi vya Google Analytics kupima jinsi tovuti inavyotumika. Kukataa hakupunguzi uwezo wa zana.",

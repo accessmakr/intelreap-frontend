@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_FA = {
     "cookie_settings": "تنظیمات کوکی",
     "free_line": "استفاده رایگان. بدون نیاز به حساب کاربری.",
     "email_us": "ایمیل بزنید",
-    "operated_by": "اداره‌شده توسط IntelReap Information Technologies."
   },
   "cookie": {
     "text": "IntelReap انتخاب‌های زبان و پوسته شما را در مرورگرتان ذخیره می‌کند. با اجازه شما، از کوکی‌های Google Analytics نیز برای سنجش نحوهٔ استفاده از سایت بهره می‌برد. رد کردن، عملکرد ابزار را محدود نمی‌کند.",
