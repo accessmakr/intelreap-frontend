@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_NL = {
     "cookie_settings": "Cookie-instellingen",
     "free_line": "Gratis te gebruiken. Geen account nodig.",
     "email_us": "Mail ons",
-    "operated_by": "Beheerd door IntelReap Information Technologies."
   },
   "cookie": {
     "text": "IntelReap slaat je taal- en themakeuze op in je browser. Met jouw toestemming gebruikt het ook Google Analytics-cookies om te meten hoe de site wordt gebruikt. Weigeren beperkt de tool niet.",

@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_ID = {
     "cookie_settings": "Pengaturan cookie",
     "free_line": "Gratis digunakan. Tidak perlu akun.",
     "email_us": "Kirim email",
-    "operated_by": "Dioperasikan oleh IntelReap Information Technologies."
   },
   "cookie": {
     "text": "IntelReap menyimpan pilihan bahasa dan tema Anda di peramban. Dengan izin Anda, situs ini juga memakai cookie Google Analytics untuk mengukur cara situs digunakan. Menolak tidak membatasi alat ini.",

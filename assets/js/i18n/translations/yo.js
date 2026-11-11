@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_YO = {
     "cookie_settings": "Ètò kúkì",
     "free_line": "Ọ̀fẹ́ láti lò. Kò nílò àkọọ́lẹ̀.",
     "email_us": "Fi ìméèlì ránṣẹ́ sí wa",
-    "operated_by": "IntelReap Information Technologies ló ń ṣàkóso rẹ̀."
   },
   "cookie": {
     "text": "IntelReap ń fi àṣàyàn èdè àti ọ̀nà ìrísí rẹ pamọ́ sínú aṣàwákiri rẹ. Pẹ̀lú ìyọ̀nda rẹ, ó tún ń lo kúkì Google Analytics láti wọn bí a ṣe ń lo ojú-òpó náà. Kíkọ̀ kò dín iṣẹ́ irinṣẹ́ náà kù.",

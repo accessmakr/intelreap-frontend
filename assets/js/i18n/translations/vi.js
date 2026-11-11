@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_VI = {
     "cookie_settings": "Cài đặt cookie",
     "free_line": "Miễn phí sử dụng. Không cần tài khoản.",
     "email_us": "Gửi email cho chúng tôi",
-    "operated_by": "Do IntelReap Information Technologies vận hành."
   },
   "cookie": {
     "text": "IntelReap lưu lựa chọn ngôn ngữ và giao diện của bạn trong trình duyệt. Khi được bạn cho phép, IntelReap cũng dùng cookie Google Analytics để đo lường cách trang web được sử dụng. Từ chối không hạn chế công cụ.",

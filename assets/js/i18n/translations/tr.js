@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_TR = {
     "cookie_settings": "Çerez ayarları",
     "free_line": "Kullanımı ücretsizdir. Hesap gerekmez.",
     "email_us": "Bize e-posta gönderin",
-    "operated_by": "İşleten: IntelReap Information Technologies."
   },
   "cookie": {
     "text": "IntelReap dil ve tema tercihlerinizi tarayıcınızda saklar. İzninizle, sitenin nasıl kullanıldığını ölçmek için Google Analytics çerezlerini de kullanır. Reddetmek aracın çalışmasını sınırlamaz.",

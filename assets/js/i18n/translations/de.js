@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_DE = {
     "cookie_settings": "Cookie-Einstellungen",
     "free_line": "Kostenlos nutzbar. Kein Konto erforderlich.",
     "email_us": "E-Mail an uns",
-    "operated_by": "Betrieben von IntelReap Information Technologies."
   },
   "cookie": {
     "text": "IntelReap speichert Ihre Sprach- und Designauswahl in Ihrem Browser. Mit Ihrer Erlaubnis nutzt es außerdem Google-Analytics-Cookies, um zu messen, wie die Website verwendet wird. Eine Ablehnung schränkt das Tool nicht ein.",

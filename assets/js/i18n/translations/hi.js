@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_HI = {
     "cookie_settings": "कुकी सेटिंग्स",
     "free_line": "उपयोग मुफ़्त। किसी खाते की आवश्यकता नहीं।",
     "email_us": "हमें ईमेल करें",
-    "operated_by": "संचालक: IntelReap Information Technologies।"
   },
   "cookie": {
     "text": "IntelReap आपके ब्राउज़र में आपकी भाषा और थीम की पसंद सहेजता है। आपकी अनुमति से यह साइट के उपयोग को मापने के लिए Google Analytics कुकीज़ का भी उपयोग करता है। अस्वीकार करने से टूल पर कोई प्रतिबंध नहीं लगता।",

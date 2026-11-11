@@ -587,7 +587,6 @@ window.NDIC_TRANSLATIONS_BN = {
     "cookie_settings": "কুকি সেটিংস",
     "free_line": "বিনামূল্যে ব্যবহারযোগ্য। অ্যাকাউন্ট লাগে না।",
     "email_us": "ইমেল করুন",
-    "operated_by": "পরিচালনা করে IntelReap Information Technologies।"
   },
   "cookie": {
     "text": "IntelReap আপনার ব্রাউজারে আপনার ভাষা ও থিমের পছন্দ সংরক্ষণ করে। আপনার অনুমতি পেলে সাইটটি কীভাবে ব্যবহৃত হচ্ছে তা পরিমাপ করতে Google Analytics কুকিও ব্যবহার করে। প্রত্যাখ্যান করলে টুলের কোনো সীমাবদ্ধতা হয় না।",
