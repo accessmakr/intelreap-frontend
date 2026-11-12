@@ -3,12 +3,12 @@
  "pages": {
   "about.html": {
    "kind": "page",
-   "modified": "2026-11-11",
+   "modified": "2026-11-12",
    "published": "2026-06-17"
   },
   "contact.html": {
    "kind": "page",
-   "modified": "2026-11-11",
+   "modified": "2026-11-12",
    "published": "2026-06-17"
   },
   "cookies-policy.html": {
@@ -192,12 +192,12 @@
   },
   "privacy-policy.html": {
    "kind": "legal",
-   "modified": "2026-11-11",
+   "modified": "2026-11-12",
    "published": "2026-04-02"
   },
   "terms-of-use.html": {
    "kind": "legal",
-   "modified": "2026-11-11",
+   "modified": "2026-11-12",
    "published": "2026-04-02"
   }
  }
