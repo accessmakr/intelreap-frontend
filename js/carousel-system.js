@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────
 // INTELREAP CAROUSEL SYSTEM
-// Affiliate and ad slot carousel
+// Ad slot carousel
 // Reads from AD_SLOTS configuration
 // Multiple zones per page
 // Auto-rotate with touch support
@@ -31,19 +31,14 @@ const CarouselSystem = (() => {
          </span>`
       : ''
 
-    // Disclosure (required for paid placements)
-    const disclosureHTML = item.type === 'affiliate'
-      ? `<span class="ndic-carousel-disclosure">
-          Sponsored
-         </span>`
-      : ''
+    const disclosureHTML = ''
 
     slide.innerHTML = `
       <a
         href="${item.url}"
         class="ndic-carousel-card"
         target="_blank"
-        rel="noopener noreferrer sponsored"
+        rel="noopener noreferrer"
         aria-label="${item.title} — ${item.description}"
       >
         <div class="ndic-carousel-card-inner">
@@ -86,7 +81,7 @@ const CarouselSystem = (() => {
     container.setAttribute('role', 'region')
     container.setAttribute(
       'aria-label',
-      'Sponsored content'
+      'Advertisement'
     )
 
     const wrapper = document.createElement('div')

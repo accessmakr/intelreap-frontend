@@ -1,9 +1,7 @@
 // ─────────────────────────────────────────
 // INTELREAP AD SLOTS CONFIGURATION
-// Controls all affiliate and ad carousels
+// Controls all ad carousels
 // Empty items array = carousel hidden
-// type: 'affiliate' shows Sponsored badge
-// type: 'ad' shows no disclosure badge
 // ─────────────────────────────────────────
 
 const AD_SLOTS = {
@@ -22,29 +20,6 @@ const AD_SLOTS = {
     'hero-below': {
       label: 'Hero Below',
       items: [
-        // Add affiliate or ad items here
-        // Example structure shown below
-        // Remove example and add real items
-        // when ready to monetize
-
-        // {
-        //   id: 'nordvpn-1',
-        //   type: 'affiliate',
-        //   title: 'Protect Your Connection',
-        //   description: 'Your scan shows your real IP. A VPN keeps it private.',
-        //   cta: 'Get Protected',
-        //   url: 'https://go.nordvpn.net/...',
-        //   badge: 'Recommended'
-        // },
-        // {
-        //   id: 'expressvpn-1',
-        //   type: 'affiliate',
-        //   title: 'Faster, Private Browsing',
-        //   description: 'World-class encryption. 3,000+ servers in 94 countries.',
-        //   cta: 'Start Free Trial',
-        //   url: 'https://...',
-        //   badge: null
-        // }
       ]
     },
 
@@ -54,15 +29,6 @@ const AD_SLOTS = {
     'tool-below': {
       label: 'Tool Below',
       items: [
-        // {
-        //   id: 'cloudflare-1',
-        //   type: 'affiliate',
-        //   title: 'Cloudflare for Teams',
-        //   description: 'Your network intelligence reveals connection risks. Cloudflare fixes them.',
-        //   cta: 'Explore Free Plan',
-        //   url: 'https://...',
-        //   badge: 'Free Tier'
-        // }
       ]
     },
 
@@ -72,15 +38,6 @@ const AD_SLOTS = {
     'faq-above': {
       label: 'FAQ Above',
       items: [
-        // {
-        //   id: 'ad-slot-1',
-        //   type: 'ad',
-        //   title: 'Your Ad Here',
-        //   description: 'Reach a technical audience interested in networking and security.',
-        //   cta: 'Book This Space',
-        //   url: '/contact',
-        //   badge: 'Available'
-        // }
       ]
     },
 
@@ -90,15 +47,6 @@ const AD_SLOTS = {
     'sidebar': {
       label: 'Sidebar',
       items: [
-        // {
-        //   id: 'protonvpn-1',
-        //   type: 'affiliate',
-        //   title: 'ProtonVPN',
-        //   description: 'Swiss privacy. No-logs policy. Built by CERN scientists.',
-        //   cta: 'Get Proton Free',
-        //   url: 'https://...',
-        //   badge: 'Free Forever'
-        // }
       ]
     },
 
