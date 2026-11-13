@@ -236,8 +236,20 @@ const Canvas13 = (() => {
         ? `±${Math.round(fp.geoAccuracy)}m`
         : '—'
     )
+    // Compared at draw time so it uses the location now in use
+    // (the IPv4 one, when it replaced the IPv6 one after the scan)
+    const idNow = STATE.identity
+    const gpsHere =
+      fp.geoLatitude !== null && fp.geoLatitude !== undefined
+    const geoMatchNow =
+      gpsHere &&
+      idNow.latitude !== null && idNow.latitude !== undefined &&
+      idNow.longitude !== null && idNow.longitude !== undefined
+        ? (Math.abs(fp.geoLatitude - idNow.latitude) < 1 &&
+           Math.abs(fp.geoLongitude - idNow.longitude) < 1)
+        : fp.geoIpMatch
     renderYesNo('c13-geo-ip-match',
-      fp.geoIpMatch,
+      geoMatchNow,
       'var(--color-success)',
       'var(--color-danger)'
     )

@@ -45,7 +45,10 @@ const STATE = {
     continent: null,
     source: null,
     accuracyRadiusKm: null,
-    alt: null
+    alt: null,
+    locationBasis: null,
+    locationBasisIp: null,
+    v6Location: null
   },
 
   vpn: {

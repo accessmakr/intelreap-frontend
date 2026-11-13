@@ -52,7 +52,12 @@ const IPEngine = (() => {
         hosting: data.hosting,
         continent: data.continent,
         source: data.source,
-        accuracyRadiusKm: data.accuracyRadiusKm || null
+        accuracyRadiusKm: data.accuracyRadiusKm || null,
+        // A fresh primary lookup resets any location
+        // switch made for the second address
+        locationBasis: null,
+        locationBasisIp: null,
+        v6Location: null
       })
 
       logBackendResponse(
@@ -88,6 +93,62 @@ const IPEngine = (() => {
   // backend looks that address up.
   // Best effort: silent on any failure.
   // ───────────────────────────────────────
+
+  // When the device has both an IPv6 and an IPv4 address and
+  // a database places them in different cities of the SAME
+  // country, the IPv4 location becomes the main one (IPv4
+  // location data is the more mature of the two). Different
+  // countries are never merged: that difference is a real
+  // signal and is shown as it is.
+  const normCity = (c) =>
+    String(c || '').trim().toLowerCase()
+
+  const chooseLocationBasis = (primary, alt) => {
+    if (!primary || !alt) return false
+    if (primary.ipVersion !== 'IPv6') return false
+    if (alt.ipVersion !== 'IPv4') return false
+    if (!alt.city) return false
+    const num = (v) =>
+      v === null || v === undefined || v === ''
+        ? NaN
+        : Number(v)
+    if (
+      !Number.isFinite(num(alt.latitude)) ||
+      !Number.isFinite(num(alt.longitude))
+    ) return false
+    if (!primary.countryCode || !alt.countryCode) return false
+    if (primary.countryCode !== alt.countryCode) return false
+    return normCity(primary.city) !== normCity(alt.city)
+  }
+
+  const useAltLocationIfBetter = (alt) => {
+    const cur = STATE.identity
+    if (cur.locationBasis) return false
+    if (!chooseLocationBasis(cur, alt)) return false
+    updateIdentity({
+      city: alt.city,
+      region: alt.region,
+      country: alt.country,
+      postal: alt.postal,
+      latitude: Number(alt.latitude),
+      longitude: Number(alt.longitude),
+      timezone: alt.timezone || cur.timezone,
+      utcOffset: alt.utcOffset || cur.utcOffset,
+      accuracyRadiusKm: alt.accuracyRadiusKm,
+      locationBasis: 'IPv4',
+      locationBasisIp: alt.ip,
+      v6Location: {
+        ip: cur.ip,
+        city: cur.city,
+        region: cur.region,
+        country: cur.country,
+        latitude: cur.latitude,
+        longitude: cur.longitude,
+        accuracyRadiusKm: cur.accuracyRadiusKm
+      }
+    })
+    return true
+  }
 
   const fetchAltAddress = async (primary) => {
     try {
@@ -126,9 +187,15 @@ const IPEngine = (() => {
         region: d.region,
         country: d.country,
         countryCode: d.countryCode,
+        latitude: d.latitude,
+        longitude: d.longitude,
+        timezone: d.timezone || null,
+        utcOffset: d.utcOffset || null,
+        postal: d.postal || null,
         accuracyRadiusKm: d.accuracyRadiusKm || null
       }
       updateIdentity({ alt })
+      useAltLocationIfBetter(alt)
       return alt
     } catch (e) {
       return null
@@ -354,6 +421,7 @@ const IPEngine = (() => {
     refresh,
     fetchIPIdentity,
     fetchAltAddress,
+    chooseLocationBasis,
     fetchIPDeep,
     initializeMap
   }

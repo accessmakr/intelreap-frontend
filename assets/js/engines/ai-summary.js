@@ -82,13 +82,17 @@ const AISummaryEngine = (() => {
         const conn = has(i.connectionType)
           ? `${lower(i.connectionType)} connection`
           : 'connection'
-        const alt = i.alt && i.alt.ip
+        const v4Main = i.locationBasis === 'IPv4'
+        const alt = v4Main
+          ? `Your device also has an IPv6 address (${i.ip})` +
+            `${i.v6Location && placeOf(i.v6Location) ? `, which a location database places near ${placeOf(i.v6Location)}, but that location differs from the IPv4 one and is less reliable` : ''}.`
+          : i.alt && i.alt.ip
           ? `Your device also has an ${i.alt.ipVersion} address (${i.alt.ip})` +
             `${placeOf(i.alt) ? `, which appears near ${placeOf(i.alt)}` : ''}.`
           : ''
         return say(
           has(i.city)
-            ? `Your ${i.ipVersion || 'IP'} address appears to be in ${where}${kmNote(i.accuracyRadiusKm)}, on ${an(conn)} ${conn}` +
+            ? `Your ${v4Main ? 'IPv4' : (i.ipVersion || 'IP')} address appears to be in ${where}${kmNote(i.accuracyRadiusKm)}, on ${an(conn)} ${conn}` +
               `${has(i.isp) ? ` from ${i.isp}` : ''}.`
             : where
             ? `Your ${i.ipVersion || 'IP'} address matches only ${where}, with no city-level match, on ${an(conn)} ${conn}` +
@@ -305,7 +309,12 @@ const AISummaryEngine = (() => {
             `${has(i.isp) ? `, through ${i.isp}` : ''}.`
           : (has(i.isp) ? `Your connection is through ${i.isp}.` : '')
       )
-      if (i.alt && i.alt.ip) {
+      if (i.locationBasis === 'IPv4') {
+        parts.push(
+          `The location above comes from the IPv4 address; the IPv6 address` +
+          `${i.v6Location && placeOf(i.v6Location) ? ` is placed near ${placeOf(i.v6Location)} by the database, which differs and is less reliable` : ' is placed elsewhere by the database'}.`
+        )
+      } else if (i.alt && i.alt.ip) {
         parts.push(
           `The device also has an ${i.alt.ipVersion} address` +
           `${placeOf(i.alt) ? `, which appears near ${placeOf(i.alt)}` : ''}.`

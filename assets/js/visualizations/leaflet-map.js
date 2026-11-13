@@ -13,6 +13,7 @@ const LeafletMapViz = (() => {
 
   let map = null
   let marker = null
+  let circle = null
   let initialized = false
   let currentLat = null
   let currentLng = null
@@ -71,6 +72,13 @@ const LeafletMapViz = (() => {
   // BUILD POPUP CONTENT
   // Shows IP location details in popup
   // ───────────────────────────────────────
+
+  // Circle radius follows the reported accuracy; 50 km when
+  // the backend gives none
+  const circleRadiusMeters = () => {
+    const km = Number(STATE.identity.accuracyRadiusKm)
+    return km > 0 ? km * 1000 : 50000
+  }
 
   const buildPopupContent = (
     city,
@@ -132,6 +140,7 @@ const LeafletMapViz = (() => {
         map.remove()
         map = null
         marker = null
+        circle = null
         initialized = false
       }
 
@@ -190,7 +199,7 @@ const LeafletMapViz = (() => {
         identity.region,
         identity.country,
         isp || identity.isp,
-        identity.ip,
+        identity.locationBasisIp || identity.ip,
         identity.connectionType
       )
 
@@ -206,12 +215,12 @@ const LeafletMapViz = (() => {
 
       // Add accuracy circle
       if (identity.latitude && identity.longitude) {
-        L.circle([lat, lng], {
+        circle = L.circle([lat, lng], {
           color: 'var(--color-accent-primary)',
           fillColor: 'var(--color-accent-primary)',
           fillOpacity: 0.05,
           weight: 1,
-          radius: 50000 // 50km radius
+          radius: circleRadiusMeters()
         }).addTo(map)
       }
 
@@ -268,11 +277,16 @@ const LeafletMapViz = (() => {
           identity.region,
           identity.country,
           isp || identity.isp,
-          identity.ip,
+          identity.locationBasisIp || identity.ip,
           identity.connectionType
         )
 
         marker.setPopupContent(popupContent)
+      }
+
+      if (circle) {
+        circle.setLatLng([lat, lng])
+        circle.setRadius(circleRadiusMeters())
       }
 
       logSystem(
