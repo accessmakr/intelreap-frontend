@@ -501,8 +501,8 @@
         <p>The global score is a weighted average of nine sub-scores: Security 20%, Network 15%, Device 15%, Capability 10%, Performance 10%, Speed 10%, Privacy 10%, Identity 5% and Graphics 5%. The weights are our own judgment, not an industry standard, and a sub-score with no data is left out of the average.</p>
         <ul>
           <li><strong>Security</strong> adds up ten checks: HTTPS, secure context, whether a local address is exposed through WebRTC, mixed content, Do Not Track, storage access, camera, microphone and location permissions, and fingerprint surface. The total is scaled to 100. The WebRTC check looks only for a local address. Many modern browsers hide it on purpose, so those show as not exposed.</li>
-          <li><strong>Speed</strong> is 60% Core Web Vitals (LCP, FCP, CLS and TTFB, plus INP and FID when you interact with the page) and 40% a short benchmark of script, page and graphics work.</li>
-          <li><strong>Performance</strong> comes from page load time, time to first byte and time until the page is ready.</li>
+          <li><strong>Speed</strong> is 60% Core Web Vitals (LCP, FCP and CLS, plus INP and FID when you interact with the page) and 40% a short benchmark of script, page and graphics work.</li>
+          <li><strong>Performance</strong> comes from page load time, time to first byte and time until the page is ready. Time to first byte is counted here only, not in Speed.</li>
         </ul>
       </div>
 
