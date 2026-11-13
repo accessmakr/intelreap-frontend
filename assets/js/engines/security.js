@@ -446,7 +446,9 @@ const SecurityEngine = (() => {
     const warnings = []
 
     // HTTPS (20 points)
-    if (data.isSecureContext) {
+    // Uses the page protocol, separate from
+    // the secure-context check below
+    if (data.isHTTPS) {
       score += 20
     } else {
       flags.push('Connection is not secure')
@@ -529,6 +531,11 @@ const SecurityEngine = (() => {
       score += 5
     }
 
+    // The signals above add up to 95 raw points.
+    // Scale to a 0-100 score so a clean scan
+    // can reach 100.
+    score = Math.round((score / 95) * 100)
+
     // Determine risk level
     let riskLevel = 'Low'
     if (score < 40) riskLevel = 'Critical'
@@ -585,6 +592,7 @@ const SecurityEngine = (() => {
 
     // Compute security score
     const scoreData = computeSecurityScore({
+      isHTTPS: httpsData.protocol === 'https:',
       isSecureContext: httpsData.isSecureContext,
       webrtcExposure: webrtcData.webrtcExposure,
       mixedContentRisk:

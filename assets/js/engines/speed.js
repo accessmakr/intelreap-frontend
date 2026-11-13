@@ -844,6 +844,7 @@ const SpeedEngine = (() => {
     const vitalMetrics = [
       { key: 'lcp', metric: 'lcp', good: 2500, poor: 4000 },
       { key: 'fcp', metric: 'fcp', good: 1800, poor: 3000 },
+      { key: 'cls', metric: 'cls', good: 0.1, poor: 0.25 },
       { key: 'ttfb', metric: 'ttfb', good: 800, poor: 1800 },
       { key: 'inp', metric: 'inp', good: 200, poor: 500 },
       { key: 'fid', metric: 'fid', good: 100, poor: 300 }

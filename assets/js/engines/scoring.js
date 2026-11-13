@@ -333,7 +333,7 @@ const ScoringEngine = (() => {
   // Weighted average of all 9 sub-scores
   // ───────────────────────────────────────
 
-  const computeGlobalScore = (subScores) => {
+  const computeGlobalScore = (subScores, present = {}) => {
     const weights = NDIC_CONFIG.SCORING_WEIGHTS
 
     let totalWeight = 0
@@ -355,10 +355,13 @@ const ScoringEngine = (() => {
       Object.entries(weights)
     ) {
       const score = scoreMap[key]
+      // A score of 0 counts when the engine
+      // measured real data (present[key]);
+      // otherwise 0 means "no data" and is skipped
       if (
         score !== null &&
         score !== undefined &&
-        score > 0
+        (score > 0 || present[key] === true)
       ) {
         weightedSum += score * weight
         totalWeight += weight
@@ -511,8 +514,18 @@ const ScoringEngine = (() => {
     }
 
     // Compute global score
+    const present = {
+      security:
+        STATE.security.securityScore != null,
+      capability:
+        STATE.capabilities.capabilityScore != null,
+      performance:
+        STATE.performance.performanceScore != null,
+      speed:
+        STATE.speed.speedScore != null
+    }
     const globalScore =
-      computeGlobalScore(subScores)
+      computeGlobalScore(subScores, present)
 
     // Health classification
     const healthClassification =
