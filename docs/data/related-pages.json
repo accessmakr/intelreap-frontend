@@ -1,0 +1,278 @@
+{
+ "_readme": "Related reading shown at the end of every article and guide ('You Can Also Read'). 2 to 4 genuinely relevant items per page, never filler: a page with few natural neighbours simply shows fewer, and an entry is swapped when a better article is written. 'titles' are the link texts (taken from each page's own title). Applied by scripts/content/related.py (and by layout.apply when a generated page is rebuilt), checked by scripts/content/verify_related.py, which also lists pages with one or no inbound link as a gap list of topics worth writing. A new article or guide must get an entry here.",
+ "titles": {
+  "learn/what-is-an-ip-address.html": "What Is an IP Address? Types and How It Works",
+  "guides/how-to-find-ip-address-of-any-device.html": "How to Find an IP Address on Any Device or Site",
+  "learn/find-router-ip-address.html": "How to Find Your Router's IP Address on Any Device",
+  "learn/find-printer-ip-address.html": "How to Find a Printer's IP Address on Any Device",
+  "learn/how-to-fix-slow-dns-lookup.html": "How to Fix Slow DNS Lookup (Test It, Then Fix It)",
+  "learn/what-is-reverse-ip-lookup.html": "What Is Reverse IP Lookup?",
+  "learn/why-does-my-internet-speed-fluctuate.html": "Why Does My Internet Speed Fluctuate?",
+  "learn/can-you-have-two-isps-in-one-house.html": "Two Internet Providers in One House: Is It Possible?",
+  "learn/how-to-protect-your-privacy-online.html": "How to Protect Your Privacy Online",
+  "learn/webrtc-leak-test-and-shield.html": "WebRTC Leak Test and How to Shield Your IP",
+  "learn/what-is-device-fingerprinting.html": "What Is Device Fingerprinting? How to Block It",
+  "learn/does-a-vpn-change-your-mac-address.html": "Does a VPN Change or Hide Your MAC Address?",
+  "learn/what-is-a-vpn-concentrator.html": "What Is a VPN Concentrator?",
+  "learn/what-is-vpn-passthrough.html": "What Is VPN Passthrough? PPTP and IPsec Explained",
+  "learn/what-is-a-gpu.html": "What Is a GPU? Explained Simply",
+  "guides/gpu-troubleshooting-guide.html": "GPU Troubleshooting: Common Questions Answered",
+  "guides/how-to-enable-webgl.html": "How to Enable WebGL in Chrome, Firefox and Safari"
+ },
+ "related": {
+  "learn/what-is-an-ip-address.html": [
+   {
+    "to": "guides/how-to-find-ip-address-of-any-device.html",
+    "why": "Find your own address step by step"
+   },
+   {
+    "to": "learn/find-router-ip-address.html",
+    "why": "The address that opens your router page"
+   },
+   {
+    "to": "learn/find-printer-ip-address.html",
+    "why": "A private address in practice: your printer"
+   },
+   {
+    "to": "learn/what-is-reverse-ip-lookup.html",
+    "why": "What an address reveals about a website host"
+   }
+  ],
+  "guides/how-to-find-ip-address-of-any-device.html": [
+   {
+    "to": "learn/what-is-an-ip-address.html",
+    "why": "What the numbers mean"
+   },
+   {
+    "to": "learn/find-router-ip-address.html",
+    "why": "Open the router page to list every device"
+   },
+   {
+    "to": "learn/find-printer-ip-address.html",
+    "why": "Printer-specific steps for Brother, HP, Epson and Canon"
+   },
+   {
+    "to": "learn/what-is-reverse-ip-lookup.html",
+    "why": "Look up who sits behind an address"
+   }
+  ],
+  "learn/find-router-ip-address.html": [
+   {
+    "to": "guides/how-to-find-ip-address-of-any-device.html",
+    "why": "Find any other device on your network"
+   },
+   {
+    "to": "learn/find-printer-ip-address.html",
+    "why": "Find a printer on the same network"
+   },
+   {
+    "to": "learn/how-to-fix-slow-dns-lookup.html",
+    "why": "Check which DNS servers the router hands out"
+   },
+   {
+    "to": "learn/can-you-have-two-isps-in-one-house.html",
+    "why": "What changes with a second provider or router"
+   }
+  ],
+  "learn/find-printer-ip-address.html": [
+   {
+    "to": "guides/how-to-find-ip-address-of-any-device.html",
+    "why": "Other devices, and websites too"
+   },
+   {
+    "to": "learn/find-router-ip-address.html",
+    "why": "Where to reserve the printer address"
+   },
+   {
+    "to": "learn/what-is-an-ip-address.html",
+    "why": "Why the address is private and can change"
+   }
+  ],
+  "learn/how-to-fix-slow-dns-lookup.html": [
+   {
+    "to": "learn/why-does-my-internet-speed-fluctuate.html",
+    "why": "When the slowness is not DNS"
+   },
+   {
+    "to": "learn/find-router-ip-address.html",
+    "why": "Change DNS on the router"
+   },
+   {
+    "to": "learn/what-is-an-ip-address.html",
+    "why": "How a name becomes an address"
+   },
+   {
+    "to": "guides/how-to-find-ip-address-of-any-device.html",
+    "why": "Find your DNS server and device address"
+   }
+  ],
+  "learn/what-is-reverse-ip-lookup.html": [
+   {
+    "to": "learn/what-is-an-ip-address.html",
+    "why": "What an IP address is"
+   },
+   {
+    "to": "guides/how-to-find-ip-address-of-any-device.html",
+    "why": "Find an address to look up"
+   },
+   {
+    "to": "learn/what-is-device-fingerprinting.html",
+    "why": "Another way sites recognise visitors"
+   }
+  ],
+  "learn/why-does-my-internet-speed-fluctuate.html": [
+   {
+    "to": "learn/how-to-fix-slow-dns-lookup.html",
+    "why": "A slow lookup that feels like slow internet"
+   },
+   {
+    "to": "learn/find-router-ip-address.html",
+    "why": "Router and Wi-Fi causes of slow speeds"
+   },
+   {
+    "to": "learn/can-you-have-two-isps-in-one-house.html",
+    "why": "A second connection for reliability"
+   }
+  ],
+  "learn/can-you-have-two-isps-in-one-house.html": [
+   {
+    "to": "learn/find-router-ip-address.html",
+    "why": "The router that makes it possible"
+   },
+   {
+    "to": "learn/why-does-my-internet-speed-fluctuate.html",
+    "why": "Why speed varies on a single connection"
+   }
+  ],
+  "learn/how-to-protect-your-privacy-online.html": [
+   {
+    "to": "learn/what-is-device-fingerprinting.html",
+    "why": "Tracking that survives a VPN"
+   },
+   {
+    "to": "learn/webrtc-leak-test-and-shield.html",
+    "why": "A common way a VPN leaks"
+   },
+   {
+    "to": "learn/does-a-vpn-change-your-mac-address.html",
+    "why": "What a VPN does not hide"
+   },
+   {
+    "to": "learn/what-is-an-ip-address.html",
+    "why": "What your address reveals"
+   }
+  ],
+  "learn/webrtc-leak-test-and-shield.html": [
+   {
+    "to": "learn/how-to-protect-your-privacy-online.html",
+    "why": "The wider privacy checklist"
+   },
+   {
+    "to": "learn/what-is-device-fingerprinting.html",
+    "why": "Tracking beyond your IP address"
+   },
+   {
+    "to": "learn/what-is-an-ip-address.html",
+    "why": "What the leaked address shows"
+   }
+  ],
+  "learn/what-is-device-fingerprinting.html": [
+   {
+    "to": "learn/how-to-protect-your-privacy-online.html",
+    "why": "How to reduce tracking"
+   },
+   {
+    "to": "learn/webrtc-leak-test-and-shield.html",
+    "why": "Check whether your real IP leaks"
+   },
+   {
+    "to": "guides/how-to-enable-webgl.html",
+    "why": "WebGL details are part of a fingerprint"
+   },
+   {
+    "to": "learn/does-a-vpn-change-your-mac-address.html",
+    "why": "Another hardware identifier"
+   }
+  ],
+  "learn/does-a-vpn-change-your-mac-address.html": [
+   {
+    "to": "learn/what-is-an-ip-address.html",
+    "why": "IP address versus MAC address"
+   },
+   {
+    "to": "learn/what-is-device-fingerprinting.html",
+    "why": "How devices are recognised anyway"
+   },
+   {
+    "to": "learn/what-is-vpn-passthrough.html",
+    "why": "VPN features on your router"
+   }
+  ],
+  "learn/what-is-a-vpn-concentrator.html": [
+   {
+    "to": "learn/what-is-vpn-passthrough.html",
+    "why": "A related VPN router setting"
+   },
+   {
+    "to": "learn/how-to-protect-your-privacy-online.html",
+    "why": "What a VPN does and does not protect"
+   }
+  ],
+  "learn/what-is-vpn-passthrough.html": [
+   {
+    "to": "learn/what-is-a-vpn-concentrator.html",
+    "why": "The device at the other end of a VPN"
+   },
+   {
+    "to": "learn/find-router-ip-address.html",
+    "why": "Where to find the router setting"
+   },
+   {
+    "to": "learn/how-to-protect-your-privacy-online.html",
+    "why": "What a VPN protects"
+   }
+  ],
+  "learn/what-is-a-gpu.html": [
+   {
+    "to": "guides/gpu-troubleshooting-guide.html",
+    "why": "Fix problems with your graphics card"
+   },
+   {
+    "to": "guides/how-to-enable-webgl.html",
+    "why": "Turn on WebGL graphics in your browser"
+   },
+   {
+    "to": "learn/what-is-device-fingerprinting.html",
+    "why": "How graphics details identify a browser"
+   }
+  ],
+  "guides/gpu-troubleshooting-guide.html": [
+   {
+    "to": "learn/what-is-a-gpu.html",
+    "why": "What a GPU does"
+   },
+   {
+    "to": "guides/how-to-enable-webgl.html",
+    "why": "Fix WebGL specifically"
+   },
+   {
+    "to": "learn/what-is-device-fingerprinting.html",
+    "why": "What your graphics setup tells websites"
+   }
+  ],
+  "guides/how-to-enable-webgl.html": [
+   {
+    "to": "guides/gpu-troubleshooting-guide.html",
+    "why": "Broader GPU problems"
+   },
+   {
+    "to": "learn/what-is-a-gpu.html",
+    "why": "What the GPU does for WebGL"
+   },
+   {
+    "to": "learn/what-is-device-fingerprinting.html",
+    "why": "Why browsers expose WebGL details"
+   }
+  ]
+ }
+}

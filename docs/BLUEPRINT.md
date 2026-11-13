@@ -19,6 +19,7 @@ intelreap.com is a free network and device intelligence site. Goal now: AdSense-
 - `layout.py`: `move_faq` (FAQ right after main content, before Logic/Sources) and `stamp` (one real date in badge, JSON-LD dateModified, article:modified_time; uses the real clock).
 - `extend.py`: append sections and FAQs to an existing page. `mobilize.py`: adds the tall phone variant of each diagram from `mobile/<slug>.py`.
 - `svgkit.py`, `dns_figs.py`, `router_figs.py`: diagram helpers. Every diagram is drawn separately for desktop and phone, for one stated purpose.
+- `related.py` / `verify_related.py`: write and check the 'You Can Also Read' block on all 17 articles and guides from `docs/data/related-pages.json`.
 - `apply_dates.py` / `verify_dates.py`: apply and check `docs/data/page-dates.json` across all 39 pages (LD published and modified, article meta, the one visible 'Last updated', sitemap and `pages.json` lastmod, no run-time date code). `verify_dates.py` is the repo-wide date check.
 - `verify.py <slug>`: structure, JSON-LD, anchors, links, FAQ count, phone variants, date consistency, FAQ position, emulated Pixel 7 light/dark render. Playwright and Wrangler both run in the sandbox.
 

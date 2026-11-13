@@ -4350,6 +4350,14 @@ select {
   line-height: 1.6;
   color: var(--color-text-secondary);
 }
+/* "You can also read" at the end of an article: article link styles must not underline the cards */
+.ir-related .hub-card,
+.ir-related .hub-card span {
+  text-decoration: none;
+}
+.ir-related .hub-grid {
+  margin: var(--space-5) 0 0;
+}
 .hub-more {
   margin-top: var(--space-8);
   font-size: var(--text-md);

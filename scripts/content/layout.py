@@ -43,6 +43,7 @@ def record(path,d):
         e['modified']=d.isoformat(); json.dump(doc,open(p,'w',encoding='utf-8'),indent=1)
 def apply(path,d=None,visible=True):
     d=d or today(); h=open(path,encoding='utf-8').read(); n=stamp(move_faq(h),d,visible)
+    import related; n=related.apply_html(n,os.path.relpath(os.path.abspath(path),related.ROOT).replace(os.sep,'/'))
     if n!=h: open(path,'w',encoding='utf-8').write(n)
     record(path,d)
     return n!=h

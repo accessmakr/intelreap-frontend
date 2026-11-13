@@ -18,17 +18,17 @@
   },
   "guides/gpu-troubleshooting-guide.html": {
    "kind": "article",
-   "modified": "2026-11-03",
+   "modified": "2026-11-12",
    "published": "2026-06-25"
   },
   "guides/how-to-enable-webgl.html": {
    "kind": "article",
-   "modified": "2026-11-03",
+   "modified": "2026-11-12",
    "published": "2026-06-26"
   },
   "guides/how-to-find-ip-address-of-any-device.html": {
    "kind": "article",
-   "modified": "2026-11-11",
+   "modified": "2026-11-12",
    "published": "2026-06-29"
   },
   "guides/index.html": {
@@ -112,32 +112,32 @@
   },
   "learn/can-you-have-two-isps-in-one-house.html": {
    "kind": "article",
-   "modified": "2026-10-02",
+   "modified": "2026-11-12",
    "published": "2026-06-24"
   },
   "learn/does-a-vpn-change-your-mac-address.html": {
    "kind": "article",
-   "modified": "2026-11-03",
+   "modified": "2026-11-12",
    "published": "2026-06-29"
   },
   "learn/find-printer-ip-address.html": {
    "kind": "article",
-   "modified": "2026-11-07",
+   "modified": "2026-11-12",
    "published": "2026-10-31"
   },
   "learn/find-router-ip-address.html": {
    "kind": "article",
-   "modified": "2026-11-06",
+   "modified": "2026-11-12",
    "published": "2026-10-31"
   },
   "learn/how-to-fix-slow-dns-lookup.html": {
    "kind": "article",
-   "modified": "2026-11-06",
+   "modified": "2026-11-12",
    "published": "2026-10-31"
   },
   "learn/how-to-protect-your-privacy-online.html": {
    "kind": "article",
-   "modified": "2026-11-03",
+   "modified": "2026-11-12",
    "published": "2026-06-30"
   },
   "learn/index.html": {
@@ -147,42 +147,42 @@
   },
   "learn/webrtc-leak-test-and-shield.html": {
    "kind": "article",
-   "modified": "2026-10-02",
+   "modified": "2026-11-12",
    "published": "2026-07-01"
   },
   "learn/what-is-a-gpu.html": {
    "kind": "article",
-   "modified": "2026-11-03",
+   "modified": "2026-11-12",
    "published": "2026-07-02"
   },
   "learn/what-is-a-vpn-concentrator.html": {
    "kind": "article",
-   "modified": "2026-10-02",
+   "modified": "2026-11-12",
    "published": "2026-07-01"
   },
   "learn/what-is-an-ip-address.html": {
    "kind": "article",
-   "modified": "2026-11-10",
+   "modified": "2026-11-12",
    "published": "2026-10-30"
   },
   "learn/what-is-device-fingerprinting.html": {
    "kind": "article",
-   "modified": "2026-10-02",
+   "modified": "2026-11-12",
    "published": "2026-06-29"
   },
   "learn/what-is-reverse-ip-lookup.html": {
    "kind": "article",
-   "modified": "2026-10-02",
+   "modified": "2026-11-12",
    "published": "2026-07-04"
   },
   "learn/what-is-vpn-passthrough.html": {
    "kind": "article",
-   "modified": "2026-10-02",
+   "modified": "2026-11-12",
    "published": "2026-07-02"
   },
   "learn/why-does-my-internet-speed-fluctuate.html": {
    "kind": "article",
-   "modified": "2026-11-03",
+   "modified": "2026-11-12",
    "published": "2026-06-25"
   },
   "methodology.html": {
