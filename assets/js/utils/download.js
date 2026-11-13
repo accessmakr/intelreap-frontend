@@ -56,7 +56,9 @@ const buildReportData = () => {
       timezone: snapshot.identity.timezone,
       utcOffset: snapshot.identity.utcOffset,
       connectionType:
-        snapshot.identity.connectionType
+        snapshot.identity.connectionType,
+      locationBasis: snapshot.identity.locationBasis,
+      locationBasisIp: snapshot.identity.locationBasisIp
     },
 
     vpn: {
@@ -481,6 +483,9 @@ const buildPlainTextReport = (data) => {
   lines.push(`ISP:                 ${data.identity.isp}`)
   lines.push(`Country:             ${data.identity.country}`)
   lines.push(`City:                ${data.identity.city}`)
+  if (data.identity.locationBasis) {
+    lines.push(`Location Based On:   ${data.identity.locationBasis} (${data.identity.locationBasisIp})`)
+  }
   lines.push(`Timezone:            ${data.identity.timezone}`)
   lines.push(`Connection Type:     ${data.identity.connectionType}`)
   lines.push('')
