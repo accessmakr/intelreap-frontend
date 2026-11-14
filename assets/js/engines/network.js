@@ -60,11 +60,13 @@ const NetworkEngine = (() => {
   // ───────────────────────────────────────
 
   const measureRTT = async () => {
+    // Free public endpoints first, so latency readings do not use
+    // the backend's request allowance; the backend is the last resort
     const endpoints = [
-      NDIC_CONFIG.BACKEND_URL +
-        NDIC_CONFIG.ENDPOINTS.health,
       'https://www.cloudflare.com/cdn-cgi/trace',
-      'https://api.ipify.org?format=json'
+      'https://api.ipify.org?format=json',
+      NDIC_CONFIG.BACKEND_URL +
+        NDIC_CONFIG.ENDPOINTS.health
     ]
 
     for (const endpoint of endpoints) {
@@ -233,7 +235,7 @@ const NetworkEngine = (() => {
 
   // ───────────────────────────────────────
   // NETWORK TICK
-  // Runs every 10 s for the first 4 minutes, then every 5 minutes
+  // Runs every 3 s for the first 3 minutes (60 readings fill the chart), then every 10 minutes
   // Updates all live network metrics
   // ───────────────────────────────────────
 
