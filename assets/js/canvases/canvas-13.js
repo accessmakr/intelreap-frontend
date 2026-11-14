@@ -388,9 +388,37 @@ const Canvas13 = (() => {
         caption.className = 'ndic-map-caption'
         dualMap.parentNode.insertBefore(caption, dualMap.nextSibling)
       }
+      const canAsk =
+        !gpsOk &&
+        fp.geoPermission !== 'denied' &&
+        fp.geoPermission !== 'unsupported' &&
+        typeof navigator !== 'undefined' &&
+        !!navigator.geolocation
       caption.textContent = gpsOk
         ? 'Blue pin: your GPS position. The dashed line shows how far it is from the location your IP address suggests.'
-        : 'Showing the approximate location your IP address suggests. Allow location access in your browser to compare it with your GPS position.'
+        : fp.geoPermission === 'denied'
+        ? 'Location access is blocked in your browser, so only the location your IP address suggests is shown.'
+        : canAsk
+        ? 'Showing the approximate location your IP address suggests. Tap “Compare with my GPS” to see how far it is from your real position.'
+        : 'Showing the approximate location your IP address suggests.'
+
+      let gpsBtn = document.getElementById('c13-gps-btn')
+      if (canAsk && !gpsBtn) {
+        gpsBtn = document.createElement('button')
+        gpsBtn.type = 'button'
+        gpsBtn.id = 'c13-gps-btn'
+        gpsBtn.className = 'ndic-btn-secondary'
+        gpsBtn.textContent = 'Compare with my GPS'
+        gpsBtn.addEventListener('click', () => {
+          gpsBtn.disabled = true
+          FingerprintEngine.requestGeolocation()
+            .then(() => Canvas13.render())
+            .catch(() => {})
+            .finally(() => { gpsBtn.disabled = false })
+        })
+        caption.parentNode.insertBefore(gpsBtn, caption.nextSibling)
+      }
+      if (gpsBtn) gpsBtn.style.display = canAsk ? '' : 'none'
     }
 
     // ─── DEEP DIVE LINK ─────────────────────

@@ -321,6 +321,12 @@ const IPEngine = (() => {
     if (typeof Canvas2 !== 'undefined') {
       Canvas2.render()
     }
+
+    // Render Canvas 13 — its map shows the IP location
+    // too, and must follow a late switch to the IPv4 one
+    if (typeof Canvas13 !== 'undefined') {
+      Canvas13.render()
+    }
   }
 
   // ───────────────────────────────────────
@@ -395,12 +401,33 @@ const IPEngine = (() => {
 
     const identityData = await fetchIPIdentity()
 
+    // A fresh lookup returns the main address's own
+    // location, so re-apply the IPv4 one when it applies
+    if (
+      identityData &&
+      previousIP &&
+      identityData.ip === previousIP
+    ) {
+      if (
+        STATE.identity.alt &&
+        useAltLocationIfBetter(STATE.identity.alt)
+      ) {
+        triggerRenders()
+      }
+    }
+
     // Detect IP change
     if (
       identityData &&
       previousIP &&
       identityData.ip !== previousIP
     ) {
+      // The old second address no longer applies
+      updateIdentity({ alt: null })
+      fetchAltAddress(identityData).then(() => {
+        triggerRenders()
+      })
+
       logNetwork(
         'CRITICAL',
         `IP address changed: ` +
