@@ -83,9 +83,12 @@ const AISummaryEngine = (() => {
           ? `${lower(i.connectionType)} connection`
           : 'connection'
         const v4Main = i.locationBasis === 'IPv4'
+        const v6same = !!i.v6Location &&
+          String(i.v6Location.city || '').trim().toLowerCase() ===
+          String(i.city || '').trim().toLowerCase()
         const alt = v4Main
           ? `Your device also has an IPv6 address (${i.ip})` +
-            `${i.v6Location && placeOf(i.v6Location) ? `, which a location database places near ${placeOf(i.v6Location)}, but that location differs from the IPv4 one and is less reliable` : ''}.`
+            `${v6same ? ', which a location database places in the same area' : (i.v6Location && placeOf(i.v6Location) ? `, which a location database places near ${placeOf(i.v6Location)}, but that location differs from the IPv4 one and is less reliable` : '')}.`
           : i.alt && i.alt.ip
           ? `Your device also has an ${i.alt.ipVersion} address (${i.alt.ip})` +
             `${placeOf(i.alt) ? `, which appears near ${placeOf(i.alt)}` : ''}.`
@@ -310,9 +313,12 @@ const AISummaryEngine = (() => {
           : (has(i.isp) ? `Your connection is through ${i.isp}.` : '')
       )
       if (i.locationBasis === 'IPv4') {
+        const v6same2 = !!i.v6Location &&
+          String(i.v6Location.city || '').trim().toLowerCase() ===
+          String(i.city || '').trim().toLowerCase()
         parts.push(
           `The location above comes from the IPv4 address; the IPv6 address` +
-          `${i.v6Location && placeOf(i.v6Location) ? ` is placed near ${placeOf(i.v6Location)} by the database, which differs and is less reliable` : ' is placed elsewhere by the database'}.`
+          `${v6same2 ? ' is placed in the same area by the database' : (i.v6Location && placeOf(i.v6Location) ? ` is placed near ${placeOf(i.v6Location)} by the database, which differs and is less reliable` : ' is placed elsewhere by the database')}.`
         )
       } else if (i.alt && i.alt.ip) {
         parts.push(

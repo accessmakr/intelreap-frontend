@@ -205,55 +205,6 @@ const Canvas13 = (() => {
       fp.ipv6Source || '—'
     )
 
-    // ─── GEOLOCATION ────────────────────────
-
-    const geoPermEl = el('c13-geo-permission')
-    if (geoPermEl) {
-      geoPermEl.textContent =
-        capitalizeFirst(fp.geoPermission) || '—'
-      geoPermEl.style.color =
-        fp.geoPermission === 'granted'
-          ? 'var(--color-warning)'
-          : fp.geoPermission === 'denied'
-          ? 'var(--color-success)'
-          : 'var(--color-info)'
-    }
-    setText('c13-geo-latitude',
-      fp.geoLatitude !== null &&
-      fp.geoLatitude !== undefined
-        ? fp.geoLatitude.toFixed(4)
-        : '—'
-    )
-    setText('c13-geo-longitude',
-      fp.geoLongitude !== null &&
-      fp.geoLongitude !== undefined
-        ? fp.geoLongitude.toFixed(4)
-        : '—'
-    )
-    setText('c13-geo-accuracy',
-      fp.geoAccuracy !== null &&
-      fp.geoAccuracy !== undefined
-        ? `±${Math.round(fp.geoAccuracy)}m`
-        : '—'
-    )
-    // Compared at draw time so it uses the location now in use
-    // (the IPv4 one, when it replaced the IPv6 one after the scan)
-    const idNow = STATE.identity
-    const gpsHere =
-      fp.geoLatitude !== null && fp.geoLatitude !== undefined
-    const geoMatchNow =
-      gpsHere &&
-      idNow.latitude !== null && idNow.latitude !== undefined &&
-      idNow.longitude !== null && idNow.longitude !== undefined
-        ? (Math.abs(fp.geoLatitude - idNow.latitude) < 1 &&
-           Math.abs(fp.geoLongitude - idNow.longitude) < 1)
-        : fp.geoIpMatch
-    renderYesNo('c13-geo-ip-match',
-      geoMatchNow,
-      'var(--color-success)',
-      'var(--color-danger)'
-    )
-
     // ─── ENVIRONMENT SIGNALS ────────────────
 
     setText('c13-media-queries-tested',
@@ -350,15 +301,11 @@ const Canvas13 = (() => {
           : '—'
     }
 
-    // ─── MAP — IP LOCATION, PLUS GPS WHEN GRANTED ──
+    // ─── MAP — IP LOCATION ──
     // Always shows the IP-based location. When the browser
     // has given a GPS reading, it adds the GPS pin and the
     // distance line so the two can be compared.
     const identity = STATE.identity
-    const gpsOk =
-      fp.geoPermission === 'granted' &&
-      fp.geoLatitude !== null &&
-      fp.geoLatitude !== undefined
     const dualMap = el('canvas13-dual-map')
     if (
       dualMap &&
@@ -367,16 +314,14 @@ const Canvas13 = (() => {
       typeof LeafletMapViz.initDualPinMap === 'function'
     ) {
       const key = [
-        gpsOk ? fp.geoLatitude : '',
-        gpsOk ? fp.geoLongitude : '',
         identity.latitude,
         identity.longitude
       ].join(',')
       if (dualMap.dataset.key !== key) {
         dualMap.dataset.key = key
         LeafletMapViz.initDualPinMap(
-          gpsOk ? fp.geoLatitude : null,
-          gpsOk ? fp.geoLongitude : null,
+          null,
+          null,
           identity.latitude,
           identity.longitude
         )
@@ -388,37 +333,8 @@ const Canvas13 = (() => {
         caption.className = 'ndic-map-caption'
         dualMap.parentNode.insertBefore(caption, dualMap.nextSibling)
       }
-      const canAsk =
-        !gpsOk &&
-        fp.geoPermission !== 'denied' &&
-        fp.geoPermission !== 'unsupported' &&
-        typeof navigator !== 'undefined' &&
-        !!navigator.geolocation
-      caption.textContent = gpsOk
-        ? 'Blue pin: your GPS position. The dashed line shows how far it is from the location your IP address suggests.'
-        : fp.geoPermission === 'denied'
-        ? 'Location access is blocked in your browser, so only the location your IP address suggests is shown.'
-        : canAsk
-        ? 'Showing the approximate location your IP address suggests. Tap “Compare with my GPS” to see how far it is from your real position.'
-        : 'Showing the approximate location your IP address suggests.'
-
-      let gpsBtn = document.getElementById('c13-gps-btn')
-      if (canAsk && !gpsBtn) {
-        gpsBtn = document.createElement('button')
-        gpsBtn.type = 'button'
-        gpsBtn.id = 'c13-gps-btn'
-        gpsBtn.className = 'ndic-btn-secondary'
-        gpsBtn.textContent = 'Compare with my GPS'
-        gpsBtn.addEventListener('click', () => {
-          gpsBtn.disabled = true
-          FingerprintEngine.requestGeolocation()
-            .then(() => Canvas13.render())
-            .catch(() => {})
-            .finally(() => { gpsBtn.disabled = false })
-        })
-        caption.parentNode.insertBefore(gpsBtn, caption.nextSibling)
-      }
-      if (gpsBtn) gpsBtn.style.display = canAsk ? '' : 'none'
+      caption.textContent =
+        'Showing the approximate location your IP address suggests.'
     }
 
     // ─── DEEP DIVE LINK ─────────────────────

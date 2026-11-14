@@ -90,7 +90,7 @@
       "description": "A deep dive into browser fingerprinting and leak detection across audio, canvas, font, and ClientRects techniques, plus bot, ad blocker, and geolocation leak signals.",
       "url": "https://intelreap.com/intelligence/fingerprinting",
       "datePublished": "2026-06-25",
-      "dateModified": "2026-11-05",
+      "dateModified": "2026-11-14",
       "author": {
         "@id": "https://intelreap.com/#organization"
       },
@@ -214,7 +214,7 @@
         <p class="ndic-deepdive-intro">
           51 live signals — audio, canvas, and font fingerprinting, bot detection, and leak checks — run the moment this page loads.
         </p>
-        <div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 5 November 2026</div>
+        <div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 14 November 2026</div>
       </div>
 
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-13">
@@ -269,12 +269,6 @@
               <div class="ndic-param-row"><span class="ndic-param-label">IPv6 Leak Detected</span><span class="ndic-param-value" id="c13-ipv6-leak">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">IPv6 Detection Source</span><span class="ndic-param-value" id="c13-ipv6-source">—</span></div>
 
-              <div class="ndic-params-section-header">Geolocation</div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Geolocation Permission</span><span class="ndic-param-value" id="c13-geo-permission">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">GPS Latitude</span><span class="ndic-param-value" id="c13-geo-latitude">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">GPS Longitude</span><span class="ndic-param-value" id="c13-geo-longitude">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">GPS Accuracy Radius</span><span class="ndic-param-value" id="c13-geo-accuracy">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">GPS vs IP Location Match</span><span class="ndic-param-value" id="c13-geo-ip-match">—</span></div>
 
               <div class="ndic-params-section-header">Environment Signals</div>
               <div class="ndic-param-row"><span class="ndic-param-label">Media Queries Tested</span><span class="ndic-param-value" id="c13-media-queries-tested">—</span></div>
@@ -391,25 +385,6 @@
 
         </div>
 
-        <div class="ndic-explain-group">
-          <h3 class="ndic-explain-group-title">Geolocation</h3>
-
-          <div class="ndic-explain-item">
-            <h4>Geolocation Permission</h4>
-            <p>This page never asks your browser for a fresh location permission prompt of its own. It only reads real GPS coordinates if you'd already granted location access to this site previously, somewhere else. If the permission state is "prompt" or "unsupported," that's simply reported as-is — we'd rather show an honest gap than push for a permission grant that isn't already there.</p>
-          </div>
-
-          <div class="ndic-explain-item">
-            <h4>GPS Latitude, Longitude &amp; Accuracy Radius</h4>
-            <p>When available, this is your device's actual GPS-reported position, accurate to within the radius shown — typically a few meters on a phone with a clear sky view, much wider indoors or on a laptop with no GPS hardware at all, where it falls back to Wi-Fi or IP-based estimation.</p>
-          </div>
-
-          <div class="ndic-explain-item">
-            <h4>GPS vs IP Location Match</h4>
-            <p>Your IP address resolves to a location based on your ISP's registered infrastructure, which can be a city or more away from where you actually are. Comparing that against your real GPS position, when both are available, is one of the more reliable ways to catch a VPN or proxy in use — a large mismatch between the two is a meaningful signal that your apparent network location isn't your real one.</p>
-          </div>
-
-        </div>
 
         <div class="ndic-explain-group">
           <h3 class="ndic-explain-group-title">Environment Signals</h3>

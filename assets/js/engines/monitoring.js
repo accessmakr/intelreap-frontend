@@ -266,9 +266,9 @@ const MonitoringEngine = (() => {
   }
 
   // ───────────────────────────────────────
-  // IP REFRESH CYCLE
-  // Checks for IP changes every 5 minutes
-  // Detects VPN toggles in near-real-time
+  // IP REFRESH CYCLE (NOT STARTED)
+  // Polling every 5 minutes was removed to save
+  // backend requests. One lookup per page load.
   // ───────────────────────────────────────
 
   const startIPRefreshCycle = () => {
@@ -643,16 +643,6 @@ const MonitoringEngine = (() => {
 
     // Start countdown timer
     startCountdownTimer()
-
-    // Start IP refresh cycle
-    startIPRefreshCycle()
-
-    // Schedule backend health check
-    // every 2 minutes
-    setInterval(
-      checkBackendHealth,
-      120000
-    )
 
     isInitialized = true
 

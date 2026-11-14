@@ -691,15 +691,15 @@ function yn(v){return v===true?'Yes':v===false?'No':'-'}
 function get(u,ms){var c=new AbortController(),t=setTimeout(function(){c.abort()},ms);return fetch(u,{cache:'no-store',signal:c.signal}).then(function(r){clearTimeout(t);if(!r.ok)throw 0;return r.json()},function(x){clearTimeout(t);throw x})}
 function num(v){return v===null||v===undefined||v===''?NaN:Number(v)}
 function lc(s){return String(s||'').trim().toLowerCase()}
-function useOther(d,a){return !!a&&d.ipVersion==='IPv6'&&a.ipVersion==='IPv4'&&!!a.city&&isFinite(num(a.latitude))&&isFinite(num(a.longitude))&&!!d.countryCode&&d.countryCode===a.countryCode&&lc(d.city)!==lc(a.city)}
+function place(x){var p=[x.city,x.region&&x.region!==x.city?x.region:null,x.country].filter(Boolean);return p.join(', ')}
+function v4first(d,a){return !!a&&d.ipVersion==='IPv6'&&a.ipVersion==='IPv4'&&!!a.city&&isFinite(num(a.latitude))&&isFinite(num(a.longitude))}
 function row(k,v){return '<div class=\"ir-tool-row\"><dt>'+k+'</dt><dd>'+e(v)+'</dd></div>'}
-function show(d,a){var sw=useOther(d,a),loc=sw?a:d,h='';
-F.forEach(function(f){var s=(f[0]==='country'||f[0]==='region'||f[0]==='city')?loc:d;h+=row(f[1],s[f[0]]||'-')});
+function show(d,a){var f4=v4first(d,a),h='';
+F.forEach(function(f){var k=f[0],s=d;if(f4&&(k==='ip'||k==='ipVersion'||k==='country'||k==='region'||k==='city'))s=a;h+=row(f[1],s[k]||'-')});
 h+=row('Proxy flag',yn(d.proxy))+row('Hosting flag',yn(d.hosting));
-if(a){h+=row('Other address',a.ip+' ('+a.ipVersion+')')}
-if(sw){h+=row('Location based on','IPv4 ('+a.ip+')')}
+if(f4){h+=row('Other address',d.ip+' (IPv6) · '+(place(d)||'-'))}else if(a){h+=row('Other address',a.ip+' ('+a.ipVersion+')')}
 o.innerHTML='<dl>'+h+'</dl>';
-n.textContent=sw?NOTE+' Your IPv4 and IPv6 addresses are placed in different cities, so the IPv4 location is shown.':NOTE}
+n.textContent=(f4&&lc(d.city)!==lc(a.city))?NOTE+' Your IPv4 and IPv6 addresses are placed in different cities, so the IPv4 address and location are shown first.':NOTE}
 function other(d){var v6=String(d.ip).indexOf(':')>-1;
 return get(v6?'https://api.ipify.org?format=json':'https://api6.ipify.org?format=json',4000).then(function(j){var ip=j&&j.ip;if(typeof ip!=='string'||ip===d.ip||(ip.indexOf(':')>-1)===v6||!/^[0-9a-fA-F:.]+$/.test(ip))return null;
 return get(NDIC_CONFIG.BACKEND_URL+NDIC_CONFIG.ENDPOINTS.ipIdentity+'?ip='+encodeURIComponent(ip),10000).then(function(j2){var a=j2&&j2.success&&j2.data;return a&&a.ip===ip?a:null})}).catch(function(){return null})}

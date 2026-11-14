@@ -12,18 +12,21 @@ const Canvas2 = (() => {
 
     // ─── PARAMETERS ───────────────────────
 
+    // With both addresses available, IPv4 is shown first
+    const v4First = i.locationBasis === 'IPv4'
     setText('c2-public-ip',
-      i.ip || '—'
+      v4First ? i.locationBasisIp : (i.ip || '—')
     )
 
     // IP version with color badge
     const ipVersionEl = el('c2-ip-version')
     if (ipVersionEl) {
+      const shownVersion = v4First ? 'IPv4' : i.ipVersion
       ipVersionEl.textContent =
-        i.ipVersion || '—'
+        shownVersion || '—'
       ipVersionEl.setAttribute(
         'data-version',
-        (i.ipVersion || '').toLowerCase()
+        (shownVersion || '').toLowerCase()
       )
     }
 
@@ -106,12 +109,15 @@ const Canvas2 = (() => {
     const kmText = (km) => km
       ? 'approximate, within about ' + km + ' km'
       : 'approximate'
-    const swapped = i.locationBasis === 'IPv4'
-    if (alt && alt.ip) {
+    const swapped = v4First
+    if (swapped) {
+      // IPv4 is the main address above; the IPv6 one is listed here
       showRow('c2-alt-row', true)
-      // When the IPv4 location is the main one it is already
-      // shown above, so this row would only repeat it
-      showRow('c2-alt-loc-row', !swapped)
+      showRow('c2-alt-loc-row', false)
+      setText('c2-alt-ip', i.ip + ' (IPv6)')
+    } else if (alt && alt.ip) {
+      showRow('c2-alt-row', true)
+      showRow('c2-alt-loc-row', true)
       setText('c2-alt-ip', alt.ip + ' (' + alt.ipVersion + ')')
       const place = [
         alt.city,
@@ -124,20 +130,21 @@ const Canvas2 = (() => {
       showRow('c2-alt-row', false)
       showRow('c2-alt-loc-row', false)
     }
-    showRow('c2-loc-basis-row', swapped)
     showRow('c2-v6-loc-row', swapped && !!i.v6Location)
     if (swapped) {
-      setText('c2-loc-basis',
-        'IPv4 (' + i.locationBasisIp + ')')
       const v6 = i.v6Location || {}
       const v6place = [
         v6.city,
         v6.region && v6.region !== v6.city ? v6.region : null,
         v6.country
       ].filter(Boolean).join(', ')
+      const norm = (c) => String(c || '').trim().toLowerCase()
+      const sameCity = norm(v6.city) === norm(i.city)
       setText('c2-v6-loc',
         (v6place || '—') +
-        ' · differs from the IPv4 location, treat as approximate')
+        (sameCity
+          ? ''
+          : ' · differs from the IPv4 location, treat as approximate'))
     }
     if (i.accuracyRadiusKm) {
       showRow('c2-accuracy-row', true)

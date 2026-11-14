@@ -3,7 +3,7 @@
  "pages": {
   "about.html": {
    "kind": "page",
-   "modified": "2026-11-12",
+   "modified": "2026-11-14",
    "published": "2026-06-17"
   },
   "contact.html": {
@@ -38,7 +38,7 @@
   },
   "index.html": {
    "kind": "home",
-   "modified": "2026-11-05"
+   "modified": "2026-11-14"
   },
   "intelligence/capability.html": {
    "kind": "panel",
@@ -52,7 +52,7 @@
   },
   "intelligence/fingerprinting.html": {
    "kind": "panel",
-   "modified": "2026-11-05",
+   "modified": "2026-11-14",
    "published": "2026-06-25"
   },
   "intelligence/graphics.html": {
@@ -192,7 +192,7 @@
   },
   "privacy-policy.html": {
    "kind": "legal",
-   "modified": "2026-11-12",
+   "modified": "2026-11-14",
    "published": "2026-04-02"
   },
   "terms-of-use.html": {

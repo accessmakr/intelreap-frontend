@@ -94,12 +94,10 @@ const IPEngine = (() => {
   // Best effort: silent on any failure.
   // ───────────────────────────────────────
 
-  // When the device has both an IPv6 and an IPv4 address and
-  // a database places them in different cities of the SAME
-  // country, the IPv4 location becomes the main one (IPv4
-  // location data is the more mature of the two). Different
-  // countries are never merged: that difference is a real
-  // signal and is shown as it is.
+  // When the device has both an IPv6 and an IPv4 address, IPv4
+  // is shown first: its address and its location become the main
+  // ones, and the IPv6 address is listed as the other address.
+  // Needs a usable IPv4 lookup (a city and coordinates).
   const normCity = (c) =>
     String(c || '').trim().toLowerCase()
 
@@ -112,13 +110,10 @@ const IPEngine = (() => {
       v === null || v === undefined || v === ''
         ? NaN
         : Number(v)
-    if (
-      !Number.isFinite(num(alt.latitude)) ||
-      !Number.isFinite(num(alt.longitude))
-    ) return false
-    if (!primary.countryCode || !alt.countryCode) return false
-    if (primary.countryCode !== alt.countryCode) return false
-    return normCity(primary.city) !== normCity(alt.city)
+    return (
+      Number.isFinite(num(alt.latitude)) &&
+      Number.isFinite(num(alt.longitude))
+    )
   }
 
   const useAltLocationIfBetter = (alt) => {
