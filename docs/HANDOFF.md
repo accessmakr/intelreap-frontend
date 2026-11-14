@@ -1,4 +1,4 @@
-# Handoff (2026-11-04)
+# Handoff (2026-11-13)
 
 ## Access (no secrets stored here)
 - Frontend repo: https://github.com/accessmakr/intelreap-frontend (branch `main` = production via Netlify).
@@ -6,10 +6,36 @@
 - The owner supplies a GitHub personal access token in chat. Clone with `https://x-access-token:<TOKEN>@github.com/accessmakr/<repo>.git`, then reset the remote URL. Never commit the token. Owner asked for no revoke advice.
 - Sandbox: network allows github.com and npm/pypi; `pip install playwright` browsers are present; `npm i wrangler` works. Commit identity: `Claude (sandbox)`.
 
+## AdSense review: rules until approval (requested 2026-11-12)
+intelreap.com was submitted to Google AdSense on 2026-11-12. Review can take a few days to 4 weeks. Until AdSense approves the site, keep the live site stable and follow these rules. If anything here conflicts with another instruction, stop and ask the owner before acting.
+
+**Do not, until approval**
+1. Re-add any affiliate or sponsored wording or links anywhere (HTML, JS, comments, schema, `llms.txt`). The site uses no affiliate or sponsored links. This was removed on purpose from about, contact, privacy, terms, `js/ad-slots.js` and `js/carousel-system.js`. A strict check finds nothing today; when writing about a technique that mentions affiliate sites, reword it.
+2. Remove or change `/ads.txt`. It must contain only: `google.com, pub-2731774500195310, DIRECT, f08c47fec0942fa0`.
+3. Remove the `<meta name="google-adsense-account" content="ca-pub-2731774500195310">` tag from `index.html`.
+4. Add `noindex`, `nofollow` or any crawler block to real content pages, or block Google's crawlers in `robots.txt` (it currently allows all).
+5. Remove or break `404.html`, `410.html` or `pinterest-917fa.html`. The Pinterest file holds only the verification meta tag and must keep it.
+6. Add AdSense code, ad units or ad scripts. That is done after approval.
+7. Make big structural changes: moving or renaming pages, deleting articles, changing URLs.
+
+**Article and panel fixes can continue** (`docs/QUALITY-QUEUE.md`). Push only finished versions of a page, never half-edited ones, because AdSense crawlers may visit at any time.
+
+**Dates** (see Gotchas for the mechanics)
+- A real content change (new sections, corrected facts, rewritten text, changed sources) sets that page's `modified` to today in `docs/data/page-dates.json`, then `apply_dates.py`, then `verify_dates.py` must print 0 problems before every push.
+- Cosmetic or site-wide changes never move a date: styling, JS, header, footer, and site-wide navigation such as the 'You Can Also Read' blocks. Only a change to the article's own text, facts or sources moves its date, to the real day of the push.
+- Use the real clock. Never type dates by hand into pages. A NEW page must be added to `docs/data/page-dates.json` (and `docs/data/related-pages.json` if it is an article or guide).
+
+**Pushing**
+- A bot commits `sitemap.xml` and `pages.json` to `main` after each push. Always fetch and rebase `origin/main` before pushing so no one's work is overwritten.
+- Never commit tokens or secrets. Use the owner's token only inline for the push; the remote URL stays plain.
+- Keep commits small and focused, ideally one page per commit, with tooling changes in their own commits.
+
+**After every push, confirm on the live site** (allow a minute for Netlify): `https://intelreap.com/ads.txt` still shows the single AdSense line; `https://intelreap.com/` opens and still contains the `google-adsense-account` tag; the pages you changed render correctly (no broken layout, no missing content).
+
 ## Done so far
 - Planning: keyword maps (`docs/keyword-map-v2.md`), GSC findings, Semrush site audit, mixed-intent audit, quality queue (54 items), blueprint, decisions.
 - Tooling: `scripts/content/*` (see BLUEPRINT).
-- Pages built: P1 `what-is-an-ip-address`, P13 `find-printer-ip-address`, P14 `find-router-ip-address`, D1 `how-to-fix-slow-dns-lookup`.
+- Pages built or redone to standard: P1 `what-is-an-ip-address`, P13 `find-printer-ip-address`, P14 `find-router-ip-address`, D1 `how-to-fix-slow-dns-lookup`, A1 hub guide `how-to-find-ip-address-of-any-device`. 'You Can Also Read' on all 17 articles and guides. Single source files: `docs/data/page-dates.json` (dates) and `docs/data/related-pages.json` (related reading).
 - Redone to the standard: D1 (logic corrected, DoH check, per-device DNS steps) and P14 (4 purpose-built diagrams).
 - Technical fixes: 5 broken citations fixed or removed, 2 Apple citations removed, two-ISPs title de-duplicated, homepage SoftwareApplication schema removed, `llms.txt` added, mobile phone diagrams, FAQ moved up and real dates stamped on all 17 content pages.
 
