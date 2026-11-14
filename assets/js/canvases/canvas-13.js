@@ -391,6 +391,36 @@ const Canvas13 = (() => {
       caption.textContent = gpsOk
         ? 'Blue pin: your GPS position. The dashed line shows how far it is from the location your IP address suggests.'
         : 'Showing the approximate location your IP address suggests.'
+
+      // Tap-only GPS comparison: the browser asks for permission
+      // only after this button is pressed, never on page load
+      const canAsk =
+        !gpsOk &&
+        fp.geoPermission !== 'denied' &&
+        fp.geoPermission !== 'unsupported' &&
+        typeof navigator !== 'undefined' &&
+        !!navigator.geolocation
+      if (canAsk) {
+        caption.textContent =
+          'Showing the approximate location your IP address suggests. Tap “Compare with my GPS” to see how far it is from your real position.'
+      }
+      let gpsBtn = document.getElementById('c13-gps-btn')
+      if (canAsk && !gpsBtn) {
+        gpsBtn = document.createElement('button')
+        gpsBtn.type = 'button'
+        gpsBtn.id = 'c13-gps-btn'
+        gpsBtn.className = 'ndic-btn-secondary'
+        gpsBtn.textContent = 'Compare with my GPS'
+        gpsBtn.addEventListener('click', () => {
+          gpsBtn.disabled = true
+          FingerprintEngine.requestGeolocation()
+            .then(() => Canvas13.render())
+            .catch(() => {})
+            .finally(() => { gpsBtn.disabled = false })
+        })
+        caption.parentNode.insertBefore(gpsBtn, caption.nextSibling)
+      }
+      if (gpsBtn) gpsBtn.style.display = canAsk ? '' : 'none'
     }
 
     // ─── DEEP DIVE LINK ─────────────────────
