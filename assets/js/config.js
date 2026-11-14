@@ -17,7 +17,9 @@ const NDIC_CONFIG = {
 
   // Scan intervals in milliseconds
   INTERVALS: {
-    networkTick:        300000, // 5 minutes
+    networkTick:        300000, // 5 minutes (after the fast window)
+    networkTickFast:    10000,  // 10 seconds, early in a visit
+    networkFastWindow:  240000, // the first 4 minutes on the page
     uiRefresh:          5000,   // 5 seconds
     aiSummaryRefresh:   60000,  // 60 seconds
     uptimeCounter:      1000,   // 1 second
