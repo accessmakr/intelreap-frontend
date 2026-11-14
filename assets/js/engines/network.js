@@ -233,11 +233,14 @@ const NetworkEngine = (() => {
 
   // ───────────────────────────────────────
   // NETWORK TICK
-  // Runs every 3 seconds
+  // Runs every 5 minutes (NDIC_CONFIG.INTERVALS.networkTick)
   // Updates all live network metrics
   // ───────────────────────────────────────
 
+  let lastTickAt = 0
+
   const tick = async () => {
+    lastTickAt = Date.now()
     const connData = readConnectionAPI()
 
     // Measure current RTT
@@ -441,8 +444,14 @@ const NetworkEngine = (() => {
           if (!tickInterval) {
             startMonitoring()
           }
-          // Immediate tick on resume
-          tick()
+          // Measure on resume only if a full interval has
+          // passed, so switching tabs never causes request bursts
+          if (
+            Date.now() - lastTickAt >=
+            NDIC_CONFIG.INTERVALS.networkTick
+          ) {
+            tick()
+          }
         }
       }
     )
