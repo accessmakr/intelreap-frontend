@@ -480,7 +480,7 @@
         <h2>What each panel measures and where the data comes from</h2>
         <div class="privacy-steps">
           <div class="privacy-step"><span class="privacy-step-num">01</span><span class="privacy-step-text"><strong>Network Route.</strong> Who owns the network you reach the internet through, its size tier and the registry that allocated its addresses. <em>Source: MaxMind GeoLite ASN data, plus public network-type lists (ipverse as-metadata, public domain).</em></span></div>
-          <div class="privacy-step"><span class="privacy-step-num">02</span><span class="privacy-step-text"><strong>Network Identity.</strong> Your public IP address (IPv4 and IPv6 when your device has both), provider and an approximate location. <em>Source: MaxMind GeoLite City data; Cloudflare request details only where that data has no record; OpenStreetMap map tiles.</em></span></div>
+          <div class="privacy-step"><span class="privacy-step-num">02</span><span class="privacy-step-text"><strong>Network Identity.</strong> Your public IP address (IPv4 and IPv6 when your device has both), provider and an approximate location. <em>Source: MaxMind GeoLite City data; request details from our backend host only where that data has no record; OpenStreetMap map tiles.</em></span></div>
           <div class="privacy-step"><span class="privacy-step-num">03</span><span class="privacy-step-text"><strong>VPN and Proxy.</strong> Signals that suggest a VPN, proxy or Tor: the network type, time zone and language against the IP location, and the WebRTC address. <em>Source: Rule-based checks written for IntelReap. This is an estimate, not a verdict.</em></span></div>
           <div class="privacy-step"><span class="privacy-step-num">04</span><span class="privacy-step-text"><strong>Live Network.</strong> Round-trip time to our server, connection type and stability over time. <em>Source: Timing requests made by your browser and the browser Network Information API.</em></span></div>
           <div class="privacy-step"><span class="privacy-step-num">05</span><span class="privacy-step-text"><strong>Device.</strong> Operating system, browser, processor cores, memory and screen. <em>Source: Standard browser APIs read on your device.</em></span></div>
@@ -544,7 +544,7 @@
           <li>This product includes GeoLite Data created by MaxMind, available from <a href="https://www.maxmind.com" rel="noopener" style="color:var(--color-accent-primary);">https://www.maxmind.com</a>.</li>
           <li>Map data: <a href="https://www.openstreetmap.org/copyright" rel="noopener" style="color:var(--color-accent-primary);">OpenStreetMap contributors</a>.</li>
           <li>Network type lists: ipverse <a href="https://github.com/ipverse/as-metadata" rel="noopener" style="color:var(--color-accent-primary);">as-metadata</a> (public domain).</li>
-          <li>Address detection: ipify. Hosting and request details: Cloudflare.</li>
+          <li>Address detection: public IP detection services. Hosting and request details: our backend host.</li>
           <li>Charts and maps: Chart.js, D3 and Leaflet (open source).</li>
         </ul>
         <p>See also the <a href="/privacy-policy" style="color:var(--color-accent-primary);">Privacy Policy</a> and the <a href="/about" style="color:var(--color-accent-primary);">About page</a>.</p>
