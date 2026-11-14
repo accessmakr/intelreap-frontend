@@ -503,6 +503,85 @@ const FingerprintEngine = (() => {
   }
 
   // ───────────────────────────────────────
+  // 10. GEOLOCATION GPS
+  // Never asks the browser for permission (no prompt, no
+  // button). It reports the permission state and reads the
+  // position only if access was already granted; otherwise
+  // the map shows the IP-based location only.
+  // ───────────────────────────────────────
+
+  const collectGeolocation = () => {
+    return new Promise(resolve => {
+      if (!navigator.geolocation) {
+        resolve({ geoPermission: 'unsupported' })
+        return
+      }
+
+      if (!navigator.permissions?.query) {
+        // Can't check state without prompting,
+        // so we decline to probe at all
+        resolve({ geoPermission: 'unknown' })
+        return
+      }
+
+      navigator.permissions
+        .query({ name: 'geolocation' })
+        .then(status => {
+          // Never ask: report the state as it is, and read the
+          // position only when access was already granted
+          if (status.state !== 'granted') {
+            resolve({ geoPermission: status.state })
+            return
+          }
+
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              const identity = STATE.identity
+              const ipLat = identity.latitude
+              const ipLng = identity.longitude
+
+              let geoIpMatch = null
+              if (ipLat !== null && ipLng !== null) {
+                // Roughly compare GPS vs IP location —
+                // ~1 degree is a generous threshold
+                // since IP geolocation is city-level
+                // at best, not GPS-precise
+                const latDiff = Math.abs(
+                  pos.coords.latitude - ipLat
+                )
+                const lngDiff = Math.abs(
+                  pos.coords.longitude - ipLng
+                )
+                geoIpMatch = (
+                  latDiff < 1 && lngDiff < 1
+                )
+              }
+
+              resolve({
+                geoPermission: 'granted',
+                geoLatitude: pos.coords.latitude,
+                geoLongitude: pos.coords.longitude,
+                geoAccuracy: pos.coords.accuracy,
+                geoIpMatch
+              })
+            },
+            (err) => {
+              resolve({
+                geoPermission:
+                  err && err.code === 1 ? 'denied' : status.state,
+                geoLatitude: null
+              })
+            },
+            { timeout: 15000, maximumAge: 60000 }
+          )
+        })
+        .catch(() => {
+          resolve({ geoPermission: 'unknown' })
+        })
+    })
+  }
+
+  // ───────────────────────────────────────
   // 11. CSS MEDIA QUERY DETECTION
   // Pure JS via matchMedia — no stylesheet
   // needed. Probes a fixed list of media
@@ -869,6 +948,7 @@ const FingerprintEngine = (() => {
       collectAdBlockerDetection(),
       collectHttpHeaders(),
       collectIPv6Check(),
+      collectGeolocation(),
       Promise.resolve(collectMediaQueryFingerprint()),
       collectExtensionFingerprint(),
       collectSpeechFingerprint(),
