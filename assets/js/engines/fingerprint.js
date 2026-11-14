@@ -504,12 +504,60 @@ const FingerprintEngine = (() => {
 
   // ───────────────────────────────────────
   // 10. GEOLOCATION GPS
-  // Asks the browser for the position. If permission
-  // is undecided the browser shows its own prompt (a
-  // website cannot grant itself access). If it is
-  // denied, nothing is requested and the map falls
-  // back to the IP-based location.
+  // Never asks on page load. On load it only reports the
+  // permission state and reads the position if access was
+  // ALREADY granted (no prompt appears). A visitor who wants
+  // the GPS comparison taps the "Compare with my GPS" button
+  // on the Fingerprinting panel, which calls
+  // requestGeolocation(); only then does the browser ask.
   // ───────────────────────────────────────
+
+  const readPosition = (permState) => {
+    return new Promise(resolve => {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const identity = STATE.identity
+          const ipLat = identity.latitude
+          const ipLng = identity.longitude
+
+          let geoIpMatch = null
+          if (ipLat !== null && ipLng !== null) {
+            // Roughly compare GPS vs IP location —
+            // ~1 degree is a generous threshold
+            // since IP geolocation is city-level
+            // at best, not GPS-precise
+            const latDiff = Math.abs(
+              pos.coords.latitude - ipLat
+            )
+            const lngDiff = Math.abs(
+              pos.coords.longitude - ipLng
+            )
+            geoIpMatch = (
+              latDiff < 1 && lngDiff < 1
+            )
+          }
+
+          resolve({
+            geoPermission: 'granted',
+            geoLatitude: pos.coords.latitude,
+            geoLongitude: pos.coords.longitude,
+            geoAccuracy: pos.coords.accuracy,
+            geoIpMatch
+          })
+        },
+        (err) => {
+          resolve({
+            geoPermission:
+              err && err.code === 1
+                ? 'denied'
+                : (permState || 'unknown'),
+            geoLatitude: null
+          })
+        },
+        { timeout: 15000, maximumAge: 60000 }
+      )
+    })
+  }
 
   const collectGeolocation = () => {
     return new Promise(resolve => {
@@ -519,8 +567,6 @@ const FingerprintEngine = (() => {
       }
 
       if (!navigator.permissions?.query) {
-        // Can't check state without prompting,
-        // so we decline to probe at all
         resolve({ geoPermission: 'unknown' })
         return
       }
@@ -528,56 +574,26 @@ const FingerprintEngine = (() => {
       navigator.permissions
         .query({ name: 'geolocation' })
         .then(status => {
-          if (status.state === 'denied') {
-            resolve({ geoPermission: 'denied' })
+          // Never ask: report the state as it is, and read the
+          // position only when access was already granted
+          if (status.state !== 'granted') {
+            resolve({ geoPermission: status.state })
             return
           }
-
-          navigator.geolocation.getCurrentPosition(
-            (pos) => {
-              const identity = STATE.identity
-              const ipLat = identity.latitude
-              const ipLng = identity.longitude
-
-              let geoIpMatch = null
-              if (ipLat !== null && ipLng !== null) {
-                // Roughly compare GPS vs IP location —
-                // ~1 degree is a generous threshold
-                // since IP geolocation is city-level
-                // at best, not GPS-precise
-                const latDiff = Math.abs(
-                  pos.coords.latitude - ipLat
-                )
-                const lngDiff = Math.abs(
-                  pos.coords.longitude - ipLng
-                )
-                geoIpMatch = (
-                  latDiff < 1 && lngDiff < 1
-                )
-              }
-
-              resolve({
-                geoPermission: 'granted',
-                geoLatitude: pos.coords.latitude,
-                geoLongitude: pos.coords.longitude,
-                geoAccuracy: pos.coords.accuracy,
-                geoIpMatch
-              })
-            },
-            (err) => {
-              resolve({
-                geoPermission:
-                  err && err.code === 1 ? 'denied' : status.state,
-                geoLatitude: null
-              })
-            },
-            { timeout: 15000, maximumAge: 60000 }
-          )
+          readPosition('granted').then(resolve)
         })
         .catch(() => {
           resolve({ geoPermission: 'unknown' })
         })
     })
+  }
+
+  // Called only when the visitor taps the button
+  const requestGeolocation = async () => {
+    if (!navigator.geolocation) return null
+    const result = await readPosition('prompt')
+    updateFingerprinting(result)
+    return result
   }
 
   // ───────────────────────────────────────
@@ -978,6 +994,7 @@ const FingerprintEngine = (() => {
 
   return {
     collect,
+    requestGeolocation,
     sha256Hex,
     collectAudioFingerprint,
     collectCanvasFingerprint,

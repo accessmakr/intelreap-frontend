@@ -18,7 +18,7 @@
     "10": "What you are looking at: browser speed measures called Core Web Vitals (LCP, FCP, CLS, INP, TTFB, FID). Coloured bars are your measured values and grey bars are the recommended targets; shorter than the grey bar is good. The four dials score JavaScript, page updates, canvas drawing and memory access; a fuller arc is better.",
     "11": "What you are looking at: your overall score. The large doughnut is the combined score. In the rings, each ring is one of nine areas (network, identity, privacy, device, graphics, security, capability, performance, speed), and a fuller ring means a higher score. The nine small dials show the same scores one by one.",
     "12": "What you are looking at: a log of everything the scan did, newest first. Each line is one event with the time, a category (such as SYSTEM, SCORE or AI) and a short message. The table counts events, warnings and errors and shows whether the backend is healthy.",
-    "13": "What you are looking at: where your IP address places you on a map. If you allow location access, a second pin shows your GPS position and a dashed line shows the distance between them. The bar and the table list the fingerprint signals that websites could use to recognise your device."
+    "13": "What you are looking at: where your IP address places you on a map. If you tap “Compare with my GPS” and allow location access, a second pin shows your GPS position and a dashed line shows the distance between them. The bar and the table list the fingerprint signals that websites could use to recognise your device."
 }
 
   var add = function () {

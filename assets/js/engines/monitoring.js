@@ -267,14 +267,16 @@ const MonitoringEngine = (() => {
 
   // ───────────────────────────────────────
   // IP REFRESH CYCLE
-  // Checks for IP changes every 5 minutes
-  // Detects VPN toggles in near-real-time
+  // Re-checks the IP every 10 minutes while the page is
+  // open and VISIBLE (a background tab makes no requests).
+  // Detects VPN toggles and network switches.
   // ───────────────────────────────────────
 
   const startIPRefreshCycle = () => {
-    // 5 minute interval
+    // 10 minute interval
     ipRefreshInterval = setInterval(
       async () => {
+        if (document.hidden) return
         if (!STATE.meta.isOnline) return
 
         logAPI(
@@ -291,7 +293,7 @@ const MonitoringEngine = (() => {
           )
         }
       },
-      300000 // 5 minutes
+      600000 // 10 minutes
     )
   }
 
@@ -644,15 +646,15 @@ const MonitoringEngine = (() => {
     // Start countdown timer
     startCountdownTimer()
 
-    // Start IP refresh cycle
+    // Start IP refresh cycle (every 10 minutes, visible tab only)
     startIPRefreshCycle()
 
-    // Schedule backend health check
-    // every 2 minutes
-    setInterval(
-      checkBackendHealth,
-      120000
-    )
+    // Backend health check every 10 minutes, visible tab only
+    // (one check also runs at startup)
+    setInterval(() => {
+      if (document.hidden) return
+      checkBackendHealth()
+    }, 600000)
 
     isInitialized = true
 

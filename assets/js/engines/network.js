@@ -60,11 +60,13 @@ const NetworkEngine = (() => {
   // ───────────────────────────────────────
 
   const measureRTT = async () => {
+    // Free public endpoints first, so latency readings do not use
+    // the backend's request allowance; the backend is the last resort
     const endpoints = [
-      NDIC_CONFIG.BACKEND_URL +
-        NDIC_CONFIG.ENDPOINTS.health,
       'https://www.cloudflare.com/cdn-cgi/trace',
-      'https://api.ipify.org?format=json'
+      'https://api.ipify.org?format=json',
+      NDIC_CONFIG.BACKEND_URL +
+        NDIC_CONFIG.ENDPOINTS.health
     ]
 
     for (const endpoint of endpoints) {
@@ -233,11 +235,15 @@ const NetworkEngine = (() => {
 
   // ───────────────────────────────────────
   // NETWORK TICK
-  // Runs every 3 seconds
+  // Runs every 3 s for the first 3 minutes (60 readings fill the chart), then every 10 minutes
   // Updates all live network metrics
   // ───────────────────────────────────────
 
+  let lastTickAt = 0
+  let monitoringStartedAt = 0
+
   const tick = async () => {
+    lastTickAt = Date.now()
     const connData = readConnectionAPI()
 
     // Measure current RTT
@@ -433,7 +439,7 @@ const NetworkEngine = (() => {
         ) {
           // Pause network tick to save resources
           if (tickInterval) {
-            clearInterval(tickInterval)
+            clearTimeout(tickInterval)
             tickInterval = null
           }
         } else {
@@ -441,8 +447,13 @@ const NetworkEngine = (() => {
           if (!tickInterval) {
             startMonitoring()
           }
-          // Immediate tick on resume
-          tick()
+          // Measure on resume only if a full interval has
+          // passed, so switching tabs never causes request bursts
+          if (
+            Date.now() - lastTickAt >= nextTickDelay()
+          ) {
+            tick()
+          }
         }
       }
     )
@@ -452,15 +463,33 @@ const NetworkEngine = (() => {
   // START MONITORING
   // ───────────────────────────────────────
 
+  // Readings come every 10 seconds during the first 4 minutes on
+  // the page, so the panel fills with real data, then every 5 minutes
+  const nextTickDelay = () => {
+    const I = NDIC_CONFIG.INTERVALS
+    return (Date.now() - monitoringStartedAt) < I.networkFastWindow
+      ? I.networkTickFast
+      : I.networkTick
+  }
+
+  const scheduleTick = () => {
+    const id = setTimeout(async () => {
+      try {
+        await tick()
+      } catch (e) {
+        // a failed reading must not stop the schedule
+      }
+      if (tickInterval === id && isMonitoring) scheduleTick()
+    }, nextTickDelay())
+    tickInterval = id
+  }
+
   const startMonitoring = () => {
     if (tickInterval) return
 
-    tickInterval = setInterval(
-      tick,
-      NDIC_CONFIG.INTERVALS.networkTick
-    )
-
+    if (!monitoringStartedAt) monitoringStartedAt = Date.now()
     isMonitoring = true
+    scheduleTick()
 
     logNetwork(
       'INFO',
@@ -474,7 +503,7 @@ const NetworkEngine = (() => {
 
   const stopMonitoring = () => {
     if (tickInterval) {
-      clearInterval(tickInterval)
+      clearTimeout(tickInterval)
       tickInterval = null
     }
     if (uptimeInterval) {
