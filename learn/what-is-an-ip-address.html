@@ -685,13 +685,26 @@
 <script>
 (function(){var b=document.getElementById('ir-tool-run'),o=document.getElementById('ir-tool-out'),n=document.getElementById('ir-tool-note');if(!b||typeof NDIC_CONFIG==='undefined')return;
 var F=[['ip','Public IP'],['ipVersion','IP version'],['isp','ISP'],['org','Organization'],['country','Country'],['region','Region'],['city','City'],['connectionType','Connection type']];
-function e(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+var NOTE='Location is an estimate from the IP address, not GPS. Nothing from this check is stored by IntelReap.';
+function e(s){return String(s).replace(/[&<>\"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]})}
 function yn(v){return v===true?'Yes':v===false?'No':'-'}
-function run(){n.textContent='Checking...';b.disabled=true;var c=new AbortController(),t=setTimeout(function(){c.abort()},10000);
-fetch(NDIC_CONFIG.BACKEND_URL+NDIC_CONFIG.ENDPOINTS.ipIdentity,{signal:c.signal}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){if(!j||!j.success||!j.data)throw 0;var d=j.data,h='';
-F.forEach(function(f){h+='<div class="ir-tool-row"><dt>'+f[1]+'</dt><dd>'+e(d[f[0]]||'-')+'</dd></div>'});
-h+='<div class="ir-tool-row"><dt>Proxy flag</dt><dd>'+yn(d.proxy)+'</dd></div><div class="ir-tool-row"><dt>Hosting flag</dt><dd>'+yn(d.hosting)+'</dd></div>';
-o.innerHTML='<dl>'+h+'</dl>';n.textContent='Location is an estimate from the IP address, not GPS. Nothing from this check is stored by IntelReap.'}).catch(function(){n.textContent='Tap to refresh.'}).then(function(){clearTimeout(t);b.disabled=false;b.textContent='Refresh'})}
+function get(u,ms){var c=new AbortController(),t=setTimeout(function(){c.abort()},ms);return fetch(u,{cache:'no-store',signal:c.signal}).then(function(r){clearTimeout(t);if(!r.ok)throw 0;return r.json()},function(x){clearTimeout(t);throw x})}
+function num(v){return v===null||v===undefined||v===''?NaN:Number(v)}
+function lc(s){return String(s||'').trim().toLowerCase()}
+function useOther(d,a){return !!a&&d.ipVersion==='IPv6'&&a.ipVersion==='IPv4'&&!!a.city&&isFinite(num(a.latitude))&&isFinite(num(a.longitude))&&!!d.countryCode&&d.countryCode===a.countryCode&&lc(d.city)!==lc(a.city)}
+function row(k,v){return '<div class=\"ir-tool-row\"><dt>'+k+'</dt><dd>'+e(v)+'</dd></div>'}
+function show(d,a){var sw=useOther(d,a),loc=sw?a:d,h='';
+F.forEach(function(f){var s=(f[0]==='country'||f[0]==='region'||f[0]==='city')?loc:d;h+=row(f[1],s[f[0]]||'-')});
+h+=row('Proxy flag',yn(d.proxy))+row('Hosting flag',yn(d.hosting));
+if(a){h+=row('Other address',a.ip+' ('+a.ipVersion+')')}
+if(sw){h+=row('Location based on','IPv4 ('+a.ip+')')}
+o.innerHTML='<dl>'+h+'</dl>';
+n.textContent=sw?NOTE+' Your IPv4 and IPv6 addresses are placed in different cities, so the IPv4 location is shown.':NOTE}
+function other(d){var v6=String(d.ip).indexOf(':')>-1;
+return get(v6?'https://api.ipify.org?format=json':'https://api6.ipify.org?format=json',4000).then(function(j){var ip=j&&j.ip;if(typeof ip!=='string'||ip===d.ip||(ip.indexOf(':')>-1)===v6||!/^[0-9a-fA-F:.]+$/.test(ip))return null;
+return get(NDIC_CONFIG.BACKEND_URL+NDIC_CONFIG.ENDPOINTS.ipIdentity+'?ip='+encodeURIComponent(ip),10000).then(function(j2){var a=j2&&j2.success&&j2.data;return a&&a.ip===ip?a:null})}).catch(function(){return null})}
+function run(){n.textContent='Checking...';b.disabled=true;
+get(NDIC_CONFIG.BACKEND_URL+NDIC_CONFIG.ENDPOINTS.ipIdentity,10000).then(function(j){if(!j||!j.success||!j.data)throw 0;var d=j.data;show(d,null);return other(d).then(function(a){if(a)show(d,a)})}).catch(function(){n.textContent='Tap to refresh.'}).then(function(){b.disabled=false;b.textContent='Refresh'})}
 b.addEventListener('click',run)})();
 </script>
 </body>
