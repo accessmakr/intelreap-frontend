@@ -345,6 +345,16 @@ const NetworkEngine = (() => {
       rttHistory: [...rttHistory],
       bandwidthHistory: [...bandwidthHistory]
     })
+
+    // Redraw the Live Network panel so its numbers and charts
+    // follow each reading (they were only drawn once, at scan end)
+    if (typeof Canvas4 !== 'undefined') {
+      try {
+        Canvas4.render()
+      } catch (e) {
+        // a drawing problem must not stop the readings
+      }
+    }
   }
 
   // ───────────────────────────────────────
