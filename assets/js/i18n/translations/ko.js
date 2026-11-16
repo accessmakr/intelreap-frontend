@@ -24,7 +24,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "tagline": "IntelReap은 네트워크 인프라, 기기 지문, 보안 상태, 브라우저 기능을 실시간으로 보여 줍니다. 13개 패널에서 285개 데이터 포인트. 무료, 로그인 불필요.",
     "cta_primary": "인텔리전스 스캔 실행",
     "cta_secondary": "작동 방식 보기",
-    "trust_data_points": "스캔당 234개 데이터 포인트",
+    "trust_data_points": "스캔당 285개 데이터 포인트",
     "trust_panels": "12개 인텔리전스 패널",
     "badge_live": "네트워크 및 기기 실시간 스캔",
     "title_html": "인터넷이 이미<br><span class=\"ndic-highlight\">당신</span>에 대해 아는 것을 확인하세요.",
@@ -461,7 +461,7 @@ window.NDIC_TRANSLATIONS_KO = {
   },
   "logic": {
     "label": "로직",
-    "text": "IntelReap은 브라우저 API와 서버리스 백엔드에서 234개의 데이터 포인트를 수집하여 네트워크 및 기기 환경의 완전한 실시간 그림을 구성합니다."
+    "text": "IntelReap은 브라우저 API와 서버리스 백엔드에서 285개의 데이터 포인트를 수집하여 네트워크 및 기기 환경의 완전한 실시간 그림을 구성합니다."
   },
   "methodology": {
     "label": "방법론",

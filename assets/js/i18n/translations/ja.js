@@ -24,7 +24,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "tagline": "IntelReap は、ネットワーク環境、デバイスのフィンガープリント、セキュリティ状況、ブラウザの機能をリアルタイムで可視化します。13 のパネルで 285 のデータポイント。無料、ログイン不要。",
     "cta_primary": "インテリジェンススキャンを実行",
     "cta_secondary": "仕組みを見る",
-    "trust_data_points": "スキャンあたり234データポイント",
+    "trust_data_points": "スキャンあたり285データポイント",
     "trust_panels": "12インテリジェンスパネル",
     "badge_live": "ネットワークとデバイスのライブスキャン",
     "title_html": "インターネットが<br><span class=\"ndic-highlight\">あなた</span>について既に知っていることを見る。",
@@ -461,7 +461,7 @@ window.NDIC_TRANSLATIONS_JA = {
   },
   "logic": {
     "label": "ロジック",
-    "text": "IntelReapはブラウザAPIとサーバーレスバックエンドから234のデータポイントを収集し、ネットワークとデバイス環境のリアルタイムな完全像を構築します。"
+    "text": "IntelReapはブラウザAPIとサーバーレスバックエンドから285のデータポイントを収集し、ネットワークとデバイス環境のリアルタイムな完全像を構築します。"
   },
   "methodology": {
     "label": "方法論",

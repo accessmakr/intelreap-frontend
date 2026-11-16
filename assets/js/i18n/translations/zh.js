@@ -24,7 +24,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "tagline": "IntelReap 实时展示您的网络基础设施、设备指纹、安全状况和浏览器能力——13 个面板共 285 个数据点。免费，无需登录。",
     "cta_primary": "运行智能扫描",
     "cta_secondary": "查看工作原理",
-    "trust_data_points": "每次扫描234个数据点",
+    "trust_data_points": "每次扫描285个数据点",
     "trust_panels": "12个智能面板",
     "badge_live": "网络与设备实时扫描",
     "title_html": "看看互联网<br>已经了解<span class=\"ndic-highlight\">你</span>的哪些信息。",
@@ -461,7 +461,7 @@ window.NDIC_TRANSLATIONS_ZH = {
   },
   "logic": {
     "label": "逻辑",
-    "text": "IntelReap从浏览器API和无服务器后端收集234个数据点，构建您的网络和设备环境的完整实时图景。"
+    "text": "IntelReap从浏览器API和无服务器后端收集285个数据点，构建您的网络和设备环境的完整实时图景。"
   },
   "methodology": {
     "label": "方法论",
