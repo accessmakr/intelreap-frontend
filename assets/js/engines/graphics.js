@@ -134,17 +134,55 @@ const GraphicsEngine = (() => {
     return words[0] || raw
   }
 
-  // Normalize renderer string
+  // Normalize renderer string.
+  // Chrome reports most GPUs as "ANGLE (Vendor, Model, Backend)"
+  // with nested brackets, e.g. "ANGLE (Qualcomm, Adreno (TM) 740,
+  // OpenGL ES 3.2)". The model is the second part; noise such as
+  // (TM), (R), hex ids and API names is removed from it.
   const normalizeGPURenderer = (raw) => {
     if (!raw) return 'Unknown'
 
-    // Remove noise patterns
-    return raw
-      .replace(/\s*\(.*?\)\s*/g, ' ')
-      .replace(/OpenGL.*$/i, '')
-      .replace(/Direct3D.*$/i, '')
+    const clean = (text) => String(text)
+      .replace(/\(0x[0-9a-f]+\)/gi, ' ')
+      .replace(/\((?:TM|R)\)/gi, '')
+      .replace(/\bDirect3D\d*.*$/i, '')
+      .replace(/\bvs_\d_\d\s+ps_\d_\d.*$/i, '')
+      .replace(/\bOpenGL(?:\s+ES)?[\d.\s]*.*$/i, '')
       .replace(/\s+/g, ' ')
-      .trim() || raw
+      .replace(/^[,\s]+|[,\s]+$/g, '')
+
+    const text = String(raw).trim()
+    const angle = text.match(/^ANGLE\s*\((.*)\)$/i)
+
+    if (angle) {
+      // split on commas that are not inside brackets
+      const parts = []
+      let depth = 0
+      let current = ''
+      for (const ch of angle[1]) {
+        if (ch === '(') depth++
+        if (ch === ')') depth--
+        if (ch === ',' && depth === 0) {
+          parts.push(current)
+          current = ''
+        } else {
+          current += ch
+        }
+      }
+      parts.push(current)
+
+      let model = (parts[1] || parts[0] || '').trim()
+      model = model.replace(/^ANGLE Metal Renderer:\s*/i, '')
+      const vulkan = model.match(
+        /^Vulkan\s+[\d.]+\s*\((.*)\)$/i
+      )
+      if (vulkan) model = vulkan[1]
+
+      const result = clean(model)
+      if (result) return result
+    }
+
+    return clean(text) || text
   }
 
   // ───────────────────────────────────────
