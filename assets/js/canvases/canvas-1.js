@@ -12,8 +12,11 @@ const Canvas1 = (() => {
 
     // ─── PARAMETERS ───────────────────────
 
+    // the backend sends the number together with the owner name
     setText('c1-asn-number',
-      n.asn || '—'
+      n.asn
+        ? (String(n.asn).match(/^AS\d+/i) || [n.asn])[0]
+        : '—'
     )
 
     setText('c1-asn-owner',
