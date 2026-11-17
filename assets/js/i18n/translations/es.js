@@ -2,7 +2,7 @@
 window.NDIC_TRANSLATIONS_ES = {
   "meta": {
     "title": "IntelReap — Centro de Inteligencia de Red y Dispositivo",
-    "description": "Inteligencia de red y dispositivo en tiempo real. Revela tu IP, ASN, estado VPN, capacidades del navegador y postura de seguridad. Gratis.",
+    "description": "Inteligencia de red y dispositivo en tiempo real. Revela tu IP, ASN, estado VPN, capacidades del navegador y postura de seguridad. Gratis. Sin registro.",
     "og_title": "IntelReap — Ve lo que Revela tu Red",
     "og_description": "Herramienta gratuita de inteligencia en tiempo real. Analiza tu red, dispositivo, seguridad y navegador en segundos."
   },
@@ -56,7 +56,7 @@ window.NDIC_TRANSLATIONS_ES = {
       "ip_range": "Rango IP",
       "allocation_registry": "Registro de Asignación",
       "route_origin": "Origen de Ruta",
-      "peering_count": "Conexiones de Emparejamiento",
+      "peering_count": "Cantidad Estimada de Peering",
       "upstream_provider": "Proveedor Upstream",
       "announcement_status": "Estado de Anuncio",
       "bgp_route_status": "Estado Ruta BGP",
@@ -244,7 +244,7 @@ window.NDIC_TRANSLATIONS_ES = {
       "push_permission": "Permiso Push",
       "do_not_track": "No Rastrear",
       "third_party_cookies": "Cookies de Terceros",
-      "referrer_policy": "Política de Referencia",
+      "referrer_policy": "Política de Referrer",
       "csp_presence": "Política de Seguridad de Contenido",
       "fingerprint_surfaces": "Superficies de Huella Digital",
       "security_flags": "Indicadores de Seguridad",
@@ -297,7 +297,7 @@ window.NDIC_TRANSLATIONS_ES = {
       "resource_count": "Total de Recursos",
       "page_weight": "Peso de Página",
       "script_count": "Scripts Cargados",
-      "stylesheet_count": "Hojas de Estilo",
+      "stylesheet_count": "Hojas de Estilo Cargadas",
       "image_count": "Imágenes Cargadas",
       "font_count": "Fuentes Cargadas",
       "cache_hit_rate": "Tasa de Aciertos de Caché",
@@ -316,7 +316,7 @@ window.NDIC_TRANSLATIONS_ES = {
     "heading_plain": "¿Qué Tan Rápido Renderiza Tu Dispositivo?",
     "vitals": {
       "lcp": "Pintado del Elemento Más Grande",
-      "fcp": "Primer Pintado Contentivo",
+      "fcp": "Primer Pintado con Contenido",
       "cls": "Cambio Acumulativo de Diseño",
       "inp": "Interacción al Siguiente Pintado",
       "ttfb": "Tiempo al Primer Byte",
@@ -332,10 +332,10 @@ window.NDIC_TRANSLATIONS_ES = {
     },
     "params": {
       "css_animation_fps": "FPS de Animación",
-      "benchmark_score": "Puntuación de Benchmark",
+      "benchmark_score": "Puntuación General de Benchmark",
       "vs_average_mobile": "vs Móvil Promedio",
       "vs_average_desktop": "vs Escritorio Promedio",
-      "vs_top_tier": "vs Dispositivos Top",
+      "vs_top_tier": "vs Dispositivos de Gama Alta",
       "percentile_ranking": "Percentil de Velocidad"
     },
     "ratings": {
@@ -451,8 +451,8 @@ window.NDIC_TRANSLATIONS_ES = {
     "not_secure": "No Seguro",
     "exposed": "Expuesto",
     "safe": "Seguro",
-    "pass": "PASADO",
-    "fail": "FALLADO",
+    "pass": "APROBADO",
+    "fail": "FALLIDO",
     "scanning": "Escaneando...",
     "loading": "Cargando...",
     "na": "N/D"
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_ES = {
   },
   "methodology": {
     "label": "Metodología",
-    "text": "Toda la inteligencia se recopila del lado del cliente a través de APIs estándar del navegador y se enriquece a través de una cadena de respaldo de tres niveles de backend."
+    "text": "Toda la inteligencia se recopila del lado del cliente a través de APIs estándar del navegador y el backend la enriquece con bases de datos de red y ubicación de IP, incluida MaxMind GeoLite2."
   },
   "faq": {
     "label": "Preguntas Frecuentes",
@@ -471,43 +471,43 @@ window.NDIC_TRANSLATIONS_ES = {
     "items": [
       {
         "q": "¿Qué es un ASN y por qué importa?",
-        "a": "Un Número de Sistema Autónomo (ASN) es un identificador único asignado a un operador de red. Determina cómo se enruta el tráfico a través de internet."
+        "a": "Un Número de Sistema Autónomo (ASN) es un identificador único asignado a un operador de red, como tu proveedor de internet, un proveedor de nube o una gran empresa. Determina cómo se enruta el tráfico a través de internet. IntelReap identifica tu ASN, su propietario, su clasificación de nivel, su registro y sus relaciones de peering para ofrecerte una imagen completa de tu infraestructura de red."
       },
       {
         "q": "¿Cómo funciona la detección de VPN?",
-        "a": "IntelReap usa un enfoque de detección de tres capas: análisis del tipo de propiedad ASN, verificación de inconsistencias de zona horaria e idioma, y consulta opcional a APIs de reputación de IP."
+        "a": "IntelReap usa un enfoque de detección de tres capas. Primero, analiza el tipo de propiedad de tu ASN: los ASN de centros de datos sugieren el uso de VPN o proxy. Segundo, comprueba si la zona horaria y el idioma del navegador no coinciden con la geolocalización de tu IP, lo que revela inconsistencias de enrutamiento. Tercero, añade señales de reputación para rangos de IP de alto riesgo. Las tres señales se combinan en una única puntuación de confianza y una clasificación de ruta."
       },
       {
         "q": "¿Qué es una filtración de IP WebRTC?",
-        "a": "WebRTC puede revelar tu dirección IP de red local incluso cuando usas una VPN. IntelReap prueba activamente las filtraciones de WebRTC creando una conexión de pares y capturando cualquier IP revelada."
+        "a": "WebRTC es una API del navegador que se usa para la comunicación en tiempo real, como las videollamadas. Un efecto secundario es que puede revelar la dirección IP de tu red local incluso cuando usas una VPN. El panel de seguridad de IntelReap prueba activamente las filtraciones de WebRTC creando una conexión entre pares y capturando cualquier dirección IP revelada a través de las cadenas de candidatos ICE."
       },
       {
         "q": "¿Qué son Core Web Vitals?",
-        "a": "Core Web Vitals son métricas definidas por Google para medir la experiencia del usuario en páginas web, incluyendo LCP, CLS e INP."
+        "a": "Core Web Vitals son un conjunto de métricas definidas por Google para medir la experiencia real del usuario en las páginas web. Incluyen Largest Contentful Paint (LCP), que mide el rendimiento de carga; Cumulative Layout Shift (CLS), que mide la estabilidad visual; e Interaction to Next Paint (INP), que mide la capacidad de respuesta. IntelReap mide las seis métricas, incluidas FCP, TTFB y FID."
       },
       {
         "q": "¿Qué tan precisa es la geolocalización IP?",
-        "a": "La geolocalización IP es precisa a nivel de país en casi todos los casos y a nivel de ciudad para la mayoría de las conexiones residenciales y comerciales."
+        "a": "La geolocalización IP es precisa a nivel de país en casi todos los casos y a nivel de ciudad para la mayoría de las conexiones residenciales y comerciales. La precisión puede ser menor en redes móviles, conexiones por satélite y VPN, donde la IP puede estar registrada en una región distinta de tu ubicación física. IntelReap combina datos de MaxMind GeoLite2 con una fuente de respaldo para lograr la máxima precisión."
       },
       {
         "q": "¿Qué mide la puntuación de seguridad?",
-        "a": "La puntuación de seguridad se calcula a partir de diez señales ponderadas: estado HTTPS, contexto seguro, exposición WebRTC, contenido mixto, Do Not Track, estado de almacenamiento y permisos."
+        "a": "La puntuación de seguridad se calcula a partir de diez señales ponderadas: estado de HTTPS, contexto seguro, exposición de IP por WebRTC, detección de contenido mixto, estado de Do Not Track, estado del acceso al almacenamiento, permiso de cámara, permiso de micrófono, permiso de ubicación y número de superficies de huella digital. Una puntuación de 90-100 es Excelente, 70-89 Saludable, 50-69 Regular, 30-49 Deficiente y menos de 30 Crítica."
       },
       {
         "q": "¿Puedo usar IntelReap sin conexión?",
-        "a": "IntelReap es una App Web Progresiva y puede instalarse en tu dispositivo. Sin embargo, el análisis de inteligencia requiere una conexión activa."
+        "a": "IntelReap es una App Web Progresiva y puede instalarse en tu dispositivo. La interfaz estática se carga sin conexión desde la caché. Sin embargo, el análisis de inteligencia requiere una conexión activa para consultar las APIs del backend y reunir datos de red e IP en vivo. Un modo sin conexión muestra los datos de tu análisis más reciente guardados en caché."
       },
       {
         "q": "¿Cómo se calcula la puntuación global?",
-        "a": "La puntuación global es un promedio ponderado de nueve sub-puntuaciones con la seguridad con mayor peso al 20%."
+        "a": "La puntuación global es un promedio ponderado de nueve sub-puntuaciones: Red (15%), Dispositivo (15%), Seguridad (20%), Capacidad (10%), Rendimiento (10%), Velocidad (10%), Privacidad (10%), Identidad (5%) y Gráficos (5%). La seguridad tiene el mayor peso porque afecta de forma más directa a tu seguridad digital. Cada sub-puntuación se calcula de forma independiente a partir de sus puntos de datos relevantes."
       },
       {
         "q": "¿Cuál es la diferencia entre el benchmark y Core Web Vitals?",
-        "a": "Core Web Vitals miden qué tan rápido cargó esta página en tu dispositivo. Los benchmarks del navegador miden la capacidad de procesamiento bruta de tu dispositivo."
+        "a": "Core Web Vitals miden qué tan rápido cargó esta página concreta en tu dispositivo y con tu conexión: son métricas de experiencia real del usuario. Los benchmarks del navegador son pruebas sintéticas que miden la capacidad de procesamiento bruta de tu dispositivo, independientemente de las condiciones de red, ejecutando aritmética de JavaScript, manipulación del DOM, renderizado en canvas y acceso a memoria a escala controlada."
       },
       {
         "q": "¿Está disponible IntelReap como app móvil?",
-        "a": "IntelReap es una App Web Progresiva que puede instalarse directamente desde tu navegador en iOS y Android sin visitar una tienda de aplicaciones."
+        "a": "IntelReap es una App Web Progresiva que puede instalarse directamente desde tu navegador en iOS y Android sin visitar una tienda de aplicaciones. En iOS, abre el sitio en Safari y toca Compartir y luego Añadir a pantalla de inicio. En Android, Chrome ofrecerá automáticamente un aviso de instalación. La app instalada se ejecuta en modo independiente con soporte sin conexión completo y acceso desde la pantalla de inicio."
       }
     ]
   },
