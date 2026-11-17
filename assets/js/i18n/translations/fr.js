@@ -1,15 +1,15 @@
 /* IntelReap translations: fr. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_FR = {
   "meta": {
-    "title": "IntelReap — Centre de renseignement réseau et dispositif",
-    "description": "Renseignement réseau et dispositif en temps réel. Révélez votre IP, ASN, statut VPN, capacités du navigateur et posture de sécurité. Gratuit.",
+    "title": "IntelReap — Centre d'analyse réseau et appareil",
+    "description": "Analyse réseau et appareil en temps réel. Révélez votre IP, ASN, statut VPN, capacités du navigateur et posture de sécurité. Gratuit. Sans inscription.",
     "og_title": "IntelReap — Découvrez ce que révèle votre réseau",
-    "og_description": "Outil de renseignement gratuit en temps réel. Analysez votre réseau, appareil, sécurité et navigateur en quelques secondes."
+    "og_description": "Outil d'analyse gratuit en temps réel. Analysez votre réseau, appareil, sécurité et navigateur en quelques secondes."
   },
   "nav": {
-    "intelligence_center": "Centre de renseignement",
+    "intelligence_center": "Centre d'analyse",
     "about": "À propos",
-    "search_placeholder": "Rechercher des panneaux de renseignement...",
+    "search_placeholder": "Rechercher des panneaux d'analyse...",
     "open_search": "Ouvrir la recherche",
     "toggle_menu": "Basculer le menu",
     "close_menu": "Fermer le menu",
@@ -18,25 +18,25 @@ window.NDIC_TRANSLATIONS_FR = {
     "guides": "Guides"
   },
   "hero": {
-    "badge": "Outil de renseignement gratuit",
+    "badge": "Outil d'analyse gratuit",
     "title_line1": "Que révèle",
     "title_line2": "votre réseau ?",
     "tagline": "IntelReap révèle en temps réel votre infrastructure réseau, l'empreinte de votre appareil, votre niveau de sécurité et les capacités de votre navigateur — 285 points de données répartis sur 13 panneaux. Gratuit. Sans connexion.",
-    "cta_primary": "Lancer l'analyse de renseignement",
+    "cta_primary": "Lancer l'analyse",
     "cta_secondary": "Voir comment ça fonctionne",
     "trust_data_points": "285 points de données par analyse",
-    "trust_panels": "13 panneaux de renseignement",
+    "trust_panels": "13 panneaux d'analyse",
     "badge_live": "Analyse réseau et appareil en direct",
     "title_html": "Voyez ce qu'internet<br>sait déjà de <span class=\"ndic-highlight\">vous</span>.",
     "see_report": "Voir le rapport complet"
   },
   "quick_answer": {
     "label": "Réponse rapide",
-    "title": "Qu'est-ce que le Centre de renseignement réseau et dispositif ?"
+    "title": "Qu'est-ce que le Centre d'analyse réseau et appareil ?"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "Centre de renseignement réseau et dispositif",
+    "subtitle": "Centre d'analyse réseau et appareil",
     "status_live": "EN DIRECT",
     "status_scanning": "ANALYSE EN COURS",
     "status_offline": "HORS LIGNE",
@@ -46,7 +46,7 @@ window.NDIC_TRANSLATIONS_FR = {
     "api_calls": "Appels API"
   },
   "canvas1": {
-    "heading_technical": "Renseignement sur la route ASN et le réseau",
+    "heading_technical": "Analyse de la route ASN et du réseau",
     "heading_plain": "Sur quel réseau êtes-vous ?",
     "params": {
       "asn_number": "Numéro ASN",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_FR = {
     "deep_dive": "Analyse approfondie de votre identité réseau"
   },
   "canvas3": {
-    "heading_technical": "Renseignement VPN, proxy et routage",
+    "heading_technical": "Analyse VPN, proxy et routage",
     "heading_plain": "Êtes-vous caché en ligne ?",
     "params": {
       "vpn_detected": "VPN détecté",
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_FR = {
     "deep_dive": "Analyse approfondie de votre réseau en direct"
   },
   "canvas5": {
-    "heading_technical": "Panneau de renseignement sur l'appareil",
+    "heading_technical": "Panneau d'analyse de l'appareil",
     "heading_plain": "Quel appareil utilisez-vous ?",
     "params": {
       "os": "Système d'exploitation",
@@ -239,8 +239,8 @@ window.NDIC_TRANSLATIONS_FR = {
       "microphone_permission": "Permission microphone",
       "location_permission": "Permission localisation",
       "notification_permission": "Permission notifications",
-      "clipboard_read": "Lecture du presse-papier",
-      "clipboard_write": "Écriture du presse-papier",
+      "clipboard_read": "Lecture du presse-papiers",
+      "clipboard_write": "Écriture du presse-papiers",
       "push_permission": "Permission push",
       "do_not_track": "Ne pas suivre",
       "third_party_cookies": "Cookies tiers",
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_FR = {
     "deep_dive": "Analyse approfondie des capacités de votre navigateur"
   },
   "canvas9": {
-    "heading_technical": "Panneau de renseignement sur les performances",
+    "heading_technical": "Panneau d'analyse des performances",
     "heading_plain": "Quelle est la vitesse de votre navigateur ?",
     "params": {
       "page_load_time": "Temps de chargement de la page",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_FR = {
     "deep_dive": "Analyse approfondie de vos performances"
   },
   "canvas10": {
-    "heading_technical": "Renseignement sur la vitesse du navigateur et du rendu",
+    "heading_technical": "Analyse de la vitesse du navigateur et du rendu",
     "heading_plain": "À quelle vitesse votre appareil effectue le rendu ?",
     "vitals": {
       "lcp": "Plus grand rendu de contenu",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_FR = {
     "deep_dive": "Analyse approfondie de la vitesse de rendu"
   },
   "canvas11": {
-    "heading_technical": "Tableau de bord de renseignement global",
+    "heading_technical": "Tableau des scores global",
     "heading_plain": "Votre score global",
     "params": {
       "global_score": "Score global",
@@ -377,7 +377,7 @@ window.NDIC_TRANSLATIONS_FR = {
     "deep_dive": "Analyse approfondie de votre score global"
   },
   "canvas12": {
-    "heading_technical": "Flux de renseignement en direct",
+    "heading_technical": "Flux d'analyse en direct",
     "heading_plain": "Que vient-il de se passer ?",
     "params": {
       "online_status": "Statut de connexion",
@@ -399,10 +399,10 @@ window.NDIC_TRANSLATIONS_FR = {
       "degraded": "Dégradé",
       "none_detected": "Aucun détecté"
     },
-    "deep_dive": "Analyse approfondie de votre flux de renseignement en direct"
+    "deep_dive": "Analyse approfondie de votre flux en direct"
   },
   "full_summary": {
-    "title": "Rapport complet de renseignement système",
+    "title": "Rapport d'analyse complet du système",
     "label": "Résumé de diagnostic",
     "source_label": "Généré par",
     "generated_at": "Généré",
@@ -411,7 +411,7 @@ window.NDIC_TRANSLATIONS_FR = {
   "download": {
     "json": "Télécharger JSON",
     "pdf": "Télécharger PDF",
-    "copy": "Copier dans le presse-papier",
+    "copy": "Copier dans le presse-papiers",
     "downloaded": "Téléchargé",
     "sent_to_printer": "Envoyé à l'imprimante",
     "copied": "Copié",
@@ -420,14 +420,14 @@ window.NDIC_TRANSLATIONS_FR = {
   "share": {
     "label": "Partager cet outil",
     "copied_for": "Copié pour",
-    "link_copied": "Lien copié dans le presse-papier",
+    "link_copied": "Lien copié dans le presse-papiers",
     "copy_failed": "Échec de la copie — essayez manuellement"
   },
   "ai_summary": {
-    "label": "Résumé de renseignement",
+    "label": "Résumé de l'analyse",
     "source_script": "Script",
     "generating": "Génération de l'analyse...",
-    "in_progress": "Analyse de renseignement en cours."
+    "in_progress": "Analyse en cours."
   },
   "scores": {
     "excellent": "Excellent",
@@ -450,20 +450,20 @@ window.NDIC_TRANSLATIONS_FR = {
     "secure": "Sécurisé",
     "not_secure": "Non sécurisé",
     "exposed": "Exposé",
-    "safe": "Sécurisé",
+    "safe": "Sûr",
     "pass": "RÉUSSI",
-    "fail": "ÉCHOUÉ",
+    "fail": "ÉCHEC",
     "scanning": "Analyse en cours...",
     "loading": "Chargement...",
     "na": "S/O"
   },
   "logic": {
     "label": "Logique",
-    "text": "IntelReap collecte 285 points de données depuis les API du navigateur et un backend sans serveur pour construire une image complète en temps réel de votre environnement réseau et dispositif."
+    "text": "IntelReap collecte 285 points de données depuis les API du navigateur et un backend sans serveur pour construire une image complète en temps réel de votre environnement réseau et appareil."
   },
   "methodology": {
     "label": "Méthodologie",
-    "text": "Toutes les données de renseignement sont collectées côté client via les API standard du navigateur et enrichies par une chaîne de repli backend à trois niveaux."
+    "text": "Toutes les données sont collectées côté client via les API standard du navigateur et enrichies par le backend à l'aide de bases de données réseau et de localisation IP, dont MaxMind GeoLite2."
   },
   "citations": {
     "label": "Sources et références",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_FR = {
     "items": [
       {
         "q": "Qu'est-ce qu'un ASN et pourquoi est-ce important ?",
-        "a": "Un numéro de système autonome (ASN) est un identifiant unique attribué à un opérateur réseau qui détermine la façon dont le trafic est acheminé sur Internet."
+        "a": "Un numéro de système autonome (ASN) est un identifiant unique attribué à un opérateur réseau, par exemple votre fournisseur d'accès, un fournisseur de cloud ou une grande entreprise. Il détermine la façon dont le trafic est acheminé sur Internet. IntelReap identifie votre ASN, son propriétaire, sa classification de niveau, son registre et ses relations de peering pour vous donner une image complète de votre infrastructure réseau."
       },
       {
         "q": "Comment fonctionne la détection VPN ?",
-        "a": "IntelReap utilise une approche en trois couches : analyse du type de propriété ASN, vérification des incohérences de fuseau horaire et de langue, et consultation optionnelle d'API de réputation IP."
+        "a": "IntelReap utilise une approche de détection en trois couches. D'abord, il analyse le type de propriété de votre ASN : les ASN de centres de données suggèrent l'usage d'un VPN ou d'un proxy. Ensuite, il vérifie les écarts de fuseau horaire et de langue du navigateur par rapport à la géolocalisation de votre IP, qui révèlent des incohérences de routage. Enfin, il ajoute des signaux de réputation pour les plages IP à haut risque. Les trois signaux sont combinés en un score de confiance unique et une classification de route."
       },
       {
         "q": "Qu'est-ce qu'une fuite IP WebRTC ?",
-        "a": "WebRTC peut révéler votre adresse IP locale même en utilisant un VPN. IntelReap teste activement les fuites WebRTC."
+        "a": "WebRTC est une API de navigateur utilisée pour la communication en temps réel, comme les appels vidéo. Un effet secondaire est qu'elle peut révéler l'adresse IP de votre réseau local, même en utilisant un VPN. Le panneau de sécurité d'IntelReap teste activement les fuites WebRTC en créant une connexion pair à pair et en capturant toutes les adresses IP révélées par les chaînes de candidats ICE."
       },
       {
         "q": "Que sont les Core Web Vitals ?",
-        "a": "Les Core Web Vitals sont un ensemble de métriques défini par Google pour mesurer l'expérience utilisateur réelle sur les pages web, incluant LCP, CLS et INP."
+        "a": "Les Core Web Vitals sont un ensemble de métriques définies par Google pour mesurer l'expérience utilisateur réelle sur les pages web. Elles comprennent le Largest Contentful Paint (LCP), qui mesure les performances de chargement, le Cumulative Layout Shift (CLS), qui mesure la stabilité visuelle, et l'Interaction to Next Paint (INP), qui mesure la réactivité. IntelReap mesure les six indicateurs, y compris FCP, TTFB et FID."
       },
       {
         "q": "Quelle est la précision de la géolocalisation IP ?",
-        "a": "La géolocalisation IP est précise au niveau du pays dans presque tous les cas et au niveau de la ville pour la plupart des connexions résidentielles et commerciales."
+        "a": "La géolocalisation IP est précise au niveau du pays dans presque tous les cas et au niveau de la ville pour la plupart des connexions résidentielles et commerciales. La précision peut être moindre pour les réseaux mobiles, les connexions par satellite et les VPN, où l'IP peut être enregistrée dans une région différente de votre position physique. IntelReap combine les données MaxMind GeoLite2 avec une source de secours pour une précision maximale."
       },
       {
         "q": "Que mesure le score de sécurité ?",
-        "a": "Le score de sécurité est calculé à partir de dix signaux pondérés incluant le statut HTTPS, l'exposition WebRTC et les permissions."
+        "a": "Le score de sécurité est calculé à partir de dix signaux pondérés : statut HTTPS, contexte sécurisé, exposition de l'IP par WebRTC, détection de contenu mixte, statut Ne pas suivre, état de l'accès au stockage, permission caméra, permission microphone, permission localisation et nombre de surfaces d'empreinte. Un score de 90 à 100 est Excellent, de 70 à 89 Sain, de 50 à 69 Acceptable, de 30 à 49 Mauvais et inférieur à 30 Critique."
       },
       {
         "q": "Puis-je utiliser IntelReap hors ligne ?",
-        "a": "IntelReap est une application web progressive. L'analyse de renseignement nécessite une connexion active."
+        "a": "IntelReap est une application web progressive (PWA) qui peut être installée sur votre appareil. L'interface statique se charge hors ligne depuis le cache. Toutefois, l'analyse elle-même nécessite une connexion active pour interroger les API du backend et recueillir des données réseau et IP en direct. Un mode hors ligne affiche vos dernières données d'analyse mises en cache."
       },
       {
         "q": "Comment le score global est-il calculé ?",
-        "a": "Le score global est une moyenne pondérée de neuf sous-scores, la sécurité ayant le poids le plus élevé à 20 %."
+        "a": "Le score global est une moyenne pondérée de neuf sous-scores : Réseau (15 %), Appareil (15 %), Sécurité (20 %), Capacités (10 %), Performance (10 %), Vitesse (10 %), Confidentialité (10 %), Identité (5 %) et Graphismes (5 %). La sécurité pèse le plus lourd, car elle influence le plus directement votre sécurité numérique. Chaque sous-score est calculé indépendamment à partir de ses données pertinentes."
       },
       {
         "q": "Quelle est la différence entre le benchmark et les Core Web Vitals ?",
-        "a": "Les Core Web Vitals mesurent la vitesse de chargement de cette page sur votre appareil. Les benchmarks du navigateur mesurent la puissance de traitement brute de votre appareil."
+        "a": "Les Core Web Vitals mesurent la vitesse de chargement de cette page précise sur votre appareil et votre connexion : ce sont des métriques d'expérience utilisateur réelle. Les benchmarks du navigateur sont des tests synthétiques qui mesurent la puissance de traitement brute de votre appareil, indépendamment des conditions réseau, en exécutant de l'arithmétique JavaScript, de la manipulation du DOM, du rendu canvas et des accès mémoire à échelle contrôlée."
       },
       {
         "q": "IntelReap est-il disponible en tant qu'application mobile ?",
-        "a": "IntelReap est une application web progressive qui peut être installée directement depuis le navigateur sur iOS et Android sans visiter un magasin d'applications."
+        "a": "IntelReap est une application web progressive qui peut être installée directement depuis votre navigateur sur iOS et Android, sans passer par un magasin d'applications. Sur iOS, ouvrez le site dans Safari, touchez Partager, puis Sur l'écran d'accueil. Sur Android, Chrome propose automatiquement une invite d'installation. L'application installée s'exécute en mode autonome, avec une prise en charge hors ligne complète et un accès depuis l'écran d'accueil."
       }
     ]
   },
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_FR = {
     "error": "Oups ! Un problème est survenu lors de l'envoi du formulaire."
   },
   "footer": {
-    "tagline": "Renseignement réseau et dispositif en temps réel.",
-    "description": "Outil d'intelligence gratuit dans le navigateur. Aucun compte requis.",
-    "col_intelligence": "Renseignement",
+    "tagline": "Analyse réseau et appareil en temps réel.",
+    "description": "Outil d'analyse gratuit dans le navigateur. Aucun compte requis.",
+    "col_intelligence": "Analyse",
     "col_deep_dives": "Analyses approfondies",
     "col_legal": "Mentions légales",
     "col_connect": "Contact",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_FR = {
   "offline": {
     "status": "Connexion perdue",
     "title": "Vous êtes hors ligne",
-    "body": "IntelReap nécessite une connexion active pour collecter les données de renseignement. Vérifiez votre réseau et réessayez.",
+    "body": "IntelReap nécessite une connexion active pour collecter les données d'analyse. Vérifiez votre réseau et réessayez.",
     "retry": "Réessayer la connexion",
-    "home": "Retourner au Centre de renseignement",
-    "cached_title": "Renseignement en cache disponible",
+    "home": "Retourner au Centre d'analyse",
+    "cached_title": "Analyse en cache disponible",
     "cached_body": "Certaines données de votre dernière session peuvent être disponibles.",
     "online_status": "Statut en ligne",
     "connection_type": "Type de connexion",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_FR = {
     "last_online": "Dernière connexion"
   },
   "internal_links": {
-    "header": "Explorer les panneaux de renseignement",
-    "back_to_main": "← Retour au Centre de renseignement"
+    "header": "Explorer les panneaux d'analyse",
+    "back_to_main": "← Retour au Centre d'analyse"
   },
   "seasonal": {
     "spring": "Édition Printemps",
