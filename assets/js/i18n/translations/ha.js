@@ -2,14 +2,14 @@
 window.NDIC_TRANSLATIONS_HA = {
   "meta": {
     "title": "IntelReap — Cibiyar Bayanan Hanyar Sadarwa da Na'ura",
-    "description": "Bayanan hanyar sadarwa da na'ura a lokaci na gaske. Gano IP ɗinka, ASN, yanayin VPN, iyawar mai bincike da matsayin tsaro. Kyauta.",
+    "description": "Bayanan hanyar sadarwa da na'ura a lokaci na gaske. Gano IP ɗinka, ASN, yanayin VPN, iyawar mai bincike da matsayin tsaro. Kyauta. Ba sai an shiga ba.",
     "og_title": "IntelReap — Duba Abin da Hanyar Sadarwa Taka ta Bayyana",
     "og_description": "Kayan aiki na bayanan kyauta a lokaci na gaske. Nazarci hanyar sadarwa, na'ura, tsaro da mai bincike ɗinka a cikin dakika kaɗan."
   },
   "nav": {
     "intelligence_center": "Cibiyar Bayanan",
     "about": "Game da",
-    "search_placeholder": "Nemo allon bayanan...",
+    "search_placeholder": "Nemo allunan bayanai...",
     "open_search": "Buɗe bincike",
     "toggle_menu": "Canza menu",
     "close_menu": "Rufe menu",
@@ -24,8 +24,8 @@ window.NDIC_TRANSLATIONS_HA = {
     "tagline": "IntelReap yana nuna maka nan take tsarin hanyar sadarwarka, hoton yatsa na na'urarka, yanayin tsaro da damar burauzarka — maki 285 na bayanai a faifai 13. Kyauta. Ba tare da shiga ba.",
     "cta_primary": "Gudanar da Binciken Bayanan",
     "cta_secondary": "Duba Yadda Take Aiki",
-    "trust_data_points": "Wurare 285 na bayanai a kowace bincike",
-    "trust_panels": "Aluna 13 na bayanan",
+    "trust_data_points": "Maki 285 na bayanai a kowane bincike",
+    "trust_panels": "Allunan bayanai 13",
     "badge_live": "Binciken kai-tsaye na hanyar sadarwa da na'ura",
     "title_html": "Duba abin da intanet<br>ta riga ta sani game da <span class=\"ndic-highlight\">kai</span>.",
     "see_report": "Duba cikakken rahoto"
@@ -65,8 +65,8 @@ window.NDIC_TRANSLATIONS_HA = {
       "classification_confidence": "Amincewa na Rarrabuwa",
       "known_provider": "Mai Bayar da Sabis Da Aka Sani",
       "peeringdb_traffic": "Zirgar PeeringDB",
-      "peeringdb_prefixes4": "Ƙarin nau'in IPv4",
-      "peeringdb_prefixes6": "Ƙarin nau'in IPv6",
+      "peeringdb_prefixes4": "Prefixes na IPv4",
+      "peeringdb_prefixes6": "Prefixes na IPv6",
       "is_hosting": "Tsarin Gidajen Yanar Gizo",
       "is_mobile": "Hanyar Sadarwa ta Wayar Hannu",
       "is_proxy": "An Gano Proxy"
@@ -122,7 +122,7 @@ window.NDIC_TRANSLATIONS_HA = {
       "detection_flags": "Tutar Ganowa",
       "primary_source": "Tushen Farko",
       "confidence": "Mataki na Amincewa",
-      "paid_api_consulted": "An yi shawarar API Mai Biyan Kuɗi"
+      "paid_api_consulted": "An yi amfani da API Mai Biyan Kuɗi"
     },
     "values": {
       "vpn_yes": "Ee",
@@ -198,7 +198,7 @@ window.NDIC_TRANSLATIONS_HA = {
       "webgl_version": "Sigar WebGL",
       "webgl_support_level": "Matakin Tallafin WebGL",
       "hardware_acceleration": "Hanzartar Kayan Aikin",
-      "max_texture_size": "Mafi Girman Girman Ƙirƙira",
+      "max_texture_size": "Mafi Girman Ƙirƙira",
       "max_viewport_size": "Mafi Girman Ɓangaren Gani",
       "shader_precision": "Daidaiton Shader",
       "extensions_count": "Tsawaitar da Ake Tallafawa",
@@ -228,7 +228,7 @@ window.NDIC_TRANSLATIONS_HA = {
       "https_status": "Yanayin HTTPS",
       "secure_context": "Mahallin Aminci",
       "mixed_content": "Abubuwan da Aka Haɗa",
-      "webrtc_exposure": "Ɓoyayyar WebRTC",
+      "webrtc_exposure": "Bayyanar WebRTC",
       "local_ip": "IP na Cikin Gida Ya Bayyana",
       "webrtc_ip_match": "Dacewan IP ta WebRTC",
       "cookie_access": "Shiga Kuki",
@@ -364,7 +364,7 @@ window.NDIC_TRANSLATIONS_HA = {
       "strongest_area": "Mafi Ƙarfin Yanki",
       "weakest_area": "Mafi Rauni Yanki",
       "improvement_priority": "Fifikon Ingantawa",
-      "critical_flags": "Tutar Muhimmanci",
+      "critical_flags": "Tutar Mai Haɗari",
       "warnings": "Gargaɗi"
     },
     "health": {
@@ -383,7 +383,7 @@ window.NDIC_TRANSLATIONS_HA = {
       "online_status": "Yanayin Haɗi",
       "backend_health": "Lafiyar Bayan Tsarin",
       "total_events": "Jimlar Abubuwan da ke Faruwa",
-      "critical_count": "Abubuwan da ke Faruwa na Muhimmanci",
+      "critical_count": "Abubuwan da ke Faruwa Masu Haɗari",
       "warning_count": "Gargaɗi",
       "api_calls": "Kiran API da Aka Yi",
       "error_count": "Kurakurai",
@@ -399,7 +399,7 @@ window.NDIC_TRANSLATIONS_HA = {
       "degraded": "Ya Ragu",
       "none_detected": "Ba a Gano Komai"
     },
-    "deep_dive": "Cikakken nazari na ciyarwar bayananku ta kai tsaye"
+    "deep_dive": "Cikakken nazari na ciyarwar bayananka ta kai tsaye"
   },
   "full_summary": {
     "title": "Cikakken Rahoton Bayanan Tsarin",
@@ -459,7 +459,7 @@ window.NDIC_TRANSLATIONS_HA = {
   },
   "logic": {
     "label": "Dabara",
-    "text": "IntelReap tana tattara wurare 285 na bayanai daga API na mai bincike da bayan tsarin marasa uwar garke don gina cikakkiyar hoto ta gaske ta yanayin hanyar sadarwa da na'ura ɗinka."
+    "text": "IntelReap tana tattara maki 285 na bayanai daga API na mai bincike da bayan tsarin marasa uwar garke don gina cikakkiyar hoto ta gaske ta yanayin hanyar sadarwa da na'ura ɗinka."
   },
   "methodology": {
     "label": "Hanyar Aiki",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_HA = {
     "items": [
       {
         "q": "Menene ASN kuma me ya sa yana da mahimmanci?",
-        "a": "Lambar Tsarin Mai Zaman Kansa (ASN) tabbataccen mai gane da aka ba wa mai gudanar da hanyar sadarwa wanda ke ƙayyade yadda ake kai tafiyar zirga-zirgar intanet. IntelReap tana gano ASN ɗinka, mai mallaka, rarrabuwa ta matakin da alaƙar haɗin gwiwa."
+        "a": "Lambar Tsarin Mai Zaman Kansa (ASN) tabbataccen mai gane da aka ba wa mai gudanar da hanyar sadarwa, kamar mai bayar da sabis na intanet ɗinka, mai bayar da sabis na cloud ko babban kamfani, wanda ke ƙayyade yadda ake kai tafiyar zirga-zirgar intanet. IntelReap tana gano ASN ɗinka, mai mallaka, rarrabuwa ta matakin rajista da alaƙar haɗin gwiwa (peering) domin ba ka cikakken hoton tsarin hanyar sadarwarka."
       },
       {
         "q": "Yadda ganin VPN ke aiki?",
-        "a": "IntelReap tana amfani da hanyar matakai uku: nazarin nau'in mallakar ASN, duba rashin dacewar yankin lokaci da harshe, da tambayar API ta sifa ta IP bisa buƙata. Alamomin uku ana haɗa su cikin maki guda ɗaya na amana da rarrabuwa ta hanya."
+        "a": "IntelReap tana amfani da hanyar matakai uku: nazarin nau'in mallakar ASN, duba rashin dacewar yankin lokaci da harshe, da ƙara alamomin suna ga kewayon IP masu haɗari. Alamomin uku ana haɗa su cikin maki guda ɗaya na amana da rarrabuwa ta hanya."
       },
       {
         "q": "Menene zubewar IP ta WebRTC?",
-        "a": "WebRTC API ce ta mai bincike don sadarwa ta gaske kamar kiran bidiyo. Zai iya bayyana adireshin IP na hanyar sadarwa ta cikin gidanka har da lokacin da kake amfani da VPN. IntelReap tana gwada zubewar WebRTC da ƙaƙƙarfan niyya."
+        "a": "WebRTC API ce ta mai bincike don sadarwa ta gaske kamar kiran bidiyo. Zai iya bayyana adireshin IP na hanyar sadarwa ta cikin gidanka har da lokacin da kake amfani da VPN. Allon tsaro na IntelReap yana gwada zubewar WebRTC ta hanyar ƙirƙirar haɗin peer da kama duk adireshin IP da ke bayyana ta igiyoyin ICE candidate."
       },
       {
         "q": "Menene Core Web Vitals?",
-        "a": "Core Web Vitals jerin ma'aunai ne da Google ta ƙayyadewa domin auna ƙwarewar mai amfani ta ainihi a shafukan yanar gizo, ciki har da LCP, CLS da INP. IntelReap tana auna duk vitals shida."
+        "a": "Core Web Vitals jerin ma'aunai ne da Google ta ƙayyadewa domin auna ƙwarewar mai amfani ta ainihi a shafukan yanar gizo, ciki har da LCP, CLS da INP. IntelReap tana auna dukkan ma'aunai shida, har da FCP, TTFB da FID."
       },
       {
         "q": "Yadda daidai ne muhallin IP?",
-        "a": "Muhallin IP yana da daidaito a matakin ƙasa kusan a kowane hali kuma a matakin birane ga mafi yawancin haɗin gidaje da kasuwanci. IntelReap tana amfani da sarkar mafi aminci mai matakai uku don mafi girman daidaito."
+        "a": "Muhallin IP yana da daidaito a matakin ƙasa kusan a kowane hali kuma a matakin birane ga mafi yawancin haɗin gidaje da kasuwanci. Daidaiton na iya raguwa a hanyoyin sadarwar wayar hannu, haɗin tauraron ɗan adam da VPN, inda IP zai iya kasancewa a rajista a yanki daban da wurinka na zahiri. IntelReap tana haɗa bayanan MaxMind GeoLite2 da wani tushe na ajiya don mafi girman daidaito."
       },
       {
         "q": "Menene maki na tsaro ke auna?",
-        "a": "Ana lissafin maki na tsaro daga alamomi goma masu nauyi: yanayin HTTPS, mahallin aminci, fallasa ta WebRTC, abubuwa masu haɗawa, yanayin Kada Ka Bi Diddigin, yanayin shiga ajiya da izinin kyamara, makirofon da wurin."
+        "a": "Ana lissafin maki na tsaro daga alamomi goma masu nauyi: yanayin HTTPS, mahallin aminci, fallasa ta WebRTC, abubuwa masu haɗawa, yanayin Kada Ka Bi Diddigin, yanayin shiga ajiya da izinin kyamara, makirofon, wuri da adadin saman yatsan hannu. Maki 90-100 Kyakkyawa Ƙwarai ne, 70-89 Lafiyayye, 50-69 Matsakaici, 30-49 Mara Kyau, kuma ƙasa da 30 Mai Haɗari ne."
       },
       {
         "q": "Zan iya amfani da IntelReap ba tare da layi ba?",
-        "a": "IntelReap Shirin Yanar Gizo ne mai ci gaba wanda za a iya sanya shi a kan na'urarka. Sifar da ba ta canzawa tana lodi ba tare da layi ba daga kashe. Koyaya, binciken bayanan yana buƙatar haɗin aiki don tambayar API na bayan tsarin."
+        "a": "IntelReap Shirin Yanar Gizo ne mai ci gaba wanda za a iya sanya shi a kan na'urarka. Sifar da ba ta canzawa tana lodi ba tare da layi ba daga ma'adanar ajiya (cache). Koyaya, binciken bayanan yana buƙatar haɗin aiki don tambayar API na bayan tsarin da tattara bayanan hanyar sadarwa da IP kai tsaye. Yanayin ba tare da layi ba yana nuna sabon bayanan bincike da aka ajiye."
       },
       {
         "q": "Yadda ake lissafin maki na duniya?",
-        "a": "Maki na duniya matsakaicin nauyi ne na maki tara ƙanana: Hanyar Sadarwa 15%, Na'ura 15%, Tsaro 20% (mafi girma), Iyawa 10%, Aiki 10%, Sauri 10%, Keɓantawa 10%, Shaida 5% da Zane-Zane 5%."
+        "a": "Maki na duniya matsakaicin nauyi ne na maki tara ƙanana: Hanyar Sadarwa 15%, Na'ura 15%, Tsaro 20% (mafi girma), Iyawa 10%, Aiki 10%, Sauri 10%, Keɓantawa 10%, Shaida 5% da Zane-Zane 5%. Tsaro yana da mafi girman nauyi saboda yana shafar amincinka na dijital kai tsaye. Ana lissafin kowane maki ƙarami daban daga bayanan da suka dace da shi."
       },
       {
         "q": "Menene bambancin tsakanin gwaji da Core Web Vitals?",
-        "a": "Core Web Vitals tana auna gurin da wannan shafi ya lodi a kan na'urarka da haɗi. Gwajin mai bincike gwaje-gwaje ne na wucin gadi da ke auna ikon sarrafa na'urarka ba tare da la'akari da yanayin hanyar sadarwa ba."
+        "a": "Core Web Vitals tana auna saurin da wannan shafi ya lodi a kan na'urarka da haɗi. Gwajin mai bincike gwaje-gwaje ne na wucin gadi da ke auna ikon sarrafa na'urarka ba tare da la'akari da yanayin hanyar sadarwa ba. Suna aiki ta hanyar lissafin JavaScript, sarrafa DOM, nunin canvas da shiga ƙwaƙwalwa a ƙaramin ma'auni mai sarrafuwa."
       },
       {
         "q": "Shin IntelReap yana samuwa a matsayin shirin wayar hannu?",
-        "a": "IntelReap Shirin Yanar Gizo ne mai ci gaba wanda za a iya sanya shi kai tsaye daga mai bincike a iOS da Android ba tare da ziyartar shagon shirye-shirye ba. A iOS, buɗe rukunin yanar gizo a Safari ka taɓa Raba sai ka zaɓi Ƙara zuwa Allon Gida."
+        "a": "IntelReap Shirin Yanar Gizo ne mai ci gaba wanda za a iya sanya shi kai tsaye daga mai bincike a iOS da Android ba tare da ziyartar shagon shirye-shirye ba. A iOS, buɗe rukunin yanar gizo a Safari ka taɓa Raba sai ka zaɓi Ƙara zuwa Allon Gida. A Android, Chrome zai ba da shawarar shigarwa ta atomatik. Shirin da aka sanya yana aiki shi kaɗai tare da cikakken tallafin ba tare da layi ba da shiga daga allon gida."
       }
     ]
   },
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_HA = {
     "col_learn": "Koyi",
     "cookie_settings": "Saitunan kukis",
     "free_line": "Amfani kyauta. Ba a buƙatar asusu.",
-    "email_us": "Aiko mana imel",
+    "email_us": "Tuntuɓe mu",
   },
   "cookie": {
     "text": "IntelReap yana adana zaɓin harshenka da jigon shafi a cikin burauzarka. Idan ka ba da izini, yana kuma amfani da kukis na Google Analytics don auna yadda ake amfani da shafin. Ƙin amincewa ba ya hana kayan aikin aiki.",
