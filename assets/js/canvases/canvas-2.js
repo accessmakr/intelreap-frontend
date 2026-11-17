@@ -165,7 +165,11 @@ const Canvas2 = (() => {
     )
 
     // ─── VISUALIZATION — LEAFLET MAP ──────
-    if (i.latitude && i.longitude) {
+    if (
+      i.latitude &&
+      i.longitude &&
+      document.getElementById('canvas2-map')
+    ) {
       if (LeafletMapViz.isReady()) {
         LeafletMapViz.update(
           i.latitude,
