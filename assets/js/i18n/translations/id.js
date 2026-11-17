@@ -1,15 +1,15 @@
 /* IntelReap translations: id. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_ID = {
   "meta": {
-    "title": "IntelReap — Pusat Intelijen Jaringan dan Perangkat",
-    "description": "Intelijen jaringan dan perangkat secara real-time. Ungkap IP, ASN, status VPN, kemampuan browser dan postur keamanan Anda. Gratis.",
+    "title": "IntelReap — Pusat Analisis Jaringan dan Perangkat",
+    "description": "Analisis jaringan dan perangkat secara real-time. Ungkap IP, ASN, status VPN, kemampuan browser dan postur keamanan Anda. Gratis. Tanpa login.",
     "og_title": "IntelReap — Lihat Apa yang Diungkapkan Jaringan Anda",
-    "og_description": "Alat intelijen real-time gratis. Analisis jaringan, perangkat, keamanan, dan browser Anda dalam hitungan detik."
+    "og_description": "Alat analisis real-time gratis. Analisis jaringan, perangkat, keamanan, dan browser Anda dalam hitungan detik."
   },
   "nav": {
-    "intelligence_center": "Pusat Intelijen",
+    "intelligence_center": "Pusat Analisis",
     "about": "Tentang",
-    "search_placeholder": "Cari panel intelijen...",
+    "search_placeholder": "Cari panel analisis...",
     "open_search": "Buka pencarian",
     "toggle_menu": "Buka/tutup menu",
     "close_menu": "Tutup menu",
@@ -18,25 +18,25 @@ window.NDIC_TRANSLATIONS_ID = {
     "guides": "Panduan"
   },
   "hero": {
-    "badge": "Alat Intelijen Gratis",
+    "badge": "Alat Analisis Gratis",
     "title_line1": "Apa yang Diungkapkan",
     "title_line2": "Jaringan Anda?",
     "tagline": "IntelReap menampilkan infrastruktur jaringan, sidik jari perangkat, tingkat keamanan, dan kemampuan peramban Anda secara real time — 285 titik data di 13 panel. Gratis. Tanpa login.",
-    "cta_primary": "Jalankan Pemindaian Intelijen",
+    "cta_primary": "Jalankan Pemindaian Analisis",
     "cta_secondary": "Lihat Cara Kerjanya",
     "trust_data_points": "285 titik data per pemindaian",
-    "trust_panels": "13 panel intelijen",
+    "trust_panels": "13 panel analisis",
     "badge_live": "Pemindaian jaringan dan perangkat langsung",
     "title_html": "Lihat apa yang internet<br>sudah ketahui tentang <span class=\"ndic-highlight\">Anda</span>.",
     "see_report": "Lihat laporan lengkap"
   },
   "quick_answer": {
     "label": "Jawaban Cepat",
-    "title": "Apa itu Pusat Intelijen Jaringan dan Perangkat?"
+    "title": "Apa itu Pusat Analisis Jaringan dan Perangkat?"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "Pusat Intelijen Jaringan dan Perangkat",
+    "subtitle": "Pusat Analisis Jaringan dan Perangkat",
     "status_live": "LANGSUNG",
     "status_scanning": "MEMINDAI",
     "status_offline": "LURING",
@@ -46,7 +46,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "api_calls": "Panggilan API"
   },
   "canvas1": {
-    "heading_technical": "Intelijen Rute ASN dan Jaringan",
+    "heading_technical": "Analisis Rute ASN dan Jaringan",
     "heading_plain": "Jaringan Apa yang Anda Gunakan?",
     "params": {
       "asn_number": "Nomor ASN",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "deep_dive": "Analisis mendalam identitas jaringan Anda"
   },
   "canvas3": {
-    "heading_technical": "Intelijen VPN, Proxy, dan Perutean",
+    "heading_technical": "Analisis VPN, Proxy, dan Perutean",
     "heading_plain": "Apakah Anda Tersembunyi Online?",
     "params": {
       "vpn_detected": "VPN Terdeteksi",
@@ -122,7 +122,7 @@ window.NDIC_TRANSLATIONS_ID = {
       "detection_flags": "Tanda Deteksi",
       "primary_source": "Sumber Utama",
       "confidence": "Tingkat Kepercayaan",
-      "paid_api_consulted": "API Berbayar Dikonsultasi"
+      "paid_api_consulted": "API Berbayar Diperiksa"
     },
     "values": {
       "vpn_yes": "Ya",
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "deep_dive": "Analisis mendalam jaringan langsung Anda"
   },
   "canvas5": {
-    "heading_technical": "Panel Intelijen Perangkat",
+    "heading_technical": "Panel Analisis Perangkat",
     "heading_plain": "Perangkat Apa yang Anda Gunakan?",
     "params": {
       "os": "Sistem Operasi",
@@ -180,7 +180,7 @@ window.NDIC_TRANSLATIONS_ID = {
       "max_touch_points": "Titik Sentuh Maksimum",
       "orientation_support": "Dukungan Orientasi",
       "orientation": "Orientasi Saat Ini",
-      "pointer_support": "Acara Penunjuk",
+      "pointer_support": "Event Pointer",
       "vibration_support": "Dukungan Getaran",
       "architecture": "Arsitektur CPU",
       "bitness": "Bit OS",
@@ -191,7 +191,7 @@ window.NDIC_TRANSLATIONS_ID = {
   },
   "canvas6": {
     "heading_technical": "Panel Mesin Grafis",
-    "heading_plain": "Seberapa Powerful Perangkat Anda?",
+    "heading_plain": "Seberapa Kuat Perangkat Anda?",
     "params": {
       "gpu_vendor": "Vendor GPU",
       "gpu_renderer": "Renderer GPU",
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "deep_dive": "Analisis mendalam kemampuan browser Anda"
   },
   "canvas9": {
-    "heading_technical": "Panel Intelijen Performa",
+    "heading_technical": "Panel Analisis Performa",
     "heading_plain": "Seberapa Cepat Browser Anda?",
     "params": {
       "page_load_time": "Waktu Muat Halaman",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "deep_dive": "Analisis mendalam performa Anda"
   },
   "canvas10": {
-    "heading_technical": "Intelijen Kecepatan Browser dan Rendering",
+    "heading_technical": "Analisis Kecepatan Browser dan Rendering",
     "heading_plain": "Seberapa Cepat Perangkat Anda Merender?",
     "vitals": {
       "lcp": "Largest Contentful Paint",
@@ -328,7 +328,7 @@ window.NDIC_TRANSLATIONS_ID = {
       "canvas_render": "Render Canvas",
       "memory_access": "Akses Memori",
       "css_animation": "Animasi CSS",
-      "event_loop": "Loop Acara"
+      "event_loop": "Event Loop"
     },
     "params": {
       "css_animation_fps": "FPS Animasi",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "deep_dive": "Analisis mendalam kecepatan rendering Anda"
   },
   "canvas11": {
-    "heading_technical": "Papan Skor Intelijen Global",
+    "heading_technical": "Papan Skor Analisis Global",
     "heading_plain": "Skor Keseluruhan Anda",
     "params": {
       "global_score": "Skor Global",
@@ -377,7 +377,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "deep_dive": "Analisis mendalam skor global Anda"
   },
   "canvas12": {
-    "heading_technical": "Umpan Intelijen Langsung",
+    "heading_technical": "Umpan Analisis Langsung",
     "heading_plain": "Apa yang Baru Saja Terjadi?",
     "params": {
       "online_status": "Status Koneksi",
@@ -399,10 +399,10 @@ window.NDIC_TRANSLATIONS_ID = {
       "degraded": "Terdegradasi",
       "none_detected": "Tidak ada yang terdeteksi"
     },
-    "deep_dive": "Analisis mendalam umpan intelijen langsung Anda"
+    "deep_dive": "Analisis mendalam umpan analisis langsung Anda"
   },
   "full_summary": {
-    "title": "Laporan Intelijen Sistem Lengkap",
+    "title": "Laporan Analisis Sistem Lengkap",
     "label": "Ringkasan Diagnostik",
     "source_label": "Dibuat oleh",
     "generated_at": "Dibuat",
@@ -424,10 +424,10 @@ window.NDIC_TRANSLATIONS_ID = {
     "copy_failed": "Salin gagal — coba secara manual"
   },
   "ai_summary": {
-    "label": "Ringkasan Intelijen",
+    "label": "Ringkasan Analisis",
     "source_script": "Skrip",
     "generating": "Membuat analisis...",
-    "in_progress": "Pemindaian intelijen sedang berlangsung."
+    "in_progress": "Pemindaian analisis sedang berlangsung."
   },
   "scores": {
     "excellent": "Sangat Baik",
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_ID = {
   },
   "methodology": {
     "label": "Metodologi",
-    "text": "Semua data intelijen dikumpulkan di sisi klien melalui API browser standar dan diperkaya melalui rantai fallback backend tiga tingkat."
+    "text": "Semua data dikumpulkan di sisi klien melalui API browser standar dan diperkaya oleh backend menggunakan basis data jaringan dan lokasi IP, termasuk MaxMind GeoLite2."
   },
   "citations": {
     "label": "Sumber dan Referensi",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_ID = {
     "items": [
       {
         "q": "Apa itu ASN dan mengapa penting?",
-        "a": "Nomor Sistem Otonom (ASN) adalah pengidentifikasi unik yang ditetapkan ke operator jaringan yang menentukan cara lalu lintas dirutekan melalui internet."
+        "a": "Nomor Sistem Otonom (ASN) adalah pengidentifikasi unik yang ditetapkan ke operator jaringan, seperti ISP Anda, penyedia cloud, atau perusahaan besar. ASN menentukan cara lalu lintas dirutekan melalui internet. IntelReap mengidentifikasi ASN Anda, pemiliknya, klasifikasi tingkat, registri, dan hubungan peering untuk memberi Anda gambaran lengkap infrastruktur jaringan Anda."
       },
       {
         "q": "Bagaimana cara deteksi VPN bekerja?",
-        "a": "IntelReap menggunakan pendekatan tiga lapis: analisis jenis kepemilikan ASN, pemeriksaan ketidakcocokan zona waktu dan bahasa, dan kueri API reputasi IP opsional."
+        "a": "IntelReap menggunakan pendekatan deteksi tiga lapis. Pertama, menganalisis jenis kepemilikan ASN Anda — ASN pusat data menunjukkan penggunaan VPN atau proxy. Kedua, memeriksa ketidakcocokan zona waktu dan bahasa browser terhadap geolokasi IP Anda, yang mengungkap inkonsistensi perutean. Ketiga, menambahkan sinyal reputasi untuk rentang IP berisiko tinggi. Ketiga sinyal digabung menjadi satu skor kepercayaan dan klasifikasi rute."
       },
       {
         "q": "Apa itu kebocoran IP WebRTC?",
-        "a": "WebRTC dapat mengekspos alamat IP lokal bahkan saat menggunakan VPN. IntelReap secara aktif menguji kebocoran WebRTC."
+        "a": "WebRTC adalah API browser yang digunakan untuk komunikasi real-time seperti panggilan video. Efek sampingnya, WebRTC dapat mengekspos alamat IP jaringan lokal Anda bahkan saat menggunakan VPN. Panel keamanan IntelReap secara aktif menguji kebocoran WebRTC dengan membuat koneksi peer dan menangkap setiap alamat IP yang terungkap melalui string kandidat ICE."
       },
       {
         "q": "Apa itu Core Web Vitals?",
-        "a": "Core Web Vitals adalah serangkaian metrik yang ditentukan Google untuk mengukur pengalaman pengguna nyata di halaman web, termasuk LCP, CLS, dan INP."
+        "a": "Core Web Vitals adalah serangkaian metrik yang ditentukan Google untuk mengukur pengalaman pengguna nyata di halaman web. Metrik ini mencakup Largest Contentful Paint (LCP) yang mengukur performa pemuatan, Cumulative Layout Shift (CLS) yang mengukur stabilitas visual, dan Interaction to Next Paint (INP) yang mengukur responsivitas. IntelReap mengukur keenam metrik, termasuk FCP, TTFB, dan FID."
       },
       {
         "q": "Seberapa akurat geolokasi IP?",
-        "a": "Geolokasi IP akurat di tingkat negara di hampir semua kasus dan di tingkat kota untuk sebagian besar koneksi residensial dan komersial."
+        "a": "Geolokasi IP akurat di tingkat negara di hampir semua kasus dan di tingkat kota untuk sebagian besar koneksi residensial dan komersial. Akurasi dapat lebih rendah untuk jaringan seluler, koneksi satelit, dan VPN, karena IP mungkin terdaftar di wilayah yang berbeda dari lokasi fisik Anda. IntelReap menggabungkan data MaxMind GeoLite2 dengan sumber cadangan untuk akurasi maksimum."
       },
       {
         "q": "Apa yang diukur skor keamanan?",
-        "a": "Skor keamanan dihitung dari sepuluh sinyal berbobot termasuk status HTTPS, eksposur WebRTC, dan izin."
+        "a": "Skor keamanan dihitung dari sepuluh sinyal berbobot: status HTTPS, konteks aman, eksposur IP WebRTC, deteksi konten campuran, status Do Not Track, status akses penyimpanan, izin kamera, izin mikrofon, izin lokasi, dan jumlah permukaan sidik jari. Skor 90-100 adalah Sangat Baik, 70-89 Sehat, 50-69 Cukup, 30-49 Buruk, dan di bawah 30 Kritis."
       },
       {
         "q": "Bisakah saya menggunakan IntelReap secara offline?",
-        "a": "IntelReap adalah Progressive Web App. Pemindaian intelijen memerlukan koneksi aktif."
+        "a": "IntelReap adalah Progressive Web App yang dapat dipasang di perangkat Anda. Antarmuka statis dimuat secara offline dari cache. Namun, pemindaian itu sendiri memerlukan koneksi aktif untuk mengkueri API backend dan mengumpulkan data jaringan dan IP langsung. Mode offline menampilkan data pemindaian terbaru yang tersimpan di cache."
       },
       {
         "q": "Bagaimana skor global dihitung?",
-        "a": "Skor global adalah rata-rata tertimbang sembilan sub-skor dengan keamanan memiliki bobot tertinggi 20%."
+        "a": "Skor global adalah rata-rata tertimbang dari sembilan sub-skor: Jaringan (15%), Perangkat (15%), Keamanan (20%), Kemampuan (10%), Performa (10%), Kecepatan (10%), Privasi (10%), Identitas (5%), dan Grafis (5%). Keamanan memiliki bobot tertinggi karena paling langsung memengaruhi keselamatan digital Anda. Setiap sub-skor dihitung secara independen dari titik data yang relevan."
       },
       {
         "q": "Apa perbedaan antara benchmark dan Core Web Vitals?",
-        "a": "Core Web Vitals mengukur seberapa cepat halaman ini dimuat di perangkat Anda. Benchmark browser mengukur kemampuan pemrosesan mentah perangkat Anda."
+        "a": "Core Web Vitals mengukur seberapa cepat halaman spesifik ini dimuat di perangkat dan koneksi Anda — metrik pengalaman pengguna nyata. Benchmark browser adalah pengujian sintetis yang mengukur kemampuan pemrosesan mentah perangkat Anda tanpa bergantung pada kondisi jaringan — dengan menjalankan aritmetika JavaScript, manipulasi DOM, rendering canvas, dan akses memori pada skala terkontrol."
       },
       {
         "q": "Apakah IntelReap tersedia sebagai aplikasi seluler?",
-        "a": "IntelReap adalah Progressive Web App yang dapat dipasang langsung dari browser di iOS dan Android tanpa mengunjungi toko aplikasi."
+        "a": "IntelReap adalah Progressive Web App yang dapat dipasang langsung dari browser di iOS dan Android tanpa mengunjungi toko aplikasi. Di iOS, buka situs di Safari lalu ketuk Bagikan, kemudian Tambahkan ke Layar Utama. Di Android, Chrome akan otomatis menawarkan petunjuk pemasangan. Aplikasi yang terpasang berjalan dalam mode mandiri dengan dukungan offline penuh dan akses dari layar utama."
       }
     ]
   },
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_ID = {
     "error": "Ups! Ada masalah saat mengirimkan formulir."
   },
   "footer": {
-    "tagline": "Intelijen jaringan dan perangkat secara real-time.",
-    "description": "Alat intelijen gratis berbasis peramban. Tidak perlu akun.",
-    "col_intelligence": "Intelijen",
+    "tagline": "Analisis jaringan dan perangkat secara real-time.",
+    "description": "Alat analisis gratis berbasis peramban. Tidak perlu akun.",
+    "col_intelligence": "Analisis",
     "col_deep_dives": "Analisis Mendalam",
     "col_legal": "Hukum",
     "col_connect": "Hubungi",
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_ID = {
     "col_learn": "Pelajari",
     "cookie_settings": "Pengaturan cookie",
     "free_line": "Gratis digunakan. Tidak perlu akun.",
-    "email_us": "Kirim email",
+    "email_us": "Hubungi kami",
   },
   "cookie": {
     "text": "IntelReap menyimpan pilihan bahasa dan tema Anda di peramban. Dengan izin Anda, situs ini juga memakai cookie Google Analytics untuk mengukur cara situs digunakan. Menolak tidak membatasi alat ini.",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_ID = {
   "offline": {
     "status": "Koneksi Terputus",
     "title": "Anda Sedang Offline",
-    "body": "IntelReap memerlukan koneksi aktif untuk mengumpulkan data intelijen. Periksa jaringan Anda dan coba lagi.",
+    "body": "IntelReap memerlukan koneksi aktif untuk mengumpulkan data analisis. Periksa jaringan Anda dan coba lagi.",
     "retry": "Coba Sambungkan Kembali",
-    "home": "Kembali ke Pusat Intelijen",
-    "cached_title": "Intelijen Cache Tersedia",
+    "home": "Kembali ke Pusat Analisis",
+    "cached_title": "Analisis Cache Tersedia",
     "cached_body": "Beberapa data yang dipindai sebelumnya mungkin tersedia dari sesi terakhir Anda.",
     "online_status": "Status Online",
     "connection_type": "Jenis Koneksi",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_ID = {
     "last_online": "Terakhir Online"
   },
   "internal_links": {
-    "header": "Jelajahi Panel Intelijen",
-    "back_to_main": "← Kembali ke Pusat Intelijen"
+    "header": "Jelajahi Panel Analisis",
+    "back_to_main": "← Kembali ke Pusat Analisis"
   },
   "seasonal": {
     "spring": "Edisi Musim Semi",
