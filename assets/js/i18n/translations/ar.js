@@ -1,15 +1,15 @@
 /* IntelReap translations: ar. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_AR = {
   "meta": {
-    "title": "IntelReap — مركز استخبارات الشبكة والأجهزة",
-    "description": "استخبارات الشبكة والأجهزة في الوقت الفعلي. اكشف عن عنوان IP وASN وحالة VPN وقدرات المتصفح والوضع الأمني. مجاني وبدون تسجيل دخول.",
+    "title": "IntelReap — مركز معلومات الشبكة والأجهزة",
+    "description": "معلومات الشبكة والأجهزة في الوقت الفعلي. اكشف عن عنوان IP وASN وحالة VPN وقدرات المتصفح والوضع الأمني. مجاني وبدون تسجيل دخول.",
     "og_title": "IntelReap — اكتشف ما تكشفه شبكتك",
-    "og_description": "أداة استخبارات مجانية في الوقت الفعلي. حلّل شبكتك وجهازك وأمانك ومتصفحك في ثوانٍ."
+    "og_description": "أداة معلومات مجانية في الوقت الفعلي. حلّل شبكتك وجهازك وأمانك ومتصفحك في ثوانٍ."
   },
   "nav": {
-    "intelligence_center": "مركز الاستخبارات",
+    "intelligence_center": "مركز المعلومات",
     "about": "حول",
-    "search_placeholder": "ابحث في لوحات الاستخبارات...",
+    "search_placeholder": "ابحث في لوحات المعلومات...",
     "open_search": "فتح البحث",
     "toggle_menu": "تبديل القائمة",
     "close_menu": "إغلاق القائمة",
@@ -18,25 +18,25 @@ window.NDIC_TRANSLATIONS_AR = {
     "guides": "الأدلة"
   },
   "hero": {
-    "badge": "أداة استخبارات مجانية",
+    "badge": "أداة معلومات مجانية",
     "title_line1": "ماذا تكشف",
     "title_line2": "شبكتك؟",
     "tagline": "يكشف IntelReap لحظيًا عن بنية شبكتك وبصمة جهازك ووضعك الأمني وقدرات متصفحك — 285 نقطة بيانات عبر 13 لوحة. مجاني وبدون تسجيل دخول.",
-    "cta_primary": "تشغيل فحص الاستخبارات",
+    "cta_primary": "تشغيل الفحص التحليلي",
     "cta_secondary": "شاهد كيف يعمل",
     "trust_data_points": "285 نقطة بيانات لكل فحص",
-    "trust_panels": "13 لوحة استخبارات",
+    "trust_panels": "13 لوحة معلومات",
     "badge_live": "فحص مباشر للشبكة والجهاز",
     "title_html": "اكتشف ما يعرفه الإنترنت<br>بالفعل <span class=\"ndic-highlight\">عنك</span>.",
     "see_report": "عرض التقرير الكامل"
   },
   "quick_answer": {
     "label": "إجابة سريعة",
-    "title": "ما هو مركز استخبارات الشبكة والأجهزة؟"
+    "title": "ما هو مركز معلومات الشبكة والأجهزة؟"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "مركز استخبارات الشبكة والأجهزة",
+    "subtitle": "مركز معلومات الشبكة والأجهزة",
     "status_live": "مباشر",
     "status_scanning": "جارٍ الفحص",
     "status_offline": "غير متصل",
@@ -46,7 +46,7 @@ window.NDIC_TRANSLATIONS_AR = {
     "api_calls": "استدعاءات API"
   },
   "canvas1": {
-    "heading_technical": "استخبارات مسار ASN والشبكة",
+    "heading_technical": "تحليلات مسار ASN والشبكة",
     "heading_plain": "على أي شبكة أنت؟",
     "params": {
       "asn_number": "رقم ASN",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_AR = {
     "deep_dive": "تحليل معمق لهوية شبكتك"
   },
   "canvas3": {
-    "heading_technical": "استخبارات VPN والبروكسي والتوجيه",
+    "heading_technical": "تحليلات VPN والبروكسي والتوجيه",
     "heading_plain": "هل أنت مختفٍ على الإنترنت؟",
     "params": {
       "vpn_detected": "تم اكتشاف VPN",
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_AR = {
     "deep_dive": "تحليل معمق لشبكتك المباشرة"
   },
   "canvas5": {
-    "heading_technical": "لوحة استخبارات الجهاز",
+    "heading_technical": "لوحة تحليلات الجهاز",
     "heading_plain": "ما الجهاز الذي تستخدمه؟",
     "params": {
       "os": "نظام التشغيل",
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_AR = {
     "deep_dive": "تحليل معمق لقدرات متصفحك"
   },
   "canvas9": {
-    "heading_technical": "لوحة استخبارات الأداء",
+    "heading_technical": "لوحة تحليلات الأداء",
     "heading_plain": "ما مدى سرعة متصفحك؟",
     "params": {
       "page_load_time": "وقت تحميل الصفحة",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_AR = {
     "deep_dive": "تحليل معمق لأدائك"
   },
   "canvas10": {
-    "heading_technical": "استخبارات سرعة العرض في المتصفح",
+    "heading_technical": "تحليلات سرعة العرض في المتصفح",
     "heading_plain": "ما مدى سرعة عرض جهازك؟",
     "vitals": {
       "lcp": "أكبر رسم للمحتوى",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_AR = {
     "deep_dive": "تحليل معمق لسرعة العرض"
   },
   "canvas11": {
-    "heading_technical": "لوحة النتائج الاستخباراتية العالمية",
+    "heading_technical": "لوحة النتائج التحليلية العالمية",
     "heading_plain": "درجتك الإجمالية",
     "params": {
       "global_score": "الدرجة العالمية",
@@ -377,7 +377,7 @@ window.NDIC_TRANSLATIONS_AR = {
     "deep_dive": "تحليل معمق لدرجتك العالمية"
   },
   "canvas12": {
-    "heading_technical": "التغذية الاستخباراتية المباشرة",
+    "heading_technical": "البث المباشر للمعلومات",
     "heading_plain": "ماذا حدث للتو؟",
     "params": {
       "online_status": "حالة الاتصال",
@@ -399,10 +399,10 @@ window.NDIC_TRANSLATIONS_AR = {
       "degraded": "متدهور",
       "none_detected": "لم يُكتشف شيء"
     },
-    "deep_dive": "تحليل معمق لتغذيتك الاستخباراتية المباشرة"
+    "deep_dive": "تحليل معمق للبث المباشر لمعلوماتك"
   },
   "full_summary": {
-    "title": "تقرير استخبارات النظام الكامل",
+    "title": "تقرير معلومات النظام الكامل",
     "label": "ملخص تشخيص",
     "source_label": "تم إنشاؤه بواسطة",
     "generated_at": "تم الإنشاء",
@@ -424,10 +424,10 @@ window.NDIC_TRANSLATIONS_AR = {
     "copy_failed": "فشل النسخ — حاول يدوياً"
   },
   "ai_summary": {
-    "label": "ملخص استخبارات",
+    "label": "ملخص التحليل",
     "source_script": "سكريبت",
     "generating": "جارٍ إنشاء التحليل...",
-    "in_progress": "جارٍ فحص الاستخبارات."
+    "in_progress": "جارٍ إجراء الفحص التحليلي."
   },
   "scores": {
     "excellent": "ممتاز",
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_AR = {
   },
   "methodology": {
     "label": "المنهجية",
-    "text": "تُجمع جميع البيانات الاستخباراتية من جانب العميل عبر واجهات برمجة المتصفح القياسية وتُثرى في الواجهة الخلفية ببيانات الشبكة والموقع من قواعد بيانات IP، ومنها MaxMind GeoLite2."
+    "text": "تُجمع جميع المعلومات من جانب العميل عبر واجهات برمجة المتصفح القياسية وتُثرى في الواجهة الخلفية ببيانات الشبكة والموقع من قواعد بيانات IP، ومنها MaxMind GeoLite2."
   },
   "citations": {
     "label": "المصادر والمراجع",
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_AR = {
     "error": "عذراً! حدثت مشكلة في إرسال النموذج."
   },
   "footer": {
-    "tagline": "استخبارات الشبكة والأجهزة في الوقت الفعلي.",
-    "description": "أداة استخبارات مجانية تعمل في المتصفح. لا حاجة لإنشاء حساب.",
-    "col_intelligence": "الاستخبارات",
+    "tagline": "معلومات الشبكة والأجهزة في الوقت الفعلي.",
+    "description": "أداة معلومات مجانية تعمل في المتصفح. لا حاجة لإنشاء حساب.",
+    "col_intelligence": "المعلومات",
     "col_deep_dives": "التحليلات المعمقة",
     "col_legal": "قانوني",
     "col_connect": "تواصل",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_AR = {
   "offline": {
     "status": "انقطع الاتصال",
     "title": "أنت غير متصل",
-    "body": "يحتاج IntelReap إلى اتصال نشط لجمع بيانات الاستخبارات. تحقق من شبكتك وحاول مجدداً.",
+    "body": "يحتاج IntelReap إلى اتصال نشط لجمع بيانات الفحص. تحقق من شبكتك وحاول مجدداً.",
     "retry": "إعادة محاولة الاتصال",
-    "home": "العودة إلى مركز الاستخبارات",
-    "cached_title": "استخبارات مخزنة متاحة",
+    "home": "العودة إلى مركز المعلومات",
+    "cached_title": "معلومات مخزنة مؤقتًا متاحة",
     "cached_body": "قد تكون بعض البيانات المفحوصة سابقاً متاحة من جلستك الأخيرة.",
     "online_status": "حالة الاتصال",
     "connection_type": "نوع الاتصال",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_AR = {
     "last_online": "آخر اتصال"
   },
   "internal_links": {
-    "header": "استكشف لوحات الاستخبارات",
-    "back_to_main": "← العودة إلى مركز الاستخبارات"
+    "header": "استكشف لوحات المعلومات",
+    "back_to_main": "← العودة إلى مركز المعلومات"
   },
   "seasonal": {
     "spring": "إصدار الربيع",

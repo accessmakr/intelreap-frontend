@@ -44,3 +44,7 @@ L5 omission, L125 grammar, L206 antialiasing, L244 push, L250 and L367 flags, L3
 
 ## Update 2026-11-17: stale English labels FIXED in all 24 languages
 Removed the ip-api / ipwho / ProxyCheck / IPQualityScore / Groq / Gemini names from en.js and every translation (lines 468, 525, 537; unused source_groq and source_gemini labels deleted). Wording is now generic (MaxMind GeoLite2 credit kept). Only translation files changed; docs/data/page-dates.json untouched; verify_dates.py: 0 problems. service-worker.js still lists those two hosts in a do-not-cache list; harmless, left as is.
+
+## Update 2026-11-17: terminology decision APPLIED
+Owner approved replacing "استخبارات" (spy sense). 30 strings changed in ar.js: "معلومات" for centre, tool, panels and tagline; "تحليلات" for the panel headings; "الفحص التحليلي" for scan wording. No leftover "استخبار". Only ar.js changed; dates untouched (verify_dates 0 problems).
+NOTE for other languages: tr (istihbarat), pl (wywiadowcze), nl (inlichtingen), vi (tinh bao), th (khaaw kraawng) use the same spy sense of "intelligence"; check during their reviews.
