@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_PT = {
   "ai_summary": {
     "label": "Resumo de Inteligência",
     "source_script": "Script",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Gerando análise...",
     "in_progress": "Análise de inteligência em andamento."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_PT = {
   },
   "methodology": {
     "label": "Metodologia",
-    "text": "Toda a inteligência é coletada no lado do cliente via APIs padrão do navegador e enriquecida através de uma cadeia de fallback backend de três níveis incluindo ip-api.com, ipwho.is e MaxMind GeoLite2."
+    "text": "Toda a inteligência é coletada no lado do cliente via APIs padrão do navegador e enriquecida pelo backend com bancos de dados de rede e localização de IP, incluindo o MaxMind GeoLite2."
   },
   "citations": {
     "label": "Fontes e Referências",
@@ -534,7 +532,7 @@ window.NDIC_TRANSLATIONS_PT = {
       },
       {
         "q": "Qual a precisão da geolocalização de IP?",
-        "a": "A geolocalização de IP é precisa no nível do país em quase todos os casos e no nível da cidade para a maioria das conexões residenciais e comerciais. O IntelReap usa uma cadeia de fallback de três níveis incluindo ip-api.com, ipwho.is e MaxMind para máxima precisão."
+        "a": "A geolocalização de IP é precisa no nível do país em quase todos os casos e no nível da cidade para a maioria das conexões residenciais e comerciais. O IntelReap combina dados do MaxMind GeoLite2 com uma fonte de apoio para máxima precisão."
       },
       {
         "q": "O que a pontuação de segurança mede?",

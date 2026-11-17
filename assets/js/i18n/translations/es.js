@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_ES = {
   "ai_summary": {
     "label": "Resumen de Inteligencia",
     "source_script": "Script",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Generando análisis...",
     "in_progress": "Análisis de inteligencia en curso."
   },

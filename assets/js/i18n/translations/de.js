@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_DE = {
   "ai_summary": {
     "label": "Aufklärungszusammenfassung",
     "source_script": "Skript",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Analyse wird erstellt...",
     "in_progress": "Aufklärungsscan läuft."
   },
@@ -534,7 +532,7 @@ window.NDIC_TRANSLATIONS_DE = {
       },
       {
         "q": "Wie genau ist die IP-Geolokalisierung?",
-        "a": "Die IP-Geolokalisierung ist auf Länderebene in fast allen Fällen korrekt und auf Stadtebene für die meisten privaten und geschäftlichen Verbindungen. IntelReap verwendet eine dreistufige Fallback-Kette einschließlich ip-api.com, ipwho.is und MaxMind GeoLite2 für maximale Genauigkeit."
+        "a": "Die IP-Geolokalisierung ist auf Länderebene in fast allen Fällen korrekt und auf Stadtebene für die meisten privaten und geschäftlichen Verbindungen. IntelReap kombiniert MaxMind-GeoLite2-Daten mit einer Ersatzquelle für maximale Genauigkeit."
       },
       {
         "q": "Was misst der Sicherheitswert?",

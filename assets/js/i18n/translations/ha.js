@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_HA = {
   "ai_summary": {
     "label": "Taƙaitawar Bayanan",
     "source_script": "Hujja",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Ana ƙirƙirar nazari...",
     "in_progress": "Binciken bayanan na ci gaba."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_HA = {
   },
   "methodology": {
     "label": "Hanyar Aiki",
-    "text": "Ana tattara duk bayanai daga gefen mai amfani ta hanyar API na daidaitattun mai bincike kuma ana ƙara bayani ta hanyar sarkar mafi aminci ta bayan tsarin mai matakai uku wanda ya haɗa da ip-api.com, ipwho.is da MaxMind."
+    "text": "Ana tattara duk bayanai daga gefen mai amfani ta hanyar API na daidaitattun mai bincike, kuma bayan tsarin yana ƙara musu bayani daga rumbun bayanan hanyar sadarwa da wurin IP, ciki har da MaxMind GeoLite2."
   },
   "citations": {
     "label": "Tushe da Manazarta",

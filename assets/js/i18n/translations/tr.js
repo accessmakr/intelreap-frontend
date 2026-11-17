@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_TR = {
   "ai_summary": {
     "label": "İstihbarat Özeti",
     "source_script": "Komut Dosyası",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Analiz oluşturuluyor...",
     "in_progress": "İstihbarat taraması devam ediyor."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_TR = {
   },
   "methodology": {
     "label": "Metodoloji",
-    "text": "Tüm istihbarat verileri standart tarayıcı API'leri aracılığıyla istemci tarafında toplanır ve ip-api.com, ipwho.is ve MaxMind veritabanlarını içeren üç katmanlı arka uç yedek zinciri üzerinden zenginleştirilir."
+    "text": "Tüm istihbarat verileri standart tarayıcı API'leri aracılığıyla istemci tarafında toplanır ve arka uçta MaxMind GeoLite2 dahil IP ağ ve konum veritabanlarıyla zenginleştirilir."
   },
   "citations": {
     "label": "Kaynaklar ve Referanslar",

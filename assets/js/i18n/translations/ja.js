@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_JA = {
   "ai_summary": {
     "label": "インテリジェンスサマリー",
     "source_script": "スクリプト",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "分析を生成中...",
     "in_progress": "インテリジェンススキャン進行中。"
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_JA = {
   },
   "methodology": {
     "label": "方法論",
-    "text": "すべてのインテリジェンスデータは標準ブラウザAPI経由でクライアント側で収集され、ip-api.com、ipwho.is、MaxMindデータベースを含む三層バックエンドフォールバックチェーンを通じて強化されます。"
+    "text": "すべてのインテリジェンスデータは標準ブラウザAPI経由でクライアント側で収集され、バックエンドでMaxMind GeoLite2を含むIPのネットワーク・位置情報データベースにより補強されます。"
   },
   "citations": {
     "label": "出典と参考文献",

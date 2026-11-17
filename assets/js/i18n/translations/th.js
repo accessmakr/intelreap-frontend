@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_TH = {
   "ai_summary": {
     "label": "สรุปข่าวกรอง",
     "source_script": "สคริปต์",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "กำลังสร้างการวิเคราะห์...",
     "in_progress": "กำลังสแกนข่าวกรองอยู่"
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_TH = {
   },
   "methodology": {
     "label": "วิธีการ",
-    "text": "ข้อมูลข่าวกรองทั้งหมดถูกรวบรวมฝั่งไคลเอ็นต์ผ่าน API เบราว์เซอร์มาตรฐานและเสริมผ่านเชนสำรองแบ็กเอนด์สามชั้นที่รวม ip-api.com, ipwho.is และ MaxMind"
+    "text": "ข้อมูลข่าวกรองทั้งหมดถูกรวบรวมฝั่งไคลเอ็นต์ผ่าน API เบราว์เซอร์มาตรฐาน และเสริมที่แบ็กเอนด์ด้วยฐานข้อมูลเครือข่ายและตำแหน่งของ IP รวมถึง MaxMind GeoLite2"
   },
   "citations": {
     "label": "แหล่งที่มาและเอกสารอ้างอิง",

@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_HI = {
   "ai_summary": {
     "label": "इंटेलिजेंस सारांश",
     "source_script": "स्क्रिप्ट",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "विश्लेषण तैयार हो रहा है...",
     "in_progress": "इंटेलिजेंस स्कैन जारी है।"
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_HI = {
   },
   "methodology": {
     "label": "पद्धति",
-    "text": "सभी इंटेलिजेंस डेटा मानक ब्राउज़र API के माध्यम से क्लाइंट-साइड एकत्र की जाती है और ip-api.com, ipwho.is और MaxMind डेटाबेस की तीन-स्तरीय बैकएंड फ़ॉलबैक श्रृंखला के माध्यम से समृद्ध की जाती है।"
+    "text": "सभी इंटेलिजेंस डेटा मानक ब्राउज़र API के माध्यम से क्लाइंट-साइड एकत्र किया जाता है और बैकएंड में MaxMind GeoLite2 सहित IP नेटवर्क और स्थान डेटाबेस की मदद से समृद्ध किया जाता है।"
   },
   "citations": {
     "label": "स्रोत और संदर्भ",

@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_UR = {
   "ai_summary": {
     "label": "انٹیلیجنس خلاصہ",
     "source_script": "اسکرپٹ",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "تجزیہ تیار ہو رہا ہے...",
     "in_progress": "انٹیلیجنس اسکین جاری ہے۔"
   },

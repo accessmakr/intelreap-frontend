@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_IT = {
   "ai_summary": {
     "label": "Riepilogo Intelligence",
     "source_script": "Script",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Generazione analisi in corso...",
     "in_progress": "Scansione intelligence in corso."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_IT = {
   },
   "methodology": {
     "label": "Metodologia",
-    "text": "Tutti i dati di intelligence vengono raccolti lato client tramite API browser standard e arricchiti attraverso una catena di fallback backend a tre livelli che include ip-api.com, ipwho.is e MaxMind GeoLite2."
+    "text": "Tutti i dati di intelligence vengono raccolti lato client tramite API browser standard e arricchiti dal backend con database di rete e posizione degli IP, tra cui MaxMind GeoLite2."
   },
   "citations": {
     "label": "Fonti e Riferimenti",

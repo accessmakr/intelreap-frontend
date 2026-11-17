@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_VI = {
   "ai_summary": {
     "label": "Tóm Tắt Tình Báo",
     "source_script": "Script",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Đang Tạo Phân Tích...",
     "in_progress": "Đang Quét Tình Báo."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_VI = {
   },
   "methodology": {
     "label": "Phương Pháp Luận",
-    "text": "Tất cả dữ liệu tình báo được thu thập ở phía máy khách thông qua API trình duyệt tiêu chuẩn và được làm phong phú thêm thông qua chuỗi dự phòng backend ba tầng bao gồm ip-api.com, ipwho.is và MaxMind."
+    "text": "Tất cả dữ liệu tình báo được thu thập ở phía máy khách thông qua API trình duyệt tiêu chuẩn và được backend bổ sung bằng các cơ sở dữ liệu mạng và vị trí IP, bao gồm MaxMind GeoLite2."
   },
   "citations": {
     "label": "Nguồn Và Tài Liệu Tham Khảo",

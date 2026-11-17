@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_FR = {
   "ai_summary": {
     "label": "Résumé de renseignement",
     "source_script": "Script",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Génération de l'analyse...",
     "in_progress": "Analyse de renseignement en cours."
   },

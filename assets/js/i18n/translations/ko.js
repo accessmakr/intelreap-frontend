@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_KO = {
   "ai_summary": {
     "label": "인텔리전스 요약",
     "source_script": "스크립트",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "분석 생성 중...",
     "in_progress": "인텔리전스 스캔 진행 중."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_KO = {
   },
   "methodology": {
     "label": "방법론",
-    "text": "모든 인텔리전스 데이터는 표준 브라우저 API를 통해 클라이언트 측에서 수집되며 ip-api.com, ipwho.is, MaxMind 데이터베이스를 포함하는 3계층 백엔드 폴백 체인을 통해 강화됩니다."
+    "text": "모든 인텔리전스 데이터는 표준 브라우저 API를 통해 클라이언트 측에서 수집되며, 백엔드에서 MaxMind GeoLite2를 포함한 IP 네트워크 및 위치 데이터베이스로 보강됩니다."
   },
   "citations": {
     "label": "출처 및 참고문헌",

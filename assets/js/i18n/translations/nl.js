@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_NL = {
   "ai_summary": {
     "label": "Inlichtingensamenvatting",
     "source_script": "Script",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Analyse genereren...",
     "in_progress": "Inlichtingenscan bezig."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_NL = {
   },
   "methodology": {
     "label": "Methodologie",
-    "text": "Alle inlichtingengegevens worden aan de clientzijde verzameld via standaard browser-API's en verrijkt via een drielagige backend-fallbackketen inclusief ip-api.com, ipwho.is en MaxMind GeoLite2."
+    "text": "Alle inlichtingengegevens worden aan de clientzijde verzameld via standaard browser-API's en door de backend verrijkt met netwerk- en locatiedatabases voor IP-adressen, waaronder MaxMind GeoLite2."
   },
   "citations": {
     "label": "Bronnen en Referenties",

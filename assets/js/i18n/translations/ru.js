@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_RU = {
   "ai_summary": {
     "label": "Сводка разведки",
     "source_script": "Скрипт",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Генерация анализа...",
     "in_progress": "Разведывательное сканирование выполняется."
   },

@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_EN = {
   "ai_summary": {
     "label": "Intelligence Summary",
     "source_script": "Script",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Generating analysis...",
     "in_progress": "Intelligence scan in progress."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_EN = {
   },
   "methodology": {
     "label": "Methodology",
-    "text": "All intelligence is gathered client-side via standard browser APIs and enriched through a three-tier backend fallback chain using ip-api, ipwho, and MaxMind databases."
+    "text": "All intelligence is gathered client-side via standard browser APIs and enriched by the backend using IP network and location databases, including MaxMind GeoLite2."
   },
   "citations": {
     "label": "Sources and References",
@@ -522,7 +520,7 @@ window.NDIC_TRANSLATIONS_EN = {
       },
       {
         "q": "How does the VPN detection work?",
-        "a": "IntelReap uses a three-layer detection approach. First, it analyses your ASN ownership type — datacenter ASNs suggest VPN or proxy usage. Second, it checks for timezone and browser language mismatches against your IP geolocation, which reveal routing inconsistencies. Third, it optionally queries ProxyCheck and IPQualityScore for high-risk IP signatures. All three signals are combined into a single trust score and route classification."
+        "a": "IntelReap uses a three-layer detection approach. First, it analyses your ASN ownership type — datacenter ASNs suggest VPN or proxy usage. Second, it checks for timezone and browser language mismatches against your IP geolocation, which reveal routing inconsistencies. Third, it adds reputation signals for high-risk IP ranges. All three signals are combined into a single trust score and route classification."
       },
       {
         "q": "What is a WebRTC IP leak?",
@@ -534,7 +532,7 @@ window.NDIC_TRANSLATIONS_EN = {
       },
       {
         "q": "How accurate is the IP geolocation?",
-        "a": "IP geolocation is accurate at the country level in nearly all cases and at the city level for most residential and commercial connections. Accuracy can be lower for mobile networks, satellite connections and VPNs where the IP may be registered in a different region than your physical location. IntelReap uses a three-tier fallback chain including ip-api.com, ipwho.is and MaxMind GeoLite2 for maximum accuracy."
+        "a": "IP geolocation is accurate at the country level in nearly all cases and at the city level for most residential and commercial connections. Accuracy can be lower for mobile networks, satellite connections and VPNs where the IP may be registered in a different region than your physical location. IntelReap combines MaxMind GeoLite2 data with a backup source for maximum accuracy."
       },
       {
         "q": "What does the security score measure?",

@@ -41,3 +41,6 @@ L5 omission, L125 grammar, L206 antialiasing, L244 push, L250 and L367 flags, L3
 - L338 "الأجهزة العليا": suggest "أجهزة الفئة العليا". MINOR.
 - L429/430 source_groq / source_gemini: English file also still has these keys, but summaries now run on the device with no AI provider. Stale keys in en.js too, not a translation fault. Check whether the page still uses them.
 - Everything else here matches the English meaning.
+
+## Update 2026-11-17: stale English labels FIXED in all 24 languages
+Removed the ip-api / ipwho / ProxyCheck / IPQualityScore / Groq / Gemini names from en.js and every translation (lines 468, 525, 537; unused source_groq and source_gemini labels deleted). Wording is now generic (MaxMind GeoLite2 credit kept). Only translation files changed; docs/data/page-dates.json untouched; verify_dates.py: 0 problems. service-worker.js still lists those two hosts in a do-not-cache list; harmless, left as is.

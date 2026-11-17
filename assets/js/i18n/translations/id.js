@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_ID = {
   "ai_summary": {
     "label": "Ringkasan Intelijen",
     "source_script": "Skrip",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Membuat analisis...",
     "in_progress": "Pemindaian intelijen sedang berlangsung."
   },

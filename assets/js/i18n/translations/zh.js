@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_ZH = {
   "ai_summary": {
     "label": "智能摘要",
     "source_script": "脚本",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "正在生成分析...",
     "in_progress": "智能扫描进行中。"
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_ZH = {
   },
   "methodology": {
     "label": "方法论",
-    "text": "所有智能数据通过标准浏览器API在客户端收集，并通过三层后端回退链进行丰富处理，包括ip-api.com、ipwho.is和MaxMind数据库。"
+    "text": "所有智能数据通过标准浏览器API在客户端收集，并由后端借助包括MaxMind GeoLite2在内的IP网络与位置数据库进行丰富处理。"
   },
   "citations": {
     "label": "来源与参考",

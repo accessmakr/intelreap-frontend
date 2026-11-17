@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_PL = {
   "ai_summary": {
     "label": "Podsumowanie Wywiadu",
     "source_script": "Skrypt",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Generowanie analizy...",
     "in_progress": "Skanowanie wywiadu w toku."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_PL = {
   },
   "methodology": {
     "label": "Metodologia",
-    "text": "Wszystkie dane wywiadowcze są zbierane po stronie klienta przez standardowe API przeglądarki i wzbogacane przez trzystopniowy łańcuch awaryjny backendu obejmujący ip-api.com, ipwho.is i MaxMind GeoLite2."
+    "text": "Wszystkie dane wywiadowcze są zbierane po stronie klienta przez standardowe API przeglądarki i wzbogacane przez backend z użyciem baz danych sieci i lokalizacji adresów IP, w tym MaxMind GeoLite2."
   },
   "citations": {
     "label": "Źródła i Odniesienia",

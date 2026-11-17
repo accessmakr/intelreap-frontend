@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_FA = {
   "ai_summary": {
     "label": "خلاصه اطلاعاتی",
     "source_script": "اسکریپت",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "در حال تولید تحلیل...",
     "in_progress": "اسکن اطلاعاتی در حال انجام است."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_FA = {
   },
   "methodology": {
     "label": "روش‌شناسی",
-    "text": "تمام داده‌های اطلاعاتی از طریق API‌های استاندارد مرورگر در سمت کلاینت جمع‌آوری شده و از طریق زنجیره پشتیبان‌گیری سه‌لایه شامل ip-api.com، ipwho.is و MaxMind غنی‌سازی می‌شوند."
+    "text": "تمام داده‌های اطلاعاتی از طریق API‌های استاندارد مرورگر در سمت کلاینت جمع‌آوری می‌شوند و در بک‌اند با پایگاه‌های داده شبکه و موقعیت IP، از جمله MaxMind GeoLite2، غنی‌سازی می‌شوند."
   },
   "citations": {
     "label": "منابع و مراجع",

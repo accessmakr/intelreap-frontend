@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_SW = {
   "ai_summary": {
     "label": "Muhtasari wa Akili",
     "source_script": "Hati",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Inaunda uchambuzi...",
     "in_progress": "Uchunguzi wa akili unaendelea."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_SW = {
   },
   "methodology": {
     "label": "Mbinu",
-    "text": "Data yote ya akili inakusanywa upande wa mteja kupitia API za kawaida za kivinjari na kuboreshwa kupitia mnyororo wa hifadhi wa mfumo wa nyuma wa tabaka tatu unaojumuisha ip-api.com, ipwho.is na MaxMind."
+    "text": "Data yote ya akili inakusanywa upande wa mteja kupitia API za kawaida za kivinjari na kuboreshwa na mfumo wa nyuma kwa kutumia hifadhidata za mtandao na eneo la IP, ikiwemo MaxMind GeoLite2."
   },
   "citations": {
     "label": "Vyanzo na Marejeo",

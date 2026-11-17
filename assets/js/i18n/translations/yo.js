@@ -426,8 +426,6 @@ window.NDIC_TRANSLATIONS_YO = {
   "ai_summary": {
     "label": "Àkópọ̀ Imọye",
     "source_script": "Hujà",
-    "source_groq": "Groq",
-    "source_gemini": "Gemini",
     "generating": "Ń ṣẹ̀dá itupalẹ...",
     "in_progress": "Ṣiṣayẹwo imọye ń lọ síwájú."
   },
@@ -465,7 +463,7 @@ window.NDIC_TRANSLATIONS_YO = {
   },
   "methodology": {
     "label": "Ọ̀nà Ìṣe",
-    "text": "A kojọ gbogbo data imọye ní ẹgbẹ́ olùmúlò látọwọ́ àwọn API aṣàwákiri ìpìlẹ̀ tí a sì jẹ́ kí ó pọ̀ sí i nípasẹ̀ pq ìpadàsẹ́ backend onítẹ̀lẹ̀ mẹ́ta tó ní ip-api.com, ipwho.is àti MaxMind."
+    "text": "A kojọ gbogbo data imọye ní ẹgbẹ́ olùmúlò látọwọ́ àwọn API aṣàwákiri ìpìlẹ̀, backend sì fi àwọn ibi ìpamọ́ data nẹ́tíwọ́ọ̀kì àti ibùdó IP, pẹ̀lú MaxMind GeoLite2, mú un pọ̀ sí i."
   },
   "citations": {
     "label": "Àwọn Orísun ati Ìtọ́kasí",
