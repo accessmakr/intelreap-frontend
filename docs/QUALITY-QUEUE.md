@@ -153,6 +153,7 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 - **Defects found:** Explainer without a tool; does not separate reverse IP (domains on an IP) from reverse DNS (PTR) up front.
 - **Retrofit work:** Retitle "Reverse IP Lookup". Answer-first with a tool: PTR via public DoH now; "domains on this IP" only if a data source is approved (decision D-4). Honest limitations (CDNs, shared hosting, partial datasets).
 - **Diagrams (purpose of each):** Teaches: forward DNS vs reverse DNS vs reverse IP, each answers a different question; Teaches: why many sites share one IP (shared hosting/CDN)
+- **Status:** Done 2026-11-17 (item 7), built from `specs/reverse_ip.py` and `reverse_figs.py`. Title "Reverse IP Lookup: Hostname and Domains on an IP"; client-side PTR lookup with forward confirmation through Cloudflare and Google DoH (JSON); 5 diagrams drawn separately for desktop and phone; 8 sections, 12 FAQs, 11 sources; no domains-on-IP list (owner: nothing paid, decision 24).
 
 ### A3 WebRTC leak test and shield (retarget)
 - **URL:** `/learn/webrtc-leak-test-and-shield`
