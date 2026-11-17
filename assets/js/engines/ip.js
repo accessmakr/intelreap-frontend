@@ -289,6 +289,10 @@ const IPEngine = (() => {
       typeof LeafletMapViz === 'undefined'
     ) return
 
+    // Only the pages that contain the identity map draw it; the
+    // other panel pages have no map element and must not log an error
+    if (!document.getElementById('canvas2-map')) return
+
     try {
       LeafletMapViz.initialize(
         lat, lng, city, isp

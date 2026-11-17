@@ -12,8 +12,11 @@ const Canvas1 = (() => {
 
     // ─── PARAMETERS ───────────────────────
 
+    // the backend sends the number together with the owner name
     setText('c1-asn-number',
-      n.asn || '—'
+      n.asn
+        ? (String(n.asn).match(/^AS\d+/i) || [n.asn])[0]
+        : '—'
     )
 
     setText('c1-asn-owner',
@@ -28,8 +31,14 @@ const Canvas1 = (() => {
       n.networkTier || '—'
     )
 
+    // This panel describes the route of the connecting address, which
+    // can differ from the IPv4 address the identity panel shows first,
+    // so say which kind of range this is
     setText('c1-ip-range',
-      n.ipRange || '—'
+      n.ipRange
+        ? n.ipRange +
+          (String(n.ipRange).includes(':') ? ' (IPv6)' : ' (IPv4)')
+        : '—'
     )
 
     setText('c1-allocation-registry',

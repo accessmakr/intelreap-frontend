@@ -13,8 +13,10 @@ const Canvas5 = (() => {
     // ─── PARAMETERS ───────────────────────
 
     // OS with version
+    // Some systems already carry the version in their name
+    // ("Android 14"); do not add it a second time
     setText('c5-os',
-      d.osVersion
+      d.osVersion && !String(d.os || '').includes(d.osVersion)
         ? `${d.os} ${d.osVersion}`
         : d.os || '—'
     )

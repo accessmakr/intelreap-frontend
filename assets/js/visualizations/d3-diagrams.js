@@ -112,7 +112,9 @@ const D3DiagramsViz = (() => {
     // a layout branch, the data and flow order
     // (device -> isp -> asn -> upstream -> internet)
     // stay identical either way.
-    const isNarrow = width < 480
+    const isNarrow = width < 640
+    // small phones: shorter names and a wider bottom row
+    const isTiny = width < 380
 
     const nodes = isNarrow
       ? [
@@ -121,7 +123,7 @@ const D3DiagramsViz = (() => {
             label: 'Your Device',
             sublabel: identity.ip || '—',
             type: 'device',
-            x: width * 0.18,
+            x: width * 0.16,
             y: height * 0.3,
             fixed: true
           },
@@ -140,7 +142,7 @@ const D3DiagramsViz = (() => {
             label: network.asnOwner || 'ASN',
             sublabel: network.asn || '—',
             type: 'asn',
-            x: width * 0.82,
+            x: width * 0.84,
             y: height * 0.3
           },
           {
@@ -149,7 +151,7 @@ const D3DiagramsViz = (() => {
               'Upstream Provider',
             sublabel: network.networkTier || '—',
             type: 'upstream',
-            x: width * 0.34,
+            x: width * (isTiny ? 0.26 : 0.34),
             y: height * 0.72
           },
           {
@@ -158,7 +160,7 @@ const D3DiagramsViz = (() => {
             sublabel: network.allocationRegistry ||
               'Global',
             type: 'internet',
-            x: width * 0.66,
+            x: width * (isTiny ? 0.74 : 0.66),
             y: height * 0.72,
             fixed: true
           }
@@ -322,7 +324,7 @@ const D3DiagramsViz = (() => {
     linkElements.append('text')
       .attr('class', 'ndic-routing-link-label')
       .attr('fill', tc('rgba(255,255,255,0.8)'))
-      .attr('font-size', '10px')
+      .attr('font-size', isTiny ? '9px' : '10px')
       .attr('text-anchor', 'middle')
       .attr('dy', -6)
       // a background-coloured outline keeps the word readable where a
@@ -333,7 +335,10 @@ const D3DiagramsViz = (() => {
       .attr('stroke-linejoin', 'round')
       .text(d => {
         if (d.latency) {
-          return `${d.label} • ${d.latency}ms`
+          // the connection type is already shown on the ISP node
+          return isNarrow
+            ? `${d.latency}ms`
+            : `${d.label} • ${d.latency}ms`
         }
         return d.label
       })
@@ -452,7 +457,7 @@ const D3DiagramsViz = (() => {
       .attr('fill', tc('rgba(255,255,255,0.95)'))
       .attr('font-size', '11px')
       .attr('font-weight', '700')
-      .text(d => truncateString(d.label, 16))
+      .text(d => truncateString(d.label, width < 340 ? 10 : isNarrow ? 13 : 16))
 
     // Node sublabels
     nodeElements.append('text')
@@ -462,7 +467,7 @@ const D3DiagramsViz = (() => {
       )
       .attr('fill', tc('rgba(255,255,255,0.7)'))
       .attr('font-size', '10px')
-      .text(d => truncateString(d.sublabel, 16))
+      .text(d => truncateString(d.sublabel, isTiny ? 10 : isNarrow ? 12 : 16))
 
     // Initialize force simulation
     routingSimulation = d3
@@ -498,12 +503,19 @@ const D3DiagramsViz = (() => {
         .attr('y2', d => d.target.y)
 
       // Update link label positions
+      // the diagonal transit label sits nearer its target so it does
+      // not cross the ISP name on the layout's top row
+      const labelAt = d =>
+        isNarrow && d.label === 'transit' ? 0.72 : 0.5
+
       linkGroup.selectAll('text')
         .attr('x', d =>
-          (d.source.x + d.target.x) / 2
+          d.source.x +
+          (d.target.x - d.source.x) * labelAt(d)
         )
         .attr('y', d =>
-          (d.source.y + d.target.y) / 2
+          d.source.y +
+          (d.target.y - d.source.y) * labelAt(d)
         )
 
       // Update node positions
