@@ -1,15 +1,15 @@
 /* IntelReap translations: ja. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_JA = {
   "meta": {
-    "title": "IntelReap — ネットワーク・デバイスインテリジェンスセンター",
-    "description": "リアルタイムのネットワークとデバイスインテリジェンス。IP、ASN、VPNステータス、ブラウザ機能、セキュリティ態勢を明らかにします。無料。",
+    "title": "IntelReap — ネットワーク・デバイス分析センター",
+    "description": "リアルタイムのネットワークとデバイス分析。IP、ASN、VPNステータス、ブラウザ機能、セキュリティ態勢を明らかにします。無料。ログイン不要。",
     "og_title": "IntelReap — あなたのネットワークが何を明かしているか見てみましょう",
-    "og_description": "無料のリアルタイムインテリジェンスツール。ネットワーク、デバイス、セキュリティ、ブラウザを数秒で分析します。"
+    "og_description": "無料のリアルタイム分析ツール。ネットワーク、デバイス、セキュリティ、ブラウザを数秒で分析します。"
   },
   "nav": {
-    "intelligence_center": "インテリジェンスセンター",
+    "intelligence_center": "分析センター",
     "about": "概要",
-    "search_placeholder": "インテリジェンスパネルを検索...",
+    "search_placeholder": "分析パネルを検索...",
     "open_search": "検索を開く",
     "toggle_menu": "メニュー切替",
     "close_menu": "メニューを閉じる",
@@ -18,35 +18,35 @@ window.NDIC_TRANSLATIONS_JA = {
     "guides": "ガイド"
   },
   "hero": {
-    "badge": "無料インテリジェンスツール",
+    "badge": "無料分析ツール",
     "title_line1": "あなたのネットワークは",
     "title_line2": "何を明かしていますか？",
     "tagline": "IntelReap は、ネットワーク環境、デバイスのフィンガープリント、セキュリティ状況、ブラウザの機能をリアルタイムで可視化します。13 のパネルで 285 のデータポイント。無料、ログイン不要。",
-    "cta_primary": "インテリジェンススキャンを実行",
+    "cta_primary": "分析スキャンを実行",
     "cta_secondary": "仕組みを見る",
     "trust_data_points": "スキャンあたり285データポイント",
-    "trust_panels": "12インテリジェンスパネル",
+    "trust_panels": "13分析パネル",
     "badge_live": "ネットワークとデバイスのライブスキャン",
     "title_html": "インターネットが<br><span class=\"ndic-highlight\">あなた</span>について既に知っていることを見る。",
     "see_report": "詳細レポートを見る"
   },
   "quick_answer": {
     "label": "簡単な答え",
-    "title": "ネットワーク・デバイスインテリジェンスセンターとは？"
+    "title": "ネットワーク・デバイス分析センターとは？"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "ネットワーク・デバイスインテリジェンスセンター",
+    "subtitle": "ネットワーク・デバイス分析センター",
     "status_live": "ライブ",
     "status_scanning": "スキャン中",
     "status_offline": "オフライン",
-    "status_degraded": "低下",
+    "status_degraded": "性能低下",
     "last_scan": "最終スキャン",
     "next_refresh": "次回更新",
     "api_calls": "API呼び出し"
   },
   "canvas1": {
-    "heading_technical": "ASNおよびネットワークルートインテリジェンス",
+    "heading_technical": "ASNおよびネットワークルート分析",
     "heading_plain": "どのネットワークにいますか？",
     "params": {
       "asn_number": "ASN番号",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "deep_dive": "ネットワークIDの詳細分析"
   },
   "canvas3": {
-    "heading_technical": "VPN・プロキシ・ルーティングインテリジェンス",
+    "heading_technical": "VPN・プロキシ・ルーティング分析",
     "heading_plain": "オンラインで隠れていますか？",
     "params": {
       "vpn_detected": "VPN検出",
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "deep_dive": "ライブネットワークの詳細分析"
   },
   "canvas5": {
-    "heading_technical": "デバイスインテリジェンスパネル",
+    "heading_technical": "デバイス分析パネル",
     "heading_plain": "どのデバイスを使用していますか？",
     "params": {
       "os": "オペレーティングシステム",
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "deep_dive": "ブラウザ機能の詳細分析"
   },
   "canvas9": {
-    "heading_technical": "パフォーマンスインテリジェンスパネル",
+    "heading_technical": "パフォーマンス分析パネル",
     "heading_plain": "ブラウザはどれほど速いですか？",
     "params": {
       "page_load_time": "ページ読み込み時間",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "deep_dive": "パフォーマンスの詳細分析"
   },
   "canvas10": {
-    "heading_technical": "ブラウザとレンダリング速度インテリジェンス",
+    "heading_technical": "ブラウザとレンダリング速度分析",
     "heading_plain": "デバイスはどれほど速くレンダリングしますか？",
     "vitals": {
       "lcp": "最大コンテンツの描画",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "deep_dive": "レンダリング速度の詳細分析"
   },
   "canvas11": {
-    "heading_technical": "グローバルインテリジェンススコアボード",
+    "heading_technical": "グローバル分析スコアボード",
     "heading_plain": "あなたの総合スコア",
     "params": {
       "global_score": "グローバルスコア",
@@ -361,8 +361,8 @@ window.NDIC_TRANSLATIONS_JA = {
       "capability_score": "機能スコア",
       "performance_score": "パフォーマンススコア",
       "speed_score": "速度スコア",
-      "strongest_area": "最強エリア",
-      "weakest_area": "最弱エリア",
+      "strongest_area": "最高スコアの領域",
+      "weakest_area": "最低スコアの領域",
       "improvement_priority": "改善優先事項",
       "critical_flags": "重大フラグ",
       "warnings": "警告"
@@ -377,7 +377,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "deep_dive": "グローバルスコアの詳細分析"
   },
   "canvas12": {
-    "heading_technical": "ライブインテリジェンスフィード",
+    "heading_technical": "ライブ分析フィード",
     "heading_plain": "今何が起きましたか？",
     "params": {
       "online_status": "接続ステータス",
@@ -396,13 +396,13 @@ window.NDIC_TRANSLATIONS_JA = {
       "online": "オンライン",
       "offline": "オフライン",
       "healthy": "良好",
-      "degraded": "低下",
+      "degraded": "性能低下",
       "none_detected": "検出なし"
     },
-    "deep_dive": "ライブインテリジェンスフィードの詳細分析"
+    "deep_dive": "ライブ分析フィードの詳細分析"
   },
   "full_summary": {
-    "title": "完全なシステムインテリジェンスレポート",
+    "title": "完全なシステム分析レポート",
     "label": "診断サマリー",
     "source_label": "生成元",
     "generated_at": "生成時刻",
@@ -419,15 +419,15 @@ window.NDIC_TRANSLATIONS_JA = {
   },
   "share": {
     "label": "このツールを共有",
-    "copied_for": "にコピー済み",
+    "copied_for": "コピー済み：",
     "link_copied": "リンクをクリップボードにコピーしました",
     "copy_failed": "コピー失敗 — 手動でお試しください"
   },
   "ai_summary": {
-    "label": "インテリジェンスサマリー",
+    "label": "分析サマリー",
     "source_script": "スクリプト",
     "generating": "分析を生成中...",
-    "in_progress": "インテリジェンススキャン進行中。"
+    "in_progress": "分析スキャン進行中。"
   },
   "scores": {
     "excellent": "優秀",
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_JA = {
   },
   "methodology": {
     "label": "方法論",
-    "text": "すべてのインテリジェンスデータは標準ブラウザAPI経由でクライアント側で収集され、バックエンドでMaxMind GeoLite2を含むIPのネットワーク・位置情報データベースにより補強されます。"
+    "text": "すべてのデータは標準ブラウザAPI経由でクライアント側で収集され、バックエンドでMaxMind GeoLite2を含むIPのネットワーク・位置情報データベースにより補強されます。"
   },
   "citations": {
     "label": "出典と参考文献",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_JA = {
     "items": [
       {
         "q": "ASNとは何ですか、なぜ重要なのですか？",
-        "a": "自律システム番号（ASN）はネットワーク事業者に割り当てられた一意の識別子で、インターネット上のトラフィックルーティング方法を決定します。IntelReapはASN、その所有者、ティア分類、ピアリング関係を特定します。"
+        "a": "自律システム番号（ASN）は、ISP、クラウド事業者、大企業などのネットワーク事業者に割り当てられる一意の識別子で、インターネット上でトラフィックがどのようにルーティングされるかを決定します。IntelReapはお使いのASN、その所有者、ティア分類、レジストリ、ピアリング関係を特定し、ネットワークインフラの全体像を提示します。"
       },
       {
         "q": "VPN検出はどのように機能しますか？",
-        "a": "IntelReapは三層アプローチを使用します：ASN所有権タイプの分析、タイムゾーンと言語の不一致確認、オプションのIP評判APIクエリ。三つのシグナルを組み合わせて単一の信頼スコアとルート分類にします。"
+        "a": "IntelReapは三層の検出方式を採用しています。第一に、ASNの所有者タイプを分析します。データセンターのASNはVPNやプロキシの利用を示唆します。第二に、IPジオロケーションに対するタイムゾーンとブラウザ言語の不一致を確認し、ルーティングの矛盾を明らかにします。第三に、リスクの高いIP範囲について評判シグナルを追加します。三つのシグナルは、単一の信頼スコアとルート分類に統合されます。"
       },
       {
         "q": "WebRTC IPリークとは何ですか？",
-        "a": "WebRTCはビデオ通話などのリアルタイム通信に使用されるブラウザAPIです。VPNを使用していても、ローカルネットワークIPアドレスを漏洩させる可能性があります。IntelReapはWebRTCリークを積極的にテストします。"
+        "a": "WebRTCは、ビデオ通話などのリアルタイム通信に使用されるブラウザAPIです。副作用として、VPNを使用していてもローカルネットワークのIPアドレスが漏洩する場合があります。IntelReapのセキュリティパネルは、ピア接続を作成し、ICE候補文字列から明らかになるIPアドレスを取得することで、WebRTCリークを能動的にテストします。"
       },
       {
         "q": "Core Web Vitalsとは何ですか？",
-        "a": "Core Web VitalsはGoogleが定義したウェブページの実際のユーザー体験を測定する指標セットで、LCP、CLS、INPを含みます。IntelReapはすべての六つのバイタルを測定します。"
+        "a": "Core Web VitalsはGoogleが定義した、ウェブページにおける実際のユーザー体験を測定する指標群です。読み込み性能を測るLargest Contentful Paint（LCP）、視覚的な安定性を測るCumulative Layout Shift（CLS）、応答性を測るInteraction to Next Paint（INP）などが含まれます。IntelReapはFCP、TTFB、FIDを含む6つの指標すべてを測定します。"
       },
       {
         "q": "IPジオロケーションはどれほど正確ですか？",
-        "a": "IPジオロケーションはほぼすべての場合で国レベルで正確で、ほとんどの住宅・商業接続では都市レベルでも正確です。IntelReapは最大精度のために三層フォールバックチェーンを使用します。"
+        "a": "IPジオロケーションは、ほぼすべての場合で国レベルで正確で、ほとんどの住宅・商用接続では都市レベルでも正確です。モバイルネットワーク、衛星接続、VPNでは、IPが実際の所在地とは異なる地域に登録されている場合があり、精度が下がることがあります。IntelReapは最大限の精度のため、MaxMind GeoLite2のデータとバックアップの情報源を組み合わせています。"
       },
       {
         "q": "セキュリティスコアは何を測定しますか？",
-        "a": "セキュリティスコアは十の重み付けシグナルから計算されます：HTTPSステータス、セキュアコンテキスト、WebRTC漏洩、混合コンテンツ、トラッキング拒否、ストレージアクセス状態、カメラ・マイク・位置情報権限。"
+        "a": "セキュリティスコアは10個の重み付けシグナルから算出されます：HTTPSステータス、セキュアコンテキスト、WebRTCによるIP漏洩、混合コンテンツの検出、トラッキング拒否の状態、ストレージアクセスの状態、カメラ権限、マイク権限、位置情報権限、フィンガープリント面の数。スコア90〜100は優秀、70〜89は良好、50〜69は普通、30〜49は不良、30未満は深刻です。"
       },
       {
         "q": "IntelReapをオフラインで使用できますか？",
-        "a": "IntelReapはデバイスにインストールできるプログレッシブウェブアプリです。静的インターフェースはキャッシュからオフラインで読み込まれますが、インテリジェンススキャンにはバックエンドAPIへのアクティブな接続が必要です。"
+        "a": "IntelReapはデバイスにインストールできるプログレッシブウェブアプリです。静的なインターフェースはキャッシュからオフラインで読み込まれます。ただし、スキャン自体はバックエンドAPIへの問い合わせとネットワーク・IPデータのリアルタイム取得のため、有効な接続が必要です。オフラインモードでは、最後にキャッシュされたスキャンデータが表示されます。"
       },
       {
         "q": "グローバルスコアはどのように計算されますか？",
-        "a": "グローバルスコアは九つのサブスコアの加重平均です：ネットワーク15%、デバイス15%、セキュリティ20%（最高）、機能10%、パフォーマンス10%、速度10%、プライバシー10%、ID5%、グラフィック5%。"
+        "a": "グローバルスコアは9つのサブスコアの加重平均です：ネットワーク15%、デバイス15%、セキュリティ20%、機能10%、パフォーマンス10%、速度10%、プライバシー10%、ID 5%、グラフィック5%。セキュリティはデジタルの安全性に最も直接影響するため、最も大きな重みを持ちます。各サブスコアは、関連するデータポイントから個別に計算されます。"
       },
       {
         "q": "ベンチマークとCore Web Vitalsの違いは何ですか？",
-        "a": "Core Web Vitalsはこのページがあなたのデバイスと接続でどれほど速く読み込まれたかを測定します。ブラウザベンチマークはネットワーク状況に関係なくデバイスの処理能力を測定する合成テストです。"
+        "a": "Core Web Vitalsは、このページがお使いのデバイスと接続でどれほど速く読み込まれたかを測定する、実際のユーザー体験の指標です。ブラウザベンチマークは、ネットワーク状況に左右されないデバイス本来の処理能力を測る合成テストで、JavaScriptの演算、DOM操作、canvasレンダリング、メモリアクセスを制御された規模で実行します。"
       },
       {
         "q": "IntelReapはモバイルアプリとして利用できますか？",
-        "a": "IntelReapはiOSとAndroidのブラウザから直接アプリストアなしでインストールできるプログレッシブウェブアプリです。iOSではSafariでサイトを開き、共有ボタンをタップしてホーム画面に追加を選択します。"
+        "a": "IntelReapは、アプリストアを経由せず、iOSとAndroidのブラウザから直接インストールできるプログレッシブウェブアプリです。iOSではSafariでサイトを開き、共有をタップして「ホーム画面に追加」を選びます。AndroidではChromeがインストールの案内を自動的に表示します。インストールしたアプリはスタンドアロンモードで動作し、完全なオフライン対応とホーム画面からのアクセスが可能です。"
       }
     ]
   },
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_JA = {
     "error": "エラーが発生しました。フォームの送信に問題がありました。"
   },
   "footer": {
-    "tagline": "リアルタイムのネットワークとデバイスインテリジェンス。",
-    "description": "ブラウザで使える無料のインテリジェンスツール。アカウント登録は不要です。",
-    "col_intelligence": "インテリジェンス",
+    "tagline": "リアルタイムのネットワークとデバイス分析。",
+    "description": "ブラウザで使える無料の分析ツール。アカウント登録は不要です。",
+    "col_intelligence": "分析",
     "col_deep_dives": "詳細分析",
     "col_legal": "法的情報",
     "col_connect": "連絡",
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_JA = {
     "col_learn": "学ぶ",
     "cookie_settings": "Cookie 設定",
     "free_line": "無料でご利用いただけます。アカウント登録は不要です。",
-    "email_us": "メールで連絡",
+    "email_us": "お問い合わせ",
   },
   "cookie": {
     "text": "IntelReap は、言語とテーマの選択をお使いのブラウザに保存します。ご許可いただいた場合は、サイトの利用状況を測定するために Google Analytics の Cookie も使用します。拒否してもツールの機能は制限されません。",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_JA = {
   "offline": {
     "status": "接続が失われました",
     "title": "オフラインです",
-    "body": "IntelReapはインテリジェンスデータを収集するためにアクティブな接続が必要です。ネットワークを確認して再試行してください。",
+    "body": "IntelReapは分析データを収集するためにアクティブな接続が必要です。ネットワークを確認して再試行してください。",
     "retry": "接続を再試行",
-    "home": "インテリジェンスセンターに戻る",
-    "cached_title": "キャッシュされたインテリジェンスが利用可能",
+    "home": "分析センターに戻る",
+    "cached_title": "キャッシュされた分析が利用可能",
     "cached_body": "前回のセッションからスキャンされたデータの一部が利用可能かもしれません。",
     "online_status": "オンラインステータス",
     "connection_type": "接続タイプ",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_JA = {
     "last_online": "最終オンライン時刻"
   },
   "internal_links": {
-    "header": "インテリジェンスパネルを探索",
-    "back_to_main": "← インテリジェンスセンターに戻る"
+    "header": "分析パネルを探索",
+    "back_to_main": "← 分析センターに戻る"
   },
   "seasonal": {
     "spring": "春版",
