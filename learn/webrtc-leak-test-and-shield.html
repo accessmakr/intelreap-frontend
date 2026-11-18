@@ -10,36 +10,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>WebRTC Leak Test and How to Shield Your IP — IntelReap</title>
-  <meta name="description" content="WebRTC can expose your real IP address even behind a VPN. Test for leaks instantly and learn how to disable or shield WebRTC in Chrome, Firefox, Safari, Brave, and Edge.">
-  <meta name="keywords" content="webrtc leak test, webrtc leak, what is webrtc leak, how to stop webrtc leak, webrtc leak protection, does vpn protect against webrtc leak, how to disable webrtc, webrtc ip leak, webrtc leak chrome, webrtc leak firefox, webrtc shield">
+  <title>WebRTC Leak Test: Check and Fix a VPN IP Leak — IntelReap</title>
+  <meta name="description" content="Test whether WebRTC reveals your real IP address behind a VPN, then fix it in Firefox, Brave, Chrome, Edge and Safari with settings checked against vendor docs.">
+  <meta name="keywords" content="webrtc leak test, webrtc leak, what is webrtc leak, webrtc leak shield, webrtc test, webrtc extension, webrtc control, how to disable webrtc on chrome, how to disable webrtc on firefox, how to enable webrtc, webrtc ip leak, does vpn protect against webrtc leak">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="IntelReap">
-
   <link rel="canonical" href="https://intelreap.com/learn/webrtc-leak-test-and-shield">
   <link rel="alternate" hreflang="en"        href="https://intelreap.com/learn/webrtc-leak-test-and-shield">
   <link rel="alternate" hreflang="x-default" href="https://intelreap.com/learn/webrtc-leak-test-and-shield">
-
   <meta property="og:type"         content="article">
-  <meta property="og:title"        content="WebRTC Leak Test and How to Shield Your IP — IntelReap">
-  <meta property="og:description"  content="WebRTC can leak your real IP address even with a VPN active. Test for it instantly and learn exactly how to disable or shield WebRTC in every major browser.">
+  <meta property="og:title"        content="WebRTC Leak Test: Check and Fix a VPN IP Leak — IntelReap">
+  <meta property="og:description"  content="Test whether WebRTC reveals your real IP address behind a VPN, then fix it in Firefox, Brave, Chrome, Edge and Safari with settings checked against vendor docs.">
   <meta property="og:url"          content="https://intelreap.com/learn/webrtc-leak-test-and-shield">
   <meta property="og:site_name"    content="IntelReap">
-  <meta property="og:image"        content="https://intelreap.com/assets/images/og-image.png">
+  <meta property="og:image"        content="https://intelreap.com/assets/images/og/webrtc-leak-test-and-shield.png">
   <meta property="og:image:width"  content="1200">
   <meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Card titled WebRTC Leak Test from IntelReap">
   <meta property="article:published_time" content="2026-07-01T00:00:00Z">
-<meta property="article:modified_time" content="2026-10-02T00:00:00Z">
+<meta property="article:modified_time" content="2026-11-18T00:00:00Z">
 <meta property="og:locale"       content="en_US">
-
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="WebRTC Leak Test and How to Shield Your IP — IntelReap">
-  <meta name="twitter:description" content="Your VPN may not be hiding what you think. Test for WebRTC leaks and learn how to shield against them in every browser.">
-  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og-image.png">
+  <meta name="twitter:title"       content="WebRTC Leak Test: Check and Fix a VPN IP Leak — IntelReap">
+  <meta name="twitter:description" content="Test whether WebRTC reveals your real IP address behind a VPN, then fix it in Firefox, Brave, Chrome, Edge and Safari with settings checked against vendor docs.">
+  <meta name="twitter:image"       content="https://intelreap.com/assets/images/og/webrtc-leak-test-and-shield.png">
   <meta name="twitter:site"        content="@intelreap">
-
-
   <link rel="manifest" href="../manifest.json">
   <meta name="theme-color" content="#0ea5e9">
   <meta name="mobile-web-app-capable" content="yes">
@@ -53,27 +49,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16.png">
   <link rel="shortcut icon" href="../assets/images/icons/favicon.ico">
   <link rel="sitemap" type="application/xml" href="../sitemap.xml">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="../assets/css/ndic-design-system.css">
   <link rel="stylesheet" href="../assets/css/ndic-animations.css">
   <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
-
   <style>
     #scroll-progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--color-accent,var(--color-accent-primary)),var(--color-accent-primary));z-index:9999;transition:width 0.1s linear;pointer-events:none;}
     .ir-breadcrumb{max-width:760px;margin:0 auto;padding:1rem 1.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:0.375rem;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.75rem;color:var(--color-text-tertiary,#475569);}
-    .ir-breadcrumb a{color:var(--color-accent,var(--color-accent-primary));text-decoration:none;}.ir-breadcrumb a:hover{text-decoration:underline;}.ir-breadcrumb-sep{opacity:0.4;}.ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
+    .ir-breadcrumb a{color:var(--color-accent,var(--color-accent-primary));text-decoration:none;}
+    .ir-breadcrumb a:hover{text-decoration:underline;}
+    .ir-breadcrumb-sep{opacity:0.4;}
+    .ir-breadcrumb-current{color:var(--color-text-secondary,#94a3b8);font-weight:500;}
     .ir-article{max-width:760px;margin:0 auto;padding:0 1.5rem 4rem;}
     .ir-article h2{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:2.75rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--color-border,var(--color-border-primary));display:flex;align-items:center;gap:0.6rem;line-height:1.35;scroll-margin-top:5rem;}
     .ir-article h3{font-family:var(--font-display,'Syne',sans-serif);font-size:0.975rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:1.75rem 0 0.6rem;line-height:1.4;}
     .ir-article p{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.85;color:var(--color-text-secondary,#94a3b8);margin-bottom:1rem;}
     .ir-article ul,.ir-article ol{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.9rem;line-height:1.8;color:var(--color-text-secondary,#94a3b8);margin:0.5rem 0 1.25rem 1.25rem;}
-    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}.ir-article li::marker{color:var(--color-accent,var(--color-accent-primary));}
-    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}.ir-article em{font-style:italic;}
-    .ir-article a{color:var(--color-accent,var(--color-accent-primary));text-decoration:underline;text-underline-offset:2px;}.ir-article a:hover{opacity:0.8;}
+    .ir-article li{margin-bottom:0.4rem;padding-left:0.25rem;}
+    .ir-article li::marker{color:var(--color-accent,var(--color-accent-primary));}
+    .ir-article strong{font-weight:600;color:var(--color-text-primary,#e2e8f0);}
+    .ir-article em{font-style:italic;}
+    .ir-article a{color:var(--color-accent,var(--color-accent-primary));text-decoration:underline;text-underline-offset:2px;}
+    .ir-article a:hover{opacity:0.8;}
     .ir-article code{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.8125rem;color:var(--color-accent,var(--color-accent-primary));background:color-mix(in srgb, var(--color-accent-primary) 8%, transparent);border:1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);border-radius:4px;padding:0.1rem 0.4rem;white-space:nowrap;}
     .section-num{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;color:var(--color-accent,var(--color-accent-primary));font-weight:500;background:color-mix(in srgb, var(--color-accent-primary) 10%, transparent);padding:0.15rem 0.4rem;border-radius:3px;flex-shrink:0;}
     .ir-callout{background:color-mix(in srgb, var(--color-accent-primary) 5%, transparent);border:1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);border-left:3px solid var(--color-accent,var(--color-accent-primary));border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
@@ -90,7 +89,9 @@
     .ir-table th{background:var(--color-bg-hover);color:var(--color-text-primary,#e2e8f0);font-family:var(--font-display,'Syne',sans-serif);font-weight:600;font-size:0.8rem;padding:0.75rem 1rem;text-align:left;border-bottom:1px solid var(--color-border,var(--color-border-primary));white-space:nowrap;}
     .ir-table td{padding:0.75rem 1rem;color:var(--color-text-secondary,#94a3b8);border-bottom:1px solid var(--color-border,var(--color-border-primary));vertical-align:middle;line-height:1.55;}
     .ir-table tr:last-child td{border-bottom:none;}
-    .ir-check{color:var(--color-success);font-weight:600;}.ir-cross{color:var(--color-danger);}.ir-neutral{color:var(--color-text-tertiary,#475569);}
+    .ir-check{color:var(--color-success);font-weight:600;}
+    .ir-cross{color:var(--color-danger);}
+    .ir-neutral{color:var(--color-text-tertiary,#475569);}
     .ir-cta-block{background:color-mix(in srgb, var(--color-accent-primary) 5%, transparent);border:1px solid color-mix(in srgb, var(--color-accent-primary) 15%, transparent);border-radius:8px;padding:1.875rem 1.75rem;margin:2.5rem 0;text-align:center;}
     .ir-cta-eyebrow{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent,var(--color-accent-primary));margin-bottom:0.625rem;display:block;}
     .ir-cta-block h3{font-family:var(--font-display,'Syne',sans-serif);font-size:1.1rem;font-weight:600;color:var(--color-text-primary,#e2e8f0);margin:0 0 0.5rem;line-height:1.3;}
@@ -114,10 +115,12 @@
     .ir-contact-sub{font-family:var(--font-body,'Be Vietnam Pro',sans-serif);font-size:0.8rem;color:var(--color-text-tertiary,#475569);line-height:1.6;}
     .ir-form-wrap{max-width:400px;margin:0 auto;}
     .ir-form-card{background:var(--color-bg-secondary);border:1px solid var(--color-border-primary);border-radius:12px;padding:2rem;}
-    .form-group{margin-bottom:1rem;}.form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
+    .form-group{margin-bottom:1rem;}
+    .form-group label{display:block;font-size:0.75rem;font-weight:500;color:var(--color-text-secondary,#94a3b8);margin-bottom:0.35rem;letter-spacing:0.03em;}
     .form-group input,.form-group textarea{width:100%;background:var(--color-bg-hover);border:1px solid var(--color-border-primary);border-radius:6px;padding:0.65rem 0.9rem;font-size:0.875rem;color:var(--color-text-primary,#e2e8f0);font-family:var(--font-body,'Be Vietnam Pro',sans-serif);transition:border-color 0.2s;box-sizing:border-box;}
     .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-accent,var(--color-accent-primary));}
-    .form-group textarea{resize:vertical;min-height:100px;}.form-hidden{display:none;}
+    .form-group textarea{resize:vertical;min-height:100px;}
+    .form-hidden{display:none;}
     .form-submit{width:100%;background:var(--color-accent,var(--color-accent-primary));color: var(--color-text-inverse);border:none;border-radius:6px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;cursor:pointer;font-family:var(--font-display,'Syne',sans-serif);letter-spacing:0.03em;transition:opacity 0.2s;margin-top:0.5rem;}
     .form-submit:hover{opacity:0.9;}
     #dynamic-internal-links{margin:3rem 0;border-top:1px solid var(--color-border,var(--color-border-primary));padding-top:2rem;}
@@ -136,19 +139,42 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://intelreap.com/learn/webrtc-leak-test-and-shield#webpage",
+      "url": "https://intelreap.com/learn/webrtc-leak-test-and-shield",
+      "name": "WebRTC Leak Test: Check and Fix a VPN IP Leak — IntelReap",
+      "description": "Test whether WebRTC reveals your real IP address behind a VPN, then fix it in Firefox, Brave, Chrome, Edge and Safari with settings checked against vendor docs.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://intelreap.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://intelreap.com/assets/images/og/webrtc-leak-test-and-shield.png"
+      },
+      "datePublished": "2026-07-01",
+      "dateModified": "2026-11-18",
+      "breadcrumb": {
+        "@id": "https://intelreap.com/learn/webrtc-leak-test-and-shield#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://intelreap.com/learn/webrtc-leak-test-and-shield#article"
+      }
+    },
+    {
       "@type": "Article",
       "@id": "https://intelreap.com/learn/webrtc-leak-test-and-shield#article",
-      "headline": "WebRTC Leak Test & Shield: How to Stop Your Real IP From Leaking",
-      "description": "WebRTC can expose your real IP address even when a VPN is active, because it operates through a separate browser API that can bypass the VPN tunnel. This guide explains how to test for leaks and shield against them in every major browser.",
+      "headline": "WebRTC Leak Test: Check Whether Your Real IP Shows Behind a VPN and Fix It by Browser",
+      "description": "Test whether WebRTC reveals your real IP address behind a VPN, then fix it in Firefox, Brave, Chrome, Edge and Safari with settings checked against vendor docs.",
       "url": "https://intelreap.com/learn/webrtc-leak-test-and-shield",
       "image": {
         "@type": "ImageObject",
-        "url": "https://intelreap.com/assets/images/og-image.png",
+        "url": "https://intelreap.com/assets/images/og/webrtc-leak-test-and-shield.png",
         "width": 1200,
         "height": 630
       },
       "datePublished": "2026-07-01",
-      "dateModified": "2026-10-02",
+      "dateModified": "2026-11-18",
       "author": {
         "@type": "Organization",
         "@id": "https://intelreap.com/#organization"
@@ -161,9 +187,76 @@
         "@id": "https://intelreap.com/learn/webrtc-leak-test-and-shield"
       },
       "inLanguage": "en-US",
-      "keywords": "webrtc leak test, what is webrtc leak, how to stop webrtc leak, does vpn protect against webrtc leak, how to disable webrtc",
+      "keywords": "webrtc leak test, webrtc leak, what is webrtc leak, webrtc leak shield, webrtc test, webrtc extension, webrtc control, how to disable webrtc on chrome, how to disable webrtc on firefox, how to enable webrtc, webrtc ip leak, does vpn protect against webrtc leak",
       "articleSection": "Privacy Guides",
-      "wordCount": 2850
+      "wordCount": 2038,
+      "isAccessibleForFree": true,
+      "about": {
+        "@type": "Thing",
+        "name": "WebRTC leak"
+      },
+      "citation": [
+        {
+          "@type": "CreativeWork",
+          "name": "RFC 8828: WebRTC IP Address Handling Requirements",
+          "url": "https://www.rfc-editor.org/rfc/rfc8828"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "MDN: RTCIceCandidate type property",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/type"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Chrome extensions: privacy API",
+          "url": "https://developer.chrome.com/extensions/privacy"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Microsoft Learn: WebRtcLocalhostIpHandling policy for Edge",
+          "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/webrtclocalhostiphandling"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "discuss-webrtc: Private IP addresses exposed by WebRTC changing to mDNS hostnames",
+          "url": "https://groups.google.com/g/discuss-webrtc/c/6stQXi72BEU"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "WebKit: A Closer Look Into WebRTC",
+          "url": "https://webkit.org/blog/7763/a-closer-look-into-webrtc"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Mozilla wiki: WebRTC privacy",
+          "url": "https://wiki.mozilla.org/Media/WebRTC/Privacy"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "uBlock Origin wiki: Prevent WebRTC from leaking local IP address",
+          "url": "https://github.com/uBlockOrigin/uBlock-issues/wiki/Prevent-WebRTC-from-leaking-local-IP-address"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "WebRTC Leak Prevent: documentation",
+          "url": "https://github.com/aghorler/WebRTC-Leak-Prevent/blob/master/DOCUMENTATION.md"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Brave Help Center: Privacy settings",
+          "url": "https://support.brave.app/hc/en-us/articles/360017989132-How-do-I-change-my-Privacy-Settings-"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Brave wiki: WebRTC Custom Settings (archived)",
+          "url": "https://github.com/brave/brave-browser/wiki/WebRTC-Custom-Settings"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "discuss-webrtc: How to include WebRTC traffic in a VPN tunnel on Chrome",
+          "url": "https://groups.google.com/g/discuss-webrtc/c/A4tDb2_NN38"
+        }
+      ]
     },
     {
       "@type": "Organization",
@@ -208,7 +301,8 @@
           "name": "WebRTC Leak Test & Shield",
           "item": "https://intelreap.com/learn/webrtc-leak-test-and-shield"
         }
-      ]
+      ],
+      "@id": "https://intelreap.com/learn/webrtc-leak-test-and-shield#breadcrumb"
     },
     {
       "@type": "FAQPage",
@@ -218,7 +312,7 @@
           "name": "What is a WebRTC leak?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A WebRTC leak occurs when a browser feature called WebRTC reveals your real IP address even while you are connected to a VPN. WebRTC is designed for real-time peer-to-peer communication like video calls, and as part of establishing that connection it queries your network interfaces directly through STUN servers — a process that can bypass the VPN tunnel entirely and expose your actual ISP-assigned IP address to any website running the right script."
+            "text": "A WebRTC leak is when the browser feature used for calls reveals an address you meant to hide, most often your ISP's public address while a VPN is on. A web page script can read the addresses WebRTC gathers."
           }
         },
         {
@@ -226,7 +320,15 @@
           "name": "How do I test for a WebRTC leak?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Connect to your VPN first, then visit a WebRTC leak testing tool while the VPN is active. IntelReap's VPN & Proxy panel includes WebRTC leak detection as part of its scan, comparing your WebRTC-reported IP against your VPN's reported IP. If they differ, or if your real ISP IP appears at all, you have a leak. Run the test with the VPN both on and off to see the contrast clearly."
+            "text": "Run the test above with your VPN on and read the verdict. A public address that differs from the address websites see is a leak. Running it once without the VPN gives you the baseline to compare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is WebRTC a leak if I do not use a VPN?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Without a VPN, websites already see your public address, so there is nothing for WebRTC to reveal beyond it. The test still shows what a page can read."
           }
         },
         {
@@ -234,7 +336,15 @@
           "name": "Does a VPN protect against WebRTC leaks?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not automatically. Whether a VPN prevents WebRTC leaks depends entirely on its implementation. Premium VPN providers with dedicated apps (not just browser extensions) typically route WebRTC traffic through the VPN tunnel correctly. Browser-extension-only VPNs and free VPN services are far more likely to leak, because browser extensions cannot always intercept WebRTC's direct network interface queries the way a system-level VPN client can."
+            "text": "Not always. RFC 8828 names cases where addresses outside the VPN are revealed: split-tunnel setups, a device with several routes, and proxy-style VPNs. A full-tunnel VPN app that carries all of the browser's traffic does not fall into the split-tunnel case, so test with yours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the test show a local address?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some browsers still offer a private LAN address, for example when a page has camera or microphone access. It is not a VPN leak. Chrome replaces it with a random .local name by default, and the test reports one when it sees one."
           }
         },
         {
@@ -242,7 +352,7 @@
           "name": "How do I disable WebRTC in Chrome?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Chrome does not provide a native setting to disable WebRTC. The only reliable method is installing a dedicated extension such as WebRTC Leak Prevent or uBlock Origin configured with WebRTC blocking enabled in its advanced settings. Disabling WebRTC in Chrome will break video calling services and any site relying on peer-to-peer connections, so weigh that trade-off before applying it permanently."
+            "text": "Chrome's own Settings page has no switch for it that we found. Extensions can set the policy, and administrators can set one on managed browsers. Pick the option to match your VPN type: Disable non-proxied UDP effectively disables WebRTC for most users."
           }
         },
         {
@@ -250,15 +360,23 @@
           "name": "How do I disable WebRTC in Firefox?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Type about:config in the Firefox address bar, accept the warning, search for media.peerconnection.enabled, and double-click it to toggle the value to false. This fully disables WebRTC at the browser level. Restart Firefox for the change to take effect. Re-enable it by setting the same value back to true if you need video calling functionality later."
+            "text": "Open about:config, search for media.peerconnection.enabled and set it to false. For a milder change, set media.peerconnection.ice.default_address_only to true."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I disable WebRTC in Safari?",
+          "name": "How do I change WebRTC settings in Brave?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Safari does not expose a user-facing setting to disable WebRTC, and recent versions have removed the Develop menu option that previously allowed this. Safari's WebRTC implementation is also less prone to IP leaks than Chrome's by default due to how it handles ICE candidate gathering, which reduces the urgency of disabling it entirely on Safari specifically."
+            "text": "Open Settings, then Privacy and security, and choose an option under WebRTC IP handling policy. Brave's help centre says most people do not need to change it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about Edge and Safari?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Edge exposes the control as an administrator policy. We found no WebRTC setting for Safari, which, without camera or microphone access, exposes only server reflexive and relay addresses."
           }
         },
         {
@@ -266,53 +384,51 @@
           "name": "Will disabling WebRTC break video calls?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, for any service that relies on WebRTC for peer-to-peer media — this includes Google Meet, Discord voice and video, WhatsApp Web calling, and many browser-based video conferencing tools. If you disable WebRTC entirely, these services either fail to connect calls or fall back to lower-quality relayed connections. A leak-prevention extension that blocks only the IP-revealing behaviour while keeping WebRTC functional is usually the better trade-off than a full disable."
+            "text": "Turning it off completely will, for sites that use it. Limiting address handling is milder, and Disable non-proxied UDP can stop calls working unless a proxy supports UDP."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the difference between a local IP leak and a public IP leak via WebRTC?",
+          "name": "How do I turn WebRTC back on?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A local IP leak reveals your private network address (such as 192.168.x.x), which on its own is not very revealing since millions of devices share those same private ranges. A public IP leak reveals your actual ISP-assigned address — the one a VPN is specifically designed to hide — and is the leak that actually defeats the purpose of using a VPN. WebRTC leak tests should specifically check for the public IP leak, since that is the meaningful exposure."
+            "text": "Reverse the change: set the Firefox preference back to true, choose Default in Brave, or remove the extension or policy that set it in Chrome. Chrome, Edge, Firefox, Brave and Safari all include WebRTC."
           }
         },
         {
           "@type": "Question",
-          "name": "Do all VPNs leak WebRTC?",
+          "name": "Does this test store my address?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Reputable paid VPN providers with native desktop and mobile applications generally handle WebRTC traffic correctly and do not leak. The leak risk is concentrated in free VPN services, browser-extension-only VPNs, and VPNs that route only specific traffic types rather than all system traffic. Testing your specific VPN and browser combination directly is the only way to know for certain rather than assuming based on the provider's reputation alone."
+            "text": "IntelReap does not store the result. Your browser contacts a public STUN server, which sees your address as part of the test, and IntelReap sees the address of your web request, as it does for any page."
           }
         },
         {
           "@type": "Question",
-          "name": "What browser extensions block WebRTC leaks?",
+          "name": "Why does the test say it cannot compare an address?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "WebRTC Leak Prevent (Chrome) is purpose-built for this and offers granular control over WebRTC's IP handling policy. uBlock Origin includes a WebRTC-blocking option in its advanced settings (Settings → enable 'Prevent WebRTC from leaking local IP addresses'). For Firefox, the about:config method described above achieves the same result natively without needing an extension at all."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is a WebRTC leak the same as a DNS leak?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No, they are different vulnerabilities with the same underlying consequence. A DNS leak occurs when your DNS queries are routed outside the VPN tunnel to your ISP's resolver, revealing what sites you visit. A WebRTC leak occurs when the browser's real-time communication API exposes your actual IP address directly, regardless of DNS routing. A VPN can be properly protected against one and still vulnerable to the other — both should be tested independently."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How often should I test for WebRTC leaks?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Test immediately after setting up a new VPN, after any VPN software update, and after switching browsers or installing new extensions that touch network behaviour. VPN providers occasionally introduce leaks through software updates without realising it, so a periodic check every few months is a reasonable habit for anyone relying on a VPN for meaningful privacy protection."
+            "text": "An address of a different family (IPv6 versus IPv4) than the one websites see cannot be compared here. With a VPN on, such an address should belong to your VPN, not your ISP."
           }
         }
-      ]
+      ],
+      "@id": "https://intelreap.com/learn/webrtc-leak-test-and-shield#faq",
+      "url": "https://intelreap.com/learn/webrtc-leak-test-and-shield",
+      "isPartOf": {
+        "@id": "https://intelreap.com/learn/webrtc-leak-test-and-shield#article"
+      }
     }
   ]
 }</script>
+<style>
+.ir-toc{border:1px solid color-mix(in srgb,currentColor 18%,transparent);border-radius:10px;padding:1rem 1.25rem;margin:0 0 2rem}.ir-toc-label{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:.5rem}.ir-toc ol{margin:0;padding-left:1.25rem;columns:2;column-gap:2rem}.ir-toc li{margin:.2rem 0}@media(max-width:600px){.ir-toc ol{columns:1}}
+.ir-fig{margin:1.75rem 0}.ir-fig svg{width:100%;height:auto;display:block;color:var(--color-text-primary,#e2e8f0)}.ir-fig figcaption{font-size:.85rem;opacity:.75;margin-top:.5rem;text-align:center}
+.ir-tool{border:1px solid color-mix(in srgb,var(--color-accent-primary,#0ea5e9) 35%,transparent);border-radius:10px;padding:1.25rem;margin:1rem 0 1.5rem}.ir-tool-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}.ir-tool-eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7}.ir-tool dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem 1.5rem;margin:1rem 0 0}.ir-tool-row dt{font-size:.75rem;opacity:.65}.ir-tool-row dd{margin:0;font-weight:600;word-break:break-word}.ir-tool-note,.ir-tool-empty{font-size:.85rem;opacity:.75;margin:.75rem 0 0}
+.ir-dns-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.75rem;margin-top:1rem}.ir-dns-card{border:1px solid color-mix(in srgb,currentColor 18%,transparent);border-radius:8px;padding:.8rem 1rem}.ir-dns-name{font-weight:700;margin-bottom:.5rem}.ir-dns-stats{display:flex;gap:1.25rem;flex-wrap:wrap}.ir-dns-stats span{display:block;font-size:.72rem;opacity:.65}.ir-dns-stats strong{font-size:1rem}
+.ir-pick{font:inherit;padding:.6rem .8rem;border-radius:8px;border:1px solid color-mix(in srgb,currentColor 30%,transparent);background:transparent;color:inherit;max-width:100%}.ir-steps{margin:1rem 0 0;padding-left:1.25rem}.ir-steps li{margin:.5rem 0}.ir-steps code,.ir-code{font-family:var(--font-mono,monospace);font-size:.85em;background:color-mix(in srgb,currentColor 9%,transparent);padding:.1em .4em;border-radius:4px;word-break:break-all}
+@media(max-width:600px){.ir-table code,.ir-table .ir-code{white-space:normal;word-break:break-word;overflow-wrap:anywhere}.ir-table{min-width:0;font-size:.8rem}.ir-table th,.ir-table td{padding:.5rem .55rem}}
+.ir-fig .d-m{display:none}@media(max-width:640px){.ir-fig .d-w{display:none}.ir-fig .d-m{display:block;max-width:420px;margin:0 auto}}
+</style>
 </head>
 <body>
   <div id="scroll-progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -339,29 +455,18 @@
     <nav class="ir-breadcrumb" aria-label="Breadcrumb navigation">
       <a href="/">IntelReap</a>
       <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
-      <a href="/learn/" data-i18n="footer.col_learn">Learn</a>
+      <a href="/learn/">Learn</a>
       <span class="ir-breadcrumb-sep" aria-hidden="true">›</span>
       <span class="ir-breadcrumb-current" aria-current="page">WebRTC Leak Test & Shield</span>
     </nav>
 
     <section class="ndic-hero">
       <div class="ndic-hero-inner">
-        <div class="ndic-hero-badge">
-          <span class="ndic-hero-badge-dot" aria-hidden="true"></span>
-          <span id="seasonal-label">Privacy Guide</span>
-        </div>
-        <h1 class="ndic-hero-title">
-          WebRTC Leak Test &amp;<br>
-          <span class="ndic-highlight">Shield Your Real IP</span>
-        </h1>
-        <p class="ndic-hero-tagline">
-          Your VPN might not be doing what you think it is doing. WebRTC, the browser technology behind video calls and voice chat, can reveal your real ISP-assigned IP address through a side channel that some VPNs never close. Here is how to test for it and shut it down properly, without breaking the video calls you actually want to keep working.
-        </p>
-        <div class="ndic-hero-cta-group">
-          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Test My VPN for Leaks</a>
-          <a href="/intelligence/security" class="ir-btn-secondary">Check My Security Score →</a>
-        </div>
-        <div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 2 October 2026</div>
+        <div class="ndic-hero-badge"><span class="ndic-hero-badge-dot" aria-hidden="true"></span><span>Privacy Guides</span></div>
+        <h1 class="ndic-hero-title">WebRTC <span class="ndic-highlight">Leak Test</span></h1>
+        <p class="ndic-hero-tagline">Check whether WebRTC reveals your real public IP address behind a VPN, then fix it for your browser and VPN type.</p>
+        <div class="ndic-hero-cta-group"><a href="#test" class="ir-btn-primary">Run the Test</a><a href="/intelligence/vpn-proxy" class="ir-btn-secondary">Open VPN and Proxy →</a></div>
+        <div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 18 November 2026</div>
         <div class="ndic-trust-strip" aria-label="IntelReap platform statistics">
           <div class="ndic-trust-item"><span class="ndic-trust-value">285 data points</span><span class="ndic-trust-label">per scan</span></div>
           <span class="ndic-trust-sep" aria-hidden="true">|</span>
@@ -372,256 +477,42 @@
       </div>
     </section>
 
-    <section class="ndic-quick-answer">
-      <div class="ndic-quick-answer-label">Quick Answer</div>
-      <h2 class="ndic-quick-answer-title">WebRTC can expose your real IP even through an active VPN, because it talks to the network directly rather than through your browser's normal traffic path</h2>
-      <p class="ndic-quick-answer-body">
-        Test for a leak by running a WebRTC check while your VPN is connected — if your actual ISP IP shows up instead of your VPN's IP, you have a leak. Fix it in Firefox by setting <code>media.peerconnection.enabled</code> to false in <code>about:config</code>. In Chrome, install a dedicated extension like WebRTC Leak Prevent, since Chrome has no native toggle. Whether your VPN leaks at all depends heavily on whether it is a full system-level client or just a browser extension — extensions are far more prone to this specific gap.
-      </p>
-    </section>
+    <section class="ndic-quick-answer"><div class="ndic-quick-answer-label">Quick Answer</div><h2 class="ndic-quick-answer-title">A VPN does not always cover WebRTC</h2><p class="ndic-quick-answer-body">WebRTC can reveal your real IP address even with a VPN on, when its request takes a route outside the VPN. The test below compares the public addresses WebRTC reveals with the address websites see. A different address means a leak if a VPN is on. The fix depends on your VPN type and browser.</p></section>
 
     <article class="ir-article" itemscope itemtype="https://schema.org/Article">
-
-      <h2><span class="section-num">01</span> What Is WebRTC and Why Does It Leak Your IP?</h2>
-      <p>WebRTC — Web Real-Time Communication — is a browser API that enables direct peer-to-peer audio, video, and data connections without routing through a server in between. It is the technology underneath Google Meet, Discord's browser voice chat, WhatsApp Web's calling feature, and most in-browser video conferencing tools. It exists because routing every video frame through a central server would be slow and expensive; peer-to-peer is faster and cheaper at scale.</p>
-      <p>To establish a direct connection between two browsers — often sitting behind different home routers and NAT configurations — WebRTC uses a protocol called ICE (Interactive Connectivity Establishment), which in turn relies on STUN servers to discover what IP addresses your device can be reached at. This discovery process is where the leak happens: STUN queries can return your real, ISP-assigned public IP address directly to the requesting page, through a request that does not necessarily travel through your VPN tunnel the way your regular browser traffic does.</p>
-      <p>The result is a strange and counterintuitive situation: you can have a VPN fully connected, showing a different IP in every other context, while a single line of JavaScript on a malicious or simply poorly-configured site extracts your actual IP address through WebRTC's STUN request. This is not a VPN failure in the conventional sense — it is a gap between two systems, browser networking and VPN tunnelling, that were not designed with each other in mind.</p>
-
-      <h2><span class="section-num">02</span> How to Test for a WebRTC Leak</h2>
-      <p>Testing is straightforward and takes under a minute, but the order of operations matters. The result you are looking for is whether your <a href="/intelligence/vpn-proxy">VPN and proxy status panel</a> shows a different IP from what WebRTC reports — if they match and reflect the VPN's address, the tunnel is holding.</p>
-      <div class="ir-browser-block">
-        <span class="ir-browser-label">WebRTC Leak Test — Correct Procedure</span>
-        <ol class="ir-browser-steps">
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Note your real IP address first by checking it with your VPN disconnected — this is your baseline to compare against</div></li>
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Connect your VPN and confirm it shows as active, with a new IP visible through a normal IP check</div></li>
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">Run a WebRTC-specific leak test while the VPN remains connected — IntelReap's VPN &amp; Proxy panel includes this check as part of its full scan</div></li>
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">4</div><div class="ir-browser-step-text">Compare the IP addresses returned by the WebRTC check against your real baseline IP from step 1 — if they match, you have a leak; if only the VPN IP appears, you are protected</div></li>
-        </ol>
-      </div>
-      <div class="ir-callout"><p><strong>What a clean result looks like:</strong> No IP addresses should appear in a WebRTC leak test other than your VPN's IP, or ideally, no addresses should be returned by WebRTC queries at all if it is properly shielded or disabled.</p></div>
-
-      <h2><span class="section-num">03</span> Why VPNs Do Not Always Stop WebRTC Leaks</h2>
-      <p>This is the part that surprises most people: paying for a reputable VPN is not, by itself, a guarantee against WebRTC leaks. The deciding factor is the VPN's architecture, not its price or marketing.</p>
-      <p>A full system-level VPN client — the kind you install as a desktop or mobile app — typically routes all network traffic, including the low-level STUN queries WebRTC generates, through the encrypted tunnel. This closes the leak at the operating system level, before it ever reaches your browser's networking stack. <a href="/learn/does-a-vpn-change-your-mac-address">A VPN operating correctly at this level changes what every application on your device reports as its network identity</a>, not just your browser's visible traffic.</p>
-      <p>A browser-extension-only VPN is a different story. Extensions operate inside the browser's JavaScript sandbox and can only intercept traffic that flows through the browser's standard request pipeline. WebRTC's STUN queries, in many implementations, bypass this pipeline entirely — they talk to the network interface more directly than a typical HTTP request does. This is precisely why free VPN browser extensions and many budget VPN services are disproportionately associated with WebRTC leaks: their architecture cannot reach the layer where the leak originates.</p>
-
-      <h2><span class="section-num">04</span> How to Disable WebRTC in Chrome</h2>
-      <p>Chrome offers no built-in toggle for WebRTC — this is a deliberate choice by Google, since WebRTC is core to many Google products. The only reliable path is a dedicated extension.</p>
-      <div class="ir-browser-block">
-        <span class="ir-browser-label">Chrome — WebRTC Leak Prevent Extension</span>
-        <ol class="ir-browser-steps">
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Install <strong>WebRTC Leak Prevent</strong> from the Chrome Web Store</div></li>
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Open the extension's options and set the IP handling policy to <strong>Disable non-proxied UDP</strong> — this is the setting that closes the leak while keeping WebRTC functional for proxied connections</div></li>
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">Re-run a leak test to confirm the fix took effect</div></li>
-        </ol>
-      </div>
-      <p>Alternatively, if you already use <strong>uBlock Origin</strong>, open its Settings panel, switch to the dashboard view, and enable <strong>"Prevent WebRTC from leaking local IP addresses"</strong> under the general settings tab — no second extension required.</p>
-
-      <h2><span class="section-num">05</span> How to Disable WebRTC in Firefox</h2>
-      <p>Firefox is the only major browser with a native, no-extension-needed way to fully disable WebRTC.</p>
-      <div class="ir-browser-block">
-        <span class="ir-browser-label">Firefox — about:config Method</span>
-        <ol class="ir-browser-steps">
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">1</div><div class="ir-browser-step-text">Type <code>about:config</code> in the address bar and accept the risk warning</div></li>
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">2</div><div class="ir-browser-step-text">Search for <code>media.peerconnection.enabled</code></div></li>
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">3</div><div class="ir-browser-step-text">Double-click the entry to toggle its value from <strong>true</strong> to <strong>false</strong></div></li>
-          <li class="ir-browser-step"><div class="ir-browser-step-num" aria-hidden="true">4</div><div class="ir-browser-step-text">Restart Firefox — WebRTC is now fully disabled site-wide</div></li>
-        </ol>
-      </div>
-      <div class="ir-callout"><p><strong>To re-enable later</strong> (for example, before a video call): repeat the steps and set the value back to <strong>true</strong>. There is no need to restart the browser between toggles in most cases, but a restart guarantees the change has fully propagated.</p></div>
-
-      <h2><span class="section-num">06</span> How to Disable WebRTC in Safari and Brave</h2>
-      <h3>Safari</h3>
-      <p>Safari does not currently expose a user-facing toggle to disable WebRTC, and recent versions have removed the previous Develop-menu option that allowed it. This is a less urgent gap than it sounds: Safari's WebRTC implementation handles ICE candidate gathering more conservatively by default than Chrome's, which reduces — though does not eliminate — the leak surface. If WebRTC leak protection on Safari is a hard requirement, routing all traffic through a properly configured system-level VPN remains the most dependable option, since it closes the gap below the browser entirely.</p>
-      <h3>Brave</h3>
-      <p>Brave, being Chromium-based, includes a built-in setting that Chrome itself lacks. Go to <strong>brave://settings/privacy</strong>, scroll to the WebRTC section, and select <strong>"Disable non-proxied UDP"</strong> from the IP handling policy dropdown. This is the same protective setting Chrome users need an extension for, built directly into Brave's privacy settings.</p>
-
-      <!-- CTA 1 -->
-      <div class="ir-cta-block">
-        <span class="ir-cta-eyebrow">VPN &amp; Proxy Intelligence</span>
-        <h3>Test Your VPN for WebRTC and DNS Leaks Right Now</h3>
-        <p>IntelReap's VPN &amp; Proxy panel checks for WebRTC leaks, DNS leaks, and IP mismatches in a single scan — showing you exactly what your VPN is and is not protecting, free and in-browser.</p>
-        <div class="ir-btn-row">
-          <a href="/intelligence/vpn-proxy" class="ir-btn-primary cta-rotate">Test My VPN for Leaks</a>
-        </div>
-      </div>
-
-      <h2><span class="section-num">07</span> Disable vs Shield — Which Approach Is Right for You?</h2>
-      <p>Fully disabling WebRTC and shielding it while keeping it functional are different trade-offs, and the right choice depends on how you actually use your browser. If you rarely or never use browser-based video calling, a full disable in Firefox via <code>about:config</code> is the cleanest, most permanent fix. If you regularly use Google Meet, Discord in-browser, or WhatsApp Web, a shielding extension that closes the leak while preserving WebRTC's core function — like WebRTC Leak Prevent set to "Disable non-proxied UDP" — gets you the privacy benefit without the functionality cost.</p>
-      <div class="ir-table-wrap" role="region" aria-label="WebRTC leak fix comparison" tabindex="0">
-        <table class="ir-table">
-          <caption>Comparison of WebRTC leak fixes by browser, method, and impact on video calling functionality</caption>
-          <thead>
-            <tr>
-              <th scope="col" data-i18n="canvas5.params.browser">Browser</th>
-              <th scope="col">Method</th>
-              <th scope="col">Breaks Video Calls?</th>
-              <th scope="col">Setup Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Firefox</strong></td>
-              <td><code>media.peerconnection.enabled = false</code></td>
-              <td class="ir-cross">Yes — fully disables WebRTC</td>
-              <td class="ir-check">30 seconds</td>
-            </tr>
-            <tr>
-              <td><strong>Chrome</strong></td>
-              <td>WebRTC Leak Prevent extension</td>
-              <td class="ir-check">No — shields IP, keeps function</td>
-              <td class="ir-check">1 minute</td>
-            </tr>
-            <tr>
-              <td><strong>Chrome</strong></td>
-              <td>uBlock Origin WebRTC setting</td>
-              <td class="ir-check">No — shields IP, keeps function</td>
-              <td class="ir-check">30 seconds (if already installed)</td>
-            </tr>
-            <tr>
-              <td><strong>Brave</strong></td>
-              <td>Built-in "Disable non-proxied UDP"</td>
-              <td class="ir-check">No — shields IP, keeps function</td>
-              <td class="ir-check">15 seconds</td>
-            </tr>
-            <tr>
-              <td><strong>Safari</strong></td>
-              <td>No native option — use system VPN</td>
-              <td class="ir-neutral">Depends on VPN architecture</td>
-              <td class="ir-neutral">Varies</td>
-            </tr>
-            <tr>
-              <td><strong>Any browser</strong></td>
-              <td>Full system-level VPN client</td>
-              <td class="ir-check">No — handled below browser layer</td>
-              <td class="ir-neutral">Depends on VPN setup</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2><span class="section-num">08</span> WebRTC Leaks Are One Piece of a Larger Picture</h2>
-      <p>A WebRTC leak defeats one specific purpose of using a VPN — IP masking — but it says nothing about the other tracking vectors that operate independently of your VPN entirely. <a href="/learn/what-is-device-fingerprinting">Browser fingerprinting reads your GPU renderer, screen configuration, and dozens of other hardware signals to identify you regardless of what your IP address shows</a>, and no VPN or WebRTC fix touches that vector at all. Closing the WebRTC gap is necessary if you rely on a VPN for privacy, but it should be treated as one item in a broader checklist rather than the whole task.</p>
-      <p>For the complete layered approach — covering DNS, fingerprinting, password security, and mobile tracking alongside VPN-specific issues like this one — our full <a href="/learn/how-to-protect-your-privacy-online">guide to protecting your privacy online</a> walks through each layer in priority order, with honest assessments of what each tool actually covers.</p>
-
-      <!-- CTA 2 -->
-      <div class="ir-cta-block">
-        <span class="ir-cta-eyebrow">Security Intelligence</span>
-        <h3>See Your Complete Privacy and Security Picture</h3>
-        <p>IntelReap's Security panel checks WebRTC leaks, DNS leaks, fingerprinting exposure, and overall connection security in one pass — giving you a single, honest score for how exposed you actually are.</p>
-        <div class="ir-btn-row">
-          <a href="/intelligence/security" class="ir-btn-secondary">Check My Security Score →</a>
-        </div>
-      </div>
-
-      <!-- LOGIC + METHODOLOGY -->
-      <!-- FAQ -->
+<nav class="ir-toc" aria-label="Table of contents"><div class="ir-toc-label">On this page</div><ol><li><a href="#test">Run the WebRTC Leak Test</a></li><li><a href="#why">Why WebRTC Can Reveal an Address Behind a VPN</a></li><li><a href="#modes">How Browsers Limit What WebRTC Reveals</a></li><li><a href="#fix">Which Fix Fits Your Setup</a></li><li><a href="#steps">Steps by Browser</a></li><li><a href="#vpn">VPN-Level Causes and Fixes</a></li><li><a href="#enable">How to Turn WebRTC Back On</a></li><li><a href="#limits">What the Test Cannot Tell You</a></li><li><a href="#faq-heading-main">FAQ</a></li><li><a href="#sources">Sources</a></li></ol></nav>
+<h2 id="test"><span class="section-num">01</span> Run the WebRTC Leak Test</h2>
+<div class="ir-tool" id="ir-tool"><style>.ir-tool-verdict{margin:.75rem 0 0}</style><div class="ir-tool-head"><span class="ir-tool-eyebrow">WebRTC leak test</span><button type="button" class="ir-btn-primary" id="ir-wr-run">Run the test</button></div><div id="ir-wr-out" aria-live="polite"></div><p class="ir-tool-note" id="ir-wr-note">Run it once without your VPN and once with it on. The test asks a public STUN server which address it sees for your browser and asks IntelReap which address your web traffic comes from. Nothing is stored.</p></div>
+<div class="ir-cta-block"><span class="ir-cta-eyebrow">VPN and Proxy panel</span><h3>Check whether your connection looks like a VPN</h3><p>The leak test looks at WebRTC. The <a href="/intelligence/vpn-proxy">VPN and Proxy panel</a> checks whether your connection looks like a VPN, proxy or hosting network.</p><div class="ir-btn-row"><a href="/intelligence/vpn-proxy" class="ir-btn-primary">Open VPN and Proxy</a></div></div>
+<p>The test needs your VPN connected. It collects the addresses WebRTC reveals to a web page, then compares the public ones with the address your web traffic comes from. If you want to see your current address first, <a href="/guides/how-to-find-ip-address-of-any-device">find it with the IP guide</a>.</p><div class="ir-table-wrap" role="region" aria-label="Run it twice" tabindex="0"><table class="ir-table"><caption>Run it twice</caption><thead><tr><th scope="col">Step</th><th scope="col">What to do</th></tr></thead><tbody><tr><td><strong>Without your VPN</strong></td><td>Run the test and note the address websites see. That is your ISP address, the baseline.</td></tr><tr><td><strong>With your VPN on</strong></td><td>Run it again. The address websites see should now be the VPN's, and any public address WebRTC reveals should match it.</td></tr></tbody></table></div><h3>How to read the result</h3><figure class="ir-fig"><svg class="d-w" viewBox="0 0 640 212" role="img" aria-label="Reading the test with a VPN on: no public address means nothing was revealed; a public address that matches the one websites see is fine; a different one is a leak" xmlns="http://www.w3.org/2000/svg"><title>Reading the test with a VPN on: no public address means nothing was revealed; a public address that matches the one websites see is fine; a different one is a leak</title><defs><marker id="ah13" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="8" y="96" width="170" height="56" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="93.0" y="120.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Any public address</text><text x="93.0" y="135.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">revealed by WebRTC?</text><line x1="93" y1="96" x2="93" y2="62" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah13)"/><text x="101" y="84" text-anchor="start" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.9">no</text><rect x="8" y="10" width="170" height="52" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="93.0" y="32.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">No public address</text><text x="93.0" y="47.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">blocked or no STUN route</text><line x1="178" y1="124" x2="235" y2="124" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah13)"/><text x="206" y="116" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.9">yes</text><rect x="235" y="96" width="170" height="56" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="320.0" y="120.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Same as the address</text><text x="320.0" y="135.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">websites see?</text><line x1="320" y1="96" x2="320" y2="62" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah13)"/><text x="328" y="84" text-anchor="start" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.9">yes</text><rect x="235" y="10" width="170" height="52" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="320.0" y="32.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Same address</text><text x="320.0" y="47.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">no leak shown</text><line x1="405" y1="124" x2="462" y2="124" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah13)"/><text x="434" y="116" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.9">no</text><rect x="462" y="96" width="170" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="547.0" y="120.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Different address</text><text x="547.0" y="135.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">a leak if a VPN is on</text><text x="320" y="196" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.85">Without a VPN, a second address is usually IPv4 versus IPv6, not a leak</text></svg><svg class="d-m" viewBox="0 0 360 420" role="img" aria-label="Reading the test with a VPN on: no public address means nothing was revealed; a public address that matches the one websites see is fine; a different one is a leak" xmlns="http://www.w3.org/2000/svg"><title>Reading the test with a VPN on: no public address means nothing was revealed; a public address that matches the one websites see is fine; a different one is a leak</title><defs><marker id="mah18" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="40" y="8" width="280" height="48" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="180.0" y="28.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Any public address</text><text x="180.0" y="44.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">revealed by WebRTC?</text><line x1="180" y1="56" x2="180" y2="86" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah18)"/><text x="192" y="76" text-anchor="start" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.9">yes</text><rect x="40" y="86" width="280" height="48" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="180.0" y="106.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Same as the address</text><text x="180.0" y="122.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">websites see?</text><line x1="180" y1="134" x2="180" y2="164" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah18)"/><text x="192" y="154" text-anchor="start" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.9">no</text><rect x="40" y="164" width="280" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="188.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Different address</text><text x="180.0" y="204.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">a leak if a VPN is on</text><line x1="40" y1="32" x2="14" y2="32" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6"/><text x="14" y="26" text-anchor="start" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.9">no</text><line x1="14" y1="32" x2="14" y2="272" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6"/><line x1="14" y1="272" x2="40" y2="272" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah18)"/><rect x="40" y="248" width="280" height="48" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="268.4" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">No public address</text><text x="180.0" y="284.0" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">blocked or no STUN route</text><line x1="320" y1="110" x2="346" y2="110" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6"/><text x="346" y="104" text-anchor="end" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.9">yes</text><line x1="346" y1="110" x2="346" y2="342" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6"/><line x1="346" y1="342" x2="320" y2="342" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah18)"/><rect x="40" y="318" width="280" height="48" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="338.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Same address</text><text x="180.0" y="354.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">no leak shown</text><text x="180" y="394.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.85">Without a VPN, a second address is</text><text x="180" y="408.9" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.85">usually IPv4 versus IPv6, not a leak</text></svg></figure><div class="ir-table-wrap" role="region" aria-label="What each result means" tabindex="0"><table class="ir-table"><caption>What each result means</caption><thead><tr><th scope="col">Result</th><th scope="col">What it means</th></tr></thead><tbody><tr><td><strong>Same address</strong></td><td>WebRTC reveals the address websites already see. No leak is shown.</td></tr><tr><td><strong>Different address</strong></td><td>With a VPN on, this is a leak: WebRTC shows an address outside the VPN. With no VPN, look for a proxy or a second connection.</td></tr><tr><td><strong>No public address</strong></td><td>WebRTC is blocked or restricted, or no STUN route was available. Nothing public leaked.</td></tr><tr><td><strong>Local address visible</strong></td><td>A private LAN address such as 192.168.x.x. It is not a VPN leak, but it can help a site recognise your network.</td></tr><tr><td><strong>Local address hidden</strong></td><td>The browser replaced it with a random .local name, as Chrome does by default.</td></tr></tbody></table></div>
+<h2 id="why"><span class="section-num">02</span> Why WebRTC Can Reveal an Address Behind a VPN</h2>
+<p>WebRTC is the browser feature behind video calls and peer-to-peer connections. To connect two browsers it gathers candidate addresses: the device's own, and the address a STUN server reports after the connection passes through a NAT, which MDN calls a server reflexive candidate. A script on a web page can read those candidates, so a page can learn an address without a call ever starting.</p><figure class="ir-fig"><svg class="d-w" viewBox="0 0 640 250" role="img" aria-label="A browser sends web traffic through the VPN to the website, and separately sends a WebRTC request to a STUN server; if that second request skips the VPN, the page script learns your ISP address" xmlns="http://www.w3.org/2000/svg"><title>A browser sends web traffic through the VPN to the website, and separately sends a WebRTC request to a STUN server; if that second request skips the VPN, the page script learns your ISP address</title><defs><marker id="ah11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="8" y="84" width="120" height="56" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="68.0" y="108.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Your browser</text><text x="68.0" y="123.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">with a VPN on</text><line x1="128" y1="102" x2="180" y2="38" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah11)"/><line x1="128" y1="122" x2="180" y2="186" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah11)"/><rect x="180" y="10" width="140" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="250.0" y="34.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Web page traffic</text><text x="250.0" y="49.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">through the VPN</text><line x1="320" y1="38" x2="400" y2="38" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah11)"/><rect x="400" y="10" width="232" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="516.0" y="34.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Website</text><text x="516.0" y="49.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">sees the VPN address</text><rect x="180" y="158" width="140" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="250.0" y="182.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">WebRTC request</text><text x="250.0" y="197.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">to a STUN server</text><line x1="320" y1="186" x2="400" y2="186" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah11)"/><rect x="400" y="158" width="232" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="516.0" y="182.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">STUN server replies</text><text x="516.0" y="197.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">with the address it saw</text><text x="320" y="238" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.85">If the second request skips the VPN, the page script learns your ISP address</text></svg><svg class="d-m" viewBox="0 0 360 408" role="img" aria-label="A browser sends web traffic through the VPN to the website, and separately sends a WebRTC request to a STUN server; if that second request skips the VPN, the page script learns your ISP address" xmlns="http://www.w3.org/2000/svg"><title>A browser sends web traffic through the VPN to the website, and separately sends a WebRTC request to a STUN server; if that second request skips the VPN, the page script learns your ISP address</title><defs><marker id="mah16" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="100" y="8" width="160" height="44" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="180.0" y="26.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Your browser</text><text x="180.0" y="42.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">with a VPN on</text><line x1="180" y1="52" x2="180" y2="84" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah16)"/><rect x="20" y="84" width="320" height="48" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="104.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Web page traffic</text><text x="180.0" y="120.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">through the VPN</text><line x1="180" y1="132" x2="180" y2="156" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah16)"/><rect x="20" y="156" width="320" height="44" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="174.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Website</text><text x="180.0" y="190.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">sees the VPN address</text><line x1="100" y1="30" x2="10" y2="30" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6"/><line x1="10" y1="30" x2="10" y2="254" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6"/><line x1="10" y1="254" x2="20" y2="254" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah16)"/><rect x="20" y="230" width="320" height="48" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="250.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">WebRTC request</text><text x="180.0" y="266.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">to a STUN server</text><line x1="180" y1="278" x2="180" y2="302" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah16)"/><rect x="20" y="302" width="320" height="48" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="322.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">STUN server replies</text><text x="180.0" y="338.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">with the address it saw</text><text x="180" y="380.0" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.85">If the second request skips the VPN,</text><text x="180" y="395.6" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.85">the page script learns your ISP address</text></svg></figure><p>When the VPN carries that request too, the address reported is the VPN's. RFC 8828 describes the cases where it does not: a device with more than one route, or a split-tunnel VPN, can reveal the ISP address; a device behind a NAT can reveal a private address; and STUN requests may go around a classical application proxy.</p><figure class="ir-fig"><svg class="d-w" viewBox="0 0 640 262" role="img" aria-label="Three cases from RFC 8828 that reveal an address: a split-tunnel VPN shows your ISP address, a proxy-style extension VPN is bypassed by STUN, and a home NAT hides a private address" xmlns="http://www.w3.org/2000/svg"><title>Three cases from RFC 8828 that reveal an address: a split-tunnel VPN shows your ISP address, a proxy-style extension VPN is bypassed by STUN, and a home NAT hides a private address</title><defs><marker id="ah12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="8" y="10" width="200" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="108.0" y="27.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Split-tunnel VPN</text><text x="108.0" y="42.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Some traffic</text><text x="108.0" y="57.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">skips the VPN</text><line x1="108" y1="66" x2="108" y2="104" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah12)"/><rect x="8" y="104" width="200" height="64" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="108.0" y="125.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">The page learns</text><text x="108.0" y="140.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Your ISP address</text><text x="108.0" y="155.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">shows beside the VPN one</text><line x1="108" y1="168" x2="108" y2="198" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah12)"/><rect x="8" y="198" width="200" height="52" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="108.0" y="220.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Leak</text><text x="108.0" y="235.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">if a VPN is on</text><rect x="220" y="10" width="200" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="320.0" y="27.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Extension VPN</text><text x="320.0" y="42.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Works as a proxy</text><text x="320.0" y="57.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">for browser traffic</text><line x1="320" y1="66" x2="320" y2="104" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah12)"/><rect x="220" y="104" width="200" height="64" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="320.0" y="125.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">The page learns</text><text x="320.0" y="140.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">STUN can bypass the proxy</text><text x="320.0" y="155.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">and show your real address</text><line x1="320" y1="168" x2="320" y2="198" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah12)"/><rect x="220" y="198" width="200" height="52" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="320.0" y="220.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Leak</text><text x="320.0" y="235.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">if a VPN is on</text><rect x="432" y="10" width="200" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="532.0" y="27.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Behind home NAT</text><text x="532.0" y="42.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Devices share</text><text x="532.0" y="57.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">one public address</text><line x1="532" y1="66" x2="532" y2="104" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah12)"/><rect x="432" y="104" width="200" height="64" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="532.0" y="125.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">The page learns</text><text x="532.0" y="140.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">A private LAN address</text><text x="532.0" y="155.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">(now often hidden by mDNS)</text><line x1="532" y1="168" x2="532" y2="198" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah12)"/><rect x="432" y="198" width="200" height="52" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="532.0" y="220.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Local only</text><text x="532.0" y="235.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">not a VPN leak</text></svg><svg class="d-m" viewBox="0 0 360 566" role="img" aria-label="Three cases from RFC 8828 that reveal an address: a split-tunnel VPN shows your ISP address, a proxy-style extension VPN is bypassed by STUN, and a home NAT hides a private address" xmlns="http://www.w3.org/2000/svg"><title>Three cases from RFC 8828 that reveal an address: a split-tunnel VPN shows your ISP address, a proxy-style extension VPN is bypassed by STUN, and a home NAT hides a private address</title><defs><marker id="mah17" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="20" y="8" width="320" height="44" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="26.4" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">Split-tunnel VPN</text><text x="180.0" y="42.0" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Some traffic skips the VPN</text><line x1="180" y1="52" x2="180" y2="70" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah17)"/><rect x="20" y="70" width="320" height="60" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="88.6" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">The page learns</text><text x="180.0" y="104.2" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Your ISP address</text><text x="180.0" y="119.8" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">shows beside the VPN one</text><line x1="180" y1="130" x2="180" y2="146" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah17)"/><rect x="20" y="146" width="320" height="32" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="180.0" y="166.2" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">Leak if a VPN is on</text><rect x="20" y="198" width="320" height="44" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="216.4" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">Extension VPN</text><text x="180.0" y="232.0" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Works as a proxy for browser traffic</text><line x1="180" y1="242" x2="180" y2="260" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah17)"/><rect x="20" y="260" width="320" height="60" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="278.6" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">The page learns</text><text x="180.0" y="294.2" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">STUN can bypass the proxy</text><text x="180.0" y="309.8" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">and show your real address</text><line x1="180" y1="320" x2="180" y2="336" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah17)"/><rect x="20" y="336" width="320" height="32" rx="8" fill="var(--color-accent-primary,#0ea5e9)" fill-opacity="0.16" stroke="var(--color-accent-primary,#0ea5e9)" stroke-opacity="0.9"/><text x="180.0" y="356.2" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">Leak if a VPN is on</text><rect x="20" y="388" width="320" height="44" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="406.4" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">Behind home NAT</text><text x="180.0" y="422.0" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">Devices share one public address</text><line x1="180" y1="432" x2="180" y2="450" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah17)"/><rect x="20" y="450" width="320" height="60" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="468.6" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">The page learns</text><text x="180.0" y="484.2" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">A private LAN address</text><text x="180.0" y="499.8" text-anchor="middle" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.8">(now often hidden by mDNS)</text><line x1="180" y1="510" x2="180" y2="526" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah17)"/><rect x="20" y="526" width="320" height="32" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="546.2" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" fill-opacity="1">Local only not a VPN leak</text></svg></figure><p>A VPN delivered as a browser extension works as a proxy for that browser's traffic, so the proxy case is the one that applies to it. A private address is a smaller matter. Chrome replaces it with a random mDNS name unless the page has camera or microphone access, as a Chrome developer announced, and WebKit says Safari exposes only server reflexive and relay addresses without that access. Public and private addresses are explained in <a href="/learn/what-is-an-ip-address">What Is an IP Address?</a></p>
+<h2 id="modes"><span class="section-num">03</span> How Browsers Limit What WebRTC Reveals</h2>
+<p>RFC 8828 defines four ways a browser can handle addresses, from revealing every address to forcing all traffic through a proxy. Each step reveals less and gives WebRTC fewer ways to connect.</p><figure class="ir-fig"><svg class="d-w" viewBox="0 0 640 196" role="img" aria-label="RFC 8828 describes four ways a browser can handle IP addresses in WebRTC, from revealing every address to forcing all traffic through a proxy" xmlns="http://www.w3.org/2000/svg"><title>RFC 8828 describes four ways a browser can handle IP addresses in WebRTC, from revealing every address to forcing all traffic through a proxy</title><defs><marker id="ah14" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><text x="8" y="16" text-anchor="start" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.85">Most information revealed</text><text x="632" y="16" text-anchor="end" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.85">Least information revealed</text><rect x="8" y="26" width="145" height="100" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="80.5" y="65.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Mode 1</text><text x="80.5" y="80.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">All interfaces</text><text x="80.5" y="95.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Every address, best calls</text><line x1="153" y1="76" x2="169" y2="76" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah14)"/><rect x="169" y="26" width="145" height="100" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="241.5" y="65.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Mode 2</text><text x="241.5" y="80.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Default route</text><text x="241.5" y="95.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">plus your LAN address</text><line x1="314" y1="76" x2="330" y2="76" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah14)"/><rect x="330" y="26" width="145" height="100" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="402.5" y="65.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Mode 3</text><text x="402.5" y="80.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Default route only</text><text x="402.5" y="95.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">no LAN address</text><line x1="475" y1="76" x2="491" y2="76" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah14)"/><rect x="491" y="26" width="145" height="100" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="563.5" y="65.1" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Mode 4</text><text x="563.5" y="80.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Force proxy</text><text x="563.5" y="95.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">UDP only through a proxy</text><text x="320" y="156.0" text-anchor="middle" font-size="11" font-weight="400" fill="currentColor" fill-opacity="0.8">Chrome and Edge policy values: default, default_public_and_private_interfaces,</text><text x="320" y="170.3" text-anchor="middle" font-size="11" font-weight="400" fill="currentColor" fill-opacity="0.8">default_public_interface_only, disable_non_proxied_udp</text></svg><svg class="d-m" viewBox="0 0 360 450" role="img" aria-label="RFC 8828 describes four ways a browser can handle IP addresses in WebRTC, from revealing every address to forcing all traffic through a proxy" xmlns="http://www.w3.org/2000/svg"><title>RFC 8828 describes four ways a browser can handle IP addresses in WebRTC, from revealing every address to forcing all traffic through a proxy</title><defs><marker id="mah19" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><text x="20" y="16" text-anchor="start" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.85">Most information revealed</text><rect x="20" y="26" width="320" height="60" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="44.1" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Mode 1</text><text x="180.0" y="60.4" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">All interfaces</text><text x="180.0" y="76.6" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Every address, best calls</text><line x1="180" y1="86" x2="180" y2="110" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah19)"/><rect x="20" y="110" width="320" height="60" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="128.1" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Mode 2</text><text x="180.0" y="144.4" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Default route</text><text x="180.0" y="160.6" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">plus your LAN address</text><line x1="180" y1="170" x2="180" y2="194" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah19)"/><rect x="20" y="194" width="320" height="60" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="212.1" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Mode 3</text><text x="180.0" y="228.4" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Default route only</text><text x="180.0" y="244.6" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">no LAN address</text><line x1="180" y1="254" x2="180" y2="278" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah19)"/><rect x="20" y="278" width="320" height="60" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="296.1" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Mode 4</text><text x="180.0" y="312.4" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">Force proxy</text><text x="180.0" y="328.6" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">UDP only through a proxy</text><text x="340" y="362" text-anchor="end" font-size="12" font-weight="400" fill="currentColor" fill-opacity="0.85">Least information revealed</text><text x="180" y="390.0" text-anchor="middle" font-size="11" font-weight="400" fill="currentColor" fill-opacity="0.8">Chrome and Edge policy values:</text><text x="180" y="404.3" text-anchor="middle" font-size="11" font-weight="400" fill="currentColor" fill-opacity="0.8">default, default_public_and_private_interfaces,</text><text x="180" y="418.6" text-anchor="middle" font-size="11" font-weight="400" fill="currentColor" fill-opacity="0.8">default_public_interface_only,</text><text x="180" y="432.9" text-anchor="middle" font-size="11" font-weight="400" fill="currentColor" fill-opacity="0.8">disable_non_proxied_udp</text></svg></figure><p>Chrome and Edge name their four policy values default, default_public_and_private_interfaces, default_public_interface_only and disable_non_proxied_udp, which follow the same order. Brave offers matching choices in its settings, including Default, Default Public Interface Only and Disable Non-Proxied UDP.</p>
+<h2 id="fix"><span class="section-num">04</span> Which Fix Fits Your Setup</h2>
+<p>Choose by how your VPN works, because the strictest option is not always the right one. The extension author's documentation says Disable non-proxied UDP effectively disables WebRTC for most users, and that default public interface only is the option meant for people on a system VPN.</p><figure class="ir-fig"><svg class="d-w" viewBox="0 0 640 216" role="img" aria-label="Choose the fix by your VPN type: a system VPN app, an extension VPN that acts as a proxy, or no VPN" xmlns="http://www.w3.org/2000/svg"><title>Choose the fix by your VPN type: a system VPN app, an extension VPN that acts as a proxy, or no VPN</title><defs><marker id="ah15" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="8" y="10" width="200" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="108.0" y="34.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">System VPN app</text><text x="108.0" y="49.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">full tunnel</text><line x1="208" y1="38" x2="252" y2="38" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah15)"/><rect x="252" y="10" width="380" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="442.0" y="34.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">If the test still shows your ISP address,</text><text x="442.0" y="49.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">use "default public interface only"</text><rect x="8" y="80" width="200" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="108.0" y="104.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Extension VPN</text><text x="108.0" y="119.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">acts as a proxy</text><line x1="208" y1="108" x2="252" y2="108" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah15)"/><rect x="252" y="80" width="380" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="442.0" y="104.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Use "disable non-proxied UDP"</text><text x="442.0" y="119.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">calls may stop working</text><rect x="8" y="150" width="200" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="108.0" y="174.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">No VPN</text><text x="108.0" y="189.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">nothing to leak</text><line x1="208" y1="178" x2="252" y2="178" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#ah15)"/><rect x="252" y="150" width="380" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="442.0" y="174.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Your ISP address is public anyway</text><text x="442.0" y="189.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">change nothing unless you want to</text></svg><svg class="d-m" viewBox="0 0 360 430" role="img" aria-label="Choose the fix by your VPN type: a system VPN app, an extension VPN that acts as a proxy, or no VPN" xmlns="http://www.w3.org/2000/svg"><title>Choose the fix by your VPN type: a system VPN app, an extension VPN that acts as a proxy, or no VPN</title><defs><marker id="mah20" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity="0.7"/></marker></defs><rect x="20" y="8" width="320" height="48" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="28.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">System VPN app</text><text x="180.0" y="44.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">full tunnel</text><line x1="180" y1="56" x2="180" y2="76" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah20)"/><rect x="20" y="76" width="320" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="100.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">If the test still shows your ISP address,</text><text x="180.0" y="115.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">use "default public interface only"</text><rect x="20" y="148" width="320" height="48" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="168.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">Extension VPN</text><text x="180.0" y="184.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">acts as a proxy</text><line x1="180" y1="196" x2="180" y2="216" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah20)"/><rect x="20" y="216" width="320" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="240.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Use "disable non-proxied UDP"</text><text x="180.0" y="255.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">calls may stop working</text><rect x="20" y="288" width="320" height="48" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="308.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" fill-opacity="1">No VPN</text><text x="180.0" y="324.5" text-anchor="middle" font-size="12.5" font-weight="400" fill="currentColor" fill-opacity="0.8">nothing to leak</text><line x1="180" y1="336" x2="180" y2="356" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6" marker-end="url(#mah20)"/><rect x="20" y="356" width="320" height="56" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.35"/><text x="180.0" y="380.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor" fill-opacity="1">Your ISP address is public anyway</text><text x="180.0" y="395.5" text-anchor="middle" font-size="11.5" font-weight="400" fill="currentColor" fill-opacity="0.8">change nothing unless you want to</text></svg></figure><div class="ir-table-wrap" role="region" aria-label="Settings by browser" tabindex="0"><table class="ir-table"><caption>Settings by browser</caption><thead><tr><th scope="col">Browser</th><th scope="col">Setting</th><th scope="col">What it does</th></tr></thead><tbody><tr><td><strong>Firefox</strong></td><td>media.peerconnection.enabled = false</td><td>Turns WebRTC off completely.</td></tr><tr><td><strong>Firefox</strong></td><td>media.peerconnection.ice.default_address_only = true</td><td>Limits WebRTC to the default interface (Mozilla wiki).</td></tr><tr><td><strong>Firefox</strong></td><td>media.peerconnection.ice.no_host = true</td><td>Stops it offering local host addresses (Mozilla wiki).</td></tr><tr><td><strong>Brave</strong></td><td>WebRTC IP handling policy: Default Public Interface Only</td><td>Uses only the default route used by web traffic and exposes no local addresses.</td></tr><tr><td><strong>Brave</strong></td><td>WebRTC IP handling policy: Disable Non-Proxied UDP</td><td>Uses TCP unless the proxy supports UDP.</td></tr><tr><td><strong>Chrome</strong></td><td>Set by an extension through the privacy API, or by an administrator policy</td><td>No setting in Chrome's own Settings page was found.</td></tr><tr><td><strong>Edge</strong></td><td>WebRtcLocalhostIpHandling administrator policy</td><td>Controls how local addresses are exposed.</td></tr><tr><td><strong>Safari</strong></td><td>No setting found</td><td>Without camera or microphone access it exposes only server reflexive and relay addresses.</td></tr></tbody></table></div>
+<h2 id="steps"><span class="section-num">05</span> Steps by Browser</h2>
+<h3>Firefox</h3><ol><li>Type <code class="ir-code">about:config</code> in the address bar and accept the warning.</li><li>Search for <code class="ir-code">media.peerconnection.enabled</code>.</li><li>Double-click it to set it to <code class="ir-code">false</code>.</li></ol><p>That switches WebRTC off, so sites that use it for calls will stop working. For a milder change, set <code class="ir-code">media.peerconnection.ice.default_address_only</code> to <code class="ir-code">true</code> instead, then run the test again.</p><h3>Brave</h3><ol><li>Open the menu and choose Settings, then Privacy and security.</li><li>Find WebRTC IP handling policy and pick an option.</li></ol><p>Brave's help centre says most people do not need to change it. Use Default Public Interface Only on a system VPN, and Disable Non-Proxied UDP only with an extension VPN or proxy, accepting that calls may stop working.</p><h3>Chrome and Edge</h3><p>Chrome's Settings page has no WebRTC switch that we found in its documentation. Extensions can set the policy through the privacy API, and the WebRTC Leak Prevent extension documents the options it offers. Administrators can set a policy on managed browsers; Microsoft documents the Edge version. Without those, the practical fix on these browsers is a VPN that routes the browser's traffic through the tunnel.</p><h3>Safari</h3><p>We found no WebRTC setting for Safari. Without camera or microphone access it exposes only server reflexive and relay addresses.</p>
+<h2 id="vpn"><span class="section-num">06</span> VPN-Level Causes and Fixes</h2>
+<p>If a leak shows with a VPN app, check whether it offers split tunneling, because RFC 8828 names a split-tunnel VPN as a case that reveals the ISP address. Route the browser through the VPN and run the test again. If you use a VPN extension, expect the proxy case, and either set the browser option above or use a system VPN app. After any change, run the test again with the VPN on.</p>
+<h2 id="enable"><span class="section-num">07</span> How to Turn WebRTC Back On</h2>
+<p>If calls stopped working after you changed a setting, undo it. In Firefox set <code class="ir-code">media.peerconnection.enabled</code> back to <code class="ir-code">true</code>. In Brave choose Default for the WebRTC IP handling policy. In Chrome, disable or remove the extension that set the policy, or ask your administrator to change a managed policy. Chrome, Edge, Firefox, Brave and Safari all include WebRTC, so nothing needs installing.</p>
+<h2 id="limits"><span class="section-num">08</span> What the Test Cannot Tell You</h2>
+<p>This test looks only at WebRTC, from one browser, at one moment. It does not test for DNS leaks, and it cannot compare an address of the other family, so a VPN that does not handle IPv6 needs a separate check. A clean result also leaves other ways to recognise you, such as a browser fingerprint, which <a href="/learn/what-is-device-fingerprinting">device fingerprinting</a> explains. For the wider checklist, see <a href="/learn/how-to-protect-your-privacy-online">how to protect your privacy online</a>.</p>
+<!-- FAQ -->
     <section aria-labelledby="faq-heading-main">
       <div class="ir-faq-outer">
         <h2 class="ir-faq-heading" id="faq-heading-main">Frequently Asked Questions</h2>
-        <p class="ir-faq-sub">Twelve questions on WebRTC leaks — what causes them, how to test, how to fix them per browser, and how this fits into a broader privacy approach.</p>
-        <div class="ndic-faq-list">
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>What is a WebRTC leak?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">A WebRTC leak occurs when the browser's real-time communication feature reveals your real IP address even while a VPN is active. WebRTC queries your network interfaces directly through STUN servers as part of setting up peer-to-peer connections for video and voice calls — a process that can bypass the VPN tunnel and expose your actual ISP-assigned IP to any site running the right script.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>How do I test for a WebRTC leak?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">Connect your VPN, then run a WebRTC-specific leak test while it stays active. IntelReap's VPN &amp; Proxy panel includes this check, comparing your WebRTC-reported IP against your VPN's IP. If your real ISP IP appears instead of or alongside your VPN IP, you have a leak. Test with the VPN on and off to see the contrast.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>Does a VPN protect against WebRTC leaks?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">Not automatically. Full system-level VPN clients with dedicated apps generally route WebRTC traffic correctly and do not leak. Browser-extension-only VPNs and free VPN services are far more prone to leaking, since extensions cannot always intercept WebRTC's direct network queries the way a system-level client can. The architecture of your specific VPN determines the outcome, not its price or reputation alone.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>How do I disable WebRTC in Chrome?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Chrome has no native toggle for this. Install the WebRTC Leak Prevent extension and set its IP handling policy to "Disable non-proxied UDP," or enable the WebRTC-blocking option already built into uBlock Origin's advanced settings if you have it installed. Either method shields the leak while keeping WebRTC functional for legitimate uses.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>How do I disable WebRTC in Firefox?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">Type about:config in the address bar, accept the warning, search for media.peerconnection.enabled, and double-click it to set the value to false. Restart Firefox for the change to take effect. This fully disables WebRTC at the browser level — no extension needed. Toggle it back to true if you need video calling functionality again later.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>Can I disable WebRTC in Safari?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">Safari does not expose a user-facing setting for this, and the previous Develop-menu option has been removed in recent versions. Safari's WebRTC implementation is somewhat more conservative by default than Chrome's, which reduces the leak surface. For guaranteed protection on Safari, a properly configured system-level VPN client remains the most dependable route.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>Will disabling WebRTC break video calls?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">Yes, for any service relying on WebRTC for peer-to-peer media — Google Meet, Discord's browser voice and video, WhatsApp Web calling, and similar tools. A full disable (as in Firefox's about:config method) breaks these. A shielding extension that blocks only the IP-revealing behaviour while preserving WebRTC's core function is usually the better trade-off if you use browser-based calling regularly.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>What is the difference between a local IP leak and a public IP leak via WebRTC?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">A local IP leak reveals your private network address, which is not very revealing on its own since millions of devices share the same private ranges. A public IP leak reveals your actual ISP-assigned address — the one a VPN exists specifically to hide — and is the leak that genuinely defeats a VPN's purpose. Leak tests should focus on whether the public IP is exposed, since that is the meaningful risk.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>Do all VPNs leak WebRTC?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">No. Reputable paid VPN providers with native desktop and mobile apps generally handle WebRTC traffic correctly. The leak risk concentrates in free VPN services and browser-extension-only VPNs that route only specific traffic types. Testing your specific combination of VPN and browser is the only way to know for certain — assumptions based on provider reputation alone are not reliable.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10"><span>What browser extensions block WebRTC leaks?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">WebRTC Leak Prevent (Chrome) is purpose-built for this with granular IP handling controls. uBlock Origin includes a WebRTC-blocking option in its advanced settings dashboard. For Firefox, the about:config method achieves the same result natively without needing any extension. Brave has the protective setting built directly into its privacy settings under brave://settings/privacy.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11"><span>Is a WebRTC leak the same as a DNS leak?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">No, they are different vulnerabilities. A DNS leak happens when DNS queries route outside the VPN tunnel to your ISP's resolver, revealing which sites you visit. A WebRTC leak exposes your actual IP address directly through the browser's real-time communication API, regardless of DNS routing. A VPN can be protected against one and still vulnerable to the other — test both independently.</div></div>
-          </div>
-
-          <div class="ndic-faq-item">
-            <button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12"><span>How often should I test for WebRTC leaks?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button>
-            <div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">Test immediately after setting up a new VPN, after any VPN software update, and after switching browsers or installing extensions that touch network behaviour. VPN providers occasionally introduce leaks through updates without intending to, so a periodic check every few months is a reasonable habit if you rely on a VPN for meaningful privacy protection.</div></div>
-          </div>
-
-        </div>
+        <p class="ir-faq-sub">Thirteen questions about WebRTC leaks, the test and the fixes.</p>
+        <div class="ndic-faq-list"><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a1"><span>What is a WebRTC leak?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a1"><div class="ndic-faq-answer-inner">A WebRTC leak is when the browser feature used for calls reveals an address you meant to hide, most often your ISP's public address while a VPN is on. A web page script can read the addresses WebRTC gathers.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a2"><span>How do I test for a WebRTC leak?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a2"><div class="ndic-faq-answer-inner">Run the test above with your VPN on and read the verdict. A public address that differs from the address websites see is a leak. Running it once without the VPN gives you the baseline to compare.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a3"><span>Is WebRTC a leak if I do not use a VPN?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a3"><div class="ndic-faq-answer-inner">No. Without a VPN, websites already see your public address, so there is nothing for WebRTC to reveal beyond it. The test still shows what a page can read.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a4"><span>Does a VPN protect against WebRTC leaks?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a4"><div class="ndic-faq-answer-inner">Not always. RFC 8828 names cases where addresses outside the VPN are revealed: split-tunnel setups, a device with several routes, and proxy-style VPNs. A full-tunnel VPN app that carries all of the browser's traffic does not fall into the split-tunnel case, so test with yours.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a5"><span>Why does the test show a local address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a5"><div class="ndic-faq-answer-inner">Some browsers still offer a private LAN address, for example when a page has camera or microphone access. It is not a VPN leak. Chrome replaces it with a random .local name by default, and the test reports one when it sees one.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a6"><span>How do I disable WebRTC in Chrome?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a6"><div class="ndic-faq-answer-inner">Chrome's own Settings page has no switch for it that we found. Extensions can set the policy, and administrators can set one on managed browsers. Pick the option to match your VPN type: Disable non-proxied UDP effectively disables WebRTC for most users.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a7"><span>How do I disable WebRTC in Firefox?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a7"><div class="ndic-faq-answer-inner">Open about:config, search for media.peerconnection.enabled and set it to false. For a milder change, set media.peerconnection.ice.default_address_only to true.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a8"><span>How do I change WebRTC settings in Brave?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a8"><div class="ndic-faq-answer-inner">Open Settings, then Privacy and security, and choose an option under WebRTC IP handling policy. Brave's help centre says most people do not need to change it.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a9"><span>What about Edge and Safari?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a9"><div class="ndic-faq-answer-inner">Edge exposes the control as an administrator policy. We found no WebRTC setting for Safari, which, without camera or microphone access, exposes only server reflexive and relay addresses.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a10"><span>Will disabling WebRTC break video calls?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a10"><div class="ndic-faq-answer-inner">Turning it off completely will, for sites that use it. Limiting address handling is milder, and Disable non-proxied UDP can stop calls working unless a proxy supports UDP.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a11"><span>How do I turn WebRTC back on?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a11"><div class="ndic-faq-answer-inner">Reverse the change: set the Firefox preference back to true, choose Default in Brave, or remove the extension or policy that set it in Chrome. Chrome, Edge, Firefox, Brave and Safari all include WebRTC.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a12"><span>Does this test store my address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a12"><div class="ndic-faq-answer-inner">IntelReap does not store the result. Your browser contacts a public STUN server, which sees your address as part of the test, and IntelReap sees the address of your web request, as it does for any page.</div></div></div><div class="ndic-faq-item"><button class="ndic-faq-question" aria-expanded="false" aria-controls="faq-a13"><span>Why does the test say it cannot compare an address?</span><span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M2 5l5 5 5-5"/></svg></span></button><div class="ndic-faq-answer" id="faq-a13"><div class="ndic-faq-answer-inner">An address of a different family (IPv6 versus IPv4) than the one websites see cannot be compared here. With a VPN on, such an address should belong to your VPN, not your ISP.</div></div></div></div>
       </div>
     </section>
 <section class="ir-related" id="related" aria-labelledby="related-heading"><div class="ir-faq-outer"><h2 class="ir-faq-heading" id="related-heading">You Can Also Read</h2><div class="hub-grid"><a class="hub-card" href="/learn/how-to-protect-your-privacy-online"><span class="hub-card-kicker">Article</span><span class="hub-card-title">How to Protect Your Privacy Online</span><span class="hub-card-desc">The wider privacy checklist</span></a><a class="hub-card" href="/learn/what-is-device-fingerprinting"><span class="hub-card-kicker">Article</span><span class="hub-card-title">What Is Device Fingerprinting? How to Block It</span><span class="hub-card-desc">Tracking beyond your IP address</span></a><a class="hub-card" href="/learn/what-is-an-ip-address"><span class="hub-card-kicker">Article</span><span class="hub-card-title">What Is an IP Address? Types and How It Works</span><span class="hub-card-desc">What the leaked address shows</span></a></div></div></section>
-<div class="ir-logic-grid">
-        <div class="ir-logic-card">
-          <span class="ir-logic-eyebrow" data-i18n="logic.label">Logic</span>
-          <p>WebRTC leaks happen because peer-to-peer connection setup and VPN tunnelling were built as separate systems — closing the gap requires addressing WebRTC specifically, not just trusting that a VPN handles everything.</p>
-        </div>
-        <div class="ir-logic-card">
-          <span class="ir-logic-eyebrow" data-i18n="methodology.label">Methodology</span>
-          <p>This guide draws on the W3C WebRTC specification, IETF STUN/ICE protocol documentation (RFC 8445, RFC 5389), browser vendor privacy documentation, and live leak testing across multiple VPN architectures and browser combinations.</p>
-        </div>
-      </div>
-
-      <!-- CITATIONS -->
-      <section class="ndic-citation-section" aria-labelledby="citation-heading">
+<div class="ir-logic-grid"><div class="ir-logic-card"><span class="ir-logic-eyebrow">Logic</span><p>Separate three things that are often confused: a public address that differs from the one websites see (a leak with a VPN on), a private LAN address (not a VPN leak), and no address at all. Test the first directly, explain why it happens using the standard, then match the fix to the VPN type instead of recommending the strictest setting.</p></div><div class="ir-logic-card"><span class="ir-logic-eyebrow">Methodology</span><p>The test runs in your browser. It opens a WebRTC connection to a public STUN server, reads the candidate addresses, classifies them, and compares public ones with the address IntelReap sees for your web request, only when they are the same address family. It stores nothing. We tested the logic in a real browser with simulated WebRTC and identity responses, not against real VPNs. That browser-extension VPNs fall under RFC 8828's proxy case is our reading, not stated by the RFC. The mapping of Chrome and Edge policy values to the four modes is our reading of their names. The WebKit post is from 2017, the Brave wiki page is archived and the Chrome mDNS notice is a developer announcement, so browser behaviour may have changed. We found no Chrome Settings option, which is not proof that none exists.</p></div></div>
+<!-- CITATIONS -->
+      <section class="ndic-citation-section" id="sources" aria-labelledby="citation-heading">
         <div class="ndic-citation-label" id="citation-heading">Sources &amp; References</div>
-        <div class="ndic-citation-list">
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">01</span>
-            <span class="ndic-citation-link"><a href="https://www.w3.org/TR/webrtc/" target="_blank" rel="noopener noreferrer">W3C — WebRTC 1.0 Specification: Real-Time Communication Between Browsers</a></span>
-          </div>
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">02</span>
-            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc8445" target="_blank" rel="noopener noreferrer">RFC 8445 — Interactive Connectivity Establishment (ICE) Protocol</a></span>
-          </div>
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">03</span>
-            <span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc5389" target="_blank" rel="noopener noreferrer">RFC 5389 — Session Traversal Utilities for NAT (STUN)</a></span>
-          </div>
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">04</span>
-            <span class="ndic-citation-link"><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API" target="_blank" rel="noopener noreferrer">MDN Web Docs — WebRTC API Reference and Browser Implementation Notes</a></span>
-          </div>
-          <div class="ndic-citation-item">
-            <span class="ndic-citation-num">05</span>
-            <span class="ndic-citation-link"><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=333752" target="_blank" rel="noopener noreferrer">Chromium Bug Tracker — WebRTC IP Leak Discussion and IP Handling Policy</a></span>
-          </div>
-        </div>
+        <div class="ndic-citation-list"><div class="ndic-citation-item"><span class="ndic-citation-num">01</span><span class="ndic-citation-link"><a href="https://www.rfc-editor.org/rfc/rfc8828" target="_blank" rel="noopener noreferrer">RFC 8828: WebRTC IP Address Handling Requirements</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">02</span><span class="ndic-citation-link"><a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/type" target="_blank" rel="noopener noreferrer">MDN: RTCIceCandidate type property</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">03</span><span class="ndic-citation-link"><a href="https://developer.chrome.com/extensions/privacy" target="_blank" rel="noopener noreferrer">Chrome extensions: privacy API</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">04</span><span class="ndic-citation-link"><a href="https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/webrtclocalhostiphandling" target="_blank" rel="noopener noreferrer">Microsoft Learn: WebRtcLocalhostIpHandling policy for Edge</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">05</span><span class="ndic-citation-link"><a href="https://groups.google.com/g/discuss-webrtc/c/6stQXi72BEU" target="_blank" rel="noopener noreferrer">discuss-webrtc: Private IP addresses exposed by WebRTC changing to mDNS hostnames</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">06</span><span class="ndic-citation-link"><a href="https://webkit.org/blog/7763/a-closer-look-into-webrtc" target="_blank" rel="noopener noreferrer">WebKit: A Closer Look Into WebRTC</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">07</span><span class="ndic-citation-link"><a href="https://wiki.mozilla.org/Media/WebRTC/Privacy" target="_blank" rel="noopener noreferrer">Mozilla wiki: WebRTC privacy</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">08</span><span class="ndic-citation-link"><a href="https://github.com/uBlockOrigin/uBlock-issues/wiki/Prevent-WebRTC-from-leaking-local-IP-address" target="_blank" rel="noopener noreferrer">uBlock Origin wiki: Prevent WebRTC from leaking local IP address</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">09</span><span class="ndic-citation-link"><a href="https://github.com/aghorler/WebRTC-Leak-Prevent/blob/master/DOCUMENTATION.md" target="_blank" rel="noopener noreferrer">WebRTC Leak Prevent: documentation</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">10</span><span class="ndic-citation-link"><a href="https://support.brave.app/hc/en-us/articles/360017989132-How-do-I-change-my-Privacy-Settings-" target="_blank" rel="noopener noreferrer">Brave Help Center: Privacy settings</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">11</span><span class="ndic-citation-link"><a href="https://github.com/brave/brave-browser/wiki/WebRTC-Custom-Settings" target="_blank" rel="noopener noreferrer">Brave wiki: WebRTC Custom Settings (archived)</a></span></div><div class="ndic-citation-item"><span class="ndic-citation-num">12</span><span class="ndic-citation-link"><a href="https://groups.google.com/g/discuss-webrtc/c/A4tDb2_NN38" target="_blank" rel="noopener noreferrer">discuss-webrtc: How to include WebRTC traffic in a VPN tunnel on Chrome</a></span></div></div>
       </section>
 
       <div id="dynamic-internal-links"></div>
@@ -639,8 +530,8 @@
     <section aria-labelledby="contact-heading">
       <div class="ir-contact-outer">
         <div class="ir-contact-header">
-          <h2 class="ir-contact-title" id="contact-heading">Still Seeing a WebRTC Leak?</h2>
-          <p class="ir-contact-sub">Tell us your browser, VPN provider, and what the test showed — we will help pinpoint the cause. We respond within two business days.</p>
+          <h2 class="ir-contact-title" id="contact-heading">Can't Find the IP Address You Need?</h2>
+          <p class="ir-contact-sub">Describe your device and situation — we will point you to the right method. We respond within two business days.</p>
         </div>
         <div class="ir-form-wrap">
           <form name="Request And Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactForm(event)" aria-label="Contact and request form">
@@ -649,7 +540,7 @@
               <p class="form-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
               <div class="form-group"><label for="cf-name" data-i18n="contact.name_label">Name</label><input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" data-i18n-placeholder="contact.name_placeholder"></div>
               <div class="form-group"><label for="cf-email" data-i18n="contact.email_label">Email</label><input type="email" id="cf-email" name="email" placeholder="Enter your email address" required autocomplete="email" data-i18n-placeholder="contact.email_placeholder"></div>
-              <div class="form-group"><label for="cf-message">Describe what the leak test showed</label><textarea id="cf-message" name="message" placeholder="What browser and VPN are you using? What did the leak test reveal?" required></textarea></div>
+              <div class="form-group"><label for="cf-message">Describe your device and situation</label><textarea id="cf-message" name="message" placeholder="What device are you trying to find the IP of? What have you already tried?" required></textarea></div>
               <button type="submit" class="form-submit" data-i18n="contact.submit">Send Message</button>
             </div>
           </form>
@@ -746,18 +637,52 @@
   <script>
   (function(){'use strict';
     document.querySelectorAll('.ndic-faq-question').forEach(function(btn){btn.addEventListener('click',function(){const item=btn.closest('.ndic-faq-item'),wasOpen=item.classList.contains('ndic-faq-item--open');document.querySelectorAll('.ndic-faq-item--open').forEach(function(i){i.classList.remove('ndic-faq-item--open');i.querySelector('.ndic-faq-question').setAttribute('aria-expanded','false');});if(!wasOpen){item.classList.add('ndic-faq-item--open');btn.setAttribute('aria-expanded','true');}});});
-    const bar=document.getElementById('scroll-progress-bar');if(bar){window.addEventListener('scroll',function(){const s=window.scrollY||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(s/h)*100:0).toFixed(2)+'%';},{passive:true});}
-        (()=>{const m=new Date().getMonth(),banners=['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'],labels=['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];const el=document.getElementById('seasonal-banner');if(el){el.textContent=banners[m];el.style.cssText='text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;';}const lbl=document.getElementById('seasonal-label');if(lbl)lbl.textContent=labels[m];})();
-    (()=>{const v=['Test My VPN for Leaks','Check My VPN Status','Scan for WebRTC Leaks','Verify My VPN Security','Run My Leak Test','Inspect My Connection'];document.querySelectorAll('.cta-rotate').forEach(el=>{el.textContent=v[Math.floor(Math.random()*v.length)];});})();
-    (()=>{const rawUrl=window.location.href,encUrl=encodeURIComponent(rawUrl),encTitle=encodeURIComponent(document.title);const platforms=[{n:'WhatsApp',u:`https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}`},{n:'Facebook',u:`https://www.facebook.com/sharer/sharer.php?u=${encUrl}`},{n:'Twitter/X',u:`https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}`},{n:'LinkedIn',u:`https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`},{n:'Reddit',u:`https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`},{n:'Quora',u:`https://www.quora.com/search?q=${encTitle}`},{n:'Medium',u:`https://medium.com/new-story?url=${encUrl}`},{n:'Telegram',u:`https://t.me/share/url?url=${encUrl}&text=${encTitle}`},{n:'Pinterest',u:`https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}`},{n:'Discord',u:'https://discord.com/channels/@me'},{n:'Snapchat',u:`https://www.snapchat.com/share?url=${encUrl}`},{n:'Vimeo',u:'https://vimeo.com'},{n:'TikTok',u:'https://www.tiktok.com'},{n:'Instagram',u:'https://www.instagram.com'},{n:'Email',u:`mailto:?subject=${encTitle}&body=${encUrl}`},{n:'Copy Link',u:null}];
+    const bar=document.getElementById('scroll-progress-bar');if(bar){window.addEventListener('scroll',function(){const s=window.scrollY||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(h>0?(s/h)*100:0).toFixed(2)+'%';},{passive:true});}
+    document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=new Date().getFullYear().toString();});
+            (()=>{const m=new Date().getMonth();const banners=['\u2744\ufe0f Winter Edition','\u2744\ufe0f Winter Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\ud83c\udf38 Spring Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\u2600\ufe0f Summer Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\ud83c\udf42 Fall Edition','\u2744\ufe0f Winter Edition'];const labels=['Winter Guide','Winter Guide','Spring Guide','Spring Guide','Spring Guide','Summer Guide','Summer Guide','Summer Guide','Fall Guide','Fall Guide','Fall Guide','Winter Guide'];const el=document.getElementById('seasonal-banner');if(el){el.textContent=banners[m];el.style.cssText='text-align:center;padding:0.375rem 1rem;font-size:0.8125rem;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);letter-spacing:0.03em;opacity:0.7;';}const lbl=document.getElementById('seasonal-label');if(lbl)lbl.textContent=labels[m];})();
+    (()=>{const v=['Reveal My Network Identity','See My Public IP Now','Check My Network Details','Inspect My IP Address','View My Network Identity','Scan My Network Now'];document.querySelectorAll('.cta-rotate').forEach(el=>{el.textContent=v[Math.floor(Math.random()*v.length)];});})();
+    (()=>{const rawUrl=window.location.href,encUrl=encodeURIComponent(rawUrl),encTitle=encodeURIComponent(document.title);const platforms=[{n:'WhatsApp',u:`https://api.whatsapp.com/send?text=${encTitle}%20${encUrl}`},{n:'Facebook',u:`https://www.facebook.com/sharer/sharer.php?u=${encUrl}`},{n:'Twitter/X',u:`https://twitter.com/intent/tweet?text=${encTitle}&url=${encUrl}`},{n:'LinkedIn',u:`https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`},{n:'Reddit',u:`https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`},{n:'Quora',u:`https://www.quora.com/search?q=${encTitle}`},{n:'Medium',u:`https://medium.com/new-story?url=${encUrl}`},{n:'Telegram',u:`https://t.me/share/url?url=${encUrl}&text=${encTitle}`},{n:'Pinterest',u:`https://pinterest.com/pin/create/button/?url=${encUrl}&description=${encTitle}`},{n:'Discord',u:'https://discord.com/channels/@me'},{n:'Snapchat',u:`https://www.snapchat.com/share?url=${encUrl}`},{n:'Vimeo',u:'https://vimeo.com'},{n:'TikTok',u:'https://www.tiktok.com'},{n:'Instagram',u:'https://www.instagram.com'},{n:'Email',u:`mailto:?subject=${encTitle}&body=I%20thought%20you%20might%20find%20this%20useful%3A%20${encUrl}`},{n:'Copy Link',u:null}];
     const container=document.getElementById('share-pills-container');if(!container)return;
     platforms.forEach(p=>{let el;if(p.u===null){el=document.createElement('button');el.type='button';el.textContent='Copy Link';el.setAttribute('aria-label','Copy page URL to clipboard');el.addEventListener('click',()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(rawUrl).then(()=>{el.textContent='\u2713 Copied!';setTimeout(()=>{el.textContent='Copy Link';},2400);showToast('Link copied to clipboard');}).catch(()=>legacyCopy(rawUrl,el));}else legacyCopy(rawUrl,el);});}else{el=document.createElement('a');el.href=p.u;el.target='_blank';el.rel='noopener noreferrer';el.textContent=p.n;el.setAttribute('aria-label',`Share on ${p.n}`);}el.className='ir-share-pill';container.appendChild(el);});})();
     function legacyCopy(text,btn){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');if(btn){btn.textContent='\u2713 Copied!';setTimeout(()=>{btn.textContent='Copy Link';},2400);}showToast('Link copied to clipboard');}catch(e){showToast('Copy failed — please copy the URL manually');}document.body.removeChild(ta);}
     function showToast(msg){const tc=document.getElementById('toast-container');if(!tc)return;const t=document.createElement('div');t.textContent=msg;t.style.cssText='display:inline-block;background:var(--color-accent-primary);color:#fff;font-family:var(--font-body,"Be Vietnam Pro",sans-serif);font-size:0.875rem;font-weight:500;padding:0.625rem 1.125rem;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.2);margin-bottom:0.5rem;opacity:0;transition:opacity 0.25s ease;pointer-events:none;';tc.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>{t.style.opacity='1';}));setTimeout(()=>{t.style.opacity='0';setTimeout(()=>{if(t.parentNode)t.parentNode.removeChild(t);},350);},2700);}
   }());
   </script>
+
   <script>
-    function handleContactForm(e){e.preventDefault();const myForm=e.target,formData=new FormData(myForm);fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(formData).toString()}).then(()=>{alert("Thank you! Your request has been transmitted.");myForm.reset();}).catch((error)=>{alert("Oops! There was a problem submitting your form.");console.error("Form submission error:",error);});}
+    function handleContactForm(e){e.preventDefault();const myForm=e.target;const formData=new FormData(myForm);fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(formData).toString()}).then(()=>{alert("Thank you! Your request has been transmitted.");myForm.reset();}).catch((error)=>{alert("Oops! There was a problem submitting your form.");console.error("Form submission error:",error);});}
   </script>
+<script src="../assets/js/config.js"></script>
+<script>(function(){var b=document.getElementById('ir-wr-run'),o=document.getElementById('ir-wr-out'),n=document.getElementById('ir-wr-note');if(!b||!o||!n)return;
+function e(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function fam(ip){return ip.indexOf(':')>-1?6:4}
+function v4(s){var m=/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(s);if(!m)return null;var a=[],i;for(i=1;i<5;i++){if(+m[i]>255)return null;a.push(+m[i])}return a}
+function exp6(s){if(!/^[0-9a-fA-F:.]+$/.test(s)||s.indexOf(':')<0)return null;var t=s,m=/^(.*:)(\d+\.\d+\.\d+\.\d+)$/.exec(s),q,i,d,h,l,w,z;if(m){q=v4(m[2]);if(!q)return null;t=m[1]+(q[0]*256+q[1]).toString(16)+':'+(q[2]*256+q[3]).toString(16)}
+d=t.split('::');if(d.length>2)return null;if(d.length===1){w=t.split(':');if(w.length!==8)return null}else{h=d[0]?d[0].split(':'):[];l=d[1]?d[1].split(':'):[];z=8-h.length-l.length;if(z<1)return null;w=h;for(i=0;i<z;i++)w.push('0');w=w.concat(l)}
+for(i=0;i<8;i++){if(!/^[0-9a-fA-F]{1,4}$/.test(w[i]))return null;w[i]=('0000'+w[i]).slice(-4).toLowerCase()}return w.join(':')}
+function norm(ip){return fam(ip)===4?ip:(exp6(ip)||ip.toLowerCase())}
+function isip(s){return fam(s)===4?!!v4(s):!!exp6(s)}
+function priv(ip){if(fam(ip)===4){var a=v4(ip);return !a||a[0]===10||a[0]===127||a[0]===0||(a[0]===172&&a[1]>=16&&a[1]<=31)||(a[0]===192&&a[1]===168)||(a[0]===169&&a[1]===254)||(a[0]===100&&a[1]>=64&&a[1]<=127)}var l=norm(ip);return l==='0000:0000:0000:0000:0000:0000:0000:0001'||/^f[cd]/.test(l)||/^fe[89ab]/.test(l)}
+function gather(){return new Promise(function(res){if(typeof RTCPeerConnection==='undefined'){res(null);return}var out=[],done=false,pc,t;try{pc=new RTCPeerConnection({iceServers:[{urls:'stun:stun.l.google.com:19302'}]})}catch(x){res(null);return}
+function fin(){if(done)return;done=true;clearTimeout(t);try{pc.close()}catch(x){}res(out)}t=setTimeout(fin,6000);
+pc.onicecandidate=function(ev){if(!ev.candidate){fin();return}var p=String(ev.candidate.candidate||'').replace(/^a=/,'').trim().split(/\s+/);if(p.length>7&&p[6]==='typ')out.push({addr:p[4],type:p[7]})};
+try{pc.createDataChannel('t');pc.createOffer().then(function(f){return pc.setLocalDescription(f)}).catch(fin)}catch(x){fin()}})}
+function seen(){if(typeof NDIC_CONFIG==='undefined')return Promise.resolve(null);var c=new AbortController(),t=setTimeout(function(){c.abort()},10000);return fetch(NDIC_CONFIG.BACKEND_URL+NDIC_CONFIG.ENDPOINTS.ipIdentity,{signal:c.signal}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){clearTimeout(t);return j&&j.success&&j.data&&j.data.ip&&isip(String(j.data.ip))?String(j.data.ip):null}).catch(function(){clearTimeout(t);return null})}
+function row(k,v){return '<div class="ir-tool-row"><dt>'+e(k)+'</dt><dd>'+e(v)+'</dd></div>'}
+function render(c,s){var h='',pub=[],loc=[],md=0,sm=[],df=[],ot=[],seenN=s?norm(s):null,keys={},v;
+if(c===null){o.innerHTML='<p class="ir-tool-verdict"><strong>WebRTC is not available in this browser, so nothing can leak through it.</strong></p>';n.textContent='Run it again in another browser if you want to compare.';return}
+c.forEach(function(x){var a=x.addr;if(/\.local$/i.test(a)){md++;return}if(!isip(a)||x.type==='relay')return;var k=norm(a);if(keys[k])return;keys[k]=1;if(priv(a))loc.push(a);else pub.push(a)});
+h+=row('Address websites see',s||'could not be read');
+if(!pub.length)h+=row('Public addresses WebRTC revealed','none');
+pub.forEach(function(a){var tag;if(!s||fam(a)!==fam(s)){tag=s?'other address family, not compared':'not compared';ot.push(a)}else if(norm(a)===seenN){tag='same as the address websites see';sm.push(a)}else{tag='different from the address websites see';df.push(a)}h+=row('Public address from WebRTC',a+' ('+tag+')')});
+h+=row('Local addresses',loc.length?'visible: '+loc.join(', '):(md?'hidden behind '+md+' mDNS name'+(md>1?'s':''):'none revealed'));
+if(!pub.length)v='No public address was revealed. WebRTC is blocked or restricted, or no STUN route was available. Nothing public leaked in this test.';
+else if(!s)v='The address websites see could not be read. Compare the public address above with it yourself: with a VPN on, a different address means WebRTC is leaking.';
+else if(df.length)v='A different address was revealed. If a VPN is on, WebRTC is leaking your ISP address. If no VPN is on, check for a proxy or a second connection.';
+else if(sm.length)v='Same as the address websites see: no leak shown.'+(ot.length?' An address of the other family was also revealed and was not compared; with a VPN on it should be your VPN\'s, not your ISP\'s.':'');
+else v='WebRTC revealed only an address of the other family (IPv4 versus IPv6), which this test cannot compare. With a VPN on, it should be your VPN\'s address, not your ISP\'s.';
+o.innerHTML='<dl>'+h+'</dl><p class="ir-tool-verdict"><strong>'+e(v)+'</strong></p>';n.textContent=loc.length?'A local address is visible. A private LAN address is not a VPN leak, but it can help a site recognise your network.':'Many browsers hide local addresses behind random mDNS names. Nothing from this test is stored by IntelReap.'}
+function run(){b.disabled=true;n.textContent='Testing...';o.textContent='';Promise.all([gather(),seen()]).then(function(r){render(r[0],r[1])}).catch(function(){n.textContent='The test could not run. Try again.'}).then(function(){b.disabled=false;b.textContent='Run again'})}
+b.addEventListener('click',run)})();</script>
 </body>
 </html>

@@ -35,7 +35,7 @@ intelreap.com was submitted to Google AdSense on 2026-11-12. Review can take a f
 ## Done so far
 - Planning: keyword maps (`docs/keyword-map-v2.md`), GSC findings, Semrush site audit, mixed-intent audit, quality queue (54 items), blueprint, decisions.
 - Tooling: `scripts/content/*` (see BLUEPRINT).
-- Pages built or redone to standard: P1 `what-is-an-ip-address`, P13 `find-printer-ip-address`, P14 `find-router-ip-address`, D1 `how-to-fix-slow-dns-lookup`, A1 hub guide `how-to-find-ip-address-of-any-device`, A2 `what-is-reverse-ip-lookup`. 'You Can Also Read' on all 17 articles and guides. Single source files: `docs/data/page-dates.json` (dates) and `docs/data/related-pages.json` (related reading).
+- Pages built or redone to standard: P1 `what-is-an-ip-address`, P13 `find-printer-ip-address`, P14 `find-router-ip-address`, D1 `how-to-fix-slow-dns-lookup`, A1 hub guide `how-to-find-ip-address-of-any-device`, A2 `what-is-reverse-ip-lookup`, A3 `webrtc-leak-test-and-shield`. 'You Can Also Read' on all 17 articles and guides. Single source files: `docs/data/page-dates.json` (dates) and `docs/data/related-pages.json` (related reading).
 - Redone to the standard: D1 (logic corrected, DoH check, per-device DNS steps) and P14 (4 purpose-built diagrams).
 - Technical fixes: 5 broken citations fixed or removed, 2 Apple citations removed, two-ISPs title de-duplicated, homepage SoftwareApplication schema removed, `llms.txt` added, mobile phone diagrams, FAQ moved up and real dates stamped on all 17 content pages.
 
@@ -47,11 +47,12 @@ intelreap.com was submitted to Google AdSense on 2026-11-12. Review can take a f
 | `find-printer-ip-address` | Redone 2026-11-07 to standard (queue item 3); phone and desktop figures drawn separately |
 | `what-is-an-ip-address` | Redone 2026-11-10 to standard (queue item 4); now built from `specs/ip_address.py`, so edit the spec, not the HTML |
 | `what-is-reverse-ip-lookup` | Redone 2026-11-17 to standard (queue item 7); built from `specs/reverse_ip.py` and `reverse_figs.py`, so edit the spec, not the HTML. The lookup runs in the browser against public DoH and was tested with mocked responses only (the sandbox cannot reach Cloudflare or Google), so confirm one real lookup on the live page |
-| 11 older articles and guides | Content untouched since July/Oct except citations (7 pages) and title (two-ISPs); retrofit items 8, 10-23 (A3 onward) |
+| `webrtc-leak-test-and-shield` | Redone 2026-11-18 to standard (queue item 8); built from `specs/webrtc.py` and `webrtc_figs.py`, so edit the spec, not the HTML. The test was exercised in a real browser with a simulated `RTCPeerConnection` and mocked identity responses only; confirm one real run, with and without a VPN, on the live page. The phone figure list is in PAGE order, not drawing order |
+| 10 older articles and guides | Content untouched since July/Oct except citations (7 pages) and title (two-ISPs); retrofit A4 onward |
 | 13 panels | Untouched (owner added charts on Nov 2); light retrofit items 24-30 |
 
 ## Next
-1. Queue item 8: A3 WebRTC leak article, then the remaining article and guide retrofits in queue order. Panel items (6, 9, 11, 13, 17, 20, 24-30) are their own later stretch, per the owner.
+1. A4 Why does my internet speed fluctuate (next article retrofit), then the remaining article and guide retrofits in queue order. Panel stretch note: the Security and Proxy engines' WebRTC verdicts (`assets/js/engines/security.js`, `proxy.js`) label a result by private LAN addresses only, never compare the public WebRTC address with the address websites see, and their IPv6 pattern misses compressed addresses; fix in the panel stretch. Panel items (6, 9, 11, 13, 17, 20, 24-30) are their own later stretch, per the owner.
 2. Execute D-3 cuts inside each affected page's retrofit; use `docs/GSC-FINDINGS.md` for title/description CTR rewrites.
 3. Still to examine: the two "content not optimized" pages (VPN concentrator, device fingerprinting); inconsistent title suffixes; no custom 404 page.
 4. Backend `claude/lookup-routes` (queue item 54): city-level provider choice pending; the owner declined any paid domains-on-IP data (decision 24).

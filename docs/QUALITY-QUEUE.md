@@ -163,6 +163,7 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 - **Defects found:** No test on the page; browser-specific disable steps need fact-checking (Chrome has no built-in switch; Firefox/Brave differ; Safari differs).
 - **Retrofit work:** Test at top (existing WebRTC exposure engine). Verify each browser step against vendor docs; honest comparison of disable vs shield. Absorb the planned W2 "enable/disable" page (decision D-2).
 - **Diagrams (purpose of each):** Teaches: how WebRTC can reveal an address even behind a VPN; Teaches: how to read a test result (what counts as a leak)
+- **Status:** Done 2026-11-18 (item 8), built from `specs/webrtc.py` and `webrtc_figs.py`. Title "WebRTC Leak Test: Check and Fix a VPN IP Leak"; in-browser test comparing same-family public WebRTC addresses with the address the backend sees (not the Security panel's private-IP logic); absorbs W2 (enable/disable); 5 diagrams drawn separately for desktop and phone; 8 sections, 13 FAQs, 12 sources. The phone figure list follows PAGE order (the page puts "how to read a result" first).
 
 ### A4 Why internet speed fluctuates
 - **URL:** `/learn/why-does-my-internet-speed-fluctuate`
