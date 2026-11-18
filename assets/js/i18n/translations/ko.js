@@ -1,15 +1,15 @@
 /* IntelReap translations: ko. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_KO = {
   "meta": {
-    "title": "IntelReap — 네트워크 및 기기 인텔리전스 센터",
-    "description": "실시간 네트워크 및 기기 인텔리전스. IP, ASN, VPN 상태, 브라우저 기능 및 보안 상태를 확인하세요. 무료.",
+    "title": "IntelReap — 네트워크 및 기기 분석 센터",
+    "description": "실시간 네트워크 및 기기 분석. IP, ASN, VPN 상태, 브라우저 기능 및 보안 상태를 확인하세요. 무료. 로그인 불필요.",
     "og_title": "IntelReap — 네트워크가 무엇을 드러내는지 확인하세요",
-    "og_description": "무료 실시간 인텔리전스 도구. 몇 초 안에 네트워크, 기기, 보안, 브라우저를 분석합니다."
+    "og_description": "무료 실시간 분석 도구. 몇 초 안에 네트워크, 기기, 보안, 브라우저를 분석합니다."
   },
   "nav": {
-    "intelligence_center": "인텔리전스 센터",
+    "intelligence_center": "분석 센터",
     "about": "소개",
-    "search_placeholder": "인텔리전스 패널 검색...",
+    "search_placeholder": "분석 패널 검색...",
     "open_search": "검색 열기",
     "toggle_menu": "메뉴 전환",
     "close_menu": "메뉴 닫기",
@@ -18,25 +18,25 @@ window.NDIC_TRANSLATIONS_KO = {
     "guides": "가이드"
   },
   "hero": {
-    "badge": "무료 인텔리전스 도구",
+    "badge": "무료 분석 도구",
     "title_line1": "당신의 네트워크는",
     "title_line2": "무엇을 드러내나요?",
     "tagline": "IntelReap은 네트워크 인프라, 기기 지문, 보안 상태, 브라우저 기능을 실시간으로 보여 줍니다. 13개 패널에서 285개 데이터 포인트. 무료, 로그인 불필요.",
-    "cta_primary": "인텔리전스 스캔 실행",
+    "cta_primary": "분석 스캔 실행",
     "cta_secondary": "작동 방식 보기",
     "trust_data_points": "스캔당 285개 데이터 포인트",
-    "trust_panels": "12개 인텔리전스 패널",
+    "trust_panels": "13개 분석 패널",
     "badge_live": "네트워크 및 기기 실시간 스캔",
     "title_html": "인터넷이 이미<br><span class=\"ndic-highlight\">당신</span>에 대해 아는 것을 확인하세요.",
     "see_report": "전체 보고서 보기"
   },
   "quick_answer": {
     "label": "빠른 답변",
-    "title": "네트워크 및 기기 인텔리전스 센터란 무엇인가요?"
+    "title": "네트워크 및 기기 분석 센터란 무엇인가요?"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "네트워크 및 기기 인텔리전스 센터",
+    "subtitle": "네트워크 및 기기 분석 센터",
     "status_live": "라이브",
     "status_scanning": "스캔 중",
     "status_offline": "오프라인",
@@ -46,7 +46,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "api_calls": "API 호출"
   },
   "canvas1": {
-    "heading_technical": "ASN 및 네트워크 경로 인텔리전스",
+    "heading_technical": "ASN 및 네트워크 경로 분석",
     "heading_plain": "어떤 네트워크에 있나요?",
     "params": {
       "asn_number": "ASN 번호",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "deep_dive": "네트워크 ID 심층 분석"
   },
   "canvas3": {
-    "heading_technical": "VPN, 프록시 및 라우팅 인텔리전스",
+    "heading_technical": "VPN, 프록시 및 라우팅 분석",
     "heading_plain": "온라인에서 숨어 있나요?",
     "params": {
       "vpn_detected": "VPN 감지",
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "deep_dive": "실시간 네트워크 심층 분석"
   },
   "canvas5": {
-    "heading_technical": "기기 인텔리전스 패널",
+    "heading_technical": "기기 분석 패널",
     "heading_plain": "어떤 기기를 사용하고 있나요?",
     "params": {
       "os": "운영 체제",
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "deep_dive": "브라우저 기능 심층 분석"
   },
   "canvas9": {
-    "heading_technical": "성능 인텔리전스 패널",
+    "heading_technical": "성능 분석 패널",
     "heading_plain": "브라우저는 얼마나 빠른가요?",
     "params": {
       "page_load_time": "페이지 로드 시간",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "deep_dive": "성능 심층 분석"
   },
   "canvas10": {
-    "heading_technical": "브라우저 및 렌더링 속도 인텔리전스",
+    "heading_technical": "브라우저 및 렌더링 속도 분석",
     "heading_plain": "기기가 얼마나 빠르게 렌더링하나요?",
     "vitals": {
       "lcp": "최대 콘텐츠 렌더링",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "deep_dive": "렌더링 속도 심층 분석"
   },
   "canvas11": {
-    "heading_technical": "글로벌 인텔리전스 스코어보드",
+    "heading_technical": "글로벌 분석 스코어보드",
     "heading_plain": "전체 점수",
     "params": {
       "global_score": "글로벌 점수",
@@ -364,7 +364,7 @@ window.NDIC_TRANSLATIONS_KO = {
       "strongest_area": "가장 강한 영역",
       "weakest_area": "가장 약한 영역",
       "improvement_priority": "개선 우선순위",
-      "critical_flags": "중요 플래그",
+      "critical_flags": "심각 플래그",
       "warnings": "경고"
     },
     "health": {
@@ -372,18 +372,18 @@ window.NDIC_TRANSLATIONS_KO = {
       "healthy": "양호",
       "fair": "보통",
       "poor": "불량",
-      "critical": "위험"
+      "critical": "심각"
     },
     "deep_dive": "글로벌 점수 심층 분석"
   },
   "canvas12": {
-    "heading_technical": "실시간 인텔리전스 피드",
+    "heading_technical": "실시간 분석 피드",
     "heading_plain": "방금 무슨 일이 있었나요?",
     "params": {
       "online_status": "연결 상태",
       "backend_health": "백엔드 상태",
       "total_events": "총 이벤트 수",
-      "critical_count": "중요 이벤트 수",
+      "critical_count": "심각 이벤트 수",
       "warning_count": "경고 수",
       "api_calls": "API 호출 수",
       "error_count": "오류 수",
@@ -399,10 +399,10 @@ window.NDIC_TRANSLATIONS_KO = {
       "degraded": "저하됨",
       "none_detected": "감지 없음"
     },
-    "deep_dive": "실시간 인텔리전스 피드 심층 분석"
+    "deep_dive": "실시간 분석 피드 심층 분석"
   },
   "full_summary": {
-    "title": "전체 시스템 인텔리전스 보고서",
+    "title": "전체 시스템 분석 보고서",
     "label": "진단 요약",
     "source_label": "생성",
     "generated_at": "생성 시간",
@@ -419,22 +419,22 @@ window.NDIC_TRANSLATIONS_KO = {
   },
   "share": {
     "label": "이 도구 공유",
-    "copied_for": "을(를) 위해 복사됨",
+    "copied_for": "복사됨:",
     "link_copied": "링크가 클립보드에 복사됨",
     "copy_failed": "복사 실패 — 수동으로 시도하세요"
   },
   "ai_summary": {
-    "label": "인텔리전스 요약",
+    "label": "분석 요약",
     "source_script": "스크립트",
     "generating": "분석 생성 중...",
-    "in_progress": "인텔리전스 스캔 진행 중."
+    "in_progress": "분석 스캔 진행 중."
   },
   "scores": {
     "excellent": "우수",
     "healthy": "양호",
     "fair": "보통",
     "poor": "불량",
-    "critical": "위험",
+    "critical": "심각",
     "out_of_100": "/100"
   },
   "values": {
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_KO = {
   },
   "methodology": {
     "label": "방법론",
-    "text": "모든 인텔리전스 데이터는 표준 브라우저 API를 통해 클라이언트 측에서 수집되며, 백엔드에서 MaxMind GeoLite2를 포함한 IP 네트워크 및 위치 데이터베이스로 보강됩니다."
+    "text": "모든 데이터는 표준 브라우저 API를 통해 클라이언트 측에서 수집되며, 백엔드에서 MaxMind GeoLite2를 포함한 IP 네트워크 및 위치 데이터베이스로 보강됩니다."
   },
   "citations": {
     "label": "출처 및 참고문헌",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_KO = {
     "items": [
       {
         "q": "ASN이란 무엇이며 왜 중요한가요?",
-        "a": "자율 시스템 번호(ASN)는 네트워크 운영자에게 할당된 고유 식별자로 인터넷에서 트래픽이 라우팅되는 방식을 결정합니다. IntelReap은 ASN, 소유자, 계층 분류, 피어링 관계를 식별합니다."
+        "a": "자율 시스템 번호(ASN)는 ISP, 클라우드 제공업체, 대기업 같은 네트워크 운영자에게 할당되는 고유 식별자로, 인터넷에서 트래픽이 어떻게 라우팅되는지를 결정합니다. IntelReap은 사용자의 ASN, 소유자, 계층 분류, 레지스트리, 피어링 관계를 식별하여 네트워크 인프라의 전체 모습을 보여 드립니다."
       },
       {
         "q": "VPN 감지는 어떻게 작동하나요?",
-        "a": "IntelReap은 세 계층 접근 방식을 사용합니다: ASN 소유권 유형 분석, 시간대 및 언어 불일치 확인, 선택적 IP 평판 API 쿼리. 세 가지 신호를 단일 신뢰 점수와 경로 분류로 결합합니다."
+        "a": "IntelReap은 3계층 감지 방식을 사용합니다. 첫째, ASN 소유권 유형을 분석합니다. 데이터센터 ASN은 VPN이나 프록시 사용을 시사합니다. 둘째, IP 지리적 위치와 시간대 및 브라우저 언어의 불일치를 확인하여 라우팅 불일치를 드러냅니다. 셋째, 위험도가 높은 IP 범위에 대한 평판 신호를 추가합니다. 세 신호는 하나의 신뢰 점수와 경로 분류로 결합됩니다."
       },
       {
         "q": "WebRTC IP 누출이란 무엇인가요?",
-        "a": "WebRTC는 화상 통화와 같은 실시간 통신을 위한 브라우저 API입니다. VPN을 사용하더라도 로컬 네트워크 IP 주소를 노출시킬 수 있습니다. IntelReap은 WebRTC 누출을 적극적으로 테스트합니다."
+        "a": "WebRTC는 화상 통화와 같은 실시간 통신에 사용되는 브라우저 API입니다. 부작용으로, VPN을 사용하더라도 로컬 네트워크 IP 주소가 노출될 수 있습니다. IntelReap의 보안 패널은 피어 연결을 생성하고 ICE 후보 문자열을 통해 드러나는 모든 IP 주소를 포착하여 WebRTC 누출을 적극적으로 테스트합니다."
       },
       {
         "q": "Core Web Vitals란 무엇인가요?",
-        "a": "Core Web Vitals는 LCP, CLS, INP를 포함한 웹 페이지의 실제 사용자 경험을 측정하기 위해 Google이 정의한 지표 세트입니다. IntelReap은 6가지 바이탈 모두를 측정합니다."
+        "a": "Core Web Vitals는 웹 페이지의 실제 사용자 경험을 측정하기 위해 Google이 정의한 지표 모음입니다. 로딩 성능을 측정하는 Largest Contentful Paint(LCP), 시각적 안정성을 측정하는 Cumulative Layout Shift(CLS), 응답성을 측정하는 Interaction to Next Paint(INP) 등이 포함됩니다. IntelReap은 FCP, TTFB, FID를 포함한 6가지 지표를 모두 측정합니다."
       },
       {
         "q": "IP 지리적 위치는 얼마나 정확한가요?",
-        "a": "IP 지리적 위치는 거의 모든 경우에 국가 수준에서 정확하며 대부분의 주거 및 상업 연결에서 도시 수준에서도 정확합니다. IntelReap은 최대 정확도를 위해 3계층 폴백 체인을 사용합니다."
+        "a": "IP 지리적 위치는 거의 모든 경우에 국가 수준에서 정확하며, 대부분의 주거 및 상업 연결에서는 도시 수준에서도 정확합니다. 모바일 네트워크, 위성 연결, VPN에서는 IP가 실제 위치와 다른 지역에 등록되어 있을 수 있어 정확도가 낮아질 수 있습니다. IntelReap은 최대 정확도를 위해 MaxMind GeoLite2 데이터와 백업 소스를 함께 사용합니다."
       },
       {
         "q": "보안 점수는 무엇을 측정하나요?",
-        "a": "보안 점수는 10가지 가중치 신호로 계산됩니다: HTTPS 상태, 보안 컨텍스트, WebRTC 노출, 혼합 콘텐츠, 추적 거부 상태, 스토리지 접근 상태, 카메라·마이크·위치 권한."
+        "a": "보안 점수는 10가지 가중치 신호로 계산됩니다: HTTPS 상태, 보안 컨텍스트, WebRTC IP 노출, 혼합 콘텐츠 감지, 추적 거부 상태, 스토리지 접근 상태, 카메라 권한, 마이크 권한, 위치 권한, 핑거프린트 표면 수. 90~100점은 우수, 70~89점은 양호, 50~69점은 보통, 30~49점은 불량, 30점 미만은 심각입니다."
       },
       {
         "q": "IntelReap을 오프라인으로 사용할 수 있나요?",
-        "a": "IntelReap은 기기에 설치할 수 있는 프로그레시브 웹 앱입니다. 정적 인터페이스는 캐시에서 오프라인으로 로드되지만 인텔리전스 스캔은 백엔드 API를 쿼리하기 위한 활성 연결이 필요합니다."
+        "a": "IntelReap은 기기에 설치할 수 있는 프로그레시브 웹 앱입니다. 정적 인터페이스는 캐시에서 오프라인으로 로드됩니다. 다만 스캔 자체는 백엔드 API를 조회하고 실시간 네트워크 및 IP 데이터를 수집하기 위해 활성 연결이 필요합니다. 오프라인 모드에서는 가장 최근에 캐시된 스캔 데이터가 표시됩니다."
       },
       {
         "q": "글로벌 점수는 어떻게 계산되나요?",
-        "a": "글로벌 점수는 9개 하위 점수의 가중 평균입니다: 네트워크 15%, 기기 15%, 보안 20%(최고), 기능 10%, 성능 10%, 속도 10%, 개인정보 10%, ID 5%, 그래픽 5%."
+        "a": "글로벌 점수는 9개 하위 점수의 가중 평균입니다: 네트워크 15%, 기기 15%, 보안 20%, 기능 10%, 성능 10%, 속도 10%, 개인정보 10%, ID 5%, 그래픽 5%. 보안은 디지털 안전에 가장 직접적인 영향을 미치므로 가중치가 가장 높습니다. 각 하위 점수는 관련 데이터 포인트로부터 독립적으로 계산됩니다."
       },
       {
         "q": "벤치마크와 Core Web Vitals의 차이점은 무엇인가요?",
-        "a": "Core Web Vitals는 이 페이지가 기기와 연결에서 얼마나 빠르게 로드되었는지 측정합니다. 브라우저 벤치마크는 네트워크 조건에 관계없이 기기의 원시 처리 능력을 측정하는 합성 테스트입니다."
+        "a": "Core Web Vitals는 이 특정 페이지가 사용자의 기기와 연결에서 얼마나 빠르게 로드되었는지를 측정하는 실제 사용자 경험 지표입니다. 브라우저 벤치마크는 네트워크 조건과 무관하게 기기의 원시 처리 능력을 측정하는 합성 테스트로, JavaScript 연산, DOM 조작, canvas 렌더링, 메모리 접근을 통제된 규모로 실행합니다."
       },
       {
         "q": "IntelReap을 모바일 앱으로 이용할 수 있나요?",
-        "a": "IntelReap은 앱 스토어 없이 iOS와 Android 브라우저에서 직접 설치할 수 있는 프로그레시브 웹 앱입니다. iOS에서는 Safari에서 사이트를 열고 공유를 탭한 후 홈 화면에 추가를 선택합니다."
+        "a": "IntelReap은 앱 스토어를 거치지 않고 iOS와 Android의 브라우저에서 직접 설치할 수 있는 프로그레시브 웹 앱입니다. iOS에서는 Safari에서 사이트를 열고 공유를 탭한 뒤 홈 화면에 추가를 선택합니다. Android에서는 Chrome이 설치 안내를 자동으로 표시합니다. 설치된 앱은 독립 실행 모드로 실행되며 완전한 오프라인 지원과 홈 화면 접근을 제공합니다."
       }
     ]
   },
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_KO = {
     "error": "오류! 양식 제출에 문제가 발생했습니다."
   },
   "footer": {
-    "tagline": "실시간 네트워크 및 기기 인텔리전스.",
-    "description": "브라우저에서 사용하는 무료 인텔리전스 도구. 계정이 필요 없습니다.",
-    "col_intelligence": "인텔리전스",
+    "tagline": "실시간 네트워크 및 기기 분석.",
+    "description": "브라우저에서 사용하는 무료 분석 도구. 계정이 필요 없습니다.",
+    "col_intelligence": "분석",
     "col_deep_dives": "심층 분석",
     "col_legal": "법적 고지",
     "col_connect": "연결",
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_KO = {
     "col_learn": "배우기",
     "cookie_settings": "쿠키 설정",
     "free_line": "무료로 사용할 수 있습니다. 계정이 필요 없습니다.",
-    "email_us": "이메일 보내기",
+    "email_us": "문의하기",
   },
   "cookie": {
     "text": "IntelReap은 언어와 테마 선택을 브라우저에 저장합니다. 사용자의 허락이 있으면 사이트 이용 현황을 측정하기 위해 Google Analytics 쿠키도 사용합니다. 거부해도 도구 사용에는 제한이 없습니다.",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_KO = {
   "offline": {
     "status": "연결 끊김",
     "title": "오프라인 상태입니다",
-    "body": "IntelReap은 인텔리전스 데이터를 수집하기 위해 활성 연결이 필요합니다. 네트워크를 확인하고 다시 시도하세요.",
+    "body": "IntelReap은 분석 데이터를 수집하기 위해 활성 연결이 필요합니다. 네트워크를 확인하고 다시 시도하세요.",
     "retry": "연결 재시도",
-    "home": "인텔리전스 센터로 돌아가기",
-    "cached_title": "캐시된 인텔리전스 사용 가능",
+    "home": "분석 센터로 돌아가기",
+    "cached_title": "캐시된 분석 사용 가능",
     "cached_body": "마지막 세션에서 스캔된 일부 데이터를 사용할 수 있습니다.",
     "online_status": "온라인 상태",
     "connection_type": "연결 유형",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_KO = {
     "last_online": "마지막 온라인 시간"
   },
   "internal_links": {
-    "header": "인텔리전스 패널 탐색",
-    "back_to_main": "← 인텔리전스 센터로 돌아가기"
+    "header": "분석 패널 탐색",
+    "back_to_main": "← 분석 센터로 돌아가기"
   },
   "seasonal": {
     "spring": "봄 에디션",
