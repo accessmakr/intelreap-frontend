@@ -1,15 +1,15 @@
 /* IntelReap translations: nl. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_NL = {
   "meta": {
-    "title": "IntelReap — Netwerk en Apparaat Inlichtingencentrum",
-    "description": "Realtime netwerk- en apparaatinlichtingen. Ontdek uw IP, ASN, VPN-status, browsermogelijkheden en beveiligingshouding. Gratis.",
+    "title": "IntelReap — Netwerk en Apparaat Analysecentrum",
+    "description": "Realtime netwerk- en apparaatanalyse. Ontdek uw IP, ASN, VPN-status, browsermogelijkheden en beveiligingshouding. Gratis. Geen login nodig.",
     "og_title": "IntelReap — Zie Wat Uw Netwerk Onthult",
-    "og_description": "Gratis realtime inlichtingentool. Analyseer uw netwerk, apparaat, beveiliging en browser in seconden."
+    "og_description": "Gratis realtime analysetool. Analyseer uw netwerk, apparaat, beveiliging en browser in seconden."
   },
   "nav": {
-    "intelligence_center": "Inlichtingencentrum",
+    "intelligence_center": "Analysecentrum",
     "about": "Over",
-    "search_placeholder": "Zoek inlichtingenpanelen...",
+    "search_placeholder": "Zoek analysepanelen...",
     "open_search": "Zoeken openen",
     "toggle_menu": "Menu wisselen",
     "close_menu": "Menu sluiten",
@@ -18,25 +18,25 @@ window.NDIC_TRANSLATIONS_NL = {
     "guides": "Gidsen"
   },
   "hero": {
-    "badge": "Gratis Inlichtingentool",
+    "badge": "Gratis Analysetool",
     "title_line1": "Wat Onthult",
     "title_line2": "Uw Netwerk?",
-    "tagline": "IntelReap toont in realtime je netwerkinfrastructuur, apparaatvingerafdruk, beveiligingsniveau en browsermogelijkheden — 285 datapunten in 13 panelen. Gratis. Zonder inloggen.",
-    "cta_primary": "Inlichtingenscan uitvoeren",
+    "tagline": "IntelReap toont in realtime uw netwerkinfrastructuur, apparaatvingerafdruk, beveiligingsniveau en browsermogelijkheden — 285 datapunten in 13 panelen. Gratis. Zonder inloggen.",
+    "cta_primary": "Analyse uitvoeren",
     "cta_secondary": "Zie hoe het werkt",
     "trust_data_points": "285 gegevenspunten per scan",
-    "trust_panels": "13 inlichtingenpanelen",
+    "trust_panels": "13 analysepanelen",
     "badge_live": "Live netwerk- en apparaatscan",
-    "title_html": "Zie wat het internet<br>al over <span class=\"ndic-highlight\">jou</span> weet.",
+    "title_html": "Zie wat het internet<br>al over <span class=\"ndic-highlight\">u</span> weet.",
     "see_report": "Bekijk het volledige rapport"
   },
   "quick_answer": {
     "label": "Snel Antwoord",
-    "title": "Wat is het Netwerk en Apparaat Inlichtingencentrum?"
+    "title": "Wat is het Netwerk en Apparaat Analysecentrum?"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "Netwerk en Apparaat Inlichtingencentrum",
+    "subtitle": "Netwerk en Apparaat Analysecentrum",
     "status_live": "LIVE",
     "status_scanning": "SCANNEN",
     "status_offline": "OFFLINE",
@@ -46,7 +46,7 @@ window.NDIC_TRANSLATIONS_NL = {
     "api_calls": "API-aanroepen"
   },
   "canvas1": {
-    "heading_technical": "ASN en Netwerkoute Inlichtingen",
+    "heading_technical": "ASN- en Netwerkroute-analyse",
     "heading_plain": "Op Welk Netwerk Bevindt U Zich?",
     "params": {
       "asn_number": "ASN-nummer",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_NL = {
     "deep_dive": "Diepgaande analyse van uw netwerkidentiteit"
   },
   "canvas3": {
-    "heading_technical": "VPN-, Proxy- en Routeringsinlichtingen",
+    "heading_technical": "VPN-, Proxy- en Routeringsanalyse",
     "heading_plain": "Bent U Online Verborgen?",
     "params": {
       "vpn_detected": "VPN gedetecteerd",
@@ -156,11 +156,11 @@ window.NDIC_TRANSLATIONS_NL = {
     "deep_dive": "Diepgaande analyse van uw live netwerk"
   },
   "canvas5": {
-    "heading_technical": "Apparaatinlichtingenpaneel",
+    "heading_technical": "Apparaatanalysepaneel",
     "heading_plain": "Welk Apparaat Gebruikt U?",
     "params": {
       "os": "Besturingssysteem",
-      "os_version": "BS-versie",
+      "os_version": "OS-versie",
       "browser": "Browser",
       "browser_version": "Browserversie",
       "browser_engine": "Renderingsmotor",
@@ -183,7 +183,7 @@ window.NDIC_TRANSLATIONS_NL = {
       "pointer_support": "Aanwijzergebeurtenissen",
       "vibration_support": "Trillingondersteuning",
       "architecture": "CPU-architectuur",
-      "bitness": "BS-bits",
+      "bitness": "OS-bits",
       "detection_source": "Detectiemethode",
       "capability_tier": "Capaciteitsniveau"
     },
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_NL = {
     "deep_dive": "Diepgaande analyse van uw browsercapaciteiten"
   },
   "canvas9": {
-    "heading_technical": "Prestatiesinlichtingenpaneel",
+    "heading_technical": "Prestatieanalysepaneel",
     "heading_plain": "Hoe Snel Is Uw Browser?",
     "params": {
       "page_load_time": "Paginalaadtijd",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_NL = {
     "deep_dive": "Diepgaande analyse van uw prestaties"
   },
   "canvas10": {
-    "heading_technical": "Browser- en Renderingssnelheidsinlichtingen",
+    "heading_technical": "Browser- en Renderingssnelheidsanalyse",
     "heading_plain": "Hoe Snel Rendert Uw Apparaat?",
     "vitals": {
       "lcp": "Largest Contentful Paint",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_NL = {
     "deep_dive": "Diepgaande analyse van uw renderingssnelheid"
   },
   "canvas11": {
-    "heading_technical": "Globaal Inlichtingenscorebord",
+    "heading_technical": "Globaal Analysescorebord",
     "heading_plain": "Uw Totaalscore",
     "params": {
       "global_score": "Globale score",
@@ -377,7 +377,7 @@ window.NDIC_TRANSLATIONS_NL = {
     "deep_dive": "Diepgaande analyse van uw globale score"
   },
   "canvas12": {
-    "heading_technical": "Live Inlichtingenfeed",
+    "heading_technical": "Live Analysefeed",
     "heading_plain": "Wat Is Er Net Gebeurd?",
     "params": {
       "online_status": "Verbindingsstatus",
@@ -399,10 +399,10 @@ window.NDIC_TRANSLATIONS_NL = {
       "degraded": "Verslechterd",
       "none_detected": "Niets gedetecteerd"
     },
-    "deep_dive": "Diepgaande analyse van uw live inlichtingenfeed"
+    "deep_dive": "Diepgaande analyse van uw live analysefeed"
   },
   "full_summary": {
-    "title": "Volledig Systeem Inlichtingenrapport",
+    "title": "Volledig Systeemanalyserapport",
     "label": "Diagnostisch Overzicht",
     "source_label": "Gegenereerd door",
     "generated_at": "Gegenereerd",
@@ -424,10 +424,10 @@ window.NDIC_TRANSLATIONS_NL = {
     "copy_failed": "Kopiëren mislukt — probeer handmatig"
   },
   "ai_summary": {
-    "label": "Inlichtingensamenvatting",
+    "label": "Analysesamenvatting",
     "source_script": "Script",
     "generating": "Analyse genereren...",
-    "in_progress": "Inlichtingenscan bezig."
+    "in_progress": "Analyse bezig."
   },
   "scores": {
     "excellent": "Uitstekend",
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_NL = {
   },
   "methodology": {
     "label": "Methodologie",
-    "text": "Alle inlichtingengegevens worden aan de clientzijde verzameld via standaard browser-API's en door de backend verrijkt met netwerk- en locatiedatabases voor IP-adressen, waaronder MaxMind GeoLite2."
+    "text": "Alle gegevens worden aan de clientzijde verzameld via standaard browser-API's en door de backend verrijkt met netwerk- en locatiedatabases voor IP-adressen, waaronder MaxMind GeoLite2."
   },
   "citations": {
     "label": "Bronnen en Referenties",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_NL = {
     "items": [
       {
         "q": "Wat is een ASN en waarom is het belangrijk?",
-        "a": "Een Autonoom Systeemnummer (ASN) is een unieke identificator die wordt toegewezen aan een netwerkoperator die bepaalt hoe verkeer wordt gerouteerd via internet. IntelReap identificeert uw ASN, de eigenaar, niveauclassificatie en peeringrelaties."
+        "a": "Een Autonoom Systeemnummer (ASN) is een unieke identificator die wordt toegewezen aan een netwerkoperator, zoals uw internetprovider, een cloudprovider of een grote onderneming. Het bepaalt hoe verkeer via internet wordt gerouteerd. IntelReap identificeert uw ASN, de eigenaar, niveauclassificatie, register en peeringrelaties om u een volledig beeld van uw netwerkinfrastructuur te geven."
       },
       {
         "q": "Hoe werkt VPN-detectie?",
-        "a": "IntelReap gebruikt een drielagige aanpak: analyse van ASN-eigendomstype, controle op tijdzone- en taalinconsistenties en optionele IP-reputatie-API-query. De drie signalen worden gecombineerd tot één vertrouwensscore en routeclassificatie."
+        "a": "IntelReap gebruikt een detectie in drie lagen. Eerst analyseert het het eigendomstype van uw ASN: datacenter-ASN's wijzen op VPN- of proxygebruik. Daarna controleert het op afwijkingen tussen tijdzone en browsertaal en uw IP-geolocatie, die routeringsinconsistenties onthullen. Ten slotte voegt het reputatiesignalen toe voor IP-bereiken met een hoog risico. Alle drie de signalen worden gecombineerd tot één vertrouwensscore en routeclassificatie."
       },
       {
         "q": "Wat is een WebRTC IP-lek?",
-        "a": "WebRTC is een browser-API voor realtime communicatie zoals videogesprekken. Het kan uw lokale netwerk-IP-adres onthullen zelfs bij gebruik van een VPN. IntelReap test actief op WebRTC-lekken."
+        "a": "WebRTC is een browser-API voor realtime communicatie zoals videogesprekken. Een bijwerking is dat het uw lokale netwerk-IP-adres kan onthullen, zelfs bij gebruik van een VPN. Het beveiligingspaneel van IntelReap test actief op WebRTC-lekken door een peerverbinding te maken en alle IP-adressen vast te leggen die via ICE-kandidaatstrings worden onthuld."
       },
       {
         "q": "Wat zijn Core Web Vitals?",
-        "a": "Core Web Vitals zijn een set statistieken gedefinieerd door Google om de echte gebruikerservaring op webpagina's te meten, inclusief LCP, CLS en INP. IntelReap meet alle zes vitals."
+        "a": "Core Web Vitals zijn een set statistieken die door Google is gedefinieerd om de echte gebruikerservaring op webpagina's te meten. Ze omvatten Largest Contentful Paint (LCP) voor de laadprestaties, Cumulative Layout Shift (CLS) voor de visuele stabiliteit en Interaction to Next Paint (INP) voor de reactiesnelheid. IntelReap meet alle zes de vitals, waaronder FCP, TTFB en FID."
       },
       {
         "q": "Hoe nauwkeurig is IP-geolocatie?",
-        "a": "IP-geolocatie is nauwkeurig op landniveau in bijna elk geval en op stadsniveau voor de meeste residentiële en commerciële verbindingen. IntelReap gebruikt een drielagige fallbackketen voor maximale nauwkeurigheid."
+        "a": "IP-geolocatie is in bijna alle gevallen nauwkeurig op landniveau en voor de meeste residentiële en commerciële verbindingen ook op stadsniveau. De nauwkeurigheid kan lager zijn bij mobiele netwerken, satellietverbindingen en VPN's, waar het IP in een andere regio kan zijn geregistreerd dan uw fysieke locatie. IntelReap combineert MaxMind GeoLite2-gegevens met een back-upbron voor maximale nauwkeurigheid."
       },
       {
         "q": "Wat meet de beveiligingsscore?",
-        "a": "De beveiligingsscore wordt berekend op basis van tien gewogen signalen: HTTPS-status, beveiligde context, WebRTC-blootstelling, gemengde inhoud, niet-volgen-status, opslagtoegansstatus en camera-, microfoon- en locatietoestemmingen."
+        "a": "De beveiligingsscore wordt berekend op basis van tien gewogen signalen: HTTPS-status, beveiligde context, WebRTC-IP-blootstelling, detectie van gemengde inhoud, niet-volgen-status, opslagtoegangsstatus, cameratoestemming, microfoontoestemming, locatietoestemming en het aantal vingerafdrukoppervlakken. Een score van 90-100 is Uitstekend, 70-89 Gezond, 50-69 Redelijk, 30-49 Slecht en onder 30 Kritiek."
       },
       {
         "q": "Kan ik IntelReap offline gebruiken?",
-        "a": "IntelReap is een Progressive Web App die op uw apparaat kan worden geïnstalleerd. De statische interface laadt offline vanuit de cache. De inlichtingenscan vereist echter een actieve verbinding om de backend-API's te bevragen."
+        "a": "IntelReap is een Progressive Web App die op uw apparaat kan worden geïnstalleerd. De statische interface laadt offline vanuit de cache. De scan zelf vereist echter een actieve verbinding om de backend-API's te bevragen en live netwerk- en IP-gegevens te verzamelen. In de offlinemodus ziet u uw meest recent in de cache opgeslagen scangegevens."
       },
       {
         "q": "Hoe wordt de globale score berekend?",
-        "a": "De globale score is een gewogen gemiddelde van negen deelscores: Netwerk 15%, Apparaat 15%, Beveiliging 20% (hoogste gewicht), Capaciteit 10%, Prestaties 10%, Snelheid 10%, Privacy 10%, Identiteit 5% en Grafisch 5%."
+        "a": "De globale score is een gewogen gemiddelde van negen deelscores: Netwerk (15%), Apparaat (15%), Beveiliging (20%), Capaciteit (10%), Prestaties (10%), Snelheid (10%), Privacy (10%), Identiteit (5%) en Grafisch (5%). Beveiliging weegt het zwaarst omdat het uw digitale veiligheid het meest direct beïnvloedt. Elke deelscore wordt onafhankelijk berekend uit de relevante datapunten."
       },
       {
         "q": "Wat is het verschil tussen benchmark en Core Web Vitals?",
-        "a": "Core Web Vitals meet hoe snel deze pagina laadde op uw apparaat en verbinding. Browserbenchmarks zijn synthetische tests die de ruwe verwerkingscapaciteit van uw apparaat meten, ongeacht de netwerkomstandigheden."
+        "a": "Core Web Vitals meten hoe snel deze specifieke pagina laadde op uw apparaat en verbinding — het zijn echte gebruikerservaringsmetrieken. Browserbenchmarks zijn synthetische tests die de ruwe verwerkingscapaciteit van uw apparaat meten, ongeacht de netwerkomstandigheden — door JavaScript-rekenwerk, DOM-manipulatie, canvasrendering en geheugentoegang op gecontroleerde schaal uit te voeren."
       },
       {
         "q": "Is IntelReap beschikbaar als mobiele app?",
-        "a": "IntelReap is een Progressive Web App die direct vanuit de browser op iOS en Android kan worden geïnstalleerd zonder een app store te bezoeken. Op iOS opent u de site in Safari en tikt u op Delen en vervolgens Voeg toe aan beginscherm."
+        "a": "IntelReap is een Progressive Web App die direct vanuit uw browser op iOS en Android kan worden geïnstalleerd zonder een app store te bezoeken. Op iOS opent u de site in Safari en tikt u op Delen en vervolgens op Zet op beginscherm. Op Android toont Chrome automatisch een installatieprompt. De geïnstalleerde app draait in standalone-modus met volledige offlineondersteuning en toegang vanaf het beginscherm."
       }
     ]
   },
@@ -563,7 +563,7 @@ window.NDIC_TRANSLATIONS_NL = {
     "name_label": "Naam",
     "name_placeholder": "Uw naam",
     "email_label": "E-mail",
-    "email_placeholder": "Voer je e-mailadres in",
+    "email_placeholder": "Voer uw e-mailadres in",
     "message_label": "Bericht",
     "message_placeholder": "Hoe kunnen wij u helpen?",
     "submit": "Bericht Verzenden",
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_NL = {
     "error": "Oeps! Er is een probleem opgetreden bij het indienen van het formulier."
   },
   "footer": {
-    "tagline": "Realtime netwerk- en apparaatinlichtingen.",
-    "description": "Gratis browsergebaseerde intelligence-tool. Geen account nodig.",
-    "col_intelligence": "Inlichtingen",
+    "tagline": "Realtime netwerk- en apparaatanalyse.",
+    "description": "Gratis browsergebaseerde analysetool. Geen account nodig.",
+    "col_intelligence": "Analyse",
     "col_deep_dives": "Diepgaande Analyses",
     "col_legal": "Juridisch",
     "col_connect": "Verbinden",
@@ -584,10 +584,10 @@ window.NDIC_TRANSLATIONS_NL = {
     "col_learn": "Leren",
     "cookie_settings": "Cookie-instellingen",
     "free_line": "Gratis te gebruiken. Geen account nodig.",
-    "email_us": "Mail ons",
+    "email_us": "Neem contact op",
   },
   "cookie": {
-    "text": "IntelReap slaat je taal- en themakeuze op in je browser. Met jouw toestemming gebruikt het ook Google Analytics-cookies om te meten hoe de site wordt gebruikt. Weigeren beperkt de tool niet.",
+    "text": "IntelReap slaat uw taal- en themakeuze op in uw browser. Met uw toestemming gebruikt het ook Google Analytics-cookies om te meten hoe de site wordt gebruikt. Weigeren beperkt de tool niet.",
     "accept": "Accepteren",
     "decline": "Weigeren",
     "policy_link": "Cookiebeleid"
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_NL = {
   "offline": {
     "status": "Verbinding Verloren",
     "title": "U Bent Offline",
-    "body": "IntelReap vereist een actieve verbinding om inlichtingengegevens te verzamelen. Controleer uw netwerk en probeer opnieuw.",
+    "body": "IntelReap vereist een actieve verbinding om analysegegevens te verzamelen. Controleer uw netwerk en probeer opnieuw.",
     "retry": "Verbinding Opnieuw Proberen",
-    "home": "Terug naar het Inlichtingencentrum",
-    "cached_title": "Gecachte Inlichtingen Beschikbaar",
+    "home": "Terug naar het Analysecentrum",
+    "cached_title": "Gecachte Analyse Beschikbaar",
     "cached_body": "Sommige gescande gegevens uit uw laatste sessie zijn mogelijk beschikbaar.",
     "online_status": "Online-status",
     "connection_type": "Verbindingstype",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_NL = {
     "last_online": "Laatst online"
   },
   "internal_links": {
-    "header": "Verken Inlichtingenpanelen",
-    "back_to_main": "← Terug naar het Inlichtingencentrum"
+    "header": "Verken Analysepanelen",
+    "back_to_main": "← Terug naar het Analysecentrum"
   },
   "seasonal": {
     "spring": "Lente-editie",
