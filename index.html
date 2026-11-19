@@ -61,7 +61,8 @@
   <link rel="stylesheet" href="./assets/css/ndic-animations.css">
   <link rel="stylesheet" href="./assets/css/ndic-rtl.css">
 
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -128,11 +129,52 @@
             "@type": "Answer",
             "text": "Your Global Intelligence Score combines weighted results from network, security, device, performance and speed dimensions into a single 0-100 figure representing your overall environment health."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I install IntelReap as an app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. IntelReap is a Progressive Web App. On mobile, tap the share icon and select Add to Home Screen. On desktop, look for the install icon in your browser's address bar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do my results change when I run the scan again?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Several readings depend on your connection at that moment. Your public address can change when a mobile connection reconnects, and the city can change with it, while speed and latency vary with signal and load. Device readings such as your operating system and graphics chip normally stay the same."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does IntelReap work if I use a VPN?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It shows the address your VPN presents, which is what websites see. The VPN panel then checks whether other signals agree, such as your browser’s timezone, language and WebRTC readings compared with the address’s location."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does IntelReap ask for my location?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not unless you ask it to. The page never requests location permission when it loads. In the Fingerprinting panel, the “Compare with my GPS” button asks your browser for permission when you tap it, and the position stays in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an ASN and why is my provider shown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An autonomous system number identifies a network that routes traffic on the internet, such as your provider’s. The network panel shows which network owns your address, its type and tier, and the registry that allocated the address."
+          }
         }
       ]
     }
   ]
-}</script>
+}
+</script>
 </head>
 <body>
 
@@ -221,6 +263,12 @@
       </p>
     </section>
 
+    <noscript>
+      <div class="ndic-quick-answer">
+        <p class="ndic-quick-answer-body">IntelReap runs its scan in your browser, so it needs JavaScript. Without it, every panel is still explained on its deep-dive page: see the <a href="/intelligence/">intelligence panels</a>.</p>
+      </div>
+    </noscript>
+
     <!-- ═══════════ NDIC TOOL WRAPPER ═══════════ -->
     <div id="ndic-tool-anchor"></div>
     <section class="ndic-system">
@@ -260,7 +308,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas1.heading_technical">ASN &amp; Network Route Intelligence</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas1.heading_plain">What Network Are You On?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas1.heading_plain">What Network Are You On?</span>
               </div>
               <span class="ndic-canvas-score" id="c1-score">—</span>
             </div>
@@ -309,7 +357,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas2.heading_technical">Network Identity Panel</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas2.heading_plain">Who Are You On The Internet?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas2.heading_plain">Who Are You On The Internet?</span>
               </div>
               <span class="ndic-canvas-score" id="c2-score">—</span>
             </div>
@@ -359,7 +407,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas3.heading_technical">VPN, Proxy &amp; Routing Intelligence</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas3.heading_plain">Are You Hidden Online?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas3.heading_plain">Are You Hidden Online?</span>
               </div>
               <div class="ndic-canvas-score-group">
                 <span class="ndic-canvas-score-label" data-i18n="canvas11.params.privacy_score">Privacy Score</span>
@@ -412,7 +460,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading">Advanced Fingerprint &amp; Leak Detection</span>
-                <span class="ndic-canvas-subheading">How Easily Can You Be Tracked?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading">How Easily Can You Be Tracked?</span>
               </div>
               <span class="ndic-canvas-score" id="c13-uniqueness-score">—</span>
             </div>
@@ -503,7 +551,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas4.heading_technical">Live Network Monitor</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas4.heading_plain">How Fast Is Your Connection?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas4.heading_plain">How Fast Is Your Connection?</span>
               </div>
               <span class="ndic-canvas-score" id="c4-score">—</span>
             </div>
@@ -545,7 +593,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas5.heading_technical">Device Intelligence Panel</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas5.heading_plain">What Device Are You Using?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas5.heading_plain">What Device Are You Using?</span>
               </div>
               <span class="ndic-canvas-score" id="c5-score">—</span>
             </div>
@@ -597,7 +645,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas6.heading_technical">Graphics Engine Panel</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas6.heading_plain">How Powerful Is Your Device?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas6.heading_plain">How Powerful Is Your Device?</span>
               </div>
               <span class="ndic-canvas-score" id="c6-score">—</span>
             </div>
@@ -647,7 +695,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas7.heading_technical">Security &amp; Privacy Panel</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas7.heading_plain">How Safe Are You Right Now?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas7.heading_plain">How Safe Are You Right Now?</span>
               </div>
               <span class="ndic-canvas-score" id="c7-score">—</span>
             </div>
@@ -697,7 +745,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas8.heading_technical">Capability Matrix</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas8.heading_plain">What Can Your Browser Do?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas8.heading_plain">What Can Your Browser Do?</span>
               </div>
               <span class="ndic-canvas-score" id="c8-score">—</span>
             </div>
@@ -730,7 +778,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas9.heading_technical">Performance Intelligence Panel</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas9.heading_plain">How Fast Is Your Browser?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas9.heading_plain">How Fast Is Your Browser?</span>
               </div>
               <span class="ndic-canvas-score" id="c9-score">—</span>
             </div>
@@ -782,7 +830,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas10.heading_technical">Browser &amp; Rendering Speed Intelligence</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas10.heading_plain">How Fast Does Your Device Render?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas10.heading_plain">How Fast Does Your Device Render?</span>
               </div>
               <span class="ndic-canvas-score" id="c10-score">—</span>
             </div>
@@ -855,7 +903,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas11.heading_technical">Global Intelligence Scoreboard</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas11.heading_plain">Your Overall Score</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas11.heading_plain">Your Overall Score</span>
               </div>
               <span class="ndic-health-badge" id="c11-health-badge">—</span>
             </div>
@@ -910,7 +958,7 @@
             <div class="ndic-canvas-header">
               <div class="ndic-canvas-header-left">
                 <span class="ndic-canvas-heading" data-i18n="canvas12.heading_technical">Live Intelligence Feed</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas12.heading_plain">What Just Happened?</span>
+                <span role="heading" aria-level="2" class="ndic-canvas-subheading" data-i18n="canvas12.heading_plain">What Just Happened?</span>
               </div>
               <span class="ndic-canvas-score" id="c12-online-status">—</span>
             </div>
@@ -974,7 +1022,7 @@
       <div class="ndic-logic-block">
         <div class="ndic-logic-block-label">How Scanning Works</div>
         <p class="ndic-logic-block-text">
-          IntelReap uses standard browser APIs — including the Network Information API, WebRTC, WebGL, the Performance Observer, and navigator hardware properties — to read information your device already exposes to every website you visit. A single lookup of your public IP address is sent for geolocation enrichment; nothing else leaves your browser.
+          IntelReap uses standard browser APIs — including the Network Information API, WebRTC, WebGL, the Performance Observer, and navigator hardware properties — to read information your device already exposes to every website you visit. Most readings stay in your browser. To identify your network, your browser makes a few requests to our backend and to public IP detection services. They receive your public IP address and the standard headers every website receives, and the VPN and proxy check also sends your browser’s timezone and language along with the network and country already found for your IP. Your device, graphics, security and fingerprint readings are not sent.
         </p>
       </div>
       <div class="ndic-methodology-block">
@@ -984,6 +1032,57 @@
         </p>
       </div>
     </div>
+
+    <!-- ═══════════ READING GUIDE ═══════════ -->
+    <section class="ndic-reading-guide" aria-labelledby="reading-guide-title" lang="en" dir="ltr">
+      <div class="ndic-faq-section-header">
+        <div class="ndic-faq-section-label">Reading Guide</div>
+        <h2 class="ndic-faq-section-title" id="reading-guide-title">How to read your results</h2>
+      </div>
+      <div class="ndic-reading-guide-body">
+        <p>A finished scan can show close to three hundred readings. You do not need to read them all. These six checks cover what most people want to know, in the order the panels appear.</p>
+
+        <h3>1. Your address and your provider</h3>
+        <p>Every connection has a public address, which works like a postal address for your network rather than for your device. The ISP and organization rows show who provides your access. The network panel shows which network owns the address, what type it is and how it connects to the wider internet. Many phones and home connections have two addresses, IPv4 and IPv6. When both are found, IntelReap shows the IPv4 address first and lists the IPv6 address as the other address. If you are new to the idea, start with <a href="/learn/what-is-an-ip-address">what an IP address is</a> or <a href="/guides/how-to-find-ip-address-of-any-device">how to find the IP address of any device</a>, then see the <a href="/intelligence/network-route">network route</a> deep dive.</p>
+
+        <h3>2. Why the location can be wrong, especially on mobile</h3>
+        <p>A location database places your address using registration and routing records. It does not know where your phone is. Mobile providers send traffic through a small number of regional gateways, so your address can map to a city hundreds of kilometers away, and it can map somewhere different after you reconnect. The accuracy line shows the database’s own margin of error for that address, so treat the city as a rough guess. For your real position, the Fingerprinting panel has a “Compare with my GPS” button. Your browser asks for permission only when you tap it, and the position stays in your browser. More in the <a href="/intelligence/network-identity">network identity</a> and <a href="/intelligence/fingerprinting">fingerprinting</a> deep dives.</p>
+
+        <h3>3. Are you hidden online?</h3>
+        <p>The VPN and proxy panel compares several signals: whether the network belongs to a hosting company or a consumer provider, whether your browser’s timezone and language fit the address’s location, whether WebRTC reveals a different address, and whether the reverse DNS record agrees. A mismatch is a hint, not proof. Travel, language settings and mobile gateways can all cause one. “VPN detected: no” does not mean you are anonymous, and a clean trust score does not mean a leak is impossible. See the <a href="/learn/webrtc-leak-test-and-shield">WebRTC leak test</a> and <a href="/learn/how-to-protect-your-privacy-online">how to protect your privacy online</a>.</p>
+
+        <h3>4. How trackable is your device</h3>
+        <p>Websites can combine ordinary settings such as fonts, screen size, graphics rendering and audio behavior into a short code that recognizes a browser without cookies. The Fingerprinting panel shows those codes, which are computed in your browser and not sent anywhere. A higher fingerprinting surface means more distinctive signals are available to sites. Browsers with anti-fingerprinting modes and fewer extensions reduce it. Read <a href="/learn/what-is-device-fingerprinting">what device fingerprinting is</a> for how it works and how to limit it.</p>
+
+        <h3>5. Device, graphics, security and speed</h3>
+        <p>The device and graphics panels report what your browser says about your operating system, screen and graphics chip. The security panel checks whether the page uses HTTPS, whether WebRTC exposes a local address, and which permissions are granted, blocked or not yet requested. The performance and rendering panels time how quickly this page loaded and how fast your device runs short tests. These numbers move with battery saver, background apps and heat, so run the scan again before drawing conclusions. If graphics or WebGL show problems, see <a href="/learn/what-is-a-gpu">what a GPU is</a>, <a href="/guides/how-to-enable-webgl">how to enable WebGL</a> and the <a href="/guides/gpu-troubleshooting-guide">GPU troubleshooting guide</a>. For slow connections, read <a href="/learn/why-does-my-internet-speed-fluctuate">why internet speed fluctuates</a>.</p>
+
+        <h3>6. Reading the score</h3>
+        <p>The global score is a weighted average of nine parts: security 20%, network 15%, device 15%, and capability, performance, speed and privacy 10% each, identity 5% and graphics 5%. It describes how well-configured and informative your environment looks, not how safe you are. Mobile connections, privacy-focused browsers and older devices can score lower on some parts without anything being wrong. Use the analysis line under each panel to see what, if anything, is worth changing.</p>
+
+        <div class="ndic-example">
+          <h3>What a finished scan looks like</h3>
+          <p class="ndic-example-note"><em>Illustrative example using reserved documentation values. It is not your data; your own results appear in the panels above.</em></p>
+          <dl class="ndic-example-list">
+            <div class="ndic-example-row"><dt>Public IP address</dt><dd>203.0.113.42 (IPv4)</dd></div>
+            <div class="ndic-example-row"><dt>Other address</dt><dd>2001:db8:85a3::8a2e:370:7334 (IPv6)</dd></div>
+            <div class="ndic-example-row"><dt>ISP</dt><dd>Example Mobile Network Ltd</dd></div>
+            <div class="ndic-example-row"><dt>Network (ASN)</dt><dd>AS64500</dd></div>
+            <div class="ndic-example-row"><dt>Network type</dt><dd>Mobile carrier</dd></div>
+            <div class="ndic-example-row"><dt>City (database estimate)</dt><dd>Example City, accuracy about 100 km</dd></div>
+            <div class="ndic-example-row"><dt>VPN detected</dt><dd>No</dd></div>
+            <div class="ndic-example-row"><dt>Timezone matches the address</dt><dd>Yes</dd></div>
+            <div class="ndic-example-row"><dt>Fingerprinting surface</dt><dd>50/100</dd></div>
+            <div class="ndic-example-row"><dt>Operating system</dt><dd>Android 14</dd></div>
+            <div class="ndic-example-row"><dt>Browser</dt><dd>Chrome 130</dd></div>
+            <div class="ndic-example-row"><dt>Graphics chip</dt><dd>Adreno 740</dd></div>
+            <div class="ndic-example-row"><dt>Security score</dt><dd>82/100</dd></div>
+            <div class="ndic-example-row"><dt>Global score</dt><dd>71/100</dd></div>
+          </dl>
+          <p class="ndic-example-note">The addresses and ASN come from ranges reserved for documentation, so they cannot belong to a real person or network.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- ═══════════ FAQ ═══════════ -->
     <section class="ndic-explore-section" aria-labelledby="explore-title">
@@ -1073,6 +1172,34 @@
             <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
           </button>
           <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Yes. IntelReap is a Progressive Web App. On mobile, tap the share icon and select Add to Home Screen. On desktop, look for the install icon in your browser's address bar.</div></div>
+        </div>
+        <div class="ndic-faq-item">
+          <button class="ndic-faq-question" aria-expanded="false">
+            <span>Why do my results change when I run the scan again?</span>
+            <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+          </button>
+          <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Several readings depend on your connection at that moment. Your public address can change when a mobile connection reconnects, and the city can change with it, while speed and latency vary with signal and load. Device readings such as your operating system and graphics chip normally stay the same.</div></div>
+        </div>
+        <div class="ndic-faq-item">
+          <button class="ndic-faq-question" aria-expanded="false">
+            <span>Does IntelReap work if I use a VPN?</span>
+            <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+          </button>
+          <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Yes. It shows the address your VPN presents, which is what websites see. The VPN panel then checks whether other signals agree, such as your browser’s timezone, language and WebRTC readings compared with the address’s location.</div></div>
+        </div>
+        <div class="ndic-faq-item">
+          <button class="ndic-faq-question" aria-expanded="false">
+            <span>Does IntelReap ask for my location?</span>
+            <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+          </button>
+          <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Not unless you ask it to. The page never requests location permission when it loads. In the Fingerprinting panel, the “Compare with my GPS” button asks your browser for permission when you tap it, and the position stays in your browser.</div></div>
+        </div>
+        <div class="ndic-faq-item">
+          <button class="ndic-faq-question" aria-expanded="false">
+            <span>What is an ASN and why is my provider shown?</span>
+            <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+          </button>
+          <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">An autonomous system number identifies a network that routes traffic on the internet, such as your provider’s. The network panel shows which network owns your address, its type and tier, and the registry that allocated the address.</div></div>
         </div>
       </div>
     </section>
