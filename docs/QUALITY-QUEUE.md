@@ -179,9 +179,10 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 - **Current state:** 2621 words, 11 sections, 2 table(s), 0 diagrams, 12 FAQs, 4 in-text links, no TOC
 - **Mapped keywords:** no Semrush data supplied
 - **Reader intent:** Homeowner wants redundancy or more speed.
-- **Defects found:** Scope creep ("what does ISP stand for"); keyword demand for this exact phrase is tiny in the supplied data (10 searches).
-- **Retrofit work:** Focus on: is it allowed, failover vs load balancing, why speeds do not simply add, dual-WAN router, setup. Cut definitions. Decide whether the page deserves effort given low demand.
+- **Defects found:** Scope creep ("what does ISP stand for"); the earlier note that demand is tiny is superseded: Search Console (Aug 17 to Nov 16 2026) shows 11,064 impressions, 20 clicks, position 8.2, the largest page by impressions.
+- **Retrofit work:** Focus on: is it allowed, failover vs load balancing, why speeds do not simply add, dual-WAN router, setup. Cut the ISP/ASN/BGP definitions but keep a short "secondary ISP" explanation (84 impressions).
 - **Diagrams (purpose of each):** Teaches: failover vs load balancing; Teaches: why two lines do not double one download
+- **Status:** Done 2026-11-18 (queue order moved up by Search Console data), built from `specs/two_isps.py` and `isp_figs.py`. Title "Can You Have Two Internet Providers in One House?" (61 characters with suffix; was 64); description 156 (was 198); quick answer 49 words (was 76). On-page two-connection check (compare mode via ip-identity and ip-deep; failover test that polls reachability through public endpoints and calls the backend only at the start, every 30 s and after recovery: about 2 calls in a typical run, at most 11). 5 diagrams, 10 sections, 13 FAQs, 10 sources. Removed: the wrong US exclusive-franchise claim, unverified router brands, unsupported failover and throttling claims, the VPN-passthrough and concentrator links.
 
 ### A6 VPN and MAC address
 - **URL:** `/learn/does-a-vpn-change-your-mac-address`
