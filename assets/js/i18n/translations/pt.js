@@ -2,7 +2,7 @@
 window.NDIC_TRANSLATIONS_PT = {
   "meta": {
     "title": "IntelReap — Centro de Inteligência de Rede e Dispositivo",
-    "description": "Inteligência de rede e dispositivo em tempo real. Revele seu IP, ASN, status VPN, capacidades do navegador e postura de segurança. Grátis.",
+    "description": "Inteligência de rede e dispositivo em tempo real. Revele seu IP, ASN, status VPN, capacidades do navegador e postura de segurança. Grátis. Sem login.",
     "og_title": "IntelReap — Veja o que Sua Rede Revela",
     "og_description": "Ferramenta gratuita de inteligência em tempo real. Analise sua rede, dispositivo, segurança e navegador em segundos."
   },
@@ -85,7 +85,7 @@ window.NDIC_TRANSLATIONS_PT = {
       "country_code": "Código do País",
       "region": "Região",
       "city": "Cidade",
-      "postal": "CEP",
+      "postal": "Código Postal",
       "coordinates": "Coordenadas",
       "latitude": "Latitude",
       "longitude": "Longitude",
@@ -132,7 +132,7 @@ window.NDIC_TRANSLATIONS_PT = {
       "route_suspect": "Suspeita",
       "route_high_risk": "Alto Risco"
     },
-    "deep_dive": "Análise profunda do seu VPN e roteamento"
+    "deep_dive": "Análise profunda da sua VPN e roteamento"
   },
   "canvas4": {
     "heading_technical": "Monitor de Rede ao Vivo",
@@ -335,7 +335,7 @@ window.NDIC_TRANSLATIONS_PT = {
       "benchmark_score": "Pontuação Geral de Benchmark",
       "vs_average_mobile": "vs Móvel Médio",
       "vs_average_desktop": "vs Desktop Médio",
-      "vs_top_tier": "vs Dispositivos Top",
+      "vs_top_tier": "vs Dispositivos de Alto Desempenho",
       "percentile_ranking": "Percentil de Velocidade"
     },
     "ratings": {
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_PT = {
     "items": [
       {
         "q": "O que é um ASN e por que é importante?",
-        "a": "Um Número de Sistema Autônomo (ASN) é um identificador único atribuído a um operador de rede que determina como o tráfego é roteado pela internet. O IntelReap identifica seu ASN, proprietário, classificação de nível e relacionamentos de peering."
+        "a": "Um Número de Sistema Autônomo (ASN) é um identificador único atribuído a um operador de rede, como seu provedor de internet, um provedor de nuvem ou uma grande empresa. Ele determina como o tráfego é roteado pela internet. O IntelReap identifica seu ASN, proprietário, classificação de nível, registro e relacionamentos de peering para dar uma visão completa da sua infraestrutura de rede."
       },
       {
         "q": "Como funciona a detecção de VPN?",
-        "a": "O IntelReap usa uma abordagem de três camadas: análise do tipo de propriedade ASN, verificação de inconsistências de fuso horário e idioma, e consulta opcional a APIs de reputação de IP. Os três sinais são combinados em uma única pontuação de confiança e classificação de rota."
+        "a": "O IntelReap usa uma abordagem de detecção em três camadas. Primeiro, analisa o tipo de propriedade do seu ASN — ASNs de datacenter sugerem uso de VPN ou proxy. Segundo, verifica inconsistências entre fuso horário, idioma do navegador e a geolocalização do seu IP, o que revela incoerências de roteamento. Terceiro, adiciona sinais de reputação para faixas de IP de alto risco. Os três sinais são combinados em uma única pontuação de confiança e classificação de rota."
       },
       {
         "q": "O que é um vazamento de IP WebRTC?",
-        "a": "O WebRTC é uma API do navegador para comunicação em tempo real como chamadas de vídeo. Um efeito colateral é que pode revelar seu endereço IP local mesmo ao usar uma VPN. O IntelReap testa ativamente vazamentos WebRTC criando uma conexão peer e capturando qualquer IP revelado."
+        "a": "O WebRTC é uma API do navegador para comunicação em tempo real, como chamadas de vídeo. Um efeito colateral é que ele pode revelar seu endereço IP de rede local mesmo ao usar uma VPN. O painel de segurança do IntelReap testa ativamente vazamentos WebRTC criando uma conexão peer e capturando qualquer endereço IP revelado por strings de candidatos ICE."
       },
       {
         "q": "O que são Core Web Vitals?",
-        "a": "Core Web Vitals são um conjunto de métricas definidas pelo Google para medir a experiência real do usuário em páginas web, incluindo Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS) e Interaction to Next Paint (INP). O IntelReap mede todos os seis vitals."
+        "a": "Core Web Vitals são um conjunto de métricas definidas pelo Google para medir a experiência real do usuário em páginas web. Incluem o Largest Contentful Paint (LCP), que mede o desempenho de carregamento, o Cumulative Layout Shift (CLS), que mede a estabilidade visual, e o Interaction to Next Paint (INP), que mede a capacidade de resposta. O IntelReap mede todos os seis vitals, incluindo FCP, TTFB e FID."
       },
       {
         "q": "Qual a precisão da geolocalização de IP?",
-        "a": "A geolocalização de IP é precisa no nível do país em quase todos os casos e no nível da cidade para a maioria das conexões residenciais e comerciais. O IntelReap combina dados do MaxMind GeoLite2 com uma fonte de apoio para máxima precisão."
+        "a": "A geolocalização de IP é precisa no nível do país em quase todos os casos e no nível da cidade para a maioria das conexões residenciais e comerciais. A precisão pode ser menor em redes móveis, conexões via satélite e VPNs, onde o IP pode estar registrado em uma região diferente da sua localização física. O IntelReap combina dados do MaxMind GeoLite2 com uma fonte de apoio para máxima precisão."
       },
       {
         "q": "O que a pontuação de segurança mede?",
-        "a": "A pontuação de segurança é calculada a partir de dez sinais ponderados: status HTTPS, contexto seguro, exposição WebRTC, conteúdo misto, Não Rastrear, estado de acesso a armazenamento e permissões de câmera, microfone e localização. Pontuação 90-100 é Excelente."
+        "a": "A pontuação de segurança é calculada a partir de dez sinais ponderados: status HTTPS, contexto seguro, exposição de IP via WebRTC, detecção de conteúdo misto, status de Não Rastrear, estado de acesso ao armazenamento, permissão de câmera, permissão de microfone, permissão de localização e número de superfícies de impressão digital. Uma pontuação de 90-100 é Excelente, 70-89 é Saudável, 50-69 é Regular, 30-49 é Ruim e abaixo de 30 é Crítica."
       },
       {
         "q": "Posso usar o IntelReap offline?",
-        "a": "O IntelReap é um Progressive Web App que pode ser instalado no seu dispositivo. A interface estática carrega offline a partir do cache. Porém, a análise de inteligência requer uma conexão ativa para consultar as APIs backend e obter dados em tempo real."
+        "a": "O IntelReap é um Progressive Web App que pode ser instalado no seu dispositivo. A interface estática carrega offline a partir do cache. No entanto, a análise de inteligência em si requer uma conexão ativa para consultar as APIs do backend e obter dados de rede e IP em tempo real. Um modo offline mostra os dados de análise mais recentes guardados em cache."
       },
       {
         "q": "Como a pontuação global é calculada?",
-        "a": "A pontuação global é uma média ponderada de nove sub-pontuações: Rede 15%, Dispositivo 15%, Segurança 20% (maior peso), Capacidade 10%, Desempenho 10%, Velocidade 10%, Privacidade 10%, Identidade 5% e Gráficos 5%."
+        "a": "A pontuação global é uma média ponderada de nove sub-pontuações: Rede (15%), Dispositivo (15%), Segurança (20%), Capacidade (10%), Desempenho (10%), Velocidade (10%), Privacidade (10%), Identidade (5%) e Gráficos (5%). A segurança tem o maior peso porque afeta mais diretamente a sua segurança digital. Cada sub-pontuação é calculada de forma independente a partir dos seus dados relevantes."
       },
       {
         "q": "Qual a diferença entre benchmark e Core Web Vitals?",
-        "a": "Core Web Vitals medem a velocidade de carregamento desta página no seu dispositivo e conexão — métricas de experiência real do usuário. Benchmarks do navegador são testes sintéticos que medem a capacidade de processamento bruta do seu dispositivo independente das condições de rede."
+        "a": "Core Web Vitals medem a velocidade com que esta página específica carregou no seu dispositivo e conexão — são métricas de experiência real do usuário. Benchmarks do navegador são testes sintéticos que medem a capacidade bruta de processamento do seu dispositivo, independentemente das condições de rede — executando aritmética JavaScript, manipulação do DOM, renderização em canvas e acesso à memória em escala controlada."
       },
       {
         "q": "O IntelReap está disponível como app móvel?",
-        "a": "O IntelReap é um Progressive Web App que pode ser instalado diretamente do navegador no iOS e Android sem visitar uma loja de aplicativos. No iOS, abra o site no Safari e toque em Compartilhar e depois em Adicionar à Tela de Início."
+        "a": "O IntelReap é um Progressive Web App que pode ser instalado diretamente do navegador no iOS e Android sem visitar uma loja de aplicativos. No iOS, abra o site no Safari e toque em Compartilhar e depois em Adicionar à Tela de Início. No Android, o Chrome oferece automaticamente um aviso de instalação. O app instalado é executado em modo independente, com suporte offline completo e acesso pela tela inicial."
       }
     ]
   },
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_PT = {
     "col_learn": "Aprender",
     "cookie_settings": "Definições de cookies",
     "free_line": "Uso gratuito. Não é necessária conta.",
-    "email_us": "Envie-nos um e-mail",
+    "email_us": "Fale conosco",
   },
   "cookie": {
     "text": "O IntelReap guarda no seu navegador as suas escolhas de idioma e tema. Com a sua permissão, também usa cookies do Google Analytics para medir como o site é utilizado. Recusar não limita a ferramenta.",
