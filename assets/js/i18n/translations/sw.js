@@ -1,15 +1,15 @@
 /* IntelReap translations: sw. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_SW = {
   "meta": {
-    "title": "IntelReap — Kituo cha Akili ya Mtandao na Kifaa",
-    "description": "Akili ya mtandao na kifaa kwa wakati halisi. Gundua IP yako, ASN, hali ya VPN, uwezo wa kivinjari na hali ya usalama. Bila malipo.",
+    "title": "IntelReap — Kituo cha Uchambuzi wa Mtandao na Kifaa",
+    "description": "Uchambuzi wa mtandao na kifaa kwa wakati halisi. Gundua IP yako, ASN, hali ya VPN, uwezo wa kivinjari na hali ya usalama. Bila malipo. Bila kuingia.",
     "og_title": "IntelReap — Ona Mtandao Wako Unafunua Nini",
-    "og_description": "Zana ya akili bila malipo kwa wakati halisi. Changanua mtandao, kifaa, usalama na kivinjari chako kwa sekunde chache."
+    "og_description": "Zana ya uchambuzi bila malipo kwa wakati halisi. Changanua mtandao, kifaa, usalama na kivinjari chako kwa sekunde chache."
   },
   "nav": {
-    "intelligence_center": "Kituo cha Akili",
+    "intelligence_center": "Kituo cha Uchambuzi",
     "about": "Kuhusu",
-    "search_placeholder": "Tafuta paneli za akili...",
+    "search_placeholder": "Tafuta paneli za uchambuzi...",
     "open_search": "Fungua utafutaji",
     "toggle_menu": "Badilisha menyu",
     "close_menu": "Funga menyu",
@@ -18,35 +18,35 @@ window.NDIC_TRANSLATIONS_SW = {
     "guides": "Miongozo"
   },
   "hero": {
-    "badge": "Zana ya Akili Bila Malipo",
+    "badge": "Zana ya Uchambuzi Bila Malipo",
     "title_line1": "Mtandao Wako",
     "title_line2": "Unafunua Nini?",
     "tagline": "IntelReap inaonyesha papo hapo miundombinu ya mtandao wako, alama ya kidole ya kifaa, hali ya usalama na uwezo wa kivinjari — alama 285 za data katika paneli 13. Bure. Bila kuingia.",
-    "cta_primary": "Endesha Uchunguzi wa Akili",
+    "cta_primary": "Endesha Uchambuzi",
     "cta_secondary": "Ona Jinsi Inavyofanya Kazi",
     "trust_data_points": "Pointi 285 za data kwa uchunguzi",
-    "trust_panels": "Paneli 13 za akili",
+    "trust_panels": "Paneli 13 za uchambuzi",
     "badge_live": "Uchanganuzi wa moja kwa moja wa mtandao na kifaa",
     "title_html": "Ona mtandao<br>tayari unajua nini kuhusu <span class=\"ndic-highlight\">wewe</span>.",
     "see_report": "Tazama ripoti kamili"
   },
   "quick_answer": {
     "label": "Jibu la Haraka",
-    "title": "Kituo cha Akili ya Mtandao na Kifaa ni Nini?"
+    "title": "Kituo cha Uchambuzi wa Mtandao na Kifaa ni Nini?"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "Kituo cha Akili ya Mtandao na Kifaa",
+    "subtitle": "Kituo cha Uchambuzi wa Mtandao na Kifaa",
     "status_live": "MOJA KWA MOJA",
     "status_scanning": "INACHUNGUZA",
     "status_offline": "NJE YA MTANDAO",
     "status_degraded": "IMEPUNGUA",
     "last_scan": "Uchunguzi wa Mwisho",
-    "next_refresh": "Kusasishwa Kinachofuata",
+    "next_refresh": "Usasishaji Unaofuata",
     "api_calls": "Simu za API"
   },
   "canvas1": {
-    "heading_technical": "Akili ya Njia ya ASN na Mtandao",
+    "heading_technical": "Uchambuzi wa Njia ya ASN na Mtandao",
     "heading_plain": "Uko kwenye Mtandao Gani?",
     "params": {
       "asn_number": "Nambari ya ASN",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_SW = {
     "deep_dive": "Uchambuzi wa kina wa utambulisho wa mtandao wako"
   },
   "canvas3": {
-    "heading_technical": "Akili ya VPN, Seva Mbadala na Uelekezaji",
+    "heading_technical": "Uchambuzi wa VPN, Seva Mbadala na Uelekezaji",
     "heading_plain": "Je, Umejificha Mtandaoni?",
     "params": {
       "vpn_detected": "VPN Imegunduliwa",
@@ -122,7 +122,7 @@ window.NDIC_TRANSLATIONS_SW = {
       "detection_flags": "Alama za Ugunduzi",
       "primary_source": "Chanzo Kikuu",
       "confidence": "Kiwango cha Imani",
-      "paid_api_consulted": "API ya Kulipa Ilishauriwa"
+      "paid_api_consulted": "API ya Kulipia Imekaguliwa"
     },
     "values": {
       "vpn_yes": "Ndiyo",
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_SW = {
     "deep_dive": "Uchambuzi wa kina wa mtandao wako wa moja kwa moja"
   },
   "canvas5": {
-    "heading_technical": "Paneli ya Akili ya Kifaa",
+    "heading_technical": "Paneli ya Uchambuzi wa Kifaa",
     "heading_plain": "Unatumia Kifaa Gani?",
     "params": {
       "os": "Mfumo wa Uendeshaji",
@@ -198,7 +198,7 @@ window.NDIC_TRANSLATIONS_SW = {
       "webgl_version": "Toleo la WebGL",
       "webgl_support_level": "Kiwango cha Msaada wa WebGL",
       "hardware_acceleration": "Kuharakisha kwa Maunzi",
-      "max_texture_size": "Ukubwa wa Juu wa Maelezo",
+      "max_texture_size": "Ukubwa wa Juu wa Umbile",
       "max_viewport_size": "Vipimo vya Juu vya Eneo la Kuona",
       "shader_precision": "Usahihi wa Shader",
       "extensions_count": "Nyongeza Zinazosaidiwa",
@@ -211,11 +211,11 @@ window.NDIC_TRANSLATIONS_SW = {
       "webgpu_vendor": "Mtengenezaji wa WebGPU",
       "webgpu_architecture": "Usanifu wa WebGPU",
       "has_anisotropy": "Uchujaji wa Anisotropic",
-      "has_float_textures": "Maelezo ya Float",
-      "has_depth_textures": "Maelezo ya Kina",
+      "has_float_textures": "Umbile la Float",
+      "has_depth_textures": "Umbile la Kina",
       "has_draw_buffers": "Hifadhi za Kuchora",
       "has_instancing": "Uundaji Nakala wa Maunzi",
-      "has_compressed_textures": "Maelezo Yaliyoshinikizwa",
+      "has_compressed_textures": "Umbile Lililoshinikizwa",
       "rendering_score": "Alama ya Uwasilishaji",
       "graphics_tier": "Ngazi ya Michoro"
     },
@@ -275,12 +275,12 @@ window.NDIC_TRANSLATIONS_SW = {
     },
     "values": {
       "supported": "Inasaidiwa",
-      "not_supported": "Haaisaidiwi"
+      "not_supported": "Haisaidiwi"
     },
     "deep_dive": "Uchambuzi wa kina wa uwezo wa kivinjari chako"
   },
   "canvas9": {
-    "heading_technical": "Paneli ya Akili ya Utendaji",
+    "heading_technical": "Paneli ya Uchambuzi wa Utendaji",
     "heading_plain": "Kivinjari Chako Kina Kasi Gani?",
     "params": {
       "page_load_time": "Wakati wa Kupakia Ukurasa",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_SW = {
     "deep_dive": "Uchambuzi wa kina wa utendaji wako"
   },
   "canvas10": {
-    "heading_technical": "Akili ya Kasi ya Kivinjari na Uwasilishaji",
+    "heading_technical": "Uchambuzi wa Kasi ya Kivinjari na Uwasilishaji",
     "heading_plain": "Kifaa Chako Kinawasilisha kwa Kasi Gani?",
     "vitals": {
       "lcp": "Uchoraji Mkubwa wa Maudhui",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_SW = {
     "deep_dive": "Uchambuzi wa kina wa kasi ya uwasilishaji wako"
   },
   "canvas11": {
-    "heading_technical": "Ubao wa Alama za Akili za Kimataifa",
+    "heading_technical": "Ubao wa Alama za Kimataifa",
     "heading_plain": "Alama Yako ya Jumla",
     "params": {
       "global_score": "Alama ya Kimataifa",
@@ -364,7 +364,7 @@ window.NDIC_TRANSLATIONS_SW = {
       "strongest_area": "Eneo Lenye Nguvu Zaidi",
       "weakest_area": "Eneo Dhaifu Zaidi",
       "improvement_priority": "Kipaumbele cha Uboreshaji",
-      "critical_flags": "Alama za Muhimu",
+      "critical_flags": "Alama za Hatari",
       "warnings": "Maonyo"
     },
     "health": {
@@ -377,13 +377,13 @@ window.NDIC_TRANSLATIONS_SW = {
     "deep_dive": "Uchambuzi wa kina wa alama yako ya kimataifa"
   },
   "canvas12": {
-    "heading_technical": "Mkondo wa Akili wa Moja kwa Moja",
+    "heading_technical": "Mkondo wa Uchambuzi wa Moja kwa Moja",
     "heading_plain": "Nini Kimetokea Sasa Hivi?",
     "params": {
       "online_status": "Hali ya Muunganisho",
       "backend_health": "Afya ya Mfumo wa Nyuma",
       "total_events": "Jumla ya Matukio",
-      "critical_count": "Matukio Muhimu",
+      "critical_count": "Matukio ya Hatari",
       "warning_count": "Maonyo",
       "api_calls": "Simu za API Zilizofanywa",
       "error_count": "Makosa",
@@ -399,10 +399,10 @@ window.NDIC_TRANSLATIONS_SW = {
       "degraded": "Imepungua",
       "none_detected": "Hakuna kilichogunduliwa"
     },
-    "deep_dive": "Uchambuzi wa kina wa mkondo wako wa akili wa moja kwa moja"
+    "deep_dive": "Uchambuzi wa kina wa mkondo wako wa uchambuzi wa moja kwa moja"
   },
   "full_summary": {
-    "title": "Ripoti Kamili ya Akili ya Mfumo",
+    "title": "Ripoti Kamili ya Uchambuzi wa Mfumo",
     "label": "Muhtasari wa Uchunguzi",
     "source_label": "Ilitengenezwa na",
     "generated_at": "Ilitengenezwa",
@@ -412,7 +412,7 @@ window.NDIC_TRANSLATIONS_SW = {
     "json": "Pakua JSON",
     "pdf": "Pakua PDF",
     "copy": "Nakili kwenye Ubao wa Kunakili",
-    "downloaded": "Imepakiwa",
+    "downloaded": "Imepakuliwa",
     "sent_to_printer": "Imetumwa kwa Printa",
     "copied": "Imenakiliwa",
     "failed": "Imeshindwa — Jaribu Tena"
@@ -424,10 +424,10 @@ window.NDIC_TRANSLATIONS_SW = {
     "copy_failed": "Kunakili kumeshindwa — jaribu mwenyewe"
   },
   "ai_summary": {
-    "label": "Muhtasari wa Akili",
+    "label": "Muhtasari wa Uchambuzi",
     "source_script": "Hati",
     "generating": "Inaunda uchambuzi...",
-    "in_progress": "Uchunguzi wa akili unaendelea."
+    "in_progress": "Uchambuzi unaendelea."
   },
   "scores": {
     "excellent": "Bora Sana",
@@ -446,7 +446,7 @@ window.NDIC_TRANSLATIONS_SW = {
     "enabled": "Imewezeshwa",
     "disabled": "Imezimwa",
     "supported": "Inasaidiwa",
-    "not_supported": "Haaisaidiwi",
+    "not_supported": "Haisaidiwi",
     "secure": "Salama",
     "not_secure": "Sio Salama",
     "exposed": "Imefunuliwa",
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_SW = {
   },
   "methodology": {
     "label": "Mbinu",
-    "text": "Data yote ya akili inakusanywa upande wa mteja kupitia API za kawaida za kivinjari na kuboreshwa na mfumo wa nyuma kwa kutumia hifadhidata za mtandao na eneo la IP, ikiwemo MaxMind GeoLite2."
+    "text": "Data yote inakusanywa upande wa mteja kupitia API za kawaida za kivinjari na kuboreshwa na mfumo wa nyuma kwa kutumia hifadhidata za mtandao na eneo la IP, ikiwemo MaxMind GeoLite2."
   },
   "citations": {
     "label": "Vyanzo na Marejeo",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_SW = {
     "items": [
       {
         "q": "ASN ni nini na kwa nini ni muhimu?",
-        "a": "Nambari ya Mfumo Huru (ASN) ni kitambulisho cha kipekee kilichopewa mwendeshaji wa mtandao kinachobainisha jinsi trafiki inavyoelekezwa kwenye intaneti. IntelReap inatambua ASN yako, mmiliki wake, uainishaji wa ngazi na uhusiano wa peering."
+        "a": "Nambari ya Mfumo Huru (ASN) ni kitambulisho cha kipekee kinachopewa mwendeshaji wa mtandao, kama vile mtoa huduma wako wa intaneti, mtoa huduma wa wingu au kampuni kubwa. Kinabainisha jinsi trafiki inavyoelekezwa kwenye intaneti. IntelReap inatambua ASN yako, mmiliki wake, uainishaji wa ngazi, daftari na uhusiano wa peering ili kukupa picha kamili ya miundombinu ya mtandao wako."
       },
       {
         "q": "Ugunduzi wa VPN unafanya kazi vipi?",
-        "a": "IntelReap hutumia mbinu za tabaka tatu: uchambuzi wa aina ya umiliki wa ASN, ukaguzi wa kutofautiana kwa eneo la wakati na lugha, na hoja ya hiari ya API ya sifa ya IP. Ishara tatu zinachanganywa katika alama moja ya uaminifu na uainishaji wa njia."
+        "a": "IntelReap hutumia mbinu ya ugunduzi ya tabaka tatu. Kwanza, huchambua aina ya umiliki wa ASN — ASN za vituo vya data zinaashiria matumizi ya VPN au seva mbadala. Pili, hukagua kutolingana kwa eneo la wakati na lugha ya kivinjari dhidi ya eneo la IP yako, jambo linalofichua kutopatana kwa uelekezaji. Tatu, huongeza ishara za sifa kwa safu za IP zenye hatari kubwa. Ishara zote tatu huunganishwa katika alama moja ya uaminifu na uainishaji wa njia."
       },
       {
         "q": "Uvujaji wa IP wa WebRTC ni nini?",
-        "a": "WebRTC ni API ya kivinjari kwa mawasiliano ya wakati halisi kama simu za video. Inaweza kufunua anwani yako ya IP ya mtandao wa ndani hata unapotumia VPN. IntelReap hujaribu kwa makini uvujaji wa WebRTC."
+        "a": "WebRTC ni API ya kivinjari kwa mawasiliano ya wakati halisi kama simu za video. Athari yake ni kwamba inaweza kufunua anwani yako ya IP ya mtandao wa ndani hata unapotumia VPN. Paneli ya usalama ya IntelReap hujaribu kwa makini uvujaji wa WebRTC kwa kuunda muunganisho wa peer na kunasa anwani zozote za IP zinazofunuliwa kupitia mfuatano wa ICE candidate."
       },
       {
         "q": "Core Web Vitals ni nini?",
-        "a": "Core Web Vitals ni seti ya vipimo vilivyofafanuliwa na Google kupima uzoefu halisi wa mtumiaji kwenye kurasa za wavuti, ikijumuisha LCP, CLS na INP. IntelReap hupima vitals vyote sita."
+        "a": "Core Web Vitals ni seti ya vipimo vilivyofafanuliwa na Google kupima uzoefu halisi wa mtumiaji kwenye kurasa za wavuti. Vinajumuisha Largest Contentful Paint (LCP) inayopima kasi ya kupakia, Cumulative Layout Shift (CLS) inayopima uthabiti wa kuonekana, na Interaction to Next Paint (INP) inayopima kasi ya kuitikia. IntelReap hupima vitals vyote sita, ikiwemo FCP, TTFB na FID."
       },
       {
-        "q": "Ujumla wa kijiografia wa IP una usahihi kiasi gani?",
-        "a": "Ujumla wa kijiografia wa IP una usahihi katika kiwango cha nchi katika karibu kila kesi na katika kiwango cha jiji kwa muunganisho mwingi wa nyumba na biashara. IntelReap hutumia mnyororo wa hifadhi wa tabaka tatu kwa usahihi mkubwa."
+        "q": "Utambuzi wa eneo la IP una usahihi kiasi gani?",
+        "a": "Utambuzi wa eneo la IP una usahihi katika kiwango cha nchi karibu kila wakati na katika kiwango cha jiji kwa muunganisho mwingi wa nyumbani na wa kibiashara. Usahihi unaweza kuwa chini kwenye mitandao ya simu, miunganisho ya setilaiti na VPN, ambapo IP inaweza kusajiliwa katika eneo tofauti na mahali ulipo kimwili. IntelReap huunganisha data ya MaxMind GeoLite2 na chanzo mbadala kwa usahihi wa juu zaidi."
       },
       {
         "q": "Alama ya usalama inapima nini?",
-        "a": "Alama ya usalama inakokotolewa kutoka kwa ishara kumi zenye uzito: hali ya HTTPS, muktadha salama, mfiduo wa WebRTC, maudhui mchanganyiko, hali ya kutofuatiliwa, hali ya ufikiaji wa hifadhi na ruhusa za kamera, maikrofoni na mahali."
+        "a": "Alama ya usalama inakokotolewa kutoka kwa ishara kumi zenye uzito: hali ya HTTPS, muktadha salama, kufichuka kwa IP kupitia WebRTC, ugunduzi wa maudhui mchanganyiko, hali ya Usifuatilie, hali ya ufikiaji wa hifadhi, ruhusa ya kamera, ruhusa ya maikrofoni, ruhusa ya mahali na idadi ya nyuso za alama ya kidole. Alama ya 90-100 ni Bora Sana, 70-89 ni Afya Nzuri, 50-69 ni Wastani, 30-49 ni Mbaya, na chini ya 30 ni Hatari."
       },
       {
         "q": "Je, ninaweza kutumia IntelReap bila mtandao?",
-        "a": "IntelReap ni Programu ya Wavuti Inayoendelea inayoweza kusanikishwa kwenye kifaa chako. Kiolesura cha kawaida kinapakia nje ya mtandao kutoka kwa kashe. Hata hivyo, uchunguzi wa akili unahitaji muunganisho amilifu kupytia maswali ya API ya mfumo wa nyuma."
+        "a": "IntelReap ni Programu ya Wavuti Inayoendelea inayoweza kusanikishwa kwenye kifaa chako. Kiolesura cha kawaida kinapakia nje ya mtandao kutoka kwa kashe. Hata hivyo, uchunguzi wenyewe unahitaji muunganisho amilifu ili kuuliza API za mfumo wa nyuma na kukusanya data ya mtandao na IP ya moja kwa moja. Hali ya nje ya mtandao huonyesha data ya uchunguzi wa hivi karibuni iliyohifadhiwa kwenye kashe."
       },
       {
         "q": "Alama ya kimataifa inakokotolewa vipi?",
-        "a": "Alama ya kimataifa ni wastani uliopimwa wa alama tisa ndogo: Mtandao 15%, Kifaa 15%, Usalama 20% (uzito mkubwa zaidi), Uwezo 10%, Utendaji 10%, Kasi 10%, Faragha 10%, Utambulisho 5% na Michoro 5%."
+        "a": "Alama ya kimataifa ni wastani uliopimwa wa alama tisa ndogo: Mtandao 15%, Kifaa 15%, Usalama 20%, Uwezo 10%, Utendaji 10%, Kasi 10%, Faragha 10%, Utambulisho 5% na Michoro 5%. Usalama una uzito mkubwa zaidi kwa sababu unaathiri usalama wako wa kidijitali moja kwa moja. Kila alama ndogo hukokotolewa kivyake kutoka kwa pointi za data husika."
       },
       {
         "q": "Tofauti kati ya kipimo na Core Web Vitals ni nini?",
-        "a": "Core Web Vitals hupima jinsi ukurasa huu ulivyopakia kwa kasi kwenye kifaa chako na muunganisho wako. Vipimo vya kivinjari ni majaribio ya bandia yanayopima uwezo wa kuchakata wa msingi wa kifaa wako bila kujali hali za mtandao."
+        "a": "Core Web Vitals hupima jinsi ukurasa huu mahususi ulivyopakia kwa kasi kwenye kifaa chako na muunganisho wako — ni vipimo vya uzoefu halisi wa mtumiaji. Vipimo vya kivinjari ni majaribio ya bandia yanayopima uwezo wa msingi wa kuchakata wa kifaa chako bila kujali hali za mtandao — kwa kuendesha hesabu za JavaScript, kudhibiti DOM, uwasilishaji wa canvas na ufikiaji wa kumbukumbu kwa kiwango kinachodhibitiwa."
       },
       {
         "q": "Je, IntelReap inapatikana kama programu ya simu?",
-        "a": "IntelReap ni Programu ya Wavuti Inayoendelea inayoweza kusanikishwa moja kwa moja kutoka kwa kivinjari kwenye iOS na Android bila kutembelea duka la programu. Kwenye iOS, fungua tovuti katika Safari na gonga Shiriki kisha Ongeza kwenye Skrini ya Nyumbani."
+        "a": "IntelReap ni Programu ya Wavuti Inayoendelea inayoweza kusanikishwa moja kwa moja kutoka kwa kivinjari kwenye iOS na Android bila kutembelea duka la programu. Kwenye iOS, fungua tovuti katika Safari na gonga Shiriki kisha Ongeza kwenye Skrini ya Nyumbani. Kwenye Android, Chrome hutoa ombi la usakinishaji kiotomatiki. Programu iliyosanikishwa hufanya kazi katika hali huru, ikiwa na usaidizi kamili wa nje ya mtandao na ufikiaji kutoka skrini ya nyumbani."
       }
     ]
   },
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_SW = {
     "error": "Samahani! Kulikuwa na tatizo kutuma fomu."
   },
   "footer": {
-    "tagline": "Akili ya mtandao na kifaa kwa wakati halisi.",
-    "description": "Zana ya taarifa ya bure kwenye kivinjari. Hakuna akaunti inayohitajika.",
-    "col_intelligence": "Akili",
+    "tagline": "Uchambuzi wa mtandao na kifaa kwa wakati halisi.",
+    "description": "Zana ya uchambuzi ya bure kwenye kivinjari. Hakuna akaunti inayohitajika.",
+    "col_intelligence": "Uchambuzi",
     "col_deep_dives": "Uchambuzi wa Kina",
     "col_legal": "Kisheria",
     "col_connect": "Unganika",
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_SW = {
     "col_learn": "Jifunze",
     "cookie_settings": "Mipangilio ya vidakuzi",
     "free_line": "Matumizi ni bure. Hakuna akaunti inayohitajika.",
-    "email_us": "Tutumie barua pepe",
+    "email_us": "Wasiliana nasi",
   },
   "cookie": {
     "text": "IntelReap huhifadhi chaguo zako za lugha na mandhari kwenye kivinjari chako. Kwa ruhusa yako, pia hutumia vidakuzi vya Google Analytics kupima jinsi tovuti inavyotumika. Kukataa hakupunguzi uwezo wa zana.",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_SW = {
   "offline": {
     "status": "Muunganisho Umepotea",
     "title": "Uko Nje ya Mtandao",
-    "body": "IntelReap inahitaji muunganisho amilifu kukusanya data ya akili. Angalia mtandao wako na ujaribu tena.",
+    "body": "IntelReap inahitaji muunganisho amilifu kukusanya data ya uchambuzi. Angalia mtandao wako na ujaribu tena.",
     "retry": "Jaribu Kuunganisha Tena",
-    "home": "Rudi kwenye Kituo cha Akili",
-    "cached_title": "Akili Iliyohifadhiwa Inapatikana",
+    "home": "Rudi kwenye Kituo cha Uchambuzi",
+    "cached_title": "Uchambuzi Uliohifadhiwa Unapatikana",
     "cached_body": "Baadhi ya data iliyochunguzwa kutoka kipindi chako cha mwisho inaweza kupatikana.",
     "online_status": "Hali ya Mtandaoni",
     "connection_type": "Aina ya Muunganisho",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_SW = {
     "last_online": "Mtandaoni Mara ya Mwisho"
   },
   "internal_links": {
-    "header": "Chunguza Paneli za Akili",
-    "back_to_main": "← Rudi kwenye Kituo cha Akili"
+    "header": "Chunguza Paneli za Uchambuzi",
+    "back_to_main": "← Rudi kwenye Kituo cha Uchambuzi"
   },
   "seasonal": {
     "spring": "Toleo la Masika",
