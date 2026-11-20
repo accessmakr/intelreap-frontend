@@ -4577,3 +4577,13 @@ select {
 .ndic-example-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-1) var(--space-4); padding: var(--space-3) 0; border-top: 1px solid var(--color-border); }
 .ndic-example-row dt { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; }
 .ndic-example-row dd { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-primary); margin: 0; overflow-wrap: anywhere; }
+
+/* ── Deep-dive comparison table and related list ── */
+.ndic-compare-wrap { overflow-x: auto; margin: 0 0 var(--space-6); }
+.ndic-compare-table { width: 100%; min-width: 0; border-collapse: collapse; font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-secondary); }
+.ndic-compare-table th, .ndic-compare-table td { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+@media (max-width: 560px) { .ndic-compare-table th, .ndic-compare-table td { padding: var(--space-2) var(--space-2); font-size: var(--text-xs, 0.75rem); } }
+.ndic-compare-table thead th { border-top: 0; color: var(--color-text-primary); font-weight: 700; }
+.ndic-compare-table tbody th { color: var(--color-text-muted); font-weight: 400; }
+.ndic-related-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.ndic-related-list a { color: var(--color-accent-primary); text-decoration: underline; text-underline-offset: 3px; font-family: var(--font-body); font-size: var(--text-base); }

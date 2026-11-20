@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>ASN and Network Route Intelligence Explained — IntelReap</title>
-  <meta name="description" content="Live ASN lookup, network tier classification, BGP route status, allocation registry, and peering data — see exactly what network infrastructure you're connecting through, explained parameter by parameter.">
+  <meta name="description" content="See which network carries your connection: ASN, owner, type and tier, with every reading explained and marked as looked up or estimated.">
   <meta name="keywords" content="ASN lookup, autonomous system number, BGP route, network tier, IP allocation registry, peering, network infrastructure, route origin">
   <meta name="robots" content="index, follow">
   <meta name="author" content="IntelReap">
@@ -22,7 +22,7 @@
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="ASN and Network Route Intelligence Explained — IntelReap">
-  <meta property="og:description" content="Live ASN lookup, network tier, BGP route status, and peering data, explained in plain English.">
+  <meta property="og:description" content="See which network carries your connection, with every reading explained and marked as looked up or estimated.">
   <meta property="og:url" content="https://intelreap.com/intelligence/network-route">
   <meta property="og:site_name" content="IntelReap">
   <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
@@ -58,7 +58,8 @@
   <link rel="stylesheet" href="../assets/css/ndic-animations.css">
   <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
 
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -87,7 +88,7 @@
       "@type": "TechArticle",
       "@id": "https://intelreap.com/intelligence/network-route#article",
       "headline": "ASN & Network Route Intelligence",
-      "description": "A deep dive into Autonomous System Number lookup, network tier classification, BGP route status, and peering infrastructure.",
+      "description": "A deep dive into ASN lookup, network type and tier classification, and how each route reading is determined, marked as looked up or estimated.",
       "url": "https://intelreap.com/intelligence/network-route",
       "datePublished": "2026-06-24",
       "dateModified": "2026-11-05",
@@ -159,11 +160,36 @@
             "@type": "Answer",
             "text": "Your upstream provider is the larger network your ISP connects through to reach the rest of the internet. It affects routing efficiency, latency to distant destinations, and resilience if your direct ISP has an outage, since traffic often has alternate paths through the upstream provider's wider network."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my mobile network show as Tier 3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tier is an estimate. Unless a detailed registry record exists, mobile and residential networks are shown as Tier 3 and datacenter and proxy networks as Tier 2. The label describes the kind of network, not a measurement of its size or quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the route status measured live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your address is looked up in an ASN database built from public routing data, and finding it there means the network is visible on the internet. This panel does not run a live routing test."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the address block look so broad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It groups the first part of your address, a /16 for IPv4 or a /48 for IPv6. The block your provider actually announces can be larger or smaller."
+          }
         }
       ]
     }
   ]
-}</script>
+}
+</script>
 </head>
 <body>
 
@@ -208,13 +234,14 @@
       </nav>
 
       <div class="ndic-deepdive-hero">
-        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 1</div>
+        <div class="ndic-deepdive-eyebrow">Deep dive · Panel 1 of 13</div>
         <h1 class="ndic-deepdive-title" data-i18n="canvas1.heading_technical">ASN &amp; Network Route Intelligence</h1>
         <p class="ndic-deepdive-subtitle" data-i18n="canvas1.heading_plain">What Network Are You On?</p>
         <p class="ndic-deepdive-intro">
-          Live ASN, route, and peering data for your exact connection, scanned the moment this page loads.
+          Your network operator, its type and its place in the wider internet, scanned the moment this page loads.
         </p>
-        <div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 5 November 2026</div>
+        <p class="ndic-deepdive-intro"><strong>At a glance:</strong> This panel shows which network carries your connection. The ASN owner and type tell you who runs it and whether it looks like a home, mobile or hosting network. Some rows are looked up and some are estimated from the network type, and each is labeled below so you can tell which.</p>
+<div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 5 November 2026</div>
       </div>
 
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-1">
@@ -232,22 +259,21 @@
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_number">ASN Number</span><span class="ndic-param-value" id="c1-asn-number">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_owner">ASN Owner</span><span class="ndic-param-value" id="c1-asn-owner">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.asn_type">ASN Type</span><span class="ndic-param-value" id="c1-asn-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.network_tier">Network Tier</span><span class="ndic-param-value" id="c1-network-tier">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.ip_range">IP Range</span><span class="ndic-param-value" id="c1-ip-range">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.network_tier">Network Tier (estimated)</span><span class="ndic-param-value" id="c1-network-tier">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.ip_range">Address Block</span><span class="ndic-param-value" id="c1-ip-range">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.allocation_registry">Allocation Registry</span><span class="ndic-param-value" id="c1-allocation-registry">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.route_origin">Route Origin</span><span class="ndic-param-value" id="c1-route-origin">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.peering_count">Estimated Peering Count</span><span class="ndic-param-value" id="c1-peering-count">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.upstream_provider">Upstream Provider</span><span class="ndic-param-value" id="c1-upstream-provider">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.upstream_provider">Typical Upstream</span><span class="ndic-param-value" id="c1-upstream-provider">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.announcement_status">Announcement Status</span><span class="ndic-param-value" id="c1-announcement-status">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.bgp_route_status">BGP Route Status</span><span class="ndic-param-value" id="c1-bgp-route-status">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label">Route Health</span><span class="ndic-param-value" id="c1-network-health">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.classification_source">Classification Source</span><span class="ndic-param-value" id="c1-classification-source">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.classification_confidence">Classification Confidence</span><span class="ndic-param-value" id="c1-classification-confidence">—</span></div>
               <div class="ndic-param-row ndic-hidden" id="c1-known-provider-row"><span class="ndic-param-label" data-i18n="canvas1.params.known_provider">Known Provider</span><span class="ndic-param-value" id="c1-known-provider">—</span></div>
               <div class="ndic-hidden" id="c1-peeringdb-section">
-                <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.peeringdb_traffic">PeeringDB Traffic</span><span class="ndic-param-value" id="c1-peeringdb-traffic">—</span></div>
-                <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB IPv4 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes4">—</span></div>
-                <div class="ndic-param-row"><span class="ndic-param-label">PeeringDB IPv6 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes6">—</span></div>
+                <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.peeringdb_traffic">Registry Traffic Band</span><span class="ndic-param-value" id="c1-peeringdb-traffic">—</span></div>
+                <div class="ndic-param-row"><span class="ndic-param-label">Registry IPv4 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes4">—</span></div>
+                <div class="ndic-param-row"><span class="ndic-param-label">Registry IPv6 Prefixes</span><span class="ndic-param-value" id="c1-peeringdb-prefixes6">—</span></div>
               </div>
               <div class="ndic-param-row"><span class="ndic-param-label">Hosting Network</span><span class="ndic-param-value" id="c1-is-hosting">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas1.params.is_mobile">Mobile Network</span><span class="ndic-param-value" id="c1-is-mobile">—</span></div>
@@ -283,48 +309,52 @@
 
           <div class="ndic-explain-item">
             <h4 data-i18n="canvas1.params.asn_type">ASN Type</h4>
-            <p>Classifies what kind of organization operates this ASN — residential ISP, mobile carrier, hosting provider, or proxy/VPN service. This is one of the strongest individual signals for telling apart a normal home connection from a VPN or datacenter route.</p>
+            <p>Classifies the operator as a residential ISP, mobile carrier, datacenter or proxy/VPN network. When no detailed registry record is available, this comes from the same hosting, mobile and proxy flags shown at the bottom of the panel, so it is a classification rather than a measurement. It is still one of the strongest hints for telling a normal home connection from a VPN or datacenter route.</p>
           </div>
 
           <div class="ndic-explain-item">
-            <h4 data-i18n="canvas1.params.network_tier">Network Tier</h4>
-            <p>Tier 1 networks reach the entire internet without paying for transit. Tier 2 networks are regional providers that both buy and sell transit. Tier 3 networks are local providers that only buy transit and connect directly to end users — most home and mobile connections fall into Tier 2 or 3.</p>
+            <h4 data-i18n="canvas1.params.network_tier">Network Tier (estimated)</h4>
+            <p>Tier 1 networks reach the entire internet without paying for transit. Tier 2 networks are regional providers that both buy and sell transit. Tier 3 networks are local providers that mostly buy transit and serve end users. The tier shown is an estimate: unless a detailed registry record exists, mobile and residential networks appear as Tier 3 and datacenter and proxy networks as Tier 2. A large national mobile operator can therefore appear as Tier 3 even though it has extensive connections of its own.</p>
           </div>
 
           <div class="ndic-explain-item">
-            <h4>IP Range &amp; Allocation Registry</h4>
-            <p>The IP range is the full block of addresses your specific IP belongs to, as registered with one of the five Regional Internet Registries. The registry shown — ARIN, RIPE NCC, APNIC, LACNIC, or AFRINIC — depends on which world region that block was originally allocated to.</p>
+            <h4>Address Block &amp; Allocation Registry</h4>
+            <p>The address block is the first part of your address, shown as a /16 block for IPv4 or a /48 block for IPv6. It is a convenient grouping, not the exact block your provider announces, which can be larger or smaller. The registry is chosen from the country your address is placed in (ARIN, RIPE NCC, APNIC, LACNIC or AFRINIC), so it can differ from the registry that originally allocated a transferred block.</p>
           </div>
 
           <div class="ndic-explain-item">
-            <h4>Route Origin &amp; Upstream Provider</h4>
-            <p>Route origin describes how your traffic enters the wider internet — directly through your ISP, or via a mobile network's gateway. Upstream provider is the larger transit network your ISP itself connects through to reach destinations outside its own network.</p>
+            <h4>Route Origin &amp; Typical Upstream</h4>
+            <p>Route origin summarizes how your traffic enters the internet: directly through an ISP, through a mobile gateway, from a cloud host, a CDN or a satellite link. It is derived from the network type. The upstream row is a typical description for that tier, such as “Regional transit provider”, not the name of your provider’s actual upstream network.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4 data-i18n="canvas1.params.peering_count">Estimated Peering Count</h4>
-            <p>An approximate count of how many other networks this ASN exchanges traffic with directly. Higher peering counts generally mean shorter, more efficient routes to popular destinations, since traffic doesn't need to pass through as many intermediate networks.</p>
+            <p>A rough band for how many networks this operator exchanges traffic with directly. It comes from the network’s tier or, when available, from how many address blocks it is known to operate, so treat it as a size indicator rather than an exact count.</p>
           </div>
 
           <div class="ndic-explain-item">
-            <h4>Announcement Status &amp; BGP Route Status</h4>
-            <p>BGP, the Border Gateway Protocol, is how networks announce which IP ranges they're responsible for. "Announced" and "active" together mean this network's ownership of your IP range is currently visible and accepted across the internet — the normal, healthy state.</p>
+            <h4>Announcement Status</h4>
+            <p>Your address was found in an ASN database built from public routing data, which means the network that owns it is visible on the internet. This panel does not run a live routing test.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4>Route Health</h4>
-            <p>A composite score reflecting routing stability, peering quality, and tier — not your live connection speed, which is measured separately on the Live Network panel. A lower score here usually points to a smaller or less-connected network rather than an active problem. It is one part of this panel's Network Score (the number at the top of the panel), which also counts the network tier, whether the route is active and how the connection originates, so the two numbers can differ slightly by design.</p>
+            <p>A rule-based estimate, not a measurement of routing stability. It starts from a base score and adds points for the network’s tier, its type (residential ISPs score highest) and how many address blocks it is known to operate. Because most mobile networks share the same tier and type, they usually receive the same figure, so a lower number points to the kind of network rather than a problem with your connection. Your live connection quality is on the Live Network panel. It is one part of this panel’s Network Score, the number at the top of the panel.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4>Classification Source &amp; Confidence</h4>
-            <p>Shows which data source classified this network and how confident that classification is, so you can judge how much weight to put on the ASN type and tier shown above.</p>
+            <p>The source names where the classification came from. “network-flags” means the network was classified from the hosting, mobile and proxy flags alone; other sources mean more detail was available. The Classification Confidence row shows how much weight to give the classification.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4>Hosting, Mobile &amp; Proxy Network Flags</h4>
             <p>Three independent yes/no checks: whether this ASN is a datacenter or hosting provider, whether it's a mobile carrier network, and whether it's flagged as proxy or VPN infrastructure. A network can only really be one of the first two, but the proxy flag can apply alongside either.</p>
           </div>
+<div class="ndic-explain-item">
+<h4>Optional Registry Details</h4>
+<p>When a network has a public registry profile, extra rows can appear: Known Provider, Registry Traffic Band, Registry IPv4 Prefixes and Registry IPv6 Prefixes. Known Provider is the operator’s registered name. The traffic band and the prefix counts are supplied by the operator, so they can be out of date. Most home and mobile networks have no such profile, so these rows usually stay hidden.</p>
+</div>
 
         </div>
       </section>
@@ -343,7 +373,37 @@
           <h4>It changes when your network changes, not when you do</h4>
           <p>This data reflects your ISP's infrastructure, not anything personal about you. Switching from Wi-Fi to mobile data, changing ISPs, or connecting through a VPN will all change every value on this page — your device and browser stay completely irrelevant to it.</p>
         </div>
-      </section>
+      <div class="ndic-explain-item">
+<h4>Why your phone can show a different network or city each time</h4>
+<p>Mobile providers run traffic through regional gateways and give each session an address from a pool. The same phone can appear behind a different gateway after it reconnects or moves between cell sites, which changes the address and sometimes the city and block, while the ASN and owner stay the same.</p>
+</div>
+<div class="ndic-explain-item">
+<h4>Wi-Fi, mobile data and VPNs</h4>
+<p>Wi-Fi at home shows your home provider. Mobile data shows your carrier. A VPN shows the VPN operator’s network, which is often a datacenter ASN. Switching between them changes this whole panel.</p>
+</div>
+<div class="ndic-explain-item">
+<h4>What this panel cannot tell you</h4>
+<p>It cannot tell you your exact location, your speed, or whether a route is congested right now. It describes the operator of your address, not you or your device. Treat estimated rows as hints, use the Live Network panel for measured performance, and the VPN panel to see whether the network pattern looks like a VPN.</p>
+</div>
+</section>
+
+<section class="ndic-explain-section">
+<div class="ndic-explain-section-header">
+<div class="ndic-explain-eyebrow">Worked Examples</div>
+<h2 class="ndic-explain-title">What Typical Results Look Like</h2>
+<p class="ndic-explain-lead">Typical values when no detailed registry record is available. Route Health follows the same rule the panel uses.</p>
+</div>
+<div class="ndic-compare-wrap"><table class="ndic-compare-table">
+<thead><tr><th scope="col">Reading</th><th scope="col">Home broadband</th><th scope="col">Mobile carrier</th><th scope="col">Datacenter or hosting</th></tr></thead>
+<tbody>
+<tr><th scope="row">ASN type</th><td>Residential ISP</td><td>Mobile Carrier</td><td>Datacenter</td></tr>
+<tr><th scope="row">Network tier (estimated)</th><td>Tier 3 — Local Provider</td><td>Tier 3 — Local Provider</td><td>Tier 2 — Regional Provider</td></tr>
+<tr><th scope="row">Route origin</th><td>Direct ISP</td><td>Mobile Network</td><td>Cloud Hosted</td></tr>
+<tr><th scope="row">Hosting / Mobile / Proxy flags</th><td>No / No / No</td><td>No / Yes / No</td><td>Yes / No / No</td></tr>
+<tr><th scope="row">Typical Route Health</th><td>70/100</td><td>55/100</td><td>65/100</td></tr>
+</tbody></table></div>
+</section>
+
 
       <!-- ═══ PAGE FAQ ═══ -->
       <section class="ndic-faq-section">
@@ -385,7 +445,28 @@
             <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Your upstream provider is the larger network your ISP connects through to reach the rest of the internet. It affects routing efficiency, latency to distant destinations, and resilience if your direct ISP has an outage, since traffic often has alternate paths through the upstream provider's wider network.</div></div>
           </div>
 
-        </div>
+        <div class="ndic-faq-item">
+<button class="ndic-faq-question" aria-expanded="false">
+<span>Why does my mobile network show as Tier 3?</span>
+<span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+</button>
+<div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The tier is an estimate. Unless a detailed registry record exists, mobile and residential networks are shown as Tier 3 and datacenter and proxy networks as Tier 2. The label describes the kind of network, not a measurement of its size or quality.</div></div>
+</div>
+<div class="ndic-faq-item">
+<button class="ndic-faq-question" aria-expanded="false">
+<span>Is the route status measured live?</span>
+<span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+</button>
+<div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">No. Your address is looked up in an ASN database built from public routing data, and finding it there means the network is visible on the internet. This panel does not run a live routing test.</div></div>
+</div>
+<div class="ndic-faq-item">
+<button class="ndic-faq-question" aria-expanded="false">
+<span>Why does the address block look so broad?</span>
+<span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+</button>
+<div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">It groups the first part of your address, a /16 for IPv4 or a /48 for IPv6. The block your provider actually announces can be larger or smaller.</div></div>
+</div>
+</div>
       </section>
 
       <!-- ═══ CITATIONS ═══ -->
@@ -394,20 +475,34 @@
         <div class="ndic-citation-list">
           <div class="ndic-citation-item">
             <span class="ndic-citation-num">01</span>
-            <span class="ndic-citation-link">Regional Internet Registry allocation records (ARIN, RIPE, APNIC, LACNIC, AFRINIC)</span>
+            <span class="ndic-citation-link">Country-to-registry mapping for the five Regional Internet Registries</span>
           </div>
           <div class="ndic-citation-item">
             <span class="ndic-citation-num">02</span>
-            <span class="ndic-citation-link">Global ASN and BGP routing reference databases</span>
+            <span class="ndic-citation-link">An ASN database built from public routing data</span>
           </div>
           <div class="ndic-citation-item">
             <span class="ndic-citation-num">03</span>
-            <span class="ndic-citation-link">Internet exchange and peering infrastructure registries</span>
+            <span class="ndic-citation-link">Network classification by operator type, with registry and peering records where available</span>
           </div>
         </div>
       </section>
 
-      <div id="dynamic-internal-links"></div>
+      <section class="ndic-explain-section">
+<div class="ndic-explain-section-header">
+<div class="ndic-explain-eyebrow">Keep Exploring</div>
+<h2 class="ndic-explain-title">Related reading</h2>
+</div>
+<ul class="ndic-related-list">
+<li><a href="/learn/what-is-an-ip-address">What an IP address is</a></li>
+<li><a href="/guides/how-to-find-ip-address-of-any-device">How to find the IP address of any device</a></li>
+<li><a href="/learn/why-does-my-internet-speed-fluctuate">Why internet speed fluctuates</a></li>
+<li><a href="/intelligence/network-identity">Network Identity panel: who you appear to be on the internet</a></li>
+<li><a href="/intelligence/live-network">Live Network panel: how fast your connection is</a></li>
+<li><a href="/intelligence/vpn-proxy">VPN &amp; Proxy panel: whether you are hidden online</a></li>
+</ul>
+</section>
+<div id="dynamic-internal-links"></div>
 
     </div>
   </main>
