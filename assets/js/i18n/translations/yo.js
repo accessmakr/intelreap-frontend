@@ -2,7 +2,7 @@
 window.NDIC_TRANSLATIONS_YO = {
   "meta": {
     "title": "IntelReap — Ile-iṣẹ Imọye Nẹtiwọọki ati Ẹrọ",
-    "description": "Imọye nẹtiwọọki ati ẹrọ ni akoko gidi. Ṣafihàn IP rẹ, ASN, ipo VPN, agbara aṣàwákiri ati ipo aabo. Ọfẹ.",
+    "description": "Imọye nẹtiwọọki ati ẹrọ ni akoko gidi. Ṣafihàn IP rẹ, ASN, ipo VPN, agbara aṣàwákiri ati ipo aabo. Ọfẹ. Kò nílò wíwọlé.",
     "og_title": "IntelReap — Wo Ohun ti Nẹtiwọọki Rẹ Ṣafihàn",
     "og_description": "Irinṣẹ imọye ọfẹ ni akoko gidi. Ṣe itupalẹ nẹtiwọọki, ẹrọ, aabo ati aṣàwákiri rẹ ni iṣẹju diẹ."
   },
@@ -122,7 +122,7 @@ window.NDIC_TRANSLATIONS_YO = {
       "detection_flags": "Àwọn Àsíà Ìwárí",
       "primary_source": "Orísun Àkọ́kọ́",
       "confidence": "Ìpele Ìgbẹ́kẹ̀lé",
-      "paid_api_consulted": "API Ìsanwó Ti Jẹ Ìmọ̀ràn"
+      "paid_api_consulted": "A Ti Ṣàyẹ̀wò API Ìsanwó"
     },
     "values": {
       "vpn_yes": "Bẹ́ẹ̀ni",
@@ -136,7 +136,7 @@ window.NDIC_TRANSLATIONS_YO = {
   },
   "canvas4": {
     "heading_technical": "Àféwọ́ Nẹtiwọọki Tí Ó Ń Ṣiṣẹ",
-    "heading_plain": "Ìsopọ̀ Rẹ Fá Tó Díé?",
+    "heading_plain": "Ìsopọ̀ Rẹ Yára Tó Báwo?",
     "params": {
       "current_rtt": "Ìdádúró Lọ́wọ́lọ́wọ́",
       "average_rtt": "Ìdádúró Àdéédé",
@@ -168,9 +168,9 @@ window.NDIC_TRANSLATIONS_YO = {
       "device_brand": "Àmì Ẹrọ",
       "cpu_cores": "Àwọn Ọpọlọ CPU",
       "ram_estimate": "Ìfojúsì RAM",
-      "screen_width": "Ìgbòókun Àwòrán",
+      "screen_width": "Ìbú Àwòrán",
       "screen_height": "Gígùn Àwòrán",
-      "viewport_width": "Ìgbòókun Àgbègbè Wiwo",
+      "viewport_width": "Ìbú Àgbègbè Wiwo",
       "viewport_height": "Gígùn Àgbègbè Wiwo",
       "pixel_ratio": "Ìpín Pixel",
       "color_depth": "Jíjìn Àwọ̀",
@@ -191,7 +191,7 @@ window.NDIC_TRANSLATIONS_YO = {
   },
   "canvas6": {
     "heading_technical": "Panẹẹli Ẹ̀rọ Àwòrán",
-    "heading_plain": "Ẹrọ Rẹ Lágbára Tó Díé?",
+    "heading_plain": "Ẹrọ Rẹ Lágbára Tó Báwo?",
     "params": {
       "gpu_vendor": "Olùpèṣẹ GPU",
       "gpu_renderer": "Olùtọ́sẹ GPU",
@@ -223,7 +223,7 @@ window.NDIC_TRANSLATIONS_YO = {
   },
   "canvas7": {
     "heading_technical": "Panẹẹli Aabo ati Àṣírí",
-    "heading_plain": "Ó Pẹ́ Tó Díé Ni O Wà Lábẹ́ Aabo Báyìí?",
+    "heading_plain": "Aabo Rẹ Pọ̀ Tó Báwo Báyìí?",
     "params": {
       "https_status": "Ipò HTTPS",
       "secure_context": "Ìlẹ̀ Aabo",
@@ -275,25 +275,25 @@ window.NDIC_TRANSLATIONS_YO = {
     },
     "values": {
       "supported": "A Ń Ṣàtìlẹ́yìn",
-      "not_supported": "A Kò Ń Ṣàtìlẹ́yìn"
+      "not_supported": "A Kò Ṣàtìlẹ́yìn"
     },
     "deep_dive": "Itupalẹ jíjinlẹ ti agbára aṣàwákiri rẹ"
   },
   "canvas9": {
     "heading_technical": "Panẹẹli Imọye Iṣẹ",
-    "heading_plain": "Aṣàwákiri Rẹ Fá Tó Díé?",
+    "heading_plain": "Aṣàwákiri Rẹ Yára Tó Báwo?",
     "params": {
       "page_load_time": "Àkókò Ìkọ Ojú-ìwé",
       "dom_content_loaded": "DOM Ti Kọ",
       "dom_interactive": "DOM Ìbásọ̀rọ̀",
-      "ttfb": "Àkókò sí Bit Àkọ́kọ́ (TTFB)",
+      "ttfb": "Àkókò sí Byte Àkọ́kọ́ (TTFB)",
       "dns_lookup": "Ìwádìí DNS",
       "tcp_connection": "Ìsopọ̀ TCP",
       "tls_handshake": "Àtẹ́wọ́ TLS",
       "request_time": "Àkókò Ìbéèrè",
       "response_time": "Àkókò Ìdáhùn",
       "dom_processing": "Ìṣeéṣe DOM",
-      "resource_fetch_time": "Àkókò Jíjẹ Ohun àmúlò",
+      "resource_fetch_time": "Àkókò Gbígbà Ohun àmúlò",
       "resource_count": "Iye Ohun àmúlò Lapapọ̀",
       "page_weight": "Ìwọn Ojú-ìwé",
       "script_count": "Àwọn Hujà Tí A Kọ",
@@ -313,13 +313,13 @@ window.NDIC_TRANSLATIONS_YO = {
   },
   "canvas10": {
     "heading_technical": "Imọye Ìyara Aṣàwákiri ati Ìtọ́sẹ",
-    "heading_plain": "Ẹrọ Rẹ Ń Tọ́sẹ Yára Tó Díé?",
+    "heading_plain": "Ẹrọ Rẹ Ń Tọ́sẹ Yára Tó Báwo?",
     "vitals": {
       "lcp": "Ìyàwòrán Àkóónú Tó Tóbi Jùlọ",
       "fcp": "Ìyàwòrán Àkóónú Àkọ́kọ́",
       "cls": "Ìyípada Ètò Tí A Ko Jọ",
       "inp": "Ìbásọ̀rọ̀ sí Ìyàwòrán Tó Kàn",
-      "ttfb": "Àkókò sí Bit Àkọ́kọ́",
+      "ttfb": "Àkókò sí Byte Àkọ́kọ́",
       "fid": "Ìdádúró Ìgbewọlé Àkọ́kọ́"
     },
     "benchmarks": {
@@ -333,9 +333,9 @@ window.NDIC_TRANSLATIONS_YO = {
     "params": {
       "css_animation_fps": "FPS Ìgbéraṣẹ",
       "benchmark_score": "Àmì Ìdánwò Lapapọ̀",
-      "vs_average_mobile": "dì Alagbeka Àdéédé",
-      "vs_average_desktop": "dì Desktop Àdéédé",
-      "vs_top_tier": "dì Àwọn Ẹrọ Tó Ga Jùlọ",
+      "vs_average_mobile": "Ní Ìfiwéra Pẹ̀lú Alagbeka Àdéédé",
+      "vs_average_desktop": "Ní Ìfiwéra Pẹ̀lú Desktop Àdéédé",
+      "vs_top_tier": "Ní Ìfiwéra Pẹ̀lú Àwọn Ẹrọ Tó Ga Jùlọ",
       "percentile_ranking": "Ìpele Ìyara"
     },
     "ratings": {
@@ -362,7 +362,7 @@ window.NDIC_TRANSLATIONS_YO = {
       "performance_score": "Àmì Iṣẹ",
       "speed_score": "Àmì Ìyara",
       "strongest_area": "Agbègbè Tó Lágbára Jùlọ",
-      "weakest_area": "Agbègbè Tó Àìlágbára Jùlọ",
+      "weakest_area": "Agbègbè Tí Kò Lágbára Jùlọ",
       "improvement_priority": "Ìsẹ́ Ìlọsíwájú",
       "critical_flags": "Àwọn Àsíà Pàtàkì",
       "warnings": "Àwọn Ìkìlọ"
@@ -397,7 +397,7 @@ window.NDIC_TRANSLATIONS_YO = {
       "offline": "Offline",
       "healthy": "Ní Ìlera",
       "degraded": "Tí Ó Dinku",
-      "none_detected": "A Kò Rí Ẹnikẹ́ni"
+      "none_detected": "A Kò Rí Nǹkan Kankan"
     },
     "deep_dive": "Itupalẹ jíjinlẹ ti oríṣun imọye tó ń ṣiṣẹ rẹ"
   },
@@ -446,7 +446,7 @@ window.NDIC_TRANSLATIONS_YO = {
     "enabled": "A Mú Ṣiṣẹ",
     "disabled": "A Dáwọ Dúró",
     "supported": "A Ń Ṣàtìlẹ́yìn",
-    "not_supported": "A Kò Ń Ṣàtìlẹ́yìn",
+    "not_supported": "A Kò Ṣàtìlẹ́yìn",
     "secure": "Lábẹ́ Aabo",
     "not_secure": "Kò Wà Lábẹ́ Aabo",
     "exposed": "A Ṣafihàn",
@@ -520,7 +520,7 @@ window.NDIC_TRANSLATIONS_YO = {
       },
       {
         "q": "Bí ìwárí VPN ṣe ń ṣiṣẹ?",
-        "a": "IntelReap ń lo ọ̀nà ìpele mẹ́ta: itupalẹ irú ìní ASN, ṣíkọ irú ìyípadà àkókò ati ede, ati ìbéèrè API ìtẹ́wọ́gbà IP tó ṣe yẹ. A dapọ̀ àwọn àmì mẹ́ta sí àmì ìgbẹ́kẹ̀lé kan ati ìpín ọ̀nà."
+        "a": "IntelReap ń lo ọ̀nà ìpele mẹ́ta: itupalẹ irú ìní ASN, ṣíkọ irú ìyípadà àkókò ati ede, ati àfikún àmì orúkọ fún àwọn ibùdó IP tó léwu gan-an. A dapọ̀ àwọn àmì mẹ́ta sí àmì ìgbẹ́kẹ̀lé kan ati ìpín ọ̀nà."
       },
       {
         "q": "Kíni ìdòtí IP WebRTC?",
@@ -531,8 +531,8 @@ window.NDIC_TRANSLATIONS_YO = {
         "a": "Core Web Vitals jẹ́ àwọn ìwọn tí Google ti ṣàlàyé láti wọn ìrírí olùmúlò gidi lori àwọn ojú-ìwé wẹ́ẹ̀bù tó ní LCP, CLS ati INP. IntelReap wọn gbogbo vitals mẹ́fà."
       },
       {
-        "q": "Ìtọ́kàn IP tó ṣe péye tó díé?",
-        "a": "Ìtọ́kàn IP ṣe péye ní ìpele orílẹ̀-èdè ní ó fẹ́rẹ̀ gbogbo ọran àti ní ìpele ìlú fún ọpọlọpọ àwọn ìsopọ̀ àgbàlà ìlú ati òwò. IntelReap ń lo pq ìpadàsẹ́ onítẹ̀lẹ̀ mẹ́ta fún ìdánilójú tó pọ̀ jùlọ."
+        "q": "Ìtọ́kàn IP tó ṣe péye tó báwo?",
+        "a": "Ìtọ́kàn IP ṣe péye ní ìpele orílẹ̀-èdè ní ó fẹ́rẹ̀ gbogbo ọran àti ní ìpele ìlú fún ọpọlọpọ àwọn ìsopọ̀ àgbàlà ìlú ati òwò. Ìpéye lè dín kù lórí àwọn nẹtiwọọki alagbeka, ìsopọ̀ satẹ́láìtì àti VPN, nítorí IP lè forúkọsílẹ̀ ní agbègbè mìíràn yàtọ̀ sí ibi tí o wà gan-an. IntelReap ń darapọ̀ data MaxMind GeoLite2 pẹ̀lú orísun àfikún fún ìpéye tó pọ̀ jùlọ."
       },
       {
         "q": "Kíni àmì aabo ń wọn?",
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_YO = {
     "col_learn": "Kọ́",
     "cookie_settings": "Ètò kúkì",
     "free_line": "Ọ̀fẹ́ láti lò. Kò nílò àkọọ́lẹ̀.",
-    "email_us": "Fi ìméèlì ránṣẹ́ sí wa",
+    "email_us": "Kàn sí wa",
   },
   "cookie": {
     "text": "IntelReap ń fi àṣàyàn èdè àti ọ̀nà ìrísí rẹ pamọ́ sínú aṣàwákiri rẹ. Pẹ̀lú ìyọ̀nda rẹ, ó tún ń lo kúkì Google Analytics láti wọn bí a ṣe ń lo ojú-òpó náà. Kíkọ̀ kò dín iṣẹ́ irinṣẹ́ náà kù.",
