@@ -1,15 +1,15 @@
 /* IntelReap translations: vi. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_VI = {
   "meta": {
-    "title": "IntelReap — Trung Tâm Tình Báo Mạng và Thiết Bị",
-    "description": "Tình báo mạng và thiết bị theo thời gian thực. Khám phá IP, ASN, trạng thái VPN, khả năng trình duyệt và tư thế bảo mật của bạn. Miễn phí.",
+    "title": "IntelReap — Trung Tâm Phân Tích Mạng và Thiết Bị",
+    "description": "Phân tích mạng và thiết bị theo thời gian thực. Khám phá IP, ASN, trạng thái VPN, khả năng trình duyệt và tư thế bảo mật của bạn. Miễn phí. Không cần đăng nhập.",
     "og_title": "IntelReap — Xem Mạng Của Bạn Tiết Lộ Điều Gì",
-    "og_description": "Công cụ tình báo thời gian thực miễn phí. Phân tích mạng, thiết bị, bảo mật và trình duyệt của bạn trong vài giây."
+    "og_description": "Công cụ phân tích thời gian thực miễn phí. Phân tích mạng, thiết bị, bảo mật và trình duyệt của bạn trong vài giây."
   },
   "nav": {
-    "intelligence_center": "Trung Tâm Tình Báo",
+    "intelligence_center": "Trung Tâm Phân Tích",
     "about": "Giới Thiệu",
-    "search_placeholder": "Tìm kiếm bảng tình báo...",
+    "search_placeholder": "Tìm kiếm bảng phân tích...",
     "open_search": "Mở tìm kiếm",
     "toggle_menu": "Chuyển đổi menu",
     "close_menu": "Đóng menu",
@@ -18,25 +18,25 @@ window.NDIC_TRANSLATIONS_VI = {
     "guides": "Hướng dẫn"
   },
   "hero": {
-    "badge": "Công Cụ Tình Báo Miễn Phí",
+    "badge": "Công Cụ Phân Tích Miễn Phí",
     "title_line1": "Mạng Của Bạn",
     "title_line2": "Tiết Lộ Điều Gì?",
     "tagline": "IntelReap hiển thị theo thời gian thực hạ tầng mạng, dấu vân tay thiết bị, mức độ bảo mật và khả năng trình duyệt của bạn — 285 điểm dữ liệu trên 13 bảng. Miễn phí. Không cần đăng nhập.",
-    "cta_primary": "Chạy Quét Tình Báo",
+    "cta_primary": "Chạy Phân Tích",
     "cta_secondary": "Xem Cách Hoạt Động",
     "trust_data_points": "285 điểm dữ liệu mỗi lần quét",
-    "trust_panels": "13 bảng tình báo",
+    "trust_panels": "13 bảng phân tích",
     "badge_live": "Quét mạng và thiết bị trực tiếp",
     "title_html": "Xem internet<br>đã biết gì về <span class=\"ndic-highlight\">bạn</span>.",
     "see_report": "Xem báo cáo đầy đủ"
   },
   "quick_answer": {
     "label": "Câu Trả Lời Nhanh",
-    "title": "Trung Tâm Tình Báo Mạng và Thiết Bị là gì?"
+    "title": "Trung Tâm Phân Tích Mạng và Thiết Bị là gì?"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "Trung Tâm Tình Báo Mạng và Thiết Bị",
+    "subtitle": "Trung Tâm Phân Tích Mạng và Thiết Bị",
     "status_live": "TRỰC TIẾP",
     "status_scanning": "ĐANG QUÉT",
     "status_offline": "NGOẠI TUYẾN",
@@ -46,7 +46,7 @@ window.NDIC_TRANSLATIONS_VI = {
     "api_calls": "Lần Gọi API"
   },
   "canvas1": {
-    "heading_technical": "Tình Báo Tuyến Đường ASN và Mạng",
+    "heading_technical": "Phân Tích Tuyến Đường ASN và Mạng",
     "heading_plain": "Bạn Đang Dùng Mạng Nào?",
     "params": {
       "asn_number": "Số ASN",
@@ -60,7 +60,7 @@ window.NDIC_TRANSLATIONS_VI = {
       "upstream_provider": "Nhà Cung Cấp Upstream",
       "announcement_status": "Trạng Thái Thông Báo",
       "bgp_route_status": "Trạng Thái Tuyến Đường BGP",
-      "network_health": "Điểm Sức Khỏe Mạng",
+      "network_health": "Điểm Tình Trạng Mạng",
       "classification_source": "Nguồn Phân Loại",
       "classification_confidence": "Độ Tin Cậy Phân Loại",
       "known_provider": "Nhà Cung Cấp Đã Biết",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_VI = {
     "deep_dive": "Phân tích chuyên sâu nhận dạng mạng của bạn"
   },
   "canvas3": {
-    "heading_technical": "Tình Báo VPN, Proxy và Định Tuyến",
+    "heading_technical": "Phân Tích VPN, Proxy và Định Tuyến",
     "heading_plain": "Bạn Có Đang Ẩn Trực Tuyến Không?",
     "params": {
       "vpn_detected": "Phát Hiện VPN",
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_VI = {
     "deep_dive": "Phân tích chuyên sâu mạng trực tiếp của bạn"
   },
   "canvas5": {
-    "heading_technical": "Bảng Tình Báo Thiết Bị",
+    "heading_technical": "Bảng Phân Tích Thiết Bị",
     "heading_plain": "Bạn Đang Dùng Thiết Bị Nào?",
     "params": {
       "os": "Hệ Điều Hành",
@@ -206,11 +206,11 @@ window.NDIC_TRANSLATIONS_VI = {
       "antialiasing": "Khử Răng Cưa",
       "depth_buffer_bits": "Bộ Đệm Độ Sâu",
       "stencil_buffer_bits": "Bộ Đệm Stencil",
-      "max_anisotropy": "Đẳng Hướng Tối Đa",
+      "max_anisotropy": "Dị Hướng Tối Đa",
       "webgpu_supported": "Hỗ Trợ WebGPU",
       "webgpu_vendor": "Nhà Sản Xuất WebGPU",
       "webgpu_architecture": "Kiến Trúc WebGPU",
-      "has_anisotropy": "Lọc Đẳng Hướng",
+      "has_anisotropy": "Lọc Dị Hướng",
       "has_float_textures": "Kết Cấu Dấu Phẩy Động",
       "has_depth_textures": "Kết Cấu Độ Sâu",
       "has_draw_buffers": "Bộ Đệm Vẽ",
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_VI = {
     "deep_dive": "Phân tích chuyên sâu khả năng trình duyệt của bạn"
   },
   "canvas9": {
-    "heading_technical": "Bảng Tình Báo Hiệu Suất",
+    "heading_technical": "Bảng Phân Tích Hiệu Suất",
     "heading_plain": "Trình Duyệt Của Bạn Nhanh Đến Mức Nào?",
     "params": {
       "page_load_time": "Thời Gian Tải Trang",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_VI = {
     "deep_dive": "Phân tích chuyên sâu hiệu suất của bạn"
   },
   "canvas10": {
-    "heading_technical": "Tình Báo Tốc Độ Trình Duyệt và Kết Xuất",
+    "heading_technical": "Phân Tích Tốc Độ Trình Duyệt và Kết Xuất",
     "heading_plain": "Thiết Bị Của Bạn Kết Xuất Nhanh Đến Mức Nào?",
     "vitals": {
       "lcp": "Nội Dung Lớn Nhất Được Vẽ",
@@ -347,11 +347,11 @@ window.NDIC_TRANSLATIONS_VI = {
     "deep_dive": "Phân tích chuyên sâu tốc độ kết xuất của bạn"
   },
   "canvas11": {
-    "heading_technical": "Bảng Xếp Hạng Tình Báo Toàn Cầu",
+    "heading_technical": "Bảng Điểm Toàn Cầu",
     "heading_plain": "Điểm Tổng Thể Của Bạn",
     "params": {
       "global_score": "Điểm Toàn Cầu",
-      "health_badge": "Phân Loại Sức Khỏe",
+      "health_badge": "Phân Loại Tình Trạng",
       "network_score": "Điểm Mạng",
       "identity_score": "Điểm Nhận Dạng",
       "privacy_score": "Điểm Quyền Riêng Tư",
@@ -364,7 +364,7 @@ window.NDIC_TRANSLATIONS_VI = {
       "strongest_area": "Lĩnh Vực Mạnh Nhất",
       "weakest_area": "Lĩnh Vực Yếu Nhất",
       "improvement_priority": "Ưu Tiên Cải Thiện",
-      "critical_flags": "Cờ Quan Trọng",
+      "critical_flags": "Cờ Nghiêm Trọng",
       "warnings": "Cảnh Báo"
     },
     "health": {
@@ -377,13 +377,13 @@ window.NDIC_TRANSLATIONS_VI = {
     "deep_dive": "Phân tích chuyên sâu điểm toàn cầu của bạn"
   },
   "canvas12": {
-    "heading_technical": "Nguồn Cấp Tình Báo Trực Tiếp",
+    "heading_technical": "Nguồn Cấp Phân Tích Trực Tiếp",
     "heading_plain": "Vừa Có Chuyện Gì Xảy Ra?",
     "params": {
       "online_status": "Trạng Thái Kết Nối",
-      "backend_health": "Sức Khỏe Backend",
+      "backend_health": "Tình Trạng Backend",
       "total_events": "Tổng Sự Kiện",
-      "critical_count": "Sự Kiện Quan Trọng",
+      "critical_count": "Sự Kiện Nghiêm Trọng",
       "warning_count": "Cảnh Báo",
       "api_calls": "Lần Gọi API Đã Thực Hiện",
       "error_count": "Lỗi",
@@ -399,10 +399,10 @@ window.NDIC_TRANSLATIONS_VI = {
       "degraded": "Suy Giảm",
       "none_detected": "Không Phát Hiện"
     },
-    "deep_dive": "Phân tích chuyên sâu nguồn cấp tình báo trực tiếp của bạn"
+    "deep_dive": "Phân tích chuyên sâu nguồn cấp phân tích trực tiếp của bạn"
   },
   "full_summary": {
-    "title": "Báo Cáo Tình Báo Hệ Thống Đầy Đủ",
+    "title": "Báo Cáo Phân Tích Hệ Thống Đầy Đủ",
     "label": "Tóm Tắt Chẩn Đoán",
     "source_label": "Được Tạo Bởi",
     "generated_at": "Được Tạo",
@@ -424,10 +424,10 @@ window.NDIC_TRANSLATIONS_VI = {
     "copy_failed": "Sao Chép Thất Bại — Thử Thủ Công"
   },
   "ai_summary": {
-    "label": "Tóm Tắt Tình Báo",
+    "label": "Tóm Tắt Phân Tích",
     "source_script": "Script",
     "generating": "Đang Tạo Phân Tích...",
-    "in_progress": "Đang Quét Tình Báo."
+    "in_progress": "Đang Phân Tích."
   },
   "scores": {
     "excellent": "Xuất Sắc",
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_VI = {
   },
   "methodology": {
     "label": "Phương Pháp Luận",
-    "text": "Tất cả dữ liệu tình báo được thu thập ở phía máy khách thông qua API trình duyệt tiêu chuẩn và được backend bổ sung bằng các cơ sở dữ liệu mạng và vị trí IP, bao gồm MaxMind GeoLite2."
+    "text": "Tất cả dữ liệu được thu thập ở phía máy khách thông qua API trình duyệt tiêu chuẩn và được backend bổ sung bằng các cơ sở dữ liệu mạng và vị trí IP, bao gồm MaxMind GeoLite2."
   },
   "citations": {
     "label": "Nguồn Và Tài Liệu Tham Khảo",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_VI = {
     "items": [
       {
         "q": "ASN là gì và tại sao nó quan trọng?",
-        "a": "Số Hệ Thống Tự Trị (ASN) là mã định danh duy nhất được gán cho nhà khai thác mạng xác định cách lưu lượng được định tuyến qua internet. IntelReap xác định ASN, chủ sở hữu, phân loại tầng và mối quan hệ peering của bạn."
+        "a": "Số Hệ Thống Tự Trị (ASN) là mã định danh duy nhất được gán cho nhà khai thác mạng, chẳng hạn nhà cung cấp internet của bạn, nhà cung cấp đám mây hoặc một doanh nghiệp lớn. Nó xác định cách lưu lượng được định tuyến qua internet. IntelReap xác định ASN, chủ sở hữu, phân loại tầng, cơ quan đăng ký và mối quan hệ peering của bạn để mang lại bức tranh đầy đủ về hạ tầng mạng của bạn."
       },
       {
         "q": "Phát hiện VPN hoạt động như thế nào?",
-        "a": "IntelReap sử dụng phương pháp ba tầng: phân tích loại quyền sở hữu ASN, kiểm tra sự không khớp múi giờ và ngôn ngữ, và truy vấn API danh tiếng IP tùy chọn. Ba tín hiệu được kết hợp thành một điểm tin cậy duy nhất và phân loại tuyến đường."
+        "a": "IntelReap sử dụng phương pháp phát hiện ba tầng. Trước hết, nó phân tích loại quyền sở hữu ASN — ASN của trung tâm dữ liệu gợi ý việc dùng VPN hoặc proxy. Thứ hai, nó kiểm tra sự không khớp giữa múi giờ, ngôn ngữ trình duyệt và vị trí địa lý IP của bạn, điều này làm lộ những bất thường trong định tuyến. Thứ ba, nó bổ sung tín hiệu danh tiếng cho các dải IP rủi ro cao. Ba tín hiệu được kết hợp thành một điểm tin cậy duy nhất và phân loại tuyến đường."
       },
       {
         "q": "Rò rỉ IP WebRTC là gì?",
-        "a": "WebRTC là API trình duyệt để liên lạc thời gian thực như cuộc gọi video. Nó có thể tiết lộ địa chỉ IP mạng cục bộ của bạn ngay cả khi sử dụng VPN. IntelReap tích cực kiểm tra rò rỉ WebRTC."
+        "a": "WebRTC là API trình duyệt dùng cho liên lạc thời gian thực như cuộc gọi video. Một tác dụng phụ là nó có thể tiết lộ địa chỉ IP mạng cục bộ của bạn ngay cả khi dùng VPN. Bảng bảo mật của IntelReap chủ động kiểm tra rò rỉ WebRTC bằng cách tạo kết nối ngang hàng và thu mọi địa chỉ IP lộ ra qua các chuỗi ứng viên ICE."
       },
       {
         "q": "Core Web Vitals là gì?",
-        "a": "Core Web Vitals là bộ chỉ số do Google định nghĩa để đo lường trải nghiệm người dùng thực tế trên các trang web, bao gồm LCP, CLS và INP. IntelReap đo lường cả sáu vitals."
+        "a": "Core Web Vitals là bộ chỉ số do Google định nghĩa để đo lường trải nghiệm người dùng thực tế trên các trang web. Chúng gồm Largest Contentful Paint (LCP) đo hiệu suất tải, Cumulative Layout Shift (CLS) đo độ ổn định thị giác và Interaction to Next Paint (INP) đo khả năng phản hồi. IntelReap đo cả sáu chỉ số, bao gồm FCP, TTFB và FID."
       },
       {
         "q": "Định vị địa lý IP chính xác đến mức nào?",
-        "a": "Định vị địa lý IP chính xác ở cấp quốc gia trong hầu hết mọi trường hợp và ở cấp thành phố cho hầu hết các kết nối dân cư và thương mại. IntelReap sử dụng chuỗi dự phòng ba tầng để đạt độ chính xác tối đa."
+        "a": "Định vị địa lý IP chính xác ở cấp quốc gia trong hầu hết mọi trường hợp và ở cấp thành phố cho hầu hết các kết nối dân cư và thương mại. Độ chính xác có thể thấp hơn với mạng di động, kết nối vệ tinh và VPN, nơi IP có thể được đăng ký ở khu vực khác với vị trí thực của bạn. IntelReap kết hợp dữ liệu MaxMind GeoLite2 với một nguồn dự phòng để đạt độ chính xác tối đa."
       },
       {
         "q": "Điểm bảo mật đo lường gì?",
-        "a": "Điểm bảo mật được tính từ mười tín hiệu có trọng số: trạng thái HTTPS, ngữ cảnh an toàn, tiếp xúc WebRTC, nội dung hỗn hợp, trạng thái Không Theo Dõi, quyền truy cập bộ nhớ và quyền camera, microphone, vị trí."
+        "a": "Điểm bảo mật được tính từ mười tín hiệu có trọng số: trạng thái HTTPS, ngữ cảnh an toàn, lộ IP qua WebRTC, phát hiện nội dung hỗn hợp, trạng thái Không Theo Dõi, trạng thái truy cập bộ nhớ, quyền camera, quyền microphone, quyền vị trí và số bề mặt dấu vân tay. Điểm 90-100 là Xuất Sắc, 70-89 Tốt, 50-69 Bình Thường, 30-49 Kém và dưới 30 là Nghiêm Trọng."
       },
       {
         "q": "Tôi có thể dùng IntelReap khi ngoại tuyến không?",
-        "a": "IntelReap là Ứng Dụng Web Tiến Bộ có thể được cài đặt trên thiết bị của bạn. Giao diện tĩnh tải ngoại tuyến từ bộ nhớ đệm nhưng quét tình báo yêu cầu kết nối tích cực để truy vấn API backend."
+        "a": "IntelReap là Ứng Dụng Web Tiến Bộ có thể được cài đặt trên thiết bị của bạn. Giao diện tĩnh tải ngoại tuyến từ bộ nhớ đệm. Tuy nhiên, bản thân lần quét cần kết nối đang hoạt động để truy vấn API backend và thu thập dữ liệu mạng và IP trực tiếp. Chế độ ngoại tuyến hiển thị dữ liệu quét gần nhất đã lưu trong bộ nhớ đệm."
       },
       {
         "q": "Điểm toàn cầu được tính như thế nào?",
-        "a": "Điểm toàn cầu là trung bình có trọng số của chín điểm phụ: Mạng 15%, Thiết Bị 15%, Bảo Mật 20% (cao nhất), Khả Năng 10%, Hiệu Suất 10%, Tốc Độ 10%, Quyền Riêng Tư 10%, Nhận Dạng 5%, Đồ Họa 5%."
+        "a": "Điểm toàn cầu là trung bình có trọng số của chín điểm phụ: Mạng 15%, Thiết Bị 15%, Bảo Mật 20%, Khả Năng 10%, Hiệu Suất 10%, Tốc Độ 10%, Quyền Riêng Tư 10%, Nhận Dạng 5% và Đồ Họa 5%. Bảo mật có trọng số cao nhất vì nó ảnh hưởng trực tiếp nhất đến sự an toàn số của bạn. Mỗi điểm phụ được tính độc lập từ các điểm dữ liệu liên quan."
       },
       {
         "q": "Sự khác biệt giữa benchmark và Core Web Vitals là gì?",
-        "a": "Core Web Vitals đo lường tốc độ tải trang này trên thiết bị và kết nối của bạn. Benchmark trình duyệt là các bài kiểm tra tổng hợp đo khả năng xử lý thô của thiết bị bất kể điều kiện mạng."
+        "a": "Core Web Vitals đo tốc độ tải của chính trang này trên thiết bị và kết nối của bạn — đó là các chỉ số trải nghiệm người dùng thực tế. Benchmark trình duyệt là các bài kiểm tra tổng hợp đo khả năng xử lý thô của thiết bị bất kể điều kiện mạng — chạy phép tính JavaScript, thao tác DOM, kết xuất canvas và truy cập bộ nhớ ở quy mô được kiểm soát."
       },
       {
         "q": "IntelReap có sẵn dưới dạng ứng dụng di động không?",
-        "a": "IntelReap là Ứng Dụng Web Tiến Bộ có thể được cài đặt trực tiếp từ trình duyệt trên iOS và Android mà không cần truy cập cửa hàng ứng dụng. Trên iOS, mở trang web trong Safari và nhấn Chia Sẻ rồi Thêm Vào Màn Hình Chính."
+        "a": "IntelReap là Ứng Dụng Web Tiến Bộ có thể được cài đặt trực tiếp từ trình duyệt trên iOS và Android mà không cần truy cập cửa hàng ứng dụng. Trên iOS, mở trang web trong Safari, nhấn Chia Sẻ rồi Thêm Vào Màn Hình Chính. Trên Android, Chrome sẽ tự động đề xuất cài đặt. Ứng dụng đã cài chạy ở chế độ độc lập, hỗ trợ ngoại tuyến đầy đủ và truy cập từ màn hình chính."
       }
     ]
   },
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_VI = {
     "error": "Rất tiếc! Đã xảy ra sự cố khi gửi biểu mẫu."
   },
   "footer": {
-    "tagline": "Tình báo mạng và thiết bị theo thời gian thực.",
+    "tagline": "Phân tích mạng và thiết bị theo thời gian thực.",
     "description": "Công cụ thông tin miễn phí chạy trên trình duyệt. Không cần tài khoản.",
-    "col_intelligence": "Tình Báo",
+    "col_intelligence": "Phân Tích",
     "col_deep_dives": "Phân Tích Chuyên Sâu",
     "col_legal": "Pháp Lý",
     "col_connect": "Kết Nối",
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_VI = {
     "col_learn": "Tìm hiểu",
     "cookie_settings": "Cài đặt cookie",
     "free_line": "Miễn phí sử dụng. Không cần tài khoản.",
-    "email_us": "Gửi email cho chúng tôi",
+    "email_us": "Liên hệ với chúng tôi",
   },
   "cookie": {
     "text": "IntelReap lưu lựa chọn ngôn ngữ và giao diện của bạn trong trình duyệt. Khi được bạn cho phép, IntelReap cũng dùng cookie Google Analytics để đo lường cách trang web được sử dụng. Từ chối không hạn chế công cụ.",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_VI = {
   "offline": {
     "status": "Mất Kết Nối",
     "title": "Bạn Đang Ngoại Tuyến",
-    "body": "IntelReap yêu cầu kết nối tích cực để thu thập dữ liệu tình báo. Kiểm tra mạng của bạn và thử lại.",
+    "body": "IntelReap yêu cầu kết nối đang hoạt động để thu thập dữ liệu phân tích. Kiểm tra mạng của bạn và thử lại.",
     "retry": "Thử Kết Nối Lại",
-    "home": "Quay Lại Trung Tâm Tình Báo",
-    "cached_title": "Tình Báo Được Lưu Trong Bộ Nhớ Đệm Có Sẵn",
+    "home": "Quay Lại Trung Tâm Phân Tích",
+    "cached_title": "Có Sẵn Phân Tích Đã Lưu Trong Bộ Nhớ Đệm",
     "cached_body": "Một số dữ liệu đã quét từ phiên trước của bạn có thể có sẵn.",
     "online_status": "Trạng Thái Trực Tuyến",
     "connection_type": "Loại Kết Nối",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_VI = {
     "last_online": "Lần Cuối Trực Tuyến"
   },
   "internal_links": {
-    "header": "Khám Phá Các Bảng Tình Báo",
-    "back_to_main": "← Quay Lại Trung Tâm Tình Báo"
+    "header": "Khám Phá Các Bảng Phân Tích",
+    "back_to_main": "← Quay Lại Trung Tâm Phân Tích"
   },
   "seasonal": {
     "spring": "Phiên Bản Mùa Xuân",
