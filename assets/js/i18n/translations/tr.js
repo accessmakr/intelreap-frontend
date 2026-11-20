@@ -1,15 +1,15 @@
 /* IntelReap translations: tr. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_TR = {
   "meta": {
-    "title": "IntelReap — Ağ ve Cihaz İstihbarat Merkezi",
-    "description": "Gerçek zamanlı ağ ve cihaz istihbaratı. IP adresinizi, ASN, VPN durumu, tarayıcı yetenekleri ve güvenlik durumunuzu ortaya çıkarın. Ücretsiz.",
+    "title": "IntelReap — Ağ ve Cihaz Analiz Merkezi",
+    "description": "Gerçek zamanlı ağ ve cihaz analizi. IP adresinizi, ASN'nizi, VPN durumunuzu, tarayıcı yeteneklerinizi ve güvenlik durumunuzu ortaya çıkarın. Ücretsiz. Giriş gerekmez.",
     "og_title": "IntelReap — Ağınızın Ne Açıkladığını Görün",
-    "og_description": "Ücretsiz gerçek zamanlı istihbarat aracı. Ağınızı, cihazınızı, güvenliğinizi ve tarayıcınızı saniyeler içinde analiz edin."
+    "og_description": "Ücretsiz gerçek zamanlı analiz aracı. Ağınızı, cihazınızı, güvenliğinizi ve tarayıcınızı saniyeler içinde analiz edin."
   },
   "nav": {
-    "intelligence_center": "İstihbarat Merkezi",
+    "intelligence_center": "Analiz Merkezi",
     "about": "Hakkında",
-    "search_placeholder": "İstihbarat panellerini arayın...",
+    "search_placeholder": "Analiz panellerini arayın...",
     "open_search": "Aramayı aç",
     "toggle_menu": "Menüyü aç/kapat",
     "close_menu": "Menüyü kapat",
@@ -18,35 +18,35 @@ window.NDIC_TRANSLATIONS_TR = {
     "guides": "Rehberler"
   },
   "hero": {
-    "badge": "Ücretsiz İstihbarat Aracı",
+    "badge": "Ücretsiz Analiz Aracı",
     "title_line1": "Ağınız",
     "title_line2": "Ne Ortaya Koyuyor?",
     "tagline": "IntelReap ağ altyapınızı, cihaz parmak izinizi, güvenlik durumunuzu ve tarayıcı yeteneklerinizi gerçek zamanlı gösterir — 13 panelde 285 veri noktası. Ücretsiz. Giriş gerekmez.",
-    "cta_primary": "İstihbarat Taraması Çalıştır",
+    "cta_primary": "Analiz Çalıştır",
     "cta_secondary": "Nasıl Çalıştığını Gör",
     "trust_data_points": "Tarama başına 285 veri noktası",
-    "trust_panels": "13 istihbarat paneli",
+    "trust_panels": "13 analiz paneli",
     "badge_live": "Canlı ağ ve cihaz taraması",
     "title_html": "İnternetin <span class=\"ndic-highlight\">sizin</span> hakkınızda<br>zaten ne bildiğini görün.",
     "see_report": "Tam raporu gör"
   },
   "quick_answer": {
     "label": "Hızlı Cevap",
-    "title": "Ağ ve Cihaz İstihbarat Merkezi Nedir?"
+    "title": "Ağ ve Cihaz Analiz Merkezi Nedir?"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "Ağ ve Cihaz İstihbarat Merkezi",
+    "subtitle": "Ağ ve Cihaz Analiz Merkezi",
     "status_live": "CANLI",
     "status_scanning": "TARANIYOR",
-    "status_offline": "ÇEVRIMDIŞI",
-    "status_degraded": "BOZULMUŞ",
+    "status_offline": "ÇEVRİMDIŞI",
+    "status_degraded": "DÜŞÜK PERFORMANS",
     "last_scan": "Son Tarama",
     "next_refresh": "Sonraki Yenileme",
     "api_calls": "API Çağrıları"
   },
   "canvas1": {
-    "heading_technical": "ASN ve Ağ Rota İstihbaratı",
+    "heading_technical": "ASN ve Ağ Rota Analizi",
     "heading_plain": "Hangi Ağdasınız?",
     "params": {
       "asn_number": "ASN Numarası",
@@ -56,7 +56,7 @@ window.NDIC_TRANSLATIONS_TR = {
       "ip_range": "IP Aralığı",
       "allocation_registry": "Tahsis Kaydı",
       "route_origin": "Rota Kökeni",
-      "peering_count": "Tahmini Eşleşme Sayısı",
+      "peering_count": "Tahmini Peering Sayısı",
       "upstream_provider": "Üst Akış Sağlayıcısı",
       "announcement_status": "Duyuru Durumu",
       "bgp_route_status": "BGP Rota Durumu",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_TR = {
     "deep_dive": "Ağ kimliğinizin derinlemesine analizi"
   },
   "canvas3": {
-    "heading_technical": "VPN, Proxy ve Yönlendirme İstihbaratı",
+    "heading_technical": "VPN, Proxy ve Yönlendirme Analizi",
     "heading_plain": "Çevrimiçi Gizleniyor musunuz?",
     "params": {
       "vpn_detected": "VPN Tespit Edildi",
@@ -122,7 +122,7 @@ window.NDIC_TRANSLATIONS_TR = {
       "detection_flags": "Tespit Bayrakları",
       "primary_source": "Birincil Kaynak",
       "confidence": "Güven Seviyesi",
-      "paid_api_consulted": "Ücretli API Danışıldı"
+      "paid_api_consulted": "Ücretli API Sorgulandı"
     },
     "values": {
       "vpn_yes": "Evet",
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_TR = {
     "deep_dive": "Canlı ağınızın derinlemesine analizi"
   },
   "canvas5": {
-    "heading_technical": "Cihaz İstihbarat Paneli",
+    "heading_technical": "Cihaz Analiz Paneli",
     "heading_plain": "Hangi Cihazı Kullanıyorsunuz?",
     "params": {
       "os": "İşletim Sistemi",
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_TR = {
     "deep_dive": "Tarayıcı yeteneklerinizin derinlemesine analizi"
   },
   "canvas9": {
-    "heading_technical": "Performans İstihbarat Paneli",
+    "heading_technical": "Performans Analiz Paneli",
     "heading_plain": "Tarayıcınız Ne Kadar Hızlı?",
     "params": {
       "page_load_time": "Sayfa Yükleme Süresi",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_TR = {
     "deep_dive": "Performansınızın derinlemesine analizi"
   },
   "canvas10": {
-    "heading_technical": "Tarayıcı ve Render Hızı İstihbaratı",
+    "heading_technical": "Tarayıcı ve Render Hızı Analizi",
     "heading_plain": "Cihazınız Ne Kadar Hızlı Render Ediyor?",
     "vitals": {
       "lcp": "En Büyük İçerik Boyaması",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_TR = {
     "deep_dive": "Render hızınızın derinlemesine analizi"
   },
   "canvas11": {
-    "heading_technical": "Global İstihbarat Skor Tablosu",
+    "heading_technical": "Global Skor Tablosu",
     "heading_plain": "Genel Puanınız",
     "params": {
       "global_score": "Global Puan",
@@ -377,7 +377,7 @@ window.NDIC_TRANSLATIONS_TR = {
     "deep_dive": "Global puanınızın derinlemesine analizi"
   },
   "canvas12": {
-    "heading_technical": "Canlı İstihbarat Akışı",
+    "heading_technical": "Canlı Analiz Akışı",
     "heading_plain": "Az Önce Ne Oldu?",
     "params": {
       "online_status": "Bağlantı Durumu",
@@ -396,13 +396,13 @@ window.NDIC_TRANSLATIONS_TR = {
       "online": "Çevrimiçi",
       "offline": "Çevrimdışı",
       "healthy": "Sağlıklı",
-      "degraded": "Bozulmuş",
+      "degraded": "Düşük Performans",
       "none_detected": "Hiçbiri tespit edilmedi"
     },
-    "deep_dive": "Canlı istihbarat akışınızın derinlemesine analizi"
+    "deep_dive": "Canlı analiz akışınızın derinlemesine analizi"
   },
   "full_summary": {
-    "title": "Tam Sistem İstihbarat Raporu",
+    "title": "Tam Sistem Analiz Raporu",
     "label": "Teşhis Özeti",
     "source_label": "Oluşturan",
     "generated_at": "Oluşturuldu",
@@ -415,19 +415,19 @@ window.NDIC_TRANSLATIONS_TR = {
     "downloaded": "İndirildi",
     "sent_to_printer": "Yazıcıya Gönderildi",
     "copied": "Kopyalandı",
-    "failed": "Başarısız — Tekrar Dene"
+    "failed": "Başarısız — Tekrar Deneyin"
   },
   "share": {
     "label": "Bu aracı paylaş",
-    "copied_for": "için kopyalandı",
+    "copied_for": "Kopyalandı:",
     "link_copied": "Bağlantı panoya kopyalandı",
     "copy_failed": "Kopyalama başarısız — manuel deneyin"
   },
   "ai_summary": {
-    "label": "İstihbarat Özeti",
+    "label": "Analiz Özeti",
     "source_script": "Komut Dosyası",
     "generating": "Analiz oluşturuluyor...",
-    "in_progress": "İstihbarat taraması devam ediyor."
+    "in_progress": "Analiz devam ediyor."
   },
   "scores": {
     "excellent": "Mükemmel",
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_TR = {
   },
   "methodology": {
     "label": "Metodoloji",
-    "text": "Tüm istihbarat verileri standart tarayıcı API'leri aracılığıyla istemci tarafında toplanır ve arka uçta MaxMind GeoLite2 dahil IP ağ ve konum veritabanlarıyla zenginleştirilir."
+    "text": "Tüm veriler standart tarayıcı API'leri aracılığıyla istemci tarafında toplanır ve arka uçta MaxMind GeoLite2 dahil IP ağ ve konum veritabanlarıyla zenginleştirilir."
   },
   "citations": {
     "label": "Kaynaklar ve Referanslar",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_TR = {
     "items": [
       {
         "q": "ASN nedir ve neden önemlidir?",
-        "a": "Otonom Sistem Numarası (ASN), bir ağ operatörüne atanan ve internetteki trafik yönlendirme şeklini belirleyen benzersiz bir tanımlayıcıdır. IntelReap, ASN'nizi, sahibini, katman sınıflandırmasını ve eşleşme ilişkilerini tanımlar."
+        "a": "Otonom Sistem Numarası (ASN), internet servis sağlayıcınız, bir bulut sağlayıcısı veya büyük bir kuruluş gibi bir ağ operatörüne atanan benzersiz bir tanımlayıcıdır. İnternetteki trafiğin nasıl yönlendirileceğini belirler. IntelReap, ağ altyapınızın eksiksiz bir resmini sunmak için ASN'nizi, sahibini, katman sınıflandırmasını, kayıt kuruluşunu ve peering ilişkilerini tanımlar."
       },
       {
         "q": "VPN tespiti nasıl çalışır?",
-        "a": "IntelReap üç katmanlı bir yaklaşım kullanır: ASN sahiplik türü analizi, saat dilimi ve dil tutarsızlığı kontrolü ve isteğe bağlı IP itibar API sorgusu. Üç sinyal tek bir güven puanı ve rota sınıflandırmasında birleştirilir."
+        "a": "IntelReap üç katmanlı bir tespit yaklaşımı kullanır. Önce ASN sahiplik türünü analiz eder; veri merkezi ASN'leri VPN veya proxy kullanımına işaret eder. Ardından saat dilimi ve tarayıcı dili uyuşmazlıklarını IP coğrafi konumunuzla karşılaştırır; bu, yönlendirme tutarsızlıklarını ortaya çıkarır. Son olarak yüksek riskli IP aralıkları için itibar sinyalleri ekler. Üç sinyal tek bir güven puanı ve rota sınıflandırmasında birleştirilir."
       },
       {
         "q": "WebRTC IP sızıntısı nedir?",
-        "a": "WebRTC, video görüşmeleri gibi gerçek zamanlı iletişim için kullanılan bir tarayıcı API'sidir. VPN kullanırken bile yerel ağ IP adresinizi açıklayabilir. IntelReap, WebRTC sızıntılarını aktif olarak test eder."
+        "a": "WebRTC, video görüşmeleri gibi gerçek zamanlı iletişim için kullanılan bir tarayıcı API'sidir. Yan etkisi, VPN kullanırken bile yerel ağ IP adresinizi açıklayabilmesidir. IntelReap'in güvenlik paneli, bir eş bağlantısı oluşturarak ve ICE aday dizeleri üzerinden açığa çıkan tüm IP adreslerini yakalayarak WebRTC sızıntılarını aktif olarak test eder."
       },
       {
         "q": "Core Web Vitals nedir?",
-        "a": "Core Web Vitals, Google'ın web sayfalarında gerçek kullanıcı deneyimini ölçmek için tanımladığı LCP, CLS ve INP dahil bir dizi metriktir. IntelReap altı vital'ın tamamını ölçer."
+        "a": "Core Web Vitals, Google'ın web sayfalarında gerçek kullanıcı deneyimini ölçmek için tanımladığı bir dizi metriktir. Yükleme performansını ölçen Largest Contentful Paint (LCP), görsel kararlılığı ölçen Cumulative Layout Shift (CLS) ve yanıt verme hızını ölçen Interaction to Next Paint (INP) bunlar arasındadır. IntelReap, FCP, TTFB ve FID dahil altı metriğin tamamını ölçer."
       },
       {
         "q": "IP coğrafi konumlandırma ne kadar doğrudur?",
-        "a": "IP coğrafi konumlandırma hemen hemen tüm durumlarda ülke düzeyinde doğrudur ve çoğu konut ve ticari bağlantı için şehir düzeyinde de doğrudur. IntelReap maksimum doğruluk için üç katmanlı yedek zinciri kullanır."
+        "a": "IP coğrafi konumlandırma hemen hemen tüm durumlarda ülke düzeyinde doğrudur ve çoğu konut ve ticari bağlantı için şehir düzeyinde de doğrudur. Mobil ağlarda, uydu bağlantılarında ve VPN'lerde IP, fiziksel konumunuzdan farklı bir bölgede kayıtlı olabileceği için doğruluk düşebilir. IntelReap, maksimum doğruluk için MaxMind GeoLite2 verilerini bir yedek kaynakla birleştirir."
       },
       {
         "q": "Güvenlik puanı neyi ölçer?",
-        "a": "Güvenlik puanı on ağırlıklı sinyalden hesaplanır: HTTPS durumu, güvenli bağlam, WebRTC açığı, karma içerik, Takip Etme durumu, depolama erişimi ve kamera, mikrofon ve konum izinleri."
+        "a": "Güvenlik puanı on ağırlıklı sinyalden hesaplanır: HTTPS durumu, güvenli bağlam, WebRTC üzerinden IP açığa çıkması, karma içerik tespiti, Takip Etme durumu, depolama erişim durumu, kamera izni, mikrofon izni, konum izni ve parmak izi yüzeyi sayısı. 90-100 puan Mükemmel, 70-89 Sağlıklı, 50-69 Orta, 30-49 Zayıf, 30'un altı Kritiktir."
       },
       {
         "q": "IntelReap'ı çevrimdışı kullanabilir miyim?",
-        "a": "IntelReap cihazınıza yüklenebilen bir İlerici Web Uygulamasıdır. Statik arayüz önbellekten çevrimdışı yüklenir. Ancak istihbarat taraması arka uç API'lerini sorgulamak için aktif bir bağlantı gerektirir."
+        "a": "IntelReap cihazınıza yüklenebilen bir İlerici Web Uygulamasıdır. Statik arayüz önbellekten çevrimdışı yüklenir. Ancak tarama işlemi, arka uç API'lerini sorgulamak ve canlı ağ ile IP verilerini toplamak için aktif bir bağlantı gerektirir. Çevrimdışı mod, en son önbelleğe alınan tarama verilerinizi gösterir."
       },
       {
         "q": "Global puan nasıl hesaplanır?",
-        "a": "Global puan dokuz alt puanın ağırlıklı ortalamasıdır: Ağ %15, Cihaz %15, Güvenlik %20 (en yüksek), Yetenek %10, Performans %10, Hız %10, Gizlilik %10, Kimlik %5 ve Grafik %5."
+        "a": "Global puan dokuz alt puanın ağırlıklı ortalamasıdır: Ağ %15, Cihaz %15, Güvenlik %20, Yetenek %10, Performans %10, Hız %10, Gizlilik %10, Kimlik %5 ve Grafik %5. Güvenlik, dijital güvenliğinizi en doğrudan etkilediği için en yüksek ağırlığa sahiptir. Her alt puan, ilgili veri noktalarından bağımsız olarak hesaplanır."
       },
       {
         "q": "Kıyaslama ile Core Web Vitals arasındaki fark nedir?",
-        "a": "Core Web Vitals bu sayfanın cihazınızda ne kadar hızlı yüklendiğini ölçer — gerçek kullanıcı deneyimi metrikleri. Tarayıcı kıyaslamaları ağ koşullarından bağımsız olarak cihazınızın ham işlem kapasitesini ölçen sentetik testlerdir."
+        "a": "Core Web Vitals, bu belirli sayfanın cihazınızda ve bağlantınızda ne kadar hızlı yüklendiğini ölçer; gerçek kullanıcı deneyimi metrikleridir. Tarayıcı kıyaslamaları ise ağ koşullarından bağımsız olarak cihazınızın ham işlem kapasitesini ölçen sentetik testlerdir; JavaScript aritmetiği, DOM manipülasyonu, canvas render ve bellek erişimini kontrollü ölçekte çalıştırırlar."
       },
       {
         "q": "IntelReap mobil uygulama olarak mevcut mu?",
-        "a": "IntelReap, uygulama mağazasına gitmeden iOS ve Android'de doğrudan tarayıcıdan yüklenebilen bir İlerici Web Uygulamasıdır. iOS'ta Safari'de siteyi açın ve Paylaş'a dokunun, ardından Ana Ekrana Ekle'yi seçin."
+        "a": "IntelReap, uygulama mağazasına gitmeden iOS ve Android'de doğrudan tarayıcıdan yüklenebilen bir İlerici Web Uygulamasıdır. iOS'ta Safari'de siteyi açın ve Paylaş'a dokunun, ardından Ana Ekrana Ekle'yi seçin. Android'de Chrome otomatik olarak bir yükleme istemi sunar. Yüklenen uygulama, tam çevrimdışı destek ve ana ekran erişimiyle bağımsız modda çalışır."
       }
     ]
   },
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_TR = {
     "error": "Hata! Formun gönderilmesinde bir sorun oluştu."
   },
   "footer": {
-    "tagline": "Gerçek zamanlı ağ ve cihaz istihbaratı.",
-    "description": "Tarayıcıda çalışan ücretsiz istihbarat aracı. Hesap gerekmez.",
-    "col_intelligence": "İstihbarat",
+    "tagline": "Gerçek zamanlı ağ ve cihaz analizi.",
+    "description": "Tarayıcıda çalışan ücretsiz analiz aracı. Hesap gerekmez.",
+    "col_intelligence": "Analiz",
     "col_deep_dives": "Derinlemesine Analizler",
     "col_legal": "Hukuki",
     "col_connect": "Bağlan",
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_TR = {
     "col_learn": "Öğren",
     "cookie_settings": "Çerez ayarları",
     "free_line": "Kullanımı ücretsizdir. Hesap gerekmez.",
-    "email_us": "Bize e-posta gönderin",
+    "email_us": "Bize ulaşın",
   },
   "cookie": {
     "text": "IntelReap dil ve tema tercihlerinizi tarayıcınızda saklar. İzninizle, sitenin nasıl kullanıldığını ölçmek için Google Analytics çerezlerini de kullanır. Reddetmek aracın çalışmasını sınırlamaz.",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_TR = {
   "offline": {
     "status": "Bağlantı Kesildi",
     "title": "Çevrimdışısınız",
-    "body": "IntelReap, istihbarat verilerini toplamak için aktif bir bağlantı gerektirir. Ağınızı kontrol edin ve tekrar deneyin.",
+    "body": "IntelReap, analiz verilerini toplamak için aktif bir bağlantı gerektirir. Ağınızı kontrol edin ve tekrar deneyin.",
     "retry": "Bağlantıyı Yeniden Dene",
-    "home": "İstihbarat Merkezine Dön",
-    "cached_title": "Önbellekteki İstihbarat Mevcut",
+    "home": "Analiz Merkezine Dön",
+    "cached_title": "Önbellekteki Analiz Mevcut",
     "cached_body": "Son oturumunuzdan taranmış bazı veriler mevcut olabilir.",
     "online_status": "Çevrimiçi Durumu",
     "connection_type": "Bağlantı Türü",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_TR = {
     "last_online": "Son Çevrimiçi Olma"
   },
   "internal_links": {
-    "header": "İstihbarat Panellerini Keşfet",
-    "back_to_main": "← İstihbarat Merkezine Dön"
+    "header": "Analiz Panellerini Keşfet",
+    "back_to_main": "← Analiz Merkezine Dön"
   },
   "seasonal": {
     "spring": "İlkbahar Sürümü",
