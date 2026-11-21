@@ -17,7 +17,7 @@
   "learn/what-is-vpn-passthrough.html": "What Is VPN Passthrough? PPTP and IPsec Explained",
   "learn/what-is-a-gpu.html": "What Is a GPU? Explained Simply",
   "guides/gpu-troubleshooting-guide.html": "GPU Troubleshooting: Common Questions Answered",
-  "guides/how-to-enable-webgl.html": "How to Enable WebGL in Chrome, Firefox and Safari"
+  "guides/how-to-enable-webgl.html": "How to Enable WebGL (and Fix WebGL Not Working)"
  },
  "related": {
   "learn/what-is-an-ip-address.html": [
