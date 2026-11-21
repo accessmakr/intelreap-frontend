@@ -57,12 +57,9 @@ const Canvas1 = (() => {
       n.upstreamProvider || '—'
     )
 
+    // Shown only when an ASN was actually found for the address
     setText('c1-announcement-status',
-      n.announcementStatus || '—'
-    )
-
-    setText('c1-bgp-route-status',
-      n.bgpRouteStatus || '—'
+      n.asn ? (n.announcementStatus || '—') : '—'
     )
 
     // Network health score with color
