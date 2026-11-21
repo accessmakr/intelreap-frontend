@@ -1,15 +1,15 @@
 /* IntelReap translations: zh. Only values are translated; keys never change. */
 window.NDIC_TRANSLATIONS_ZH = {
   "meta": {
-    "title": "IntelReap — 网络与设备智能中心",
-    "description": "实时网络和设备智能。揭示您的IP、ASN、VPN状态、浏览器能力和安全态势。免费。无需登录。",
+    "title": "IntelReap — 网络与设备分析中心",
+    "description": "实时网络和设备分析。揭示您的IP、ASN、VPN状态、浏览器能力和安全态势。免费。无需登录。",
     "og_title": "IntelReap — 查看您的网络揭示了什么",
-    "og_description": "免费实时智能工具。在几秒内分析您的网络、设备、安全性和浏览器。"
+    "og_description": "免费实时分析工具。在几秒内分析您的网络、设备、安全性和浏览器。"
   },
   "nav": {
-    "intelligence_center": "智能中心",
+    "intelligence_center": "分析中心",
     "about": "关于",
-    "search_placeholder": "搜索智能面板...",
+    "search_placeholder": "搜索分析面板...",
     "open_search": "打开搜索",
     "toggle_menu": "切换菜单",
     "close_menu": "关闭菜单",
@@ -18,25 +18,25 @@ window.NDIC_TRANSLATIONS_ZH = {
     "guides": "指南"
   },
   "hero": {
-    "badge": "免费智能工具",
+    "badge": "免费分析工具",
     "title_line1": "您的网络",
     "title_line2": "揭示了什么？",
     "tagline": "IntelReap 实时展示您的网络基础设施、设备指纹、安全状况和浏览器能力——13 个面板共 285 个数据点。免费，无需登录。",
-    "cta_primary": "运行智能扫描",
+    "cta_primary": "运行分析",
     "cta_secondary": "查看工作原理",
     "trust_data_points": "每次扫描285个数据点",
-    "trust_panels": "12个智能面板",
+    "trust_panels": "13个分析面板",
     "badge_live": "网络与设备实时扫描",
     "title_html": "看看互联网<br>已经了解<span class=\"ndic-highlight\">你</span>的哪些信息。",
     "see_report": "查看完整报告"
   },
   "quick_answer": {
     "label": "快速答案",
-    "title": "什么是网络与设备智能中心？"
+    "title": "什么是网络与设备分析中心？"
   },
   "tool_header": {
     "title": "NDIC",
-    "subtitle": "网络与设备智能中心",
+    "subtitle": "网络与设备分析中心",
     "status_live": "实时",
     "status_scanning": "扫描中",
     "status_offline": "离线",
@@ -46,7 +46,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "api_calls": "API调用"
   },
   "canvas1": {
-    "heading_technical": "ASN与网络路由智能",
+    "heading_technical": "ASN与网络路由分析",
     "heading_plain": "您在哪个网络上？",
     "params": {
       "asn_number": "ASN编号",
@@ -101,7 +101,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "deep_dive": "深入分析您的网络身份"
   },
   "canvas3": {
-    "heading_technical": "VPN、代理与路由智能",
+    "heading_technical": "VPN、代理与路由分析",
     "heading_plain": "您在网上隐藏了吗？",
     "params": {
       "vpn_detected": "检测到VPN",
@@ -128,7 +128,7 @@ window.NDIC_TRANSLATIONS_ZH = {
       "vpn_yes": "是",
       "vpn_no": "否",
       "vpn_maybe": "可能",
-      "route_clean": "清洁",
+      "route_clean": "正常",
       "route_suspect": "可疑",
       "route_high_risk": "高风险"
     },
@@ -156,7 +156,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "deep_dive": "深入分析您的实时网络"
   },
   "canvas5": {
-    "heading_technical": "设备智能面板",
+    "heading_technical": "设备分析面板",
     "heading_plain": "您使用的是什么设备？",
     "params": {
       "os": "操作系统",
@@ -280,7 +280,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "deep_dive": "深入分析您的浏览器能力"
   },
   "canvas9": {
-    "heading_technical": "性能智能面板",
+    "heading_technical": "性能分析面板",
     "heading_plain": "您的浏览器有多快？",
     "params": {
       "page_load_time": "页面加载时间",
@@ -312,7 +312,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "deep_dive": "深入分析您的性能"
   },
   "canvas10": {
-    "heading_technical": "浏览器与渲染速度智能",
+    "heading_technical": "浏览器与渲染速度分析",
     "heading_plain": "您的设备渲染有多快？",
     "vitals": {
       "lcp": "最大内容绘制",
@@ -347,7 +347,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "deep_dive": "深入分析您的渲染速度"
   },
   "canvas11": {
-    "heading_technical": "全球智能排行榜",
+    "heading_technical": "全球评分总览",
     "heading_plain": "您的总体评分",
     "params": {
       "global_score": "全球评分",
@@ -377,11 +377,11 @@ window.NDIC_TRANSLATIONS_ZH = {
     "deep_dive": "深入分析您的全球评分"
   },
   "canvas12": {
-    "heading_technical": "实时智能动态",
+    "heading_technical": "实时分析动态",
     "heading_plain": "刚刚发生了什么？",
     "params": {
       "online_status": "连接状态",
-      "backend_health": "后端健康",
+      "backend_health": "后端状态",
       "total_events": "总事件数",
       "critical_count": "严重事件",
       "warning_count": "警告",
@@ -399,10 +399,10 @@ window.NDIC_TRANSLATIONS_ZH = {
       "degraded": "降级",
       "none_detected": "未检测到"
     },
-    "deep_dive": "深入分析您的实时智能动态"
+    "deep_dive": "深入分析您的实时分析动态"
   },
   "full_summary": {
-    "title": "完整系统智能报告",
+    "title": "完整系统分析报告",
     "label": "诊断摘要",
     "source_label": "由...生成",
     "generated_at": "生成时间",
@@ -424,10 +424,10 @@ window.NDIC_TRANSLATIONS_ZH = {
     "copy_failed": "复制失败 — 请手动复制"
   },
   "ai_summary": {
-    "label": "智能摘要",
+    "label": "分析摘要",
     "source_script": "脚本",
     "generating": "正在生成分析...",
-    "in_progress": "智能扫描进行中。"
+    "in_progress": "分析进行中。"
   },
   "scores": {
     "excellent": "优秀",
@@ -463,7 +463,7 @@ window.NDIC_TRANSLATIONS_ZH = {
   },
   "methodology": {
     "label": "方法论",
-    "text": "所有智能数据通过标准浏览器API在客户端收集，并由后端借助包括MaxMind GeoLite2在内的IP网络与位置数据库进行丰富处理。"
+    "text": "所有数据通过标准浏览器API在客户端收集，并由后端借助包括MaxMind GeoLite2在内的IP网络与位置数据库进行丰富处理。"
   },
   "citations": {
     "label": "来源与参考",
@@ -516,43 +516,43 @@ window.NDIC_TRANSLATIONS_ZH = {
     "items": [
       {
         "q": "什么是ASN，为什么重要？",
-        "a": "自治系统号码(ASN)是分配给网络运营商的唯一标识符，决定互联网上的流量路由方式。IntelReap识别您的ASN、所有者、层级分类和对等关系。"
+        "a": "自治系统号码(ASN)是分配给网络运营商的唯一标识符，运营商可以是您的互联网服务提供商、云服务商或大型企业。它决定互联网上的流量路由方式。IntelReap会识别您的ASN、所有者、层级分类、注册机构和对等关系，让您全面了解自己的网络基础设施。"
       },
       {
         "q": "VPN检测是如何工作的？",
-        "a": "IntelReap使用三层检测方法：ASN所有权类型分析、时区和语言不一致检测、可选的IP信誉API查询，综合得出信任评分和路由分类。"
+        "a": "IntelReap使用三层检测方法。第一，分析ASN所有权类型——数据中心ASN往往意味着使用了VPN或代理。第二，将时区和浏览器语言与您的IP地理定位进行比对，不一致之处会暴露路由异常。第三，为高风险IP范围添加信誉信号。三个信号综合得出单一的信任评分和路由分类。"
       },
       {
         "q": "什么是WebRTC IP泄露？",
-        "a": "WebRTC是用于实时通信的浏览器API，可能在使用VPN时暴露本地IP地址。IntelReap通过创建对等连接主动测试WebRTC泄露，捕获ICE候选字符串中显示的任何IP地址。"
+        "a": "WebRTC是用于视频通话等实时通信的浏览器API，其副作用是即使使用VPN，也可能暴露您的本地网络IP地址。IntelReap的安全面板通过创建对等连接，并捕获ICE候选字符串中显示的所有IP地址，主动测试WebRTC泄露。"
       },
       {
         "q": "什么是Core Web Vitals？",
-        "a": "Core Web Vitals是Google定义的用于衡量网页真实用户体验的指标集，包括最大内容绘制(LCP)、累积布局偏移(CLS)和交互到下次绘制(INP)。IntelReap测量所有六项指标。"
+        "a": "Core Web Vitals是Google定义的一组指标，用于衡量网页上的真实用户体验。其中包括衡量加载性能的最大内容绘制(LCP)、衡量视觉稳定性的累积布局偏移(CLS)，以及衡量响应能力的交互到下次绘制(INP)。IntelReap测量全部六项指标，包括FCP、TTFB和FID。"
       },
       {
         "q": "IP地理定位有多准确？",
-        "a": "IP地理定位在国家级别几乎完全准确，对于大多数住宅和商业连接在城市级别也很准确。IntelReap使用三层回退链确保最大准确性。"
+        "a": "IP地理定位在几乎所有情况下都能精确到国家级别，对大多数住宅和商业连接也能精确到城市级别。在移动网络、卫星连接和VPN下，由于IP可能注册在与您实际位置不同的地区，准确度可能较低。IntelReap将MaxMind GeoLite2数据与备用来源相结合，以获得最高准确度。"
       },
       {
         "q": "安全评分衡量什么？",
-        "a": "安全评分根据十个加权信号计算：HTTPS状态、安全上下文、WebRTC暴露、混合内容、禁止追踪、存储访问状态以及摄像头、麦克风和位置权限。90-100分为优秀。"
+        "a": "安全评分根据十个加权信号计算：HTTPS状态、安全上下文、WebRTC的IP暴露、混合内容检测、禁止追踪状态、存储访问状态、摄像头权限、麦克风权限、位置权限以及指纹暴露面数量。90-100分为优秀，70-89分为健康，50-69分为一般，30-49分为差，低于30分为严重。"
       },
       {
         "q": "我可以离线使用IntelReap吗？",
-        "a": "IntelReap是一款渐进式网络应用，可安装在您的设备上。静态界面可从缓存离线加载。但智能扫描本身需要活跃连接来查询后端API和获取实时数据。"
+        "a": "IntelReap是一款渐进式网络应用，可安装在您的设备上。静态界面可从缓存离线加载。不过，扫描本身需要有效的网络连接，以查询后端API并获取实时网络和IP数据。离线模式会显示您最近缓存的扫描数据。"
       },
       {
         "q": "全球评分是如何计算的？",
-        "a": "全球评分是九个子评分的加权平均值：网络15%、设备15%、安全性20%（最高权重）、能力10%、性能10%、速度10%、隐私10%、身份5%、图形5%。"
+        "a": "全球评分是九个子评分的加权平均值：网络15%、设备15%、安全性20%、能力10%、性能10%、速度10%、隐私10%、身份5%、图形5%。安全性权重最高，因为它对您的数字安全影响最直接。每个子评分都由其相关数据点独立计算。"
       },
       {
         "q": "浏览器基准测试和Core Web Vitals有什么区别？",
-        "a": "Core Web Vitals测量此页面在您的设备和连接上的加载速度，是真实用户体验指标。浏览器基准测试是合成测试，测量您设备的原始处理能力，不受网络条件影响。"
+        "a": "Core Web Vitals衡量的是这个具体页面在您的设备和网络连接上的加载速度，属于真实用户体验指标。浏览器基准测试则是合成测试，测量设备本身的原始处理能力，不受网络条件影响——以可控规模运行JavaScript运算、DOM操作、canvas渲染和内存访问。"
       },
       {
         "q": "IntelReap有移动应用吗？",
-        "a": "IntelReap是一款渐进式网络应用，可以直接从浏览器安装在iOS和Android上，无需访问应用商店。在iOS上，在Safari中打开网站，点击分享然后点击添加到主屏幕。"
+        "a": "IntelReap是一款渐进式网络应用，可以直接从浏览器安装在iOS和Android上，无需访问应用商店。在iOS上，请在Safari中打开网站，点击分享，然后点击添加到主屏幕。在Android上，Chrome会自动弹出安装提示。安装后的应用以独立模式运行，支持完整的离线功能，并可从主屏幕访问。"
       }
     ]
   },
@@ -571,9 +571,9 @@ window.NDIC_TRANSLATIONS_ZH = {
     "error": "哎呀！提交表单时出现问题。"
   },
   "footer": {
-    "tagline": "实时网络和设备智能。",
-    "description": "基于浏览器的免费情报工具，无需账户。",
-    "col_intelligence": "智能",
+    "tagline": "实时网络和设备分析。",
+    "description": "基于浏览器的免费分析工具，无需账户。",
+    "col_intelligence": "分析",
     "col_deep_dives": "深度分析",
     "col_legal": "法律",
     "col_connect": "联系",
@@ -584,7 +584,7 @@ window.NDIC_TRANSLATIONS_ZH = {
     "col_learn": "学习",
     "cookie_settings": "Cookie 设置",
     "free_line": "免费使用，无需账户。",
-    "email_us": "给我们发邮件",
+    "email_us": "联系我们",
   },
   "cookie": {
     "text": "IntelReap 会在您的浏览器中保存您选择的语言和主题。经您允许，还会使用 Google Analytics Cookie 来衡量网站的使用情况。拒绝不会影响工具的使用。",
@@ -595,10 +595,10 @@ window.NDIC_TRANSLATIONS_ZH = {
   "offline": {
     "status": "连接丢失",
     "title": "您处于离线状态",
-    "body": "IntelReap需要活跃连接来收集智能数据。请检查您的网络后重试。",
+    "body": "IntelReap需要有效的网络连接来收集分析数据。请检查您的网络后重试。",
     "retry": "重试连接",
-    "home": "返回智能中心",
-    "cached_title": "可用缓存智能数据",
+    "home": "返回分析中心",
+    "cached_title": "可用缓存分析数据",
     "cached_body": "上次会话的部分扫描数据可能可用。",
     "online_status": "在线状态",
     "connection_type": "连接类型",
@@ -606,8 +606,8 @@ window.NDIC_TRANSLATIONS_ZH = {
     "last_online": "最后在线时间"
   },
   "internal_links": {
-    "header": "探索智能面板",
-    "back_to_main": "← 返回智能中心"
+    "header": "探索分析面板",
+    "back_to_main": "← 返回分析中心"
   },
   "seasonal": {
     "spring": "春季版",
