@@ -228,6 +228,7 @@ Metrics are from the audit. "Defects" come from headings, structure and metrics;
 - **Defects found:** No live check; browser steps unverified; "context could not be created" needs a flow.
 - **Retrofit work:** Live "is WebGL on" check at top (Graphics/Capability engines). Verify each browser path. Add failure flow.
 - **Diagrams (purpose of each):** Teaches: why WebGL fails (flow from symptom to fix)
+- **Status:** Done 2026-11-19 (moved up by Search Console data), built from `specs/webgl.py` and `webgl_figs.py`. Title "How to Enable WebGL (and Fix WebGL Not Working)" (59 characters with suffix; was 49 with no suffix); description 158 (was 215); quick answer 47 words (was 67). On-page WebGL and WebGPU check (hardware vs software via failIfMajorPerformanceCaveat and renderer name; WebGPU adapter; next steps by browser; no backend, no third party). New WebGPU section from Chrome's own troubleshooting page (the 'found no usable graphics adapter' errors drive most impressions), an error-message table and the exact extension and blocklist strings. 5 diagrams, 9 sections, 13 FAQs, 11 sources. Checked that 22 winning phrases from the Search Console export are still answered. Dropped as unsourced: version history, Google Maps claim, side-channel remark, layers.acceleration.disabled (5 impressions).
 
 ### A11 Device fingerprinting
 - **URL:** `/learn/what-is-device-fingerprinting`
