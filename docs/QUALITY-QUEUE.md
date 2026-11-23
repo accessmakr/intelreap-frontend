@@ -565,3 +565,31 @@ Housekeeping noticed in the crawl: titles are inconsistent (some end with "- Int
 | Low text-to-HTML (Contact) | Ignored. |
 
 **New standard rule (found while fixing links):** several citation labels described content the target does not contain, and some IDs did not exist. Every citation on every page is opened and checked against the claim it supports during that page's retrofit; any that cannot be verified is removed, not kept.
+
+## 10. Outstanding owner-approved items (added 2026-11-19, none started)
+
+**Why these exist.** The VPN and MAC rebuild cut the page from 3,374 to 1,759 words (same counting method: body text, FAQs and tables, no figures or scripts). The owner challenged the size of the cut. The audit trail: five off-topic sections (1,381 words) were removed along with their FAQs; the planned replacement content is mostly tools, diagrams, tables and sources, which add few words. The decision-3 rule in `docs/DECISIONS.md` sets no word-count gate, but the cut was larger than the estimate given to the owner (2,200 to 2,400) and was reported only after the build. Lesson recorded: when a build comes in more than about 10% under the estimate, stop and tell the owner before polishing.
+
+Word counts, before to after the rebuilds (same method): Reverse IP 2,864 to 2,233; WebRTC 2,537 to 2,102; Two-ISPs 3,716 to 2,042; WebGL 3,169 to 2,192; VPN and MAC 3,374 to 1,759.
+
+Recoverable pre-rebuild text (use `git show <commit>~1:<path>`): Reverse IP `86a3010` `learn/what-is-reverse-ip-lookup.html`; WebRTC `b2dc1ae` `learn/webrtc-leak-test-and-shield.html`; Two-ISPs `dfbec93` `learn/can-you-have-two-isps-in-one-house.html`; WebGL `df648b0` `guides/how-to-enable-webgl.html`; VPN and MAC `ab620b9` `learn/does-a-vpn-change-your-mac-address.html`.
+
+### O1 Restore the five removed topics as their own articles
+Status: outstanding. Owner approved 2026-11-19 ("B"). Each is a new article, built with the full process (audit, keyword and Search Console check, primary-source verification, spec approval, diagrams drawn separately for desktop and phone, sources, tool or panel pointer). The old text is a starting point to audit, not text to republish.
+- **Is ExitLag a VPN?** Old text 249 words. Demand seen: "exitlag for mac" 4 impressions at 8.3 and "exitlag vs expressvpn" 3 at 6.7 (Search Console, Aug 17 to Nov 16 2026). Claims about what it does and how it routes must be verified from its own documentation. Provider names appear in visible text, so check the owner's rule on provider names first.
+- **How to use a VPN in incognito or private mode.** Old text 300 words. No query for it in the exported 500 of 1,000 rows. Check browser documentation for what private mode and VPN each change.
+- **Can you use a VPN to buy Steam games cheaper?** Old text 229 words. No demand seen. **Owner decision needed before building:** regional-price workarounds can conflict with a store's terms, and the AdSense review is pending. Verify against the store's own agreement. Not a policy ruling, only a risk flag.
+- **How to bind qBittorrent to a VPN (network interface binding).** Old text 264 words. No demand seen. **Owner decision needed before building** for the same reason (file-sharing topic during review). The qBittorrent steps must come from its own documentation.
+- **How to find VPN and device management on a Mac.** Old text 339 words. No demand seen. Verify against Apple's own support pages. It is an Apple-settings topic, so it may sit better as a guide than an article.
+Demand check before building: Semrush has no API units (all reports return "no API units left"), so the seeds to export when units return are: exitlag vpn, vpn incognito, vpn steam region, qbittorrent vpn bind, mac vpn settings. Until then, Search Console is the only demand source, and it shows little or none for four of the five. The owner may still want them for completeness; build order is the owner's call. New pages must follow the new-page date and `pages.json` flow in this file. They add URLs and do not move or rename any existing page, so AdSense rule 7 is not engaged, but publish only finished pages.
+
+### O2 Expand the VPN and MAC page where the topic needs depth
+Status: outstanding. Owner approved 2026-11-19 ("C"). Target about 2,300 to 2,600 words, reached only by content that answers a question on this topic. Candidates, each to be sourced and judged at build time, with none added just to reach a length:
+- how to find your own MAC address on Windows, Mac, iPhone and Android (Apple, Microsoft and Android documentation);
+- how router MAC filtering works and why a private Wi-Fi address can break it (Apple's warning and the Microsoft IETF slides are already cited);
+- how hotspot or captive-portal login can tie a session to a MAC (needs a primary source; drop if none is found);
+- what the OUI prefix of a MAC reveals (needs the IEEE registry as the source).
+Keep the page's focus: its question is whether a VPN changes or hides a MAC. Re-run the winning-phrase check and the tool tests after any change. Page date moves only for real content changes.
+
+### O3 Over-trimming review of the other four rebuilt pages
+Status: outstanding. Owner approved 2026-11-19. Method: for each of Reverse IP, WebRTC, Two-ISPs and WebGL, diff the pre-rebuild text against the live text and list every removed block with its word count; classify each as (a) off topic, (b) wrong or unsourced, (c) valid and worth keeping, restoring or moving to its own article; check each removed block against the Search Console export for demand; and bring the owner one table per page before any edit. Largest cuts to examine first: Two-ISPs (3,716 to 2,042, including about 330 words of ISP, ASN and BGP definition and three FAQs), WebGL (3,169 to 2,192) and Reverse IP (2,864 to 2,233). Nothing is edited without owner approval of the table.

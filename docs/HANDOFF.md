@@ -54,6 +54,12 @@ intelreap.com was submitted to Google AdSense on 2026-11-12. Review can take a f
 | 7 older articles and guides | Content untouched since July/Oct except citations (7 pages); retrofit in the Search Console order: speed fluctuation (A4), then VPN concentrator, VPN passthrough, fingerprinting, GPU pair, privacy |
 | 13 panels | Untouched (owner added charts on Nov 2); light retrofit items 24-30 |
 
+## Outstanding (owner-approved 2026-11-19, not started)
+These were approved as ledger items after the owner questioned how much the VPN and MAC rebuild cut (3,374 to 1,759 words). Nothing here is built yet. Full detail is in `docs/QUALITY-QUEUE.md` section 10.
+- **O1 Restore the five removed VPN and MAC topics as their own articles** (ExitLag, VPN in incognito, Steam pricing, qBittorrent binding, Mac VPN and device management). The old text is `git show ab620b9~1:learn/does-a-vpn-change-your-mac-address.html`. Each needs the standard process (audit, primary-source check, spec approval) and none is a copy-paste. The Steam and qBittorrent topics need an owner decision first because the AdSense review is pending.
+- **O2 Expand the VPN and MAC page only where useful** (find your MAC, router MAC filtering, hotspot login), target about 2,300 to 2,600 words, each addition sourced and judged at build.
+- **O3 Over-trimming review of the four other rebuilt pages** (Reverse IP, WebRTC, Two-ISPs, WebGL): compare each against its pre-rebuild commit, classify every removed block, and bring the owner a table before any edit.
+
 ## Next
 1. A4 speed fluctuation (4 clicks, 2,908 impressions at position 8.7; add one-line definition for the seven 'fluctuation meaning' variants, 82 impressions), then VPN concentrator, VPN passthrough, fingerprinting, GPU pair and privacy, per the Search Console data of 17 Nov. Panel stretch note: the Security and Proxy engines' WebRTC verdicts (`assets/js/engines/security.js`, `proxy.js`) label a result by private LAN addresses only, never compare the public WebRTC address with the address websites see, and their IPv6 pattern misses compressed addresses; fix in the panel stretch. Panel items (6, 9, 11, 13, 17, 20, 24-30) are their own later stretch, per the owner.
 2. Execute D-3 cuts inside each affected page's retrofit; use `docs/GSC-FINDINGS.md` for title/description CTR rewrites.
