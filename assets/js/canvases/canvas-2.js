@@ -98,7 +98,13 @@ const Canvas2 = (() => {
     setText('c2-continent', i.continent || '—')
 
     // Data source
-    setText('c2-data-source', i.source || '—')
+    // Show a plain description instead of the internal source name
+    const sourceLabels = {
+      'maxmind-local': 'Local database',
+      cloudflare: 'Network edge data'
+    }
+    setText('c2-data-source',
+      sourceLabels[i.source] || i.source || '—')
 
     // Other address (the visitor's IPv4 or IPv6 counterpart)
     const showRow = (id, on) => {

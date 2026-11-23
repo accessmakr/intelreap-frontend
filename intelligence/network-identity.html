@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Network Identity Panel Explained — IntelReap</title>
-  <meta name="description" content="Live IP address lookup, ISP, geolocation, timezone, connection type, and mobile/proxy/hosting flags — your full network identity explained parameter by parameter.">
+  <meta name="description" content="See how your connection appears online: public IP, owner network, estimated location and flags, with every reading explained and its limits noted.">
   <meta name="keywords" content="IP address lookup, ISP lookup, geolocation, public IP, IP version, timezone detection, connection type, proxy flag, hosting flag, mobile network">
   <meta name="robots" content="index, follow">
   <meta name="author" content="IntelReap">
@@ -22,7 +22,7 @@
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="Network Identity Panel Explained — IntelReap">
-  <meta property="og:description" content="Live IP address, ISP, geolocation, timezone, and connection type — your full network identity explained in plain English.">
+  <meta property="og:description" content="See how your connection appears online, with every reading explained and its limits noted.">
   <meta property="og:url" content="https://intelreap.com/intelligence/network-identity">
   <meta property="og:site_name" content="IntelReap">
   <meta property="og:image" content="https://intelreap.com/assets/images/og-image.png">
@@ -58,7 +58,8 @@
   <link rel="stylesheet" href="../assets/css/ndic-animations.css">
   <link rel="stylesheet" href="../assets/css/ndic-rtl.css">
 
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -141,7 +142,7 @@
           "name": "What is the difference between ISP and Organization?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ISP is the company providing your internet access. Organization is the entity registered as the owner of the specific IP block you're connecting from — for most home users these are the same, but on corporate or university networks they differ, since the organization owns the IPs and the ISP provides the transit."
+            "text": "Both show the name of the network that owns your address, from the same record, so they are normally identical. On corporate or university networks the owner and the carrier can differ, but this panel cannot separate them."
           }
         },
         {
@@ -149,7 +150,7 @@
           "name": "What does the proxy or hosting flag mean?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "These flags indicate that your IP address belongs to a range commonly associated with proxy services, VPNs, or datacenter hosting rather than a residential or mobile network. A hosting flag does not mean you are definitely using a VPN — it means your connection exits through infrastructure that's also used for those purposes."
+            "text": "They describe the network your connection exits through. Hosting means the network belongs to a datacenter or content-delivery operator or matches a known hosting provider. Proxy means its name matches a known VPN provider. Neither proves you are using a VPN."
           }
         },
         {
@@ -159,11 +160,36 @@
             "@type": "Answer",
             "text": "IPv4 is the older address format using four groups of numbers, like 192.168.1.1, and is still the dominant protocol. IPv6 is the newer format using eight groups of hexadecimal values, designed to solve the exhaustion of IPv4 addresses. Most connections today use IPv4, with IPv6 available on some modern ISPs and mobile networks."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my postal code blank?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The location database does not include postal codes. The row fills only in the uncommon case where the network edge supplies one for your connection, so it is usually empty."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the panel show two addresses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many connections have both an IPv4 and an IPv6 address. The panel shows IPv4 first and lists the other address and where the database places it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the location?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Location Accuracy row shows the database’s own margin for your address. It can be a few kilometers or hundreds, and on mobile data the city is often a nearby hub rather than your town."
+          }
         }
       ]
     }
   ]
-}</script>
+}
+</script>
 </head>
 <body>
 
@@ -208,11 +234,12 @@
       </nav>
 
       <div class="ndic-deepdive-hero">
-        <div class="ndic-deepdive-eyebrow">Deep Dive · Canvas 2</div>
+        <div class="ndic-deepdive-eyebrow">Deep dive · Panel 2 of 13</div>
         <h1 class="ndic-deepdive-title" data-i18n="canvas2.heading_technical">Network Identity Panel</h1>
         <p class="ndic-deepdive-subtitle" data-i18n="canvas2.heading_plain">Who Are You On The Internet?</p>
         <p class="ndic-deepdive-intro">Your public IP, ISP, geolocation, and connection classification — live, the moment this page loads.</p>
-        <div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 5 November 2026</div>
+        <p class="ndic-deepdive-intro"><strong>At a glance:</strong> This panel shows how your connection appears on the internet: your public address, the network that owns it, and where a location database places it. The location is an estimate based on records, not on your device, and the Location Accuracy row tells you how much to trust it.</p>
+<div id="freshness-badge" data-fixed="true" aria-live="polite">Last updated 5 November 2026</div>
       </div>
 
           <div class="ndic-canvas ndic-canvas-loading" id="canvas-2">
@@ -265,57 +292,7 @@
           </div>
 
           <!-- ═══ CANVAS 3 — VPN, PROXY & ROUTING ═══ -->
-          <div class="ndic-canvas ndic-canvas-loading" id="canvas-3">
-            <div class="ndic-canvas-header">
-              <div class="ndic-canvas-header-left">
-                <span class="ndic-canvas-heading" data-i18n="canvas3.heading_technical">VPN, Proxy &amp; Routing Intelligence</span>
-                <span class="ndic-canvas-subheading" data-i18n="canvas3.heading_plain">Are You Hidden Online?</span>
-              </div>
-              <span class="ndic-canvas-score" id="c3-score">—</span>
-            </div>
-            <div class="ndic-canvas-viz">
-              <div class="ndic-trust-score-display">
-                <span class="ndic-score-large" id="c3-trust-score">—</span>
-                <span class="ndic-canvas-subheading" style="font-size:var(--text-xs);" data-i18n="canvas3.params.trust_score">Trust Score</span>
-              </div>
-              <div class="ndic-risk-bar-track">
-                <div id="c3-risk-heat-bar"></div>
-              </div>
-            </div>
-            <div class="ndic-canvas-params">
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.vpn_detected">VPN Detected</span><span class="ndic-param-value" id="c3-vpn-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.proxy_detected">Proxy Detected</span><span class="ndic-param-value" id="c3-proxy-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">TOR Exit Node Detected</span><span class="ndic-param-value" id="c3-tor-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Datacenter Routing Detected</span><span class="ndic-param-value" id="c3-datacenter-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.ip_classification">IP Classification</span><span class="ndic-param-value" id="c3-ip-classification">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.asn_ownership_type">ASN Ownership Type</span><span class="ndic-param-value" id="c3-asn-ownership-type">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.timezone_match">Timezone Match</span><span class="ndic-param-value" id="c3-timezone-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.language_match">Language Match</span><span class="ndic-param-value" id="c3-language-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.webrtc_match">WebRTC Match</span><span class="ndic-param-value" id="c3-webrtc-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.reverse_dns_match">Reverse DNS Match</span><span class="ndic-param-value" id="c3-reverse-dns-match">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.fraud_score">Fraud Score</span><span class="ndic-param-value" id="c3-fraud-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.abuse_score">Abuse Score</span><span class="ndic-param-value" id="c3-abuse-score">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.bot_detected">Bot Detected</span><span class="ndic-param-value" id="c3-bot-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.route_classification">Route Classification</span><span class="ndic-param-value" id="c3-route-classification">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.detection_flags">Detection Flags</span><span class="ndic-param-value" id="c3-detection-flags">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Primary Detection Source</span><span class="ndic-param-value" id="c3-primary-source">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Detection Confidence</span><span class="ndic-param-value" id="c3-confidence">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.paid_api_consulted">Paid API Consulted</span><span class="ndic-param-value" id="c3-paid-api-consulted">—</span></div>
-            </div>
-            <div class="ndic-canvas-footer">
-              <div class="ndic-ai-summary-wrapper">
-                <div class="ndic-ai-summary-header">
-                  <span class="ndic-ai-summary-label">Analysis</span>
-                  <span class="ndic-ai-source-badge" id="canvas3-ai-source">—</span>
-                </div>
-                <p class="ndic-ai-summary-text" id="canvas3-ai-summary">Analyzing your VPN and routing status...</p>
-              </div>
-              <a href="#" class="ndic-deep-dive-link" id="c3-deep-dive-link">Deep dive into your VPN and routing analysis</a>
-            </div>
-          </div>
-
-
-      <!-- ═══ UNDERSTANDING EVERY SIGNAL ═══ -->
+                <!-- ═══ UNDERSTANDING EVERY SIGNAL ═══ -->
       <section class="ndic-explain-section">
         <div class="ndic-explain-section-header">
           <div class="ndic-explain-eyebrow">Parameter by Parameter</div>
@@ -328,27 +305,27 @@
 
           <div class="ndic-explain-item">
             <h4>Public IP Address &amp; IP Version</h4>
-            <p>Your public IP is the address the rest of the internet sees when you connect — assigned by your ISP, not fixed to your device. IP version tells you whether your connection is using the older IPv4 format (four number groups) or the newer IPv6 format (eight hexadecimal groups). Most connections worldwide still use IPv4.</p>
+            <p>Your public IP is the address the rest of the internet sees when you connect, assigned by your provider and not fixed to your device. IP version tells you whether it uses the older IPv4 format or the newer IPv6 format. Many phones and home connections have both. When both are found, this panel shows the IPv4 address first and lists the IPv6 address as the other address.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4>ISP &amp; Organization</h4>
-            <p>ISP is the company providing your internet access. Organization is the entity registered as owner of your specific IP block. For most home connections these are the same; on corporate, university, or VPN connections they often differ — the organization owns the IPs but the ISP provides the physical transit.</p>
+            <p>Both rows show the name of the network that owns your address, taken from the same record, so they are normally identical. On corporate, university or VPN connections the company that owns the addresses can differ from the company that carries your traffic, and this panel cannot separate the two.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4>Country, Country Code, Region &amp; City</h4>
-            <p>These come from your IP address's registered location in geolocation databases, not from GPS. They reflect where your ISP's infrastructure is registered, which can be a different city — sometimes a different region — from where you physically are. Mobile carriers and VPNs in particular often route through a regional hub.</p>
+            <p>These come from where a location database places your address, not from GPS. On mobile data the city can be hundreds of kilometers from you and can change when you reconnect, because carriers send traffic through a few regional gateways.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4>Postal Code &amp; Coordinates</h4>
-            <p>The most granular geolocation estimates available from IP data. Postal code accuracy varies widely by country and ISP — in some regions it's reliable to the local area; in others it reflects the ISP's billing address city rather than any geographic precision. Coordinates carry the same accuracy caveat as city-level data.</p>
+            <p>Coordinates are the point the database uses for your city, rounded to about one kilometer. The postal code row is usually empty: the database does not include postal codes, and the row fills only in the uncommon case where the network edge supplies one for your connection.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4>Latitude &amp; Longitude</h4>
-            <p>The numeric coordinates behind the map pin above. These are IP-derived, not GPS — accuracy is typically within 50 kilometres for most ISPs in well-mapped regions, but can be off by much more for mobile and satellite connections where the registered infrastructure location differs significantly from where subscribers actually are.</p>
+            <p>The numbers behind the map pin. They are derived from your IP address, not GPS. How far they can be from you ranges from a few kilometers on well-mapped fixed networks to hundreds of kilometers on mobile and satellite connections. The Location Accuracy row shows the database’s own margin for your address.</p>
           </div>
 
           <div class="ndic-explain-item">
@@ -358,18 +335,22 @@
 
           <div class="ndic-explain-item">
             <h4>Connection Type &amp; Mobile Connection</h4>
-            <p>Connection type classifies your access method — broadband, mobile, satellite, or corporate/datacenter. The mobile flag is a direct yes/no answer: is this connection coming from a mobile carrier network? Mobile connections are significant because they almost always use carrier-grade NAT, meaning your public IP is shared with many other subscribers on the same cell tower or carrier gateway.</p>
+            <p>Connection type is one of four values: mobile, proxy, hosting or broadband. It is worked out from the same flags described in the next entry, so Mobile Connection simply repeats whether the mobile flag is set. Mobile connections matter because they almost always use carrier-grade NAT, so your public address is shared with many other subscribers.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4>Proxy Flag, Hosting Flag &amp; Continent</h4>
-            <p>Proxy flag means your IP range is associated with VPN or proxy services. Hosting flag means the IP is in a datacenter or hosting provider's allocation rather than a residential block. Both flags together strongly suggest a non-residential connection. Continent is included as context since some detection logic and rate-limiting systems operate at continental rather than country level.</p>
+            <p>These flags describe the network, not your device. A network is flagged as hosting when its number belongs to a datacenter or content-delivery operator, or its registered name matches a known hosting provider. It is flagged as proxy when its name matches a known VPN provider. Neither flag proves you are using a VPN: a hosting flag only means your connection exits through infrastructure that is also used for that purpose. Continent is context for systems that work at continental level.</p>
           </div>
 
           <div class="ndic-explain-item">
             <h4 data-i18n="canvas2.params.data_source">Data Source</h4>
-            <p>Shows which geolocation source produced the values above — your backend has a priority chain (cached result → primary lookup → local database fallback) and this confirms which tier was actually used, so you know how fresh and reliable to consider the data.</p>
+            <p>Shows where the location came from: a licensed IP location database stored with our backend or, where it has no record for your address, the network edge’s own data. Either way, the location is an estimate.</p>
           </div>
+<div class="ndic-explain-item">
+<h4>Other Address, Other Address Location, IPv6 Location (Database) &amp; Location Accuracy</h4>
+<p>Other Address is the second address your device has, when one is found. Other Address Location and IPv6 Location (Database) show where the database places that second address, which can differ from the location of the address shown at the top. Location Accuracy is the database’s own margin of error for the address shown at the top: “within about 100 km” means the city is a rough guess, not a position.</p>
+</div>
 
         </div>
       </section>
@@ -388,7 +369,34 @@
           <h4>A VPN changes everything on this panel — and nothing on the fingerprinting panel</h4>
           <p>Connecting through a VPN replaces every value shown here with data reflecting your VPN exit server's location and ISP, not yours. That's exactly what VPNs are designed to do. What it doesn't change is your browser's fingerprint — the audio, canvas, and font signals measured in the Fingerprinting panel stay identical regardless of which network you're routed through.</p>
         </div>
-      </section>
+      <div class="ndic-explain-item">
+<h4>Why the location can be wrong, especially on mobile</h4>
+<p>Location databases work from records about networks, not from your phone. A mobile network may route all of its customers in a region through one gateway, so your address is mapped to the gateway’s city, and a new session can be tied to a different gateway. Home Wi-Fi tends to be closer to the truth because fixed lines are registered to a service area.</p>
+</div>
+<div class="ndic-explain-item">
+<h4>What this panel cannot tell you</h4>
+<p>It cannot tell you your exact position, your device, or who you are. It describes the network your connection exits through. For your real position, the Fingerprinting panel offers a tap-only GPS comparison; for whether the pattern looks like a VPN, see the VPN &amp; Proxy panel.</p>
+</div>
+</section>
+
+<section class="ndic-explain-section">
+<div class="ndic-explain-section-header">
+<div class="ndic-explain-eyebrow">Worked Examples</div>
+<h2 class="ndic-explain-title">What Typical Results Look Like</h2>
+<p class="ndic-explain-lead">Typical readings for three kinds of connection. Values follow the rules the panel uses.</p>
+</div>
+<div class="ndic-compare-wrap"><table class="ndic-compare-table">
+<thead><tr><th scope="col">Reading</th><th scope="col">Home broadband</th><th scope="col">Mobile data</th><th scope="col">VPN or datacenter</th></tr></thead>
+<tbody>
+<tr><th scope="row">Connection type</th><td>broadband</td><td>mobile</td><td>hosting or proxy</td></tr>
+<tr><th scope="row">Mobile Connection</th><td>No</td><td>Yes</td><td>No</td></tr>
+<tr><th scope="row">Hosting Flag</th><td>No</td><td>No</td><td>Yes</td></tr>
+<tr><th scope="row">Proxy Flag</th><td>No</td><td>No</td><td>Yes if the name matches a known VPN provider</td></tr>
+<tr><th scope="row">City</th><td>Usually near you</td><td>May be hundreds of km away</td><td>The server’s city, not yours</td></tr>
+<tr><th scope="row">ISP and Organization</th><td>Same name</td><td>Same name</td><td>Same name</td></tr>
+</tbody></table></div>
+</section>
+
 
       <!-- ═══ PAGE FAQ ═══ -->
       <section class="ndic-faq-section">
@@ -411,7 +419,7 @@
               <span>What is the difference between ISP and Organization?</span>
               <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
             </button>
-            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">ISP is the company providing your internet access. Organization is the entity registered as the owner of the specific IP block you're connecting from — for most home users these are the same, but on corporate or university networks they differ, since the organization owns the IPs and the ISP provides the transit.</div></div>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Both show the name of the network that owns your address, from the same record, so they are normally identical. On corporate or university networks the owner and the carrier can differ, but this panel cannot separate them.</div></div>
           </div>
 
           <div class="ndic-faq-item">
@@ -419,7 +427,7 @@
               <span>What does the proxy or hosting flag mean?</span>
               <span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
             </button>
-            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">These flags indicate that your IP address belongs to a range commonly associated with proxy services, VPNs, or datacenter hosting rather than a residential or mobile network. A hosting flag does not mean you are definitely using a VPN — it means your connection exits through infrastructure that's also used for those purposes.</div></div>
+            <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">They describe the network your connection exits through. Hosting means the network belongs to a datacenter or content-delivery operator or matches a known hosting provider. Proxy means its name matches a known VPN provider. Neither proves you are using a VPN.</div></div>
           </div>
 
           <div class="ndic-faq-item">
@@ -430,7 +438,28 @@
             <div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">IPv4 is the older address format using four groups of numbers, like 192.168.1.1, and is still the dominant protocol. IPv6 is the newer format using eight groups of hexadecimal values, designed to solve the exhaustion of IPv4 addresses. Most connections today use IPv4, with IPv6 available on some modern ISPs and mobile networks.</div></div>
           </div>
 
-        </div>
+        <div class="ndic-faq-item">
+<button class="ndic-faq-question" aria-expanded="false">
+<span>Why is my postal code blank?</span>
+<span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+</button>
+<div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The location database does not include postal codes. The row fills only in the uncommon case where the network edge supplies one for your connection, so it is usually empty.</div></div>
+</div>
+<div class="ndic-faq-item">
+<button class="ndic-faq-question" aria-expanded="false">
+<span>Why does the panel show two addresses?</span>
+<span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+</button>
+<div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">Many connections have both an IPv4 and an IPv6 address. The panel shows IPv4 first and lists the other address and where the database places it.</div></div>
+</div>
+<div class="ndic-faq-item">
+<button class="ndic-faq-question" aria-expanded="false">
+<span>How accurate is the location?</span>
+<span class="ndic-faq-chevron" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 5l5 5 5-5"/></svg></span>
+</button>
+<div class="ndic-faq-answer"><div class="ndic-faq-answer-inner">The Location Accuracy row shows the database’s own margin for your address. It can be a few kilometers or hundreds, and on mobile data the city is often a nearby hub rather than your town.</div></div>
+</div>
+</div>
       </section>
 
       <!-- ═══ CITATIONS ═══ -->
@@ -439,16 +468,34 @@
         <div class="ndic-citation-list">
           <div class="ndic-citation-item">
             <span class="ndic-citation-num">01</span>
-            <span class="ndic-citation-link">Global IP geolocation and ASN reference databases</span>
+            <span class="ndic-citation-link">An IP location and network-owner database stored with our backend, with the network edge’s data where it has no record</span>
           </div>
           <div class="ndic-citation-item">
             <span class="ndic-citation-num">02</span>
-            <span class="ndic-citation-link">Regional Internet Registry allocation records (ARIN, RIPE, APNIC, LACNIC, AFRINIC)</span>
+            <span class="ndic-citation-link">A list of network numbers classified as mobile, datacenter or content-delivery operators, built from public data</span>
           </div>
-        </div>
+        <div class="ndic-citation-item">
+<span class="ndic-citation-num">03</span>
+<span class="ndic-citation-link">A list of known VPN and hosting provider names</span>
+</div>
+</div>
       </section>
 
-      <div id="dynamic-internal-links"></div>
+      <section class="ndic-explain-section">
+<div class="ndic-explain-section-header">
+<div class="ndic-explain-eyebrow">Keep Exploring</div>
+<h2 class="ndic-explain-title">Related reading</h2>
+</div>
+<ul class="ndic-related-list">
+<li><a href="/learn/what-is-an-ip-address">What an IP address is</a></li>
+<li><a href="/guides/how-to-find-ip-address-of-any-device">How to find the IP address of any device</a></li>
+<li><a href="/learn/how-to-protect-your-privacy-online">How to protect your privacy online</a></li>
+<li><a href="/intelligence/network-route">Network Route panel: which network carries your connection</a></li>
+<li><a href="/intelligence/vpn-proxy">VPN &amp; Proxy panel: whether you are hidden online</a></li>
+<li><a href="/intelligence/fingerprinting">Fingerprinting panel: how easily you can be tracked</a></li>
+</ul>
+</section>
+<div id="dynamic-internal-links"></div>
 
     </div>
   </main>
