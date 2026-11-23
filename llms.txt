@@ -19,7 +19,7 @@
 
 ## Guides and explainers
 - [Can You Have Two Internet Providers in One House?](https://intelreap.com/learn/can-you-have-two-isps-in-one-house): Yes, if both providers reach your address. See one-router and two-router setups, failover vs load balancing, and compare your connections with a free check.
-- [Does a VPN Change or Hide Your MAC Address?](https://intelreap.com/learn/does-a-vpn-change-your-mac-address): No — a VPN does not change your MAC address. Learn what a VPN actually changes, whether ExitLag is a VPN, how to use VPN in incognito, bind qBittorrent to a VPN, and more.
+- [Does a VPN Change or Hide Your MAC Address?](https://intelreap.com/learn/does-a-vpn-change-your-mac-address): No. A VPN changes your public IP, not your MAC address, and your router and Wi-Fi network can still see it. See what hides it on Apple, Windows and Android.
 - [How to Find a Printer's IP Address on Any Device](https://intelreap.com/learn/find-printer-ip-address): Find your printer's IP address in under a minute: printer menu, Windows, Mac, Linux or your router. Includes a device step picker and diagrams.
 - [How to Find Your Router's IP Address on Any Device](https://intelreap.com/learn/find-router-ip-address): Find your router's IP address (default gateway) on Windows, Mac, Linux, iPhone or Android. Includes a device step picker, default address list and diagrams.
 - [How to Fix Slow DNS Lookup (Test It, Then Fix It)](https://intelreap.com/learn/how-to-fix-slow-dns-lookup): Slow DNS lookup delays every page. Time your resolver, compare public ones live, then change DNS, flush the cache and check your VPN and router.
