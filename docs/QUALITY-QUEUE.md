@@ -593,3 +593,30 @@ Keep the page's focus: its question is whether a VPN changes or hides a MAC. Re-
 
 ### O3 Over-trimming review of the other four rebuilt pages
 Status: outstanding. Owner approved 2026-11-19. Method: for each of Reverse IP, WebRTC, Two-ISPs and WebGL, diff the pre-rebuild text against the live text and list every removed block with its word count; classify each as (a) off topic, (b) wrong or unsourced, (c) valid and worth keeping, restoring or moving to its own article; check each removed block against the Search Console export for demand; and bring the owner one table per page before any edit. Largest cuts to examine first: Two-ISPs (3,716 to 2,042, including about 330 words of ISP, ASN and BGP definition and three FAQs), WebGL (3,169 to 2,192) and Reverse IP (2,864 to 2,233). Nothing is edited without owner approval of the table.
+
+### O3 findings (review done 2026-11-19, no page edited)
+Method: each page's pre-rebuild text (`git show <commit>~1:<path>`, commits listed above) compared section by section and FAQ by FAQ with the live text, then each removed or condensed block classified as (a) off topic, (b) wrong or unsourced, (c) valid. The Search Console export (Aug 17 to Nov 16 2026) was used to test the live text for the terms of queries that bring impressions. FAQ answer words, before to after: Two-ISPs 835 to 389; Reverse IP 742 to 411; WebRTC 697 to 440; WebGL 793 to 356.
+
+**Two-ISPs (3,716 to 2,042 words).**
+- Stay cut, off topic: ISP, ASN and BGP definition (about 255 words) and three FAQs (what ISP stands for, education meaning, which term describes an ISP; about 170 words).
+- Stay cut, wrong or unsourced: failover detection 'every 5 to 30 seconds by pinging 8.8.8.8 or 1.1.1.1'; 'route around throttling'; the legal claims; Orbi, Deco and Cisco RV as dual-WAN examples; the VPN-passthrough advice.
+- Restore, valid but condensed too far or dropped: independence of the physical lines (the same Openreach copper or cable plant example, label as general practice, about 120 words); WAN connection types DHCP, PPPoE and static IP from vendor documentation (about 100); the one-ISP versus two-ISP comparison table without the throttling row (about 137); cost strategies without price figures: cheaper backup plan, mobile SIM as secondary, business bundle (about 187); connection bonding (about 110, needs sources, RFC 8684 is already cited); the 200 plus 100 Mbps concurrency example labelled as an example (about 50); assigning a specific device to a line, from ASUS's FAQ (about 120).
+- Vocabulary to add: dual ISP, multiple ISPs, wifi providers, broadband providers, secondary ISP (already present). Estimated total after restoration: 2,750 to 2,850 words.
+
+**Reverse IP (2,864 to 2,233 words).**
+- Nothing off topic or wrong was removed; sections were condensed.
+- Restore: shared-hosting reputation and dedicated IP (old section 08, about 180 words; Google's note that a shared IP's reputation is shared by its senders is already cited), the FAQs on dedicated IP and on checking your own site's neighbours (about 120), and the 'is reverse IP lookup legal' FAQ rewritten without absolute claims and not as legal advice (about 60).
+- Optional, small demand: a line separating reverse IP from reverse proxy ('reverse proxy lookup', 11 impressions at 8.8); a Google Analytics question only if verified ('google analytics reverse ip lookup' and the reverse order, 12 impressions at 6.0 and 8.6). Estimated total: about 2,580.
+
+**WebRTC (2,537 to 2,102 words).**
+- Stay cut, wrong: uBlock Origin as a Chrome fix row; 'Disable non-proxied UDP keeps WebRTC working'; the Safari Develop-menu claim.
+- Restore: the FAQ 'What browser extensions block WebRTC leaks?' using the sources already checked (about 120); 'How often should I test?' labelled as general practice (about 70); a fuller 'one piece of a larger picture' section (about 100).
+- Regression: the word 'shield' is gone from the page. Option for owner approval: title 'WebRTC Leak Test and Shield: Check and Fix a Leak' (61 characters with suffix). Add a 'what is a WebRTC leak shield' FAQ and one section heading using the term. Estimated total: about 2,450.
+
+**WebGL (3,169 to 2,192 words).**
+- Stay cut, wrong: 'WebGL is a W3C standard' (to be verified, it is specified by the Khronos Group); 'cannot be disabled on iOS'; the old Safari Develop path; the IntelReap-specific FAQ.
+- Restore, verified from MDN or similar before use: what WebGL is and what it is used for (about 120); a corrected browser-support table (about 150); FAQs on safety, mobile, WebGL 1 versus WebGL 2 and dedicated GPU (about 270). Estimated total: about 2,750.
+
+Total restoration across the four pages: about 1,950 words. Each addition needs a primary source or an explicit 'general practice' label. Order when it starts: WebRTC and Two-ISPs first (clear regressions), then WebGL, then Reverse IP.
+
+**Admitted process faults behind O3.** I promised a Search Console query check for Two-ISPs and did not run it; I ran it only for WebGL and the VPN and MAC page. I changed the WebRTC title and dropped 'shield' without checking the impressions at stake. I condensed several valid sections instead of correcting their wrong sentences.
