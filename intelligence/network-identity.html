@@ -256,8 +256,8 @@
             <div class="ndic-canvas-params">
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.public_ip">Public IP Address</span><span class="ndic-param-value" id="c2-public-ip">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.ip_version">IP Version</span><span class="ndic-param-value" id="c2-ip-version">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">ISP</span><span class="ndic-param-value" id="c2-isp">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Organization</span><span class="ndic-param-value" id="c2-organization">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.isp">ISP</span><span class="ndic-param-value" id="c2-isp">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.organization">Organization</span><span class="ndic-param-value" id="c2-organization">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.country">Country</span><span class="ndic-param-value" id="c2-country">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.country_code">Country Code</span><span class="ndic-param-value" id="c2-country-code">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.region">Region</span><span class="ndic-param-value" id="c2-region">—</span></div>
@@ -270,19 +270,19 @@
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.utc_offset">UTC Offset</span><span class="ndic-param-value" id="c2-utc-offset">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.connection_type">Connection Type</span><span class="ndic-param-value" id="c2-connection-type">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.mobile_flag">Mobile Connection</span><span class="ndic-param-value" id="c2-mobile-flag">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Proxy Flag</span><span class="ndic-param-value" id="c2-proxy-flag">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Hosting Flag</span><span class="ndic-param-value" id="c2-hosting-flag">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.proxy_flag">Proxy Flag</span><span class="ndic-param-value" id="c2-proxy-flag">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.hosting_flag">Hosting Flag</span><span class="ndic-param-value" id="c2-hosting-flag">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.continent">Continent</span><span class="ndic-param-value" id="c2-continent">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas2.params.data_source">Data Source</span><span class="ndic-param-value" id="c2-data-source">—</span></div>
-              <div class="ndic-param-row ndic-hidden" id="c2-alt-row"><span class="ndic-param-label">Other Address</span><span class="ndic-param-value" id="c2-alt-ip">—</span></div>
-              <div class="ndic-param-row ndic-hidden" id="c2-alt-loc-row"><span class="ndic-param-label">Other Address Location</span><span class="ndic-param-value" id="c2-alt-location">—</span></div>
-              <div class="ndic-param-row ndic-hidden" id="c2-v6-loc-row"><span class="ndic-param-label">IPv6 Location (Database)</span><span class="ndic-param-value" id="c2-v6-loc">—</span></div>
-              <div class="ndic-param-row ndic-hidden" id="c2-accuracy-row"><span class="ndic-param-label">Location Accuracy</span><span class="ndic-param-value" id="c2-accuracy">—</span></div>
+              <div class="ndic-param-row ndic-hidden" id="c2-alt-row"><span class="ndic-param-label" data-i18n="labels.other_address">Other Address</span><span class="ndic-param-value" id="c2-alt-ip">—</span></div>
+              <div class="ndic-param-row ndic-hidden" id="c2-alt-loc-row"><span class="ndic-param-label" data-i18n="labels.other_address_location">Other Address Location</span><span class="ndic-param-value" id="c2-alt-location">—</span></div>
+              <div class="ndic-param-row ndic-hidden" id="c2-v6-loc-row"><span class="ndic-param-label" data-i18n="labels.ipv6_location_database">IPv6 Location (Database)</span><span class="ndic-param-value" id="c2-v6-loc">—</span></div>
+              <div class="ndic-param-row ndic-hidden" id="c2-accuracy-row"><span class="ndic-param-label" data-i18n="labels.location_accuracy">Location Accuracy</span><span class="ndic-param-value" id="c2-accuracy">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
                 <div class="ndic-ai-summary-header">
-                  <span class="ndic-ai-summary-label">Analysis</span>
+                  <span class="ndic-ai-summary-label" data-i18n="labels.analysis">Analysis</span>
                   <span class="ndic-ai-source-badge" id="canvas2-ai-source">—</span>
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas2-ai-summary">Analyzing your network identity...</p>
@@ -574,6 +574,7 @@
   <script defer src="../js/root-config.js"></script>
   <script defer src="../js/analytics-consent.js"></script>
   <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../assets/js/i18n/value-translator.js"></script>
 
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>

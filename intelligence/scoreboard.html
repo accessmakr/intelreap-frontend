@@ -161,15 +161,15 @@
               </div>
               <svg id="canvas11-score-rings"></svg>
               <div class="ndic-sub-score-gauges">
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-network-chart"></canvas><span class="ndic-sub-gauge-label">Network</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-identity-chart"></canvas><span class="ndic-sub-gauge-label">Identity</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-network-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="labels.network">Network</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-identity-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="labels.identity">Identity</span></div>
                 <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-privacy-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="footer.privacy">Privacy</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-device-chart"></canvas><span class="ndic-sub-gauge-label">Device</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-graphics-chart"></canvas><span class="ndic-sub-gauge-label">Graphics</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-security-chart"></canvas><span class="ndic-sub-gauge-label">Security</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-capability-chart"></canvas><span class="ndic-sub-gauge-label">Capability</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-performance-chart"></canvas><span class="ndic-sub-gauge-label">Performance</span></div>
-                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-speed-chart"></canvas><span class="ndic-sub-gauge-label">Speed</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-device-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="labels.device">Device</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-graphics-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="labels.graphics">Graphics</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-security-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="labels.security">Security</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-capability-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="labels.capability">Capability</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-performance-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="labels.performance">Performance</span></div>
+                <div class="ndic-sub-gauge-item"><canvas class="ndic-sub-gauge-canvas" id="canvas11-speed-chart"></canvas><span class="ndic-sub-gauge-label" data-i18n="labels.speed">Speed</span></div>
               </div>
             </div>
             <div class="ndic-canvas-params">
@@ -184,14 +184,14 @@
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.speed_score">Speed Score</span><span class="ndic-param-value" id="c11-speed-score">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.strongest_area">Strongest Area</span><span class="ndic-param-value" id="c11-strongest-area">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.weakest_area">Weakest Area</span><span class="ndic-param-value" id="c11-weakest-area">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Improvement Priority</span><span class="ndic-param-value" id="c11-improvement-priority">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.improvement_priority">Improvement Priority</span><span class="ndic-param-value" id="c11-improvement-priority">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.critical_flags">Critical Flags</span><span class="ndic-param-value" id="c11-critical-flags">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas11.params.warnings">Warnings</span><span class="ndic-param-value" id="c11-warnings">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
                 <div class="ndic-ai-summary-header">
-                  <span class="ndic-ai-summary-label">Analysis</span>
+                  <span class="ndic-ai-summary-label" data-i18n="labels.analysis">Analysis</span>
                   <span class="ndic-ai-source-badge" id="canvas11-ai-source">—</span>
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas11-ai-summary">Computing your global score...</p>
@@ -370,6 +370,7 @@
   <script defer src="../js/root-config.js"></script>
   <script defer src="../js/analytics-consent.js"></script>
   <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../assets/js/i18n/value-translator.js"></script>
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>
   <script defer src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin></script>

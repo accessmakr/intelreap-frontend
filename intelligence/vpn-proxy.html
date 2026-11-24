@@ -235,8 +235,8 @@
             <div class="ndic-canvas-params">
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.vpn_detected">VPN Detected</span><span class="ndic-param-value" id="c3-vpn-detected">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.proxy_detected">Proxy Detected</span><span class="ndic-param-value" id="c3-proxy-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">TOR Exit Node Detected</span><span class="ndic-param-value" id="c3-tor-detected">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Datacenter Routing Detected</span><span class="ndic-param-value" id="c3-datacenter-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.tor_exit_node_detected">TOR Exit Node Detected</span><span class="ndic-param-value" id="c3-tor-detected">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.datacenter_routing_detected">Datacenter Routing Detected</span><span class="ndic-param-value" id="c3-datacenter-detected">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.ip_classification">IP Classification</span><span class="ndic-param-value" id="c3-ip-classification">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.asn_ownership_type">ASN Ownership Type</span><span class="ndic-param-value" id="c3-asn-ownership-type">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.timezone_match">Timezone Match</span><span class="ndic-param-value" id="c3-timezone-match">—</span></div>
@@ -248,14 +248,14 @@
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.bot_detected">Bot Detected</span><span class="ndic-param-value" id="c3-bot-detected">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.route_classification">Route Classification</span><span class="ndic-param-value" id="c3-route-classification">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.detection_flags">Detection Flags</span><span class="ndic-param-value" id="c3-detection-flags">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Primary Detection Source</span><span class="ndic-param-value" id="c3-primary-source">—</span></div>
-              <div class="ndic-param-row"><span class="ndic-param-label">Detection Confidence</span><span class="ndic-param-value" id="c3-confidence">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.primary_detection_source">Primary Detection Source</span><span class="ndic-param-value" id="c3-primary-source">—</span></div>
+              <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="labels.detection_confidence">Detection Confidence</span><span class="ndic-param-value" id="c3-confidence">—</span></div>
               <div class="ndic-param-row"><span class="ndic-param-label" data-i18n="canvas3.params.paid_api_consulted">Paid API Consulted</span><span class="ndic-param-value" id="c3-paid-api-consulted">—</span></div>
             </div>
             <div class="ndic-canvas-footer">
               <div class="ndic-ai-summary-wrapper">
                 <div class="ndic-ai-summary-header">
-                  <span class="ndic-ai-summary-label">Analysis</span>
+                  <span class="ndic-ai-summary-label" data-i18n="labels.analysis">Analysis</span>
                   <span class="ndic-ai-source-badge" id="canvas3-ai-source">—</span>
                 </div>
                 <p class="ndic-ai-summary-text" id="canvas3-ai-summary">Analyzing your VPN and routing status...</p>
@@ -491,6 +491,7 @@
   <script defer src="../js/root-config.js"></script>
   <script defer src="../js/analytics-consent.js"></script>
   <script defer src="../assets/js/i18n/i18n-engine.js"></script>
+  <script defer src="../assets/js/i18n/value-translator.js"></script>
 
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" crossorigin></script>

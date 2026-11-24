@@ -180,3 +180,14 @@ Homepage: 141 distinct; deep-dive pages: 141 distinct; union: 141.
 
 | String | Pages |
 |---|---|
+
+## UPDATE 2026-11-17: canvas headers and data labels are now fully wired
+
+- Homepage: 342 of 342 header and label elements carry a `data-i18n="labels.<key>"` (or existing) key. Deep-dive pages: 364 of 364.
+- 195 new strings live in a new `labels` section in en.js and all 23 other language files (141 header/label strings + 54 panel-visual, chart and diagram strings). Keys are the English text as a lowercase slug, for example `labels.hosting_network`.
+- `assets/js/i18n/value-translator.js` (new, loaded after i18n-engine.js on the homepage and the 14 deep-dive pages) translates English values and sentences that other scripts insert into the page ("Supported", "Good", "none found", "Deep dive into ...") at display time only. It does not touch script logic or data. The English-to-key table inside it is generated from en.js.
+- `assets/js/visualizations/chartjs.js` now reads chart titles, dataset names, waterfall stage names and gauge sub-text from `labels.*` and refreshes them on `ndic-i18n-ready` and `ndic-language-changed`.
+- To add a new panel label: add it to `labels` in en.js and all 23 files, then put `data-i18n="labels.<key>"` on the element. For a value that a script writes as text, add its English text and key to the table in value-translator.js.
+- Tested in a headless browser: English unchanged; ja, de, ar and all other languages show the translated labels with no JS errors; live language switching works.
+- Still English by design: article bodies, long page prose, FAQ text on the homepage (hard-coded, different questions from the translated FAQ keys), and chart internals not listed above.
+- Native-speaker check still needed for the 195 new strings, especially Hausa and Yoruba.

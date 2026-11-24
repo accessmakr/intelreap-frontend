@@ -22,6 +22,27 @@ const ChartJSViz = (() => {
 
   const charts = {}
 
+  // Translated chart text. Falls back to the English string when the
+  // language file has not loaded yet; refreshChartText() re-applies it.
+  const T = (key, fallback) => {
+    try {
+      const v = (typeof I18nEngine !== 'undefined')
+        ? I18nEngine.t(key, null) : null
+      return v && v !== key ? v : fallback
+    } catch (e) {
+      return fallback
+    }
+  }
+  const waterfallLabels = () => [
+    T('canvas9.params.dns_lookup', 'DNS Lookup'),
+    T('labels.tcp_connect', 'TCP Connect'),
+    T('canvas9.params.tls_handshake', 'TLS Handshake'),
+    T('canvas10.vitals.ttfb', 'Time to First Byte'),
+    T('labels.response', 'Response'),
+    T('canvas9.params.dom_processing', 'DOM Processing'),
+    T('labels.resource_fetch', 'Resource Fetch')
+  ]
+
   // ---------------------------------------
   // THEME COLOURS
   // Swaps dark-theme chart colours for
@@ -257,7 +278,7 @@ const ChartJSViz = (() => {
       data: {
         labels: labels,
         datasets: [{
-          label: 'Latency (ms)',
+          label: T('labels.latency_ms', 'Latency (ms)'),
           data: data,
           borderColor: tc('#63b3ed'),
           backgroundColor: gradient,
@@ -435,7 +456,7 @@ const ChartJSViz = (() => {
       text: bandwidth
         ? (bandwidth >= 100 ? '100+' : Number(bandwidth).toFixed(1))
         : '—',
-      sub: 'Mbps download'
+      sub: T('labels.mbps_download', 'Mbps download')
     }
     chart.update()
   }
@@ -562,15 +583,7 @@ const ChartJSViz = (() => {
     charts['canvas9-waterfall'] = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: [
-          'DNS Lookup',
-          'TCP Connect',
-          'TLS Handshake',
-          'Time to First Byte',
-          'Response',
-          'DOM Processing',
-          'Resource Fetch'
-        ],
+        labels: waterfallLabels(),
         datasets: [{
           data: [0, 0, 0, 0, 0, 0, 0],
           backgroundColor: [
@@ -714,7 +727,7 @@ const ChartJSViz = (() => {
       color
     chart.options.plugins.ndicGaugeText = {
       text: Math.round(value),
-      sub: 'responsiveness / 100'
+      sub: T('labels.responsiveness_100', 'responsiveness / 100')
     }
     chart.update()
   }
@@ -754,7 +767,7 @@ const ChartJSViz = (() => {
         labels: VITAL_NAMES,
         datasets: [
           {
-            label: 'Your result',
+            label: T('labels.your_result', 'Your result'),
             data: [0, 0, 0, 0, 0, 0],
             backgroundColor: [
               tc('#68d391'), tc('#68d391'), tc('#68d391'),
@@ -764,7 +777,7 @@ const ChartJSViz = (() => {
             borderSkipped: false
           },
           {
-            label: 'Good limit',
+            label: T('labels.good_limit', 'Good limit'),
             data: [1, 1, 1, 1, 1, 1],
             backgroundColor:
               tc('rgba(255,255,255,0.12)'),
@@ -795,7 +808,8 @@ const ChartJSViz = (() => {
           legend: { display: false },
           title: {
             display: true,
-            text: 'Your result against the "good" limit (grey): lower than grey is good',
+            text: T('labels.your_result_against_the_good_limit_grey_lower_than_grey_is_good',
+              'Your result against the "good" limit (grey): lower than grey is good'),
             align: 'start',
             color: cssVar('--color-text-secondary', '#a8b6c9'),
             font: { size: 11, weight: '600' },
@@ -807,10 +821,10 @@ const ChartJSViz = (() => {
               label: (c) => {
                 const i = c.dataIndex
                 if (c.datasetIndex === 1) {
-                  return ' Good limit: ' + formatVital(i, VITAL_LIMITS[i])
+                  return ' ' + T('labels.good_limit', 'Good limit') + ': ' + formatVital(i, VITAL_LIMITS[i])
                 }
                 const raw = c.chart.$rawVitals
-                return ' Your result: ' + formatVital(i, raw ? raw[i] : null)
+                return ' ' + T('labels.your_result', 'Your result') + ': ' + formatVital(i, raw ? raw[i] : null)
               }
             }
           }
@@ -1228,6 +1242,55 @@ const ChartJSViz = (() => {
     chart.update('none')
   }
 
+  // Re-apply translated text to charts that were built before the
+  // language file arrived, and after the visitor switches language.
+  const refreshChartText = () => {
+    setChartTitle('canvas3-latency', T(
+      'labels.latency_over_time_ms_lower_is_better',
+      'Latency over time (ms): lower is better'))
+    setChartTitle('canvas3-stability', T(
+      'labels.stability_over_time_higher_and_steadier_is_better',
+      'Stability over time: higher and steadier is better'))
+    setChartTitle('canvas9-waterfall', T(
+      'labels.where_the_page_load_time_went_ms_shorter_is_better',
+      'Where the page load time went (ms): shorter is better'))
+    const lat = charts['canvas3-latency']
+    if (lat && lat.data.datasets[0]) {
+      lat.data.datasets[0].label = T('labels.latency_ms', 'Latency (ms)')
+      lat.update('none')
+    }
+    const wf = charts['canvas9-waterfall']
+    if (wf) {
+      wf.data.labels = waterfallLabels()
+      wf.update('none')
+    }
+    const vit = charts['canvas10-vitals']
+    if (vit) {
+      vit.data.datasets[0].label = T('labels.your_result', 'Your result')
+      vit.data.datasets[1].label = T('labels.good_limit', 'Good limit')
+      if (vit.options.plugins.title) {
+        vit.options.plugins.title.text = T(
+          'labels.your_result_against_the_good_limit_grey_lower_than_grey_is_good',
+          'Your result against the "good" limit (grey): lower than grey is good')
+      }
+      vit.update('none')
+    }
+    const bw = charts['canvas3-bandwidth']
+    if (bw && bw.options.plugins.ndicGaugeText) {
+      bw.options.plugins.ndicGaugeText.sub =
+        T('labels.mbps_download', 'Mbps download')
+      bw.update('none')
+    }
+    const rs = charts['canvas9-responsiveness']
+    if (rs && rs.options.plugins.ndicGaugeText) {
+      rs.options.plugins.ndicGaugeText.sub =
+        T('labels.responsiveness_100', 'responsiveness / 100')
+      rs.update('none')
+    }
+  }
+  window.addEventListener('ndic-i18n-ready', refreshChartText)
+  window.addEventListener('ndic-language-changed', refreshChartText)
+
   const initializeAll = () => {
     if (typeof Chart === 'undefined') {
       logError(
@@ -1256,12 +1319,7 @@ const ChartJSViz = (() => {
     initSubScoreGauges()
 
     // Plain titles so each chart says what it shows
-    setChartTitle('canvas3-latency',
-      'Latency over time (ms): lower is better')
-    setChartTitle('canvas3-stability',
-      'Stability over time: higher and steadier is better')
-    setChartTitle('canvas9-waterfall',
-      'Where the page load time went (ms): shorter is better')
+    refreshChartText()
 
     logSystem(
       'INFO',
